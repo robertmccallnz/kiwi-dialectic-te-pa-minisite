@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" aria-label="Unaunahi — fish scales, abundance and connection to the moana">
+  <!-- Unaunahi: fish-scale pattern — abundance, sustenance, connection to the moana -->
+  <!-- Red scales on dark ground in a 4-column offset grid -->
+  <rect width="120" height="120" fill="#111111"/>
+  <defs>
+    <!-- Single fish-scale arc: a semicircle arch -->
+    <path id="sc" d="M0,16 A16,16 0 0,1 32,16" fill="#c0392b" stroke="#111" stroke-width="1.2"/>
+  </defs>
+  <!-- Row 0 (y=0): 4 scales -->
+  <use href="#sc" x="0"  y="0"/>
+  <use href="#sc" x="32" y="0"/>
+  <use href="#sc" x="64" y="0"/>
+  <use href="#sc" x="96" y="0"/>
+  <!-- Row 1 (y=14, offset): 3 scales -->
+  <use href="#sc" x="-16" y="14"/>
+  <use href="#sc" x="16"  y="14"/>
+  <use href="#sc" x="48"  y="14"/>
+  <use href="#sc" x="80"  y="14"/>
+  <!-- Row 2 (y=28): 4 scales -->
+  <use href="#sc" x="0"  y="28"/>
+  <use href="#sc" x="32" y="28"/>
+  <use href="#sc" x="64" y="28"/>
+  <use href="#sc" x="96" y="28"/>
+  <!-- Row 3 (y=42, offset) -->
+  <use href="#sc" x="-16" y="42"/>
+  <use href="#sc" x="16"  y="42"/>
+  <use href="#sc" x="48"  y="42"/>
+  <use href="#sc" x="80"  y="42"/>
+  <!-- Row 4 (y=56) -->
+  <use href="#sc" x="0"  y="56"/>
+  <use href="#sc" x="32" y="56"/>
+  <use href="#sc" x="64" y="56"/>
+  <use href="#sc" x="96" y="56"/>
+  <!-- Row 5 (y=70, offset) -->
+  <use href="#sc" x="-16" y="70"/>
+  <use href="#sc" x="16"  y="70"/>
+  <use href="#sc" x="48"  y="70"/>
+  <use href="#sc" x="80"  y="70"/>
+  <!-- Row 6 (y=84) -->
+  <use href="#sc" x="0"  y="84"/>
+  <use href="#sc" x="32" y="84"/>
+  <use href="#sc" x="64" y="84"/>
+  <use href="#sc" x="96" y="84"/>
+  <!-- Row 7 (y=98, offset) -->
+  <use href="#sc" x="-16" y="98"/>
+  <use href="#sc" x="16"  y="98"/>
+  <use href="#sc" x="48"  y="98"/>
+  <use href="#sc" x="80"  y="98"/>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" aria-label="Koru — new life and growth">
+  <!-- Koru: unfurling fern frond spiral. Te Whai Ao — coming into being -->
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Outer spiral arc -->
+    <path d="M 60 108
+             C 20 108, 8 80, 8 60
+             C 8 28, 32 10, 60 10
+             C 88 10, 108 30, 108 56
+             C 108 76, 94 92, 76 96
+             C 62 100, 48 92, 46 78
+             C 44 66, 54 56, 64 58
+             C 72 60, 76 68, 72 74
+             C 68 80, 60 78, 60 72
+             C 60 66, 66 64, 68 68"
+          stroke-width="5"/>
+    <!-- Stem -->
+    <path d="M 60 108 C 60 108, 58 96, 56 88" stroke-width="4"/>
+  </g>
+</svg>

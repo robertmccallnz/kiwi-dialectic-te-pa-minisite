@@ -4,104 +4,139 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Module 1: Whakapapa o te raraunga — The Kiwi Dialectic</title>
-  <meta name="description" content="The whakapapa of data — where does data come from, and who does it belong to? Te Pā Tūwatawata course." />
+  <meta name="description" content="The whakapapa of data — where does data come from, and who does it belong to? Te Pā Tūwatawata course, The Kiwi Dialectic." />
   <meta property="og:title" content="Module 1: Whakapapa o te raraunga" />
   <meta property="og:description" content="The whakapapa of data — where does data come from, and who does it belong to?" />
   <meta property="og:image" content="https://robertmccallnz.github.io/kiwi-dialectic-te-pa-minisite/assets/social/kiwi-dialectic-x-card.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <style>
-    :root{--bg:#f8f8f6;--fg:#111;--muted:#555;--border:rgba(0,0,0,.1);--card-bg:#fff;--accent:#c0392b;--accent2:#2c7a4b}
-    [data-theme="dark"]{--bg:#111;--fg:#f0efe9;--muted:#aaa;--border:rgba(255,255,255,.12);--card-bg:#1c1c1c;--accent:#e05a4a;--accent2:#4caf75}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font:17px/1.7 Georgia,serif;background:var(--bg);color:var(--fg);transition:background .3s,color .3s}
-    .shell{max-width:820px;margin:0 auto;padding:28px 24px}
-    nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0 20px;border-bottom:1px solid var(--border);margin-bottom:36px}
-    .nav-brand{font-family:Arial,sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none}
-    .nav-links{display:flex;gap:16px;align-items:center}
-    .nav-links a{font-family:Arial,sans-serif;font-size:13px;text-decoration:none;color:var(--fg);opacity:.7}
-    .nav-links a:hover{opacity:1}
-    #themeToggle{font-size:13px;font-family:Arial,sans-serif;background:none;border:1px solid var(--border);color:var(--fg);border-radius:999px;padding:4px 12px;cursor:pointer}
-    .breadcrumb{font-family:Arial,sans-serif;font-size:12px;color:var(--muted);margin-bottom:24px}
-    .breadcrumb a{color:var(--accent2);text-decoration:none}
-    .module-tag{font-family:Arial,sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2);margin-bottom:12px}
-    h1{font-family:Georgia,serif;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.15;margin-bottom:10px}
-    .subtitle{font-size:1.1rem;color:var(--muted);margin-bottom:32px;font-style:italic}
-    h2{font-family:Georgia,serif;font-size:1.4rem;margin:36px 0 12px;border-bottom:1px solid var(--border);padding-bottom:6px}
-    p{margin-bottom:1.2em}
-    .pull-quote{border-left:3px solid var(--accent);padding:16px 22px;margin:28px 0;font-size:1.15rem;font-style:italic;color:var(--muted);background:var(--card-bg);border-radius:0 12px 12px 0}
-    ul,ol{padding-left:1.6em;margin-bottom:1.2em}
-    li{margin-bottom:.4em}
-    .question-box{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:22px;margin:28px 0}
-    .question-box h3{font-family:Arial,sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
-    .nav-between{display:flex;justify-content:space-between;padding:28px 0;border-top:1px solid var(--border);margin-top:36px;font-family:Arial,sans-serif;font-size:13px}
-    .nav-between a{color:var(--fg);text-decoration:none;opacity:.7}
-    .nav-between a:hover{opacity:1}
-    footer{padding:24px 0 10px;font-family:Arial,sans-serif;font-size:13px;color:var(--muted);border-top:1px solid var(--border)}
-    footer a{color:var(--muted);text-decoration:none}
-  </style>
+  <link rel="stylesheet" href="../assets/kiwi-dialectic.css" />
 </head>
 <body>
-  <div class="shell">
-    <nav>
+  <span class="motif-stripe" role="presentation" aria-hidden="true"></span>
+  <div class="shell--narrow" style="padding-top:0">
+    <nav class="site-nav">
       <a class="nav-brand" href="https://www.kiwidialectic.com" target="_blank" rel="noopener noreferrer">The Kiwi Dialectic</a>
       <div class="nav-links">
         <a href="../index.html">All Modules</a>
         <a href="../index.html#sources">Sources</a>
-        <button id="themeToggle">Dark</button>
+        <button class="theme-btn" id="themeToggle">Dark</button>
       </div>
     </nav>
-    <p class="breadcrumb"><a href="../index.html">Te Pā Tūwatawata</a> / Module 1</p>
+
+    <!-- Kōwhaiwhai band — whakapapa -->
+    <div class="motif-band" role="presentation" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 44" width="100%" height="44" preserveAspectRatio="xMidYMid slice">
+        <rect width="600" height="44" fill="#111"/>
+        <polygon points="0.0,0 25.0,0 12.5,16" fill="#c0392b"/>
+        <polygon points="25.0,0 50.0,0 37.5,16" fill="#c0392b"/>
+        <polygon points="50.0,0 75.0,0 62.5,16" fill="#c0392b"/>
+        <polygon points="75.0,0 100.0,0 87.5,16" fill="#c0392b"/>
+        <polygon points="100.0,0 125.0,0 112.5,16" fill="#c0392b"/>
+        <polygon points="125.0,0 150.0,0 137.5,16" fill="#c0392b"/>
+        <polygon points="150.0,0 175.0,0 162.5,16" fill="#c0392b"/>
+        <polygon points="175.0,0 200.0,0 187.5,16" fill="#c0392b"/>
+        <polygon points="200.0,0 225.0,0 212.5,16" fill="#c0392b"/>
+        <polygon points="225.0,0 250.0,0 237.5,16" fill="#c0392b"/>
+        <polygon points="250.0,0 275.0,0 262.5,16" fill="#c0392b"/>
+        <polygon points="275.0,0 300.0,0 287.5,16" fill="#c0392b"/>
+        <polygon points="300.0,0 325.0,0 312.5,16" fill="#c0392b"/>
+        <polygon points="325.0,0 350.0,0 337.5,16" fill="#c0392b"/>
+        <polygon points="350.0,0 375.0,0 362.5,16" fill="#c0392b"/>
+        <polygon points="375.0,0 400.0,0 387.5,16" fill="#c0392b"/>
+        <polygon points="400.0,0 425.0,0 412.5,16" fill="#c0392b"/>
+        <polygon points="425.0,0 450.0,0 437.5,16" fill="#c0392b"/>
+        <polygon points="450.0,0 475.0,0 462.5,16" fill="#c0392b"/>
+        <polygon points="475.0,0 500.0,0 487.5,16" fill="#c0392b"/>
+        <polygon points="500.0,0 525.0,0 512.5,16" fill="#c0392b"/>
+        <polygon points="525.0,0 550.0,0 537.5,16" fill="#c0392b"/>
+        <polygon points="550.0,0 575.0,0 562.5,16" fill="#c0392b"/>
+        <polygon points="575.0,0 600.0,0 587.5,16" fill="#c0392b"/>
+        <line x1="0" y1="22" x2="600" y2="22" stroke="#f0efe9" stroke-width=".5" stroke-opacity=".2"/>
+      </svg>
+    </div>
+
+    <p class="breadcrumb" style="margin-top:20px">
+      <a href="../index.html">Te Pā Tūwatawata</a>
+      <span class="breadcrumb-sep">/</span>
+      Module 1
+    </p>
+
     <article>
       <p class="module-tag">Module 1 of 6</p>
       <h1>Whakapapa o te raraunga</h1>
       <p class="subtitle">The whakapapa of data — where does data come from, and who does it belong to?</p>
 
-      <h2>He kupu whakataki — Introduction</h2>
-      <p>
-        In te ao Māori, whakapapa is not merely genealogy — it is the framework through which all things are understood in relation to one another. Every entity has connections: to ancestors, to the land, to community. This module applies that framework to data itself.
-      </p>
-      <p>
-        When a corporation collects health data from a Māori community, or when a university harvests oral histories from iwi for a research database, something profound happens that Western data law barely registers: a whakapapa is severed. The data becomes decontextualised. Its origins — the people, the wānanga, the whenua it came from — are erased from the record.
-      </p>
-
-      <div class="pull-quote">
-        "Data is not neutral. Every dataset carries the fingerprints of power — who collected it, why, and who it was taken from."
+      <!-- Module motif banner -->
+      <div style="display:flex;align-items:center;gap:18px;background:var(--bg-raised);border-radius:14px;padding:18px 20px;margin:0 0 36px;border:1px solid var(--border)">
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:64px;height:64px;color:#c0392b;flex-shrink:0">
+        <path d="M40 72 C18 72 8 54 8 40 C8 20 24 8 40 8 C56 8 70 20 70 36 C70 48 62 58 52 60 C44 62 36 58 34 50 C32 44 38 38 44 40 C48 42 50 48 46 52 C44 54 40 52 40 48 C40 44 44 42 46 44"
+              fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+      </svg>
+        <div>
+          <div style="font-family:var(--font-sans);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:4px">Tohu o tēnei akoranga — Module symbol</div>
+          <strong style="font-family:var(--font-serif)">Koru</strong>
+          <p style="font-size:.88rem;color:var(--fg-muted);margin:4px 0 0">unfurling fern frond — new life, growth, renewal</p>
+        </div>
       </div>
 
+      <!-- Symbol meaning note -->
+      <p style="font-size:.92rem;color:var(--fg-muted);border-left:3px solid var(--accent);padding:10px 16px;background:var(--bg-raised);border-radius:0 10px 10px 0;margin-bottom:36px">This module carries the <strong>koru</strong> — the unfurling fern frond. The whakapapa of data is itself an unfolding: tracing each dataset back to its origin, its relationships, its people. The koru reminds us that everything has a beginning, and that beginning matters.</p>
+
+      <h2>He kupu whakataki — Introduction</h2>
+      <p>In te ao Māori, whakapapa is not merely genealogy — it is the framework through which all things are understood in relation to one another. Every entity has connections: to ancestors, to the land, to community. This module applies that framework to data itself.</p>
+      <p>When a corporation collects health data from a Māori community, or when a university harvests oral histories from iwi for a research database, something profound happens that Western data law barely registers: a whakapapa is severed. The data becomes decontextualised. Its origins — the people, the wānanga, the whenua it came from — are erased from the record.</p>
+
+      <div class="pull-quote">"Data is not neutral. Every dataset carries the fingerprints of power — who collected it, why, and who it was taken from."</div>
       <h2>Whakapapa as data ontology</h2>
-      <p>
-        The concept of whakapapa gives us a richer ontology of data than anything offered by GDPR or the New Zealand Privacy Act. Where those frameworks ask "who owns this data?", whakapapa asks: "what are this data's relationships, and do those relationships remain intact?"
-      </p>
-      <p>
-        Māori data scholars like those at Te Mana Raraunga have argued that data about Māori is, in an important sense, Māori data — regardless of who currently holds it. This is not a legal claim so much as an ethical and relational one. It flows directly from the logic of whakapapa.
-      </p>
+      <p>The concept of whakapapa gives us a richer ontology of data than anything offered by GDPR or the New Zealand Privacy Act. Where those frameworks ask "who owns this data?", whakapapa asks: "what are this data's relationships, and do those relationships remain intact?"</p>
+      <p>Māori data scholars at Te Mana Raraunga have argued that data about Māori is, in an important sense, Māori data — regardless of who currently holds it. This is not merely a legal claim but an ethical and relational one. It flows directly from the logic of whakapapa.</p>
       <ul>
         <li>Data about a person's whakapapa belongs to that whakapapa.</li>
         <li>Data collected in a community context carries obligations to that community.</li>
         <li>Removing data from its relational context is a form of extraction — analogous to removing taonga from a marae.</li>
       </ul>
-
       <h2>Colonial data extraction: a short history</h2>
-      <p>
-        The theft of Māori data is not new. Colonial governments collected census records, land survey data, genealogical records, and geographical information about Māori communities throughout the 19th and 20th centuries — often without consent, and always with the aim of control. This data was used to enforce the Native Land Court system, to administer land confiscations, and to implement assimilationist policy.
-      </p>
-      <p>
-        Digital colonialism continues this logic. Machine learning systems trained on Māori linguistic data, cultural knowledge, or health statistics — without iwi consent — are a new expression of an old pattern. The technology is different; the underlying relationship of extraction is not.
-      </p>
-
-      <div class="pull-quote">
-        "He aha te mea nui o te ao? He tangata, he tangata, he tangata."<br/>
-        <span style="font-size:.9rem">What is the greatest thing in the world? It is people, it is people, it is people.</span>
-      </div>
-
-      <h2>Key concepts from this module</h2>
-      <ul>
-        <li><strong>Raraunga</strong> — data; information</li>
-        <li><strong>Whakapapa o te raraunga</strong> — the genealogy and relational context of data</li>
-        <li><strong>Mana raraunga</strong> — data sovereignty; the right of Māori to govern their own data</li>
-        <li><strong>Raupatu matihiko</strong> — digital dispossession; the taking of Māori data without consent</li>
+      <p>The theft of Māori data is not new. Colonial governments collected census records, land survey data, genealogical records, and geographical information about Māori communities throughout the 19th and 20th centuries — often without consent, and always with the aim of control. This data was used to enforce the Native Land Court system, to administer land confiscations, and to implement assimilationist policy.</p>
+      <p>Digital colonialism continues this logic. Machine learning systems trained on Māori linguistic data, cultural knowledge, or health statistics — without iwi consent — are a new expression of an old pattern. The technology is different; the underlying relationship of extraction is not.</p>
+      <div class="pull-quote">"He aha te mea nui o te ao? He tangata, he tangata, he tangata."<br/><small style="font-size:.85rem;font-style:normal">What is the greatest thing in the world? It is people, it is people, it is people.</small></div>
+      <h2>Key concepts</h2>
+      <ul class="concept-list">
+        <li><span class="concept-term">Raraunga</span> Data; information</li>
+        <li><span class="concept-term">Whakapapa o te raraunga</span> The genealogy and relational context of data</li>
+        <li><span class="concept-term">Mana raraunga</span> Data sovereignty; the right of Māori to govern their own data</li>
+        <li><span class="concept-term">Raupatu matihiko</span> Digital dispossession; the taking of Māori data without consent</li>
       </ul>
+
+      <!-- Niho taniwha separator before questions -->
+      <div role="presentation" aria-hidden="true" style="margin:32px 0 0">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 16" width="100%" height="16" preserveAspectRatio="xMidYMid slice">
+          <rect width="600" height="16" fill="var(--mangu,#111)"/>
+          <polygon points="0.0,0 25.0,0 12.5,16" fill="#c0392b"/>
+        <polygon points="25.0,0 50.0,0 37.5,16" fill="#c0392b"/>
+        <polygon points="50.0,0 75.0,0 62.5,16" fill="#c0392b"/>
+        <polygon points="75.0,0 100.0,0 87.5,16" fill="#c0392b"/>
+        <polygon points="100.0,0 125.0,0 112.5,16" fill="#c0392b"/>
+        <polygon points="125.0,0 150.0,0 137.5,16" fill="#c0392b"/>
+        <polygon points="150.0,0 175.0,0 162.5,16" fill="#c0392b"/>
+        <polygon points="175.0,0 200.0,0 187.5,16" fill="#c0392b"/>
+        <polygon points="200.0,0 225.0,0 212.5,16" fill="#c0392b"/>
+        <polygon points="225.0,0 250.0,0 237.5,16" fill="#c0392b"/>
+        <polygon points="250.0,0 275.0,0 262.5,16" fill="#c0392b"/>
+        <polygon points="275.0,0 300.0,0 287.5,16" fill="#c0392b"/>
+        <polygon points="300.0,0 325.0,0 312.5,16" fill="#c0392b"/>
+        <polygon points="325.0,0 350.0,0 337.5,16" fill="#c0392b"/>
+        <polygon points="350.0,0 375.0,0 362.5,16" fill="#c0392b"/>
+        <polygon points="375.0,0 400.0,0 387.5,16" fill="#c0392b"/>
+        <polygon points="400.0,0 425.0,0 412.5,16" fill="#c0392b"/>
+        <polygon points="425.0,0 450.0,0 437.5,16" fill="#c0392b"/>
+        <polygon points="450.0,0 475.0,0 462.5,16" fill="#c0392b"/>
+        <polygon points="475.0,0 500.0,0 487.5,16" fill="#c0392b"/>
+        <polygon points="500.0,0 525.0,0 512.5,16" fill="#c0392b"/>
+        <polygon points="525.0,0 550.0,0 537.5,16" fill="#c0392b"/>
+        <polygon points="550.0,0 575.0,0 562.5,16" fill="#c0392b"/>
+        <polygon points="575.0,0 600.0,0 587.5,16" fill="#c0392b"/>
+        </svg>
+      </div>
 
       <div class="question-box">
         <h3>Pātai — Discussion questions</h3>
@@ -113,19 +148,27 @@
         </ol>
       </div>
     </article>
+
     <div class="nav-between">
       <span></span>
       <a href="module-2.html">Module 2 →</a>
     </div>
-    <footer>
+
+    <footer class="site-footer">
       <a href="https://www.kiwidialectic.com" target="_blank" rel="noopener noreferrer">The Kiwi Dialectic</a> · Dunedin, Aotearoa
     </footer>
   </div>
   <script>
     const btn=document.getElementById('themeToggle'),html=document.documentElement;
-    const saved=localStorage.getItem('theme')||'light';
-    html.setAttribute('data-theme',saved);btn.textContent=saved==='dark'?'Light':'Dark';
-    btn.addEventListener('click',()=>{const cur=html.getAttribute('data-theme'),next=cur==='dark'?'light':'dark';html.setAttribute('data-theme',next);localStorage.setItem('theme',next);btn.textContent=next==='dark'?'Light':'Dark';});
+    const saved=localStorage.getItem('kd-theme')||'light';
+    html.setAttribute('data-theme',saved);
+    btn.textContent=saved==='dark'?'Light':'Dark';
+    btn.addEventListener('click',()=>{
+      const cur=html.getAttribute('data-theme'),next=cur==='dark'?'light':'dark';
+      html.setAttribute('data-theme',next);
+      localStorage.setItem('kd-theme',next);
+      btn.textContent=next==='dark'?'Light':'Dark';
+    });
   </script>
 </body>
 </html>

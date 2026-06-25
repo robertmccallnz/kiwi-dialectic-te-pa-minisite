@@ -8,7 +8,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="The Kiwi Dialectic — Te Pā Tūwatawata" />
-  <meta property="og:description" content="A bilingual educational mini site on AI, Māori data sovereignty, tikanga, and Indigenous control over digital infrastructure." />
+  <meta property="og:description" content="Six modules on AI, Māori data sovereignty, tikanga, and Indigenous digital futures. Bilingual — te reo Māori and English." />
   <meta property="og:image" content="https://robertmccallnz.github.io/kiwi-dialectic-te-pa-minisite/assets/social/kiwi-dialectic-x-card.png" />
   <meta property="og:url" content="https://robertmccallnz.github.io/kiwi-dialectic-te-pa-minisite/" />
   <meta property="og:site_name" content="The Kiwi Dialectic" />
@@ -16,212 +16,229 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@kiwidialectic" />
   <meta name="twitter:title" content="The Kiwi Dialectic — Te Pā Tūwatawata" />
-  <meta name="twitter:description" content="AI, Māori data sovereignty, tikanga, and digital futures." />
+  <meta name="twitter:description" content="Six modules on AI, Māori data sovereignty, tikanga, and Indigenous digital futures." />
   <meta name="twitter:image" content="https://robertmccallnz.github.io/kiwi-dialectic-te-pa-minisite/assets/social/kiwi-dialectic-x-card.png" />
-  <style>
-    :root {
-      --bg: #f8f8f6;
-      --fg: #111111;
-      --muted: #555555;
-      --border: rgba(0,0,0,.1);
-      --card-bg: #ffffff;
-      --accent: #c0392b;
-      --accent2: #2c7a4b;
-    }
-    [data-theme="dark"] {
-      --bg: #111111;
-      --fg: #f0efe9;
-      --muted: #aaaaaa;
-      --border: rgba(255,255,255,.12);
-      --card-bg: #1c1c1c;
-      --accent: #e05a4a;
-      --accent2: #4caf75;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font: 17px/1.7 'Georgia', serif;
-      background: var(--bg);
-      color: var(--fg);
-      transition: background .3s, color .3s;
-    }
-    .shell { max-width: 1100px; margin: 0 auto; padding: 28px 24px; }
-
-    /* NAV */
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 0 20px;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 32px;
-    }
-    .nav-brand { font-family: Arial, sans-serif; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
-    .nav-links { display: flex; gap: 18px; align-items: center; }
-    .nav-links a { font-family: Arial, sans-serif; font-size: 13px; text-decoration: none; color: var(--fg); opacity: .7; }
-    .nav-links a:hover { opacity: 1; }
-    #themeToggle {
-      font-size: 13px; font-family: Arial, sans-serif;
-      background: none; border: 1px solid var(--border);
-      color: var(--fg); border-radius: 999px; padding: 4px 12px;
-      cursor: pointer; transition: border-color .2s;
-    }
-    #themeToggle:hover { border-color: var(--fg); }
-
-    /* HERO */
-    .hero { padding: 48px 0 40px; border-bottom: 1px solid var(--border); }
-    .hero-tag { font-family: Arial, sans-serif; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
-    .hero h1 { font-family: Georgia, serif; font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 1.1; margin-bottom: 20px; }
-    .hero-sub { font-size: 1.1rem; color: var(--muted); max-width: 680px; margin-bottom: 28px; }
-    .btn-row { display: flex; flex-wrap: wrap; gap: 10px; }
-    .btn {
-      display: inline-block; padding: 11px 22px;
-      border: 1.5px solid var(--fg); border-radius: 999px;
-      text-decoration: none; color: var(--fg);
-      font-family: Arial, sans-serif; font-size: 13px;
-      transition: background .2s, color .2s;
-    }
-    .btn:hover { background: var(--fg); color: var(--bg); }
-    .btn.solid { background: var(--fg); color: var(--bg); }
-    .btn.solid:hover { background: transparent; color: var(--fg); }
-
-    /* SECTION */
-    section { padding: 40px 0; border-bottom: 1px solid var(--border); }
-    section h2 { font-family: Georgia, serif; font-size: 1.7rem; margin-bottom: 10px; }
-    .section-intro { color: var(--muted); font-size: 1rem; max-width: 720px; margin-bottom: 28px; }
-
-    /* MODULES GRID */
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 22px;
-      text-decoration: none;
-      color: var(--fg);
-      display: block;
-      transition: border-color .2s, transform .15s;
-    }
-    .card:hover { border-color: var(--fg); transform: translateY(-2px); }
-    .card-num { font-family: Arial, sans-serif; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent2); margin-bottom: 8px; }
-    .card h3 { font-size: 1.05rem; font-family: Georgia, serif; margin-bottom: 6px; }
-    .card p { font-size: .9rem; color: var(--muted); }
-    .card-arrow { float: right; opacity: .35; font-size: .85rem; margin-top: 2px; }
-
-    /* QUOTE */
-    .pull-quote {
-      border-left: 3px solid var(--accent);
-      padding: 18px 24px;
-      margin: 28px 0;
-      font-size: 1.2rem;
-      font-style: italic;
-      color: var(--muted);
-      background: var(--card-bg);
-      border-radius: 0 12px 12px 0;
-    }
-
-    /* SOURCES */
-    .source-list { list-style: none; }
-    .source-list li { padding: 8px 0; border-bottom: 1px solid var(--border); font-size: .95rem; }
-    .source-list li a { color: var(--accent2); text-decoration: none; }
-    .source-list li a:hover { text-decoration: underline; }
-
-    /* FOOTER */
-    footer { padding: 32px 0 16px; font-family: Arial, sans-serif; font-size: 13px; color: var(--muted); }
-    footer a { color: var(--muted); text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-  </style>
+  <link rel="stylesheet" href="assets/kiwi-dialectic.css" />
 </head>
 <body>
+
+  <!-- Te Whai Ao — the realm of Coming into Being — red stripe -->
+  <span class="motif-stripe" role="presentation" aria-hidden="true"></span>
+
   <div class="shell">
-    <nav>
+    <nav class="site-nav">
       <a class="nav-brand" href="https://www.kiwidialectic.com" target="_blank" rel="noopener noreferrer">The Kiwi Dialectic</a>
       <div class="nav-links">
         <a href="#modules">Modules</a>
+        <a href="#symbolism">Symbolism</a>
         <a href="#sources">Sources</a>
         <a href="https://www.kiwidialectic.com" target="_blank" rel="noopener noreferrer">Substack</a>
-        <button id="themeToggle" aria-label="Toggle dark mode">Dark</button>
+        <button class="theme-btn" id="themeToggle" aria-label="Toggle dark mode">Dark</button>
       </div>
     </nav>
 
+    <!-- KŌWHAIWHAI BAND — whakapapa / genealogy -->
+    <div class="motif-band" role="presentation" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 60" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <pattern id="kww-idx" x="0" y="0" width="100" height="60" patternUnits="userSpaceOnUse">
+            <rect width="100" height="60" fill="#111"/>
+            <polygon points="0,0 20,0 10,18"  fill="#c0392b"/>
+            <polygon points="20,0 40,0 30,18" fill="#c0392b"/>
+            <polygon points="40,0 60,0 50,18" fill="#c0392b"/>
+            <polygon points="60,0 80,0 70,18" fill="#c0392b"/>
+            <polygon points="80,0 100,0 90,18" fill="#c0392b"/>
+            <circle cx="25" cy="40" r="8" fill="none" stroke="#f0efe9" stroke-width="2" stroke-opacity=".6"/>
+            <circle cx="75" cy="40" r="8" fill="none" stroke="#f0efe9" stroke-width="2" stroke-opacity=".6"/>
+            <line x1="0" y1="30" x2="100" y2="30" stroke="#f0efe9" stroke-width=".5" stroke-opacity=".2"/>
+          </pattern>
+        </defs>
+        <rect width="800" height="60" fill="url(#kww-idx)"/>
+      </svg>
+    </div>
+
     <header class="hero">
+      <!-- Large koru ghost in top-right -->
+      <svg class="hero-koru" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M100 190 C40 190 10 148 10 100 C10 42 52 8 100 8 C148 8 186 46 186 94 C186 130 162 154 136 160 C116 166 94 156 90 138 C86 122 98 108 112 112 C122 114 128 126 120 134 C114 140 104 136 104 128 C104 120 112 116 116 120"
+              fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+
       <p class="hero-tag">Educational Course · Bilingual · AI &amp; Māori Data Sovereignty</p>
       <h1>Te Pā Tūwatawata</h1>
       <p class="hero-sub">
         Six modules exploring AI, Māori data sovereignty, tikanga, and Indigenous control over digital infrastructure — taught bilingually in te reo Māori and English.
       </p>
       <div class="btn-row">
-        <a class="btn solid" href="#modules">Start learning</a>
-        <a class="btn" href="https://www.kiwidialectic.com" target="_blank" rel="noopener noreferrer">Follow The Kiwi Dialectic</a>
-        <a class="btn" href="#sources">View sources</a>
+        <a class="btn btn--solid" href="#modules">Tīmata — Start learning</a>
+        <a class="btn btn--red" href="https://www.kiwidialectic.com" target="_blank" rel="noopener noreferrer">Follow The Kiwi Dialectic</a>
+        <a class="btn" href="#sources">Ngā puna — Sources</a>
       </div>
     </header>
 
+    <!-- ABOUT SECTION -->
     <section>
-      <h2>About this course</h2>
+      <div class="section-head">
+        <p class="section-tag">He pānui — About this course</p>
+        <h2>He aha tēnei akoranga?</h2>
+      </div>
       <p class="section-intro">
-        Te Pā Tūwatawata is the anchor case study for this course. Built from a radical pedagogy framework, it connects indigenous data governance to the lived realities of algorithmic extraction, colonial data infrastructure, and the struggle for Māori digital futures.
+        Te Pā Tūwatawata is the anchor case study for this course. Built from a radical pedagogy framework, it connects Indigenous data governance to the lived realities of algorithmic extraction, colonial data infrastructure, and the struggle for Māori digital futures.
       </p>
       <div class="pull-quote">
         "AI must not become a new machine for stealing Māori data."
       </div>
       <p class="section-intro">
-        This course is free and open. Each module combines te reo Māori framing with English discussion, primary sources, and critical questions for further inquiry.
+        This course is free and open. Each module combines te reo Māori framing with English discussion, primary sources from kaupapa Māori research, and critical questions for further inquiry. The symbolism of kōwhaiwhai — whakapapa, life, protection, abundance — runs through every page.
       </p>
     </section>
 
+    <!-- SYMBOLISM SECTION -->
+    <section id="symbolism">
+      <div class="section-head">
+        <p class="section-tag">Tohu — Symbolism</p>
+        <h2>The design language of this site</h2>
+      </div>
+      <p class="section-intro">
+        Every visual element here draws from the traditional kōwhaiwhai palette and motif vocabulary. Kōwhaiwhai were painted on the heke (rafters) of wharenui — they told stories of whakapapa, protected the people within, and connected the present to the ancestors. The same logic applies here.
+      </p>
+
+      <!-- Niho taniwha separator -->
+      <div style="margin: 24px 0;" role="presentation" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 28" width="100%" height="28" preserveAspectRatio="xMidYMid slice">
+          <rect width="600" height="28" fill="var(--mangu,#111)"/>
+          <polygon points="0,0   25,0  12.5,20" fill="#c0392b"/>
+          <polygon points="25,0  50,0  37.5,20" fill="#c0392b"/>
+          <polygon points="50,0  75,0  62.5,20" fill="#c0392b"/>
+          <polygon points="75,0 100,0  87.5,20" fill="#c0392b"/>
+          <polygon points="100,0 125,0 112.5,20" fill="#c0392b"/>
+          <polygon points="125,0 150,0 137.5,20" fill="#c0392b"/>
+          <polygon points="150,0 175,0 162.5,20" fill="#c0392b"/>
+          <polygon points="175,0 200,0 187.5,20" fill="#c0392b"/>
+          <polygon points="200,0 225,0 212.5,20" fill="#c0392b"/>
+          <polygon points="225,0 250,0 237.5,20" fill="#c0392b"/>
+          <polygon points="250,0 275,0 262.5,20" fill="#c0392b"/>
+          <polygon points="275,0 300,0 287.5,20" fill="#c0392b"/>
+          <polygon points="300,0 325,0 312.5,20" fill="#c0392b"/>
+          <polygon points="325,0 350,0 337.5,20" fill="#c0392b"/>
+          <polygon points="350,0 375,0 362.5,20" fill="#c0392b"/>
+          <polygon points="375,0 400,0 387.5,20" fill="#c0392b"/>
+          <polygon points="400,0 425,0 412.5,20" fill="#c0392b"/>
+          <polygon points="425,0 450,0 437.5,20" fill="#c0392b"/>
+          <polygon points="450,0 475,0 462.5,20" fill="#c0392b"/>
+          <polygon points="475,0 500,0 487.5,20" fill="#c0392b"/>
+          <polygon points="500,0 525,0 512.5,20" fill="#c0392b"/>
+          <polygon points="525,0 550,0 537.5,20" fill="#c0392b"/>
+          <polygon points="550,0 575,0 562.5,20" fill="#c0392b"/>
+          <polygon points="575,0 600,0 587.5,20" fill="#c0392b"/>
+        </svg>
+      </div>
+
+      <div class="symbol-key">
+        <div class="symbol-item">
+          <div class="symbol-swatch symbol-swatch--red"></div>
+          <div class="symbol-label">
+            <strong>Whero — Red</strong>
+            Te Whai Ao: coming into being, mana, life force, rangatiratanga
+          </div>
+        </div>
+        <div class="symbol-item">
+          <div class="symbol-swatch symbol-swatch--black"></div>
+          <div class="symbol-label">
+            <strong>Mangu — Black</strong>
+            Te Korekore: potential, the void, the darkness before creation
+          </div>
+        </div>
+        <div class="symbol-item">
+          <div class="symbol-swatch symbol-swatch--white"></div>
+          <div class="symbol-label">
+            <strong>Mā — White</strong>
+            Te Ao Mārama: the realm of light, purity, the physical world
+          </div>
+        </div>
+        <div class="symbol-item">
+          <div class="symbol-swatch symbol-swatch--koru"></div>
+          <div class="symbol-label">
+            <strong>Koru</strong>
+            Unfurling fern frond — new life, growth, renewal, perpetual movement
+          </div>
+        </div>
+      </div>
+      <p class="section-intro mt-md">
+        The <strong>kōwhaiwhai band</strong> at the top represents whakapapa — the genealogical line connecting ancestors to descendants, as painted on the tahuhu (ridgepole) of a wharenui. The <strong>niho taniwha</strong> (taniwha teeth) borders signal protection and the strength of those who guard what is inside. The ghost <strong>koru</strong> in the hero section represents the course itself: something new unfolding, drawing energy from its origin.
+      </p>
+    </section>
+
+    <!-- MODULES -->
     <section id="modules">
-      <h2>Six modules</h2>
-      <p class="section-intro">Click any module to read the full lesson, discussion notes, and resources.</p>
-      <div class="grid">
-        <a class="card" href="modules/module-1.html">
+      <div class="section-head">
+        <p class="section-tag">Ngā akoranga — Course modules</p>
+        <h2>Ono akoranga</h2>
+      </div>
+      <p class="section-intro" style="margin-bottom: 28px;">Click any module to read the full lesson, discussion notes, and resources.</p>
+      <div class="module-grid">
+
+        <a class="module-card" href="modules/module-1.html" data-module="1">
           <p class="card-num">Module 1 <span class="card-arrow">→</span></p>
           <h3>Whakapapa o te raraunga</h3>
           <p>The whakapapa of data — where does data come from, and who does it belong to?</p>
         </a>
-        <a class="card" href="modules/module-2.html">
+
+        <a class="module-card" href="modules/module-2.html" data-module="2">
           <p class="card-num">Module 2 <span class="card-arrow">→</span></p>
           <h3>Te Pā Tūwatawata hei tauira</h3>
-          <p>Te Pā Tūwatawata as a model for Indigenous-led digital infrastructure.</p>
+          <p>Te Pā Tūwatawata as a model for Indigenous-led digital infrastructure and self-determination.</p>
         </a>
-        <a class="card" href="modules/module-3.html">
+
+        <a class="module-card" href="modules/module-3.html" data-module="3">
           <p class="card-num">Module 3 <span class="card-arrow">→</span></p>
           <h3>AI me te raupatu matihiko</h3>
           <p>AI and digital extraction — tracing the colonial logic inside machine learning.</p>
         </a>
-        <a class="card" href="modules/module-4.html">
+
+        <a class="module-card" href="modules/module-4.html" data-module="4">
           <p class="card-num">Module 4 <span class="card-arrow">→</span></p>
           <h3>Tikanga, ture, mana whakahaere</h3>
           <p>Tikanga, law, and governance — how Māori legal frameworks challenge tech power.</p>
         </a>
-        <a class="card" href="modules/module-5.html">
+
+        <a class="module-card" href="modules/module-5.html" data-module="5">
           <p class="card-num">Module 5 <span class="card-arrow">→</span></p>
           <h3>Hoahoa tika</h3>
           <p>Designing ethical systems — what does a decolonised AI architecture look like?</p>
         </a>
-        <a class="card" href="modules/module-6.html">
+
+        <a class="module-card" href="modules/module-6.html" data-module="6">
           <p class="card-num">Module 6 <span class="card-arrow">→</span></p>
           <h3>He anamata rangatira</h3>
           <p>Sovereign digital futures — building Māori-controlled infrastructure for generations.</p>
         </a>
+
       </div>
     </section>
 
+    <!-- SOURCES -->
     <section id="sources">
-      <h2>Sources &amp; further reading</h2>
+      <div class="section-head">
+        <p class="section-tag">Ngā puna — Sources</p>
+        <h2>Further reading</h2>
+      </div>
       <ul class="source-list">
-        <li><a href="https://tepatuwatawata.io" target="_blank" rel="noopener noreferrer">tepatuwatawata.io</a> — Te Pā Tūwatawata official site</li>
+        <li><a href="https://tepatuwatawata.io" target="_blank" rel="noopener noreferrer">tepatuwatawata.io</a> — Te Pā Tūwatawata official initiative</li>
         <li><a href="https://www.kahuiraraunga.io" target="_blank" rel="noopener noreferrer">kahuiraraunga.io</a> — Kāhui Raraunga, Māori Data Governance</li>
         <li><a href="https://www.temanararaunga.maori.nz" target="_blank" rel="noopener noreferrer">temanararaunga.maori.nz</a> — Te Mana Raraunga Collective</li>
         <li><a href="https://www.kahuiraraunga.io/maoridatagovernance" target="_blank" rel="noopener noreferrer">Māori Data Governance Model</a> — Kāhui Raraunga framework document</li>
+        <li><a href="https://tehiku.nz" target="_blank" rel="noopener noreferrer">tehiku.nz</a> — Te Hiku Media: community-owned te reo Māori AI</li>
+        <li><a href="https://www.gida-global.org/care" target="_blank" rel="noopener noreferrer">CARE Principles for Indigenous Data Governance</a> — Global Indigenous Data Alliance</li>
         <li><a href="https://www.kiwidialectic.com" target="_blank" rel="noopener noreferrer">kiwidialectic.com</a> — The Kiwi Dialectic publication</li>
       </ul>
     </section>
 
-    <footer>
+    <footer class="site-footer">
       <p>
-        <a href="https://www.kiwidialectic.com" target="_blank" rel="noopener noreferrer">The Kiwi Dialectic</a> · Dunedin, Aotearoa New Zealand ·
-        <a href="https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.kiwidialectic.com" target="_blank" rel="noopener noreferrer">The Kiwi Dialectic</a>
+        &nbsp;·&nbsp; Dunedin, Aotearoa New Zealand
+        &nbsp;·&nbsp; <a href="https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite" target="_blank" rel="noopener noreferrer">GitHub</a>
       </p>
     </footer>
   </div>
@@ -229,14 +246,14 @@
   <script>
     const btn = document.getElementById('themeToggle');
     const html = document.documentElement;
-    const saved = localStorage.getItem('theme') || 'light';
+    const saved = localStorage.getItem('kd-theme') || 'light';
     html.setAttribute('data-theme', saved);
     btn.textContent = saved === 'dark' ? 'Light' : 'Dark';
     btn.addEventListener('click', () => {
       const cur = html.getAttribute('data-theme');
       const next = cur === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
+      localStorage.setItem('kd-theme', next);
       btn.textContent = next === 'dark' ? 'Light' : 'Dark';
     });
   </script>

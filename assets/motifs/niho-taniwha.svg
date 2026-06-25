@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60" width="120" height="60" aria-label="Niho taniwha — protection and warrior strength">
+  <!-- Niho taniwha: dog-tooth / taniwha teeth pattern — warrior strength, protection, resilience -->
+  <!-- Traditional border motif. Red on black. -->
+  <rect width="120" height="60" fill="#111111"/>
+  <!-- Top row: red teeth pointing down -->
+  <polygon points="0,0   20,0  10,20" fill="#c0392b"/>
+  <polygon points="20,0  40,0  30,20" fill="#c0392b"/>
+  <polygon points="40,0  60,0  50,20" fill="#c0392b"/>
+  <polygon points="60,0  80,0  70,20" fill="#c0392b"/>
+  <polygon points="80,0 100,0  90,20" fill="#c0392b"/>
+  <polygon points="100,0 120,0 110,20" fill="#c0392b"/>
+  <!-- Bottom row: white teeth pointing up (inverted, negative) -->
+  <polygon points="0,60   20,60  10,40" fill="#f0efe9" fill-opacity="0.85"/>
+  <polygon points="20,60  40,60  30,40" fill="#f0efe9" fill-opacity="0.85"/>
+  <polygon points="40,60  60,60  50,40" fill="#f0efe9" fill-opacity="0.85"/>
+  <polygon points="60,60  80,60  70,40" fill="#f0efe9" fill-opacity="0.85"/>
+  <polygon points="80,60 100,60  90,40" fill="#f0efe9" fill-opacity="0.85"/>
+  <polygon points="100,60 120,60 110,40" fill="#f0efe9" fill-opacity="0.85"/>
+</svg>

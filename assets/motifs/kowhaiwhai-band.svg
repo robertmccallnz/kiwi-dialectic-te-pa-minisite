@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 80" width="800" height="80" preserveAspectRatio="xMidYMid meet" aria-label="Kōwhaiwhai band — whakapapa and genealogy">
+  <!-- Kōwhaiwhai repeating pattern band: red, black, white — traditional rafter painting motif -->
+  <!-- Each unit is 100px wide. 8 repeats across 800px -->
+  <defs>
+    <pattern id="kww" x="0" y="0" width="100" height="80" patternUnits="userSpaceOnUse">
+      <!-- Black background -->
+      <rect width="100" height="80" fill="#111111"/>
+      <!-- White negative space triangles (niho taniwha) -->
+      <polygon points="0,0 20,0 10,20" fill="#f0efe9" opacity="0.9"/>
+      <polygon points="20,0 40,0 30,20" fill="#f0efe9" opacity="0.9"/>
+      <polygon points="40,0 60,0 50,20" fill="#f0efe9" opacity="0.9"/>
+      <polygon points="60,0 80,0 70,20" fill="#f0efe9" opacity="0.9"/>
+      <polygon points="80,0 100,0 90,20" fill="#f0efe9" opacity="0.9"/>
+      <!-- Red koru spirals -->
+      <circle cx="25" cy="45" r="12" fill="none" stroke="#c0392b" stroke-width="3"/>
+      <circle cx="25" cy="45" r="6" fill="#c0392b" opacity="0.7"/>
+      <path d="M25 33 C25 33, 22 28, 20 24" stroke="#c0392b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <circle cx="75" cy="45" r="12" fill="none" stroke="#c0392b" stroke-width="3"/>
+      <circle cx="75" cy="45" r="6" fill="#c0392b" opacity="0.7"/>
+      <path d="M75 33 C75 33, 72 28, 70 24" stroke="#c0392b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <!-- Manawa line (heart/spine of the pattern) -->
+      <line x1="0" y1="40" x2="100" y2="40" stroke="#f0efe9" stroke-width="1" stroke-opacity="0.3"/>
+      <!-- Bottom niho taniwha (inverted) -->
+      <polygon points="0,80 20,80 10,62" fill="#f0efe9" opacity="0.7"/>
+      <polygon points="20,80 40,80 30,62" fill="#f0efe9" opacity="0.7"/>
+      <polygon points="40,80 60,80 50,62" fill="#f0efe9" opacity="0.7"/>
+      <polygon points="60,80 80,80 70,62" fill="#f0efe9" opacity="0.7"/>
+      <polygon points="80,80 100,80 90,62" fill="#f0efe9" opacity="0.7"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="80" fill="url(#kww)"/>
+</svg>

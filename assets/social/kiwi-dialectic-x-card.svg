@@ -1,34 +1,119 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
-  <!-- Background -->
+
+  <!-- Te Korekore — Black: the void, potential, the ground -->
   <rect width="1600" height="900" fill="#111111"/>
-  <!-- Top accent line -->
-  <rect x="0" y="0" width="1600" height="5" fill="#c0392b"/>
-  <!-- Card border -->
-  <rect x="48" y="48" width="1504" height="804" rx="24" fill="none" stroke="#f0efe9" stroke-opacity="0.1" stroke-width="1.5"/>
 
-  <!-- Koru/fern decorative motif (abstract spiral) -->
-  <circle cx="1420" cy="480" r="200" fill="none" stroke="#c0392b" stroke-opacity="0.15" stroke-width="60"/>
-  <circle cx="1420" cy="480" r="120" fill="none" stroke="#c0392b" stroke-opacity="0.12" stroke-width="40"/>
-  <circle cx="1420" cy="480" r="60" fill="none" stroke="#c0392b" stroke-opacity="0.1" stroke-width="20"/>
+  <!-- Kōwhaiwhai band top — whakapapa line, red niho taniwha -->
+  <!-- 32 teeth across 1600px = 50px each -->
+  <rect x="0" y="0" width="1600" height="52" fill="#111111"/>
+  <polygon points="0,0    50,0   25,42"  fill="#c0392b"/>
+  <polygon points="50,0  100,0   75,42"  fill="#c0392b"/>
+  <polygon points="100,0 150,0  125,42"  fill="#c0392b"/>
+  <polygon points="150,0 200,0  175,42"  fill="#c0392b"/>
+  <polygon points="200,0 250,0  225,42"  fill="#c0392b"/>
+  <polygon points="250,0 300,0  275,42"  fill="#c0392b"/>
+  <polygon points="300,0 350,0  325,42"  fill="#c0392b"/>
+  <polygon points="350,0 400,0  375,42"  fill="#c0392b"/>
+  <polygon points="400,0 450,0  425,42"  fill="#c0392b"/>
+  <polygon points="450,0 500,0  475,42"  fill="#c0392b"/>
+  <polygon points="500,0 550,0  525,42"  fill="#c0392b"/>
+  <polygon points="550,0 600,0  575,42"  fill="#c0392b"/>
+  <polygon points="600,0 650,0  625,42"  fill="#c0392b"/>
+  <polygon points="650,0 700,0  675,42"  fill="#c0392b"/>
+  <polygon points="700,0 750,0  725,42"  fill="#c0392b"/>
+  <polygon points="750,0 800,0  775,42"  fill="#c0392b"/>
+  <polygon points="800,0 850,0  825,42"  fill="#c0392b"/>
+  <polygon points="850,0 900,0  875,42"  fill="#c0392b"/>
+  <polygon points="900,0 950,0  925,42"  fill="#c0392b"/>
+  <polygon points="950,0 1000,0  975,42" fill="#c0392b"/>
+  <polygon points="1000,0 1050,0 1025,42" fill="#c0392b"/>
+  <polygon points="1050,0 1100,0 1075,42" fill="#c0392b"/>
+  <polygon points="1100,0 1150,0 1125,42" fill="#c0392b"/>
+  <polygon points="1150,0 1200,0 1175,42" fill="#c0392b"/>
+  <polygon points="1200,0 1250,0 1225,42" fill="#c0392b"/>
+  <polygon points="1250,0 1300,0 1275,42" fill="#c0392b"/>
+  <polygon points="1300,0 1350,0 1325,42" fill="#c0392b"/>
+  <polygon points="1350,0 1400,0 1375,42" fill="#c0392b"/>
+  <polygon points="1400,0 1450,0 1425,42" fill="#c0392b"/>
+  <polygon points="1450,0 1500,0 1475,42" fill="#c0392b"/>
+  <polygon points="1500,0 1550,0 1525,42" fill="#c0392b"/>
+  <polygon points="1550,0 1600,0 1575,42" fill="#c0392b"/>
 
-  <!-- Brand tag -->
-  <text x="110" y="148" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="4" fill="#f0efe9" fill-opacity="0.5" text-transform="uppercase">THE KIWI DIALECTIC</text>
+  <!-- Manawa line — the heart line connecting the design -->
+  <line x1="110" y1="200" x2="1490" y2="200" stroke="#f0efe9" stroke-width="1" stroke-opacity="0.1"/>
 
-  <!-- Divider -->
-  <rect x="110" y="170" width="60" height="3" fill="#c0392b"/>
+  <!-- Koru ghost — large, top right: new life unfolding -->
+  <path d="M1420 160
+           C1280 160 1200 260 1200 360
+           C1200 500 1300 580 1420 580
+           C1540 580 1620 500 1620 400
+           C1620 320 1568 264 1508 252
+           C1468 244 1424 268 1416 300
+           C1408 328 1428 352 1452 348
+           C1472 344 1484 324 1472 312
+           C1464 304 1448 308 1448 320"
+        fill="none" stroke="#c0392b" stroke-width="8" stroke-linecap="round" stroke-opacity="0.18"/>
 
-  <!-- Main heading line 1 -->
-  <text x="110" y="310" font-family="Georgia, 'Times New Roman', serif" font-size="108" fill="#f0efe9" font-weight="normal">AI must not become</text>
+  <!-- Unaunahi ghost scales — bottom left corner: abundance -->
+  <path d="M-20,820  A60,60 0 0,1 100,820" fill="#c0392b" fill-opacity="0.07"/>
+  <path d="M60,820   A60,60 0 0,1 180,820" fill="#c0392b" fill-opacity="0.07"/>
+  <path d="M-80,880  A60,60 0 0,1 40,880"  fill="#c0392b" fill-opacity="0.05"/>
+  <path d="M20,880   A60,60 0 0,1 140,880" fill="#c0392b" fill-opacity="0.05"/>
+  <path d="M100,880  A60,60 0 0,1 220,880" fill="#c0392b" fill-opacity="0.05"/>
 
-  <!-- Main heading line 2 -->
-  <text x="110" y="430" font-family="Georgia, 'Times New Roman', serif" font-size="108" fill="#f0efe9" font-weight="normal">a new machine for</text>
+  <!-- BRAND TAG -->
+  <text x="110" y="136" font-family="Arial, Helvetica, sans-serif" font-size="24" letter-spacing="5" fill="#f0efe9" fill-opacity="0.45">THE KIWI DIALECTIC</text>
 
-  <!-- Main heading line 3 — accent colour -->
-  <text x="110" y="550" font-family="Georgia, 'Times New Roman', serif" font-size="108" fill="#c0392b" font-weight="normal">stealing Māori data.</text>
+  <!-- Red accent rule under brand tag -->
+  <rect x="110" y="152" width="80" height="3" fill="#c0392b"/>
 
-  <!-- Sub-text -->
-  <text x="110" y="650" font-family="Georgia, 'Times New Roman', serif" font-size="36" fill="#f0efe9" fill-opacity="0.6" font-style="italic">Te Pā Tūwatawata — six modules on AI &amp; Māori data sovereignty</text>
+  <!-- MAIN HEADLINE — three lines -->
+  <!-- Line 1: white — Te Ao Mārama -->
+  <text x="110" y="330" font-family="Georgia, 'Times New Roman', serif" font-size="112" fill="#f0efe9">AI must not become</text>
+  <!-- Line 2: white -->
+  <text x="110" y="455" font-family="Georgia, 'Times New Roman', serif" font-size="112" fill="#f0efe9">a new machine for</text>
+  <!-- Line 3: whero — Te Whai Ao — red: coming into being, mana, life force -->
+  <text x="110" y="580" font-family="Georgia, 'Times New Roman', serif" font-size="112" fill="#c0392b">stealing Māori data.</text>
 
-  <!-- URL -->
-  <text x="110" y="810" font-family="Arial, Helvetica, sans-serif" font-size="24" letter-spacing="1" fill="#f0efe9" fill-opacity="0.4">kiwidialectic.com</text>
+  <!-- Sub-heading — te reo Māori -->
+  <text x="110" y="660" font-family="Georgia, 'Times New Roman', serif" font-size="38" fill="#f0efe9" fill-opacity="0.55" font-style="italic">Te Pā Tūwatawata — ono akoranga · six modules</text>
+
+  <!-- Kōwhaiwhai bottom band — inverted niho (white teeth pointing up) -->
+  <rect x="0" y="842" width="1600" height="58" fill="#111111"/>
+  <polygon points="0,900    50,900   25,858"  fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="50,900  100,900   75,858"  fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="100,900 150,900  125,858"  fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="150,900 200,900  175,858"  fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="200,900 250,900  225,858"  fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="250,900 300,900  275,858"  fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="300,900 350,900  325,858"  fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="350,900 400,900  375,858"  fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="400,900 450,900  425,858"  fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="450,900 500,900  475,858"  fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="500,900 550,900  525,858"  fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="550,900 600,900  575,858"  fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="600,900 650,900  625,858"  fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="650,900 700,900  675,858"  fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="700,900 750,900  725,858"  fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="750,900 800,900  775,858"  fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="800,900 850,900  825,858"  fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="850,900 900,900  875,858"  fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="900,900 950,900  925,858"  fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="950,900 1000,900  975,858" fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="1000,900 1050,900 1025,858" fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="1050,900 1100,900 1075,858" fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="1100,900 1150,900 1125,858" fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="1150,900 1200,900 1175,858" fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="1200,900 1250,900 1225,858" fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="1250,900 1300,900 1275,858" fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="1300,900 1350,900 1325,858" fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="1350,900 1400,900 1375,858" fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="1400,900 1450,900 1425,858" fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="1450,900 1500,900 1475,858" fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="1500,900 1550,900 1525,858" fill="#f0efe9" fill-opacity="0.55"/>
+  <polygon points="1550,900 1600,900 1575,858" fill="#f0efe9" fill-opacity="0.55"/>
+
+  <!-- Domain -->
+  <text x="110" y="832" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="2" fill="#f0efe9" fill-opacity="0.35">kiwidialectic.com</text>
+
 </svg>

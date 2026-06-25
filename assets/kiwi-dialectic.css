@@ -1,0 +1,559 @@
+/*
+  THE KIWI DIALECTIC — Te Pā Tūwatawata
+  Shared design system grounded in Māori colour symbolism
+
+  COLOUR SYSTEM (kōwhaiwhai palette):
+  ─────────────────────────────────────────────────────────────────
+  Whero  (red)   = Te Whai Ao — coming into being, mana, life force
+  Mangu  (black) = Te Korekore — potential, the void, the earth  
+  Mā     (white) = Te Ao Mārama — light, purity, the realm of being
+  ─────────────────────────────────────────────────────────────────
+*/
+
+:root {
+  /* Core palette — light mode */
+  --whero:       #c0392b;   /* red: Te Whai Ao — mana, life */
+  --whero-soft:  #e05a4a;   /* lighter red for hover/dark mode */
+  --mangu:       #111111;   /* black: Te Korekore — potential */
+  --ma:          #f0efe9;   /* off-white: Te Ao Mārama — light */
+  --ma-pure:     #ffffff;
+
+  /* Light mode surfaces */
+  --bg:          #f8f8f5;
+  --bg-card:     #ffffff;
+  --bg-raised:   #f0efe9;
+  --fg:          #111111;
+  --fg-muted:    #555555;
+  --border:      rgba(0,0,0,.1);
+  --border-bold: rgba(0,0,0,.22);
+
+  /* Accent */
+  --accent:      var(--whero);
+  --accent2:     #2c7a4b;   /* deep green — pounamu, whenua */
+
+  /* Type */
+  --font-serif:  'Georgia', 'Times New Roman', serif;
+  --font-sans:   'Arial', 'Helvetica Neue', sans-serif;
+
+  /* Motif dimensions */
+  --band-h:      6px;    /* thick red rule */
+  --niho-size:   20px;
+}
+
+[data-theme="dark"] {
+  --bg:          #0d0d0d;
+  --bg-card:     #1a1a1a;
+  --bg-raised:   #222222;
+  --fg:          #f0efe9;
+  --fg-muted:    #aaaaaa;
+  --border:      rgba(255,255,255,.1);
+  --border-bold: rgba(255,255,255,.25);
+  --accent:      var(--whero-soft);
+  --accent2:     #4caf75;
+}
+
+/* ─── RESET & BASE ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font: 17px/1.75 var(--font-serif);
+  background: var(--bg);
+  color: var(--fg);
+  transition: background .3s, color .3s;
+}
+
+/* ─── LAYOUT ─── */
+.shell       { max-width: 1100px; margin: 0 auto; padding: 0 24px 48px; }
+.shell--narrow { max-width: 820px; margin: 0 auto; padding: 0 24px 48px; }
+
+/* ─── MOTIF STRIPE ─── */
+/* Red Te Whai Ao stripe at top of page */
+.motif-stripe {
+  width: 100%;
+  height: 5px;
+  background: var(--whero);
+  display: block;
+}
+
+/* Kōwhaiwhai divider band (inline SVG) */
+.motif-band {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  margin: 32px 0;
+}
+.motif-band img,
+.motif-band svg {
+  width: 100%;
+  height: 60px;
+  display: block;
+}
+
+/* Niho taniwha rule — red tooth border */
+.motif-niho {
+  display: block;
+  width: 100%;
+  height: 20px;
+  background:
+    /* top teeth: red triangles */
+    linear-gradient(
+      135deg,
+      var(--whero) 33.33%,
+      transparent 33.33%
+    ) 0 0 / 20px 20px,
+    linear-gradient(
+      225deg,
+      var(--whero) 33.33%,
+      transparent 33.33%
+    ) 10px 0 / 20px 20px,
+    var(--mangu);
+  background-repeat: repeat-x;
+}
+
+/* Koru corner decoration (CSS-only approximation) */
+.motif-koru-corner {
+  position: absolute;
+  top: 0; right: 0;
+  width: 180px; height: 180px;
+  border-radius: 0 0 0 100%;
+  border: 3px solid var(--whero);
+  border-top: none; border-right: none;
+  opacity: .15;
+  pointer-events: none;
+}
+
+/* ─── NAV ─── */
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0 18px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0;
+  position: relative;
+}
+.nav-brand {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  text-decoration: none;
+  transition: color .2s;
+}
+.nav-brand:hover { color: var(--accent); }
+.nav-links { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+.nav-links a {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  text-decoration: none;
+  color: var(--fg);
+  opacity: .65;
+  transition: opacity .2s;
+}
+.nav-links a:hover { opacity: 1; }
+.theme-btn {
+  font-size: 12px;
+  font-family: var(--font-sans);
+  background: none;
+  border: 1.5px solid var(--border-bold);
+  color: var(--fg);
+  border-radius: 999px;
+  padding: 4px 14px;
+  cursor: pointer;
+  transition: border-color .2s, color .2s;
+  letter-spacing: .05em;
+}
+.theme-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ─── HERO ─── */
+.hero {
+  padding: 52px 0 44px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.hero-tag {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-tag::before {
+  content: '';
+  display: inline-block;
+  width: 28px; height: 2px;
+  background: var(--accent);
+}
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 5.5vw, 4rem);
+  line-height: 1.08;
+  margin-bottom: 18px;
+  letter-spacing: -.01em;
+}
+.hero-sub {
+  font-size: 1.1rem;
+  color: var(--fg-muted);
+  max-width: 680px;
+  margin-bottom: 32px;
+  line-height: 1.65;
+}
+.hero-koru {
+  position: absolute;
+  right: -40px; top: 10px;
+  width: 260px; height: 260px;
+  opacity: .06;
+  pointer-events: none;
+}
+
+/* ─── BUTTONS ─── */
+.btn-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn {
+  display: inline-block;
+  padding: 11px 24px;
+  border: 1.5px solid var(--fg);
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  letter-spacing: .03em;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.btn:hover { background: var(--fg); color: var(--bg); }
+.btn--red {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.btn--red:hover { background: var(--accent); color: var(--ma-pure); }
+.btn--solid {
+  background: var(--fg);
+  color: var(--bg);
+}
+.btn--solid:hover { background: transparent; color: var(--fg); }
+
+/* ─── SECTIONS ─── */
+section { padding: 44px 0; border-bottom: 1px solid var(--border); }
+.section-head { margin-bottom: 28px; }
+.section-tag {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+  display: flex; align-items: center; gap: 8px;
+}
+.section-tag::before {
+  content: '';
+  display: inline-block;
+  width: 18px; height: 1.5px;
+  background: var(--accent);
+}
+section h2 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+.section-intro {
+  color: var(--fg-muted);
+  font-size: 1rem;
+  max-width: 740px;
+  line-height: 1.7;
+}
+
+/* ─── MODULE GRID ─── */
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+.module-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  text-decoration: none;
+  color: var(--fg);
+  display: block;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .2s, transform .15s, box-shadow .2s;
+}
+.module-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 28px rgba(192,57,43,.12);
+}
+/* Red accent stripe on left edge */
+.module-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--accent);
+  border-radius: 16px 0 0 16px;
+  opacity: 0;
+  transition: opacity .2s;
+}
+.module-card:hover::before { opacity: 1; }
+/* Koru corner motif per card */
+.module-card::after {
+  content: '';
+  position: absolute;
+  right: -16px; bottom: -16px;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  opacity: .07;
+}
+.card-num {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-arrow { opacity: .4; font-size: .85rem; }
+.module-card h3 {
+  font-size: 1.05rem;
+  font-family: var(--font-serif);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.module-card p { font-size: .9rem; color: var(--fg-muted); line-height: 1.55; }
+/* Module-specific accent colours (kōwhaiwhai variation) */
+.module-card[data-module="1"]::before { background: #c0392b; opacity: 1; }
+.module-card[data-module="2"]::before { background: #2c7a4b; opacity: 1; }
+.module-card[data-module="3"]::before { background: #c0392b; opacity: 1; }
+.module-card[data-module="4"]::before { background: #2c7a4b; opacity: 1; }
+.module-card[data-module="5"]::before { background: #c0392b; opacity: 1; }
+.module-card[data-module="6"]::before { background: #2c7a4b; opacity: 1; }
+
+/* ─── PULL QUOTE ─── */
+.pull-quote {
+  border-left: 4px solid var(--accent);
+  padding: 18px 26px;
+  margin: 32px 0;
+  font-size: 1.18rem;
+  font-style: italic;
+  color: var(--fg-muted);
+  background: var(--bg-raised);
+  border-radius: 0 14px 14px 0;
+  position: relative;
+}
+.pull-quote::before {
+  content: '\201C';
+  position: absolute;
+  left: 10px; top: 4px;
+  font-size: 3rem;
+  color: var(--accent);
+  opacity: .25;
+  line-height: 1;
+  font-family: var(--font-serif);
+}
+
+/* ─── SYMBOL KEY (for course pages) ─── */
+.symbol-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 24px 0;
+}
+.symbol-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: .88rem;
+}
+.symbol-swatch {
+  width: 28px; height: 28px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+.symbol-swatch--red   { background: var(--whero); }
+.symbol-swatch--black { background: var(--mangu); border: 1px solid var(--border); }
+.symbol-swatch--white { background: var(--ma); border: 1px solid var(--border); }
+.symbol-swatch--koru  {
+  background: none;
+  border: 2px solid var(--accent);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+}
+.symbol-label strong { display: block; color: var(--accent); }
+
+/* ─── SOURCES ─── */
+.source-list { list-style: none; }
+.source-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: .95rem;
+  display: flex; gap: 12px; align-items: baseline;
+}
+.source-list li::before {
+  content: '';
+  display: inline-block;
+  width: 6px; height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+.source-list a { color: var(--accent2); text-decoration: none; }
+.source-list a:hover { text-decoration: underline; }
+
+/* ─── QUESTION BOX ─── */
+.question-box {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-top: 3px solid var(--accent);
+  border-radius: 0 0 14px 14px;
+  padding: 24px;
+  margin: 36px 0;
+}
+.question-box h3 {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.question-box ol { padding-left: 1.5em; }
+.question-box li { margin-bottom: .65em; font-size: .96rem; }
+
+/* ─── MODULE PAGE SPECIFIC ─── */
+.breadcrumb {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--fg-muted);
+  margin-bottom: 28px;
+  display: flex; gap: 6px; align-items: center;
+}
+.breadcrumb a { color: var(--accent2); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb-sep { opacity: .4; }
+.module-tag {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin-bottom: 14px;
+  display: flex; align-items: center; gap: 8px;
+}
+.module-tag::before {
+  content: '';
+  display: inline-block;
+  width: 22px; height: 2px;
+  background: var(--accent2);
+}
+article h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 4.5vw, 3rem);
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--fg-muted);
+  margin-bottom: 36px;
+  font-style: italic;
+}
+article h2 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  margin: 40px 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+article p { margin-bottom: 1.25em; }
+article ul, article ol { padding-left: 1.6em; margin-bottom: 1.25em; }
+article li { margin-bottom: .45em; }
+
+/* Concept glossary */
+.concept-list { list-style: none; padding: 0; }
+.concept-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 16px;
+  font-size: .95rem;
+}
+.concept-term {
+  font-style: italic;
+  color: var(--accent);
+  font-family: var(--font-serif);
+}
+
+/* Completion box (module 6) */
+.complete-box {
+  text-align: center;
+  background: var(--bg-card);
+  border: 2px solid var(--accent2);
+  border-radius: 16px;
+  padding: 32px 24px;
+  margin: 36px 0;
+}
+.complete-box h3 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--accent2);
+  margin-bottom: 10px;
+}
+.complete-box p { color: var(--fg-muted); margin-bottom: 18px; }
+
+/* Module nav */
+.nav-between {
+  display: flex;
+  justify-content: space-between;
+  padding: 28px 0;
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+}
+.nav-between a {
+  color: var(--fg);
+  text-decoration: none;
+  opacity: .65;
+  transition: opacity .2s, color .2s;
+}
+.nav-between a:hover { opacity: 1; color: var(--accent); }
+
+/* ─── FOOTER ─── */
+.site-footer {
+  padding: 32px 0 20px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--fg-muted);
+  border-top: 1px solid var(--border);
+}
+.site-footer a { color: var(--fg-muted); text-decoration: none; }
+.site-footer a:hover { color: var(--accent); }
+
+/* ─── UTILITY ─── */
+.red      { color: var(--accent); }
+.muted    { color: var(--fg-muted); }
+.serif    { font-family: var(--font-serif); }
+.sans     { font-family: var(--font-sans); }
+.italic   { font-style: italic; }
+.mt-sm    { margin-top: 12px; }
+.mt-md    { margin-top: 24px; }
+.mt-lg    { margin-top: 40px; }
