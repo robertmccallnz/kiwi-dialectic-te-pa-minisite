@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+<rect width="1080" height="1080" fill="#0d0d0d"/>
+<circle cx="540" cy="540" r="388" fill="none" stroke="#f4f0e8" stroke-width="2.5" opacity="0.9"/><circle cx="540" cy="540" r="279" fill="none" stroke="#f4f0e8" stroke-width="2.1" opacity="0.72"/><circle cx="540" cy="540" r="186" fill="none" stroke="#f4f0e8" stroke-width="1.7" opacity="0.54"/><circle cx="540" cy="540" r="108" fill="none" stroke="#f4f0e8" stroke-width="1.2999999999999998" opacity="0.36"/>
+<rect x="0" y="0" width="1080" height="8" fill="#c0392b"/>
+<rect x="0" y="1008" width="1080" height="72" fill="#0d0d0d"/>
+<rect width="1080" height="18" fill="#0d0d0d"/><polygon points="0.0,0 45.0,0 22.5,18" fill="#c0392b"/><polygon points="45.0,0 90.0,0 67.5,18" fill="#c0392b"/><polygon points="90.0,0 135.0,0 112.5,18" fill="#c0392b"/><polygon points="135.0,0 180.0,0 157.5,18" fill="#c0392b"/><polygon points="180.0,0 225.0,0 202.5,18" fill="#c0392b"/><polygon points="225.0,0 270.0,0 247.5,18" fill="#c0392b"/><polygon points="270.0,0 315.0,0 292.5,18" fill="#c0392b"/><polygon points="315.0,0 360.0,0 337.5,18" fill="#c0392b"/><polygon points="360.0,0 405.0,0 382.5,18" fill="#c0392b"/><polygon points="405.0,0 450.0,0 427.5,18" fill="#c0392b"/><polygon points="450.0,0 495.0,0 472.5,18" fill="#c0392b"/><polygon points="495.0,0 540.0,0 517.5,18" fill="#c0392b"/><polygon points="540.0,0 585.0,0 562.5,18" fill="#c0392b"/><polygon points="585.0,0 630.0,0 607.5,18" fill="#c0392b"/><polygon points="630.0,0 675.0,0 652.5,18" fill="#c0392b"/><polygon points="675.0,0 720.0,0 697.5,18" fill="#c0392b"/><polygon points="720.0,0 765.0,0 742.5,18" fill="#c0392b"/><polygon points="765.0,0 810.0,0 787.5,18" fill="#c0392b"/><polygon points="810.0,0 855.0,0 832.5,18" fill="#c0392b"/><polygon points="855.0,0 900.0,0 877.5,18" fill="#c0392b"/><polygon points="900.0,0 945.0,0 922.5,18" fill="#c0392b"/><polygon points="945.0,0 990.0,0 967.5,18" fill="#c0392b"/><polygon points="990.0,0 1035.0,0 1012.5,18" fill="#c0392b"/><polygon points="1035.0,0 1080.0,0 1057.5,18" fill="#c0392b"/>
+<text x="540" y="490" font-family="Georgia,serif" font-size="86" font-weight="bold"
+  fill="#f4f0e8" text-anchor="middle">HANGAIA</text>
+<text x="540" y="560" font-family="Arial,sans-serif" font-size="43"
+  font-weight="bold" fill="#c0392b" text-anchor="middle">BUILD</text>
+<text x="540" y="602" font-family="Arial,sans-serif" font-size="21"
+  fill="#f4f0e8" text-anchor="middle" opacity="0.7">Build the systems you want to live inside.</text>
+<text x="540" y="1058" font-family="Arial,sans-serif" font-size="20" font-weight="bold"
+  fill="#f4f0e8" text-anchor="middle">THE KIWI DIALECTIC · kiwidialectic.com · Te Pā Tūwatawata</text>
+</svg>
