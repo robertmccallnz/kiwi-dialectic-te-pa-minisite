@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Te Pakiaka — The Rhizome: Underground Activism &amp; Te Reo Māori — The Kiwi Dialectic</title>
+  <meta name="description" content="How Deleuze and Guattari's rhizome connects to whakapapa, te reo Māori, and underground street activism. A framework for non-hierarchical Māori data sovereignty organising." />
+  <meta property="og:title" content="Te Pakiaka — The Rhizome" />
+  <meta property="og:description" content="Deleuze, whakapapa, lines of flight, and the underground community of place." />
+  <meta property="og:image" content="https://robertmccallnz.github.io/kiwi-dialectic-te-pa-minisite/assets/social/kiwi-dialectic-x-card.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../assets/kiwi-dialectic.css" />
+  <style>
+    .rhizome-quote {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.18rem;
+      line-height: 1.65;
+      color: var(--accent);
+      border-left: 4px solid var(--accent);
+      padding: 14px 20px;
+      margin: 2rem 0;
+      background: var(--bg-raised);
+      border-radius: 0 10px 10px 0;
+    }
+    .rhizome-quote cite {
+      display: block;
+      font-size: .82rem;
+      font-style: normal;
+      color: var(--fg-muted);
+      margin-top: .5rem;
+      font-family: var(--font-sans);
+      letter-spacing: .04em;
+    }
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.1rem;
+      margin: 1.6rem 0;
+    }
+    .concept-card {
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .concept-card h4 {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      color: var(--accent);
+      margin: 0 0 6px;
+    }
+    .concept-card p {
+      font-size: .88rem;
+      color: var(--fg-muted);
+      margin: 0;
+      line-height: 1.55;
+    }
+    .tool-card {
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      background: var(--bg-raised);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 22px;
+      margin: 1.2rem 0;
+    }
+    .tool-card h4 {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: .98rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--fg);
+      margin: 0 0 6px;
+    }
+    .tool-card .tool-te-reo {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--accent);
+      font-size: 1.05rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .tool-card p {
+      font-size: .90rem;
+      color: var(--fg-muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+    .principle-row {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin: .9rem 0;
+    }
+    .principle-num {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--accent);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 32px;
+    }
+    .principle-body strong {
+      font-family: var(--font-sans);
+      font-size: .82rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--fg);
+      display: block;
+      margin-bottom: 3px;
+    }
+    .principle-body p {
+      font-size: .88rem;
+      color: var(--fg-muted);
+      margin: 0;
+      line-height: 1.55;
+    }
+  </style>
+</head>
+<body>
+  <span class="motif-stripe" role="presentation" aria-hidden="true"></span>
+  <div class="shell--narrow" style="padding-top:0">
+    <nav class="site-nav">
+      <a class="nav-brand" href="https://www.kiwidialectic.com" target="_blank" rel="noopener noreferrer">The Kiwi Dialectic</a>
+      <div class="nav-links">
+        <a href="../index.html">All Modules</a>
+        <a href="../index.html#stickers">Stickers</a>
+        <a href="../index.html#sources">Sources</a>
+        <button class="theme-btn" id="themeToggle">Dark</button>
+      </div>
+    </nav>
+
+    <div class="motif-band" role="presentation" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 44" width="100%" height="44" preserveAspectRatio="xMidYMid slice">
+        <rect width="600" height="44" fill="#111"/>
+        <polygon points="0,44 12.5,28 25,44" fill="#c0392b"/><polygon points="25,44 37.5,28 50,44" fill="#c0392b"/>
+        <polygon points="50,44 62.5,28 75,44" fill="#c0392b"/><polygon points="75,44 87.5,28 100,44" fill="#c0392b"/>
+        <polygon points="100,44 112.5,28 125,44" fill="#c0392b"/><polygon points="125,44 137.5,28 150,44" fill="#c0392b"/>
+        <polygon points="150,44 162.5,28 175,44" fill="#c0392b"/><polygon points="175,44 187.5,28 200,44" fill="#c0392b"/>
+        <polygon points="200,44 212.5,28 225,44" fill="#c0392b"/><polygon points="225,44 237.5,28 250,44" fill="#c0392b"/>
+        <polygon points="250,44 262.5,28 275,44" fill="#c0392b"/><polygon points="275,44 287.5,28 300,44" fill="#c0392b"/>
+        <polygon points="300,44 312.5,28 325,44" fill="#c0392b"/><polygon points="325,44 337.5,28 350,44" fill="#c0392b"/>
+        <polygon points="350,44 362.5,28 375,44" fill="#c0392b"/><polygon points="375,44 387.5,28 400,44" fill="#c0392b"/>
+        <polygon points="400,44 412.5,28 425,44" fill="#c0392b"/><polygon points="425,44 437.5,28 450,44" fill="#c0392b"/>
+        <polygon points="450,44 462.5,28 475,44" fill="#c0392b"/><polygon points="475,44 487.5,28 500,44" fill="#c0392b"/>
+        <polygon points="500,44 512.5,28 525,44" fill="#c0392b"/><polygon points="525,44 537.5,28 550,44" fill="#c0392b"/>
+        <polygon points="550,44 562.5,28 575,44" fill="#c0392b"/><polygon points="575,44 587.5,28 600,44" fill="#c0392b"/>
+        <line x1="0" y1="22" x2="600" y2="22" stroke="#f0efe9" stroke-width=".5" stroke-opacity=".2"/>
+      </svg>
+    </div>
+
+    <p class="breadcrumb" style="margin-top:20px">
+      <a href="../index.html">Te Pā Tūwatawata</a>
+      <span class="breadcrumb-sep">/</span>
+      Te Pakiaka — The Rhizome
+    </p>
+
+    <article>
+      <p class="module-tag">Activism framework — Extended reading</p>
+      <h1>Te Pakiaka</h1>
+      <p class="subtitle">The rhizome, lines of flight, and the underground community of place — connecting Deleuze, whakapapa, and street activism.</p>
+
+      <!-- Motif banner -->
+      <div style="display:flex;align-items:center;gap:18px;background:var(--bg-raised);border-radius:14px;padding:18px 20px;margin:0 0 36px;border:1px solid var(--border)">
+        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:64px;height:64px;color:#c0392b;flex-shrink:0">
+          <!-- Pakiaka / rhizome — horizontal spreading roots -->
+          <line x1="40" y1="40" x2="8"  y2="32" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          <line x1="40" y1="40" x2="14" y2="56" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          <line x1="40" y1="40" x2="40" y2="62" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="40" y1="40" x2="66" y2="56" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          <line x1="40" y1="40" x2="72" y2="32" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          <line x1="40" y1="40" x2="40" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-opacity=".4"/>
+          <circle cx="40" cy="40" r="5" fill="currentColor"/>
+          <circle cx="8"  cy="32" r="3" fill="currentColor" opacity=".7"/>
+          <circle cx="14" cy="56" r="3" fill="currentColor" opacity=".7"/>
+          <circle cx="40" cy="62" r="3" fill="currentColor" opacity=".5"/>
+          <circle cx="66" cy="56" r="3" fill="currentColor" opacity=".7"/>
+          <circle cx="72" cy="32" r="3" fill="currentColor" opacity=".7"/>
+        </svg>
+        <div>
+          <div style="font-family:var(--font-sans);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:4px">Tohu — Symbol</div>
+          <strong style="font-family:var(--font-serif)">Pakiaka</strong>
+          <p style="font-size:.88rem;color:var(--fg-muted);margin:4px 0 0">root system, underground network — spreading horizontally, no centre, no hierarchy</p>
+        </div>
+      </div>
+
+      <div class="rhizome-quote">
+        "A rhizome has no beginning or end; it is always in the middle, between things, interbeing, intermezzo."
+        <cite>— Gilles Deleuze &amp; Félix Guattari, <em>A Thousand Plateaus</em> (1980)</cite>
+      </div>
+
+      <div class="rhizome-quote">
+        "Kia whakatōmuri te haere whakamua."<br/>
+        <span style="font-style:normal;font-size:.92rem">I walk backwards into the future with my eyes fixed on my past.</span>
+        <cite>— Te Kākano Māori whakataukī</cite>
+      </div>
+
+      <!-- ── PART I ──────────────────────────────────────────────────────── -->
+      <h2>He kupu whakataki — Why this matters now</h2>
+      <p>The colonial system is structured like a tree. There is a root — private property, Crown sovereignty, Western empiricism. There is a trunk — the state, the university, the corporation. There are branches — departments, disciplines, subsidiaries. Everything flows from the top down, from root to leaf, from general to particular.</p>
+
+      <p>The tree is easy to attack — and easy to defend. Cut a branch and the tree survives. The trunk is protected. The root is invisible and underground, presumed safe.</p>
+
+      <p>The rhizome works differently. French philosophers Gilles Deleuze and Félix Guattari, writing in <em>A Thousand Plateaus</em> (1980), proposed the rhizome as a counter-model. Not a tree but a root system: horizontal, multi-directional, without a centre. Every point connects to every other. There is no privileged entry point, no single root, no hierarchy of importance. Cut it anywhere and it starts up again on a new line.</p>
+
+      <p>This is not merely a metaphor. It is a description of how underground movements actually work — and how whakapapa already works.</p>
+
+      <!-- ── THE 6 PRINCIPLES ────────────────────────────────────────────── -->
+      <h2>Ngā mātāpono o te pakiaka — The six principles</h2>
+
+      <div class="principle-row">
+        <span class="principle-num">1</span>
+        <div class="principle-body">
+          <strong>Hononga — Connection</strong>
+          <p>Any point of a rhizome can and must connect to any other. There is no authorised beginning, no correct sequence. A sticker on a lamppost connects to a QR code connects to a course connects to a wānanga connects to a whānau. The entry point does not matter. The connection does.</p>
+        </div>
+      </div>
+
+      <div class="principle-row">
+        <span class="principle-num">2</span>
+        <div class="principle-body">
+          <strong>Reo rerekē — Heterogeneity</strong>
+          <p>The rhizome connects unlike things — te reo Māori and Python code, a grandmother's kōrero and a data governance framework, a sticker on a bin and a submission to parliament. Unlike the tree, which imposes a common code on everything it connects, the rhizome allows difference to remain different.</p>
+        </div>
+      </div>
+
+      <div class="principle-row">
+        <span class="principle-num">3</span>
+        <div class="principle-body">
+          <strong>Tokomaha — Multiplicity</strong>
+          <p>The rhizome is not a unity pretending to be many. It is irreducible multiplicity. No central committee. No single leader. No one true version of the movement. This is not weakness — it is the source of its resilience.</p>
+        </div>
+      </div>
+
+      <div class="principle-row">
+        <span class="principle-num">4</span>
+        <div class="principle-body">
+          <strong>Ārai pakiaka — Asignifying rupture</strong>
+          <p>Cut the rhizome anywhere and it starts again on a new line. This is the principle most directly relevant to colonised peoples. Every rupture — every suppression of te reo, every raupatu, every data extraction — was met by the rhizome starting up again somewhere else. The rhizome cannot be permanently destroyed. It can only be pushed underground, where it keeps spreading.</p>
+        </div>
+      </div>
+
+      <div class="principle-row">
+        <span class="principle-num">5</span>
+        <div class="principle-body">
+          <strong>Mapi — Cartography</strong>
+          <p>The rhizome makes maps, not tracings. A tracing reproduces a fixed, official structure — the official map, the Crown's version of history. A map is always open, revisable, made from multiple directions at once. Counter-cartography — remapping the city through Māori whakapapa, through the names the Crown tried to erase — is rhizomatic practice.</p>
+        </div>
+      </div>
+
+      <div class="principle-row">
+        <span class="principle-num">6</span>
+        <div class="principle-body">
+          <strong>Tohatoha — Decalcomania</strong>
+          <p>The rhizome spreads not from a single template but through heterogeneous transfer. There is no original that loses authority when reproduced. Every copy is also a transformation. This is why stickers, memes, and paste-up culture are genuinely rhizomatic — not because they are cheap, but because every act of distribution is also an act of creation.</p>
+        </div>
+      </div>
+
+      <!-- ── WHAKAPAPA ───────────────────────────────────────────────────── -->
+      <h2>Whakapapa hei pakiaka — Whakapapa as rhizome</h2>
+
+      <p>Whakapapa is most commonly translated as genealogy and then represented as a family tree. This is a profound mistranslation — not linguistically but ontologically. Whakapapa is not a tree. It is a network: horizontal, multi-dimensional, with no single root and no single trunk.</p>
+
+      <p>You can enter whakapapa from any node — an ancestor, a place, a species, a star, an event — and it connects to everything else. The genealogy of the kūmara, the stars, the forest sits within a collapsed space-time framework that Mere Roberts describes as a network of time-space co-ordinates, not a chronological descent. This is the Deleuzian map: open, connectable, reversible, multiple entry points.</p>
+
+      <p>The crucial difference — and we must be precise — is that whakapapa is not merely a formal structure. It is ontological. To know one's whakapapa is not to possess information about relationships. It is to <em>be</em> those relationships. The Māori philosophical claim that "I am that thing, and that thing is me" carries a weight that Deleuze's secular philosophy cannot fully contain. Whakapapa does not merely <em>resemble</em> the rhizome. Whakapapa <em>is</em> a rhizomatic structure — but one embedded in cosmological and spiritual commitment that European post-structuralism approaches from the outside.</p>
+
+      <div class="rhizome-quote">
+        "Ko au te awa, ko te awa ko au."<br/>
+        <span style="font-style:normal;font-size:.92rem">I am the river, the river is me.</span>
+        <cite>— Whanganui iwi — recognised in New Zealand law 2017</cite>
+      </div>
+
+      <!-- ── MUA / MURI ─────────────────────────────────────────────────── -->
+      <h2>Mua, muri — Facing the past to move forward</h2>
+
+      <p>In te ao Māori, <em>mua</em> means both "front" and "past." <em>Muri</em> means both "behind" and "future." This is the inverse of Western linear temporality. The past is in front of you — visible, present, generative. The future is behind you, unseen, unfolding. You travel backwards into the future with your eyes fixed on what you can see: your ancestors, your whenua, your whakapapa.</p>
+
+      <p>The colonial injunction to "move on" and "forget the past" depends entirely on the Western temporal model in which the past is behind and therefore available for erasure. The Māori temporal ontology is constitutively resistant to this move. You cannot be told to move past something that is standing directly in front of you.</p>
+
+      <p>For Deleuze, similarly, the past is not dead — it is co-present with the present on a plane of immanence. Memory is not recollection of something that no longer exists; it is the actualisation of something that has never stopped existing. <em>Wā</em> — the Māori term that means both time and space simultaneously — is the lived version of this. The past is not archived. It is here.</p>
+
+      <!-- ── LINES OF FLIGHT ─────────────────────────────────────────────── -->
+      <h2>Raina rere — Lines of flight</h2>
+
+      <p>The most politically charged concept in Deleuzian thought is the <em>ligne de fuite</em> — line of flight. A line of flight is not a retreat. It is a vector of deterritorialisation: movement away from the dominant order that creates new terrain as it moves.</p>
+
+      <p>Te reo Māori is a line of flight. Colonialism attempted to suppress it. The rhizome started up again — in kōhanga reo, in wānanga, in Discord servers where young Māori play video games in te reo, in the hip-hop of Maisey Rika, in WhatsApp groups between cousins in different cities. Every new node of te reo is a line of flight from the colonial arborescence.</p>
+
+      <p>A sticker on a lamppost is a line of flight. A wheatpaste poster in a colonial streetscape is deterritorialisation of visual space — the reclamation of a surface that has been striated by advertising and state signage, smoothed back into a commons for a moment.</p>
+
+      <p>Data sovereignty is a line of flight. The centralised internet — owned by five corporations in three American states — is arborescent. Te Mana Raraunga's six principles, the CARE principles for Indigenous data, tikanga-governed Fediverse instances — these are lines of flight from the data tree.</p>
+
+      <div class="pull-quote">"Every rupture opens a new line of flight. The rhizome cannot be permanently suppressed — it can only be pushed underground, where it keeps spreading."</div>
+
+      <!-- ── ART PEDAGOGY ────────────────────────────────────────────────── -->
+      <h2>Toi akoranga — Art as rhizomatic pedagogy</h2>
+
+      <p>Paulo Freire's <em>conscientização</em> — the process of developing critical consciousness through education — is rhizomatic. It begins not with the teacher's curriculum but with the student's lived reality. The "generative themes" emerge from the community's own experience. There is no single authorised entry point. Knowledge moves horizontally between learners, not vertically from expert to pupil.</p>
+
+      <p>Joseph Beuys called this "social sculpture" — the idea that everyone is an artist, that the shaping of society is itself an art form, that the materials of political life (language, gesture, space, community) are sculptural materials. Every paste-up, every wānanga, every data sovereignty workshop is a social sculpture.</p>
+
+      <p>The zine — the samizdat — is the most rhizomatic of all forms. It costs almost nothing to reproduce, it has no authorised version, it spreads through networks of care rather than commercial distribution, and every reproduction transforms it. The sticker is the smallest possible zine. The meme is the digital zine. The wānanga is the embodied one.</p>
+
+      <p>Graeber's "everyday communism" — the baseline of mutual aid that underlies all human sociality — is what allows rhizomatic networks to function. People share food, share knowledge, share space, share risk. This is not utopian. It is already happening. The task is to make it visible and deliberate.</p>
+
+      <!-- ── 8 TOOLS ──────────────────────────────────────────────────────── -->
+      <h2>Ngā rawa — Eight tools for the underground</h2>
+      <p style="color:var(--fg-muted);font-size:.92rem;margin-bottom:1.4rem">Concrete applications of rhizome theory to te reo Māori, Māori data sovereignty, and street activism.</p>
+
+      <div class="tool-card">
+        <h4>1 — Te Aropā</h4>
+        <span class="tool-te-reo">The drift / the counter-walk</span>
+        <p>Adapt the Situationist <em>dérive</em> — a purposeless walk through the city guided by atmosphere rather than destination — as a Māori urban practice. Walk a colonial city reading it against its suppressed Māori whakapapa: the stream buried beneath the motorway, the pā site under the car park, the place name the Crown erased. Produce counter-maps. Attach QR codes to sites. Build an open, rhizomatic archive that anyone can contribute to and enter from any node.</p>
+      </div>
+
+      <div class="tool-card">
+        <h4>2 — Te Pakiaka Network</h4>
+        <span class="tool-te-reo">The root network — distributed sticker ecosystem</span>
+        <p>Design a sticker system using pakiaka (root) imagery — rhizomatic spreading lines as the visual motif. Each sticker carries a QR code linking to a different node: a module of this course, a local activist resource, a te reo learning platform, a data sovereignty tool. The network has no centre. Any sticker is an entry point. The map grows every time someone adds a node.</p>
+      </div>
+
+      <div class="tool-card">
+        <h4>3 — He Kete Kōrero</h4>
+        <span class="tool-te-reo">The open basket of voices — zine series</span>
+        <p>A recurring zine in the samizdat tradition — photocopiable A5, bilingual, no authorised version. Each issue produced by a different community node. Contributers add to it, transform it, translate it. Distribute through marae, kōhanga reo, universities, community gardens, barbershops, record stores. The kete (basket) holds many contributions; none is the original.</p>
+      </div>
+
+      <div class="tool-card">
+        <h4>4 — Te Whatungarongaro</h4>
+        <span class="tool-te-reo">The unseen weave — tikanga-governed federated social media</span>
+        <p>Establish a Mastodon/ActivityPub instance governed by tikanga rather than Silicon Valley terms of service. Data stays on Māori-owned servers. Moderation is by kaitiaki, not algorithm. The instance federates with the global Fediverse — a line of flight from Facebook and X — while maintaining a protected interiority. Like the pā tūwatawata: permeable and defended simultaneously.</p>
+      </div>
+
+      <div class="tool-card">
+        <h4>5 — Te Pakiaka Kōrero</h4>
+        <span class="tool-te-reo">The root conversation — open-entry wānanga model</span>
+        <p>Structure learning as a rhizome, not a tree. No prerequisites. No single correct entry point. Anyone can begin at any module — Module 3 is not "after" Module 2; it is alongside it. The wānanga format: sitting in circle, knowledge moving horizontally, tuakana-teina replacing teacher-student. The curriculum is a map, not a syllabus. Every learner remaps it.</p>
+      </div>
+
+      <div class="tool-card">
+        <h4>6 — He Kōrero Ngahere</h4>
+        <span class="tool-te-reo">Voices from the bush — geolocated audio walks</span>
+        <p>Build an open-source audio layer over urban and rural Aotearoa. At each site: an elder's voice, a pūrākau, a te reo place name, a data sovereignty story. Accessible via QR code or geolocation. No app required — just a phone and a browser. The layer grows through community contribution. The city becomes legible in te reo.</p>
+      </div>
+
+      <div class="tool-card">
+        <h4>7 — He Aho Tukutuku</h4>
+        <span class="tool-te-reo">The woven thread — participatory data art</span>
+        <p>Render community data as tukutuku weaving patterns. Each whānau, hapū, or community contributes a "thread" — anonymised, consensual data about their relationship to digital tools, language use, data governance. The result is woven into a visual tukutuku panel that makes the community's collective data sovereignty legible as art. The weaving is the analysis.</p>
+      </div>
+
+      <div class="tool-card">
+        <h4>8 — Te Tuakiri Raraunga</h4>
+        <span class="tool-te-reo">The data identity audit</span>
+        <p>A simple, printable, photocopiable A4 kit — in te reo and English — that walks any whānau through a self-conducted data sovereignty audit. Where is your language data? Who trained their AI on your kōrero? What data do you hold, and what holds data about you? Apply the six principles of Te Mana Raraunga to your own digital life. Share your audit with others. The audit spreads rhizomatically — every copy a new node.</p>
+      </div>
+
+      <!-- ── NIHO SEPARATOR ─────────────────────────────────────────────── -->
+      <div role="presentation" aria-hidden="true" style="margin:40px 0 0">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 16" width="100%" height="16" preserveAspectRatio="xMidYMid slice">
+          <rect width="600" height="16" fill="var(--mangu,#111)"/>
+          <polygon points="0,16 12.5,0 25,16" fill="#c0392b"/>
+          <polygon points="25,16 37.5,0 50,16" fill="#c0392b"/>
+          <polygon points="50,16 62.5,0 75,16" fill="#c0392b"/>
+          <polygon points="75,16 87.5,0 100,16" fill="#c0392b"/>
+          <polygon points="100,16 112.5,0 125,16" fill="#c0392b"/>
+          <polygon points="125,16 137.5,0 150,16" fill="#c0392b"/>
+          <polygon points="150,16 162.5,0 175,16" fill="#c0392b"/>
+          <polygon points="175,16 187.5,0 200,16" fill="#c0392b"/>
+          <polygon points="200,16 212.5,0 225,16" fill="#c0392b"/>
+          <polygon points="225,16 237.5,0 250,16" fill="#c0392b"/>
+          <polygon points="250,16 262.5,0 275,16" fill="#c0392b"/>
+          <polygon points="275,16 287.5,0 300,16" fill="#c0392b"/>
+          <polygon points="300,16 312.5,0 325,16" fill="#c0392b"/>
+          <polygon points="325,16 337.5,0 350,16" fill="#c0392b"/>
+          <polygon points="350,16 362.5,0 375,16" fill="#c0392b"/>
+          <polygon points="375,16 387.5,0 400,16" fill="#c0392b"/>
+          <polygon points="400,16 412.5,0 425,16" fill="#c0392b"/>
+          <polygon points="425,16 437.5,0 450,16" fill="#c0392b"/>
+          <polygon points="450,16 462.5,0 475,16" fill="#c0392b"/>
+          <polygon points="475,16 487.5,0 500,16" fill="#c0392b"/>
+          <polygon points="500,16 512.5,0 525,16" fill="#c0392b"/>
+          <polygon points="525,16 537.5,0 550,16" fill="#c0392b"/>
+          <polygon points="550,16 562.5,0 575,16" fill="#c0392b"/>
+          <polygon points="575,16 587.5,0 600,16" fill="#c0392b"/>
+        </svg>
+      </div>
+
+      <!-- ── REFLECTION QUESTIONS ───────────────────────────────────────── -->
+      <h2 style="margin-top:36px">He pātai whakaaro — Questions for reflection</h2>
+      <ul>
+        <li>Where are the existing rhizomatic networks in your community — the informal ones, the non-institutional ones? How might they connect to data sovereignty work?</li>
+        <li>What is your own whakapapa of data? Who has collected data about you, your whānau, your iwi — and what did they do with it?</li>
+        <li>Where in your city or town is Māori whakapapa invisible? What would it take to make it visible — a QR code, a sticker, an audio recording, a painted wall?</li>
+        <li>What does a line of flight look like in your specific context? What is the existing territory, and where are the escape routes?</li>
+        <li>If you were to design a rhizomatic learning experience — no single entry point, no hierarchy of modules, knowledge moving horizontally — what would it look like?</li>
+      </ul>
+
+      <!-- ── KEY CONCEPTS ───────────────────────────────────────────────── -->
+      <h2>Ngā kupu matua — Key concepts</h2>
+      <div class="concept-grid">
+        <div class="concept-card">
+          <h4>Pakiaka</h4>
+          <p>Root system. Used here as the te reo equivalent of the rhizome — horizontal, underground, no centre, multiple entry points.</p>
+        </div>
+        <div class="concept-card">
+          <h4>Raina rere</h4>
+          <p>Line of flight (<em>ligne de fuite</em>). A vector of escape from dominant structures that creates new terrain as it moves.</p>
+        </div>
+        <div class="concept-card">
+          <h4>Whakahorohoro</h4>
+          <p>Deterritorialisation. The movement away from and beyond the codes and territories of the dominant order.</p>
+        </div>
+        <div class="concept-card">
+          <h4>Mua / muri</h4>
+          <p>Front/past · behind/future. The Māori temporal ontology that makes the colonial injunction to "forget" structurally impossible.</p>
+        </div>
+        <div class="concept-card">
+          <h4>Wā</h4>
+          <p>Time-space. The collapsed space-time of whakapapa in which the past is co-present with the present.</p>
+        </div>
+        <div class="concept-card">
+          <h4>Tūāhu pakiaka</h4>
+          <p>The war machine (<em>machine de guerre</em>). Nomadic, exterior to the state, oriented toward smooth space rather than captured territory.</p>
+        </div>
+        <div class="concept-card">
+          <h4>Paparārangi</h4>
+          <p>Plane of immanence. The surface of potential from which all actual forms are expressed — no transcendence, no outside.</p>
+        </div>
+        <div class="concept-card">
+          <h4>Mapi hou</h4>
+          <p>Counter-cartography. Remapping the colonial city through Māori whakapapa — names, streams, pā sites, ancestral relationships.</p>
+        </div>
+      </div>
+
+      <!-- ── SOURCES ────────────────────────────────────────────────────── -->
+      <h2>Ngā puna — Sources</h2>
+      <ul class="source-list">
+        <li>Deleuze, G. &amp; Guattari, F. (1980). <em>A Thousand Plateaus: Capitalism and Schizophrenia</em>. University of Minnesota Press.</li>
+        <li>Smith, L. T. (1999). <em>Decolonising Methodologies: Research and Indigenous Peoples</em>. Zed Books / University of Otago Press.</li>
+        <li>Roberts, M. (2013). "Ways of seeing: Whakapapa." <em>Sites: A Journal of Social Anthropology and Cultural Studies</em>.</li>
+        <li>Freire, P. (1970). <em>Pedagogy of the Oppressed</em>. Herder and Herder.</li>
+        <li>Graeber, D. (2011). <em>Debt: The First 5,000 Years</em>. Melville House.</li>
+        <li>Kropotkin, P. (1902). <em>Mutual Aid: A Factor of Evolution</em>. McClure Phillips.</li>
+        <li><a href="https://www.temanararaunga.maori.nz" target="_blank" rel="noopener noreferrer">Te Mana Raraunga</a> — Māori Data Sovereignty Network principles.</li>
+        <li><a href="https://www.gida-global.org/care" target="_blank" rel="noopener noreferrer">CARE Principles for Indigenous Data Governance</a> — Global Indigenous Data Alliance.</li>
+        <li>Situationist International (1958). "Theory of the Dérive." <em>Internationale Situationniste</em>, No. 2.</li>
+        <li><a href="https://www.kiwidialectic.com" target="_blank" rel="noopener noreferrer">The Kiwi Dialectic</a> — kiwidialectic.com.</li>
+      </ul>
+
+    </article>
+
+    <footer class="site-footer">
+      <p>
+        <a href="https://www.kiwidialectic.com" target="_blank" rel="noopener noreferrer">The Kiwi Dialectic</a>
+        &nbsp;·&nbsp; Dunedin, Aotearoa New Zealand
+        &nbsp;·&nbsp; <a href="../index.html">Te Pā Tūwatawata</a>
+        &nbsp;·&nbsp; <a href="https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    const btn = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    const saved = localStorage.getItem('kd-theme') || 'light';
+    html.setAttribute('data-theme', saved);
+    btn.textContent = saved === 'dark' ? 'Light' : 'Dark';
+    btn.addEventListener('click', () => {
+      const cur = html.getAttribute('data-theme');
+      const next = cur === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('kd-theme', next);
+      btn.textContent = next === 'dark' ? 'Light' : 'Dark';
+    });
+  </script>
+</body>
+</html>
