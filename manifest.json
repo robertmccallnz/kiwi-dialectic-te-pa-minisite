@@ -1,0 +1,37 @@
+{
+  "name": "Te Pā Tūwatawata — The Kiwi Dialectic",
+  "short_name": "Kiwi Dialectic",
+  "description": "Six modules on AI, Māori data sovereignty, tikanga, and Indigenous digital futures. Bilingual — te reo Māori and English.",
+  "start_url": "/kiwi-dialectic-te-pa-minisite/",
+  "scope": "/kiwi-dialectic-te-pa-minisite/",
+  "display": "standalone",
+  "background_color": "#111111",
+  "theme_color": "#c0392b",
+  "lang": "en-NZ",
+  "icons": [
+    {
+      "src": "assets/social/kiwi-dialectic-profile-x.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/social/kiwi-dialectic-github-symbol.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["education", "politics", "social"],
+  "shortcuts": [
+    {
+      "name": "Rhizome Mapper",
+      "short_name": "Mapper",
+      "description": "Map political events to Māori motifs",
+      "url": "/kiwi-dialectic-te-pa-minisite/rhizome-mapper.html"
+    },
+    {
+      "name": "Module 1",
+      "url": "/kiwi-dialectic-te-pa-minisite/modules/module-1.html"
+    }
+  ]
+}

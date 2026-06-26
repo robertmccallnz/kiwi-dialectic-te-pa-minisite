@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Rhizome Mapper — Political Event → Motif → Post · The Kiwi Dialectic</title>
   <meta name="description" content="Enter a NZ political event. The Rhizome Mapper finds the underlying Māori motif and drafts your social media post."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/kiwi-dialectic.css"/>
   <style>
     /* ── layout ── */
@@ -44,12 +47,25 @@
     .map-btn:active { transform:translateY(0); }
     .map-btn:disabled { opacity:.4; cursor:not-allowed; transform:none; }
 
-    /* ── rhizome canvas ── */
-    #rhizomeCanvas {
-      width:100%; max-width:700px; display:block;
-      margin:2rem auto; border-radius:16px;
-      background:var(--bg-raised); border:1px solid var(--border);
+    /* ── D3 rhizome viz ── */
+    .rh-link { stroke-opacity: 0.7; stroke-linecap: round; }
+    .rh-node-circle { cursor: grab; stroke-width: 2.5; }
+    .rh-node-circle:active { cursor: grabbing; }
+    .rh-node-label { pointer-events: none; font-family: var(--font-sans); font-weight: 600; }
+    .rh-node-score { pointer-events: none; font-family: monospace; }
+    .rh-center-circle { pointer-events: none; }
+    .rh-center-label { pointer-events: none; font-family: var(--font-sans); fill: #fff; font-weight: 700; }
+    .rh-legend { font-size: 9px; font-family: var(--font-sans); fill: var(--fg-muted); }
+    #rhizomeViz .zoom-btn {
+      position: absolute; top: 10px; right: 10px;
+      display: flex; gap: 4px;
     }
+    .zoom-btn button {
+      width: 28px; height: 28px; border-radius: 6px;
+      border: 1px solid var(--border-bold); background: var(--bg-card);
+      color: var(--fg); font-size: 1rem; cursor: pointer; line-height: 1;
+    }
+    .zoom-btn button:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
 
     /* ── result panels ── */
     .result-section { display:none; margin-top:2rem; }
@@ -148,6 +164,8 @@
     .section-divider { border:none; border-top:1px solid var(--border); margin:2.5rem 0; }
     .section-tag2 { font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--fg-muted);font-family:var(--font-sans);margin:0 0 .5rem }
   </style>
+  <link rel="manifest" href="/kiwi-dialectic-te-pa-minisite/manifest.json">
+  <meta name="theme-color" content="#c0392b">
 </head>
 <body>
 <span class="motif-stripe" role="presentation" aria-hidden="true"></span>
@@ -212,8 +230,15 @@
     <div class="spinner" id="spinner"><div class="spin-ring"></div> Tracing the rhizome…</div>
   </section>
 
-  <!-- RHIZOME CANVAS -->
-  <canvas id="rhizomeCanvas" width="700" height="380" style="display:none"></canvas>
+  <!-- RHIZOME CANVAS — D3.js force-directed graph -->
+  <div id="rhizomeViz" style="display:none; position:relative; width:100%; max-width:720px; margin:2rem auto;">
+    <svg id="rhizomeSVG" width="100%" viewBox="0 0 720 400"
+         style="border-radius:16px; background:var(--bg-raised); border:1px solid var(--border); display:block;">
+    </svg>
+    <p style="font-size:.72rem; color:var(--fg-muted); font-family:var(--font-sans); text-align:center; margin:.5rem 0 0;">
+      Drag nodes · scroll to zoom · line weight = match strength
+    </p>
+  </div>
 
   <!-- RESULTS -->
   <section class="result-section" id="resultSection">
@@ -478,103 +503,7 @@ function scoreMotifs(eventText, activeThemes) {
   return Object.entries(scores).sort((a,b) => b[1]-a[1]);
 }
 
-/* ══════════════════════════════════════════════════════════════════════════
-   RHIZOME CANVAS
-══════════════════════════════════════════════════════════════════════════ */
-function drawRhizome(canvas, ranked, eventText) {
-  const ctx = canvas.getContext('2d');
-  const W = canvas.width, H = canvas.height;
-  ctx.clearRect(0,0,W,H);
-
-  // background
-  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-  ctx.fillStyle = isDark ? '#111' : '#f4f0e8';
-  ctx.fillRect(0,0,W,H);
-
-  const motifKeys = ranked.map(r => r[0]);
-  const maxScore = ranked[0][1] || 1;
-
-  // positions — radial around centre event node
-  const cx = W/2, cy = H/2;
-  const angles = { koru:-1.2, pa:-0.4, niho:0.4, kow:1.2, unaunahi:1.9, takarangi:2.7 };
-
-  function motifPos(key, dist) {
-    const a = angles[key] || 0;
-    return { x: cx + dist*Math.cos(a), y: cy + dist*Math.sin(a) };
-  }
-
-  // draw connection lines first
-  for (const [key, score] of ranked) {
-    const m = MOTIFS[key];
-    const strength = score / maxScore;
-    const dist = 60 + (1 - strength) * 110;
-    const pos = motifPos(key, dist);
-
-    ctx.beginPath();
-    ctx.moveTo(cx, cy);
-    ctx.lineTo(pos.x, pos.y);
-    ctx.strokeStyle = m.colour + Math.round(strength * 220).toString(16).padStart(2,'0');
-    ctx.lineWidth = strength * 5;
-    ctx.setLineDash(strength > 0.7 ? [] : [6, 5]);
-    ctx.stroke();
-    ctx.setLineDash([]);
-  }
-
-  // draw event node (centre)
-  const gradient = ctx.createRadialGradient(cx,cy,0,cx,cy,44);
-  gradient.addColorStop(0,'#c0392b');
-  gradient.addColorStop(1,'#7b1010');
-  ctx.beginPath();
-  ctx.arc(cx, cy, 44, 0, Math.PI*2);
-  ctx.fillStyle = gradient;
-  ctx.fill();
-  ctx.strokeStyle = '#fff';
-  ctx.lineWidth = 2;
-  ctx.stroke();
-
-  // event label
-  ctx.fillStyle = '#fff';
-  ctx.font = 'bold 11px Arial';
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-  const words = eventText.slice(0,28).split(' ');
-  const line1 = words.slice(0,3).join(' ');
-  const line2 = words.slice(3,6).join(' ')+(eventText.length>28?'…':'');
-  ctx.fillText(line1, cx, cy - 7);
-  ctx.fillText(line2, cx, cy + 8);
-
-  // draw motif nodes
-  for (const [key, score] of ranked) {
-    const m = MOTIFS[key];
-    const strength = score / maxScore;
-    const dist = 60 + (1 - strength) * 110;
-    const pos = motifPos(key, dist);
-    const r = 16 + strength * 22;
-
-    ctx.beginPath();
-    ctx.arc(pos.x, pos.y, r, 0, Math.PI*2);
-    ctx.fillStyle = m.colour + (strength > 0.5 ? 'dd' : '77');
-    ctx.fill();
-    ctx.strokeStyle = m.colour;
-    ctx.lineWidth = key === ranked[0][0] ? 3 : 1.5;
-    ctx.stroke();
-
-    ctx.fillStyle = isDark ? '#fff' : '#111';
-    ctx.font = `${key === ranked[0][0] ? 'bold ' : ''}${Math.round(8+strength*4)}px Arial`;
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillText(m.name, pos.x, pos.y - r - 10);
-    ctx.font = '9px Arial';
-    ctx.fillStyle = isDark ? '#aaa' : '#555';
-    ctx.fillText(score + '%', pos.x, pos.y);
-  }
-
-  // legend
-  ctx.font = '10px Arial';
-  ctx.fillStyle = isDark ? '#666' : '#aaa';
-  ctx.textAlign = 'left';
-  ctx.fillText('Line weight = match strength · Node size = relevance score', 12, H-10);
-}
+/* ── D3 rhizome rendering moved to assets/rhizome-d3.js ── */
 
 /* ══════════════════════════════════════════════════════════════════════════
    STATE
@@ -609,10 +538,10 @@ function runMapper() {
 
     currentResult = { ranked, primaryKey, eventText, activeThemes, posts };
 
-    // draw canvas
-    const canvas = document.getElementById('rhizomeCanvas');
-    canvas.style.display = 'block';
-    drawRhizome(canvas, ranked.map(([k,s]) => [k, Math.min(100, Math.round(s/Math.max(ranked[0][1],1)*100))]), eventText);
+    // draw D3 force-directed rhizome
+    if (typeof drawRhizomeD3 === 'function') {
+      drawRhizomeD3(ranked.map(([k,s]) => [k, Math.min(100, Math.round(s/Math.max(ranked[0][1],1)*100))]), eventText);
+    }
 
     // PRIMARY MOTIF CARD
     const card = document.getElementById('primaryMotifCard');
@@ -851,11 +780,10 @@ tBtn.addEventListener('click', () => {
   html.setAttribute('data-theme', next);
   localStorage.setItem('kd-theme', next);
   tBtn.textContent = next === 'dark' ? 'Light' : 'Dark';
-  // redraw canvas if result showing
-  if (currentResult) {
-    const canvas = document.getElementById('rhizomeCanvas');
+  // redraw D3 rhizome on theme change
+  if (currentResult && typeof drawRhizomeD3 === 'function') {
     const maxS = currentResult.ranked[0][1] || 1;
-    drawRhizome(canvas, currentResult.ranked.map(([k,s]) => [k, Math.round(s/maxS*100)]), currentResult.eventText);
+    drawRhizomeD3(currentResult.ranked.map(([k,s]) => [k, Math.round(s/maxS*100)]), currentResult.eventText);
   }
 });
 
@@ -868,6 +796,19 @@ document.getElementById('eventInput').addEventListener('keydown', e => {
 
 // init
 renderHistory();
+</script>
+
+<!-- ── D3.js v7 + Rhizome force-directed graph ─────────────────────── -->
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="assets/rhizome-d3.js"></script>
+
+<!-- ── PWA Service Worker ──────────────────────────────────────────── -->
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/kiwi-dialectic-te-pa-minisite/sw.js')
+      .then(r => console.log('[KD] SW registered:', r.scope))
+      .catch(e => console.warn('[KD] SW registration failed:', e));
+  }
 </script>
 </body>
 </html>

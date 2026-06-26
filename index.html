@@ -18,7 +18,12 @@
   <meta name="twitter:title" content="The Kiwi Dialectic — Te Pā Tūwatawata" />
   <meta name="twitter:description" content="Six modules on AI, Māori data sovereignty, tikanga, and Indigenous digital futures." />
   <meta name="twitter:image" content="https://robertmccallnz.github.io/kiwi-dialectic-te-pa-minisite/assets/social/kiwi-dialectic-x-card.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/kiwi-dialectic.css" />
+  <link rel="manifest" href="/kiwi-dialectic-te-pa-minisite/manifest.json">
+  <meta name="theme-color" content="#c0392b">
 </head>
 <body>
 
@@ -41,6 +46,18 @@
         <a href="#sources">Sources</a>
         <a href="https://www.kiwidialectic.com" target="_blank" rel="noopener noreferrer">Substack</a>
         <button class="theme-btn" id="themeToggle" aria-label="Toggle dark mode">Dark</button>
+        <!-- Fuse.js search -->
+        <div class="search-wrap" id="searchWrap">
+          <button class="search-toggle" id="searchToggle" aria-label="Search site" title="Search (Ctrl+K)">&#9906;</button>
+          <div class="search-box" id="searchBox">
+            <div class="search-input-wrap">
+              <span style="color:var(--fg-muted);font-size:.95rem">&#9906;</span>
+              <input class="search-input" id="searchInput" type="search" placeholder="Bilal ngā kupu — search…" autocomplete="off" spellcheck="false" />
+              <kbd style="font-size:.7rem;padding:2px 6px;border:1px solid var(--border-bold);border-radius:4px;font-family:var(--font-sans);color:var(--fg-muted)">Esc</kbd>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+          </div>
+        </div>
       </div>
     </nav>
 
@@ -1488,6 +1505,19 @@ TikTok hook: "I printed indigenous data sovereignty stickers for 50 cents each. 
       localStorage.setItem('kd-theme', next);
       btn.textContent = next === 'dark' ? 'Light' : 'Dark';
     });
+  </script>
+
+  <!-- ── FUSE.JS SEARCH ──────────────────────────────────────────────── -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+  <script src="assets/search.js"></script>
+
+  <!-- ── PWA SERVICE WORKER ─────────────────────────────────────────── -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/kiwi-dialectic-te-pa-minisite/sw.js')
+        .then(r => console.log('[KD] SW registered:', r.scope))
+        .catch(e => console.warn('[KD] SW registration failed:', e));
+    }
   </script>
 </body>
 </html>

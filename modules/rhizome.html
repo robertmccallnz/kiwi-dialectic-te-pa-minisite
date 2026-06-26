@@ -9,6 +9,9 @@
   <meta property="og:description" content="Deleuze, whakapapa, lines of flight, and the underground community of place." />
   <meta property="og:image" content="https://robertmccallnz.github.io/kiwi-dialectic-te-pa-minisite/assets/social/kiwi-dialectic-x-card.png" />
   <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/kiwi-dialectic.css" />
   <style>
     .rhizome-quote {
@@ -117,6 +120,8 @@
       line-height: 1.55;
     }
   </style>
+  <link rel="manifest" href="/kiwi-dialectic-te-pa-minisite/manifest.json">
+  <meta name="theme-color" content="#c0392b">
 </head>
 <body>
   <span class="motif-stripe" role="presentation" aria-hidden="true"></span>
@@ -351,10 +356,45 @@
         <p>Render community data as tukutuku weaving patterns. Each whānau, hapū, or community contributes a "thread" — anonymised, consensual data about their relationship to digital tools, language use, data governance. The result is woven into a visual tukutuku panel that makes the community's collective data sovereignty legible as art. The weaving is the analysis.</p>
       </div>
 
-      <div class="tool-card">
+      <div class="tool-card" id="audit-tool">
         <h4>8 — Te Tuakiri Raraunga</h4>
         <span class="tool-te-reo">The data identity audit</span>
         <p>A simple, printable, photocopiable A4 kit — in te reo and English — that walks any whānau through a self-conducted data sovereignty audit. Where is your language data? Who trained their AI on your kōrero? What data do you hold, and what holds data about you? Apply the six principles of Te Mana Raraunga to your own digital life. Share your audit with others. The audit spreads rhizomatically — every copy a new node.</p>
+
+        <!-- Interactive audit form + jsPDF export -->
+        <div id="audit-form" style="margin-top:1.2rem;border-top:1px solid var(--border);padding-top:1rem">
+          <p style="font-size:.82rem;font-weight:700;font-family:var(--font-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:0 0 .8rem">Fill out your audit — download as PDF</p>
+
+          <div style="display:grid;gap:.7rem">
+            <div>
+              <label style="font-size:.78rem;font-family:var(--font-sans);color:var(--fg-muted);display:block;margin-bottom:3px">Ko wai koe? — Your name / whānau / hapū (optional)</label>
+              <input id="aud-name" type="text" placeholder="e.g. Ngāti Whātua whānau" style="width:100%;box-sizing:border-box;background:var(--bg);border:1px solid var(--border-bold);border-radius:6px;padding:8px 12px;font-family:var(--font-sans);font-size:.88rem;color:var(--fg);outline:none">
+            </div>
+            <div>
+              <label style="font-size:.78rem;font-family:var(--font-sans);color:var(--fg-muted);display:block;margin-bottom:3px">1. He aha ōu raraunga? — What data do platforms hold about you?</label>
+              <textarea id="aud-q1" rows="2" placeholder="Social media, health records, location data, language data…" style="width:100%;box-sizing:border-box;background:var(--bg);border:1px solid var(--border-bold);border-radius:6px;padding:8px 12px;font-family:var(--font-sans);font-size:.88rem;color:var(--fg);resize:vertical;outline:none"></textarea>
+            </div>
+            <div>
+              <label style="font-size:.78rem;font-family:var(--font-sans);color:var(--fg-muted);display:block;margin-bottom:3px">2. He aha ōu raraunga reo? — Where is your language / te reo data?</label>
+              <textarea id="aud-q2" rows="2" placeholder="Voice assistants, AI training sets, social media posts in te reo…" style="width:100%;box-sizing:border-box;background:var(--bg);border:1px solid var(--border-bold);border-radius:6px;padding:8px 12px;font-family:var(--font-sans);font-size:.88rem;color:var(--fg);resize:vertical;outline:none"></textarea>
+            </div>
+            <div>
+              <label style="font-size:.78rem;font-family:var(--font-sans);color:var(--fg-muted);display:block;margin-bottom:3px">3. Ko wai ngā kamupene e pupuri ana i ōu raraunga? — Who holds your data?</label>
+              <textarea id="aud-q3" rows="2" placeholder="Google, Meta, government agencies, health providers…" style="width:100%;box-sizing:border-box;background:var(--bg);border:1px solid var(--border-bold);border-radius:6px;padding:8px 12px;font-family:var(--font-sans);font-size:.88rem;color:var(--fg);resize:vertical;outline:none"></textarea>
+            </div>
+            <div>
+              <label style="font-size:.78rem;font-family:var(--font-sans);color:var(--fg-muted);display:block;margin-bottom:3px">4. He aha tāu AI e kai ana? — What AI systems train on your data without consent?</label>
+              <textarea id="aud-q4" rows="2" placeholder="Which AI companies may have used community data, images, language…" style="width:100%;box-sizing:border-box;background:var(--bg);border:1px solid var(--border-bold);border-radius:6px;padding:8px 12px;font-family:var(--font-sans);font-size:.88rem;color:var(--fg);resize:vertical;outline:none"></textarea>
+            </div>
+            <div>
+              <label style="font-size:.78rem;font-family:var(--font-sans);color:var(--fg-muted);display:block;margin-bottom:3px">5. He aha tōu mahere? — Your data sovereignty commitment (one action)</label>
+              <textarea id="aud-q5" rows="2" placeholder="e.g. Switch to a tikanga-governed platform, opt out of data sharing, support Te Mana Raraunga…" style="width:100%;box-sizing:border-box;background:var(--bg);border:1px solid var(--border-bold);border-radius:6px;padding:8px 12px;font-family:var(--font-sans);font-size:.88rem;color:var(--fg);resize:vertical;outline:none"></textarea>
+            </div>
+          </div>
+
+          <button onclick="downloadAuditPDF()" style="margin-top:1rem;padding:11px 24px;background:var(--accent);color:#fff;border:none;border-radius:999px;font-family:var(--font-sans);font-size:.88rem;font-weight:700;cursor:pointer;letter-spacing:.04em">↓ Download my audit PDF</button>
+          <p style="font-size:.72rem;color:var(--fg-muted);margin:.4rem 0 0;font-family:var(--font-sans)">All data stays in your browser — nothing is sent anywhere. The audit spreads rhizomatically — share printed copies.</p>
+        </div>
       </div>
 
       <!-- ── NIHO SEPARATOR ─────────────────────────────────────────────── -->
@@ -476,5 +516,142 @@
       btn.textContent = next === 'dark' ? 'Light' : 'Dark';
     });
   </script>
+
+  <!-- ── jsPDF — Data Sovereignty Audit export ──────────────────────── -->
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script>
+  function downloadAuditPDF() {
+    if (typeof window.jspdf === 'undefined') {
+      alert('PDF library not loaded yet — please wait a moment and try again.');
+      return;
+    }
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+    const RED = [192, 57, 43];
+    const BLACK = [17, 17, 17];
+    const GREY = [85, 85, 85];
+    const W = 210, M = 18;
+
+    function wrap(text, x, y, maxW, lineH) {
+      const lines = doc.splitTextToSize(text || '(blank)', maxW);
+      doc.text(lines, x, y);
+      return y + lines.length * lineH;
+    }
+
+    // ── Header ──
+    doc.setFillColor(...RED);
+    doc.rect(0, 0, W, 18, 'F');
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(13);
+    doc.setTextColor(255, 255, 255);
+    doc.text('Te Tuakiri Raraunga — Data Sovereignty Audit', M, 12);
+
+    doc.setFontSize(8);
+    doc.setFont('helvetica', 'normal');
+    doc.text('The Kiwi Dialectic  ·  kiwidialectic.com  ·  CC BY-NC-SA 4.0', M, 16.5);
+
+    // ── Title block ──
+    let y = 28;
+    doc.setTextColor(...BLACK);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(16);
+    doc.text('Ko wai koe?', M, y);
+    y += 6;
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(10);
+    doc.setTextColor(...GREY);
+    const name = document.getElementById('aud-name')?.value || '(not provided)';
+    doc.text(name, M, y);
+    y += 5;
+    doc.setFontSize(8);
+    doc.text('Date: ' + new Date().toLocaleDateString('en-NZ', { day: 'numeric', month: 'long', year: 'numeric' }), M, y);
+    y += 10;
+
+    // ── Red rule ──
+    doc.setDrawColor(...RED);
+    doc.setLineWidth(0.8);
+    doc.line(M, y, W - M, y);
+    y += 8;
+
+    const questions = [
+      { id: 'aud-q1', te_reo: '1. He aha ōu raraunga?', en: 'What data do platforms hold about you?' },
+      { id: 'aud-q2', te_reo: '2. He aha ōu raraunga reo?', en: 'Where is your language / te reo data?' },
+      { id: 'aud-q3', te_reo: '3. Ko wai ngā kamupene e pupuri ana i ōu raraunga?', en: 'Who holds your data?' },
+      { id: 'aud-q4', te_reo: '4. He aha tāu AI e kai ana?', en: 'What AI systems train on your data without consent?' },
+      { id: 'aud-q5', te_reo: '5. He aha tōu mahere?', en: 'Your data sovereignty commitment (one action)' },
+    ];
+
+    for (const q of questions) {
+      if (y > 260) { doc.addPage(); y = 20; }
+      // Question label
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(10);
+      doc.setTextColor(...RED);
+      y = wrap(q.te_reo, M, y, W - M*2, 5.5);
+      doc.setFont('helvetica', 'italic');
+      doc.setFontSize(8.5);
+      doc.setTextColor(...GREY);
+      y = wrap(q.en, M, y, W - M*2, 4.5);
+      y += 2;
+      // Answer
+      const answer = document.getElementById(q.id)?.value?.trim() || '(not answered)';
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(10);
+      doc.setTextColor(...BLACK);
+      y = wrap(answer, M, y, W - M*2, 5.5);
+      y += 5;
+      // divider
+      doc.setDrawColor(200, 200, 200);
+      doc.setLineWidth(0.3);
+      doc.line(M, y, W - M, y);
+      y += 7;
+    }
+
+    // ── CARE Principles reminder ──
+    if (y > 250) { doc.addPage(); y = 20; }
+    y += 4;
+    doc.setFillColor(240, 239, 233);
+    doc.rect(M, y, W - M*2, 38, 'F');
+    y += 6;
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(9);
+    doc.setTextColor(...RED);
+    doc.text('Te Mana Raraunga — Six Principles for Māori Data Sovereignty', M + 3, y);
+    y += 5;
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(8);
+    doc.setTextColor(...BLACK);
+    const principles = [
+      '1. Rangatiratanga — Authority and control over Māori data',
+      '2. Whakapapa — Context matters; data has genealogy',
+      '3. Whanaungatanga — Relationships and collective rights',
+      '4. Kaitiakitanga — Guardianship and stewardship of data',
+      '5. Manaakitanga — Ethics of care in how data is used',
+      '6. Kotahitanga — Collective sovereignty, not just individual',
+    ];
+    for (const p of principles) {
+      doc.text(p, M + 3, y);
+      y += 4.5;
+    }
+    y += 2;
+
+    // ── Footer ──
+    const pageCount = doc.internal.getNumberOfPages();
+    for (let i = 1; i <= pageCount; i++) {
+      doc.setPage(i);
+      doc.setFontSize(7);
+      doc.setTextColor(170, 170, 170);
+      doc.text(
+        'Te Tuakiri Raraunga · The Kiwi Dialectic · kiwidialectic.com · CC BY-NC-SA 4.0 · Share freely',
+        M, 292
+      );
+      doc.text(`${i} / ${pageCount}`, W - M, 292, { align: 'right' });
+    }
+
+    const safeName = (document.getElementById('aud-name')?.value || 'audit').replace(/[^a-z0-9]/gi, '-').slice(0,30) || 'audit';
+    doc.save(`te-tuakiri-raraunga-${safeName}.pdf`);
+  }
+  </script>
+
 </body>
 </html>
