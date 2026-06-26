@@ -508,6 +508,41 @@ function scoreMotifs(eventText, activeThemes) {
 /* ══════════════════════════════════════════════════════════════════════════
    STATE
 ══════════════════════════════════════════════════════════════════════════ */
+const memoryStore = {};
+const safeStore = {
+  get(key, fallback = null) {
+    try {
+      const v = localStorage.getItem(key);
+      return v === null ? fallback : v;
+    } catch (e) {
+      return Object.prototype.hasOwnProperty.call(memoryStore, key) ? memoryStore[key] : fallback;
+    }
+  },
+  set(key, value) {
+    try {
+      localStorage.setItem(key, value);
+    } catch (e) {
+      memoryStore[key] = value;
+    }
+  },
+  remove(key) {
+    try {
+      localStorage.removeItem(key);
+    } catch (e) {
+      delete memoryStore[key];
+    }
+  }
+};
+
+const MOTIF_SLUGS = {
+  koru: 'who_built_this',
+  pa: 'hold_your_pā',
+  niho: 'it_still_has_teeth',
+  kow: 'tikanga_first',
+  unaunahi: 'we_are_armour',
+  takarangi: 'we_are_the_future'
+};
+
 let currentResult = null;
 let currentPlatform = 'x';
 
@@ -720,15 +755,15 @@ function applyOverride(key) {
    HISTORY
 ══════════════════════════════════════════════════════════════════════════ */
 function saveHistory(eventText, motifKey, motifName) {
-  const history = JSON.parse(localStorage.getItem('kd-rhizome-history') || '[]');
+  const history = JSON.parse(safeStore.get('kd-rhizome-history', '[]'));
   history.unshift({ eventText: eventText.slice(0,120), motifKey, motifName, ts: Date.now() });
   history.splice(8); // keep last 8
-  localStorage.setItem('kd-rhizome-history', JSON.stringify(history));
+  safeStore.set('kd-rhizome-history', JSON.stringify(history));
   renderHistory();
 }
 
 function renderHistory() {
-  const history = JSON.parse(localStorage.getItem('kd-rhizome-history') || '[]');
+  const history = JSON.parse(safeStore.get('kd-rhizome-history', '[]'));
   const section = document.getElementById('historySection');
   const list = document.getElementById('historyList');
   if (!history.length) { section.style.display='none'; return; }
@@ -747,7 +782,7 @@ function renderHistory() {
 }
 
 function reloadHistory(i) {
-  const history = JSON.parse(localStorage.getItem('kd-rhizome-history') || '[]');
+  const history = JSON.parse(safeStore.get('kd-rhizome-history', '[]'));
   const h = history[i];
   if (!h) return;
   document.getElementById('eventInput').value = h.eventText;
@@ -755,7 +790,7 @@ function reloadHistory(i) {
 }
 
 function clearHistory() {
-  localStorage.removeItem('kd-rhizome-history');
+  safeStore.remove('kd-rhizome-history');
   renderHistory();
 }
 
@@ -771,14 +806,14 @@ document.querySelectorAll('.chip').forEach(chip => {
 ══════════════════════════════════════════════════════════════════════════ */
 const tBtn = document.getElementById('themeToggle');
 const html = document.documentElement;
-const saved = localStorage.getItem('kd-theme') || 'dark';
+const saved = safeStore.get('kd-theme', 'dark');
 html.setAttribute('data-theme', saved);
 tBtn.textContent = saved === 'dark' ? 'Light' : 'Dark';
 tBtn.addEventListener('click', () => {
   const cur = html.getAttribute('data-theme');
   const next = cur === 'dark' ? 'light' : 'dark';
   html.setAttribute('data-theme', next);
-  localStorage.setItem('kd-theme', next);
+  safeStore.set('kd-theme', next);
   tBtn.textContent = next === 'dark' ? 'Light' : 'Dark';
   // redraw D3 rhizome on theme change
   if (currentResult && typeof drawRhizomeD3 === 'function') {
@@ -805,10 +840,11 @@ renderHistory();
 <!-- ── PWA Service Worker ──────────────────────────────────────────── -->
 <script>
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/kiwi-dialectic-te-pa-minisite/sw.js')
+    navigator.serviceWorker.register('./sw.js')
       .then(r => console.log('[KD] SW registered:', r.scope))
       .catch(e => console.warn('[KD] SW registration failed:', e));
   }
 </script>
 </body>
 </html>
+
