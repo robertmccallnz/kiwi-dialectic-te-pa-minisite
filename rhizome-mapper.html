@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Rhizome Mapper — Indigenous Connections · The Kiwi Dialectic</title>
-  <meta name="description" content="An interactive force-directed map of indigenous sovereignty, land rights, data sovereignty and environmental justice movements across Oceania, South America, and Aotearoa."/>
+  <meta name="description" content="An interactive force-directed map of indigenous sovereignty, land rights, data sovereignty and environmental justice movements across Oceania, South America, Aotearoa, North America, Africa, Europe and globally."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
@@ -40,13 +40,22 @@
     .filter-chip.active { font-weight: 700; }
 
     /* region colours */
-    .chip-maori.active    { background: #2ecc71; border-color: #2ecc71; color: #fff; }
-    .chip-oceania.active  { background: #3498db; border-color: #3498db; color: #fff; }
-    .chip-sa.active       { background: #e67e22; border-color: #e67e22; color: #fff; }
-    .chip-all.active      { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .chip-maori.active       { background: #2ecc71; border-color: #2ecc71; color: #fff; }
+    .chip-oceania.active     { background: #3498db; border-color: #3498db; color: #fff; }
+    .chip-sa.active          { background: #e67e22; border-color: #e67e22; color: #fff; }
+    .chip-na.active          { background: #e74c3c; border-color: #e74c3c; color: #fff; }
+    .chip-global.active      { background: #9b59b6; border-color: #9b59b6; color: #fff; }
+    .chip-africa.active      { background: #f39c12; border-color: #f39c12; color: #fff; }
+    .chip-europe.active      { background: #1abc9c; border-color: #1abc9c; color: #fff; }
+    .chip-all.active         { background: var(--accent); border-color: var(--accent); color: #fff; }
 
     /* cause filter chips */
     .chip-cause.active    { background: #9b59b6; border-color: #9b59b6; color: #fff; }
+
+    /* lang chips */
+    .chip-lang-pt.active  { background: #27ae60; border-color: #27ae60; color: #fff; }
+    .chip-lang-gn.active  { background: #e67e22; border-color: #e67e22; color: #fff; }
+    .chip-lang-sm.active  { background: #00b4d8; border-color: #00b4d8; color: #fff; }
 
     /* lang badge */
     .lang-chip {
@@ -56,6 +65,7 @@
     }
     .lang-pt { background: #27ae60; color: #fff; }
     .lang-gn { background: #e67e22; color: #fff; }
+    .lang-sm { background: #00b4d8; color: #fff; }
 
     /* ── D3 canvas ── */
     #rhizomeViz {
@@ -105,6 +115,12 @@
       text-decoration: none; color: #fff; transition: opacity .15s;
     }
     .node-link:hover { opacity: .85; }
+    .campaign-chip {
+      display: inline-block; padding: 3px 11px; font-size: .72rem;
+      font-family: var(--font-sans); border-radius: 999px; font-weight: 700;
+      background: #c0392b22; color: #e74c3c; border: 1px solid #e74c3c55;
+      margin: 2px;
+    }
 
     /* ── stats bar ── */
     .stats-bar {
@@ -258,9 +274,120 @@
     .node-search:focus { outline: none; border-color: var(--accent); }
     .node-search::placeholder { color: var(--fg-muted); }
 
+    /* ── collapsible panels ── */
+    .collapsible-panel {
+      margin: 1.5rem 0;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .collapsible-panel summary {
+      list-style: none; cursor: pointer;
+      padding: 1rem 1.4rem;
+      background: var(--bg-raised);
+      display: flex; align-items: center; gap: .6rem;
+      font-family: var(--font-sans); font-size: .9rem; font-weight: 700;
+      user-select: none;
+    }
+    .collapsible-panel summary::-webkit-details-marker { display: none; }
+    .collapsible-panel summary::before {
+      content: '▸'; font-size: .75rem; transition: transform .2s; flex-shrink: 0;
+    }
+    .collapsible-panel[open] summary::before { transform: rotate(90deg); }
+    .collapsible-panel-body {
+      padding: 1.4rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── campaigns panel ── */
+    .campaigns-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: .8rem;
+    }
+    .campaign-card {
+      background: #0d0d0d;
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      padding: 1.1rem 1.2rem;
+    }
+    [data-theme="light"] .campaign-card {
+      background: #1a1a2e;
+      border-color: #2c2c4a;
+    }
+    .campaign-hashtag {
+      display: inline-block;
+      padding: 4px 13px; font-size: .82rem; font-family: var(--font-sans);
+      font-weight: 800; border-radius: 999px;
+      background: #e74c3c22; color: #e74c3c; border: 1.5px solid #e74c3c88;
+      margin-bottom: .5rem; cursor: pointer; text-decoration: none;
+      transition: background .15s;
+    }
+    .campaign-hashtag:hover { background: #e74c3c44; }
+    .campaign-none {
+      display: inline-block; padding: 4px 13px; font-size: .72rem;
+      font-family: var(--font-sans); border-radius: 999px;
+      background: #33333344; color: var(--fg-muted); border: 1px dashed var(--border-bold);
+      margin-bottom: .5rem;
+    }
+    .campaign-org { font-size: .72rem; font-family: var(--font-sans); color: var(--fg-muted); margin: 0 0 .4rem; }
+    .campaign-desc { font-size: .82rem; line-height: 1.55; color: var(--fg-muted); margin: 0 0 .6rem; }
+    .campaign-link { font-size: .78rem; font-family: var(--font-sans); color: var(--accent); text-decoration: none; }
+    .campaign-link:hover { text-decoration: underline; }
+
+    /* ── frameworks panel ── */
+    .frameworks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: .8rem;
+      margin-top: .8rem;
+    }
+    .framework-card {
+      background: var(--bg-raised); border: 1px solid var(--border);
+      border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0;
+      padding: 1rem 1.1rem;
+    }
+    .framework-name {
+      font-family: var(--font-sans); font-size: .85rem; font-weight: 700;
+      margin: 0 0 .3rem; color: var(--fg);
+    }
+    .framework-meta {
+      font-size: .7rem; font-family: var(--font-sans); color: var(--fg-muted);
+      letter-spacing: .06em; text-transform: uppercase; margin: 0 0 .4rem;
+    }
+    .framework-desc { font-size: .82rem; line-height: 1.55; color: var(--fg-muted); margin: 0; }
+
+    /* ── social media kit panel ── */
+    .smkit-section {
+      margin: 1.5rem 0;
+      background: var(--bg-raised); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.4rem 1.6rem;
+    }
+    .smkit-title {
+      font-family: var(--font-serif); font-size: 1.3rem; margin: 0 0 .6rem;
+    }
+    .smkit-hashtag-group { margin: .8rem 0; }
+    .smkit-region-label {
+      font-size: .68rem; letter-spacing: .12em; text-transform: uppercase;
+      font-weight: 700; font-family: var(--font-sans); color: var(--fg-muted);
+      margin: 0 0 .35rem;
+    }
+    .smkit-tags { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .smkit-tag {
+      display: inline-block; padding: 3px 11px; font-size: .78rem;
+      font-family: var(--font-sans); font-weight: 600;
+      border-radius: 999px; background: transparent;
+      border: 1px solid var(--border-bold); color: var(--fg-muted);
+      cursor: pointer; transition: all .15s;
+    }
+    .smkit-tag:hover { border-color: var(--accent); color: var(--accent); }
+
     @media (max-width: 640px) {
       .controls-bar { flex-direction: column; align-items: flex-start; }
       .node-search { width: 100%; }
+      .campaigns-grid { grid-template-columns: 1fr; }
+      .frameworks-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -281,6 +408,7 @@
         <button class="lang-btn active" onclick="setLang('en')" data-lang="en">EN</button>
         <button class="lang-btn" onclick="setLang('pt')" data-lang="pt">PT</button>
         <button class="lang-btn" onclick="setLang('gn')" data-lang="gn">GN</button>
+        <button class="lang-btn" onclick="setLang('sm')" data-lang="sm">SM</button>
       </div>
       <button class="theme-btn" id="themeToggle">Light</button>
     </div>
@@ -293,7 +421,7 @@
       Rhizome Mapper
     </h1>
     <p style="font-size:1rem;opacity:.65;margin:0 0 1.2rem" id="hdr-sub">
-      Two modes: <strong>Network</strong> — explore 36 real indigenous movements across Oceania, South America, and Aotearoa as a live force map. <strong>Event Mapper</strong> — paste a political event, get a Māori motif and a ready-to-post social caption.
+      Two modes: <strong>Network</strong> — explore 105+ real indigenous movements across Oceania, South America, Aotearoa, North America, Africa, Europe and globally as a live force map. <strong>Event Mapper</strong> — paste a political event, get a Māori motif and a ready-to-post social caption.
     </p>
 
     <!-- MODE TABS -->
@@ -315,6 +443,10 @@
       <button class="filter-chip chip-maori" onclick="filterRegion('maori',this)" data-i18n="maori">Māori · Aotearoa</button>
       <button class="filter-chip chip-oceania" onclick="filterRegion('oceania',this)" data-i18n="oceania">Oceania</button>
       <button class="filter-chip chip-sa" onclick="filterRegion('south_america',this)" data-i18n="south-america">South America</button>
+      <button class="filter-chip chip-na" onclick="filterRegion('north_america',this)" data-i18n="north-america">North America</button>
+      <button class="filter-chip chip-global" onclick="filterRegion('global',this)" data-i18n="global">Global</button>
+      <button class="filter-chip chip-africa" onclick="filterRegion('africa',this)" data-i18n="africa">Africa</button>
+      <button class="filter-chip chip-europe" onclick="filterRegion('europe',this)" data-i18n="europe">Europe</button>
 
       <span class="controls-label" style="margin-left:.4rem" data-i18n="ctrl-cause">Cause</span>
       <button class="filter-chip chip-cause" onclick="filterCause('land rights',this)" data-i18n="land-rights">Land</button>
@@ -323,15 +455,21 @@
       <button class="filter-chip chip-cause" onclick="filterCause('language revival',this)" data-i18n="language">Language</button>
       <button class="filter-chip chip-cause" onclick="filterCause('environmental justice',this)" data-i18n="environment">Environment</button>
 
+      <span class="controls-label" style="margin-left:.4rem">Lang</span>
+      <button class="filter-chip chip-lang-pt" onclick="filterLang('pt',this)">PT</button>
+      <button class="filter-chip chip-lang-gn" onclick="filterLang('gn',this)">GN</button>
+      <button class="filter-chip chip-lang-sm" onclick="filterLang('sm',this)">SM</button>
+
       <input type="search" class="node-search" id="nodeSearch" placeholder="Search orgs…" oninput="searchNodes(this.value)" data-i18n-placeholder="search-placeholder"/>
     </div>
 
     <!-- STATS -->
     <div class="stats-bar" id="statsBar">
-      <span><strong id="statVisible">36</strong> <span data-i18n="stat-orgs">organisations</span></span>
-      <span><strong>3</strong> <span data-i18n="stat-regions">regions</span></span>
-      <span><strong id="statPt">8</strong> <span data-i18n="stat-pt">with Portuguese resources</span></span>
-      <span><strong id="statGn">4</strong> <span data-i18n="stat-gn">with Guaraní resources</span></span>
+      <span class="stat-item"><strong id="statVisible">105</strong> <span data-i18n="stat-orgs">organisations</span></span>
+      <span class="stat-item"><strong>7</strong> <span data-i18n="stat-regions">regions</span></span>
+      <span class="stat-item"><strong id="statPt">8</strong> <span data-i18n="stat-pt">with Portuguese resources</span></span>
+      <span class="stat-item"><strong id="statGn">4</strong> <span data-i18n="stat-gn">with Guaraní resources</span></span>
+      <span class="stat-item"><strong id="statSm">15</strong> <span>with Samoan resources</span></span>
     </div>
 
     <!-- LEGEND -->
@@ -339,6 +477,10 @@
       <div class="legend-item"><div class="legend-dot" style="background:#2ecc71"></div> <span data-i18n="leg-maori">Māori / Aotearoa</span></div>
       <div class="legend-item"><div class="legend-dot" style="background:#3498db"></div> <span data-i18n="leg-oceania">Oceania / Te Moana-nui-a-Kiwa</span></div>
       <div class="legend-item"><div class="legend-dot" style="background:#e67e22"></div> <span data-i18n="leg-sa">South America / Amazonia</span></div>
+      <div class="legend-item"><div class="legend-dot" style="background:#e74c3c"></div> <span>North America</span></div>
+      <div class="legend-item"><div class="legend-dot" style="background:#9b59b6"></div> <span>Global</span></div>
+      <div class="legend-item"><div class="legend-dot" style="background:#f39c12"></div> <span>Africa</span></div>
+      <div class="legend-item"><div class="legend-dot" style="background:#1abc9c"></div> <span>Europe / Sápmi</span></div>
       <div class="legend-item" style="margin-left:.5rem"><div class="legend-line" style="background:#aaa;opacity:.4"></div> <span data-i18n="leg-link">Shared cause connection</span></div>
       <div class="legend-item"><span style="font-size:.75rem;font-family:var(--font-sans);color:var(--fg-muted)" data-i18n="leg-drag">Drag · scroll to zoom · click node for detail</span></div>
     </div>
@@ -356,6 +498,119 @@
     <!-- NODE DETAIL PANEL -->
     <div id="nodePanel">
       <div id="nodePanelContent"></div>
+    </div>
+
+    <!-- CAMPAIGNS PANEL -->
+    <details class="collapsible-panel" id="campaignsPanel">
+      <summary>🌐 Global Resistance Campaigns</summary>
+      <div class="collapsible-panel-body">
+        <p style="font-size:.85rem;color:var(--fg-muted);margin:0 0 1rem;line-height:1.6">
+          Active campaigns connecting indigenous data sovereignty, land rights, and resistance to digital colonialism — from Standing Rock to Pacific data governance.
+        </p>
+        <div class="campaigns-grid" id="campaignsGrid"></div>
+      </div>
+    </details>
+
+    <!-- FRAMEWORKS PANEL -->
+    <details class="collapsible-panel" id="frameworksPanel">
+      <summary>📋 Key Frameworks &amp; Principles</summary>
+      <div class="collapsible-panel-body">
+        <p style="font-size:.85rem;color:var(--fg-muted);margin:0 0 1rem;line-height:1.6">
+          The legal and ethical frameworks underpinning indigenous data sovereignty and AI rights globally.
+        </p>
+        <div class="frameworks-grid">
+          <div class="framework-card">
+            <p class="framework-name">UNDRIP</p>
+            <p class="framework-meta">UN · 2007</p>
+            <p class="framework-desc">UN Declaration on the Rights of Indigenous Peoples. Articles 3, 18, 19, 31, and 32 directly protect indigenous data and AI rights — including self-determination, participation in decisions affecting them, FPIC, and the right to maintain and control their cultural heritage and traditional knowledge.</p>
+          </div>
+          <div class="framework-card" style="border-left-color:#9b59b6">
+            <p class="framework-name">CARE Principles</p>
+            <p class="framework-meta">GIDA · 2019</p>
+            <p class="framework-desc">Collective Benefit, Authority to Control, Responsibility, Ethics. Developed by the Global Indigenous Data Alliance as a complement to FAIR data principles — ensuring indigenous data governance is people- and purpose-oriented.</p>
+          </div>
+          <div class="framework-card" style="border-left-color:#e74c3c">
+            <p class="framework-name">OCAP® Principles</p>
+            <p class="framework-meta">FNIGC · Canada · 1998</p>
+            <p class="framework-desc">Ownership, Control, Access, Possession. Developed by the First Nations Information Governance Centre; the foundational framework for First Nations data sovereignty in Canada. Registered trademark of the Assembly of First Nations.</p>
+          </div>
+          <div class="framework-card" style="border-left-color:#2ecc71">
+            <p class="framework-name">Te Mana Raraunga Charter</p>
+            <p class="framework-meta">Aotearoa NZ · 2016</p>
+            <p class="framework-desc">Six principles for Māori data sovereignty: Rangatiratanga (authority), Whakapapa (relationships), Whanaungatanga (obligations), Kotahitanga (collective benefit), Manaakitanga (reciprocity), Kaitiakitanga (guardianship). First charter of its kind in Aotearoa.</p>
+          </div>
+          <div class="framework-card" style="border-left-color:#3498db">
+            <p class="framework-name">Local Contexts TK Labels</p>
+            <p class="framework-meta">Local Contexts · Global · 2010</p>
+            <p class="framework-desc">Traditional Knowledge (TK) and Biocultural (BC) Labels for digital assets. Community-generated labels that provide indigenous communities with a mechanism to communicate cultural protocols for use of traditional knowledge and data in digital environments.</p>
+          </div>
+          <div class="framework-card" style="border-left-color:#f39c12">
+            <p class="framework-name">UNDRIP Article 31</p>
+            <p class="framework-meta">UN · 2007 · Specific Right</p>
+            <p class="framework-desc">Indigenous peoples have the right to maintain, protect and develop their cultural heritage, traditional knowledge and traditional cultural expressions — including human and genetic resources, seeds, medicines, knowledge of flora and fauna, oral traditions, literatures, designs, sports and traditional games, and visual and performing arts.</p>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <!-- SOCIAL MEDIA KIT SECTION -->
+    <div class="smkit-section" id="smkitSection">
+      <p class="section-tag2">Ngā rauemi pāpāho — Social media toolkit</p>
+      <h2 class="smkit-title">How to Use This Map</h2>
+      <p style="font-size:.87rem;color:var(--fg-muted);line-height:1.65;margin:0 0 1rem">
+        Share the mapper link to spread awareness of the global indigenous sovereignty network.
+        Use the ready-made hashtag sets below for each region, or copy the link to a specific org's page.
+        The full social media kit (posters, motif cards, sticker sheets) is available at
+        <a href="index.html" style="color:var(--accent)">index.html</a>.
+      </p>
+
+      <div class="smkit-hashtag-group">
+        <p class="smkit-region-label" style="color:#2ecc71">Māori · Aotearoa</p>
+        <div class="smkit-tags">
+          <span class="smkit-tag" style="border-color:#2ecc7155;color:#2ecc71">#TinoRangatiratanga</span>
+          <span class="smkit-tag" style="border-color:#2ecc7155;color:#2ecc71">#MāoriDataSovereignty</span>
+          <span class="smkit-tag" style="border-color:#2ecc7155;color:#2ecc71">#KiwiDialectic</span>
+          <span class="smkit-tag" style="border-color:#2ecc7155;color:#2ecc71">#WaiMāori</span>
+          <span class="smkit-tag" style="border-color:#2ecc7155;color:#2ecc71">#TeReoMāori</span>
+        </div>
+      </div>
+
+      <div class="smkit-hashtag-group">
+        <p class="smkit-region-label" style="color:#3498db">Pacific / Pasefika / Gagana Sāmoa</p>
+        <div class="smkit-tags">
+          <span class="smkit-tag" style="border-color:#3498db55;color:#3498db">#PuleOFaʻamaumauga</span>
+          <span class="smkit-tag" style="border-color:#3498db55;color:#3498db">#PasifikaProud</span>
+          <span class="smkit-tag" style="border-color:#3498db55;color:#3498db">#GaganaFaaola</span>
+          <span class="smkit-tag" style="border-color:#3498db55;color:#3498db">#OceaniaRising</span>
+          <span class="smkit-tag" style="border-color:#3498db55;color:#3498db">#PacificDataSovereignty</span>
+        </div>
+      </div>
+
+      <div class="smkit-hashtag-group">
+        <p class="smkit-region-label" style="color:#e67e22">South America / Amazônia</p>
+        <div class="smkit-tags">
+          <span class="smkit-tag" style="border-color:#e67e2255;color:#e67e22">#SoberaníaIndígena</span>
+          <span class="smkit-tag" style="border-color:#e67e2255;color:#e67e22">#DatosIndígenas</span>
+          <span class="smkit-tag" style="border-color:#e67e2255;color:#e67e22">#Amazônia</span>
+          <span class="smkit-tag" style="border-color:#e67e2255;color:#e67e22">#APIB</span>
+          <span class="smkit-tag" style="border-color:#e67e2255;color:#e67e22">#TerrasIndígenas</span>
+        </div>
+      </div>
+
+      <div class="smkit-hashtag-group">
+        <p class="smkit-region-label" style="color:#9b59b6">Global</p>
+        <div class="smkit-tags">
+          <span class="smkit-tag" style="border-color:#9b59b655;color:#9b59b6">#IndigenousDataSovereignty</span>
+          <span class="smkit-tag" style="border-color:#9b59b655;color:#9b59b6">#UNDRIP</span>
+          <span class="smkit-tag" style="border-color:#9b59b655;color:#9b59b6">#CARE</span>
+          <span class="smkit-tag" style="border-color:#9b59b655;color:#9b59b6">#StopDataColonialism</span>
+          <span class="smkit-tag" style="border-color:#9b59b655;color:#9b59b6">#LANDBACK</span>
+        </div>
+      </div>
+
+      <p style="font-size:.78rem;color:var(--fg-muted);margin:.8rem 0 0;font-family:var(--font-sans)">
+        Click any node in the map above to see its detail panel, then use the link to share that organisation's page directly.
+      </p>
     </div>
 
   </div><!-- /network-section -->
@@ -479,7 +734,7 @@
 
 <script>
 /* ══════════════════════════════════════════════════════════════════════════
-   i18n — English / Portuguese / Guaraní
+   i18n — English / Portuguese / Guaraní / Samoan
 ══════════════════════════════════════════════════════════════════════════ */
 const STRINGS = {
   en: {
@@ -490,6 +745,10 @@ const STRINGS = {
     'maori': 'Māori · Aotearoa',
     'oceania': 'Oceania',
     'south-america': 'South America',
+    'north-america': 'North America',
+    'global': 'Global',
+    'africa': 'Africa',
+    'europe': 'Europe',
     'ctrl-cause': 'Cause',
     'land-rights': 'Land',
     'sovereignty': 'Sovereignty',
@@ -521,6 +780,10 @@ const STRINGS = {
     'maori': 'Māori · Aotearoa',
     'oceania': 'Oceania',
     'south-america': 'América do Sul',
+    'north-america': 'América do Norte',
+    'global': 'Global',
+    'africa': 'África',
+    'europe': 'Europa',
     'ctrl-cause': 'Causa',
     'land-rights': 'Terra',
     'sovereignty': 'Soberania',
@@ -552,6 +815,10 @@ const STRINGS = {
     'maori': 'Māori · Aotearoa',
     'oceania': 'Oceania',
     'south-america': 'Ñemby Amérika',
+    'north-america': 'Ñorãi Amérika',
+    'global': 'Opaite Yvy',
+    'africa': 'Áfrika',
+    'europe': 'Europa',
     'ctrl-cause': 'Mba\'erehegua',
     'land-rights': 'Yvy',
     'sovereignty': 'Teko Joaju',
@@ -574,6 +841,41 @@ const STRINGS = {
     'ev-step4': 'Eguereko post X, Instagram, Facebook térã TikTok-pe.',
     'ev-label': 'Mba\'e oiko?',
     'ev-themes': 'Mba\'erehegua nde rohayhu',
+  },
+  sm: {
+    'tab-network': '⬡ Faʻafanua o le Fesoʻotaʻiga',
+    'tab-event': '→ Faʻafanua o Mea Tutupu',
+    'ctrl-region': 'Itūlagi',
+    'all': 'Uma',
+    'maori': 'Māori · Aotearoa',
+    'oceania': 'Oceania / Pasefika',
+    'south-america': 'Amerika i Saute',
+    'north-america': 'Amerika i Matu',
+    'global': 'O le Lalolagi',
+    'africa': 'Aferika',
+    'europe': 'Europa',
+    'ctrl-cause': 'Mafuaʻaga',
+    'land-rights': 'Fanua',
+    'sovereignty': 'Pule faʻaola',
+    'data-sov': 'Faʻamaumauga / AI',
+    'language': 'Gagana',
+    'environment': 'Siosiomaga',
+    'search-placeholder': 'Saili faalapotopotoga…',
+    'stat-orgs': 'faalapotopotoga',
+    'stat-regions': 'itūlagi',
+    'stat-pt': 'ma punaoa Potukale',
+    'stat-gn': 'ma punaoa Guaraní',
+    'leg-maori': 'Māori / Aotearoa',
+    'leg-oceania': 'Oceania / Te Moana-nui-a-Kiwa',
+    'leg-sa': 'Amerika i Saute / Amazonia',
+    'leg-link': 'Fesootaiga faavae',
+    'leg-drag': 'Toso · faʻaoloa e zoom · kiliki le node mo faʻamatalaga',
+    'ev-step1': 'Faʻamatala se mea tutupu faapolokiki.',
+    'ev-step2': 'Faʻailoa atu uiga — pule, tango, tetee, galue faʻatasi.',
+    'ev-step3': 'Suʻe le faʻailoga Māori e talafeagai.',
+    'ev-step4': 'Mauaina se pasi mo X, Instagram, Facebook, poʻo TikTok.',
+    'ev-label': 'O le a le mea tutupu?',
+    'ev-themes': 'Uiga o loʻo e vaʻaia',
   }
 };
 
@@ -587,174 +889,473 @@ function setLang(lang) {
   // update all i18n elements
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
-    if (STRINGS[lang][key]) el.textContent = STRINGS[lang][key];
+    if (STRINGS[lang] && STRINGS[lang][key]) el.textContent = STRINGS[lang][key];
   });
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const key = el.dataset.i18nPlaceholder;
-    if (STRINGS[lang][key]) el.placeholder = STRINGS[lang][key];
+    if (STRINGS[lang] && STRINGS[lang][key]) el.placeholder = STRINGS[lang][key];
   });
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
-   NODE DATA — 36 indigenous organisations
+   NODE DATA — 105+ indigenous organisations
+   Original 36 + new organisations appended
 ══════════════════════════════════════════════════════════════════════════ */
 const NODES_DATA = [
   // ── MĀORI ──────────────────────────────────────────────────────────────
   { id:"te-mana-raraunga", name:"Te Mana Raraunga", region:"maori", country:"NZ",
     cause:["data sovereignty","AI ethics"],
     description:"The Māori Data Sovereignty Network advocates for Māori rights in data governance, algorithmic systems, and digital infrastructure.",
-    url:"https://www.temanararaunga.maori.nz", lang_pt:false, lang_gn:false },
+    url:"https://www.temanararaunga.maori.nz", lang_pt:false, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"te-kahui-raraunga", name:"Te Kāhui Raraunga", region:"maori", country:"NZ",
     cause:["data sovereignty","AI ethics"],
     description:"An independent Māori-led trust established in 2019 to lead action on Māori data governance and co-designing AI governance across the NZ public service.",
-    url:"https://www.kahuiraraunga.io", lang_pt:false, lang_gn:false },
+    url:"https://www.kahuiraraunga.io", lang_pt:false, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"maori-ai-advisory", name:"Te Kāhui Māori Atamai Iahiko", region:"maori", country:"NZ",
     cause:["AI ethics","data sovereignty"],
     description:"A Māori advisory panel within the AI Forum NZ embedding Te Ao Māori values in national AI governance, chaired by Dr Karaitiana Taiuru.",
-    url:"https://aiforum.org.nz/kahui-maori-atamai-iahiko-maori-artificial-intelligence-advisory-panel/", lang_pt:false, lang_gn:false },
+    url:"https://aiforum.org.nz/kahui-maori-atamai-iahiko-maori-artificial-intelligence-advisory-panel/", lang_pt:false, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"te-kohanga-reo", name:"Te Kōhanga Reo National Trust", region:"maori", country:"NZ",
     cause:["language revival","cultural preservation"],
     description:"Oversees the Kōhanga Reo movement — total-immersion Māori language early childhood centres central to the revitalisation of te reo Māori since 1982.",
-    url:"https://www.kohanga.ac.nz", lang_pt:false, lang_gn:false },
+    url:"https://www.kohanga.ac.nz", lang_pt:false, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"te-kura", name:"Te Aho o Te Kura Pounamu", region:"maori", country:"NZ",
     cause:["language revival","cultural preservation"],
     description:"NZ's largest school, providing Māori-medium distance education from early childhood to secondary level and free te reo Māori courses nationwide.",
-    url:"https://www.tekura.school.nz", lang_pt:false, lang_gn:false },
+    url:"https://www.tekura.school.nz", lang_pt:false, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"te-pati-maori", name:"Te Pāti Māori", region:"maori", country:"NZ",
     cause:["political sovereignty","land rights"],
     description:"The Māori Party advocates for tino rangatiratanga — Māori self-determination, mana motuhake, and constitutional recognition of Māori as the indigenous people.",
-    url:"https://www.maoriparty.org.nz", lang_pt:false, lang_gn:false },
+    url:"https://www.maoriparty.org.nz", lang_pt:false, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"soul-ihumatao", name:"SOUL – Save Our Unique Landscape", region:"maori", country:"NZ",
     cause:["land rights","cultural preservation"],
     description:"A grassroots Māori-led group that mounted a sustained occupation (2016–2020) protecting the wāhi tapu landscape of Ihumātao from housing development.",
-    url:"https://protectihumatao.com", lang_pt:false, lang_gn:false },
+    url:"https://protectihumatao.com", lang_pt:false, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"waitangi-tribunal", name:"Waitangi Tribunal", region:"maori", country:"NZ",
     cause:["land rights","political sovereignty"],
     description:"NZ's permanent commission of inquiry investigating Crown breaches of te Tiriti o Waitangi — covering land, resources, and constitutional rights.",
-    url:"https://www.waitangitribunal.govt.nz", lang_pt:false, lang_gn:false },
+    url:"https://www.waitangitribunal.govt.nz", lang_pt:false, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"tino-rangatiratanga", name:"Tino Rangatiratanga Movement", region:"maori", country:"NZ",
     cause:["political sovereignty","land rights"],
     description:"A broad Māori sovereignty movement articulating the right to absolute chieftainship guaranteed under Te Tiriti, expressed through the 1989 flag and multiple hapū organisations.",
-    url:"https://wai262.nz", lang_pt:false, lang_gn:false },
+    url:"https://wai262.nz", lang_pt:false, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"te-wai-maori", name:"Te Wai Māori Trust", region:"maori", country:"NZ",
     cause:["land rights","environmental justice"],
     description:"Advocates for Māori rights and interests in freshwater, advancing Te Mana o te Wai and representing iwi in water policy and Treaty claims.",
-    url:"https://waimaori.maori.nz", lang_pt:false, lang_gn:false },
+    url:"https://waimaori.maori.nz", lang_pt:false, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"wai-262", name:"Wai 262 Taumata Whakapūmau", region:"maori", country:"NZ",
     cause:["cultural preservation","data sovereignty"],
     description:"The claimant collective for the landmark Wai 262 Treaty claim on the protection of mātauranga Māori, taonga species, and intellectual property rights.",
-    url:"https://www.wai262.nz", lang_pt:false, lang_gn:false },
+    url:"https://www.wai262.nz", lang_pt:false, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"ngai-tahu", name:"Te Rūnanga o Ngāi Tahu", region:"maori", country:"NZ",
     cause:["land rights","cultural preservation","political sovereignty"],
     description:"The principal South Island iwi authority managing Treaty settlement assets and pursuing tribal sovereignty over lands, fisheries, and cultural resources across Te Wai Pounamu.",
-    url:"https://ngaitahu.iwi.nz", lang_pt:false, lang_gn:false },
+    url:"https://ngaitahu.iwi.nz", lang_pt:false, lang_gn:false, lang_sm:false, campaigns:"" },
 
   // ── OCEANIA ─────────────────────────────────────────────────────────────
   { id:"ulmwp", name:"ULMWP – United Liberation Movement for West Papua", region:"oceania", country:"PG",
     cause:["political sovereignty","land rights"],
     description:"The primary international umbrella body representing West Papuan independence movements, seeking a UN-supervised referendum on self-determination.",
-    url:"https://www.ulmwp.org", lang_pt:false, lang_gn:false },
+    url:"https://www.ulmwp.org", lang_pt:false, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"knpb", name:"Komite Nasional Papua Barat (KNPB)", region:"oceania", country:"PG",
     cause:["political sovereignty"],
     description:"A non-violent mass organisation inside West Papua that campaigns for a UN-supervised referendum on independence and documents human rights violations.",
-    url:"https://westpapuamedia.info", lang_pt:false, lang_gn:false },
-  { id:"flnks", name:"FLNKS – Kanak and Socialist National Liberation Front", region:"oceania", country:"NC",
+    url:"https://westpapuamedia.info", lang_pt:false, lang_gn:false, lang_sm:false, campaigns:"" },
+  { id:"flnks-orig", name:"FLNKS – Kanak and Socialist National Liberation Front", region:"oceania", country:"NC",
     cause:["political sovereignty","land rights"],
     description:"A coalition of pro-independence parties in Kanaky/New Caledonia founded in 1984, leading the Kanak indigenous struggle against French colonial rule.",
-    url:"https://flnks.com", lang_pt:false, lang_gn:false },
-  { id:"350-pacific", name:"350 Pacific / Pacific Climate Warriors", region:"oceania", country:"FJ",
+    url:"https://flnks.com", lang_pt:false, lang_gn:false, lang_sm:false, campaigns:"" },
+  { id:"350-pacific-orig", name:"350 Pacific / Pacific Climate Warriors", region:"oceania", country:"FJ",
     cause:["environmental justice","political sovereignty"],
     description:"A Pacific-led climate justice movement across 15+ island nations centring indigenous frontline voices and framing climate change as an existential threat to Pacific sovereignty.",
-    url:"https://350pacific.org", lang_pt:false, lang_gn:false },
+    url:"https://350pacific.org", lang_pt:false, lang_gn:false, lang_sm:true, campaigns:"" },
   { id:"oha", name:"Office of Hawaiian Affairs (OHA)", region:"oceania", country:"US",
     cause:["political sovereignty","cultural preservation","land rights"],
     description:"A semi-autonomous state agency in Hawaiʻi established in 1978 to advance the education, health, and wellbeing of Kānaka Maoli, managing $600M+ in assets in trust.",
-    url:"https://www.oha.org", lang_pt:false, lang_gn:false },
+    url:"https://www.oha.org", lang_pt:false, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"ka-lahui-hawaii", name:"Ka Lāhui Hawaiʻi", region:"oceania", country:"US",
     cause:["political sovereignty"],
     description:"A Native Hawaiian self-governance initiative founded in 1987, operating as an indigenous nation-within-a-nation with its own constitution and advocating for Hawaiian nationhood.",
-    url:"https://kalahuihawaii.com", lang_pt:false, lang_gn:false },
+    url:"https://kalahuihawaii.com", lang_pt:false, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"kahaa", name:"Ka ʻAhahui Hawaiʻi Aloha ʻĀina", region:"oceania", country:"US",
     cause:["political sovereignty","land rights"],
     description:"The Hawaiian Patriotic League, reconstituted in 2016 from its 1893 original, affirms Hawaiian independence and campaigns against US military land leases.",
-    url:"http://www.kahaa.org", lang_pt:false, lang_gn:false },
+    url:"http://www.kahaa.org", lang_pt:false, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"melanesian-spearhead-group", name:"Melanesian Spearhead Group (MSG)", region:"oceania", country:"VU",
     cause:["political sovereignty","cultural preservation"],
     description:"A regional intergovernmental organisation comprising Vanuatu, Solomon Islands, Fiji, PNG, and FLNKS, promoting Melanesian indigenous culture and regional self-determination.",
-    url:"https://msgsec.info", lang_pt:false, lang_gn:false },
+    url:"https://msgsec.info", lang_pt:false, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"tuvalu-sovereignty", name:"Tuvalu Climate Sovereignty Initiative", region:"oceania", country:"TV",
     cause:["political sovereignty","environmental justice"],
     description:"Tuvalu's government has led landmark legal and diplomatic efforts — including a constitutional amendment declaring perpetual statehood — to preserve indigenous sovereignty amid sea-level rise.",
-    url:"https://tuvaluislands.com", lang_pt:false, lang_gn:false },
+    url:"https://tuvaluislands.com", lang_pt:false, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"fiji-indigenous-peoples-foundation", name:"Fiji Indigenous Peoples Foundation", region:"oceania", country:"FJ",
     cause:["land rights","cultural preservation"],
     description:"An organisation working to protect and advance the rights, land tenure, and cultural heritage of indigenous iTaukei Fijian peoples.",
-    url:"https://fijiindigenouspeoplesfoundation.org", lang_pt:false, lang_gn:false },
+    url:"https://fijiindigenouspeoplesfoundation.org", lang_pt:false, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"pacific-concerns-resource-centre", name:"Pacific Concerns Resource Centre (PCRC)", region:"oceania", country:"FJ",
     cause:["political sovereignty","environmental justice"],
     description:"A Suva-based NGO serving since 1980 as the secretariat of the Nuclear Free and Independent Pacific movement, advocating for demilitarisation and decolonisation.",
-    url:"https://www.pcrc.org.fj", lang_pt:false, lang_gn:false },
+    url:"https://www.pcrc.org.fj", lang_pt:false, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"west-papua-parliament", name:"National Parliament of West Papua", region:"oceania", country:"PG",
     cause:["political sovereignty"],
     description:"An exile/shadow parliamentary body claiming to represent the West Papuan people's right to self-determination, coordinating international independence advocacy.",
-    url:"http://www.westpapuaparliament.org", lang_pt:false, lang_gn:false },
+    url:"http://www.westpapuaparliament.org", lang_pt:false, lang_gn:false, lang_sm:false, campaigns:"" },
 
   // ── SOUTH AMERICA ───────────────────────────────────────────────────────
   { id:"apib", name:"APIB – Articulação dos Povos Indígenas do Brasil", region:"south_america", country:"BR",
     cause:["land rights","political sovereignty","environmental justice"],
     description:"Brazil's largest national indigenous peoples' movement, created in 2005 to unify regional organisations defending indigenous territorial rights and political representation.",
-    url:"https://apiboficial.org", lang_pt:true, lang_gn:false },
+    url:"https://apiboficial.org", lang_pt:true, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"coiab", name:"COIAB – Coordenação das Organizações Indígenas da Amazônia Brasileira", region:"south_america", country:"BR",
     cause:["land rights","environmental justice","political sovereignty"],
     description:"Founded in 1989, the principal coordinating body for indigenous organisations across the Brazilian Amazon, representing peoples from nine Amazonian countries.",
-    url:"https://coiab.org.br", lang_pt:true, lang_gn:false },
+    url:"https://coiab.org.br", lang_pt:true, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"coica", name:"COICA – Coordinadora de las Organizaciones Indígenas de la Cuenca Amazónica", region:"south_america", country:"EC",
     cause:["land rights","environmental justice","political sovereignty"],
     description:"The international umbrella organisation representing 511 indigenous peoples across nine Amazonian countries, coordinating action on territorial rights, climate, and FPIC.",
-    url:"https://coicamazonia.org", lang_pt:true, lang_gn:false },
+    url:"https://coicamazonia.org", lang_pt:true, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"funai", name:"FUNAI – Fundação Nacional dos Povos Indígenas", region:"south_america", country:"BR",
     cause:["land rights","cultural preservation"],
     description:"Brazil's federal indigenous affairs agency, responsible for demarcating and protecting indigenous lands and monitoring uncontacted peoples.",
-    url:"https://www.gov.br/funai/pt-br", lang_pt:true, lang_gn:false },
+    url:"https://www.gov.br/funai/pt-br", lang_pt:true, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"amazon-watch", name:"Amazon Watch", region:"south_america", country:"BR",
     cause:["land rights","environmental justice"],
     description:"An international NGO founded in 1996 partnering with Amazonian indigenous peoples to defend their territories from oil, gas, mining, and agribusiness incursions.",
-    url:"https://amazonwatch.org", lang_pt:true, lang_gn:false },
+    url:"https://amazonwatch.org", lang_pt:true, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"cir", name:"CIR – Conselho Indígena de Roraima", region:"south_america", country:"BR",
     cause:["land rights","political sovereignty"],
     description:"Founded in 1977, representing Macuxi, Wapichana, Ingarikó, and other Roraima peoples in defence of their demarcated territories, especially Raposa Serra do Sol.",
-    url:"https://www.cir.org.br", lang_pt:true, lang_gn:false },
+    url:"https://www.cir.org.br", lang_pt:true, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"survival-international-brazil", name:"Survival International – Brazil", region:"south_america", country:"BR",
     cause:["land rights","cultural preservation"],
     description:"Runs dedicated campaigns for Brazilian peoples including uncontacted Kawahiva and Yanomami, mobilising international pressure to enforce territorial protection.",
-    url:"https://www.survivalinternational.org/peoples/brazilian", lang_pt:true, lang_gn:false },
+    url:"https://www.survivalinternational.org/peoples/brazilian", lang_pt:true, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"mst", name:"MST – Movimento dos Trabalhadores Rurais Sem Terra", region:"south_america", country:"BR",
     cause:["land rights","environmental justice"],
     description:"Brazil's Landless Workers' Movement, one of Latin America's largest social movements, campaigns for agrarian reform and redistribution of land to rural workers and indigenous communities.",
-    url:"https://mst.org.br", lang_pt:true, lang_gn:false },
+    url:"https://mst.org.br", lang_pt:true, lang_gn:false, lang_sm:false, campaigns:"" },
   { id:"fapi", name:"FAPI – Federación por la Autodeterminación de los Pueblos Indígenas", region:"south_america", country:"PY",
     cause:["political sovereignty","land rights"],
     description:"Paraguay's leading autonomous indigenous federation, representing 13 organisations advocating for collective rights, land titling, and self-determination for Guaraní and other peoples.",
-    url:"https://fapi.org.py", lang_pt:false, lang_gn:true },
+    url:"https://fapi.org.py", lang_pt:false, lang_gn:true, lang_sm:false, campaigns:"" },
   { id:"indi", name:"INDI – Instituto Paraguayo del Indígena", region:"south_america", country:"PY",
     cause:["land rights","cultural preservation"],
     description:"Paraguay's government body responsible for formulating indigenous policy, protecting land rights, and coordinating with Guaraní communities on language preservation.",
-    url:"https://indi.gov.py", lang_pt:false, lang_gn:true },
+    url:"https://indi.gov.py", lang_pt:false, lang_gn:true, lang_sm:false, campaigns:"" },
   { id:"guarani-vikipeta", name:"Vikipetã – Guaraní Wikipedia", region:"south_america", country:"PY",
     cause:["language revival","cultural preservation"],
     description:"The Guaraní-language Wikipedia (est. 2007, 15,000+ entries) — the cornerstone of bringing Guaraní into the digital sphere alongside the Aguaratata Firefox localisation.",
-    url:"https://gn.wikipedia.org", lang_pt:false, lang_gn:true },
+    url:"https://gn.wikipedia.org", lang_pt:false, lang_gn:true, lang_sm:false, campaigns:"" },
   { id:"portal-guarani", name:"Portal Guaraní", region:"south_america", country:"PY",
     cause:["cultural preservation","language revival"],
     description:"Paraguay's leading digital cultural archive preserving Guaraní art, literature, history, and language resources, making indigenous cultural heritage accessible online.",
-    url:"https://www.portalguarani.com", lang_pt:false, lang_gn:true },
+    url:"https://www.portalguarani.com", lang_pt:false, lang_gn:true, lang_sm:false, campaigns:"" },
+
+  // ── NEW ORGANISATIONS (appended from new_orgs_js.txt) ──────────────────
+
+  // GLOBAL
+  { id:"gida", name:"Global Indigenous Data Alliance (GIDA)", region:"global", country:"INT",
+    cause:["data sovereignty", "political sovereignty"],
+    description:"An international network of Indigenous researchers, data practitioners, and policy activists advocating for Indigenous Data Sovereignty within their nation-states and internationally. GIDA developed and maintains the CARE Principles for Indigenous Data Governance.",
+    url:"https://www.gida-global.org", campaigns:"",
+    lang_pt:false, lang_gn:false, lang_sm:true },
+  { id:"local_contexts_org", name:"Local Contexts", region:"global", country:"USA",
+    cause:["data sovereignty"],
+    description:"Global initiative founded 2010 by Jane Anderson and Kim Christen. Provides the Local Contexts Hub — a web portal enabling Indigenous communities to customise TK (Traditional Knowledge) and BC (Biocultural) Labels, and institutions/researchers to apply them.",
+    url:"https://localcontexts.org", campaigns:"",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"ipai", name:"Indigenous Protocol and Artificial Intelligence Working Group (IPAI)", region:"global", country:"INT",
+    cause:["political sovereignty","AI ethics"],
+    description:"Working Group founded by Prof. Jason Edward Lewis (Hawaiian, Samoan, Cherokee; Concordia University) together with 30+ Indigenous scholars from Aotearoa, Australia, North America and the Pacific. Held workshops in 2019 and published the 2020 Position Paper.",
+    url:"https://www.indigenous-ai.net", campaigns:"",
+    lang_pt:false, lang_gn:false, lang_sm:true },
+  { id:"cultural_survival", name:"Cultural Survival", region:"global", country:"USA",
+    cause:["political sovereignty"],
+    description:"International indigenous rights organisation that advocates for the rights, voices, and visions of indigenous peoples. Has published extensively on the intersection of AI and indigenous rights, including analysis of UNDRIP violations in AI development.",
+    url:"https://www.culturalsurvival.org", campaigns:"",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"rda_idsig", name:"RDA International Indigenous Data Sovereignty Interest Group", region:"global", country:"INT",
+    cause:["political sovereignty","data sovereignty"],
+    description:"Interest group within the Research Data Alliance (RDA) that produced the CARE Principles for Indigenous Data Governance (2019). Provides a global forum for Indigenous data sovereignty scholars and practitioners.",
+    url:"https://www.rd-alliance.org/gida-global-indigenous-data-alliance", campaigns:"",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"flair_initiative", name:"First Languages AI Reality (FLAIR) Initiative", region:"global", country:"USA",
+    cause:["political sovereignty","language revival"],
+    description:"Initiative co-founded by Michael Running Wolf (Northern Cheyenne and Lakota) that develops adaptable AI tools for indigenous language revitalisation worldwide. Goal: reduce data requirements for building automatic speech recognition for indigenous languages.",
+    url:"https://mila.quebec/en/ai4humanity/applied-projects/first-languages-ai-reality", campaigns:"",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+
+  // NORTH AMERICA
+  { id:"fnigc", name:"First Nations Information Governance Centre (FNIGC)", region:"north_america", country:"CAN",
+    cause:["data sovereignty"],
+    description:"Canadian non-profit that stewards the OCAP® principles (Ownership, Control, Access, Possession) on behalf of all First Nations in Canada. Founded 1998 through the First Nations Regional Health Survey.",
+    url:"https://fnigc.ca", campaigns:"OCAP Principles; First Nations Regional Health Survey",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"fntc", name:"First Nations Technology Council", region:"north_america", country:"CAN",
+    cause:["data sovereignty"],
+    description:"Indigenous-led non-profit, mandated by the First Nations Leadership Council to advance digital literacy, connectivity, and technology strategy for all 204 First Nations in BC. Defines Indigenous Digital Equity as a foundational right.",
+    url:"https://www.technologycouncil.ca", campaigns:"BC First Nations Digital Divide Initiative; Connectivity for First Nations",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"usidsn", name:"U.S. Indigenous Data Sovereignty Network (USIDSN)", region:"north_america", country:"USA",
+    cause:["data sovereignty", "political sovereignty"],
+    description:"Helps ensure that data for and about Indigenous Peoples in the US (American Indians, Alaska Natives, Native Hawaiians) are utilised to advance Indigenous aspirations for collective and individual wellbeing.",
+    url:"https://usindigenousdatanetwork.org", campaigns:"",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"collaboratory_idg", name:"Collaboratory for Indigenous Data Governance (CIDG)", region:"north_america", country:"USA",
+    cause:["data sovereignty"],
+    description:"Develops institutional frameworks to center the terms of Indigenous Peoples around research and data partnerships. Directed by Dr. Stephanie Russo Carroll (Ahtna-Native Village of Kluti-Kaah). Hosts the Indigenous Data Exchange (IDX).",
+    url:"https://indigenousdatalab.org", campaigns:"",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"native_biodata", name:"Native BioData Consortium (NBDC)", region:"north_america", country:"USA",
+    cause:["data sovereignty"],
+    description:"The first 501(c)(3) nonprofit research institute led by Indigenous scientists and tribal members in the United States. Founded 2018. Ensures that advances in genetics and health research benefit all Indigenous peoples.",
+    url:"https://nativebiodata.org", campaigns:"",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"honor_the_earth", name:"Honor the Earth", region:"north_america", country:"USA",
+    cause:["environmental justice", "land rights"],
+    description:"Indigenous-led environmental justice organisation. Executive Director: Krystal Two Bulls (Oglala Lakota and Northern Cheyenne). Launched the No Data Centers Coalition to resist hyperscale AI data centres on tribal and rural lands.",
+    url:"https://www.honorearth.org", campaigns:"No Data Centers Campaign; Stop Data Colonialism Coalition",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"center_tribal_digital_sovereignty", name:"Center for Tribal Digital Sovereignty (CTDS)", region:"north_america", country:"USA",
+    cause:["political sovereignty","data sovereignty"],
+    description:"Founded 2024 by the American Indian Policy Institute (Arizona State University) and National Congress of American Indians (NCAI). Committed to advancing research, policy development and capacity-building across Indian Country.",
+    url:"https://aipi.asu.edu/center-for-tribal-digital-sovereignty", campaigns:"",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"aboriginal_territories_cyberspace", name:"Aboriginal Territories in Cyberspace (AbTeC)", region:"north_america", country:"CAN",
+    cause:["political sovereignty","data sovereignty"],
+    description:"Research network of artists, academics and technologists investigating, creating and critiquing Indigenous virtual environments. Co-directed by Jason Edward Lewis and Skawennati at Concordia University, Montreal.",
+    url:"https://abtec.org", campaigns:"",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"ndn-collective", name:"NDN Collective", region:"north_america", country:"USA",
+    cause:["political sovereignty","land rights"],
+    description:"Based on Oceti Sakowin Territory (Rapid City, South Dakota), NDN Collective was founded by Nick Tilsen (Oglala Lakota) — providing what it describes as the most ambitious systemic approach to empowering Indigenous communities.",
+    url:"https://ndncollective.org", campaigns:"LANDBACK; NDN For the People",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"landback-network", name:"LANDBACK Action Network", region:"north_america", country:"USA",
+    cause:["political sovereignty","land rights"],
+    description:"A membership-based organising network rooted in the LANDBACK political framework — an indigenous-led movement asserting that stolen lands must be returned to indigenous stewardship.",
+    url:"https://landback.org", campaigns:"Black Hills Federal Lands Return; Craven Canyon Drilling Stop; Rematriations",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"indigenous-environmental-network", name:"Indigenous Environmental Network (IEN)", region:"north_america", country:"USA",
+    cause:["environmental justice", "political sovereignty"],
+    description:"Founded in 1990 near Bear Butte, South Dakota, IEN is the oldest Indigenous-based grassroots network in North America working on environmental, energy, climate, and economic justice.",
+    url:"https://www.ienearth.org", campaigns:"Stop Dakota Access Pipeline; No KXL; Protecting Mother Earth Gatherings",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"idle-no-more", name:"Idle No More", region:"north_america", country:"CA",
+    cause:["political sovereignty","land rights"],
+    description:"Born in November 2012 in Canada, Idle No More is a First Nations–led grassroots movement that rapidly became a continent-wide network through social media organising and round dance flash mobs.",
+    url:"https://idlenomore.ca", campaigns:"Sovereignty Summer; Round Dance Revolution; Bill C-45 Resistance",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"cherokee-nation-data-sovereignty", name:"Cherokee Nation — Data Sovereignty Task Force", region:"north_america", country:"USA",
+    cause:["data sovereignty","political sovereignty"],
+    description:"Established by Executive Order by Principal Chief Chuck Hoskin Jr., the Cherokee Nation Data Sovereignty and Governance Task Force has produced the nation's first comprehensive AI policy (2025) and a detailed roadmap for data sovereignty.",
+    url:"https://www.cherokee.org/our-government/executive-branch/task-forces/data-sovereignty-and-governance-task-force/", campaigns:"Cherokee Nation AI Policy 2025; Gadugi Portal; Legal AI Agent",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+
+  // AFRICA
+  { id:"ipacc", name:"Indigenous Peoples of Africa Co-ordinating Committee (IPACC)", region:"africa", country:"SOU",
+    cause:["political sovereignty", "land rights"],
+    description:"Founded 1997. A network of 135+ Indigenous peoples' organisations in 21 African countries. Accredited with UN ECOSOC, UNCBD, UNFCCC, UNESCO, and the African Commission on Human and Peoples' Rights. Works on integrating indigenous/traditional knowledge with formal policy.",
+    url:"https://www.ipacc.org.za", campaigns:"",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"paradigm_initiative", name:"Paradigm Initiative (PIN)", region:"africa", country:"NIG",
+    cause:["political sovereignty","data sovereignty"],
+    description:"Pan-African digital rights and inclusion non-profit founded 2007 by Gbenga Sesan. Advocates digital rights across Africa, played a major role in drafting Africa's first digital rights law. Publishes the annual Londa Digital Rights and Inclusion Report.",
+    url:"https://paradigmhq.org", campaigns:"",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+
+  // EUROPE
+  { id:"gida_sapmi", name:"GIDA-Sápmi Network", region:"europe", country:"NOR",
+    cause:["data sovereignty"],
+    description:"Regional network established June 2021 to adapt and operationalise the CARE Principles in the Sápmi context and advance Sámi data governance. Includes representatives from universities, archives, and memory institutions in Norway, Sweden, and Finland.",
+    url:"https://www.tandfonline.com/doi/full/10.1080/08003831.2024.2410110", campaigns:"",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+
+  // ADDITIONAL OCEANIA
+  { id:"maiam_nayri_wingara", name:"Maiam nayri Wingara – Indigenous Data Sovereignty Collective", region:"oceania", country:"AUS",
+    cause:["data sovereignty", "political sovereignty"],
+    description:"Australia's Indigenous Data Sovereignty Collective, comprising Aboriginal and Torres Strait Islander academics and practitioners. Developed the Australian Indigenous Data Sovereignty Principles (2018).",
+    url:"https://www.maiamnayriwingara.org", campaigns:"Australian Indigenous Data Sovereignty Principles (2018); National Indigenous Data Sovereignty Summit advocacy",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"aiatsis", name:"Australian Institute of Aboriginal and Torres Strait Islander Studies (AIATSIS)", region:"oceania", country:"AUS",
+    cause:["data sovereignty","cultural preservation"],
+    description:"Australia's peak national body for research, collection, and publications relating to the cultures and histories of Aboriginal and Torres Strait Islander peoples. Published the AIATSIS Code of Ethics for Aboriginal and Torres Strait Islander Research.",
+    url:"https://aiatsis.gov.au", campaigns:"",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"aipp", name:"Asia Indigenous Peoples Pact (AIPP)", region:"oceania", country:"THA",
+    cause:["political sovereignty", "data sovereignty"],
+    description:"Regional organisation of indigenous peoples' organisations in Asia. Published the 2023 Asian Framework on Indigenous Knowledge and Data Sovereignty (IKDS) — the first regional Asian framework for indigenous knowledge and data rights.",
+    url:"https://aippnet.org", campaigns:"",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"pacific_data_sovereignty_trust", name:"Pacific Data Sovereignty Trust", region:"oceania", country:"NZ",
+    cause:["data sovereignty"],
+    description:"Founded 2021 to address gaps in how Pacific communities are represented in national data. Inspired by Te Mana Raraunga and GIDA. Guided by the principle 'data is the new land'.",
+    url:"https://pacificdatasovereignty.com", campaigns:"",
+    lang_pt:false, lang_gn:false, lang_sm:true },
+  { id:"magabala_books", name:"Magabala Books", region:"oceania", country:"AUS",
+    cause:["political sovereignty","cultural preservation"],
+    description:"Australia's leading indigenous publishing company. Came to national prominence in the AI debate when Meta used 37 First Nations literary works sourced from Magabala Books without consent for AI training (2025). CEO Lilly Brown has become a key voice.",
+    url:"https://www.magabala.com", campaigns:"Oppose Meta AI Training Without Consent (2025)",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"siufofoga_laumua", name:"Si'ufofoga o le Laumua Trust / Samoa Capital Radio", region:"oceania", country:"SAM",
+    cause:["political sovereignty","language revival"],
+    description:"Samoan language preservation trust operating Samoa Capital Radio. Created the Gagana Samoa app and the gaganasamoa.nz website, providing free resources for learning and speaking Gagana Sāmoa.",
+    url:"https://gaganasamoa.nz", campaigns:"",
+    lang_pt:false, lang_gn:false, lang_sm:true },
+  { id:"pacific_broadband", name:"Pacific Broadband and Digital Economy Cooperative (PBDE)", region:"oceania", country:"PAC",
+    cause:["political sovereignty","data sovereignty"],
+    description:"Pacific organisation developing AI-powered language tools for Pacific languages including Samoan. Built a Samoan-English AI translator testbed to explore whether current AI capabilities can support Pacific Islander languages.",
+    url:"https://www.pacificbroadband.org", campaigns:"",
+    lang_pt:false, lang_gn:false, lang_sm:true },
+  { id:"sprep", name:"Secretariat of the Pacific Regional Environment Programme (SPREP)", region:"oceania", country:"WS",
+    cause:["environmental justice"],
+    description:"SPREP is the principal intergovernmental organisation charged with protecting and managing the Pacific environment and natural resources. Headquartered in Apia, Samoa.",
+    url:"https://www.sprep.org", campaigns:"Cleaner Pacific 2025 waste strategy; Pacific Invasive Species Programme",
+    lang_pt:false, lang_gn:false, lang_sm:true },
+  { id:"spc", name:"The Pacific Community (SPC)", region:"oceania", country:"NC",
+    cause:["environmental justice","data sovereignty"],
+    description:"The Pacific Community is the principal scientific and technical intergovernmental organisation of the Pacific region, supporting development since 1947. Owned and governed by 27 country and territory members.",
+    url:"https://www.spc.int", campaigns:"Pacific Data Hub; Pacific Community Centre for Ocean Science (PCCOS)",
+    lang_pt:false, lang_gn:false, lang_sm:true },
+  { id:"pasefika-proud", name:"Pasefika Proud", region:"oceania", country:"NZ",
+    cause:["political sovereignty"],
+    description:"A 'by Pacific for Pacific' social change movement launched in New Zealand in 2011. Mobilises Pacific individuals, families and communities to prevent family violence and promote wellbeing.",
+    url:"https://www.pasefikaproud.co.nz", campaigns:"Pathways for Change 2019–2023 strategic framework",
+    lang_pt:false, lang_gn:false, lang_sm:true },
+  { id:"faasamoa-arts", name:"Fa'asamoa Arts – Art Studio & Gallery of American Samoa", region:"oceania", country:"AS",
+    cause:["political sovereignty","cultural preservation"],
+    description:"A nonprofit organisation in American Samoa dedicated to reviving and sustaining traditional Samoan artistic practices — including tatau (tattooing), weaving, and navigation arts.",
+    url:"https://www.faasamoaarts.com", campaigns:"Tatau preservation and education workshops; Digital arts education outreach",
+    lang_pt:false, lang_gn:false, lang_sm:true },
+  { id:"samoan-language-commission", name:"Samoan Language Commission", region:"oceania", country:"WS",
+    cause:["language revival","political sovereignty"],
+    description:"Implements the National Samoan Language Framework 2024–2034, the government's comprehensive strategy for preserving, maintaining and safeguarding the Samoan language.",
+    url:"https://www.mesc.gov.ws", campaigns:"National Samoan Language Framework 2024–2034; Fa'alupega mobile app",
+    lang_pt:false, lang_gn:false, lang_sm:true },
+  { id:"free-west-papua", name:"Free West Papua Campaign", region:"oceania", country:"ID",
+    cause:["political sovereignty"],
+    description:"Founded in Oxford, UK in 2004 by exiled West Papuan leader Benny Wenda. The principal international advocacy organisation for West Papuan independence from Indonesian occupation.",
+    url:"https://www.freewestpapua.org", campaigns:"Papua Merdeka (Free Papua) self-determination campaign; Free West Papuan Political Prisoners campaign",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"ipwp", name:"International Parliamentarians for West Papua (IPWP)", region:"oceania", country:"ID",
+    cause:["political sovereignty"],
+    description:"A cross-party group of elected politicians from around the world supporting the right to self-determination for the West Papuan people. Founded by Benny Wenda.",
+    url:"https://www.ipwp.org", campaigns:"UN Special Committee on Decolonisation engagement; Pacific Parliamentarians for West Papua sub-group",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"pican", name:"Pacific Islands Climate Action Network (PICAN)", region:"oceania", country:"FJ",
+    cause:["environmental justice","political sovereignty"],
+    description:"A leading coalition of Pacific civil society organisations dedicated to amplifying Pacific voices in the global climate movement, with 269 network members, four country nodes.",
+    url:"https://www.pican.org", campaigns:"Pacific civil society COP engagement; Blue Pacific Continent advocacy framework",
+    lang_pt:false, lang_gn:false, lang_sm:true },
+  { id:"uluru-statement", name:"Uluru Statement from the Heart", region:"oceania", country:"AU",
+    cause:["political sovereignty","land rights"],
+    description:"The largest consensus position of First Nations peoples on constitutional recognition in Australian history, calling for a Voice to Parliament, a Makarrata Commission for treaty-making, and truth-telling.",
+    url:"https://ulurustatement.org", campaigns:"2023 Voice to Parliament Referendum (Yes campaign); Makarrata Commission and Treaty framework advocacy",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"nitv", name:"National Indigenous Television (NITV)", region:"oceania", country:"AU",
+    cause:["political sovereignty","cultural preservation"],
+    description:"Australia's only dedicated national free-to-air television channel for Aboriginal and Torres Strait Islander peoples, launched 2007 and absorbed into the SBS network in 2012.",
+    url:"https://www.sbs.com.au/nitv", campaigns:"NAIDOC Week special programming; First Nations News Service (FNNS)",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"ku-kiai-mauna", name:"Kū Kia'i Mauna – Mauna Kea Protectors", region:"oceania", country:"US",
+    cause:["political sovereignty","land rights","environmental justice"],
+    description:"The Hawaiian-led movement that in 2019 blockaded construction of the Thirty Meter Telescope (TMT) on Mauna Kea, a mountain sacred to Native Hawaiians as the piko connecting earth and sky.",
+    url:"https://maui.hawaii.libguides.com/maunakea", campaigns:"TMT (Thirty Meter Telescope) blockade 2019–present; Pu'uhuluhulu University – free open-air indigenous knowledge school",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"tuvalu-falepili-union", name:"Tuvalu–Australia Falepili Union Treaty", region:"oceania", country:"TV",
+    cause:["political sovereignty","environmental justice"],
+    description:"The world's first bilateral climate mobility treaty, signed 9 November 2023. It legally recognises Tuvalu's continuing statehood and sovereignty even if the islands become uninhabitable due to sea level rise.",
+    url:"https://www.dfat.gov.au/geo/tuvalu/australia-tuvalu-falepili-union-treaty", campaigns:"Tuvaluan climate mobility visa scheme; Preservation of Tuvalu statehood under international law",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"usp-pace-sd", name:"USP – Pacific Centre for Environment and Sustainable Development (PaCE-SD)", region:"oceania", country:"FJ",
+    cause:["environmental justice","data sovereignty"],
+    description:"USP's research and advisory centre, established 1999 to empower Pacific peoples with the knowledge to adapt to climate change and pursue sustainable development. Integrates indigenous Pacific knowledge with formal scientific research.",
+    url:"https://www.usp.ac.fj/pace-sd/", campaigns:"Pacific Climate Change Science programme; WIRE (Women in Research and Exchange)",
+    lang_pt:false, lang_gn:false, lang_sm:true },
+
+  // ADDITIONAL SOUTH AMERICA
+  { id:"isa-brazil", name:"Instituto Socioambiental (ISA)", region:"south_america", country:"BR",
+    cause:["political sovereignty", "land rights", "environmental justice", "data sovereignty", "cultural preservation"],
+    description:"Founded in 1994, ISA is Brazil's leading socio-environmental NGO defending the rights of indigenous peoples, quilombola communities, and traditional populations. It operates the largest publicly accessible database on indigenous lands in Brazil.",
+    url:"https://www.socioambiental.org/en", campaigns:"#ForaGarimpoForaCovid; Y Ikatu Xingu; LessPrejudiceMoreIndian",
+    lang_pt:true, lang_gn:false, lang_sm:false },
+  { id:"hutukara-yanomami", name:"Hutukara Associação Yanomami (HAY)", region:"south_america", country:"BR",
+    cause:["political sovereignty", "land rights", "cultural preservation"],
+    description:"Founded in 2004 and led by shaman-intellectual Davi Kopenawa Yanomami, Hutukara is the primary representative organisation of the Yanomami and Ye'kwana peoples of the Yanomami Indigenous Land in Roraima and Amazonas.",
+    url:"https://hutukarayanomami.org", campaigns:"#ForaGarimpoForaCovid; Yanomami genocide emergency 2023",
+    lang_pt:true, lang_gn:false, lang_sm:false },
+  { id:"cimi-brazil", name:"Conselho Indigenista Missionário (CIMI)", region:"south_america", country:"BR",
+    cause:["political sovereignty", "land rights"],
+    description:"Founded in 1972 and linked to the National Conference of Bishops of Brazil (CNBB), CIMI operates across 11 regional offices and supports over 180 indigenous peoples in 26 states.",
+    url:"https://cimi.org.br", campaigns:"Relatório Violência contra os Povos Indígenas; Anti-Marco Temporal",
+    lang_pt:true, lang_gn:false, lang_sm:false },
+  { id:"alianza-ceibo-ecuador", name:"Alianza Ceibo (Ceibo Alliance)", region:"south_america", country:"EC",
+    cause:["political sovereignty", "land rights","environmental justice"],
+    description:"An indigenous-led Ecuadorian non-profit founded in 2015, representing Kofan, Siona, Secoya, and Waorani peoples. Co-created the Mapeo digital mapping platform.",
+    url:"https://www.alianzaceibo.org", campaigns:"Waorani Territory Court Victory 2019; #ProtectTheAmazon",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"digital-democracy", name:"Digital Democracy", region:"south_america", country:"US",
+    cause:["data sovereignty","land rights"],
+    description:"A US-based non-profit that co-creates digital tools with indigenous and marginalised communities in South America (Ecuador, Peru, Guyana) and globally. Its flagship tool Mapeo — built with Waorani and Amazonian communities — is a peer-to-peer offline mapping tool.",
+    url:"https://www.digital-democracy.org", campaigns:"Earth Defenders Toolkit; Mapeo",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"conaie-ecuador", name:"Confederación de Nacionalidades Indígenas del Ecuador (CONAIE)", region:"south_america", country:"EC",
+    cause:["political sovereignty", "land rights"],
+    description:"Founded in 1986, representing 18 peoples and 15 nationalities across 53 base organisations. Ecuador's largest and most powerful indigenous confederation, leading successive national uprisings.",
+    url:"https://conaie.org", campaigns:"Levantamiento Indígena 2022; Paro Nacional Indígena 2024; #SomosConaie",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"cidob-bolivia", name:"Confederación de Pueblos Indígenas del Oriente Boliviano (CIDOB)", region:"south_america", country:"BO",
+    cause:["political sovereignty", "land rights", "environmental justice"],
+    description:"CIDOB represents 34 indigenous peoples of Bolivia's lowland regions across seven departments, with a mission to defend territorial rights and achieve meaningful political representation.",
+    url:"https://cidobbolivia.com", campaigns:"Defensa TIPNIS; VIII Marcha Indígena",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+  { id:"cenia-chile-latamgpt", name:"CENIA — Latam-GPT Project", region:"south_america", country:"CL",
+    cause:["data sovereignty","language revival"],
+    description:"Chile's state-backed National Centre for Artificial Intelligence, coordinating the Latam-GPT initiative: the first open-source large language model developed in Latin America, trained on 8+ terabytes of Spanish, Portuguese, and indigenous language data.",
+    url:"https://cenia.cl", campaigns:"Latam-GPT; Copuchat",
+    lang_pt:true, lang_gn:true, lang_sm:false },
+  { id:"conapi-paraguay", name:"Coordinación Nacional de Pastoral Indígena (CONAPI)", region:"south_america", country:"PY",
+    cause:["political sovereignty", "cultural preservation"],
+    description:"Established in 1969 under the Paraguayan Episcopal Conference, CONAPI is the Catholic Church's principal body for indigenous pastoral work in Paraguay and a key advocate for Guaraní and other indigenous peoples.",
+    url:"https://conapi.org.py", campaigns:"Defensa Tekoha Sauce-Itaipú",
+    lang_pt:false, lang_gn:true, lang_sm:false },
+  { id:"aty-guasu-brazil", name:"Aty Guasu (Grande Assembleia do Povo Guarani e Kaiowá)", region:"south_america", country:"BR",
+    cause:["cultural preservation","political sovereignty","land rights"],
+    description:"Aty Guasu is the supreme political assembly of the Guaraní and Kaiowá peoples of Mato Grosso do Sul, convening leaders (tuxauas), rezadores, and youth for over 30 years.",
+    url:"https://www.kunangue.com/en/copy-of-home", campaigns:"Demarcação das Terras Guarani e Kaiowá; Kuñangue Aty Guasu",
+    lang_pt:true, lang_gn:true, lang_sm:false },
+  { id:"conap-peru", name:"Confederación de Nacionalidades Amazónicas del Perú (CONAP)", region:"south_america", country:"PE",
+    cause:["political sovereignty", "land rights"],
+    description:"Founded in 1987 and headquartered in Lima, CONAP represents over 40 federations and regional organisations of Amazonian indigenous peoples across Loreto, Amazonas, Junín, Pasco, Huánuco, Cuzco, and Ucayali.",
+    url:"https://conapperu.org", campaigns:"Consulta Previa; Derechos Territoriales Amazónicos",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+];
+
+/* ══════════════════════════════════════════════════════════════════════════
+   CAMPAIGNS DATA
+══════════════════════════════════════════════════════════════════════════ */
+const CAMPAIGNS_DATA = [
+  { hashtag:"#StopDataColonialism", name:"No Data Centers on Native Land", org:"Honor the Earth / No Data Center Coalition", description:"Campaign launched by Honor the Earth to resist hyperscale AI data centres being built on tribal and rural Native lands. Tracks over 100 proposed data centres near indigenous territories.", url:"https://www.honorearth.org/stopdatacolonialism" },
+  { hashtag:"#IdleNoMore", name:"Idle No More", org:"Idle No More (grassroots, Canada)", description:"Canadian First Nations grassroots movement launched November 2012 by four women in Saskatchewan, responding to omnibus Bill C-45 that threatened indigenous land and water sovereignty. Became a pan-Indigenous global movement.", url:"https://idlenomore.ca" },
+  { hashtag:"#NoDAPL", name:"NoDAPL — Standing Rock Dakota Access Pipeline Resistance", org:"Standing Rock Sioux Tribe / Indigenous youth Water Protectors", description:"Social media and direct action campaign launched 2016 by indigenous youth group ReZpect Our Water against the Dakota Access Pipeline threatening sacred sites and water sources. Grew to involve 20,000+ people at Standing Rock.", url:"https://www.standingrock.org" },
+  { hashtag:"#ForaGarimpoForaCovid", name:"Magabala Books / First Nations Authors vs Meta AI Training", org:"Magabala Books / Kirli Saunders / Australian First Nations creatives", description:"2025 campaign by Magabala Books and First Nations authors after discovery that Meta used 37 First Nations literary works without consent for AI training. Coined 'double colonisation' — first the body, now the mind.", url:"https://www.abc.net.au/news/2025-10-16/first-nations-creatives-warn-against-ai-double-colonisation/105889290" },
+  { hashtag:"#AIIsNotIndigenous", name:"AI Is Not Indigenous", org:"Andersson & Bergman (artists)", description:"Sustained artistic protest practice (2022–ongoing) confronting algorithmic appropriation and cultural erasure of indigenous culture by AI systems. Protest signs turned into artworks exposing the colonial logic of generative AI.", url:"https://www.artafter.ai/ai-is-not-indigenous" },
+  { hashtag:"#LANDBACK", name:"LANDBACK", org:"NDN Collective", description:"Movement demanding the return of stolen indigenous land to indigenous peoples. Has increasingly incorporated digital sovereignty dimensions, asserting that 'land back' includes data sovereignty — indigenous data must also be returned.", url:"https://landback.org" },
+  { hashtag:"#WetsuwetunStrong", name:"WetsuwetunStrong", org:"Wet'suwet'en hereditary chiefs / Unist'ot'en Camp", description:"Campaign led by Wet'suwet'en hereditary chiefs against the Coastal GasLink pipeline in northern British Columbia. Built on #NoDAPL tactics — resistance camps, social media organising, and online fundraising.", url:"https://www.yintahaccess.com" },
+  { hashtag:"#PacificDataSovereignty", name:"Pacific Data Sovereignty Initiative", org:"Pacific Data Sovereignty Trust / Moana Connect", description:"Initiative by the Pacific Data Sovereignty Trust (NZ) to assert that 'data is the new land' — Pacific data must be governed by Pacific peoples. Hosted AI Pacific workshops (2025) and Pacific Data Sovereignty Summits.", url:"https://pacificdatasovereignty.com" },
 ];
 
 /* region / cause colours */
 const REGION_COLOUR = {
   maori: '#2ecc71',
   oceania: '#3498db',
-  south_america: '#e67e22'
+  south_america: '#e67e22',
+  north_america: '#e74c3c',
+  global: '#9b59b6',
+  africa: '#f39c12',
+  europe: '#1abc9c',
+  asia: '#e91e63'
 };
 const CAUSE_COLOURS = {
   'land rights': '#e74c3c',
@@ -766,11 +1367,24 @@ const CAUSE_COLOURS = {
   'environmental justice': '#27ae60'
 };
 
+/* region display labels */
+const REGION_LABELS = {
+  maori: 'Māori · Aotearoa',
+  oceania: 'Oceania · Te Moana-nui-a-Kiwa',
+  south_america: 'South America · Amazonia',
+  north_america: 'North America',
+  global: 'Global',
+  africa: 'Africa',
+  europe: 'Europe / Sápmi',
+  asia: 'Asia'
+};
+
 /* ══════════════════════════════════════════════════════════════════════════
    STATE
 ══════════════════════════════════════════════════════════════════════════ */
 let activeRegion = 'all';
 let activeCause = null;
+let activeLang = null;
 let searchQuery = '';
 let simulation = null;
 let svgZoom = null;
@@ -780,6 +1394,9 @@ function getVisibleNodes() {
   return NODES_DATA.filter(n => {
     if (activeRegion !== 'all' && n.region !== activeRegion) return false;
     if (activeCause && !n.cause.includes(activeCause)) return false;
+    if (activeLang === 'pt' && !n.lang_pt) return false;
+    if (activeLang === 'gn' && !n.lang_gn) return false;
+    if (activeLang === 'sm' && !n.lang_sm) return false;
     if (searchQuery) {
       const q = searchQuery.toLowerCase();
       return n.name.toLowerCase().includes(q) ||
@@ -823,6 +1440,18 @@ function filterCause(cause, btn) {
   drawNetwork();
 }
 
+function filterLang(lang, btn) {
+  if (activeLang === lang) {
+    activeLang = null;
+    btn.classList.remove('active');
+  } else {
+    activeLang = lang;
+    document.querySelectorAll('.filter-chip[onclick^="filterLang"]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+  drawNetwork();
+}
+
 function searchNodes(q) {
   searchQuery = q;
   drawNetwork();
@@ -833,14 +1462,15 @@ function searchNodes(q) {
 ══════════════════════════════════════════════════════════════════════════ */
 function drawNetwork() {
   const visible = getVisibleNodes();
-  const visibleIds = new Set(visible.map(n => n.id));
 
   // update stats
   document.getElementById('statVisible').textContent = visible.length;
   const ptCount = visible.filter(n => n.lang_pt).length;
   const gnCount = visible.filter(n => n.lang_gn).length;
+  const smCount = visible.filter(n => n.lang_sm).length;
   document.getElementById('statPt').textContent = ptCount;
   document.getElementById('statGn').textContent = gnCount;
+  document.getElementById('statSm').textContent = smCount;
 
   const svg = d3.select('#rhizomeSVG');
   svg.selectAll('*').remove();
@@ -862,36 +1492,56 @@ function drawNetwork() {
   const g = svg.append('g').attr('class', 'zoom-g');
 
   d3Zoom = d3.zoom()
-    .scaleExtent([0.25, 3])
+    .scaleExtent([0.1, 3])
     .on('zoom', e => g.attr('transform', e.transform));
   svg.call(d3Zoom);
   svgZoom = svg;
 
+  // forceX positioning by region
+  function regionX(region) {
+    switch(region) {
+      case 'maori':        return W * 0.12;
+      case 'europe':       return W * 0.22;
+      case 'global':       return W * 0.5;
+      case 'oceania':      return W * 0.55;
+      case 'africa':       return W * 0.65;
+      case 'north_america':return W * 0.78;
+      case 'south_america':return W * 0.88;
+      default:             return W * 0.5;
+    }
+  }
+
+  function regionY(region) {
+    switch(region) {
+      case 'global':  return H * 0.3;
+      case 'europe':  return H * 0.25;
+      case 'africa':  return H * 0.6;
+      default:        return H * 0.5;
+    }
+  }
+
+  function regionStrength(region) {
+    return region === 'global' ? 0.06 : 0.12;
+  }
+
   // simulation
   if (simulation) simulation.stop();
   simulation = d3.forceSimulation(visible)
-    .force('link', d3.forceLink(links).id(d => d.id).distance(d => 90 + (3 - d.strength) * 30).strength(0.4))
-    .force('charge', d3.forceManyBody().strength(-280))
+    .force('link', d3.forceLink(links).id(d => d.id).distance(d => 80 + (3 - d.strength) * 25).strength(0.35))
+    .force('charge', d3.forceManyBody().strength(-200))
     .force('center', d3.forceCenter(W / 2, H / 2))
-    .force('collision', d3.forceCollide(32))
-    .force('x', d3.forceX(d => {
-      if (d.region === 'maori') return W * 0.18;
-      if (d.region === 'oceania') return W * 0.5;
-      return W * 0.82;
-    }).strength(0.12))
-    .force('y', d3.forceY(H / 2).strength(0.05));
+    .force('collision', d3.forceCollide(28))
+    .force('x', d3.forceX(d => regionX(d.region)).strength(d => regionStrength(d.region)))
+    .force('y', d3.forceY(d => regionY(d.region)).strength(0.05));
 
   // draw links
   const link = g.append('g').attr('class', 'links')
     .selectAll('line')
     .data(links)
     .join('line')
-    .attr('stroke', d => {
-      // colour by shared cause (first shared)
-      return CAUSE_COLOURS[d.shared[0]] || '#888';
-    })
-    .attr('stroke-opacity', 0.25)
-    .attr('stroke-width', d => d.strength * 1.2);
+    .attr('stroke', d => CAUSE_COLOURS[d.shared[0]] || '#888')
+    .attr('stroke-opacity', 0.18)
+    .attr('stroke-width', d => d.strength * 1.0);
 
   // draw nodes
   const node = g.append('g').attr('class', 'nodes')
@@ -915,58 +1565,73 @@ function drawNetwork() {
 
   // node circle
   node.append('circle')
-    .attr('r', d => 14 + d.cause.length * 2)
+    .attr('r', d => 12 + d.cause.length * 2)
     .attr('fill', d => REGION_COLOUR[d.region] || '#888')
-    .attr('fill-opacity', 0.85)
+    .attr('fill-opacity', 0.82)
     .attr('stroke', '#fff')
-    .attr('stroke-width', 2)
-    .attr('stroke-opacity', 0.5);
+    .attr('stroke-width', 1.5)
+    .attr('stroke-opacity', 0.45);
 
-  // lang badge dots
+  // lang badge dots — PT (green), GN (orange), SM (teal)
   node.filter(d => d.lang_pt)
     .append('circle')
-    .attr('r', 4).attr('cx', 12).attr('cy', -12)
-    .attr('fill', '#27ae60').attr('stroke', '#fff').attr('stroke-width', 1.5);
+    .attr('r', 3.5).attr('cx', 11).attr('cy', -11)
+    .attr('fill', '#27ae60').attr('stroke', '#fff').attr('stroke-width', 1.2);
   node.filter(d => d.lang_gn)
     .append('circle')
-    .attr('r', 4).attr('cx', d => d.lang_pt ? 20 : 12).attr('cy', -12)
-    .attr('fill', '#e67e22').attr('stroke', '#fff').attr('stroke-width', 1.5);
+    .attr('r', 3.5).attr('cx', d => d.lang_pt ? 18 : 11).attr('cy', -11)
+    .attr('fill', '#e67e22').attr('stroke', '#fff').attr('stroke-width', 1.2);
+  node.filter(d => d.lang_sm)
+    .append('circle')
+    .attr('r', 3.5)
+    .attr('cx', d => {
+      let offset = 11;
+      if (d.lang_pt) offset += 7;
+      if (d.lang_gn) offset += 7;
+      return offset;
+    })
+    .attr('cy', -11)
+    .attr('fill', '#00b4d8').attr('stroke', '#fff').attr('stroke-width', 1.2);
 
   // node label
   node.append('text')
     .attr('text-anchor', 'middle')
-    .attr('dy', d => (14 + d.cause.length * 2) + 14)
-    .attr('font-size', 9)
+    .attr('dy', d => (12 + d.cause.length * 2) + 13)
+    .attr('font-size', 8.5)
     .attr('font-family', 'var(--font-sans)')
     .attr('font-weight', '600')
     .attr('fill', 'var(--fg)')
-    .attr('fill-opacity', 0.8)
+    .attr('fill-opacity', 0.75)
     .text(d => {
-      // abbreviate long names
-      const name = d.name.replace(/^(APIB|COIAB|COICA|FUNAI|ULMWP|KNPB|FLNKS|FAPI|INDI|MST|CIR|MSG|OHA|PCRC|KAHAA) ?.*$/, '$1');
-      return name.length > 18 ? name.slice(0, 16) + '…' : name;
+      const name = d.name.replace(/^(APIB|COIAB|COICA|FUNAI|ULMWP|KNPB|FLNKS|FAPI|INDI|MST|CIR|MSG|OHA|PCRC|KAHAA|GIDA|IPAI|IPACC|USIDSN|AIATSIS|AIPP|FNTC|FNIGC|NBDC|CTDS|CIDOB|CONAIE|CONAP|CENIA|CIMI|SPREP|PICAN|NITV|IEN|SPC|CIDG) ?.*$/, '$1');
+      return name.length > 16 ? name.slice(0, 14) + '…' : name;
     });
 
-  // region label headers
-  const regions = [
-    { label: 'Māori / Aotearoa', x: W * 0.12, y: 28 },
-    { label: 'Oceania', x: W * 0.5, y: 28 },
-    { label: 'South America / Amazonia', x: W * 0.88, y: 28 },
-  ];
-  g.append('g').selectAll('text').data(regions).join('text')
-    .attr('x', d => d.x).attr('y', d => d.y)
-    .attr('text-anchor', 'middle')
-    .attr('font-size', 10).attr('font-family', 'var(--font-sans)')
-    .attr('font-weight', '700').attr('letter-spacing', '0.08em')
-    .attr('fill', 'var(--fg-muted)').attr('fill-opacity', 0.5)
-    .attr('text-transform', 'uppercase')
-    .text(d => d.label.toUpperCase());
+  // region label headers (show only when all or filtering)
+  if (activeRegion === 'all') {
+    const regionHeaders = [
+      { label: 'MĀORI', x: W * 0.09, y: 22 },
+      { label: 'GLOBAL', x: W * 0.5, y: 22 },
+      { label: 'OCEANIA', x: W * 0.57, y: 36 },
+      { label: 'N.AMERICA', x: W * 0.79, y: 22 },
+      { label: 'S.AMERICA', x: W * 0.9, y: 36 },
+      { label: 'AFRICA', x: W * 0.67, y: 50 },
+      { label: 'EUROPE', x: W * 0.22, y: 22 },
+    ];
+    g.append('g').selectAll('text').data(regionHeaders).join('text')
+      .attr('x', d => d.x).attr('y', d => d.y)
+      .attr('text-anchor', 'middle')
+      .attr('font-size', 9).attr('font-family', 'var(--font-sans)')
+      .attr('font-weight', '700').attr('letter-spacing', '0.08em')
+      .attr('fill', 'var(--fg-muted)').attr('fill-opacity', 0.4)
+      .text(d => d.label);
+  }
 
   simulation.on('tick', () => {
     link
       .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
       .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
-    node.attr('transform', d => `translate(${Math.max(20,Math.min(W-20,d.x))},${Math.max(20,Math.min(H-20,d.y))})`);
+    node.attr('transform', d => `translate(${Math.max(18,Math.min(W-18,d.x))},${Math.max(18,Math.min(H-18,d.y))})`)
   });
 }
 
@@ -979,8 +1644,8 @@ function zoomReset() { svgZoom && svgZoom.transition().call(d3Zoom.transform, d3
 ══════════════════════════════════════════════════════════════════════════ */
 function showNodePanel(d) {
   const panel = document.getElementById('nodePanel');
-  const colour = REGION_COLOUR[d.region];
-  const regionLabel = { maori: 'Māori · Aotearoa', oceania: 'Oceania · Te Moana-nui-a-Kiwa', south_america: 'South America · Amazonia' }[d.region];
+  const colour = REGION_COLOUR[d.region] || '#888';
+  const regionLabel = REGION_LABELS[d.region] || d.region;
 
   const causePills = d.cause.map(c =>
     `<span class="cause-pill" style="color:${CAUSE_COLOURS[c]||'#888'};border-color:${CAUSE_COLOURS[c]||'#888'}55;background:${CAUSE_COLOURS[c]||'#888'}11">${c}</span>`
@@ -989,21 +1654,49 @@ function showNodePanel(d) {
   const langBadges = [
     d.lang_pt ? '<span class="lang-chip lang-pt">PT</span>' : '',
     d.lang_gn ? '<span class="lang-chip lang-gn">GN</span>' : '',
+    d.lang_sm ? '<span class="lang-chip lang-sm">SM</span>' : '',
   ].join('');
+
+  // campaigns chips
+  let campaignsHtml = '';
+  if (d.campaigns && d.campaigns.trim()) {
+    const chips = d.campaigns.split(';').map(c => c.trim()).filter(Boolean)
+      .map(c => `<span class="campaign-chip">${c}</span>`).join('');
+    campaignsHtml = `<div style="margin:.6rem 0"><span style="font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:var(--fg-muted);font-family:var(--font-sans)">Campaigns: </span>${chips}</div>`;
+  }
 
   document.getElementById('nodePanelContent').innerHTML = `
     <p class="node-region-tag" style="color:${colour}">${regionLabel} · ${d.country}</p>
     <h2 class="node-name">${d.name} ${langBadges}</h2>
     <div class="node-causes">${causePills}</div>
     <p class="node-desc">${d.description}</p>
+    ${campaignsHtml}
     <a class="node-link" href="${d.url}" target="_blank" rel="noopener" style="background:${colour}">
-      Visit ${d.name.split('–')[0].trim()} →
+      Visit ${d.name.split('–')[0].split('(')[0].trim()} →
     </a>
     <button onclick="document.getElementById('nodePanel').classList.remove('visible')"
       style="margin-left:.8rem;font-size:.8rem;color:var(--fg-muted);background:none;border:none;cursor:pointer">✕ Close</button>
   `;
   panel.classList.add('visible');
   panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   CAMPAIGNS PANEL RENDER
+══════════════════════════════════════════════════════════════════════════ */
+function renderCampaigns() {
+  const grid = document.getElementById('campaignsGrid');
+  if (!grid) return;
+  grid.innerHTML = CAMPAIGNS_DATA.map(c => `
+    <div class="campaign-card">
+      ${c.hashtag && c.hashtag !== 'None'
+        ? `<a class="campaign-hashtag" href="${c.url}" target="_blank" rel="noopener">${c.hashtag}</a>`
+        : `<span class="campaign-none">No official hashtag</span>`}
+      <div class="campaign-org">${c.org}</div>
+      <p class="campaign-desc">${c.description}</p>
+      <a class="campaign-link" href="${c.url}" target="_blank" rel="noopener">Learn more →</a>
+    </div>
+  `).join('');
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -1223,6 +1916,7 @@ tBtn.addEventListener('click',()=>{
 });
 
 renderHistory();
+renderCampaigns();
 </script>
 
 <!-- D3.js v7 -->
