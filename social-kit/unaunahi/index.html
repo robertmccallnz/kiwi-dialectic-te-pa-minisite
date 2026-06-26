@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unaunahi Art Series — The Kiwi Dialectic</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:#0d0d0d;color:#f4f0e8;font-family:Arial,sans-serif;padding:2rem}
+    h1{font-family:Georgia,serif;font-size:2.8rem;color:#f4f0e8;margin-bottom:.4rem}
+    h1 span{color:#c0392b}
+    .subtitle{color:#f4f0e8;opacity:.6;margin-bottom:2rem;font-size:1rem;letter-spacing:.12em}
+    h2{font-family:Georgia,serif;font-size:1.4rem;color:#c0392b;margin:2rem 0 1rem;border-bottom:1px solid #c0392b33;padding-bottom:.4rem}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin-bottom:2rem}
+    .card{background:#1a1a1a;border-radius:8px;overflow:hidden;border:1px solid #ffffff11}
+    .card img{width:100%;display:block}
+    .card-info{padding:.7rem 1rem}
+    .card-info .fname{font-size:.8rem;opacity:.5;word-break:break-all}
+    a.dl{display:inline-block;margin-top:.4rem;padding:.3rem .8rem;background:#c0392b;color:#fff;border-radius:4px;text-decoration:none;font-size:.8rem}
+    .follow{margin-top:3rem;padding:1.5rem;background:#1a1a1a;border-radius:8px;border-left:4px solid #c0392b}
+    .follow a{color:#c0392b}
+    footer{margin-top:2rem;opacity:.4;font-size:.8rem}
+  </style>
+</head>
+<body>
+<h1>UNAUNAHI <span>SERIES</span></h1>
+<p class="subtitle">FISH SCALE · KOTAHITANGA · COLLECTIVE ARMOUR — THE KIWI DIALECTIC</p>
+<p style="opacity:.7;max-width:640px;margin-bottom:2rem;line-height:1.6">
+  Unaunahi — the fish-scale pattern of Māori carving — represents kotahitanga: collective strength. Each scale holds the next. These assets are free to download and share for Māori data sovereignty and AI activism campaigns.
+</p>
+
+<h2>Social Cards — X / Twitter (1200×675)</h2>
+<div class="grid" id="grid-x"></div>
+
+<h2>Social Cards — Instagram (1080×1080)</h2>
+<div class="grid" id="grid-ig"></div>
+
+<h2>Social Cards — Facebook (1200×630)</h2>
+<div class="grid" id="grid-fb"></div>
+
+<h2>Social Cards — TikTok (1080×1920)</h2>
+<div class="grid" id="grid-tt"></div>
+
+<h2>Banners</h2>
+<div class="grid" id="grid-banners"></div>
+
+<h2>Posters (A3 / A4 Print)</h2>
+<div class="grid" id="grid-posters"></div>
+
+<h2>Stickers (Print-Ready B&W)</h2>
+<div class="grid" id="grid-stickers"></div>
+
+<div class="follow">
+  <strong>Follow The Kiwi Dialectic</strong><br/>
+  <a href="https://www.kiwidialectic.com" target="_blank">www.kiwidialectic.com</a> ·
+  All assets CC BY-NC-SA 4.0
+</div>
+
+<footer>Unaunahi Series — Te Pā Tūwatawata · kiwidialectic.com</footer>
+
+<script>
+const MSGS = ['sovereignty','boundaries','layers','resist','future','ai','together','design'];
+const addCard = (gridId, src, label) => {
+  const g = document.getElementById(gridId);
+  if (!g) return;
+  const d = document.createElement('div');
+  d.className = 'card';
+  d.innerHTML = `<img src="${src}" loading="lazy" alt="${label}"/><div class="card-info"><span class="fname">${label}</span><br/><a class="dl" href="${src}" download="${label}">Download SVG</a></div>`;
+  g.appendChild(d);
+};
+MSGS.forEach(m => {
+  addCard('grid-x',  `una-x-${m}.svg`,         `una-x-${m}.svg`);
+  addCard('grid-ig', `una-instagram-${m}.svg`,  `una-instagram-${m}.svg`);
+  addCard('grid-fb', `una-facebook-${m}.svg`,   `una-facebook-${m}.svg`);
+  addCard('grid-tt', `una-tiktok-${m}.svg`,     `una-tiktok-${m}.svg`);
+});
+addCard('grid-ig', 'una-instagram-carousel-cover.svg', 'una-instagram-carousel-cover.svg');
+[['../banners/una-twitter-banner-1500x500.svg','Twitter banner 1500×500'],
+ ['../banners/una-facebook-linkedin-cover-1640x624.svg','Facebook/LinkedIn cover 1640×624']]
+  .forEach(([s,l])=>addCard('grid-banners',s,l));
+['una-poster-a3-we-are-armour','una-poster-a3-data-sovereignty',
+ 'una-poster-a4-kotahitanga','una-poster-a4-stand-firm','una-poster-a4-ai-resist',
+ 'una-poster-a4-future','una-poster-a4-layers']
+  .forEach(k=>addCard('grid-posters',`../posters/${k}.svg`,`${k}.svg`));
+['sticker-una-armour','sticker-una-consent','sticker-una-data','sticker-una-layers',
+ 'sticker-una-resist','sticker-una-tino','sticker-una-future','sticker-una-build']
+  .forEach(k=>addCard('grid-stickers',`../stickers/${k}.svg`,`${k}.svg`));
+</script>
+</body>
+</html>
