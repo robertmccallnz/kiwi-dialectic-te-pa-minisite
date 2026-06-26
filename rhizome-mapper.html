@@ -2127,28 +2127,79 @@ function expandMotif(cardId, mJson) {
   const expanded = document.getElementById('motifExpanded');
   if (!expanded) return;
   const _mLang = (typeof currentLang !== 'undefined' ? currentLang : 'en');
-  const meaning = m[`meaning_${_mLang}`] || m.meaning_en || '';
-  const colour  = m.colour_primary || '#888';
-  const pngUrl  = m.svg_r2_url || '';
-  const themes  = Array.isArray(m.political_themes) ? m.political_themes : [];
+  const meaning   = m[`meaning_${_mLang}`] || m.meaning_en || '';
+  const colour    = m.colour_primary || '#888';
+  const pngUrl    = m.svg_r2_url   || '';
+  const memeUrl   = m.meme_r2_url  || '';
+  const module    = m.course_module || '';
+  const courseUrl = module ? `https://kiwi-dialectic-te-pa-minisite.vercel.app#${module}` : '';
+
+  const MODULE_NAMES = {
+    module_1: {en:'What is Data?',        pt:'O Que \u00e9 Dado?',             gn:'Mba\u2019\u00e9pa Dato?',         sm:'O le \u0101 le Faamaumauga?', mi:'He aha te Raraunga?'},
+    module_2: {en:'Data Colonialism',     pt:'Colonialismo de Dados',   gn:'Dato Kolonialismo',       sm:"Fa'akolone Faamaumauga",  mi:'T\u0101mitanga Raraunga'},
+    module_3: {en:'CARE & Sovereignty',   pt:'CARE e Soberania',        gn:'CARE ha Soberan\u00eda',       sm:'CARE ma Pule',            mi:'Kaitiakitanga Raraunga'},
+    module_4: {en:'Land & Territory',     pt:'Terra e Territ\u00f3rio',       gn:'Yvy ha Tekoh\u00e1',           sm:'Fanua ma Teritori',       mi:'Whenua me Rohe'},
+    module_5: {en:'Collective Knowledge', pt:'Conhecimento Coletivo',   gn:'Arandu \u00d1embyasy',         sm:"Poto Fa'apotopotoga",      mi:'M\u0101tauranga \u014ckawa'},
+    module_6: {en:'Indigenous AI Futures',pt:'Futuros IA Ind\u00edgena',      gn:'IA Tekove Pyahu',         sm:'AI Anamua Pasifika',       mi:'AI M\u0101ori \u0100p\u014dp\u014d'},
+  };
+  const modLabel = module ? (MODULE_NAMES[module]?.[_mLang] || MODULE_NAMES[module]?.en || module) : '';
+
+  const themes = Array.isArray(m.political_themes) ? m.political_themes : [];
   const themeHtml = themes.length
-    ? `<div style="margin:.4rem 0;display:flex;flex-wrap:wrap;gap:.3rem">${themes.map(t=>`<span style="display:inline-block;padding:2px 8px;border-radius:999px;border:1px solid ${colour}44;color:${colour};font-size:.68rem;font-family:var(--font-sans)">${t}</span>`).join('')}</div>`
+    ? `<div style="margin:.4rem 0;display:flex;flex-wrap:wrap;gap:.3rem">${themes.map(t =>
+        `<span style="display:inline-block;padding:2px 8px;border-radius:999px;border:1px solid ${colour}44;color:${colour};font-size:.68rem;font-family:var(--font-sans)">${t}</span>`
+      ).join('')}</div>`
     : '';
   const resistHtml = m.resistance_use
-    ? `<p style="font-size:.8rem;color:var(--fg-muted);margin:.4rem 0;font-style:italic;line-height:1.5">${m.resistance_use}</p>`
+    ? `<p style="font-size:.78rem;color:var(--fg-muted);margin:.4rem 0;font-style:italic;line-height:1.5">${m.resistance_use}</p>`
     : '';
+
+  const shareText = encodeURIComponent(`${m.name_indigenous || m.name_en} \u2014 ${meaning.slice(0,120)}\n\n#TePa #IndigenousSovereignty #DataBack\n${courseUrl}`);
+  const xShareUrl  = `https://twitter.com/intent/tweet?text=${shareText}${memeUrl ? '&url=' + encodeURIComponent(memeUrl) : ''}`;
+  const fbShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(memeUrl || courseUrl)}`;
+
+  const btn = (bg, label) => `<span style="display:inline-flex;align-items:center;gap:4px;padding:6px 13px;border-radius:999px;border:1px solid ${bg}66;background:${bg}22;color:${bg};font-size:.74rem;font-family:var(--font-sans);cursor:pointer;font-weight:700">${label}</span>`;
+
   expanded.innerHTML = `
-    ${pngUrl ? `<img src="${pngUrl}" alt="${m.name_en}" loading="lazy">` : ''}
-    <h4 style="color:${colour}">${m.name_indigenous || m.name_en}</h4>
-    <span style="font-size:.7rem;color:var(--fg-muted);font-family:var(--font-sans);text-transform:uppercase;letter-spacing:.1em">${m.culture} &middot; ${m.form_geometry||''}</span>
+    ${memeUrl
+      ? `<img src="${memeUrl}" alt="${m.name_en} meme" loading="lazy" style="border-radius:10px;border:2px solid ${colour}55">`
+      : (pngUrl ? `<img src="${pngUrl}" alt="${m.name_en}" loading="lazy">` : '')}
+    <h4 style="color:${colour};margin:.7rem 0 .2rem">${m.name_indigenous || m.name_en}</h4>
+    <span style="font-size:.68rem;color:var(--fg-muted);font-family:var(--font-sans);text-transform:uppercase;letter-spacing:.1em">${m.culture} &middot; ${m.form_geometry || ''}</span>
+    ${module ? `<div style="margin:.5rem 0"><span style="font-size:.68rem;font-family:var(--font-sans);padding:3px 10px;border-radius:999px;border:1px solid ${colour}44;color:${colour}">&#x1F4DA; ${modLabel}</span></div>` : ''}
     ${themeHtml}
-    <p style="font-size:.85rem;line-height:1.6;color:var(--fg);margin:.6rem 0">${meaning}</p>
+    <p style="font-size:.84rem;line-height:1.65;color:var(--fg);margin:.6rem 0">${meaning}</p>
     ${resistHtml}
-    ${pngUrl ? `<a href="${pngUrl}" download="${m.id}.png" class="motif-download-btn" style="background:${colour}" data-motif="${m.id}" onclick="trackEvent('download','${m.id}')">&#x2913; Download PNG</a>` : ''}
+    <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.8rem">
+      ${memeUrl ? `
+        <a href="${xShareUrl}" target="_blank" rel="noopener"
+           style="display:inline-flex;align-items:center;gap:4px;padding:6px 13px;border-radius:999px;border:1px solid #1d9bf066;background:#1d9bf022;color:#1d9bf0;font-size:.74rem;font-family:var(--font-sans);cursor:pointer;font-weight:700;text-decoration:none"
+           onclick="trackEvent('share_x','${m.id}')">&#x1D54F; Share on X</a>
+        <a href="${fbShareUrl}" target="_blank" rel="noopener"
+           style="display:inline-flex;align-items:center;gap:4px;padding:6px 13px;border-radius:999px;border:1px solid #1877f266;background:#1877f222;color:#1877f2;font-size:.74rem;font-family:var(--font-sans);cursor:pointer;font-weight:700;text-decoration:none"
+           onclick="trackEvent('share_fb','${m.id}')">f Share</a>
+        <button onclick="navigator.clipboard.writeText('${memeUrl}').then(()=>{this.textContent='Copied \u2713';setTimeout(()=>{this.textContent='\uD83D\uDCF7 Copy meme URL';},1800)})"
+           style="display:inline-flex;align-items:center;gap:4px;padding:6px 13px;border-radius:999px;border:1px solid #88888866;background:#88888822;color:#ccc;font-size:.74rem;font-family:var(--font-sans);cursor:pointer;font-weight:700"
+           onclick="trackEvent('share_ig','${m.id}')">&#x1F4F7; Copy meme URL</button>
+        <a href="${memeUrl}" download="tepa-${m.id}.png"
+           style="display:inline-flex;align-items:center;gap:4px;padding:6px 13px;border-radius:999px;border:1px solid ${colour}66;background:${colour}22;color:${colour};font-size:.74rem;font-family:var(--font-sans);cursor:pointer;font-weight:700;text-decoration:none"
+           onclick="trackEvent('download','${m.id}')">&#x2913; Download meme</a>
+      ` : ''}
+      ${pngUrl ? `
+        <a href="${pngUrl}" download="${m.id}-motif.png"
+           style="display:inline-flex;align-items:center;gap:4px;padding:6px 13px;border-radius:999px;border:1px dashed ${colour}44;background:transparent;color:${colour};font-size:.72rem;font-family:var(--font-sans);cursor:pointer;font-weight:600;text-decoration:none"
+           onclick="trackEvent('download','${m.id}-motif')">&#x2913; Motif PNG</a>
+      ` : ''}
+      ${courseUrl ? `
+        <a href="${courseUrl}" target="_blank" rel="noopener"
+           style="display:inline-flex;align-items:center;gap:4px;padding:6px 13px;border-radius:999px;border:1px solid #ffffff44;background:#ffffff11;color:#fff;font-size:.74rem;font-family:var(--font-sans);cursor:pointer;font-weight:700;text-decoration:none">
+          &#x1F4D6; ${modLabel}
+        </a>
+      ` : ''}
+    </div>
   `;
   expanded.classList.add('open');
   expanded.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  // track motif view
   trackEvent('motif_view', m.id);
 }
 
