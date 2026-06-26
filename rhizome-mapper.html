@@ -499,6 +499,113 @@
     }
     .analytics-toggle-btn:hover { background: var(--accent2); }
 
+
+    /* ── live feed ticker ── */
+    #liveTicker {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 7000;
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      padding: 4px 0;
+      overflow: hidden;
+      height: 28px;
+      display: none;
+    }
+    #liveTicker.active { display: block; }
+    #liveTickerInner {
+      display: flex;
+      gap: 2.5rem;
+      animation: tickerScroll 40s linear infinite;
+      white-space: nowrap;
+      font-family: var(--font-sans);
+      font-size: .7rem;
+      color: var(--fg-muted);
+      padding: 0 2rem;
+      line-height: 20px;
+    }
+    @keyframes tickerScroll {
+      0%   { transform: translateX(100vw); }
+      100% { transform: translateX(-200%); }
+    }
+    .ticker-event { display: inline-flex; align-items: center; gap: .35rem; }
+    .ticker-dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+
+    /* ── geo heatmap dots ── */
+    .geo-dot {
+      pointer-events: none;
+      animation: geoPulse 3s ease-out infinite;
+    }
+    @keyframes geoPulse {
+      0%   { opacity: .9; r: 3px; }
+      70%  { opacity: 0; r: 10px; }
+      100% { opacity: 0; r: 10px; }
+    }
+
+    /* ── live indicator badge ── */
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: .68rem;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: #e74c3c;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .live-badge::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #e74c3c;
+      animation: liveBlink 1.2s ease infinite;
+    }
+    @keyframes liveBlink {
+      0%,100% { opacity: 1; }
+      50%      { opacity: 0.3; }
+    }
+
+    /* ── social share row (expanded) ── */
+    .share-row { display:flex; gap:.45rem; flex-wrap:wrap; margin-top:.8rem; align-items:center; }
+    .share-btn {
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-family: var(--font-sans);
+      font-size: .8rem;
+      cursor: pointer;
+      text-decoration: none;
+      border: 1px solid;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: opacity .15s;
+    }
+    .share-btn:hover { opacity: .75; }
+    .share-btn-x    { background:#1DA1F222; border-color:#1DA1F255; color:#1DA1F2; }
+    .share-btn-ig   { background:#E1306C22; border-color:#E1306C55; color:#E1306C; }
+    .share-btn-fb   { background:#1877F222; border-color:#1877F255; color:#1877F2; }
+    .share-btn-tt   { background:#69C9D022; border-color:#69C9D055; color:#010101; }
+    .share-btn-copy { background:var(--bg-raised); border-color:var(--border); color:var(--fg); }
+    .share-btn-link { background:var(--bg-raised); border-color:var(--border); color:var(--fg-muted); font-size:.72rem; }
+
+    /* ── connections overlay toggle ── */
+    .conn-toggle {
+      font-size: .72rem;
+      font-family: var(--font-sans);
+      color: var(--fg-muted);
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 3px 9px;
+      cursor: pointer;
+      margin-left: .5rem;
+    }
+    .conn-toggle.active { color: var(--accent); border-color: var(--accent); }
+
   </style>
 </head>
 <body>
@@ -602,6 +709,8 @@
         <button onclick="zoomIn()" title="Zoom in">+</button>
         <button onclick="zoomOut()" title="Zoom out">−</button>
         <button onclick="zoomReset()" title="Reset" style="font-size:.72rem">⌂</button>
+        <button class="conn-toggle" id="connToggle" onclick="toggleConnections()" title="Show user connection paths">⟷ Connections</button>
+
       </div>
     </div>
 
@@ -2200,15 +2309,37 @@ tBtn.addEventListener('click',()=>{
 });
 
 
-/* ══════════════════════════════════════════════════════════════════════════
-   ANALYTICS LAYER — Share / View / Download Tracking
-   Storage: localStorage key 'kd-analytics-v1'
-   Schema: { views: {orgId: n}, shares: {orgId: n}, copies: {orgId: n},
-             xClicks: {orgId: n}, motifRuns: n, lastSeen: iso }
-══════════════════════════════════════════════════════════════════════════ */
-const ANALYTICS_KEY = 'kd-analytics-v1';
 
-function getAnalytics() {
+/* ══════════════════════════════════════════════════════════════════════════
+   LIVE ANALYTICS — Cloudflare Worker backend + localStorage fallback
+   Worker URL: set ANALYTICS_WORKER_URL once Worker is deployed
+══════════════════════════════════════════════════════════════════════════ */
+const ANALYTICS_WORKER_URL = window.ANALYTICS_WORKER_URL || 'https://te-pa-analytics.PLACEHOLDER.workers.dev';
+const ANALYTICS_KEY = 'kd-analytics-v1';
+const ANALYTICS_QUEUE_KEY = 'kd-analytics-queue';
+
+/* ── Anonymous session ID (persists across page loads, resets after 30min idle) ── */
+function getSessionId() {
+  const key = 'kd-session';
+  const now = Date.now();
+  let s = null;
+  try { s = JSON.parse(localStorage.getItem(key)); } catch(e) {}
+  if (!s || now - s.ts > 30 * 60 * 1000) {
+    // generate UUID v4
+    const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+      const r = Math.random() * 16 | 0;
+      return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+    s = { id: uuid, ts: now };
+  } else {
+    s.ts = now;
+  }
+  try { localStorage.setItem(key, JSON.stringify(s)); } catch(e) {}
+  return s.id;
+}
+
+/* ── localStorage fallback store ── */
+function getLocalAnalytics() {
   try {
     const raw = localStorage.getItem(ANALYTICS_KEY);
     if (!raw) return { views:{}, shares:{}, copies:{}, xClicks:{}, motifRuns:0, lastSeen: new Date().toISOString() };
@@ -2216,34 +2347,93 @@ function getAnalytics() {
   } catch(e) { return { views:{}, shares:{}, copies:{}, xClicks:{}, motifRuns:0, lastSeen: new Date().toISOString() }; }
 }
 
-function saveAnalytics(data) {
+function saveLocalAnalytics(data) {
   try { localStorage.setItem(ANALYTICS_KEY, JSON.stringify(data)); } catch(e) {}
 }
 
-function trackEvent(type, orgId) {
-  const data = getAnalytics();
-  if (type === 'motifRun') {
+/* ── Event queue for offline resilience ── */
+function enqueueEvent(payload) {
+  try {
+    const q = JSON.parse(localStorage.getItem(ANALYTICS_QUEUE_KEY) || '[]');
+    q.push({ ...payload, queued_at: Date.now() });
+    if (q.length > 200) q.splice(0, q.length - 200); // cap at 200
+    localStorage.setItem(ANALYTICS_QUEUE_KEY, JSON.stringify(q));
+  } catch(e) {}
+}
+
+async function flushQueue() {
+  try {
+    const q = JSON.parse(localStorage.getItem(ANALYTICS_QUEUE_KEY) || '[]');
+    if (!q.length) return;
+    for (const evt of q) {
+      await sendToWorker(evt);
+    }
+    localStorage.removeItem(ANALYTICS_QUEUE_KEY);
+  } catch(e) {}
+}
+
+async function sendToWorker(payload) {
+  try {
+    const resp = await fetch(`${ANALYTICS_WORKER_URL}/track`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+      keepalive: true,
+    });
+    return resp.ok;
+  } catch(e) {
+    return false;
+  }
+}
+
+/* ── Core trackEvent — sends live + stores locally ── */
+function trackEvent(type, orgId, extra = {}) {
+  const org = orgId && typeof NODES !== 'undefined'
+    ? NODES.find(n => n.id === orgId)
+    : null;
+
+  const payload = {
+    type,
+    org_id: orgId || null,
+    org_name: org ? org.name : null,
+    region: org ? org.region : null,
+    lang: (typeof currentLang !== 'undefined' ? currentLang : 'en'),
+    session_id: getSessionId(),
+    ...extra,
+  };
+
+  // fire-and-forget to Worker
+  sendToWorker(payload).then(ok => {
+    if (!ok) enqueueEvent(payload);
+  });
+
+  // also update localStorage for instant local display
+  const data = getLocalAnalytics();
+  if (type === 'motif_run' || type === 'motifRun') {
     data.motifRuns = (data.motifRuns || 0) + 1;
-  } else {
-    if (!data[type]) data[type] = {};
-    data[type][orgId] = (data[type][orgId] || 0) + 1;
+  } else if (orgId) {
+    const bucket = type === 'copy' ? 'copies'
+      : type.startsWith('share') ? 'shares'
+      : 'views';
+    if (!data[bucket]) data[bucket] = {};
+    data[bucket][orgId] = (data[bucket][orgId] || 0) + 1;
   }
   data.lastSeen = new Date().toISOString();
-  saveAnalytics(data);
-  // refresh pulse rings after tracking
+  saveLocalAnalytics(data);
+
   refreshPulseRings();
 }
 
 function clearAnalytics() {
   localStorage.removeItem(ANALYTICS_KEY);
+  localStorage.removeItem(ANALYTICS_QUEUE_KEY);
   refreshPulseRings();
   renderAnalyticsPanel();
 }
 
-/* ── Pulse rings on D3 nodes ── */
+/* ── Pulse rings ── */
 function refreshPulseRings() {
-  const data = getAnalytics();
-  // combine all interaction types per org
+  const data = getLocalAnalytics();
   const heat = {};
   ['views','shares','copies','xClicks'].forEach(type => {
     Object.entries(data[type] || {}).forEach(([id, n]) => {
@@ -2251,134 +2441,358 @@ function refreshPulseRings() {
     });
   });
   if (!Object.keys(heat).length) return;
-
   const maxHeat = Math.max(...Object.values(heat));
 
-  // select all node groups in the D3 SVG
   d3.selectAll('.node-g').each(function(d) {
     const g = d3.select(this);
     if (!d || !d.id) return;
     const count = heat[d.id] || 0;
     if (count === 0) return;
-
-    // remove old pulse ring if any
     g.selectAll('.pulse-ring').remove();
-
     const baseR = 12 + d.cause.length * 2;
-    const intensity = count / maxHeat; // 0–1
+    const intensity = count / maxHeat;
     const colour = REGION_COLOUR[d.region] || '#888';
-    const opacity = 0.3 + intensity * 0.5;
-
-    // static heat glow (outer circle)
     g.insert('circle', ':first-child')
       .attr('class', 'pulse-ring')
       .attr('r', baseR + 4 + intensity * 10)
       .attr('fill', 'none')
       .attr('stroke', colour)
       .attr('stroke-width', 1.5 + intensity * 2)
-      .attr('stroke-opacity', opacity)
+      .attr('stroke-opacity', 0.3 + intensity * 0.5)
       .attr('style', `--base-r: ${baseR}px; animation-delay: ${Math.random() * 1.5}s`);
   });
 }
 
-/* ── Analytics Panel rendering ── */
+/* ── Geo heatmap from Worker /heatmap ── */
+let _geoPoints = [];
+
+async function fetchAndDrawGeoHeatmap() {
+  try {
+    const resp = await fetch(`${ANALYTICS_WORKER_URL}/heatmap?days=30`);
+    if (!resp.ok) return;
+    const data = await resp.json();
+    _geoPoints = data.points || [];
+    drawGeoHeatmap();
+  } catch(e) {}
+}
+
+function drawGeoHeatmap() {
+  if (!_geoPoints.length) return;
+  const svg = d3.select('#rhizomeSVG');
+  svg.selectAll('.geo-dot').remove();
+  const W = 1100, H = 620;
+  // Simple equirectangular projection
+  _geoPoints.forEach(pt => {
+    if (!pt.lat || !pt.lon) return;
+    const x = ((parseFloat(pt.lon) + 180) / 360) * W;
+    const y = ((90 - parseFloat(pt.lat)) / 180) * H;
+    const r = Math.max(3, Math.min(14, Math.sqrt(pt.count) * 1.5));
+    const g = svg.select('.zoom-g');
+    if (!g.node()) return;
+    g.append('circle')
+      .attr('class', 'geo-dot')
+      .attr('cx', x).attr('cy', y)
+      .attr('r', r)
+      .attr('fill', '#e74c3c')
+      .attr('fill-opacity', 0.55)
+      .attr('style', `animation-delay: ${Math.random() * 2}s`)
+      .append('title').text(`${pt.country}: ${pt.count} interactions`);
+  });
+}
+
+/* ── Connections overlay (co-visited orgs) ── */
+let _showConnections = false;
+let _connectionEdges = [];
+
+async function fetchConnections() {
+  try {
+    const resp = await fetch(`${ANALYTICS_WORKER_URL}/connections?days=30`);
+    if (!resp.ok) return;
+    const data = await resp.json();
+    _connectionEdges = data.connections || [];
+  } catch(e) {}
+}
+
+function toggleConnections() {
+  _showConnections = !_showConnections;
+  const btn = document.getElementById('connToggle');
+  if (btn) btn.classList.toggle('active', _showConnections);
+  drawConnectionOverlay();
+}
+
+function drawConnectionOverlay() {
+  const svg = d3.select('#rhizomeSVG').select('.zoom-g');
+  svg.selectAll('.conn-edge').remove();
+  if (!_showConnections || !_connectionEdges.length) return;
+
+  // build node position lookup from simulation
+  const posMap = {};
+  if (typeof simulation !== 'undefined' && simulation) {
+    simulation.nodes().forEach(n => { posMap[n.id] = { x: n.x, y: n.y }; });
+  }
+
+  const maxW = Math.max(..._connectionEdges.map(e => e.weight));
+  _connectionEdges.slice(0, 80).forEach(edge => {
+    const src = posMap[edge.source_id];
+    const tgt = posMap[edge.target_id];
+    if (!src || !tgt) return;
+    const opacity = 0.15 + (edge.weight / maxW) * 0.55;
+    svg.insert('line', '.links')
+      .attr('class', 'conn-edge')
+      .attr('x1', src.x).attr('y1', src.y)
+      .attr('x2', tgt.x).attr('y2', tgt.y)
+      .attr('stroke', '#f39c12')
+      .attr('stroke-opacity', opacity)
+      .attr('stroke-width', 1 + (edge.weight / maxW) * 3)
+      .attr('stroke-dasharray', '4 3');
+  });
+}
+
+/* ── Live ticker ── */
+async function fetchAndShowLiveTicker() {
+  try {
+    const resp = await fetch(`${ANALYTICS_WORKER_URL}/live`);
+    if (!resp.ok) return;
+    const data = await resp.json();
+    const events = data.events || [];
+    if (!events.length) return;
+
+    const typeLabel = {
+      view: '👁 viewed', copy: '📋 copied', share_x: '🐦 shared on X',
+      share_ig: '📸 shared on Instagram', share_fb: '💙 shared on Facebook',
+      share_tt: '🎵 shared on TikTok', download: '⬇ downloaded',
+      motif_run: '⬡ ran motif mapper',
+    };
+    const regionColour = {
+      maori: '#2ecc71', oceania: '#3498db', south_america: '#e67e22',
+      north_america: '#e74c3c', global: '#9b59b6', africa: '#f39c12', europe: '#1abc9c',
+    };
+
+    const items = events.slice(0, 20).map(e => {
+      const label = typeLabel[e.type] || e.type;
+      const org = e.org_name ? ` <strong>${e.org_name}</strong>` : '';
+      const loc = e.city ? ` · ${e.city}` : (e.country ? ` · ${e.country}` : '');
+      const colour = regionColour[e.region] || '#888';
+      return `<span class="ticker-event"><span class="ticker-dot" style="background:${colour}"></span>${label}${org}${loc}</span>`;
+    });
+
+    const ticker = document.getElementById('liveTicker');
+    const inner = document.getElementById('liveTickerInner');
+    if (inner) {
+      inner.innerHTML = [...items, ...items].join(''); // doubled for seamless loop
+      ticker.classList.add('active');
+    }
+  } catch(e) {}
+}
+
+/* ── Analytics Panel ── */
 function openAnalyticsPanel() {
   renderAnalyticsPanel();
   document.getElementById('analyticsPanel').classList.add('open');
+  // also fetch fresh live data
+  fetchLiveStatsForPanel();
+}
+
+async function fetchLiveStatsForPanel() {
+  try {
+    const resp = await fetch(`${ANALYTICS_WORKER_URL}/stats?days=30`);
+    if (!resp.ok) return;
+    const data = await resp.json();
+    renderAnalyticsPanelWithData(data);
+  } catch(e) {}
 }
 
 function renderAnalyticsPanel() {
-  const data = getAnalytics();
-
-  // global stats
+  // show local data immediately, then replace with live
+  const data = getLocalAnalytics();
   const totalViews = Object.values(data.views || {}).reduce((a,b)=>a+b, 0);
   const totalShares = Object.values(data.shares || {}).reduce((a,b)=>a+b, 0);
   const totalCopies = Object.values(data.copies || {}).reduce((a,b)=>a+b, 0);
-  const totalX = Object.values(data.xClicks || {}).reduce((a,b)=>a+b, 0);
 
   document.getElementById('apGlobalStats').innerHTML = `
-    <div class="ap-stat-chip"><strong>${totalViews}</strong> views</div>
-    <div class="ap-stat-chip"><strong>${totalShares}</strong> X shares</div>
-    <div class="ap-stat-chip"><strong>${totalCopies}</strong> copies</div>
-    <div class="ap-stat-chip"><strong>${data.motifRuns||0}</strong> motif runs</div>
+    <div class="ap-stat-chip"><strong>${totalViews}</strong> views (local)</div>
+    <div class="ap-stat-chip"><strong>${totalShares}</strong> shares (local)</div>
+    <div class="ap-stat-chip"><strong>${totalCopies}</strong> copies (local)</div>
+    <div class="ap-stat-chip live-badge">LIVE loading…</div>
+  `;
+}
+
+function renderAnalyticsPanelWithData(data) {
+  const t = data.totals || {};
+  document.getElementById('apGlobalStats').innerHTML = `
+    <div class="ap-stat-chip"><strong>${t.views||0}</strong> views</div>
+    <div class="ap-stat-chip"><strong>${(t.shares_x||0)+(t.shares_ig||0)+(t.shares_fb||0)+(t.shares_tt||0)}</strong> shares</div>
+    <div class="ap-stat-chip"><strong>${t.copies||0}</strong> copies</div>
+    <div class="ap-stat-chip"><strong>${t.downloads||0}</strong> downloads</div>
+    <div class="ap-stat-chip"><strong>${t.motif_runs||0}</strong> motif runs</div>
+    <div class="ap-stat-chip"><strong>${t.countries||0}</strong> countries</div>
+    <div class="ap-stat-chip"><strong>${t.sessions||0}</strong> sessions</div>
   `;
 
-  function renderTopList(containerId, typeData, colour) {
-    const sorted = Object.entries(typeData || {})
-      .sort((a,b) => b[1]-a[1]).slice(0,8);
-    const max = sorted[0]?.[1] || 1;
-    document.getElementById(containerId).innerHTML = sorted.length
-      ? sorted.map(([id, n]) => {
-          const node = (typeof NODES !== 'undefined' ? NODES : []).find(nd => nd.id === id);
-          const name = node ? node.name.slice(0,30) : id;
-          const c = node ? (REGION_COLOUR[node.region]||colour) : colour;
-          const pct = Math.round((n/max)*100);
+  function renderTopList(containerId, items, valueKey, colour) {
+    const max = items[0]?.[valueKey] || 1;
+    document.getElementById(containerId).innerHTML = items.length
+      ? items.slice(0,8).map(item => {
+          const c = (typeof REGION_COLOUR !== 'undefined' ? REGION_COLOUR[item.region] : null) || colour;
+          const pct = Math.round((item[valueKey]/max)*100);
           return `<div class="ap-row">
             <div style="flex:1">
-              <div class="ap-org-name">${name}</div>
+              <div class="ap-org-name">${(item.org_name||item.org_id||'unknown').slice(0,30)}</div>
               <div class="ap-bar" style="width:${pct}%;background:${c}55"></div>
             </div>
-            <div class="ap-count" style="color:${c}">${n}</div>
+            <div class="ap-count" style="color:${c}">${item[valueKey]}</div>
           </div>`;
         }).join('')
       : '<div style="color:var(--fg-muted);font-size:.8rem;padding:.4rem 0">No data yet</div>';
   }
 
-  renderTopList('apTopViewed', data.views, '#3498db');
-  renderTopList('apTopShared', data.shares, '#e74c3c');
-  renderTopList('apTopCopied', data.copies, '#2ecc71');
+  const byOrg = data.by_org || [];
+  renderTopList('apTopViewed', byOrg.filter(o => o.views > 0).sort((a,b)=>b.views-a.views), 'views', '#3498db');
+  renderTopList('apTopShared', byOrg.filter(o => o.shares > 0).sort((a,b)=>b.shares-a.shares), 'shares', '#e74c3c');
+  renderTopList('apTopCopied', byOrg.filter(o => o.copies > 0).sort((a,b)=>b.copies-a.copies), 'copies', '#2ecc71');
+
+  // Platform chart
+  const byPlatform = data.by_platform || [];
+  const platformEl = document.getElementById('apPlatformBreakdown');
+  if (platformEl && byPlatform.length) {
+    const maxP = byPlatform[0].count;
+    platformEl.innerHTML = byPlatform.map(p => {
+      const pct = Math.round((p.count/maxP)*100);
+      return `<div class="ap-row">
+        <div style="flex:1">
+          <div class="ap-org-name">${p.platform||'unknown'}</div>
+          <div class="ap-bar" style="width:${pct}%;background:#9b59b655"></div>
+        </div>
+        <div class="ap-count" style="color:#9b59b6">${p.count}</div>
+      </div>`;
+    }).join('');
+  }
 }
 
-/* ── Hook into existing functions ── */
+/* ── Enhanced showOrgPostModal with full social platforms + UTM links ── */
+function buildShareButtons(org, post, colour) {
+  const encodedPost = encodeURIComponent(post.slice(0, 260));
+  const utmLink = `${org.url}?utm_source=te-pa-rhizome&utm_medium=social&utm_campaign=${org.region}&utm_content=${encodeURIComponent(org.id)}`;
+  const encodedLink = encodeURIComponent(utmLink);
 
-// Wrap showNodePanel to track org views
+  // Platform share URLs
+  const xUrl = `https://twitter.com/intent/tweet?text=${encodedPost}`;
+  const fbUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedLink}&quote=${encodedPost}`;
+  // Instagram: no direct web share API — copy + open
+  const ttUrl = `https://www.tiktok.com/upload`; // TikTok has no web share intent, open app
+  const igCopy = true; // Instagram: copy post, then open app
+
+  return `
+    <div class="share-row">
+      <a class="share-btn share-btn-x"
+         href="${xUrl}" target="_blank" rel="noopener"
+         data-platform="share_x" data-org="${org.id}"
+         onclick="trackEvent('share_x','${org.id}',{platform:'x'})">
+        𝕏 Post to X
+      </a>
+      <button class="share-btn share-btn-fb"
+         onclick="trackEvent('share_fb','${org.id}',{platform:'fb'});window.open('${fbUrl}','_blank')">
+        f Facebook
+      </button>
+      <button class="share-btn share-btn-ig"
+         onclick="trackEvent('share_ig','${org.id}',{platform:'ig'});
+           navigator.clipboard.writeText(${JSON.stringify(post)}).then(()=>{
+             this.textContent='Copied! Open Instagram →';
+             this.style.background='#E1306C33';
+             setTimeout(()=>{this.innerHTML='📸 Instagram';this.style.background='';},3000);
+           })">
+        📸 Instagram
+      </button>
+      <button class="share-btn share-btn-tt"
+         onclick="trackEvent('share_tt','${org.id}',{platform:'tt'});
+           navigator.clipboard.writeText(${JSON.stringify(post)}).then(()=>{
+             this.textContent='Copied! Open TikTok →';
+             setTimeout(()=>{this.innerHTML='🎵 TikTok';},3000);
+           });window.open('https://www.tiktok.com','_blank')">
+        🎵 TikTok
+      </button>
+      <button class="share-btn share-btn-copy"
+         onclick="navigator.clipboard.writeText(document.getElementById('orgPostText').value).then(()=>{
+           trackEvent('copy','${org.id}');
+           this.textContent='Copied ✓';
+           setTimeout(()=>{this.textContent='Copy text';},2000);
+         })">
+        Copy text
+      </button>
+      <button class="share-btn share-btn-link"
+         onclick="navigator.clipboard.writeText('${utmLink}').then(()=>{
+           this.textContent='Link copied ✓';
+           setTimeout(()=>{this.textContent='🔗 Copy link';},2000);
+         })">
+        🔗 Copy link
+      </button>
+    </div>
+    <p style="font-size:.68rem;color:var(--fg-muted);margin:.4rem 0 0;font-family:var(--font-sans)">
+      UTM-tracked link auto-included · shares recorded globally
+    </p>`;
+}
+
+/* ── Wrap showOrgPostModal to inject full share row ── */
+const _origShowOrgPostModal = showOrgPostModal;
+showOrgPostModal = function(org, post, tags, lang) {
+  _origShowOrgPostModal(org, post, tags, lang);
+  // Replace existing share buttons with enhanced version
+  setTimeout(() => {
+    const modal = document.getElementById('orgPostModal');
+    if (!modal) return;
+    // Find the existing share div and replace it
+    const innerDiv = modal.querySelector('div[style*="display:flex"]');
+    if (innerDiv) {
+      const colour = REGION_COLOUR[org.region] || '#888';
+      innerDiv.outerHTML = buildShareButtons(org, post, colour);
+    }
+    // Also track node view
+    if (org && org.id) trackEvent('view', org.id);
+  }, 80);
+};
+
+/* ── Wrap key functions ── */
 const _origShowNodePanel = showNodePanel;
 showNodePanel = function(d) {
   _origShowNodePanel(d);
-  if (d && d.id) trackEvent('views', d.id);
+  if (d && d.id) trackEvent('view', d.id);
 };
 
-// Wrap copyPost to track copies
 const _origCopyPost = copyPost;
 copyPost = function() {
   _origCopyPost();
   const org = window._activeMapOrg;
-  if (org && org.id) trackEvent('copies', org.id);
+  if (org && org.id) trackEvent('copy', org.id);
 };
 
-// Wrap runMapper to count motif runs
 const _origRunMapper = runMapper;
 runMapper = function() {
   _origRunMapper();
-  trackEvent('motifRun', null);
+  trackEvent('motif_run', null);
 };
 
-// Track "Post to X" clicks — patch showOrgPostModal to add listener on X button
-const _origShowOrgPostModal = showOrgPostModal;
-showOrgPostModal = function(org, post, tags, lang) {
-  _origShowOrgPostModal(org, post, tags, lang);
-  // after modal renders, wire X button click
-  setTimeout(() => {
-    const modal = document.getElementById('orgPostModal');
-    if (!modal) return;
-    const xBtn = modal.querySelector('a[href*="twitter.com"], a[href*="x.com"]');
-    if (xBtn && !xBtn.dataset.tracked) {
-      xBtn.dataset.tracked = '1';
-      xBtn.addEventListener('click', () => {
-        if (org && org.id) trackEvent('xClicks', org.id);
-        if (org && org.id) trackEvent('shares', org.id);
-      });
-    }
-  }, 150);
-};
-
-// Refresh pulse rings after network redraws
 const _origDrawNetwork = drawNetwork;
 drawNetwork = function() {
   _origDrawNetwork();
-  // slight delay to let D3 settle
-  setTimeout(refreshPulseRings, 600);
+  setTimeout(() => {
+    refreshPulseRings();
+    if (_showConnections) drawConnectionOverlay();
+    if (_geoPoints.length) drawGeoHeatmap();
+  }, 600);
 };
+
+/* ── Initialise on load ── */
+setTimeout(() => {
+  flushQueue();
+  fetchAndShowLiveTicker();
+  fetchAndDrawGeoHeatmap();
+  fetchConnections();
+  // refresh ticker every 60s
+  setInterval(fetchAndShowLiveTicker, 60000);
+  // refresh geo every 5min
+  setInterval(fetchAndDrawGeoHeatmap, 300000);
+}, 2000);
+
 
 /* ── Download motif tracking ── */
 // Track clicks on motif image links / download buttons
@@ -2427,14 +2841,22 @@ renderCampaigns();
   <div id="apTopShared"></div>
   <div class="ap-section-head">Top copied posts</div>
   <div id="apTopCopied"></div>
+  <div class="ap-section-head">By platform</div>
+  <div id="apPlatformBreakdown"></div>
   <button onclick="if(confirm('Clear all analytics data?')){clearAnalytics();}" 
     style="margin-top:1rem;font-size:.75rem;color:var(--fg-muted);background:none;border:none;cursor:pointer;padding:.2rem 0">
     Clear analytics data
   </button>
 </div>
 <button class="analytics-toggle-btn" onclick="openAnalyticsPanel()" title="View share analytics">
-  📊 Analytics
+  <span class="live-badge" style="margin-right:4px"></span>📊 Analytics
 </button>
+
+
+<!-- ── Live Activity Ticker ── -->
+<div id="liveTicker" aria-live="polite" aria-label="Live activity feed">
+  <div id="liveTickerInner"></div>
+</div>
 
 </body>
 </html>
