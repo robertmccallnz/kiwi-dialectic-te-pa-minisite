@@ -20,8 +20,11 @@
   <meta name="twitter:image" content="https://robertmccallnz.github.io/kiwi-dialectic-te-pa-minisite/assets/social/kiwi-dialectic-x-card.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/kiwi-dialectic.css" />
+  <!-- Load fonts asynchronously to avoid render blocking -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="preload" href="assets/kiwi-dialectic.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/kiwi-dialectic.css"></noscript>
   <link rel="manifest" href="/kiwi-dialectic-te-pa-minisite/manifest.json">
   <meta name="theme-color" content="#c0392b">
 </head>
@@ -635,49 +638,49 @@ Facebook: "If you're teaching anything about data, AI, technology rights, or ind
         <p style="font-size:.72rem;font-weight:600;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;margin:.5rem 0 .3rem">Twitter/X <span style="font-weight:400">(1200×675)</span></p>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem;margin-bottom:.5rem">
           <figure style="margin:0"><a href="social-kit/platform/platform-x-koru-begin.png" download>
-            <img src="social-kit/platform/platform-x-koru-begin.png" alt="Ko tōu tīmatanga tōu ake" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-x-koru-begin.png" alt="Ko tōu tīmatanga tōu ake" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ko tōu tīmatanga tōu ake <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-x-koru-data.png" download>
-            <img src="social-kit/platform/platform-x-koru-data.png" alt="Ko wai nāu i hanga?" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-x-koru-data.png" alt="Ko wai nāu i hanga?" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ko wai nāu i hanga? <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-x-koru-learn.png" download>
-            <img src="social-kit/platform/platform-x-koru-learn.png" alt="Ako. Ara. Tū." style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-x-koru-learn.png" alt="Ako. Ara. Tū." style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ako. Ara. Tū. <span style="color:var(--accent2)">↓</span></figcaption></figure>
         </div>
         <p style="font-size:.72rem;font-weight:600;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;margin:.5rem 0 .3rem">Instagram <span style="font-weight:400">(1080×1080)</span></p>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem;margin-bottom:.5rem">
           <figure style="margin:0"><a href="social-kit/platform/platform-instagram-koru-begin.png" download>
-            <img src="social-kit/platform/platform-instagram-koru-begin.png" alt="Ko tōu tīmatanga tōu ake" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-instagram-koru-begin.png" alt="Ko tōu tīmatanga tōu ake" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ko tōu tīmatanga tōu ake <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-instagram-koru-data.png" download>
-            <img src="social-kit/platform/platform-instagram-koru-data.png" alt="Ko wai nāu i hanga?" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-instagram-koru-data.png" alt="Ko wai nāu i hanga?" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ko wai nāu i hanga? <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-instagram-koru-learn.png" download>
-            <img src="social-kit/platform/platform-instagram-koru-learn.png" alt="Ako. Ara. Tū." style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-instagram-koru-learn.png" alt="Ako. Ara. Tū." style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ako. Ara. Tū. <span style="color:var(--accent2)">↓</span></figcaption></figure>
         </div>
         <p style="font-size:.72rem;font-weight:600;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;margin:.5rem 0 .3rem">Facebook <span style="font-weight:400">(1200×630)</span></p>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem;margin-bottom:.5rem">
           <figure style="margin:0"><a href="social-kit/platform/platform-facebook-koru-begin.png" download>
-            <img src="social-kit/platform/platform-facebook-koru-begin.png" alt="Ko tōu tīmatanga tōu ake" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-facebook-koru-begin.png" alt="Ko tōu tīmatanga tōu ake" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ko tōu tīmatanga tōu ake <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-facebook-koru-data.png" download>
-            <img src="social-kit/platform/platform-facebook-koru-data.png" alt="Ko wai nāu i hanga?" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-facebook-koru-data.png" alt="Ko wai nāu i hanga?" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ko wai nāu i hanga? <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-facebook-koru-learn.png" download>
-            <img src="social-kit/platform/platform-facebook-koru-learn.png" alt="Ako. Ara. Tū." style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-facebook-koru-learn.png" alt="Ako. Ara. Tū." style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ako. Ara. Tū. <span style="color:var(--accent2)">↓</span></figcaption></figure>
         </div>
         <p style="font-size:.72rem;font-weight:600;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;margin:.5rem 0 .3rem">TikTok <span style="font-weight:400">(1080×1920)</span></p>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem;margin-bottom:.5rem">
           <figure style="margin:0"><a href="social-kit/platform/platform-tiktok-koru-begin.png" download>
-            <img src="social-kit/platform/platform-tiktok-koru-begin.png" alt="Ko tōu tīmatanga tōu ake" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-tiktok-koru-begin.png" alt="Ko tōu tīmatanga tōu ake" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ko tōu tīmatanga tōu ake <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-tiktok-koru-data.png" download>
-            <img src="social-kit/platform/platform-tiktok-koru-data.png" alt="Ko wai nāu i hanga?" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-tiktok-koru-data.png" alt="Ko wai nāu i hanga?" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ko wai nāu i hanga? <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-tiktok-koru-learn.png" download>
-            <img src="social-kit/platform/platform-tiktok-koru-learn.png" alt="Ako. Ara. Tū." style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-tiktok-koru-learn.png" alt="Ako. Ara. Tū." style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ako. Ara. Tū. <span style="color:var(--accent2)">↓</span></figcaption></figure>
         </div>
       </div>
@@ -687,49 +690,49 @@ Facebook: "If you're teaching anything about data, AI, technology rights, or ind
         <p style="font-size:.72rem;font-weight:600;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;margin:.5rem 0 .3rem">Twitter/X <span style="font-weight:400">(1200×675)</span></p>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem;margin-bottom:.5rem">
           <figure style="margin:0"><a href="social-kit/platform/platform-x-pa-protect.png" download>
-            <img src="social-kit/platform/platform-x-pa-protect.png" alt="He ārai tō koutou mō ngā raraunga" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-x-pa-protect.png" alt="He ārai tō koutou mō ngā raraunga" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">He ārai tō koutou mō ngā raraunga <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-x-pa-resist.png" download>
-            <img src="social-kit/platform/platform-x-pa-resist.png" alt="Kaua e tuku i tō reo ki ngā kaihanga AI" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-x-pa-resist.png" alt="Kaua e tuku i tō reo ki ngā kaihanga AI" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Kaua e tuku i tō reo ki ngā kaihanga AI <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-x-pa-build.png" download>
-            <img src="social-kit/platform/platform-x-pa-build.png" alt="Hangaia ō ake pūnaha" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-x-pa-build.png" alt="Hangaia ō ake pūnaha" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Hangaia ō ake pūnaha <span style="color:var(--accent2)">↓</span></figcaption></figure>
         </div>
         <p style="font-size:.72rem;font-weight:600;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;margin:.5rem 0 .3rem">Instagram <span style="font-weight:400">(1080×1080)</span></p>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem;margin-bottom:.5rem">
           <figure style="margin:0"><a href="social-kit/platform/platform-instagram-pa-protect.png" download>
-            <img src="social-kit/platform/platform-instagram-pa-protect.png" alt="He ārai tō koutou mō ngā raraunga" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-instagram-pa-protect.png" alt="He ārai tō koutou mō ngā raraunga" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">He ārai tō koutou mō ngā raraunga <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-instagram-pa-resist.png" download>
-            <img src="social-kit/platform/platform-instagram-pa-resist.png" alt="Kaua e tuku i tō reo ki ngā kaihanga AI" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-instagram-pa-resist.png" alt="Kaua e tuku i tō reo ki ngā kaihanga AI" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Kaua e tuku i tō reo ki ngā kaihanga AI <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-instagram-pa-build.png" download>
-            <img src="social-kit/platform/platform-instagram-pa-build.png" alt="Hangaia ō ake pūnaha" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-instagram-pa-build.png" alt="Hangaia ō ake pūnaha" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Hangaia ō ake pūnaha <span style="color:var(--accent2)">↓</span></figcaption></figure>
         </div>
         <p style="font-size:.72rem;font-weight:600;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;margin:.5rem 0 .3rem">Facebook <span style="font-weight:400">(1200×630)</span></p>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem;margin-bottom:.5rem">
           <figure style="margin:0"><a href="social-kit/platform/platform-facebook-pa-protect.png" download>
-            <img src="social-kit/platform/platform-facebook-pa-protect.png" alt="He ārai tō koutou mō ngā raraunga" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-facebook-pa-protect.png" alt="He ārai tō koutou mō ngā raraunga" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">He ārai tō koutou mō ngā raraunga <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-facebook-pa-resist.png" download>
-            <img src="social-kit/platform/platform-facebook-pa-resist.png" alt="Kaua e tuku i tō reo ki ngā kaihanga AI" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-facebook-pa-resist.png" alt="Kaua e tuku i tō reo ki ngā kaihanga AI" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Kaua e tuku i tō reo ki ngā kaihanga AI <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-facebook-pa-build.png" download>
-            <img src="social-kit/platform/platform-facebook-pa-build.png" alt="Hangaia ō ake pūnaha" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-facebook-pa-build.png" alt="Hangaia ō ake pūnaha" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Hangaia ō ake pūnaha <span style="color:var(--accent2)">↓</span></figcaption></figure>
         </div>
         <p style="font-size:.72rem;font-weight:600;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;margin:.5rem 0 .3rem">TikTok <span style="font-weight:400">(1080×1920)</span></p>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem;margin-bottom:.5rem">
           <figure style="margin:0"><a href="social-kit/platform/platform-tiktok-pa-protect.png" download>
-            <img src="social-kit/platform/platform-tiktok-pa-protect.png" alt="He ārai tō koutou mō ngā raraunga" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-tiktok-pa-protect.png" alt="He ārai tō koutou mō ngā raraunga" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">He ārai tō koutou mō ngā raraunga <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-tiktok-pa-resist.png" download>
-            <img src="social-kit/platform/platform-tiktok-pa-resist.png" alt="Kaua e tuku i tō reo ki ngā kaihanga AI" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-tiktok-pa-resist.png" alt="Kaua e tuku i tō reo ki ngā kaihanga AI" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Kaua e tuku i tō reo ki ngā kaihanga AI <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-tiktok-pa-build.png" download>
-            <img src="social-kit/platform/platform-tiktok-pa-build.png" alt="Hangaia ō ake pūnaha" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-tiktok-pa-build.png" alt="Hangaia ō ake pūnaha" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Hangaia ō ake pūnaha <span style="color:var(--accent2)">↓</span></figcaption></figure>
         </div>
       </div>
@@ -739,49 +742,49 @@ Facebook: "If you're teaching anything about data, AI, technology rights, or ind
         <p style="font-size:.72rem;font-weight:600;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;margin:.5rem 0 .3rem">Twitter/X <span style="font-weight:400">(1200×675)</span></p>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem;margin-bottom:.5rem">
           <figure style="margin:0"><a href="social-kit/platform/platform-x-niho-bite.png" download>
-            <img src="social-kit/platform/platform-x-niho-bite.png" alt="He niho tonu tōna" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-x-niho-bite.png" alt="He niho tonu tōna" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">He niho tonu tōna <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-x-niho-ai.png" download>
-            <img src="social-kit/platform/platform-x-niho-ai.png" alt="He aha tō AI e kai ana?" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-x-niho-ai.png" alt="He aha tō AI e kai ana?" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">He aha tō AI e kai ana? <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-x-niho-name.png" download>
-            <img src="social-kit/platform/platform-x-niho-name.png" alt="Tōia mai. Whakaingoatia." style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-x-niho-name.png" alt="Tōia mai. Whakaingoatia." style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Tōia mai. Whakaingoatia. <span style="color:var(--accent2)">↓</span></figcaption></figure>
         </div>
         <p style="font-size:.72rem;font-weight:600;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;margin:.5rem 0 .3rem">Instagram <span style="font-weight:400">(1080×1080)</span></p>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem;margin-bottom:.5rem">
           <figure style="margin:0"><a href="social-kit/platform/platform-instagram-niho-bite.png" download>
-            <img src="social-kit/platform/platform-instagram-niho-bite.png" alt="He niho tonu tōna" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-instagram-niho-bite.png" alt="He niho tonu tōna" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">He niho tonu tōna <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-instagram-niho-ai.png" download>
-            <img src="social-kit/platform/platform-instagram-niho-ai.png" alt="He aha tō AI e kai ana?" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-instagram-niho-ai.png" alt="He aha tō AI e kai ana?" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">He aha tō AI e kai ana? <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-instagram-niho-name.png" download>
-            <img src="social-kit/platform/platform-instagram-niho-name.png" alt="Tōia mai. Whakaingoatia." style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-instagram-niho-name.png" alt="Tōia mai. Whakaingoatia." style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Tōia mai. Whakaingoatia. <span style="color:var(--accent2)">↓</span></figcaption></figure>
         </div>
         <p style="font-size:.72rem;font-weight:600;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;margin:.5rem 0 .3rem">Facebook <span style="font-weight:400">(1200×630)</span></p>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem;margin-bottom:.5rem">
           <figure style="margin:0"><a href="social-kit/platform/platform-facebook-niho-bite.png" download>
-            <img src="social-kit/platform/platform-facebook-niho-bite.png" alt="He niho tonu tōna" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-facebook-niho-bite.png" alt="He niho tonu tōna" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">He niho tonu tōna <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-facebook-niho-ai.png" download>
-            <img src="social-kit/platform/platform-facebook-niho-ai.png" alt="He aha tō AI e kai ana?" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-facebook-niho-ai.png" alt="He aha tō AI e kai ana?" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">He aha tō AI e kai ana? <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-facebook-niho-name.png" download>
-            <img src="social-kit/platform/platform-facebook-niho-name.png" alt="Tōia mai. Whakaingoatia." style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-facebook-niho-name.png" alt="Tōia mai. Whakaingoatia." style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Tōia mai. Whakaingoatia. <span style="color:var(--accent2)">↓</span></figcaption></figure>
         </div>
         <p style="font-size:.72rem;font-weight:600;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;margin:.5rem 0 .3rem">TikTok <span style="font-weight:400">(1080×1920)</span></p>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem;margin-bottom:.5rem">
           <figure style="margin:0"><a href="social-kit/platform/platform-tiktok-niho-bite.png" download>
-            <img src="social-kit/platform/platform-tiktok-niho-bite.png" alt="He niho tonu tōna" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-tiktok-niho-bite.png" alt="He niho tonu tōna" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">He niho tonu tōna <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-tiktok-niho-ai.png" download>
-            <img src="social-kit/platform/platform-tiktok-niho-ai.png" alt="He aha tō AI e kai ana?" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-tiktok-niho-ai.png" alt="He aha tō AI e kai ana?" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">He aha tō AI e kai ana? <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-tiktok-niho-name.png" download>
-            <img src="social-kit/platform/platform-tiktok-niho-name.png" alt="Tōia mai. Whakaingoatia." style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-tiktok-niho-name.png" alt="Tōia mai. Whakaingoatia." style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Tōia mai. Whakaingoatia. <span style="color:var(--accent2)">↓</span></figcaption></figure>
         </div>
       </div>
@@ -791,49 +794,49 @@ Facebook: "If you're teaching anything about data, AI, technology rights, or ind
         <p style="font-size:.72rem;font-weight:600;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;margin:.5rem 0 .3rem">Twitter/X <span style="font-weight:400">(1200×675)</span></p>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem;margin-bottom:.5rem">
           <figure style="margin:0"><a href="social-kit/platform/platform-x-kow-law.png" download>
-            <img src="social-kit/platform/platform-x-kow-law.png" alt="Ko te tikanga te ture tuatahi" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-x-kow-law.png" alt="Ko te tikanga te ture tuatahi" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ko te tikanga te ture tuatahi <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-x-kow-design.png" download>
-            <img src="social-kit/platform/platform-x-kow-design.png" alt="He tikanga tō ia āhua" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-x-kow-design.png" alt="He tikanga tō ia āhua" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">He tikanga tō ia āhua <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-x-kow-reclaim.png" download>
-            <img src="social-kit/platform/platform-x-kow-reclaim.png" alt="Whakahokia mai ngā raraunga" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-x-kow-reclaim.png" alt="Whakahokia mai ngā raraunga" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Whakahokia mai ngā raraunga <span style="color:var(--accent2)">↓</span></figcaption></figure>
         </div>
         <p style="font-size:.72rem;font-weight:600;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;margin:.5rem 0 .3rem">Instagram <span style="font-weight:400">(1080×1080)</span></p>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem;margin-bottom:.5rem">
           <figure style="margin:0"><a href="social-kit/platform/platform-instagram-kow-law.png" download>
-            <img src="social-kit/platform/platform-instagram-kow-law.png" alt="Ko te tikanga te ture tuatahi" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-instagram-kow-law.png" alt="Ko te tikanga te ture tuatahi" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ko te tikanga te ture tuatahi <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-instagram-kow-design.png" download>
-            <img src="social-kit/platform/platform-instagram-kow-design.png" alt="He tikanga tō ia āhua" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-instagram-kow-design.png" alt="He tikanga tō ia āhua" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">He tikanga tō ia āhua <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-instagram-kow-reclaim.png" download>
-            <img src="social-kit/platform/platform-instagram-kow-reclaim.png" alt="Whakahokia mai ngā raraunga" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-instagram-kow-reclaim.png" alt="Whakahokia mai ngā raraunga" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Whakahokia mai ngā raraunga <span style="color:var(--accent2)">↓</span></figcaption></figure>
         </div>
         <p style="font-size:.72rem;font-weight:600;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;margin:.5rem 0 .3rem">Facebook <span style="font-weight:400">(1200×630)</span></p>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem;margin-bottom:.5rem">
           <figure style="margin:0"><a href="social-kit/platform/platform-facebook-kow-law.png" download>
-            <img src="social-kit/platform/platform-facebook-kow-law.png" alt="Ko te tikanga te ture tuatahi" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-facebook-kow-law.png" alt="Ko te tikanga te ture tuatahi" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ko te tikanga te ture tuatahi <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-facebook-kow-design.png" download>
-            <img src="social-kit/platform/platform-facebook-kow-design.png" alt="He tikanga tō ia āhua" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-facebook-kow-design.png" alt="He tikanga tō ia āhua" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">He tikanga tō ia āhua <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-facebook-kow-reclaim.png" download>
-            <img src="social-kit/platform/platform-facebook-kow-reclaim.png" alt="Whakahokia mai ngā raraunga" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-facebook-kow-reclaim.png" alt="Whakahokia mai ngā raraunga" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Whakahokia mai ngā raraunga <span style="color:var(--accent2)">↓</span></figcaption></figure>
         </div>
         <p style="font-size:.72rem;font-weight:600;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;margin:.5rem 0 .3rem">TikTok <span style="font-weight:400">(1080×1920)</span></p>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem;margin-bottom:.5rem">
           <figure style="margin:0"><a href="social-kit/platform/platform-tiktok-kow-law.png" download>
-            <img src="social-kit/platform/platform-tiktok-kow-law.png" alt="Ko te tikanga te ture tuatahi" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-tiktok-kow-law.png" alt="Ko te tikanga te ture tuatahi" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ko te tikanga te ture tuatahi <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-tiktok-kow-design.png" download>
-            <img src="social-kit/platform/platform-tiktok-kow-design.png" alt="He tikanga tō ia āhua" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-tiktok-kow-design.png" alt="He tikanga tō ia āhua" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">He tikanga tō ia āhua <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-tiktok-kow-reclaim.png" download>
-            <img src="social-kit/platform/platform-tiktok-kow-reclaim.png" alt="Whakahokia mai ngā raraunga" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-tiktok-kow-reclaim.png" alt="Whakahokia mai ngā raraunga" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Whakahokia mai ngā raraunga <span style="color:var(--accent2)">↓</span></figcaption></figure>
         </div>
       </div>
@@ -843,49 +846,49 @@ Facebook: "If you're teaching anything about data, AI, technology rights, or ind
         <p style="font-size:.72rem;font-weight:600;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;margin:.5rem 0 .3rem">Twitter/X <span style="font-weight:400">(1200×675)</span></p>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem;margin-bottom:.5rem">
           <figure style="margin:0"><a href="social-kit/platform/platform-x-una-collective.png" download>
-            <img src="social-kit/platform/platform-x-una-collective.png" alt="Ko tātou he kahu" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-x-una-collective.png" alt="Ko tātou he kahu" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ko tātou he kahu <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-x-una-consent.png" download>
-            <img src="social-kit/platform/platform-x-una-consent.png" alt="Me tō ake āheinga koe e whakaae ana" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-x-una-consent.png" alt="Me tō ake āheinga koe e whakaae ana" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Me tō ake āheinga koe e whakaae ana <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-x-una-many.png" download>
-            <img src="social-kit/platform/platform-x-una-many.png" alt="Nō reira, kia tokomaha" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-x-una-many.png" alt="Nō reira, kia tokomaha" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Nō reira, kia tokomaha <span style="color:var(--accent2)">↓</span></figcaption></figure>
         </div>
         <p style="font-size:.72rem;font-weight:600;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;margin:.5rem 0 .3rem">Instagram <span style="font-weight:400">(1080×1080)</span></p>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem;margin-bottom:.5rem">
           <figure style="margin:0"><a href="social-kit/platform/platform-instagram-una-collective.png" download>
-            <img src="social-kit/platform/platform-instagram-una-collective.png" alt="Ko tātou he kahu" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-instagram-una-collective.png" alt="Ko tātou he kahu" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ko tātou he kahu <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-instagram-una-consent.png" download>
-            <img src="social-kit/platform/platform-instagram-una-consent.png" alt="Me tō ake āheinga koe e whakaae ana" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-instagram-una-consent.png" alt="Me tō ake āheinga koe e whakaae ana" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Me tō ake āheinga koe e whakaae ana <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-instagram-una-many.png" download>
-            <img src="social-kit/platform/platform-instagram-una-many.png" alt="Nō reira, kia tokomaha" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-instagram-una-many.png" alt="Nō reira, kia tokomaha" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Nō reira, kia tokomaha <span style="color:var(--accent2)">↓</span></figcaption></figure>
         </div>
         <p style="font-size:.72rem;font-weight:600;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;margin:.5rem 0 .3rem">Facebook <span style="font-weight:400">(1200×630)</span></p>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem;margin-bottom:.5rem">
           <figure style="margin:0"><a href="social-kit/platform/platform-facebook-una-collective.png" download>
-            <img src="social-kit/platform/platform-facebook-una-collective.png" alt="Ko tātou he kahu" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-facebook-una-collective.png" alt="Ko tātou he kahu" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ko tātou he kahu <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-facebook-una-consent.png" download>
-            <img src="social-kit/platform/platform-facebook-una-consent.png" alt="Me tō ake āheinga koe e whakaae ana" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-facebook-una-consent.png" alt="Me tō ake āheinga koe e whakaae ana" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Me tō ake āheinga koe e whakaae ana <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-facebook-una-many.png" download>
-            <img src="social-kit/platform/platform-facebook-una-many.png" alt="Nō reira, kia tokomaha" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-facebook-una-many.png" alt="Nō reira, kia tokomaha" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Nō reira, kia tokomaha <span style="color:var(--accent2)">↓</span></figcaption></figure>
         </div>
         <p style="font-size:.72rem;font-weight:600;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;margin:.5rem 0 .3rem">TikTok <span style="font-weight:400">(1080×1920)</span></p>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem;margin-bottom:.5rem">
           <figure style="margin:0"><a href="social-kit/platform/platform-tiktok-una-collective.png" download>
-            <img src="social-kit/platform/platform-tiktok-una-collective.png" alt="Ko tātou he kahu" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-tiktok-una-collective.png" alt="Ko tātou he kahu" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ko tātou he kahu <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-tiktok-una-consent.png" download>
-            <img src="social-kit/platform/platform-tiktok-una-consent.png" alt="Me tō ake āheinga koe e whakaae ana" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-tiktok-una-consent.png" alt="Me tō ake āheinga koe e whakaae ana" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Me tō ake āheinga koe e whakaae ana <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-tiktok-una-many.png" download>
-            <img src="social-kit/platform/platform-tiktok-una-many.png" alt="Nō reira, kia tokomaha" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-tiktok-una-many.png" alt="Nō reira, kia tokomaha" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Nō reira, kia tokomaha <span style="color:var(--accent2)">↓</span></figcaption></figure>
         </div>
       </div>
@@ -895,49 +898,49 @@ Facebook: "If you're teaching anything about data, AI, technology rights, or ind
         <p style="font-size:.72rem;font-weight:600;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;margin:.5rem 0 .3rem">Twitter/X <span style="font-weight:400">(1200×675)</span></p>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem;margin-bottom:.5rem">
           <figure style="margin:0"><a href="social-kit/platform/platform-x-tak-future.png" download>
-            <img src="social-kit/platform/platform-x-tak-future.png" alt="Ko tātou te anamata" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-x-tak-future.png" alt="Ko tātou te anamata" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ko tātou te anamata <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-x-tak-cycle.png" download>
-            <img src="social-kit/platform/platform-x-tak-cycle.png" alt="Ka huri, ka huri, ka ora" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-x-tak-cycle.png" alt="Ka huri, ka huri, ka ora" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ka huri, ka huri, ka ora <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-x-tak-both.png" download>
-            <img src="social-kit/platform/platform-x-tak-both.png" alt="E rua ngā ao — kotahi te iwi" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-x-tak-both.png" alt="E rua ngā ao — kotahi te iwi" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">E rua ngā ao — kotahi te iwi <span style="color:var(--accent2)">↓</span></figcaption></figure>
         </div>
         <p style="font-size:.72rem;font-weight:600;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;margin:.5rem 0 .3rem">Instagram <span style="font-weight:400">(1080×1080)</span></p>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem;margin-bottom:.5rem">
           <figure style="margin:0"><a href="social-kit/platform/platform-instagram-tak-future.png" download>
-            <img src="social-kit/platform/platform-instagram-tak-future.png" alt="Ko tātou te anamata" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-instagram-tak-future.png" alt="Ko tātou te anamata" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ko tātou te anamata <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-instagram-tak-cycle.png" download>
-            <img src="social-kit/platform/platform-instagram-tak-cycle.png" alt="Ka huri, ka huri, ka ora" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-instagram-tak-cycle.png" alt="Ka huri, ka huri, ka ora" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ka huri, ka huri, ka ora <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-instagram-tak-both.png" download>
-            <img src="social-kit/platform/platform-instagram-tak-both.png" alt="E rua ngā ao — kotahi te iwi" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-instagram-tak-both.png" alt="E rua ngā ao — kotahi te iwi" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">E rua ngā ao — kotahi te iwi <span style="color:var(--accent2)">↓</span></figcaption></figure>
         </div>
         <p style="font-size:.72rem;font-weight:600;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;margin:.5rem 0 .3rem">Facebook <span style="font-weight:400">(1200×630)</span></p>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem;margin-bottom:.5rem">
           <figure style="margin:0"><a href="social-kit/platform/platform-facebook-tak-future.png" download>
-            <img src="social-kit/platform/platform-facebook-tak-future.png" alt="Ko tātou te anamata" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-facebook-tak-future.png" alt="Ko tātou te anamata" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ko tātou te anamata <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-facebook-tak-cycle.png" download>
-            <img src="social-kit/platform/platform-facebook-tak-cycle.png" alt="Ka huri, ka huri, ka ora" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-facebook-tak-cycle.png" alt="Ka huri, ka huri, ka ora" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ka huri, ka huri, ka ora <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-facebook-tak-both.png" download>
-            <img src="social-kit/platform/platform-facebook-tak-both.png" alt="E rua ngā ao — kotahi te iwi" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-facebook-tak-both.png" alt="E rua ngā ao — kotahi te iwi" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">E rua ngā ao — kotahi te iwi <span style="color:var(--accent2)">↓</span></figcaption></figure>
         </div>
         <p style="font-size:.72rem;font-weight:600;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;margin:.5rem 0 .3rem">TikTok <span style="font-weight:400">(1080×1920)</span></p>
         <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem;margin-bottom:.5rem">
           <figure style="margin:0"><a href="social-kit/platform/platform-tiktok-tak-future.png" download>
-            <img src="social-kit/platform/platform-tiktok-tak-future.png" alt="Ko tātou te anamata" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-tiktok-tak-future.png" alt="Ko tātou te anamata" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ko tātou te anamata <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-tiktok-tak-cycle.png" download>
-            <img src="social-kit/platform/platform-tiktok-tak-cycle.png" alt="Ka huri, ka huri, ka ora" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-tiktok-tak-cycle.png" alt="Ka huri, ka huri, ka ora" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">Ka huri, ka huri, ka ora <span style="color:var(--accent2)">↓</span></figcaption></figure>
           <figure style="margin:0"><a href="social-kit/platform/platform-tiktok-tak-both.png" download>
-            <img src="social-kit/platform/platform-tiktok-tak-both.png" alt="E rua ngā ao — kotahi te iwi" style="width:100%;border-radius:4px;display:block" loading="lazy"/>
+            <img src="social-kit/platform/platform-tiktok-tak-both.png" alt="E rua ngā ao — kotahi te iwi" style="width:100%;border-radius:4px;display:block;aspect-ratio:1/1" loading="lazy"/>
           </a><figcaption style="font-size:.70rem;color:var(--text-muted);margin-top:.25rem">E rua ngā ao — kotahi te iwi <span style="color:var(--accent2)">↓</span></figcaption></figure>
         </div>
       </div>
@@ -1463,30 +1466,30 @@ TikTok hook: "I printed indigenous data sovereignty stickers for 50 cents each. 
 
     <h3 style="font-family:Georgia,serif;margin-bottom:1rem">Posters (A3 / A4 Print)</h3>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.75rem;margin-bottom:2rem">
-      <div><a href="social-kit/posters/una-poster-a3-we-are-armour.svg" download><img src="social-kit/posters/una-poster-a3-we-are-armour.svg" style="width:100%;border-radius:6px" alt="A3 — Ko Tātou He Kahu"/></a><div style="font-size:.75rem;opacity:.5;padding:.3rem">A3 — Ko Tātou He Kahu</div></div>
-      <div><a href="social-kit/posters/una-poster-a3-data-sovereignty.svg" download><img src="social-kit/posters/una-poster-a3-data-sovereignty.svg" style="width:100%;border-radius:6px" alt="A3 — Nō Māori Te Raraunga"/></a><div style="font-size:.75rem;opacity:.5;padding:.3rem">A3 — Nō Māori Te Raraunga</div></div>
-      <div><a href="social-kit/posters/una-poster-a4-kotahitanga.svg" download><img src="social-kit/posters/una-poster-a4-kotahitanga.svg" style="width:100%;border-radius:6px" alt="A4 — Kotahitanga"/></a><div style="font-size:.75rem;opacity:.5;padding:.3rem">A4 — Kotahitanga</div></div>
-      <div><a href="social-kit/posters/una-poster-a4-stand-firm.svg" download><img src="social-kit/posters/una-poster-a4-stand-firm.svg" style="width:100%;border-radius:6px" alt="A4 — Kia Tū Māia"/></a><div style="font-size:.75rem;opacity:.5;padding:.3rem">A4 — Kia Tū Māia</div></div>
-      <div><a href="social-kit/posters/una-poster-a4-ai-resist.svg" download><img src="social-kit/posters/una-poster-a4-ai-resist.svg" style="width:100%;border-radius:6px" alt="A4 — AI Resist"/></a><div style="font-size:.75rem;opacity:.5;padding:.3rem">A4 — AI Kāore e Tika</div></div>
-      <div><a href="social-kit/posters/una-poster-a4-future.svg" download><img src="social-kit/posters/una-poster-a4-future.svg" style="width:100%;border-radius:6px" alt="A4 — Future"/></a><div style="font-size:.75rem;opacity:.5;padding:.3rem">A4 — He Anamata Rangatira</div></div>
+      <div><a href="social-kit/posters/una-poster-a3-we-are-armour.svg" download><img src="social-kit/posters/una-poster-a3-we-are-armour.svg" loading="lazy" style="width:100%;border-radius:6px" alt="A3 — Ko Tātou He Kahu"/></a><div style="font-size:.75rem;opacity:.5;padding:.3rem">A3 — Ko Tātou He Kahu</div></div>
+      <div><a href="social-kit/posters/una-poster-a3-data-sovereignty.svg" download><img src="social-kit/posters/una-poster-a3-data-sovereignty.svg" loading="lazy" style="width:100%;border-radius:6px" alt="A3 — Nō Māori Te Raraunga"/></a><div style="font-size:.75rem;opacity:.5;padding:.3rem">A3 — Nō Māori Te Raraunga</div></div>
+      <div><a href="social-kit/posters/una-poster-a4-kotahitanga.svg" download><img src="social-kit/posters/una-poster-a4-kotahitanga.svg" loading="lazy" style="width:100%;border-radius:6px" alt="A4 — Kotahitanga"/></a><div style="font-size:.75rem;opacity:.5;padding:.3rem">A4 — Kotahitanga</div></div>
+      <div><a href="social-kit/posters/una-poster-a4-stand-firm.svg" download><img src="social-kit/posters/una-poster-a4-stand-firm.svg" loading="lazy" style="width:100%;border-radius:6px" alt="A4 — Kia Tū Māia"/></a><div style="font-size:.75rem;opacity:.5;padding:.3rem">A4 — Kia Tū Māia</div></div>
+      <div><a href="social-kit/posters/una-poster-a4-ai-resist.svg" download><img src="social-kit/posters/una-poster-a4-ai-resist.svg" loading="lazy" style="width:100%;border-radius:6px" alt="A4 — AI Resist"/></a><div style="font-size:.75rem;opacity:.5;padding:.3rem">A4 — AI Kāore e Tika</div></div>
+      <div><a href="social-kit/posters/una-poster-a4-future.svg" download><img src="social-kit/posters/una-poster-a4-future.svg" loading="lazy" style="width:100%;border-radius:6px" alt="A4 — Future"/></a><div style="font-size:.75rem;opacity:.5;padding:.3rem">A4 — He Anamata Rangatira</div></div>
     </div>
 
     <h3 style="font-family:Georgia,serif;margin-bottom:1rem">Banners</h3>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:2rem">
-      <div><a href="social-kit/banners/una-twitter-banner-1500x500.svg" download><img src="social-kit/banners/una-twitter-banner-1500x500.svg" style="width:100%;border-radius:6px" alt="Twitter banner"/></a><div style="font-size:.75rem;opacity:.5;padding:.3rem">X/Twitter banner 1500×500</div></div>
-      <div><a href="social-kit/banners/una-facebook-linkedin-cover-1640x624.svg" download><img src="social-kit/banners/una-facebook-linkedin-cover-1640x624.svg" style="width:100%;border-radius:6px" alt="Facebook/LinkedIn cover"/></a><div style="font-size:.75rem;opacity:.5;padding:.3rem">Facebook / LinkedIn cover 1640×624</div></div>
+      <div><a href="social-kit/banners/una-twitter-banner-1500x500.svg" download><img src="social-kit/banners/una-twitter-banner-1500x500.svg" loading="lazy" style="width:100%;border-radius:6px" alt="Twitter banner"/></a><div style="font-size:.75rem;opacity:.5;padding:.3rem">X/Twitter banner 1500×500</div></div>
+      <div><a href="social-kit/banners/una-facebook-linkedin-cover-1640x624.svg" download><img src="social-kit/banners/una-facebook-linkedin-cover-1640x624.svg" loading="lazy" style="width:100%;border-radius:6px" alt="Facebook/LinkedIn cover"/></a><div style="font-size:.75rem;opacity:.5;padding:.3rem">Facebook / LinkedIn cover 1640×624</div></div>
     </div>
 
     <h3 style="font-family:Georgia,serif;margin-bottom:1rem">Unaunahi Stickers (Print-Ready B&W)</h3>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.75rem;margin-bottom:1.5rem">
-      <div><a href="social-kit/stickers/sticker-una-armour.svg" download><img src="social-kit/stickers/sticker-una-armour.svg" style="width:100%;border-radius:6px" alt="Ko Tātou He Kahu sticker"/></a></div>
-      <div><a href="social-kit/stickers/sticker-una-consent.svg" download><img src="social-kit/stickers/sticker-una-consent.svg" style="width:100%;border-radius:6px" alt="Consent sticker"/></a></div>
-      <div><a href="social-kit/stickers/sticker-una-data.svg" download><img src="social-kit/stickers/sticker-una-data.svg" style="width:100%;border-radius:6px" alt="Data sovereignty sticker"/></a></div>
-      <div><a href="social-kit/stickers/sticker-una-layers.svg" download><img src="social-kit/stickers/sticker-una-layers.svg" style="width:100%;border-radius:6px" alt="Layers sticker"/></a></div>
-      <div><a href="social-kit/stickers/sticker-una-resist.svg" download><img src="social-kit/stickers/sticker-una-resist.svg" style="width:100%;border-radius:6px" alt="Resist sticker"/></a></div>
-      <div><a href="social-kit/stickers/sticker-una-tino.svg" download><img src="social-kit/stickers/sticker-una-tino.svg" style="width:100%;border-radius:6px" alt="Tino Rangatiratanga sticker"/></a></div>
-      <div><a href="social-kit/stickers/sticker-una-future.svg" download><img src="social-kit/stickers/sticker-una-future.svg" style="width:100%;border-radius:6px" alt="Future sticker"/></a></div>
-      <div><a href="social-kit/stickers/sticker-una-build.svg" download><img src="social-kit/stickers/sticker-una-build.svg" style="width:100%;border-radius:6px" alt="Build sticker"/></a></div>
+      <div><a href="social-kit/stickers/sticker-una-armour.svg" download><img src="social-kit/stickers/sticker-una-armour.svg" loading="lazy" style="width:100%;border-radius:6px" alt="Ko Tātou He Kahu sticker"/></a></div>
+      <div><a href="social-kit/stickers/sticker-una-consent.svg" download><img src="social-kit/stickers/sticker-una-consent.svg" loading="lazy" style="width:100%;border-radius:6px" alt="Consent sticker"/></a></div>
+      <div><a href="social-kit/stickers/sticker-una-data.svg" download><img src="social-kit/stickers/sticker-una-data.svg" loading="lazy" style="width:100%;border-radius:6px" alt="Data sovereignty sticker"/></a></div>
+      <div><a href="social-kit/stickers/sticker-una-layers.svg" download><img src="social-kit/stickers/sticker-una-layers.svg" loading="lazy" style="width:100%;border-radius:6px" alt="Layers sticker"/></a></div>
+      <div><a href="social-kit/stickers/sticker-una-resist.svg" download><img src="social-kit/stickers/sticker-una-resist.svg" loading="lazy" style="width:100%;border-radius:6px" alt="Resist sticker"/></a></div>
+      <div><a href="social-kit/stickers/sticker-una-tino.svg" download><img src="social-kit/stickers/sticker-una-tino.svg" loading="lazy" style="width:100%;border-radius:6px" alt="Tino Rangatiratanga sticker"/></a></div>
+      <div><a href="social-kit/stickers/sticker-una-future.svg" download><img src="social-kit/stickers/sticker-una-future.svg" loading="lazy" style="width:100%;border-radius:6px" alt="Future sticker"/></a></div>
+      <div><a href="social-kit/stickers/sticker-una-build.svg" download><img src="social-kit/stickers/sticker-una-build.svg" loading="lazy" style="width:100%;border-radius:6px" alt="Build sticker"/></a></div>
     </div>
 
     <p><a href="social-kit/unaunahi/index.html" style="color:var(--accent);font-weight:bold">View full Unaunahi gallery with all 50 assets →</a></p>
@@ -1508,8 +1511,8 @@ TikTok hook: "I printed indigenous data sovereignty stickers for 50 cents each. 
   </script>
 
   <!-- ── FUSE.JS SEARCH ──────────────────────────────────────────────── -->
-  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
-  <script src="assets/search.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" defer></script>
+  <script src="assets/search.js" defer></script>
 
   <!-- ── PWA SERVICE WORKER ─────────────────────────────────────────── -->
   <script>

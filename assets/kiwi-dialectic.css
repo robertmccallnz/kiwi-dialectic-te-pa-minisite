@@ -655,3 +655,27 @@ article li { margin-bottom: .45em; }
   text-align: center;
   font-family: var(--font-sans);
 }
+
+/* ── Performance optimisations ─────────────────────────────────────────── */
+
+/* content-visibility: defer rendering of off-screen sections */
+.section-social-kit,
+.section-stickers,
+.section-unaunahi,
+.section-sources,
+#rhizome,
+#toolkit {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 600px;
+}
+
+/* Prevent layout shift on lazy images */
+img[loading="lazy"] {
+  background-color: var(--bg-alt, #f5f4ef);
+}
+
+/* Platform image grids — reserve space */
+.platform-grid img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
