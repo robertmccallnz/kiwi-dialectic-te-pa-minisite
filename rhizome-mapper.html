@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Rhizome Mapper — Political Event → Motif → Post · The Kiwi Dialectic</title>
+  <meta name="description" content="Enter a NZ political event. The Rhizome Mapper finds the underlying Māori motif and drafts your social media post."/>
+  <link rel="stylesheet" href="assets/kiwi-dialectic.css"/>
+  <style>
+    /* ── layout ── */
+    .mapper-shell { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1.2rem 4rem; }
+
+    /* ── input panel ── */
+    .input-panel { margin: 2rem 0; }
+    .event-label { font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--accent);margin:0 0 .5rem;display:block }
+    .event-input {
+      width:100%; box-sizing:border-box;
+      font-family:var(--font-serif); font-size:1.15rem; line-height:1.6;
+      background:var(--bg-raised); color:var(--fg);
+      border:2px solid var(--border-bold); border-radius:10px;
+      padding:14px 18px; resize:vertical; min-height:110px;
+      transition: border-color .2s;
+    }
+    .event-input:focus { outline:none; border-color:var(--accent); }
+    .event-input::placeholder { color:var(--fg-muted); font-style:italic; }
+
+    .theme-chips { display:flex; flex-wrap:wrap; gap:.5rem; margin:.8rem 0; }
+    .chip {
+      padding:5px 13px; font-size:.78rem; font-family:var(--font-sans);
+      border:1px solid var(--border-bold); border-radius:999px; cursor:pointer;
+      background:transparent; color:var(--fg-muted); transition: all .15s;
+      user-select:none;
+    }
+    .chip:hover { border-color:var(--accent); color:var(--accent); }
+    .chip.active { background:var(--accent); border-color:var(--accent); color:#fff; font-weight:700; }
+
+    .map-btn {
+      margin-top:1rem; padding:13px 32px;
+      background:var(--accent); color:#fff; border:none; border-radius:999px;
+      font-family:var(--font-sans); font-size:1rem; font-weight:700; cursor:pointer;
+      letter-spacing:.04em; transition: opacity .15s, transform .1s;
+    }
+    .map-btn:hover { opacity:.88; transform:translateY(-1px); }
+    .map-btn:active { transform:translateY(0); }
+    .map-btn:disabled { opacity:.4; cursor:not-allowed; transform:none; }
+
+    /* ── rhizome canvas ── */
+    #rhizomeCanvas {
+      width:100%; max-width:700px; display:block;
+      margin:2rem auto; border-radius:16px;
+      background:var(--bg-raised); border:1px solid var(--border);
+    }
+
+    /* ── result panels ── */
+    .result-section { display:none; margin-top:2rem; }
+    .result-section.visible { display:block; }
+
+    .motif-result {
+      display:grid; grid-template-columns:auto 1fr; gap:1.5rem; align-items:start;
+      background:var(--bg-raised); border:1px solid var(--border);
+      border-radius:14px; padding:1.5rem; margin-bottom:1.5rem;
+    }
+    @media(max-width:600px){ .motif-result { grid-template-columns:1fr; } }
+    .motif-img-sm { width:140px; height:140px; border-radius:10px; display:block; }
+
+    .match-bar-wrap { margin:.6rem 0; }
+    .match-label { font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--fg-muted); font-family:var(--font-sans); }
+    .match-bar { height:7px; border-radius:4px; background:var(--border-bold); margin:.3rem 0 .2rem; position:relative; overflow:hidden; }
+    .match-fill { height:100%; border-radius:4px; background:var(--accent); transition: width 1s cubic-bezier(.4,0,.2,1); width:0; }
+
+    /* ── post outputs ── */
+    .post-tabs { display:flex; gap:.4rem; flex-wrap:wrap; margin:1rem 0 .5rem; }
+    .post-tab {
+      padding:6px 16px; font-size:.8rem; font-family:var(--font-sans); font-weight:700;
+      border:1px solid var(--border-bold); border-radius:999px; cursor:pointer;
+      background:transparent; color:var(--fg-muted); transition:all .15s;
+    }
+    .post-tab.active { background:var(--accent); border-color:var(--accent); color:#fff; }
+
+    .post-output {
+      background:var(--bg-raised); border:1px solid var(--border);
+      border-left:4px solid var(--accent); border-radius:0 12px 12px 0;
+      padding:18px 20px; font-family:var(--font-serif); font-size:.95rem;
+      line-height:1.75; white-space:pre-wrap; min-height:90px;
+      position:relative;
+    }
+    .copy-btn {
+      position:absolute; top:10px; right:12px;
+      padding:5px 14px; font-size:.75rem; font-family:var(--font-sans);
+      border:1px solid var(--border-bold); border-radius:999px;
+      background:transparent; color:var(--fg-muted); cursor:pointer; transition:all .15s;
+    }
+    .copy-btn:hover { background:var(--accent); border-color:var(--accent); color:#fff; }
+    .copy-btn.copied { background:var(--accent2); border-color:var(--accent2); color:#fff; }
+
+    .char-count { font-size:.75rem; font-family:var(--font-sans); color:var(--fg-muted); margin:.4rem 0 0; text-align:right; }
+    .char-count.over { color:#e74c3c; font-weight:700; }
+
+    /* ── rationale ── */
+    .rationale-grid {
+      display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:.8rem; margin:1rem 0;
+    }
+    .rationale-card {
+      background:var(--bg-raised); border:1px solid var(--border);
+      border-left:3px solid; border-radius:0 10px 10px 0; padding:12px 14px;
+    }
+    .rationale-card .rc-label { font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; font-weight:700; font-family:var(--font-sans); margin:0 0 4px; }
+    .rationale-card p { font-size:.82rem; color:var(--fg-muted); line-height:1.55; margin:0; }
+
+    /* ── theme score table ── */
+    .score-table { width:100%; border-collapse:collapse; font-size:.83rem; margin:1rem 0; }
+    .score-table th { background:var(--bg-raised); padding:8px 12px; text-align:left; font-family:var(--font-sans); font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--fg-muted); border-bottom:1px solid var(--border); }
+    .score-table td { padding:8px 12px; border-bottom:1px solid var(--border); vertical-align:middle; }
+    .score-table tr:last-child td { border-bottom:none; }
+    .score-dot { display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:5px; vertical-align:middle; }
+
+    /* ── history ── */
+    .history-item {
+      background:var(--bg-raised); border:1px solid var(--border); border-radius:10px;
+      padding:12px 16px; margin-bottom:.6rem; cursor:pointer; transition:border-color .15s;
+      display:flex; align-items:center; gap:.8rem;
+    }
+    .history-item:hover { border-color:var(--accent); }
+    .history-dot { width:12px; height:12px; border-radius:50%; flex-shrink:0; }
+    .history-text { font-size:.84rem; line-height:1.4; flex:1; }
+    .history-tag { font-size:.7rem; font-family:var(--font-sans); color:var(--fg-muted); margin-top:2px; }
+
+    /* ── intro ── */
+    .intro-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:.7rem; margin:1.2rem 0; }
+    .intro-card { background:var(--bg-raised); border:1px solid var(--border); border-radius:10px; padding:14px 16px; }
+    .intro-card .ic-num { font-size:1.6rem; font-family:var(--font-serif); color:var(--accent); margin:0 0 4px; }
+    .intro-card p { font-size:.8rem; color:var(--fg-muted); line-height:1.5; margin:0; }
+
+    /* ── spinner ── */
+    .spinner { display:none; margin:.5rem 0; }
+    .spinner.visible { display:flex; align-items:center; gap:.6rem; font-size:.85rem; color:var(--fg-muted); font-family:var(--font-sans); }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    .spin-ring { width:18px; height:18px; border:2px solid var(--border-bold); border-top-color:var(--accent); border-radius:50%; animation:spin .7s linear infinite; }
+
+    /* ── motif colour accents ── */
+    .c-koru      { color:#2ecc71; } .b-koru      { border-color:#2ecc71; } .bg-koru  { background:#2ecc71; }
+    .c-pa        { color:#3498db; } .b-pa        { border-color:#3498db; } .bg-pa    { background:#3498db; }
+    .c-niho      { color:#e74c3c; } .b-niho      { border-color:#e74c3c; } .bg-niho  { background:#e74c3c; }
+    .c-kow       { color:#f39c12; } .b-kow       { border-color:#f39c12; } .bg-kow   { background:#f39c12; }
+    .c-unaunahi  { color:#1abc9c; } .b-unaunahi  { border-color:#1abc9c; } .bg-una   { background:#1abc9c; }
+    .c-takarangi { color:#9b59b6; } .b-takarangi { border-color:#9b59b6; } .bg-tak   { background:#9b59b6; }
+
+    .section-divider { border:none; border-top:1px solid var(--border); margin:2.5rem 0; }
+    .section-tag2 { font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--fg-muted);font-family:var(--font-sans);margin:0 0 .5rem }
+  </style>
+</head>
+<body>
+<span class="motif-stripe" role="presentation" aria-hidden="true"></span>
+<div class="mapper-shell">
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <a class="nav-brand" href="https://www.kiwidialectic.com" target="_blank" rel="noopener">The Kiwi Dialectic</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="motifs/index.html">Motifs</a>
+      <a href="index.html#modules">Modules</a>
+      <button class="theme-btn" id="themeToggle">Light</button>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header style="margin:2rem 0 1.5rem">
+    <p class="section-tag">Te taura here — The rhizome mapper</p>
+    <h1 style="font-family:var(--font-serif);font-size:2.6rem;margin:.3rem 0 .5rem">
+      Rhizome Mapper
+    </h1>
+    <p style="font-size:1rem;opacity:.65;margin:0 0 1rem">
+      Political event → Māori motif → punchy social post. Break news with kaupapa.
+    </p>
+
+    <div class="intro-grid">
+      <div class="intro-card"><p class="ic-num">01</p><p>Describe or paste a NZ political event — a bill, a decision, a speech, a protest.</p></div>
+      <div class="intro-card"><p class="ic-num">02</p><p>Tag the themes you see — sovereignty, extraction, resistance, collective action.</p></div>
+      <div class="intro-card"><p class="ic-num">03</p><p>The mapper scores all 6 motifs and finds the deepest match.</p></div>
+      <div class="intro-card"><p class="ic-num">04</p><p>Get a bilingual draft post for X, Instagram, Facebook, or TikTok — ready in seconds.</p></div>
+    </div>
+  </header>
+
+  <hr class="section-divider"/>
+
+  <!-- INPUT PANEL -->
+  <section class="input-panel">
+    <label class="event-label" for="eventInput">He aha te kaupake? — What is the event?</label>
+    <textarea id="eventInput" class="event-input"
+      placeholder="e.g. 'Government announces fast-track consenting for mining on conservation land' or 'ACT Party introduces Treaty Principles Bill to remove co-governance' or 'Māori health authority disestablished'…"></textarea>
+
+    <p class="event-label" style="margin-top:1.2rem">Ngā kaupeka — Themes you see in this event</p>
+    <div class="theme-chips" id="themeChips">
+      <button class="chip" data-theme="sovereignty">Sovereignty / tino rangatiratanga</button>
+      <button class="chip" data-theme="extraction">Extraction / raupatu</button>
+      <button class="chip" data-theme="resistance">Resistance / kaha</button>
+      <button class="chip" data-theme="collective">Collective action / kotahitanga</button>
+      <button class="chip" data-theme="land">Whenua / land rights</button>
+      <button class="chip" data-theme="language">Reo / language</button>
+      <button class="chip" data-theme="law">Law / tikanga / ture</button>
+      <button class="chip" data-theme="future">Future / anamata</button>
+      <button class="chip" data-theme="governance">Governance / whakahaere</button>
+      <button class="chip" data-theme="data">Data / AI / technology</button>
+      <button class="chip" data-theme="treaty">Treaty / Tiriti</button>
+      <button class="chip" data-theme="protection">Protection / tiaki</button>
+      <button class="chip" data-theme="renewal">Renewal / beginnings</button>
+      <button class="chip" data-theme="cycles">Cycles / history repeating</button>
+    </div>
+
+    <button class="map-btn" id="mapBtn" onclick="runMapper()">Map to motif →</button>
+    <div class="spinner" id="spinner"><div class="spin-ring"></div> Tracing the rhizome…</div>
+  </section>
+
+  <!-- RHIZOME CANVAS -->
+  <canvas id="rhizomeCanvas" width="700" height="380" style="display:none"></canvas>
+
+  <!-- RESULTS -->
+  <section class="result-section" id="resultSection">
+
+    <!-- PRIMARY MOTIF -->
+    <div id="primaryMotifPanel">
+      <p class="section-tag2">He tohu kei roto — Primary motif match</p>
+      <div class="motif-result" id="primaryMotifCard">
+        <!-- filled by JS -->
+      </div>
+    </div>
+
+    <!-- SCORE TABLE -->
+    <details style="margin-bottom:1.5rem">
+      <summary style="cursor:pointer;font-family:var(--font-sans);font-size:.85rem;color:var(--fg-muted);padding:.4rem 0">▸ All motif scores</summary>
+      <table class="score-table" id="scoreTable"><!-- filled by JS --></table>
+    </details>
+
+    <!-- RATIONALE -->
+    <div id="rationalePanel" style="margin-bottom:1.5rem">
+      <p class="section-tag2" style="margin-bottom:.6rem">He whakamārama — Why this motif</p>
+      <div class="rationale-grid" id="rationaleGrid"><!-- filled by JS --></div>
+    </div>
+
+    <hr class="section-divider" style="margin:1.5rem 0"/>
+
+    <!-- POST GENERATOR -->
+    <div id="postPanel">
+      <p class="section-tag2">Tuhituhi pāpāho — Draft social post</p>
+      <h2 style="font-family:var(--font-serif);font-size:1.5rem;margin:.3rem 0 .8rem">Ready-to-post copy</h2>
+      <p style="font-size:.85rem;color:var(--fg-muted);margin:0 0 1rem">Pick a platform. Edit the bracketed text. Copy. Post within minutes of the news breaking.</p>
+
+      <div class="post-tabs" id="postTabs">
+        <button class="post-tab active" data-plat="x" onclick="showPost('x',this)">X / Twitter</button>
+        <button class="post-tab" data-plat="ig" onclick="showPost('ig',this)">Instagram</button>
+        <button class="post-tab" data-plat="fb" onclick="showPost('fb',this)">Facebook</button>
+        <button class="post-tab" data-plat="tt" onclick="showPost('tt',this)">TikTok hook</button>
+        <button class="post-tab" data-plat="thread" onclick="showPost('thread',this)">X Thread</button>
+      </div>
+
+      <div class="post-output" id="postOutput">
+        <button class="copy-btn" onclick="copyPost()">Copy</button>
+        <span id="postText"></span>
+      </div>
+      <p class="char-count" id="charCount"></p>
+
+      <!-- REGENERATE VARIANTS -->
+      <div style="margin-top:1rem;display:flex;gap:.6rem;flex-wrap:wrap">
+        <button class="map-btn" style="font-size:.85rem;padding:9px 20px" onclick="regenPost()">↺ New variant</button>
+        <button class="map-btn" style="font-size:.85rem;padding:9px 20px;background:var(--accent2)" onclick="forceMotif()">Override motif</button>
+      </div>
+      <p style="font-size:.78rem;color:var(--fg-muted);margin:.5rem 0">Replace [EVENT], [SOURCE], and [LINK] before posting.</p>
+    </div>
+
+    <!-- RELATED ASSETS -->
+    <hr class="section-divider" style="margin:1.5rem 0"/>
+    <div id="assetsPanel">
+      <p class="section-tag2">Ngā rauemi — Download matching assets</p>
+      <div id="assetLinks" style="display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.5rem"></div>
+    </div>
+
+  </section>
+
+  <!-- HISTORY -->
+  <hr class="section-divider"/>
+  <section id="historySection" style="display:none">
+    <p class="section-tag2">Hītori — Recent mappings</p>
+    <div id="historyList"></div>
+    <button style="font-size:.78rem;color:var(--fg-muted);background:none;border:none;cursor:pointer;padding:.3rem 0" onclick="clearHistory()">Clear history</button>
+  </section>
+
+  <footer class="site-footer" style="margin-top:3rem">
+    <a href="https://www.kiwidialectic.com" target="_blank">The Kiwi Dialectic</a> ·
+    <a href="index.html">Course home</a> ·
+    <a href="motifs/index.html">All motifs</a>
+  </footer>
+</div>
+
+<!-- MOTIF OVERRIDE MODAL -->
+<div id="overrideModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:100;align-items:center;justify-content:center">
+  <div style="background:var(--bg-raised);border:1px solid var(--border-bold);border-radius:16px;padding:2rem;max-width:440px;width:90%">
+    <p style="font-family:var(--font-serif);font-size:1.2rem;margin:0 0 1rem">Choose a different motif</p>
+    <div id="motifOverrideBtns" style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem"></div>
+    <button style="margin-top:1rem;font-size:.82rem;color:var(--fg-muted);background:none;border:none;cursor:pointer" onclick="document.getElementById('overrideModal').style.display='none'">Cancel</button>
+  </div>
+</div>
+
+<script>
+/* ══════════════════════════════════════════════════════════════════════════
+   MOTIF DEFINITIONS
+══════════════════════════════════════════════════════════════════════════ */
+const MOTIFS = {
+  koru: {
+    name: "Koru",
+    colour: "#2ecc71",
+    realm: "Tīmatanga · Growth · Beginnings",
+    page: "motifs/koru.html",
+    img: "assets/motifs/koru-dark-square.svg",
+    meaning: "New life, unfurling potential, the origin point of all things. Something is beginning — or being prevented from beginning.",
+    themes: {
+      renewal: 10, future: 8, resistance: 5, language: 6, sovereignty: 5,
+      collective: 4, law: 3, treaty: 4, land: 5, extraction: 4,
+      governance: 3, data: 4, protection: 4, cycles: 6
+    },
+    // keyword signals in event text
+    keywords: ["new","begin","start","launch","introduce","announce","birth","emerge","grow","kōhanga","education","school","youth","next generation","future","first","establish","found","create","reform","change","transform"],
+    core_logic: "This event marks a moment of beginning — a threshold crossed, a new phase entered, a potential unfolding or being blocked.",
+    te_reo_hook: ["Ko wai nāu i hanga?","Tīmatanga hou — he ara hou?","He aha tōu koru?","Ka pū te ruha, ka hao te rangatahi"]
+  },
+  pa: {
+    name: "Pā Tūwatawata",
+    colour: "#3498db",
+    realm: "Ārai · Tiaki · Collective sovereignty",
+    page: "motifs/pa-tuwatawata.html",
+    img: "assets/motifs/pa-tuwatawata-dark-square.svg",
+    meaning: "The fortified palisade — collective protection, sovereignty over space and governance. Someone is trying to breach the pā, or the pā is being built stronger.",
+    themes: {
+      sovereignty: 10, protection: 10, governance: 9, collective: 8,
+      land: 8, treaty: 7, data: 7, law: 6, resistance: 7,
+      extraction: 5, future: 5, language: 4, renewal: 4, cycles: 5
+    },
+    keywords: ["sovereignty","co-governance","rangatiratanga","authority","control","infrastructure","resource","ownership","self-determination","manage","protect","defend","border","territory","breach","access","enter","takeover","seize","remove","disestablish","abolish","health","hospital","council"],
+    core_logic: "This event is about who controls the space — physical, political, or digital. The pā is under pressure, being reinforced, or being dismantled.",
+    te_reo_hook: ["Ārahina tō pā ake","He pā tūwatawata mō tātou katoa","Kaua e tuku i tō pā","Ko wai e tiaki ana i ngā tatau?","Tiakina — kia mau"]
+  },
+  niho: {
+    name: "Niho Taniwha",
+    colour: "#e74c3c",
+    realm: "Raupatu · Kaha · Challenge at the threshold",
+    page: "motifs/niho-taniwha.html",
+    img: "assets/motifs/niho-taniwha-dark-square.svg",
+    meaning: "The taniwha's teeth — the colonial bite, extraction without consent, harm that must be named. This event is raupatu in a new form.",
+    themes: {
+      extraction: 10, resistance: 9, land: 8, treaty: 8,
+      sovereignty: 7, law: 6, data: 8, governance: 6,
+      collective: 5, protection: 6, language: 5, future: 4, renewal: 3, cycles: 7
+    },
+    keywords: ["seize","confiscate","strip","remove","cut","reduce","deny","reject","override","mine","drill","extract","profit","corporate","foreign","privatise","sell","commercial","raupatu","confiscation","stolen","without consent","against","protest","oppose","march","hīkoi","court","tribunal","claim","settlement","breach"],
+    core_logic: "This event is a form of extraction or harm — something is being taken, stripped, denied, or overridden. Name it for what it is.",
+    te_reo_hook: ["He raupatu tonu tēnei","He niho tonu tōna","Tōia mai ki te ao mārama","Whakaingoatia — kia mārama ai","He aha tāu AI e kai ana?","He niho hou tō te taniwha"]
+  },
+  kow: {
+    name: "Kōwhaiwhai",
+    colour: "#f39c12",
+    realm: "Ture · Tikanga · Genealogy as law",
+    page: "motifs/kowhaiwhai.html",
+    img: "assets/motifs/kowhaiwhai-dark-square.svg",
+    meaning: "The law written on the rafter. This event involves a clash between tikanga and statute, between relationships and contracts, between ancestral authority and state power.",
+    themes: {
+      law: 10, treaty: 10, governance: 9, sovereignty: 8,
+      language: 7, land: 6, data: 6, protection: 6,
+      collective: 6, extraction: 5, resistance: 6, future: 5, renewal: 5, cycles: 6
+    },
+    keywords: ["law","act","bill","parliament","court","judge","tribunal","waitangi","treaty","principle","policy","regulation","rule","right","constitutional","legal","jurisdiction","authority","tikanga","custom","precedent","ruling","decision","legislation","amendment","repeal","review","inquiry","hearing","submission","debate","vote","select committee"],
+    core_logic: "This event is fundamentally about whose law governs. Ko te tikanga te ture tuatahi — tikanga is the first law.",
+    te_reo_hook: ["Ko te tikanga te ture tuatahi","He tikanga tō ia āhua","Ko wai e whakahaere ana i ēnei ture?","Whakahokia mai — he tikanga tō tēnei","Ko te whakapapa o tēnei ture ko wai?"]
+  },
+  unaunahi: {
+    name: "Unaunahi",
+    colour: "#1abc9c",
+    realm: "Kotahitanga · Collective armour",
+    page: "motifs/unaunahi.html",
+    img: "assets/motifs/unaunahi-dark-square.svg",
+    meaning: "Fish scales interlocking. This event calls for collective response — no single scale holds the whole, but together they form armour. Unity is both the analysis and the answer.",
+    themes: {
+      collective: 10, resistance: 8, protection: 9, sovereignty: 6,
+      data: 7, future: 6, land: 6, language: 7, law: 5,
+      governance: 6, treaty: 5, extraction: 6, renewal: 6, cycles: 5
+    },
+    keywords: ["together","unite","collective","community","whānau","iwi","hapū","alliance","coalition","movement","march","hīkoi","solidarity","mutual","cooperative","shared","common","network","organise","campaign","petition","support","join","response","stand","defend","protect","kotahitanga","tūhono","aroha","whakangungu"],
+    core_logic: "This event demands collective armour. No single scale holds the whole — but interlocked, the community cannot be broken.",
+    te_reo_hook: ["Ko tātou he kahu","He waka eke noa","Kia tokomaha — ka taea","Kotahitanga ki runga i ngā mea katoa","He aha tō āhua hei kahu mō tātou?"]
+  },
+  takarangi: {
+    name: "Takarangi",
+    colour: "#9b59b6",
+    realm: "Anamata · Duality · Cycles of past and future",
+    page: "motifs/takarangi.html",
+    img: "assets/motifs/takarangi-dark-square.svg",
+    meaning: "The double spiral — history repeating, past and future wound together. This event echoes a previous injustice, or opens a question about what kind of future we are turning toward.",
+    themes: {
+      cycles: 10, future: 10, sovereignty: 7, treaty: 7,
+      land: 6, resistance: 6, governance: 7, collective: 6,
+      law: 6, extraction: 6, language: 7, data: 5, renewal: 8, protection: 5
+    },
+    keywords: ["again","repeat","history","same","another","once more","return","cycle","pattern","colonial","legacy","still","ongoing","not new","hundred years","generation","ancestor","tūpuna","future","anamata","vision","transform","long-term","endure","survive","continue","persist","spiral","echo","mirror","reflect","anniversary","remember","never forget","kia kaha"],
+    core_logic: "This event is a moment in a longer cycle. The double spiral: what past does this echo? What future is it turning toward? Kia whakatōmuri te haere whakamua.",
+    te_reo_hook: ["Ko tātou te anamata rangatira","Ka huri ka huri — ōrite tonu","Kia whakatōmuri te haere whakamua","He āhuatanga hou? Kāo. He āhuatanga tawhito","Ko tātou te anamata — hangaia ināianei"]
+  }
+};
+
+/* ══════════════════════════════════════════════════════════════════════════
+   POST TEMPLATES — per motif × per platform
+   Each has multiple variants (array) — we pick randomly for "new variant"
+══════════════════════════════════════════════════════════════════════════ */
+function buildPosts(motif, eventText, activeThemes) {
+  const m = MOTIFS[motif];
+  const hook = m.te_reo_hook[Math.floor(Math.random() * m.te_reo_hook.length)];
+  const eventSnip = eventText.length > 80 ? eventText.slice(0,77)+"…" : eventText;
+  const tags = `#KiwiDialectic #${motif === 'unaunahi' ? 'Unaunahi' : motif === 'pa' ? 'TePāTūwatawata' : motif === 'kow' ? 'KaupapaMāori' : motif === 'niho' ? 'Raupatu' : motif === 'takarangi' ? 'SovereignFutures' : 'Koru'} #MāoriDataSovereignty #TinoRangatiratanga`;
+
+  const posts = {
+    x: [
+      `${hook}\n\n${eventSnip}\n\n${m.core_logic.slice(0,90)}.\n\nFree course on why this matters 👉 [LINK]\n${tags}`,
+      `${eventSnip}\n\n${m.name}: ${m.meaning.slice(0,100)}.\n\n${hook} — kōrero mai.\n${tags} #AIActivism`,
+      `He aha tēnei? ${hook}\n\nThis is the ${m.name} moment. ${m.core_logic.slice(0,80)}.\n\nMore 👉 [LINK]\n${tags}`
+    ],
+    ig: [
+      `${hook}\n\n${eventText.slice(0,120)}\n\nThis is the ${m.name} moment.\n\n${m.meaning.slice(0,100)}.\n\n${m.core_logic.slice(0,100)}.\n\nFree course on Māori data sovereignty, AI, and indigenous futures. Link in bio.\n\n${tags} #Aotearoa #TeReoMāori #IndigenousRights`,
+      `${hook} — ${m.name}.\n\n${eventText.slice(0,150)}\n\n${m.core_logic}\n\nEvery motif has a message. This one is ${m.name}: ${m.realm}.\n\nLink in bio for the full free course.\n\n${tags} #MāoriArt #KaupapaMāori`
+    ],
+    fb: [
+      `${hook}\n\n${eventText}\n\nThe Māori motif for this moment is ${m.name} — ${m.realm}.\n\n${m.meaning}\n\n${m.core_logic}\n\nFree course on Māori data sovereignty, tikanga, and indigenous digital futures: [LINK]\n\nShare this if you think people need to hear it.\n\n${tags}`,
+    ],
+    tt: [
+      `Hook (say in first 3 seconds): "${hook}"\n\nContext: "${eventSnip}. This is ${m.name} — ${m.realm.split('·')[0].trim()}."\n\nCall to action: "Free course on Māori data sovereignty — link in bio. ${tags}"`,
+      `Hook: "Did you know this is happening RIGHT NOW in Aotearoa?"\n\nContext: "${eventSnip}"\n\nMotif frame: "In te ao Māori this is called ${m.name}. ${m.core_logic.slice(0,80)}."\n\nCTA: "Free course at kiwidialectic.com — link in bio. ${tags}"`
+    ],
+    thread: [
+      `1/ ${hook}\n\n${eventSnip}\n\nHere's why this matters — and what Māori are saying about it. 🧵 ${tags}\n\n2/ The Māori motif for this moment is ${m.name}. ${m.realm}.\n\n${m.meaning}\n\n3/ ${m.core_logic}\n\nThis is not a new pattern. The ${m.name} is visible in [HISTORICAL PARALLEL — add yours].\n\n4/ What can we do?\n→ Name it for what it is\n→ Share this thread\n→ Learn the deeper context: free 6-module course 👉 [LINK]\n→ Tag your people\n\n5/ ${m.te_reo_hook[0]}\n\nKo tātou te anamata rangatira. We are the sovereign future. If not now, when?\n\n#KiwiDialectic #TinoRangatiratanga #MāoriDataSovereignty`
+    ]
+  };
+
+  // pick random variant for each platform
+  return {
+    x: posts.x[Math.floor(Math.random()*posts.x.length)],
+    ig: posts.ig[Math.floor(Math.random()*posts.ig.length)],
+    fb: posts.fb[0],
+    tt: posts.tt[Math.floor(Math.random()*posts.tt.length)],
+    thread: posts.thread[0]
+  };
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SCORING ENGINE
+══════════════════════════════════════════════════════════════════════════ */
+function scoreMotifs(eventText, activeThemes) {
+  const text = eventText.toLowerCase();
+  const scores = {};
+
+  for (const [key, motif] of Object.entries(MOTIFS)) {
+    let score = 0;
+
+    // theme chip matches — high weight
+    for (const theme of activeThemes) {
+      if (motif.themes[theme]) score += motif.themes[theme] * 2.5;
+    }
+
+    // keyword matches in text — medium weight
+    for (const kw of motif.keywords) {
+      if (text.includes(kw.toLowerCase())) {
+        score += 6;
+        if (text.split(kw.toLowerCase()).length > 2) score += 3; // repeated
+      }
+    }
+
+    // normalise 0–100
+    scores[key] = Math.min(100, Math.round(score));
+  }
+
+  // sort descending
+  return Object.entries(scores).sort((a,b) => b[1]-a[1]);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   RHIZOME CANVAS
+══════════════════════════════════════════════════════════════════════════ */
+function drawRhizome(canvas, ranked, eventText) {
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+  ctx.clearRect(0,0,W,H);
+
+  // background
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  ctx.fillStyle = isDark ? '#111' : '#f4f0e8';
+  ctx.fillRect(0,0,W,H);
+
+  const motifKeys = ranked.map(r => r[0]);
+  const maxScore = ranked[0][1] || 1;
+
+  // positions — radial around centre event node
+  const cx = W/2, cy = H/2;
+  const angles = { koru:-1.2, pa:-0.4, niho:0.4, kow:1.2, unaunahi:1.9, takarangi:2.7 };
+
+  function motifPos(key, dist) {
+    const a = angles[key] || 0;
+    return { x: cx + dist*Math.cos(a), y: cy + dist*Math.sin(a) };
+  }
+
+  // draw connection lines first
+  for (const [key, score] of ranked) {
+    const m = MOTIFS[key];
+    const strength = score / maxScore;
+    const dist = 60 + (1 - strength) * 110;
+    const pos = motifPos(key, dist);
+
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.lineTo(pos.x, pos.y);
+    ctx.strokeStyle = m.colour + Math.round(strength * 220).toString(16).padStart(2,'0');
+    ctx.lineWidth = strength * 5;
+    ctx.setLineDash(strength > 0.7 ? [] : [6, 5]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+  }
+
+  // draw event node (centre)
+  const gradient = ctx.createRadialGradient(cx,cy,0,cx,cy,44);
+  gradient.addColorStop(0,'#c0392b');
+  gradient.addColorStop(1,'#7b1010');
+  ctx.beginPath();
+  ctx.arc(cx, cy, 44, 0, Math.PI*2);
+  ctx.fillStyle = gradient;
+  ctx.fill();
+  ctx.strokeStyle = '#fff';
+  ctx.lineWidth = 2;
+  ctx.stroke();
+
+  // event label
+  ctx.fillStyle = '#fff';
+  ctx.font = 'bold 11px Arial';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  const words = eventText.slice(0,28).split(' ');
+  const line1 = words.slice(0,3).join(' ');
+  const line2 = words.slice(3,6).join(' ')+(eventText.length>28?'…':'');
+  ctx.fillText(line1, cx, cy - 7);
+  ctx.fillText(line2, cx, cy + 8);
+
+  // draw motif nodes
+  for (const [key, score] of ranked) {
+    const m = MOTIFS[key];
+    const strength = score / maxScore;
+    const dist = 60 + (1 - strength) * 110;
+    const pos = motifPos(key, dist);
+    const r = 16 + strength * 22;
+
+    ctx.beginPath();
+    ctx.arc(pos.x, pos.y, r, 0, Math.PI*2);
+    ctx.fillStyle = m.colour + (strength > 0.5 ? 'dd' : '77');
+    ctx.fill();
+    ctx.strokeStyle = m.colour;
+    ctx.lineWidth = key === ranked[0][0] ? 3 : 1.5;
+    ctx.stroke();
+
+    ctx.fillStyle = isDark ? '#fff' : '#111';
+    ctx.font = `${key === ranked[0][0] ? 'bold ' : ''}${Math.round(8+strength*4)}px Arial`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(m.name, pos.x, pos.y - r - 10);
+    ctx.font = '9px Arial';
+    ctx.fillStyle = isDark ? '#aaa' : '#555';
+    ctx.fillText(score + '%', pos.x, pos.y);
+  }
+
+  // legend
+  ctx.font = '10px Arial';
+  ctx.fillStyle = isDark ? '#666' : '#aaa';
+  ctx.textAlign = 'left';
+  ctx.fillText('Line weight = match strength · Node size = relevance score', 12, H-10);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   STATE
+══════════════════════════════════════════════════════════════════════════ */
+let currentResult = null;
+let currentPlatform = 'x';
+
+/* ══════════════════════════════════════════════════════════════════════════
+   MAIN: RUN MAPPER
+══════════════════════════════════════════════════════════════════════════ */
+function runMapper() {
+  const eventText = document.getElementById('eventInput').value.trim();
+  if (!eventText || eventText.length < 8) {
+    document.getElementById('eventInput').style.borderColor = '#e74c3c';
+    setTimeout(() => document.getElementById('eventInput').style.borderColor = '', 1200);
+    return;
+  }
+
+  const activeThemes = [...document.querySelectorAll('.chip.active')].map(c => c.dataset.theme);
+
+  // show spinner
+  const spinner = document.getElementById('spinner');
+  const btn = document.getElementById('mapBtn');
+  spinner.className = 'spinner visible';
+  btn.disabled = true;
+
+  setTimeout(() => {
+    const ranked = scoreMotifs(eventText, activeThemes);
+    const primaryKey = ranked[0][0];
+    const primaryMotif = MOTIFS[primaryKey];
+    const posts = buildPosts(primaryKey, eventText, activeThemes);
+
+    currentResult = { ranked, primaryKey, eventText, activeThemes, posts };
+
+    // draw canvas
+    const canvas = document.getElementById('rhizomeCanvas');
+    canvas.style.display = 'block';
+    drawRhizome(canvas, ranked.map(([k,s]) => [k, Math.min(100, Math.round(s/Math.max(ranked[0][1],1)*100))]), eventText);
+
+    // PRIMARY MOTIF CARD
+    const card = document.getElementById('primaryMotifCard');
+    const pct = Math.min(100, Math.round(ranked[0][1] / Math.max(ranked[0][1],1) * 100));
+    const second = ranked[1];
+    const secondM = MOTIFS[second[0]];
+
+    card.style.borderLeft = `4px solid ${primaryMotif.colour}`;
+    card.innerHTML = `
+      <div>
+        <img src="${primaryMotif.img}" class="motif-img-sm" alt="${primaryMotif.name}" onerror="this.style.display='none'"/>
+        <div style="margin-top:.6rem;text-align:center">
+          <a href="${primaryMotif.page}" target="_blank"
+             style="font-size:.78rem;color:${primaryMotif.colour};text-decoration:none;font-family:var(--font-sans)">
+             Deep dive →
+          </a>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:${primaryMotif.colour};font-family:var(--font-sans);margin:0 0 4px">Primary match</p>
+        <h2 style="font-family:var(--font-serif);font-size:1.8rem;margin:0 0 4px">${primaryMotif.name}</h2>
+        <p style="font-size:.85rem;opacity:.65;margin:0 0 .8rem;font-family:var(--font-sans)">${primaryMotif.realm}</p>
+        <p style="font-size:.92rem;line-height:1.65;margin:0 0 1rem">${primaryMotif.meaning}</p>
+
+        <div class="match-bar-wrap">
+          <span class="match-label">Match strength</span>
+          <div class="match-bar"><div class="match-fill" style="background:${primaryMotif.colour}" id="primaryFill"></div></div>
+        </div>
+        <div class="match-bar-wrap" style="margin-top:.5rem">
+          <span class="match-label" style="color:${secondM.colour}">Secondary: ${secondM.name}</span>
+          <div class="match-bar">
+            <div class="match-fill" style="background:${secondM.colour}" id="secondFill"></div>
+          </div>
+        </div>
+
+        <p style="font-size:.8rem;color:var(--fg-muted);margin:.8rem 0 0;font-family:var(--font-sans)">
+          Te reo hook: <strong style="color:${primaryMotif.colour}">${primaryMotif.te_reo_hook[Math.floor(Math.random()*primaryMotif.te_reo_hook.length)]}</strong>
+        </p>
+      </div>`;
+
+    // animate bars
+    setTimeout(() => {
+      const p1 = Math.min(100, Math.round(ranked[0][1]/Math.max(...ranked.map(r=>r[1]))*100));
+      const p2 = Math.min(100, Math.round(ranked[1][1]/Math.max(...ranked.map(r=>r[1]))*100));
+      document.getElementById('primaryFill').style.width = p1 + '%';
+      document.getElementById('secondFill').style.width = p2 + '%';
+    }, 100);
+
+    // SCORE TABLE
+    const table = document.getElementById('scoreTable');
+    const maxS = ranked[0][1] || 1;
+    table.innerHTML = `<tr><th>Motif</th><th>Score</th><th>Match bar</th></tr>` +
+      ranked.map(([k,s]) => {
+        const m = MOTIFS[k];
+        const pct = Math.round(s/maxS*100);
+        return `<tr>
+          <td><span class="score-dot" style="background:${m.colour}"></span>${m.name}</td>
+          <td style="font-family:monospace;color:${m.colour}">${pct}%</td>
+          <td style="min-width:120px"><div class="match-bar" style="max-width:200px"><div class="match-fill" style="background:${m.colour};width:${pct}%"></div></div></td>
+        </tr>`;
+      }).join('');
+
+    // RATIONALE
+    const rationaleGrid = document.getElementById('rationaleGrid');
+    const matchedThemes = activeThemes.filter(t => MOTIFS[primaryKey].themes[t] >= 6);
+    const matchedKWs = MOTIFS[primaryKey].keywords.filter(kw => eventText.toLowerCase().includes(kw.toLowerCase())).slice(0,5);
+
+    rationaleGrid.innerHTML = `
+      <div class="rationale-card b-${primaryKey === 'unaunahi' ? 'unaunahi' : primaryKey}" style="border-left-color:${primaryMotif.colour}">
+        <p class="rc-label" style="color:${primaryMotif.colour}">Core logic</p>
+        <p>${primaryMotif.core_logic}</p>
+      </div>
+      <div class="rationale-card" style="border-left-color:${primaryMotif.colour}">
+        <p class="rc-label" style="color:${primaryMotif.colour}">Matched themes</p>
+        <p>${matchedThemes.length ? matchedThemes.map(t => `<strong>${t}</strong>`).join(', ') : 'Keyword-based match — add theme chips above for stronger results'}</p>
+      </div>
+      <div class="rationale-card" style="border-left-color:${primaryMotif.colour}">
+        <p class="rc-label" style="color:${primaryMotif.colour}">Keywords found</p>
+        <p>${matchedKWs.length ? matchedKWs.join(', ') : 'General pattern match'}</p>
+      </div>
+      <div class="rationale-card" style="border-left-color:${primaryMotif.colour}">
+        <p class="rc-label" style="color:${primaryMotif.colour}">Second strongest</p>
+        <p><strong>${secondM.name}</strong> — ${secondM.realm}. Also consider this motif if your framing leans toward ${secondM.meaning.slice(0,60)}…</p>
+      </div>`;
+
+    // POSTS
+    showPost('x', null, posts);
+
+    // ASSETS
+    const assetLinks = document.getElementById('assetLinks');
+    assetLinks.innerHTML = [
+      [`social-kit/motifs/${primaryKey}/${primaryKey}-x-01-${Object.values({koru:'who_built_this',pa:'hold_your_p\u0101',niho:'it_still_has_teeth',kow:'tikanga_first',unaunahi:'we_are_armour',takarangi:'we_are_the_future'})[Object.keys(MOTIFS).indexOf(primaryKey)]}.svg`, `X card — ${primaryMotif.name}`],
+      [`social-kit/motifs/${primaryKey}/${primaryKey}-instagram-01-${Object.values({koru:'who_built_this',pa:'hold_your_p\u0101',niho:'it_still_has_teeth',kow:'tikanga_first',unaunahi:'we_are_armour',takarangi:'we_are_the_future'})[Object.keys(MOTIFS).indexOf(primaryKey)]}.svg`, `Instagram — ${primaryMotif.name}`],
+      [`assets/motifs/${primaryKey}-dark-square.svg`, `${primaryMotif.name} motif SVG`],
+      [`motifs/${primaryMotif.page.split('/')[1]}`, `${primaryMotif.name} deep dive page`],
+    ].map(([href,label]) =>
+      `<a href="${href}" download style="padding:8px 16px;background:var(--bg-raised);border:1px solid ${primaryMotif.colour}55;border-radius:999px;text-decoration:none;color:${primaryMotif.colour};font-size:.8rem;font-family:var(--font-sans)">↓ ${label}</a>`
+    ).join('');
+
+    // save to history
+    saveHistory(eventText, primaryKey, primaryMotif.name);
+
+    // show
+    document.getElementById('resultSection').className = 'result-section visible';
+    document.getElementById('resultSection').scrollIntoView({behavior:'smooth', block:'start'});
+    spinner.className = 'spinner';
+    btn.disabled = false;
+  }, 800); // artificial delay for UX
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   POST DISPLAY
+══════════════════════════════════════════════════════════════════════════ */
+function showPost(platform, btn, posts) {
+  currentPlatform = platform;
+  if (btn) {
+    document.querySelectorAll('.post-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+  }
+  const p = posts || currentResult?.posts;
+  if (!p) return;
+  const text = p[platform] || '';
+  document.getElementById('postText').textContent = text;
+  const cc = document.getElementById('charCount');
+  const len = text.length;
+  cc.textContent = `${len} characters${platform==='x'?' (X limit: 280 per tweet)':platform==='ig'?' (IG limit: 2200)':''}`;
+  cc.className = 'char-count' + (platform==='x'&&len>280?' over':'');
+}
+
+function regenPost() {
+  if (!currentResult) return;
+  const posts = buildPosts(currentResult.primaryKey, currentResult.eventText, currentResult.activeThemes);
+  currentResult.posts = posts;
+  showPost(currentPlatform, null, posts);
+}
+
+function copyPost() {
+  const text = document.getElementById('postText').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector('.copy-btn');
+    btn.textContent = 'Copied ✓';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent='Copy'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   MOTIF OVERRIDE
+══════════════════════════════════════════════════════════════════════════ */
+function forceMotif() {
+  const modal = document.getElementById('overrideModal');
+  const btns = document.getElementById('motifOverrideBtns');
+  btns.innerHTML = Object.entries(MOTIFS).map(([k,m]) =>
+    `<button onclick="applyOverride('${k}')"
+      style="padding:10px 14px;border-radius:8px;border:2px solid ${m.colour};
+             background:${m.colour}22;color:${m.colour};font-weight:700;
+             font-family:var(--font-sans);cursor:pointer;font-size:.88rem">
+      ${m.name}
+    </button>`
+  ).join('');
+  modal.style.display = 'flex';
+}
+
+function applyOverride(key) {
+  document.getElementById('overrideModal').style.display = 'none';
+  if (!currentResult) return;
+  currentResult.primaryKey = key;
+  const posts = buildPosts(key, currentResult.eventText, currentResult.activeThemes);
+  currentResult.posts = posts;
+  showPost(currentPlatform, null, posts);
+  // update primary card heading colour
+  document.getElementById('primaryMotifCard').style.borderLeft = `4px solid ${MOTIFS[key].colour}`;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   HISTORY
+══════════════════════════════════════════════════════════════════════════ */
+function saveHistory(eventText, motifKey, motifName) {
+  const history = JSON.parse(localStorage.getItem('kd-rhizome-history') || '[]');
+  history.unshift({ eventText: eventText.slice(0,120), motifKey, motifName, ts: Date.now() });
+  history.splice(8); // keep last 8
+  localStorage.setItem('kd-rhizome-history', JSON.stringify(history));
+  renderHistory();
+}
+
+function renderHistory() {
+  const history = JSON.parse(localStorage.getItem('kd-rhizome-history') || '[]');
+  const section = document.getElementById('historySection');
+  const list = document.getElementById('historyList');
+  if (!history.length) { section.style.display='none'; return; }
+  section.style.display = 'block';
+  list.innerHTML = history.map((h,i) => {
+    const m = MOTIFS[h.motifKey];
+    const date = new Date(h.ts).toLocaleDateString('en-NZ',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
+    return `<div class="history-item" onclick="reloadHistory(${i})">
+      <div class="history-dot" style="background:${m?.colour||'#888'}"></div>
+      <div>
+        <div class="history-text">${h.eventText}</div>
+        <div class="history-tag">${h.motifName} · ${date}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function reloadHistory(i) {
+  const history = JSON.parse(localStorage.getItem('kd-rhizome-history') || '[]');
+  const h = history[i];
+  if (!h) return;
+  document.getElementById('eventInput').value = h.eventText;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function clearHistory() {
+  localStorage.removeItem('kd-rhizome-history');
+  renderHistory();
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   THEME CHIP TOGGLE
+══════════════════════════════════════════════════════════════════════════ */
+document.querySelectorAll('.chip').forEach(chip => {
+  chip.addEventListener('click', () => chip.classList.toggle('active'));
+});
+
+/* ══════════════════════════════════════════════════════════════════════════
+   THEME TOGGLE
+══════════════════════════════════════════════════════════════════════════ */
+const tBtn = document.getElementById('themeToggle');
+const html = document.documentElement;
+const saved = localStorage.getItem('kd-theme') || 'dark';
+html.setAttribute('data-theme', saved);
+tBtn.textContent = saved === 'dark' ? 'Light' : 'Dark';
+tBtn.addEventListener('click', () => {
+  const cur = html.getAttribute('data-theme');
+  const next = cur === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('kd-theme', next);
+  tBtn.textContent = next === 'dark' ? 'Light' : 'Dark';
+  // redraw canvas if result showing
+  if (currentResult) {
+    const canvas = document.getElementById('rhizomeCanvas');
+    const maxS = currentResult.ranked[0][1] || 1;
+    drawRhizome(canvas, currentResult.ranked.map(([k,s]) => [k, Math.round(s/maxS*100)]), currentResult.eventText);
+  }
+});
+
+/* ══════════════════════════════════════════════════════════════════════════
+   KEYBOARD SHORTCUT — Ctrl+Enter to map
+══════════════════════════════════════════════════════════════════════════ */
+document.getElementById('eventInput').addEventListener('keydown', e => {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') runMapper();
+});
+
+// init
+renderHistory();
+</script>
+</body>
+</html>
