@@ -3,18 +3,147 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Rhizome Mapper — Political Event → Motif → Post · The Kiwi Dialectic</title>
-  <meta name="description" content="Enter a NZ political event. The Rhizome Mapper finds the underlying Māori motif and drafts your social media post."/>
+  <title>Rhizome Mapper — Indigenous Connections · The Kiwi Dialectic</title>
+  <meta name="description" content="An interactive force-directed map of indigenous sovereignty, land rights, data sovereignty and environmental justice movements across Oceania, South America, and Aotearoa."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/kiwi-dialectic.css"/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="preload" href="assets/kiwi-dialectic.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/kiwi-dialectic.css"></noscript>
+  <link rel="manifest" href="/kiwi-dialectic-te-pa-minisite/manifest.json">
+  <meta name="theme-color" content="#c0392b">
+
   <style>
     /* ── layout ── */
-    .mapper-shell { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1.2rem 4rem; }
+    .mapper-shell { max-width: 1200px; margin: 0 auto; padding: 1.5rem 1.2rem 4rem; }
 
-    /* ── input panel ── */
-    .input-panel { margin: 2rem 0; }
+    /* ── controls bar ── */
+    .controls-bar {
+      display: flex; flex-wrap: wrap; gap: .6rem; align-items: center;
+      margin: 1.2rem 0; padding: 1rem 1.2rem;
+      background: var(--bg-raised); border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    .controls-label {
+      font-size: .7rem; letter-spacing: .1em; text-transform: uppercase;
+      font-weight: 700; color: var(--fg-muted); font-family: var(--font-sans);
+      white-space: nowrap;
+    }
+    .filter-chip {
+      padding: 5px 13px; font-size: .78rem; font-family: var(--font-sans);
+      border: 1.5px solid var(--border-bold); border-radius: 999px; cursor: pointer;
+      background: transparent; color: var(--fg-muted); transition: all .15s;
+      user-select: none; white-space: nowrap;
+    }
+    .filter-chip:hover { border-color: var(--accent); color: var(--accent); }
+    .filter-chip.active { font-weight: 700; }
+
+    /* region colours */
+    .chip-maori.active    { background: #2ecc71; border-color: #2ecc71; color: #fff; }
+    .chip-oceania.active  { background: #3498db; border-color: #3498db; color: #fff; }
+    .chip-sa.active       { background: #e67e22; border-color: #e67e22; color: #fff; }
+    .chip-all.active      { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    /* cause filter chips */
+    .chip-cause.active    { background: #9b59b6; border-color: #9b59b6; color: #fff; }
+
+    /* lang badge */
+    .lang-chip {
+      padding: 3px 10px; font-size: .68rem; font-family: var(--font-sans);
+      border-radius: 999px; font-weight: 700; display: inline-block;
+      margin-right: 3px;
+    }
+    .lang-pt { background: #27ae60; color: #fff; }
+    .lang-gn { background: #e67e22; color: #fff; }
+
+    /* ── D3 canvas ── */
+    #rhizomeViz {
+      position: relative; width: 100%; margin: 1.2rem 0;
+      border-radius: 16px; overflow: hidden;
+    }
+    #rhizomeSVG {
+      width: 100%; display: block;
+      background: var(--bg-raised); border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+    .zoom-controls {
+      position: absolute; top: 12px; right: 12px;
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .zoom-controls button {
+      width: 30px; height: 30px; border-radius: 7px;
+      border: 1px solid var(--border-bold); background: var(--bg-card);
+      color: var(--fg); font-size: 1rem; cursor: pointer; line-height: 1;
+    }
+    .zoom-controls button:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+    /* ── detail panel ── */
+    #nodePanel {
+      display: none; margin: .8rem 0;
+      background: var(--bg-raised); border: 1px solid var(--border-bold);
+      border-radius: 14px; padding: 1.4rem 1.6rem;
+      animation: slideIn .2s ease;
+    }
+    #nodePanel.visible { display: block; }
+    @keyframes slideIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+
+    .node-region-tag {
+      font-size: .68rem; letter-spacing: .12em; text-transform: uppercase;
+      font-weight: 700; font-family: var(--font-sans); margin: 0 0 4px;
+    }
+    .node-name { font-family: var(--font-serif); font-size: 1.5rem; margin: 0 0 .3rem; }
+    .node-causes { display: flex; flex-wrap: wrap; gap: .35rem; margin: .5rem 0 .8rem; }
+    .cause-pill {
+      padding: 3px 11px; font-size: .72rem; font-family: var(--font-sans);
+      border-radius: 999px; border: 1px solid; font-weight: 600;
+    }
+    .node-desc { font-size: .9rem; line-height: 1.65; color: var(--fg-muted); margin: 0 0 1rem; }
+    .node-link {
+      display: inline-block; padding: 8px 20px; border-radius: 999px;
+      font-family: var(--font-sans); font-size: .82rem; font-weight: 700;
+      text-decoration: none; color: #fff; transition: opacity .15s;
+    }
+    .node-link:hover { opacity: .85; }
+
+    /* ── stats bar ── */
+    .stats-bar {
+      display: flex; flex-wrap: wrap; gap: 1rem;
+      font-family: var(--font-sans); font-size: .8rem; color: var(--fg-muted);
+      margin: .5rem 0; padding: .5rem 0; border-top: 1px solid var(--border);
+    }
+    .stat-item strong { color: var(--fg); }
+
+    /* ── legend ── */
+    .legend {
+      display: flex; flex-wrap: wrap; gap: .8rem 1.4rem;
+      margin: .8rem 0; padding: .8rem 1rem;
+      background: var(--bg-raised); border: 1px solid var(--border);
+      border-radius: 10px; font-family: var(--font-sans); font-size: .78rem;
+    }
+    .legend-item { display: flex; align-items: center; gap: .4rem; }
+    .legend-dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
+    .legend-line { width: 20px; height: 3px; flex-shrink: 0; border-radius: 2px; }
+
+    /* ── cause tabs ── */
+    .cause-tabs { display: flex; flex-wrap: wrap; gap: .4rem; margin: .5rem 0; }
+
+    /* ── mode toggle ── */
+    .mode-tabs { display: flex; gap: .4rem; margin-bottom: 1rem; }
+    .mode-tab {
+      padding: 7px 18px; font-size: .82rem; font-family: var(--font-sans); font-weight: 700;
+      border: 1.5px solid var(--border-bold); border-radius: 999px; cursor: pointer;
+      background: transparent; color: var(--fg-muted); transition: all .15s;
+    }
+    .mode-tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    /* ── event mapper (original) ── */
+    .event-section { display: none; }
+    .event-section.visible { display: block; }
+    .network-section { display: none; }
+    .network-section.visible { display: block; }
+
+    /* ── input panel (from original) ── */
     .event-label { font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--accent);margin:0 0 .5rem;display:block }
     .event-input {
       width:100%; box-sizing:border-box;
@@ -26,7 +155,6 @@
     }
     .event-input:focus { outline:none; border-color:var(--accent); }
     .event-input::placeholder { color:var(--fg-muted); font-style:italic; }
-
     .theme-chips { display:flex; flex-wrap:wrap; gap:.5rem; margin:.8rem 0; }
     .chip {
       padding:5px 13px; font-size:.78rem; font-family:var(--font-sans);
@@ -36,7 +164,6 @@
     }
     .chip:hover { border-color:var(--accent); color:var(--accent); }
     .chip.active { background:var(--accent); border-color:var(--accent); color:#fff; font-weight:700; }
-
     .map-btn {
       margin-top:1rem; padding:13px 32px;
       background:var(--accent); color:#fff; border:none; border-radius:999px;
@@ -46,31 +173,12 @@
     .map-btn:hover { opacity:.88; transform:translateY(-1px); }
     .map-btn:active { transform:translateY(0); }
     .map-btn:disabled { opacity:.4; cursor:not-allowed; transform:none; }
-
-    /* ── D3 rhizome viz ── */
-    .rh-link { stroke-opacity: 0.7; stroke-linecap: round; }
-    .rh-node-circle { cursor: grab; stroke-width: 2.5; }
-    .rh-node-circle:active { cursor: grabbing; }
-    .rh-node-label { pointer-events: none; font-family: var(--font-sans); font-weight: 600; }
-    .rh-node-score { pointer-events: none; font-family: monospace; }
-    .rh-center-circle { pointer-events: none; }
-    .rh-center-label { pointer-events: none; font-family: var(--font-sans); fill: #fff; font-weight: 700; }
-    .rh-legend { font-size: 9px; font-family: var(--font-sans); fill: var(--fg-muted); }
-    #rhizomeViz .zoom-btn {
-      position: absolute; top: 10px; right: 10px;
-      display: flex; gap: 4px;
-    }
-    .zoom-btn button {
-      width: 28px; height: 28px; border-radius: 6px;
-      border: 1px solid var(--border-bold); background: var(--bg-card);
-      color: var(--fg); font-size: 1rem; cursor: pointer; line-height: 1;
-    }
-    .zoom-btn button:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
-
-    /* ── result panels ── */
+    .spinner { display:none; margin:.5rem 0; }
+    .spinner.visible { display:flex; align-items:center; gap:.6rem; font-size:.85rem; color:var(--fg-muted); font-family:var(--font-sans); }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    .spin-ring { width:18px; height:18px; border:2px solid var(--border-bold); border-top-color:var(--accent); border-radius:50%; animation:spin .7s linear infinite; }
     .result-section { display:none; margin-top:2rem; }
     .result-section.visible { display:block; }
-
     .motif-result {
       display:grid; grid-template-columns:auto 1fr; gap:1.5rem; align-items:start;
       background:var(--bg-raised); border:1px solid var(--border);
@@ -78,13 +186,10 @@
     }
     @media(max-width:600px){ .motif-result { grid-template-columns:1fr; } }
     .motif-img-sm { width:140px; height:140px; border-radius:10px; display:block; }
-
     .match-bar-wrap { margin:.6rem 0; }
     .match-label { font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--fg-muted); font-family:var(--font-sans); }
     .match-bar { height:7px; border-radius:4px; background:var(--border-bold); margin:.3rem 0 .2rem; position:relative; overflow:hidden; }
     .match-fill { height:100%; border-radius:4px; background:var(--accent); transition: width 1s cubic-bezier(.4,0,.2,1); width:0; }
-
-    /* ── post outputs ── */
     .post-tabs { display:flex; gap:.4rem; flex-wrap:wrap; margin:1rem 0 .5rem; }
     .post-tab {
       padding:6px 16px; font-size:.8rem; font-family:var(--font-sans); font-weight:700;
@@ -92,7 +197,6 @@
       background:transparent; color:var(--fg-muted); transition:all .15s;
     }
     .post-tab.active { background:var(--accent); border-color:var(--accent); color:#fff; }
-
     .post-output {
       background:var(--bg-raised); border:1px solid var(--border);
       border-left:4px solid var(--accent); border-radius:0 12px 12px 0;
@@ -108,64 +212,57 @@
     }
     .copy-btn:hover { background:var(--accent); border-color:var(--accent); color:#fff; }
     .copy-btn.copied { background:var(--accent2); border-color:var(--accent2); color:#fff; }
-
     .char-count { font-size:.75rem; font-family:var(--font-sans); color:var(--fg-muted); margin:.4rem 0 0; text-align:right; }
     .char-count.over { color:#e74c3c; font-weight:700; }
-
-    /* ── rationale ── */
-    .rationale-grid {
-      display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:.8rem; margin:1rem 0;
-    }
-    .rationale-card {
-      background:var(--bg-raised); border:1px solid var(--border);
-      border-left:3px solid; border-radius:0 10px 10px 0; padding:12px 14px;
-    }
+    .rationale-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:.8rem; margin:1rem 0; }
+    .rationale-card { background:var(--bg-raised); border:1px solid var(--border); border-left:3px solid; border-radius:0 10px 10px 0; padding:12px 14px; }
     .rationale-card .rc-label { font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; font-weight:700; font-family:var(--font-sans); margin:0 0 4px; }
     .rationale-card p { font-size:.82rem; color:var(--fg-muted); line-height:1.55; margin:0; }
-
-    /* ── theme score table ── */
     .score-table { width:100%; border-collapse:collapse; font-size:.83rem; margin:1rem 0; }
     .score-table th { background:var(--bg-raised); padding:8px 12px; text-align:left; font-family:var(--font-sans); font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--fg-muted); border-bottom:1px solid var(--border); }
     .score-table td { padding:8px 12px; border-bottom:1px solid var(--border); vertical-align:middle; }
     .score-table tr:last-child td { border-bottom:none; }
     .score-dot { display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:5px; vertical-align:middle; }
-
-    /* ── history ── */
-    .history-item {
-      background:var(--bg-raised); border:1px solid var(--border); border-radius:10px;
-      padding:12px 16px; margin-bottom:.6rem; cursor:pointer; transition:border-color .15s;
-      display:flex; align-items:center; gap:.8rem;
-    }
+    .section-divider { border:none; border-top:1px solid var(--border); margin:2.5rem 0; }
+    .section-tag2 { font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--fg-muted);font-family:var(--font-sans);margin:0 0 .5rem }
+    .history-item { background:var(--bg-raised); border:1px solid var(--border); border-radius:10px; padding:12px 16px; margin-bottom:.6rem; cursor:pointer; transition:border-color .15s; display:flex; align-items:center; gap:.8rem; }
     .history-item:hover { border-color:var(--accent); }
     .history-dot { width:12px; height:12px; border-radius:50%; flex-shrink:0; }
     .history-text { font-size:.84rem; line-height:1.4; flex:1; }
     .history-tag { font-size:.7rem; font-family:var(--font-sans); color:var(--fg-muted); margin-top:2px; }
-
-    /* ── intro ── */
     .intro-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:.7rem; margin:1.2rem 0; }
     .intro-card { background:var(--bg-raised); border:1px solid var(--border); border-radius:10px; padding:14px 16px; }
     .intro-card .ic-num { font-size:1.6rem; font-family:var(--font-serif); color:var(--accent); margin:0 0 4px; }
     .intro-card p { font-size:.8rem; color:var(--fg-muted); line-height:1.5; margin:0; }
+    .c-koru{color:#2ecc71}.c-pa{color:#3498db}.c-niho{color:#e74c3c}.c-kow{color:#f39c12}.c-unaunahi{color:#1abc9c}.c-takarangi{color:#9b59b6}
 
-    /* ── spinner ── */
-    .spinner { display:none; margin:.5rem 0; }
-    .spinner.visible { display:flex; align-items:center; gap:.6rem; font-size:.85rem; color:var(--fg-muted); font-family:var(--font-sans); }
-    @keyframes spin { to { transform:rotate(360deg); } }
-    .spin-ring { width:18px; height:18px; border:2px solid var(--border-bold); border-top-color:var(--accent); border-radius:50%; animation:spin .7s linear infinite; }
+    /* ── i18n switcher ── */
+    .lang-switcher {
+      display: flex; gap: .35rem; align-items: center;
+    }
+    .lang-btn {
+      padding: 4px 11px; font-size: .72rem; font-family: var(--font-sans); font-weight: 700;
+      border: 1.5px solid var(--border-bold); border-radius: 999px; cursor: pointer;
+      background: transparent; color: var(--fg-muted); transition: all .15s; letter-spacing: .05em;
+    }
+    .lang-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .lang-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
 
-    /* ── motif colour accents ── */
-    .c-koru      { color:#2ecc71; } .b-koru      { border-color:#2ecc71; } .bg-koru  { background:#2ecc71; }
-    .c-pa        { color:#3498db; } .b-pa        { border-color:#3498db; } .bg-pa    { background:#3498db; }
-    .c-niho      { color:#e74c3c; } .b-niho      { border-color:#e74c3c; } .bg-niho  { background:#e74c3c; }
-    .c-kow       { color:#f39c12; } .b-kow       { border-color:#f39c12; } .bg-kow   { background:#f39c12; }
-    .c-unaunahi  { color:#1abc9c; } .b-unaunahi  { border-color:#1abc9c; } .bg-una   { background:#1abc9c; }
-    .c-takarangi { color:#9b59b6; } .b-takarangi { border-color:#9b59b6; } .bg-tak   { background:#9b59b6; }
+    /* ── search input ── */
+    .node-search {
+      padding: 8px 14px; font-size: .88rem; font-family: var(--font-sans);
+      background: var(--bg-raised); color: var(--fg);
+      border: 1.5px solid var(--border-bold); border-radius: 8px;
+      width: 220px; transition: border-color .2s;
+    }
+    .node-search:focus { outline: none; border-color: var(--accent); }
+    .node-search::placeholder { color: var(--fg-muted); }
 
-    .section-divider { border:none; border-top:1px solid var(--border); margin:2.5rem 0; }
-    .section-tag2 { font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--fg-muted);font-family:var(--font-sans);margin:0 0 .5rem }
+    @media (max-width: 640px) {
+      .controls-bar { flex-direction: column; align-items: flex-start; }
+      .node-search { width: 100%; }
+    }
   </style>
-  <link rel="manifest" href="/kiwi-dialectic-te-pa-minisite/manifest.json">
-  <meta name="theme-color" content="#c0392b">
 </head>
 <body>
 <span class="motif-stripe" role="presentation" aria-hidden="true"></span>
@@ -178,144 +275,198 @@
       <a href="index.html">Home</a>
       <a href="motifs/index.html">Motifs</a>
       <a href="index.html#modules">Modules</a>
+      <!-- Language switcher -->
+      <div class="lang-switcher" id="langSwitcher">
+        <span style="font-size:.68rem;color:var(--fg-muted);font-family:var(--font-sans);letter-spacing:.08em">LANG</span>
+        <button class="lang-btn active" onclick="setLang('en')" data-lang="en">EN</button>
+        <button class="lang-btn" onclick="setLang('pt')" data-lang="pt">PT</button>
+        <button class="lang-btn" onclick="setLang('gn')" data-lang="gn">GN</button>
+      </div>
       <button class="theme-btn" id="themeToggle">Light</button>
     </div>
   </nav>
 
   <!-- HEADER -->
   <header style="margin:2rem 0 1.5rem">
-    <p class="section-tag">Te taura here — The rhizome mapper</p>
-    <h1 style="font-family:var(--font-serif);font-size:2.6rem;margin:.3rem 0 .5rem">
+    <p class="section-tag" id="hdr-tag">Te taura here — The rhizome mapper</p>
+    <h1 style="font-family:var(--font-serif);font-size:2.6rem;margin:.3rem 0 .5rem" id="hdr-title">
       Rhizome Mapper
     </h1>
-    <p style="font-size:1rem;opacity:.65;margin:0 0 1rem">
-      Political event → Māori motif → punchy social post. Break news with kaupapa.
+    <p style="font-size:1rem;opacity:.65;margin:0 0 1.2rem" id="hdr-sub">
+      Two modes: <strong>Network</strong> — explore 36 real indigenous movements across Oceania, South America, and Aotearoa as a live force map. <strong>Event Mapper</strong> — paste a political event, get a Māori motif and a ready-to-post social caption.
     </p>
 
-    <div class="intro-grid">
-      <div class="intro-card"><p class="ic-num">01</p><p>Describe or paste a NZ political event — a bill, a decision, a speech, a protest.</p></div>
-      <div class="intro-card"><p class="ic-num">02</p><p>Tag the themes you see — sovereignty, extraction, resistance, collective action.</p></div>
-      <div class="intro-card"><p class="ic-num">03</p><p>The mapper scores all 6 motifs and finds the deepest match.</p></div>
-      <div class="intro-card"><p class="ic-num">04</p><p>Get a bilingual draft post for X, Instagram, Facebook, or TikTok — ready in seconds.</p></div>
+    <!-- MODE TABS -->
+    <div class="mode-tabs">
+      <button class="mode-tab active" id="tabNetwork" onclick="setMode('network')" data-i18n="tab-network">⬡ Network Map</button>
+      <button class="mode-tab" id="tabEvent" onclick="setMode('event')" data-i18n="tab-event">→ Event Mapper</button>
     </div>
   </header>
 
-  <hr class="section-divider"/>
+  <!-- ══════════════════════════════════════════════════════
+       NETWORK MAP MODE
+  ══════════════════════════════════════════════════════ -->
+  <div class="network-section visible" id="networkSection">
 
-  <!-- INPUT PANEL -->
-  <section class="input-panel">
-    <label class="event-label" for="eventInput">He aha te kaupake? — What is the event?</label>
-    <textarea id="eventInput" class="event-input"
-      placeholder="e.g. 'Government announces fast-track consenting for mining on conservation land' or 'ACT Party introduces Treaty Principles Bill to remove co-governance' or 'Māori health authority disestablished'…"></textarea>
+    <!-- CONTROLS -->
+    <div class="controls-bar">
+      <span class="controls-label" data-i18n="ctrl-region">Region</span>
+      <button class="filter-chip chip-all active" onclick="filterRegion('all',this)" data-i18n="all">All</button>
+      <button class="filter-chip chip-maori" onclick="filterRegion('maori',this)" data-i18n="maori">Māori · Aotearoa</button>
+      <button class="filter-chip chip-oceania" onclick="filterRegion('oceania',this)" data-i18n="oceania">Oceania</button>
+      <button class="filter-chip chip-sa" onclick="filterRegion('south_america',this)" data-i18n="south-america">South America</button>
 
-    <p class="event-label" style="margin-top:1.2rem">Ngā kaupeka — Themes you see in this event</p>
-    <div class="theme-chips" id="themeChips">
-      <button class="chip" data-theme="sovereignty">Sovereignty / tino rangatiratanga</button>
-      <button class="chip" data-theme="extraction">Extraction / raupatu</button>
-      <button class="chip" data-theme="resistance">Resistance / kaha</button>
-      <button class="chip" data-theme="collective">Collective action / kotahitanga</button>
-      <button class="chip" data-theme="land">Whenua / land rights</button>
-      <button class="chip" data-theme="language">Reo / language</button>
-      <button class="chip" data-theme="law">Law / tikanga / ture</button>
-      <button class="chip" data-theme="future">Future / anamata</button>
-      <button class="chip" data-theme="governance">Governance / whakahaere</button>
-      <button class="chip" data-theme="data">Data / AI / technology</button>
-      <button class="chip" data-theme="treaty">Treaty / Tiriti</button>
-      <button class="chip" data-theme="protection">Protection / tiaki</button>
-      <button class="chip" data-theme="renewal">Renewal / beginnings</button>
-      <button class="chip" data-theme="cycles">Cycles / history repeating</button>
+      <span class="controls-label" style="margin-left:.4rem" data-i18n="ctrl-cause">Cause</span>
+      <button class="filter-chip chip-cause" onclick="filterCause('land rights',this)" data-i18n="land-rights">Land</button>
+      <button class="filter-chip chip-cause" onclick="filterCause('political sovereignty',this)" data-i18n="sovereignty">Sovereignty</button>
+      <button class="filter-chip chip-cause" onclick="filterCause('data sovereignty',this)" data-i18n="data-sov">Data / AI</button>
+      <button class="filter-chip chip-cause" onclick="filterCause('language revival',this)" data-i18n="language">Language</button>
+      <button class="filter-chip chip-cause" onclick="filterCause('environmental justice',this)" data-i18n="environment">Environment</button>
+
+      <input type="search" class="node-search" id="nodeSearch" placeholder="Search orgs…" oninput="searchNodes(this.value)" data-i18n-placeholder="search-placeholder"/>
     </div>
 
-    <button class="map-btn" id="mapBtn" onclick="runMapper()">Map to motif →</button>
-    <div class="spinner" id="spinner"><div class="spin-ring"></div> Tracing the rhizome…</div>
-  </section>
+    <!-- STATS -->
+    <div class="stats-bar" id="statsBar">
+      <span><strong id="statVisible">36</strong> <span data-i18n="stat-orgs">organisations</span></span>
+      <span><strong>3</strong> <span data-i18n="stat-regions">regions</span></span>
+      <span><strong id="statPt">8</strong> <span data-i18n="stat-pt">with Portuguese resources</span></span>
+      <span><strong id="statGn">4</strong> <span data-i18n="stat-gn">with Guaraní resources</span></span>
+    </div>
 
-  <!-- RHIZOME CANVAS — D3.js force-directed graph -->
-  <div id="rhizomeViz" style="display:none; position:relative; width:100%; max-width:720px; margin:2rem auto;">
-    <svg id="rhizomeSVG" width="100%" viewBox="0 0 720 400"
-         style="border-radius:16px; background:var(--bg-raised); border:1px solid var(--border); display:block;">
-    </svg>
-    <p style="font-size:.72rem; color:var(--fg-muted); font-family:var(--font-sans); text-align:center; margin:.5rem 0 0;">
-      Drag nodes · scroll to zoom · line weight = match strength
-    </p>
-  </div>
+    <!-- LEGEND -->
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#2ecc71"></div> <span data-i18n="leg-maori">Māori / Aotearoa</span></div>
+      <div class="legend-item"><div class="legend-dot" style="background:#3498db"></div> <span data-i18n="leg-oceania">Oceania / Te Moana-nui-a-Kiwa</span></div>
+      <div class="legend-item"><div class="legend-dot" style="background:#e67e22"></div> <span data-i18n="leg-sa">South America / Amazonia</span></div>
+      <div class="legend-item" style="margin-left:.5rem"><div class="legend-line" style="background:#aaa;opacity:.4"></div> <span data-i18n="leg-link">Shared cause connection</span></div>
+      <div class="legend-item"><span style="font-size:.75rem;font-family:var(--font-sans);color:var(--fg-muted)" data-i18n="leg-drag">Drag · scroll to zoom · click node for detail</span></div>
+    </div>
 
-  <!-- RESULTS -->
-  <section class="result-section" id="resultSection">
-
-    <!-- PRIMARY MOTIF -->
-    <div id="primaryMotifPanel">
-      <p class="section-tag2">He tohu kei roto — Primary motif match</p>
-      <div class="motif-result" id="primaryMotifCard">
-        <!-- filled by JS -->
+    <!-- D3 CANVAS -->
+    <div id="rhizomeViz">
+      <svg id="rhizomeSVG" viewBox="0 0 1100 620" style="border-radius:16px;background:var(--bg-raised);border:1px solid var(--border);display:block;width:100%"></svg>
+      <div class="zoom-controls">
+        <button onclick="zoomIn()" title="Zoom in">+</button>
+        <button onclick="zoomOut()" title="Zoom out">−</button>
+        <button onclick="zoomReset()" title="Reset" style="font-size:.72rem">⌂</button>
       </div>
     </div>
 
-    <!-- SCORE TABLE -->
-    <details style="margin-bottom:1.5rem">
-      <summary style="cursor:pointer;font-family:var(--font-sans);font-size:.85rem;color:var(--fg-muted);padding:.4rem 0">▸ All motif scores</summary>
-      <table class="score-table" id="scoreTable"><!-- filled by JS --></table>
-    </details>
-
-    <!-- RATIONALE -->
-    <div id="rationalePanel" style="margin-bottom:1.5rem">
-      <p class="section-tag2" style="margin-bottom:.6rem">He whakamārama — Why this motif</p>
-      <div class="rationale-grid" id="rationaleGrid"><!-- filled by JS --></div>
+    <!-- NODE DETAIL PANEL -->
+    <div id="nodePanel">
+      <div id="nodePanelContent"></div>
     </div>
 
-    <hr class="section-divider" style="margin:1.5rem 0"/>
+  </div><!-- /network-section -->
 
-    <!-- POST GENERATOR -->
-    <div id="postPanel">
-      <p class="section-tag2">Tuhituhi pāpāho — Draft social post</p>
-      <h2 style="font-family:var(--font-serif);font-size:1.5rem;margin:.3rem 0 .8rem">Ready-to-post copy</h2>
-      <p style="font-size:.85rem;color:var(--fg-muted);margin:0 0 1rem">Pick a platform. Edit the bracketed text. Copy. Post within minutes of the news breaking.</p>
-
-      <div class="post-tabs" id="postTabs">
-        <button class="post-tab active" data-plat="x" onclick="showPost('x',this)">X / Twitter</button>
-        <button class="post-tab" data-plat="ig" onclick="showPost('ig',this)">Instagram</button>
-        <button class="post-tab" data-plat="fb" onclick="showPost('fb',this)">Facebook</button>
-        <button class="post-tab" data-plat="tt" onclick="showPost('tt',this)">TikTok hook</button>
-        <button class="post-tab" data-plat="thread" onclick="showPost('thread',this)">X Thread</button>
-      </div>
-
-      <div class="post-output" id="postOutput">
-        <button class="copy-btn" onclick="copyPost()">Copy</button>
-        <span id="postText"></span>
-      </div>
-      <p class="char-count" id="charCount"></p>
-
-      <!-- REGENERATE VARIANTS -->
-      <div style="margin-top:1rem;display:flex;gap:.6rem;flex-wrap:wrap">
-        <button class="map-btn" style="font-size:.85rem;padding:9px 20px" onclick="regenPost()">↺ New variant</button>
-        <button class="map-btn" style="font-size:.85rem;padding:9px 20px;background:var(--accent2)" onclick="forceMotif()">Override motif</button>
-      </div>
-      <p style="font-size:.78rem;color:var(--fg-muted);margin:.5rem 0">Replace [EVENT], [SOURCE], and [LINK] before posting.</p>
+  <!-- ══════════════════════════════════════════════════════
+       EVENT MAPPER MODE (original functionality preserved)
+  ══════════════════════════════════════════════════════ -->
+  <div class="event-section" id="eventSection">
+    <div class="intro-grid">
+      <div class="intro-card"><p class="ic-num">01</p><p data-i18n="ev-step1">Describe or paste a political event — a bill, a decision, a speech, a protest.</p></div>
+      <div class="intro-card"><p class="ic-num">02</p><p data-i18n="ev-step2">Tag the themes you see — sovereignty, extraction, resistance, collective action.</p></div>
+      <div class="intro-card"><p class="ic-num">03</p><p data-i18n="ev-step3">The mapper scores all 6 Māori motifs and finds the deepest match.</p></div>
+      <div class="intro-card"><p class="ic-num">04</p><p data-i18n="ev-step4">Get a bilingual draft post for X, Instagram, Facebook, or TikTok — ready in seconds.</p></div>
     </div>
 
-    <!-- RELATED ASSETS -->
-    <hr class="section-divider" style="margin:1.5rem 0"/>
-    <div id="assetsPanel">
-      <p class="section-tag2">Ngā rauemi — Download matching assets</p>
-      <div id="assetLinks" style="display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.5rem"></div>
+    <hr class="section-divider"/>
+
+    <section class="input-panel">
+      <label class="event-label" for="eventInput" id="ev-label" data-i18n="ev-label">He aha te kaupake? — What is the event?</label>
+      <textarea id="eventInput" class="event-input"
+        placeholder="e.g. 'Government announces fast-track consenting for mining on conservation land' or 'FUNAI budget cut by 30%' or 'West Papua independence vote blocked'…"></textarea>
+
+      <p class="event-label" style="margin-top:1.2rem" data-i18n="ev-themes">Ngā kaupeka — Themes you see in this event</p>
+      <div class="theme-chips" id="themeChips">
+        <button class="chip" data-theme="sovereignty">Sovereignty / tino rangatiratanga</button>
+        <button class="chip" data-theme="extraction">Extraction / raupatu</button>
+        <button class="chip" data-theme="resistance">Resistance / kaha</button>
+        <button class="chip" data-theme="collective">Collective action / kotahitanga</button>
+        <button class="chip" data-theme="land">Whenua / land rights</button>
+        <button class="chip" data-theme="language">Reo / language</button>
+        <button class="chip" data-theme="law">Law / tikanga / ture</button>
+        <button class="chip" data-theme="future">Future / anamata</button>
+        <button class="chip" data-theme="governance">Governance / whakahaere</button>
+        <button class="chip" data-theme="data">Data / AI / technology</button>
+        <button class="chip" data-theme="treaty">Treaty / Tiriti / FPIC</button>
+        <button class="chip" data-theme="protection">Protection / tiaki</button>
+        <button class="chip" data-theme="renewal">Renewal / beginnings</button>
+        <button class="chip" data-theme="cycles">Cycles / history repeating</button>
+      </div>
+      <button class="map-btn" id="mapBtn" onclick="runMapper()">Map to motif →</button>
+      <div class="spinner" id="spinner"><div class="spin-ring"></div> Tracing the rhizome…</div>
+    </section>
+
+    <!-- RHIZOME MINI CANVAS for event mode -->
+    <div id="rhizomeVizEvent" style="display:none; position:relative; width:100%; max-width:720px; margin:2rem auto;">
+      <svg id="rhizomeSVGEvent" width="100%" viewBox="0 0 720 400"
+           style="border-radius:16px; background:var(--bg-raised); border:1px solid var(--border); display:block;">
+      </svg>
+      <p style="font-size:.72rem; color:var(--fg-muted); font-family:var(--font-sans); text-align:center; margin:.5rem 0 0;">
+        Drag nodes · scroll to zoom · line weight = match strength
+      </p>
     </div>
 
-  </section>
+    <section class="result-section" id="resultSection">
+      <div id="primaryMotifPanel">
+        <p class="section-tag2">He tohu kei roto — Primary motif match</p>
+        <div class="motif-result" id="primaryMotifCard"></div>
+      </div>
+      <details style="margin-bottom:1.5rem">
+        <summary style="cursor:pointer;font-family:var(--font-sans);font-size:.85rem;color:var(--fg-muted);padding:.4rem 0">▸ All motif scores</summary>
+        <table class="score-table" id="scoreTable"></table>
+      </details>
+      <div id="rationalePanel" style="margin-bottom:1.5rem">
+        <p class="section-tag2" style="margin-bottom:.6rem">He whakamārama — Why this motif</p>
+        <div class="rationale-grid" id="rationaleGrid"></div>
+      </div>
+      <hr class="section-divider" style="margin:1.5rem 0"/>
+      <div id="postPanel">
+        <p class="section-tag2">Tuhituhi pāpāho — Draft social post</p>
+        <h2 style="font-family:var(--font-serif);font-size:1.5rem;margin:.3rem 0 .8rem">Ready-to-post copy</h2>
+        <p style="font-size:.85rem;color:var(--fg-muted);margin:0 0 1rem">Pick a platform. Edit the bracketed text. Copy. Post within minutes of the news breaking.</p>
+        <div class="post-tabs" id="postTabs">
+          <button class="post-tab active" data-plat="x" onclick="showPost('x',this)">X / Twitter</button>
+          <button class="post-tab" data-plat="ig" onclick="showPost('ig',this)">Instagram</button>
+          <button class="post-tab" data-plat="fb" onclick="showPost('fb',this)">Facebook</button>
+          <button class="post-tab" data-plat="tt" onclick="showPost('tt',this)">TikTok hook</button>
+          <button class="post-tab" data-plat="thread" onclick="showPost('thread',this)">X Thread</button>
+        </div>
+        <div class="post-output" id="postOutput">
+          <button class="copy-btn" onclick="copyPost()">Copy</button>
+          <span id="postText"></span>
+        </div>
+        <p class="char-count" id="charCount"></p>
+        <div style="margin-top:1rem;display:flex;gap:.6rem;flex-wrap:wrap">
+          <button class="map-btn" style="font-size:.85rem;padding:9px 20px" onclick="regenPost()">↺ New variant</button>
+          <button class="map-btn" style="font-size:.85rem;padding:9px 20px;background:var(--accent2)" onclick="forceMotif()">Override motif</button>
+        </div>
+        <p style="font-size:.78rem;color:var(--fg-muted);margin:.5rem 0">Replace [EVENT], [SOURCE], and [LINK] before posting.</p>
+      </div>
+      <hr class="section-divider" style="margin:1.5rem 0"/>
+      <div id="assetsPanel">
+        <p class="section-tag2">Ngā rauemi — Download matching assets</p>
+        <div id="assetLinks" style="display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.5rem"></div>
+      </div>
+    </section>
 
-  <!-- HISTORY -->
-  <hr class="section-divider"/>
-  <section id="historySection" style="display:none">
-    <p class="section-tag2">Hītori — Recent mappings</p>
-    <div id="historyList"></div>
-    <button style="font-size:.78rem;color:var(--fg-muted);background:none;border:none;cursor:pointer;padding:.3rem 0" onclick="clearHistory()">Clear history</button>
-  </section>
+    <hr class="section-divider"/>
+    <section id="historySection" style="display:none">
+      <p class="section-tag2">Hītori — Recent mappings</p>
+      <div id="historyList"></div>
+      <button style="font-size:.78rem;color:var(--fg-muted);background:none;border:none;cursor:pointer;padding:.3rem 0" onclick="clearHistory()">Clear history</button>
+    </section>
+
+  </div><!-- /event-section -->
 
   <footer class="site-footer" style="margin-top:3rem">
     <a href="https://www.kiwidialectic.com" target="_blank">The Kiwi Dialectic</a> ·
     <a href="index.html">Course home</a> ·
     <a href="motifs/index.html">All motifs</a>
   </footer>
-</div>
+</div><!-- /mapper-shell -->
 
 <!-- MOTIF OVERRIDE MODAL -->
 <div id="overrideModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:100;align-items:center;justify-content:center">
@@ -328,516 +479,762 @@
 
 <script>
 /* ══════════════════════════════════════════════════════════════════════════
-   MOTIF DEFINITIONS
+   i18n — English / Portuguese / Guaraní
 ══════════════════════════════════════════════════════════════════════════ */
-const MOTIFS = {
-  koru: {
-    name: "Koru",
-    colour: "#2ecc71",
-    realm: "Tīmatanga · Growth · Beginnings",
-    page: "motifs/koru.html",
-    img: "assets/motifs/koru-dark-square.svg",
-    meaning: "New life, unfurling potential, the origin point of all things. Something is beginning — or being prevented from beginning.",
-    themes: {
-      renewal: 10, future: 8, resistance: 5, language: 6, sovereignty: 5,
-      collective: 4, law: 3, treaty: 4, land: 5, extraction: 4,
-      governance: 3, data: 4, protection: 4, cycles: 6
-    },
-    // keyword signals in event text
-    keywords: ["new","begin","start","launch","introduce","announce","birth","emerge","grow","kōhanga","education","school","youth","next generation","future","first","establish","found","create","reform","change","transform"],
-    core_logic: "This event marks a moment of beginning — a threshold crossed, a new phase entered, a potential unfolding or being blocked.",
-    te_reo_hook: ["Ko wai nāu i hanga?","Tīmatanga hou — he ara hou?","He aha tōu koru?","Ka pū te ruha, ka hao te rangatahi"]
+const STRINGS = {
+  en: {
+    'tab-network': '⬡ Network Map',
+    'tab-event': '→ Event Mapper',
+    'ctrl-region': 'Region',
+    'all': 'All',
+    'maori': 'Māori · Aotearoa',
+    'oceania': 'Oceania',
+    'south-america': 'South America',
+    'ctrl-cause': 'Cause',
+    'land-rights': 'Land',
+    'sovereignty': 'Sovereignty',
+    'data-sov': 'Data / AI',
+    'language': 'Language',
+    'environment': 'Environment',
+    'search-placeholder': 'Search orgs…',
+    'stat-orgs': 'organisations',
+    'stat-regions': 'regions',
+    'stat-pt': 'with Portuguese resources',
+    'stat-gn': 'with Guaraní resources',
+    'leg-maori': 'Māori / Aotearoa',
+    'leg-oceania': 'Oceania / Te Moana-nui-a-Kiwa',
+    'leg-sa': 'South America / Amazonia',
+    'leg-link': 'Shared cause connection',
+    'leg-drag': 'Drag · scroll to zoom · click node for detail',
+    'ev-step1': 'Describe or paste a political event — a bill, a decision, a speech, a protest.',
+    'ev-step2': 'Tag the themes you see — sovereignty, extraction, resistance, collective action.',
+    'ev-step3': 'The mapper scores all 6 Māori motifs and finds the deepest match.',
+    'ev-step4': 'Get a bilingual draft post for X, Instagram, Facebook, or TikTok.',
+    'ev-label': 'He aha te kaupake? — What is the event?',
+    'ev-themes': 'Ngā kaupeka — Themes you see in this event',
   },
-  pa: {
-    name: "Pā Tūwatawata",
-    colour: "#3498db",
-    realm: "Ārai · Tiaki · Collective sovereignty",
-    page: "motifs/pa-tuwatawata.html",
-    img: "assets/motifs/pa-tuwatawata-dark-square.svg",
-    meaning: "The fortified palisade — collective protection, sovereignty over space and governance. Someone is trying to breach the pā, or the pā is being built stronger.",
-    themes: {
-      sovereignty: 10, protection: 10, governance: 9, collective: 8,
-      land: 8, treaty: 7, data: 7, law: 6, resistance: 7,
-      extraction: 5, future: 5, language: 4, renewal: 4, cycles: 5
-    },
-    keywords: ["sovereignty","co-governance","rangatiratanga","authority","control","infrastructure","resource","ownership","self-determination","manage","protect","defend","border","territory","breach","access","enter","takeover","seize","remove","disestablish","abolish","health","hospital","council"],
-    core_logic: "This event is about who controls the space — physical, political, or digital. The pā is under pressure, being reinforced, or being dismantled.",
-    te_reo_hook: ["Ārahina tō pā ake","He pā tūwatawata mō tātou katoa","Kaua e tuku i tō pā","Ko wai e tiaki ana i ngā tatau?","Tiakina — kia mau"]
+  pt: {
+    'tab-network': '⬡ Mapa de Rede',
+    'tab-event': '→ Mapeador de Eventos',
+    'ctrl-region': 'Região',
+    'all': 'Todos',
+    'maori': 'Māori · Aotearoa',
+    'oceania': 'Oceania',
+    'south-america': 'América do Sul',
+    'ctrl-cause': 'Causa',
+    'land-rights': 'Terra',
+    'sovereignty': 'Soberania',
+    'data-sov': 'Dados / IA',
+    'language': 'Língua',
+    'environment': 'Meio Ambiente',
+    'search-placeholder': 'Buscar organizações…',
+    'stat-orgs': 'organizações',
+    'stat-regions': 'regiões',
+    'stat-pt': 'com recursos em Português',
+    'stat-gn': 'com recursos em Guaraní',
+    'leg-maori': 'Māori / Aotearoa',
+    'leg-oceania': 'Oceania / Te Moana-nui-a-Kiwa',
+    'leg-sa': 'América do Sul / Amazônia',
+    'leg-link': 'Conexão por causa comum',
+    'leg-drag': 'Arraste · role para zoom · clique no nó para detalhes',
+    'ev-step1': 'Descreva ou cole um evento político — um projeto de lei, decisão, discurso, protesto.',
+    'ev-step2': 'Marque os temas — soberania, extração, resistência, ação coletiva.',
+    'ev-step3': 'O mapeador pontua os 6 motivos Māori e encontra a correspondência mais profunda.',
+    'ev-step4': 'Obtenha um rascunho de post para X, Instagram, Facebook ou TikTok.',
+    'ev-label': 'Qual é o evento?',
+    'ev-themes': 'Temas que você vê neste evento',
   },
-  niho: {
-    name: "Niho Taniwha",
-    colour: "#e74c3c",
-    realm: "Raupatu · Kaha · Challenge at the threshold",
-    page: "motifs/niho-taniwha.html",
-    img: "assets/motifs/niho-taniwha-dark-square.svg",
-    meaning: "The taniwha's teeth — the colonial bite, extraction without consent, harm that must be named. This event is raupatu in a new form.",
-    themes: {
-      extraction: 10, resistance: 9, land: 8, treaty: 8,
-      sovereignty: 7, law: 6, data: 8, governance: 6,
-      collective: 5, protection: 6, language: 5, future: 4, renewal: 3, cycles: 7
-    },
-    keywords: ["seize","confiscate","strip","remove","cut","reduce","deny","reject","override","mine","drill","extract","profit","corporate","foreign","privatise","sell","commercial","raupatu","confiscation","stolen","without consent","against","protest","oppose","march","hīkoi","court","tribunal","claim","settlement","breach"],
-    core_logic: "This event is a form of extraction or harm — something is being taken, stripped, denied, or overridden. Name it for what it is.",
-    te_reo_hook: ["He raupatu tonu tēnei","He niho tonu tōna","Tōia mai ki te ao mārama","Whakaingoatia — kia mārama ai","He aha tāu AI e kai ana?","He niho hou tō te taniwha"]
-  },
-  kow: {
-    name: "Kōwhaiwhai",
-    colour: "#f39c12",
-    realm: "Ture · Tikanga · Genealogy as law",
-    page: "motifs/kowhaiwhai.html",
-    img: "assets/motifs/kowhaiwhai-dark-square.svg",
-    meaning: "The law written on the rafter. This event involves a clash between tikanga and statute, between relationships and contracts, between ancestral authority and state power.",
-    themes: {
-      law: 10, treaty: 10, governance: 9, sovereignty: 8,
-      language: 7, land: 6, data: 6, protection: 6,
-      collective: 6, extraction: 5, resistance: 6, future: 5, renewal: 5, cycles: 6
-    },
-    keywords: ["law","act","bill","parliament","court","judge","tribunal","waitangi","treaty","principle","policy","regulation","rule","right","constitutional","legal","jurisdiction","authority","tikanga","custom","precedent","ruling","decision","legislation","amendment","repeal","review","inquiry","hearing","submission","debate","vote","select committee"],
-    core_logic: "This event is fundamentally about whose law governs. Ko te tikanga te ture tuatahi — tikanga is the first law.",
-    te_reo_hook: ["Ko te tikanga te ture tuatahi","He tikanga tō ia āhua","Ko wai e whakahaere ana i ēnei ture?","Whakahokia mai — he tikanga tō tēnei","Ko te whakapapa o tēnei ture ko wai?"]
-  },
-  unaunahi: {
-    name: "Unaunahi",
-    colour: "#1abc9c",
-    realm: "Kotahitanga · Collective armour",
-    page: "motifs/unaunahi.html",
-    img: "assets/motifs/unaunahi-dark-square.svg",
-    meaning: "Fish scales interlocking. This event calls for collective response — no single scale holds the whole, but together they form armour. Unity is both the analysis and the answer.",
-    themes: {
-      collective: 10, resistance: 8, protection: 9, sovereignty: 6,
-      data: 7, future: 6, land: 6, language: 7, law: 5,
-      governance: 6, treaty: 5, extraction: 6, renewal: 6, cycles: 5
-    },
-    keywords: ["together","unite","collective","community","whānau","iwi","hapū","alliance","coalition","movement","march","hīkoi","solidarity","mutual","cooperative","shared","common","network","organise","campaign","petition","support","join","response","stand","defend","protect","kotahitanga","tūhono","aroha","whakangungu"],
-    core_logic: "This event demands collective armour. No single scale holds the whole — but interlocked, the community cannot be broken.",
-    te_reo_hook: ["Ko tātou he kahu","He waka eke noa","Kia tokomaha — ka taea","Kotahitanga ki runga i ngā mea katoa","He aha tō āhua hei kahu mō tātou?"]
-  },
-  takarangi: {
-    name: "Takarangi",
-    colour: "#9b59b6",
-    realm: "Anamata · Duality · Cycles of past and future",
-    page: "motifs/takarangi.html",
-    img: "assets/motifs/takarangi-dark-square.svg",
-    meaning: "The double spiral — history repeating, past and future wound together. This event echoes a previous injustice, or opens a question about what kind of future we are turning toward.",
-    themes: {
-      cycles: 10, future: 10, sovereignty: 7, treaty: 7,
-      land: 6, resistance: 6, governance: 7, collective: 6,
-      law: 6, extraction: 6, language: 7, data: 5, renewal: 8, protection: 5
-    },
-    keywords: ["again","repeat","history","same","another","once more","return","cycle","pattern","colonial","legacy","still","ongoing","not new","hundred years","generation","ancestor","tūpuna","future","anamata","vision","transform","long-term","endure","survive","continue","persist","spiral","echo","mirror","reflect","anniversary","remember","never forget","kia kaha"],
-    core_logic: "This event is a moment in a longer cycle. The double spiral: what past does this echo? What future is it turning toward? Kia whakatōmuri te haere whakamua.",
-    te_reo_hook: ["Ko tātou te anamata rangatira","Ka huri ka huri — ōrite tonu","Kia whakatōmuri te haere whakamua","He āhuatanga hou? Kāo. He āhuatanga tawhito","Ko tātou te anamata — hangaia ināianei"]
+  gn: {
+    'tab-network': '⬡ Teko Rape Mapa',
+    'tab-event': '→ Mba\'e Rape Jehecha',
+    'ctrl-region': 'Tetã',
+    'all': 'Opaite',
+    'maori': 'Māori · Aotearoa',
+    'oceania': 'Oceania',
+    'south-america': 'Ñemby Amérika',
+    'ctrl-cause': 'Mba\'erehegua',
+    'land-rights': 'Yvy',
+    'sovereignty': 'Teko Joaju',
+    'data-sov': 'Mba\'eporu / IA',
+    'language': 'Ñe\'ẽ',
+    'environment': 'Ko\'ẽ',
+    'search-placeholder': 'Eheka mba\'eporupyru…',
+    'stat-orgs': 'mba\'eporupyru',
+    'stat-regions': 'tetã',
+    'stat-pt': 'portugués ñe\'ẽme',
+    'stat-gn': 'guaraní ñe\'ẽme',
+    'leg-maori': 'Māori / Aotearoa',
+    'leg-oceania': 'Océano / Te Moana-nui-a-Kiwa',
+    'leg-sa': 'Ñemby Amérika / Amazonia',
+    'leg-link': 'Pytyvõ ojoaju',
+    'leg-drag': 'Emboty · ñemonge rehe zoom · embopy nodo mba\'erehegua',
+    'ev-step1': 'Embohasa peteĩ teko rape — ley, mba\'apohára, ñe\'ẽ, ñangarekó.',
+    'ev-step2': 'Emoĩ temas — teko joaju, mba\'e mboguata, mba\'e ñangarekó.',
+    'ev-step3': 'Oñemomba\'e 6 Māori motif ha oheka mba\'e oiko porã.',
+    'ev-step4': 'Eguereko post X, Instagram, Facebook térã TikTok-pe.',
+    'ev-label': 'Mba\'e oiko?',
+    'ev-themes': 'Mba\'erehegua nde rohayhu',
   }
 };
 
-/* ══════════════════════════════════════════════════════════════════════════
-   POST TEMPLATES — per motif × per platform
-   Each has multiple variants (array) — we pick randomly for "new variant"
-══════════════════════════════════════════════════════════════════════════ */
-function buildPosts(motif, eventText, activeThemes) {
-  const m = MOTIFS[motif];
-  const hook = m.te_reo_hook[Math.floor(Math.random() * m.te_reo_hook.length)];
-  const eventSnip = eventText.length > 80 ? eventText.slice(0,77)+"…" : eventText;
-  const tags = `#KiwiDialectic #${motif === 'unaunahi' ? 'Unaunahi' : motif === 'pa' ? 'TePāTūwatawata' : motif === 'kow' ? 'KaupapaMāori' : motif === 'niho' ? 'Raupatu' : motif === 'takarangi' ? 'SovereignFutures' : 'Koru'} #MāoriDataSovereignty #TinoRangatiratanga`;
+let currentLang = 'en';
 
-  const posts = {
-    x: [
-      `${hook}\n\n${eventSnip}\n\n${m.core_logic.slice(0,90)}.\n\nFree course on why this matters 👉 [LINK]\n${tags}`,
-      `${eventSnip}\n\n${m.name}: ${m.meaning.slice(0,100)}.\n\n${hook} — kōrero mai.\n${tags} #AIActivism`,
-      `He aha tēnei? ${hook}\n\nThis is the ${m.name} moment. ${m.core_logic.slice(0,80)}.\n\nMore 👉 [LINK]\n${tags}`
-    ],
-    ig: [
-      `${hook}\n\n${eventText.slice(0,120)}\n\nThis is the ${m.name} moment.\n\n${m.meaning.slice(0,100)}.\n\n${m.core_logic.slice(0,100)}.\n\nFree course on Māori data sovereignty, AI, and indigenous futures. Link in bio.\n\n${tags} #Aotearoa #TeReoMāori #IndigenousRights`,
-      `${hook} — ${m.name}.\n\n${eventText.slice(0,150)}\n\n${m.core_logic}\n\nEvery motif has a message. This one is ${m.name}: ${m.realm}.\n\nLink in bio for the full free course.\n\n${tags} #MāoriArt #KaupapaMāori`
-    ],
-    fb: [
-      `${hook}\n\n${eventText}\n\nThe Māori motif for this moment is ${m.name} — ${m.realm}.\n\n${m.meaning}\n\n${m.core_logic}\n\nFree course on Māori data sovereignty, tikanga, and indigenous digital futures: [LINK]\n\nShare this if you think people need to hear it.\n\n${tags}`,
-    ],
-    tt: [
-      `Hook (say in first 3 seconds): "${hook}"\n\nContext: "${eventSnip}. This is ${m.name} — ${m.realm.split('·')[0].trim()}."\n\nCall to action: "Free course on Māori data sovereignty — link in bio. ${tags}"`,
-      `Hook: "Did you know this is happening RIGHT NOW in Aotearoa?"\n\nContext: "${eventSnip}"\n\nMotif frame: "In te ao Māori this is called ${m.name}. ${m.core_logic.slice(0,80)}."\n\nCTA: "Free course at kiwidialectic.com — link in bio. ${tags}"`
-    ],
-    thread: [
-      `1/ ${hook}\n\n${eventSnip}\n\nHere's why this matters — and what Māori are saying about it. 🧵 ${tags}\n\n2/ The Māori motif for this moment is ${m.name}. ${m.realm}.\n\n${m.meaning}\n\n3/ ${m.core_logic}\n\nThis is not a new pattern. The ${m.name} is visible in [HISTORICAL PARALLEL — add yours].\n\n4/ What can we do?\n→ Name it for what it is\n→ Share this thread\n→ Learn the deeper context: free 6-module course 👉 [LINK]\n→ Tag your people\n\n5/ ${m.te_reo_hook[0]}\n\nKo tātou te anamata rangatira. We are the sovereign future. If not now, when?\n\n#KiwiDialectic #TinoRangatiratanga #MāoriDataSovereignty`
-    ]
-  };
-
-  // pick random variant for each platform
-  return {
-    x: posts.x[Math.floor(Math.random()*posts.x.length)],
-    ig: posts.ig[Math.floor(Math.random()*posts.ig.length)],
-    fb: posts.fb[0],
-    tt: posts.tt[Math.floor(Math.random()*posts.tt.length)],
-    thread: posts.thread[0]
-  };
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+  // update all i18n elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (STRINGS[lang][key]) el.textContent = STRINGS[lang][key];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.dataset.i18nPlaceholder;
+    if (STRINGS[lang][key]) el.placeholder = STRINGS[lang][key];
+  });
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
-   SCORING ENGINE
+   NODE DATA — 36 indigenous organisations
 ══════════════════════════════════════════════════════════════════════════ */
-function scoreMotifs(eventText, activeThemes) {
-  const text = eventText.toLowerCase();
-  const scores = {};
+const NODES_DATA = [
+  // ── MĀORI ──────────────────────────────────────────────────────────────
+  { id:"te-mana-raraunga", name:"Te Mana Raraunga", region:"maori", country:"NZ",
+    cause:["data sovereignty","AI ethics"],
+    description:"The Māori Data Sovereignty Network advocates for Māori rights in data governance, algorithmic systems, and digital infrastructure.",
+    url:"https://www.temanararaunga.maori.nz", lang_pt:false, lang_gn:false },
+  { id:"te-kahui-raraunga", name:"Te Kāhui Raraunga", region:"maori", country:"NZ",
+    cause:["data sovereignty","AI ethics"],
+    description:"An independent Māori-led trust established in 2019 to lead action on Māori data governance and co-designing AI governance across the NZ public service.",
+    url:"https://www.kahuiraraunga.io", lang_pt:false, lang_gn:false },
+  { id:"maori-ai-advisory", name:"Te Kāhui Māori Atamai Iahiko", region:"maori", country:"NZ",
+    cause:["AI ethics","data sovereignty"],
+    description:"A Māori advisory panel within the AI Forum NZ embedding Te Ao Māori values in national AI governance, chaired by Dr Karaitiana Taiuru.",
+    url:"https://aiforum.org.nz/kahui-maori-atamai-iahiko-maori-artificial-intelligence-advisory-panel/", lang_pt:false, lang_gn:false },
+  { id:"te-kohanga-reo", name:"Te Kōhanga Reo National Trust", region:"maori", country:"NZ",
+    cause:["language revival","cultural preservation"],
+    description:"Oversees the Kōhanga Reo movement — total-immersion Māori language early childhood centres central to the revitalisation of te reo Māori since 1982.",
+    url:"https://www.kohanga.ac.nz", lang_pt:false, lang_gn:false },
+  { id:"te-kura", name:"Te Aho o Te Kura Pounamu", region:"maori", country:"NZ",
+    cause:["language revival","cultural preservation"],
+    description:"NZ's largest school, providing Māori-medium distance education from early childhood to secondary level and free te reo Māori courses nationwide.",
+    url:"https://www.tekura.school.nz", lang_pt:false, lang_gn:false },
+  { id:"te-pati-maori", name:"Te Pāti Māori", region:"maori", country:"NZ",
+    cause:["political sovereignty","land rights"],
+    description:"The Māori Party advocates for tino rangatiratanga — Māori self-determination, mana motuhake, and constitutional recognition of Māori as the indigenous people.",
+    url:"https://www.maoriparty.org.nz", lang_pt:false, lang_gn:false },
+  { id:"soul-ihumatao", name:"SOUL – Save Our Unique Landscape", region:"maori", country:"NZ",
+    cause:["land rights","cultural preservation"],
+    description:"A grassroots Māori-led group that mounted a sustained occupation (2016–2020) protecting the wāhi tapu landscape of Ihumātao from housing development.",
+    url:"https://protectihumatao.com", lang_pt:false, lang_gn:false },
+  { id:"waitangi-tribunal", name:"Waitangi Tribunal", region:"maori", country:"NZ",
+    cause:["land rights","political sovereignty"],
+    description:"NZ's permanent commission of inquiry investigating Crown breaches of te Tiriti o Waitangi — covering land, resources, and constitutional rights.",
+    url:"https://www.waitangitribunal.govt.nz", lang_pt:false, lang_gn:false },
+  { id:"tino-rangatiratanga", name:"Tino Rangatiratanga Movement", region:"maori", country:"NZ",
+    cause:["political sovereignty","land rights"],
+    description:"A broad Māori sovereignty movement articulating the right to absolute chieftainship guaranteed under Te Tiriti, expressed through the 1989 flag and multiple hapū organisations.",
+    url:"https://wai262.nz", lang_pt:false, lang_gn:false },
+  { id:"te-wai-maori", name:"Te Wai Māori Trust", region:"maori", country:"NZ",
+    cause:["land rights","environmental justice"],
+    description:"Advocates for Māori rights and interests in freshwater, advancing Te Mana o te Wai and representing iwi in water policy and Treaty claims.",
+    url:"https://waimaori.maori.nz", lang_pt:false, lang_gn:false },
+  { id:"wai-262", name:"Wai 262 Taumata Whakapūmau", region:"maori", country:"NZ",
+    cause:["cultural preservation","data sovereignty"],
+    description:"The claimant collective for the landmark Wai 262 Treaty claim on the protection of mātauranga Māori, taonga species, and intellectual property rights.",
+    url:"https://www.wai262.nz", lang_pt:false, lang_gn:false },
+  { id:"ngai-tahu", name:"Te Rūnanga o Ngāi Tahu", region:"maori", country:"NZ",
+    cause:["land rights","cultural preservation","political sovereignty"],
+    description:"The principal South Island iwi authority managing Treaty settlement assets and pursuing tribal sovereignty over lands, fisheries, and cultural resources across Te Wai Pounamu.",
+    url:"https://ngaitahu.iwi.nz", lang_pt:false, lang_gn:false },
 
-  for (const [key, motif] of Object.entries(MOTIFS)) {
-    let score = 0;
+  // ── OCEANIA ─────────────────────────────────────────────────────────────
+  { id:"ulmwp", name:"ULMWP – United Liberation Movement for West Papua", region:"oceania", country:"PG",
+    cause:["political sovereignty","land rights"],
+    description:"The primary international umbrella body representing West Papuan independence movements, seeking a UN-supervised referendum on self-determination.",
+    url:"https://www.ulmwp.org", lang_pt:false, lang_gn:false },
+  { id:"knpb", name:"Komite Nasional Papua Barat (KNPB)", region:"oceania", country:"PG",
+    cause:["political sovereignty"],
+    description:"A non-violent mass organisation inside West Papua that campaigns for a UN-supervised referendum on independence and documents human rights violations.",
+    url:"https://westpapuamedia.info", lang_pt:false, lang_gn:false },
+  { id:"flnks", name:"FLNKS – Kanak and Socialist National Liberation Front", region:"oceania", country:"NC",
+    cause:["political sovereignty","land rights"],
+    description:"A coalition of pro-independence parties in Kanaky/New Caledonia founded in 1984, leading the Kanak indigenous struggle against French colonial rule.",
+    url:"https://flnks.com", lang_pt:false, lang_gn:false },
+  { id:"350-pacific", name:"350 Pacific / Pacific Climate Warriors", region:"oceania", country:"FJ",
+    cause:["environmental justice","political sovereignty"],
+    description:"A Pacific-led climate justice movement across 15+ island nations centring indigenous frontline voices and framing climate change as an existential threat to Pacific sovereignty.",
+    url:"https://350pacific.org", lang_pt:false, lang_gn:false },
+  { id:"oha", name:"Office of Hawaiian Affairs (OHA)", region:"oceania", country:"US",
+    cause:["political sovereignty","cultural preservation","land rights"],
+    description:"A semi-autonomous state agency in Hawaiʻi established in 1978 to advance the education, health, and wellbeing of Kānaka Maoli, managing $600M+ in assets in trust.",
+    url:"https://www.oha.org", lang_pt:false, lang_gn:false },
+  { id:"ka-lahui-hawaii", name:"Ka Lāhui Hawaiʻi", region:"oceania", country:"US",
+    cause:["political sovereignty"],
+    description:"A Native Hawaiian self-governance initiative founded in 1987, operating as an indigenous nation-within-a-nation with its own constitution and advocating for Hawaiian nationhood.",
+    url:"https://kalahuihawaii.com", lang_pt:false, lang_gn:false },
+  { id:"kahaa", name:"Ka ʻAhahui Hawaiʻi Aloha ʻĀina", region:"oceania", country:"US",
+    cause:["political sovereignty","land rights"],
+    description:"The Hawaiian Patriotic League, reconstituted in 2016 from its 1893 original, affirms Hawaiian independence and campaigns against US military land leases.",
+    url:"http://www.kahaa.org", lang_pt:false, lang_gn:false },
+  { id:"melanesian-spearhead-group", name:"Melanesian Spearhead Group (MSG)", region:"oceania", country:"VU",
+    cause:["political sovereignty","cultural preservation"],
+    description:"A regional intergovernmental organisation comprising Vanuatu, Solomon Islands, Fiji, PNG, and FLNKS, promoting Melanesian indigenous culture and regional self-determination.",
+    url:"https://msgsec.info", lang_pt:false, lang_gn:false },
+  { id:"tuvalu-sovereignty", name:"Tuvalu Climate Sovereignty Initiative", region:"oceania", country:"TV",
+    cause:["political sovereignty","environmental justice"],
+    description:"Tuvalu's government has led landmark legal and diplomatic efforts — including a constitutional amendment declaring perpetual statehood — to preserve indigenous sovereignty amid sea-level rise.",
+    url:"https://tuvaluislands.com", lang_pt:false, lang_gn:false },
+  { id:"fiji-indigenous-peoples-foundation", name:"Fiji Indigenous Peoples Foundation", region:"oceania", country:"FJ",
+    cause:["land rights","cultural preservation"],
+    description:"An organisation working to protect and advance the rights, land tenure, and cultural heritage of indigenous iTaukei Fijian peoples.",
+    url:"https://fijiindigenouspeoplesfoundation.org", lang_pt:false, lang_gn:false },
+  { id:"pacific-concerns-resource-centre", name:"Pacific Concerns Resource Centre (PCRC)", region:"oceania", country:"FJ",
+    cause:["political sovereignty","environmental justice"],
+    description:"A Suva-based NGO serving since 1980 as the secretariat of the Nuclear Free and Independent Pacific movement, advocating for demilitarisation and decolonisation.",
+    url:"https://www.pcrc.org.fj", lang_pt:false, lang_gn:false },
+  { id:"west-papua-parliament", name:"National Parliament of West Papua", region:"oceania", country:"PG",
+    cause:["political sovereignty"],
+    description:"An exile/shadow parliamentary body claiming to represent the West Papuan people's right to self-determination, coordinating international independence advocacy.",
+    url:"http://www.westpapuaparliament.org", lang_pt:false, lang_gn:false },
 
-    // theme chip matches — high weight
-    for (const theme of activeThemes) {
-      if (motif.themes[theme]) score += motif.themes[theme] * 2.5;
-    }
+  // ── SOUTH AMERICA ───────────────────────────────────────────────────────
+  { id:"apib", name:"APIB – Articulação dos Povos Indígenas do Brasil", region:"south_america", country:"BR",
+    cause:["land rights","political sovereignty","environmental justice"],
+    description:"Brazil's largest national indigenous peoples' movement, created in 2005 to unify regional organisations defending indigenous territorial rights and political representation.",
+    url:"https://apiboficial.org", lang_pt:true, lang_gn:false },
+  { id:"coiab", name:"COIAB – Coordenação das Organizações Indígenas da Amazônia Brasileira", region:"south_america", country:"BR",
+    cause:["land rights","environmental justice","political sovereignty"],
+    description:"Founded in 1989, the principal coordinating body for indigenous organisations across the Brazilian Amazon, representing peoples from nine Amazonian countries.",
+    url:"https://coiab.org.br", lang_pt:true, lang_gn:false },
+  { id:"coica", name:"COICA – Coordinadora de las Organizaciones Indígenas de la Cuenca Amazónica", region:"south_america", country:"EC",
+    cause:["land rights","environmental justice","political sovereignty"],
+    description:"The international umbrella organisation representing 511 indigenous peoples across nine Amazonian countries, coordinating action on territorial rights, climate, and FPIC.",
+    url:"https://coicamazonia.org", lang_pt:true, lang_gn:false },
+  { id:"funai", name:"FUNAI – Fundação Nacional dos Povos Indígenas", region:"south_america", country:"BR",
+    cause:["land rights","cultural preservation"],
+    description:"Brazil's federal indigenous affairs agency, responsible for demarcating and protecting indigenous lands and monitoring uncontacted peoples.",
+    url:"https://www.gov.br/funai/pt-br", lang_pt:true, lang_gn:false },
+  { id:"amazon-watch", name:"Amazon Watch", region:"south_america", country:"BR",
+    cause:["land rights","environmental justice"],
+    description:"An international NGO founded in 1996 partnering with Amazonian indigenous peoples to defend their territories from oil, gas, mining, and agribusiness incursions.",
+    url:"https://amazonwatch.org", lang_pt:true, lang_gn:false },
+  { id:"cir", name:"CIR – Conselho Indígena de Roraima", region:"south_america", country:"BR",
+    cause:["land rights","political sovereignty"],
+    description:"Founded in 1977, representing Macuxi, Wapichana, Ingarikó, and other Roraima peoples in defence of their demarcated territories, especially Raposa Serra do Sol.",
+    url:"https://www.cir.org.br", lang_pt:true, lang_gn:false },
+  { id:"survival-international-brazil", name:"Survival International – Brazil", region:"south_america", country:"BR",
+    cause:["land rights","cultural preservation"],
+    description:"Runs dedicated campaigns for Brazilian peoples including uncontacted Kawahiva and Yanomami, mobilising international pressure to enforce territorial protection.",
+    url:"https://www.survivalinternational.org/peoples/brazilian", lang_pt:true, lang_gn:false },
+  { id:"mst", name:"MST – Movimento dos Trabalhadores Rurais Sem Terra", region:"south_america", country:"BR",
+    cause:["land rights","environmental justice"],
+    description:"Brazil's Landless Workers' Movement, one of Latin America's largest social movements, campaigns for agrarian reform and redistribution of land to rural workers and indigenous communities.",
+    url:"https://mst.org.br", lang_pt:true, lang_gn:false },
+  { id:"fapi", name:"FAPI – Federación por la Autodeterminación de los Pueblos Indígenas", region:"south_america", country:"PY",
+    cause:["political sovereignty","land rights"],
+    description:"Paraguay's leading autonomous indigenous federation, representing 13 organisations advocating for collective rights, land titling, and self-determination for Guaraní and other peoples.",
+    url:"https://fapi.org.py", lang_pt:false, lang_gn:true },
+  { id:"indi", name:"INDI – Instituto Paraguayo del Indígena", region:"south_america", country:"PY",
+    cause:["land rights","cultural preservation"],
+    description:"Paraguay's government body responsible for formulating indigenous policy, protecting land rights, and coordinating with Guaraní communities on language preservation.",
+    url:"https://indi.gov.py", lang_pt:false, lang_gn:true },
+  { id:"guarani-vikipeta", name:"Vikipetã – Guaraní Wikipedia", region:"south_america", country:"PY",
+    cause:["language revival","cultural preservation"],
+    description:"The Guaraní-language Wikipedia (est. 2007, 15,000+ entries) — the cornerstone of bringing Guaraní into the digital sphere alongside the Aguaratata Firefox localisation.",
+    url:"https://gn.wikipedia.org", lang_pt:false, lang_gn:true },
+  { id:"portal-guarani", name:"Portal Guaraní", region:"south_america", country:"PY",
+    cause:["cultural preservation","language revival"],
+    description:"Paraguay's leading digital cultural archive preserving Guaraní art, literature, history, and language resources, making indigenous cultural heritage accessible online.",
+    url:"https://www.portalguarani.com", lang_pt:false, lang_gn:true },
+];
 
-    // keyword matches in text — medium weight
-    for (const kw of motif.keywords) {
-      if (text.includes(kw.toLowerCase())) {
-        score += 6;
-        if (text.split(kw.toLowerCase()).length > 2) score += 3; // repeated
-      }
-    }
-
-    // normalise 0–100
-    scores[key] = Math.min(100, Math.round(score));
-  }
-
-  // sort descending
-  return Object.entries(scores).sort((a,b) => b[1]-a[1]);
-}
-
-/* ── D3 rhizome rendering moved to assets/rhizome-d3.js ── */
+/* region / cause colours */
+const REGION_COLOUR = {
+  maori: '#2ecc71',
+  oceania: '#3498db',
+  south_america: '#e67e22'
+};
+const CAUSE_COLOURS = {
+  'land rights': '#e74c3c',
+  'political sovereignty': '#3498db',
+  'data sovereignty': '#9b59b6',
+  'AI ethics': '#9b59b6',
+  'language revival': '#f39c12',
+  'cultural preservation': '#1abc9c',
+  'environmental justice': '#27ae60'
+};
 
 /* ══════════════════════════════════════════════════════════════════════════
    STATE
 ══════════════════════════════════════════════════════════════════════════ */
-const memoryStore = {};
-const safeStore = {
-  get(key, fallback = null) {
-    try {
-      const v = localStorage.getItem(key);
-      return v === null ? fallback : v;
-    } catch (e) {
-      return Object.prototype.hasOwnProperty.call(memoryStore, key) ? memoryStore[key] : fallback;
-    }
-  },
-  set(key, value) {
-    try {
-      localStorage.setItem(key, value);
-    } catch (e) {
-      memoryStore[key] = value;
-    }
-  },
-  remove(key) {
-    try {
-      localStorage.removeItem(key);
-    } catch (e) {
-      delete memoryStore[key];
-    }
-  }
-};
+let activeRegion = 'all';
+let activeCause = null;
+let searchQuery = '';
+let simulation = null;
+let svgZoom = null;
+let d3Zoom = null;
 
-const MOTIF_SLUGS = {
-  koru: 'who_built_this',
-  pa: 'hold_your_pā',
-  niho: 'it_still_has_teeth',
-  kow: 'tikanga_first',
-  unaunahi: 'we_are_armour',
-  takarangi: 'we_are_the_future'
-};
-
-let currentResult = null;
-let currentPlatform = 'x';
+function getVisibleNodes() {
+  return NODES_DATA.filter(n => {
+    if (activeRegion !== 'all' && n.region !== activeRegion) return false;
+    if (activeCause && !n.cause.includes(activeCause)) return false;
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase();
+      return n.name.toLowerCase().includes(q) ||
+             n.description.toLowerCase().includes(q) ||
+             n.cause.some(c => c.includes(q)) ||
+             n.country.toLowerCase().includes(q);
+    }
+    return true;
+  });
+}
 
 /* ══════════════════════════════════════════════════════════════════════════
-   MAIN: RUN MAPPER
+   MODE TOGGLE
 ══════════════════════════════════════════════════════════════════════════ */
-function runMapper() {
-  const eventText = document.getElementById('eventInput').value.trim();
-  if (!eventText || eventText.length < 8) {
-    document.getElementById('eventInput').style.borderColor = '#e74c3c';
-    setTimeout(() => document.getElementById('eventInput').style.borderColor = '', 1200);
-    return;
+function setMode(mode) {
+  document.getElementById('networkSection').classList.toggle('visible', mode === 'network');
+  document.getElementById('eventSection').classList.toggle('visible', mode === 'event');
+  document.getElementById('tabNetwork').classList.toggle('active', mode === 'network');
+  document.getElementById('tabEvent').classList.toggle('active', mode === 'event');
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   FILTER CONTROLS
+══════════════════════════════════════════════════════════════════════════ */
+function filterRegion(region, btn) {
+  activeRegion = region;
+  document.querySelectorAll('.filter-chip[onclick^="filterRegion"]').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  drawNetwork();
+}
+
+function filterCause(cause, btn) {
+  if (activeCause === cause) {
+    activeCause = null;
+    btn.classList.remove('active');
+  } else {
+    activeCause = cause;
+    document.querySelectorAll('.chip-cause').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+  drawNetwork();
+}
+
+function searchNodes(q) {
+  searchQuery = q;
+  drawNetwork();
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   D3 NETWORK MAP
+══════════════════════════════════════════════════════════════════════════ */
+function drawNetwork() {
+  const visible = getVisibleNodes();
+  const visibleIds = new Set(visible.map(n => n.id));
+
+  // update stats
+  document.getElementById('statVisible').textContent = visible.length;
+  const ptCount = visible.filter(n => n.lang_pt).length;
+  const gnCount = visible.filter(n => n.lang_gn).length;
+  document.getElementById('statPt').textContent = ptCount;
+  document.getElementById('statGn').textContent = gnCount;
+
+  const svg = d3.select('#rhizomeSVG');
+  svg.selectAll('*').remove();
+
+  const W = 1100, H = 620;
+
+  // build links — connect nodes that share at least one cause
+  const links = [];
+  for (let i = 0; i < visible.length; i++) {
+    for (let j = i + 1; j < visible.length; j++) {
+      const shared = visible[i].cause.filter(c => visible[j].cause.includes(c));
+      if (shared.length) {
+        links.push({ source: visible[i].id, target: visible[j].id, shared, strength: shared.length });
+      }
+    }
   }
 
-  const activeThemes = [...document.querySelectorAll('.chip.active')].map(c => c.dataset.theme);
+  // zoom container
+  const g = svg.append('g').attr('class', 'zoom-g');
 
-  // show spinner
-  const spinner = document.getElementById('spinner');
-  const btn = document.getElementById('mapBtn');
-  spinner.className = 'spinner visible';
-  btn.disabled = true;
+  d3Zoom = d3.zoom()
+    .scaleExtent([0.25, 3])
+    .on('zoom', e => g.attr('transform', e.transform));
+  svg.call(d3Zoom);
+  svgZoom = svg;
 
-  setTimeout(() => {
-    const ranked = scoreMotifs(eventText, activeThemes);
-    const primaryKey = ranked[0][0];
-    const primaryMotif = MOTIFS[primaryKey];
-    const posts = buildPosts(primaryKey, eventText, activeThemes);
+  // simulation
+  if (simulation) simulation.stop();
+  simulation = d3.forceSimulation(visible)
+    .force('link', d3.forceLink(links).id(d => d.id).distance(d => 90 + (3 - d.strength) * 30).strength(0.4))
+    .force('charge', d3.forceManyBody().strength(-280))
+    .force('center', d3.forceCenter(W / 2, H / 2))
+    .force('collision', d3.forceCollide(32))
+    .force('x', d3.forceX(d => {
+      if (d.region === 'maori') return W * 0.18;
+      if (d.region === 'oceania') return W * 0.5;
+      return W * 0.82;
+    }).strength(0.12))
+    .force('y', d3.forceY(H / 2).strength(0.05));
 
-    currentResult = { ranked, primaryKey, eventText, activeThemes, posts };
+  // draw links
+  const link = g.append('g').attr('class', 'links')
+    .selectAll('line')
+    .data(links)
+    .join('line')
+    .attr('stroke', d => {
+      // colour by shared cause (first shared)
+      return CAUSE_COLOURS[d.shared[0]] || '#888';
+    })
+    .attr('stroke-opacity', 0.25)
+    .attr('stroke-width', d => d.strength * 1.2);
 
-    // draw D3 force-directed rhizome
-    if (typeof drawRhizomeD3 === 'function') {
-      drawRhizomeD3(ranked.map(([k,s]) => [k, Math.min(100, Math.round(s/Math.max(ranked[0][1],1)*100))]), eventText);
-    }
+  // draw nodes
+  const node = g.append('g').attr('class', 'nodes')
+    .selectAll('g')
+    .data(visible)
+    .join('g')
+    .attr('class', 'node-g')
+    .style('cursor', 'pointer')
+    .on('click', (e, d) => showNodePanel(d))
+    .call(d3.drag()
+      .on('start', (e, d) => {
+        if (!e.active) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x; d.fy = d.y;
+      })
+      .on('drag', (e, d) => { d.fx = e.x; d.fy = e.y; })
+      .on('end', (e, d) => {
+        if (!e.active) simulation.alphaTarget(0);
+        d.fx = null; d.fy = null;
+      })
+    );
 
-    // PRIMARY MOTIF CARD
-    const card = document.getElementById('primaryMotifCard');
-    const pct = Math.min(100, Math.round(ranked[0][1] / Math.max(ranked[0][1],1) * 100));
-    const second = ranked[1];
-    const secondM = MOTIFS[second[0]];
+  // node circle
+  node.append('circle')
+    .attr('r', d => 14 + d.cause.length * 2)
+    .attr('fill', d => REGION_COLOUR[d.region] || '#888')
+    .attr('fill-opacity', 0.85)
+    .attr('stroke', '#fff')
+    .attr('stroke-width', 2)
+    .attr('stroke-opacity', 0.5);
 
-    card.style.borderLeft = `4px solid ${primaryMotif.colour}`;
-    card.innerHTML = `
+  // lang badge dots
+  node.filter(d => d.lang_pt)
+    .append('circle')
+    .attr('r', 4).attr('cx', 12).attr('cy', -12)
+    .attr('fill', '#27ae60').attr('stroke', '#fff').attr('stroke-width', 1.5);
+  node.filter(d => d.lang_gn)
+    .append('circle')
+    .attr('r', 4).attr('cx', d => d.lang_pt ? 20 : 12).attr('cy', -12)
+    .attr('fill', '#e67e22').attr('stroke', '#fff').attr('stroke-width', 1.5);
+
+  // node label
+  node.append('text')
+    .attr('text-anchor', 'middle')
+    .attr('dy', d => (14 + d.cause.length * 2) + 14)
+    .attr('font-size', 9)
+    .attr('font-family', 'var(--font-sans)')
+    .attr('font-weight', '600')
+    .attr('fill', 'var(--fg)')
+    .attr('fill-opacity', 0.8)
+    .text(d => {
+      // abbreviate long names
+      const name = d.name.replace(/^(APIB|COIAB|COICA|FUNAI|ULMWP|KNPB|FLNKS|FAPI|INDI|MST|CIR|MSG|OHA|PCRC|KAHAA) ?.*$/, '$1');
+      return name.length > 18 ? name.slice(0, 16) + '…' : name;
+    });
+
+  // region label headers
+  const regions = [
+    { label: 'Māori / Aotearoa', x: W * 0.12, y: 28 },
+    { label: 'Oceania', x: W * 0.5, y: 28 },
+    { label: 'South America / Amazonia', x: W * 0.88, y: 28 },
+  ];
+  g.append('g').selectAll('text').data(regions).join('text')
+    .attr('x', d => d.x).attr('y', d => d.y)
+    .attr('text-anchor', 'middle')
+    .attr('font-size', 10).attr('font-family', 'var(--font-sans)')
+    .attr('font-weight', '700').attr('letter-spacing', '0.08em')
+    .attr('fill', 'var(--fg-muted)').attr('fill-opacity', 0.5)
+    .attr('text-transform', 'uppercase')
+    .text(d => d.label.toUpperCase());
+
+  simulation.on('tick', () => {
+    link
+      .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+      .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+    node.attr('transform', d => `translate(${Math.max(20,Math.min(W-20,d.x))},${Math.max(20,Math.min(H-20,d.y))})`);
+  });
+}
+
+function zoomIn()    { svgZoom && svgZoom.transition().call(d3Zoom.scaleBy, 1.4); }
+function zoomOut()   { svgZoom && svgZoom.transition().call(d3Zoom.scaleBy, 0.7); }
+function zoomReset() { svgZoom && svgZoom.transition().call(d3Zoom.transform, d3.zoomIdentity); }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   NODE DETAIL PANEL
+══════════════════════════════════════════════════════════════════════════ */
+function showNodePanel(d) {
+  const panel = document.getElementById('nodePanel');
+  const colour = REGION_COLOUR[d.region];
+  const regionLabel = { maori: 'Māori · Aotearoa', oceania: 'Oceania · Te Moana-nui-a-Kiwa', south_america: 'South America · Amazonia' }[d.region];
+
+  const causePills = d.cause.map(c =>
+    `<span class="cause-pill" style="color:${CAUSE_COLOURS[c]||'#888'};border-color:${CAUSE_COLOURS[c]||'#888'}55;background:${CAUSE_COLOURS[c]||'#888'}11">${c}</span>`
+  ).join('');
+
+  const langBadges = [
+    d.lang_pt ? '<span class="lang-chip lang-pt">PT</span>' : '',
+    d.lang_gn ? '<span class="lang-chip lang-gn">GN</span>' : '',
+  ].join('');
+
+  document.getElementById('nodePanelContent').innerHTML = `
+    <p class="node-region-tag" style="color:${colour}">${regionLabel} · ${d.country}</p>
+    <h2 class="node-name">${d.name} ${langBadges}</h2>
+    <div class="node-causes">${causePills}</div>
+    <p class="node-desc">${d.description}</p>
+    <a class="node-link" href="${d.url}" target="_blank" rel="noopener" style="background:${colour}">
+      Visit ${d.name.split('–')[0].trim()} →
+    </a>
+    <button onclick="document.getElementById('nodePanel').classList.remove('visible')"
+      style="margin-left:.8rem;font-size:.8rem;color:var(--fg-muted);background:none;border:none;cursor:pointer">✕ Close</button>
+  `;
+  panel.classList.add('visible');
+  panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   MOTIF DEFINITIONS (for event mapper)
+══════════════════════════════════════════════════════════════════════════ */
+const MOTIFS = {
+  koru: {
+    name:"Koru",colour:"#2ecc71",realm:"Tīmatanga · Growth · Beginnings",
+    page:"motifs/koru.html",img:"assets/motifs/koru-dark-square.svg",
+    meaning:"New life, unfurling potential, the origin point of all things. Something is beginning — or being prevented from beginning.",
+    themes:{renewal:10,future:8,resistance:5,language:6,sovereignty:5,collective:4,law:3,treaty:4,land:5,extraction:4,governance:3,data:4,protection:4,cycles:6},
+    keywords:["new","begin","start","launch","introduce","announce","birth","emerge","grow","education","school","youth","next generation","future","first","establish","found","create","reform","change","transform"],
+    core_logic:"This event marks a moment of beginning — a threshold crossed, a new phase entered, a potential unfolding or being blocked.",
+    te_reo_hook:["Ko wai nāu i hanga?","Tīmatanga hou — he ara hou?","He aha tōu koru?","Ka pū te ruha, ka hao te rangatahi"]
+  },
+  pa: {
+    name:"Pā Tūwatawata",colour:"#3498db",realm:"Ārai · Tiaki · Collective sovereignty",
+    page:"motifs/pa-tuwatawata.html",img:"assets/motifs/pa-tuwatawata-dark-square.svg",
+    meaning:"The fortified palisade — collective protection, sovereignty over space and governance.",
+    themes:{sovereignty:10,protection:10,governance:9,collective:8,land:8,treaty:7,data:7,law:6,resistance:7,extraction:5,future:5,language:4,renewal:4,cycles:5},
+    keywords:["sovereignty","co-governance","rangatiratanga","authority","control","infrastructure","resource","ownership","self-determination","manage","protect","defend","territory","breach","access","enter","takeover","seize","remove","disestablish","abolish","health","hospital","council","demarcation","FUNAI","FPIC"],
+    core_logic:"This event is about who controls the space — physical, political, or digital. The pā is under pressure, being reinforced, or being dismantled.",
+    te_reo_hook:["Ārahina tō pā ake","He pā tūwatawata mō tātou katoa","Kaua e tuku i tō pā","Ko wai e tiaki ana i ngā tatau?","Tiakina — kia mau"]
+  },
+  niho: {
+    name:"Niho Taniwha",colour:"#e74c3c",realm:"Raupatu · Kaha · Challenge at the threshold",
+    page:"motifs/niho-taniwha.html",img:"assets/motifs/niho-taniwha-dark-square.svg",
+    meaning:"The taniwha's teeth — the colonial bite, extraction without consent, harm that must be named.",
+    themes:{extraction:10,resistance:9,land:8,treaty:8,sovereignty:7,law:6,data:8,governance:6,collective:5,protection:6,language:5,future:4,renewal:3,cycles:7},
+    keywords:["seize","confiscate","strip","remove","cut","reduce","deny","reject","override","mine","drill","extract","profit","corporate","foreign","privatise","sell","commercial","raupatu","stolen","without consent","against","protest","oppose","march","hīkoi","court","tribunal","claim","settlement","breach","deforestation","Amazon","logging","agribusiness","occupation","Indonesia","Papua"],
+    core_logic:"This event is a form of extraction or harm — something is being taken, stripped, denied, or overridden.",
+    te_reo_hook:["He raupatu tonu tēnei","He niho tonu tōna","Tōia mai ki te ao mārama","Whakaingoatia — kia mārama ai","He niho hou tō te taniwha"]
+  },
+  kow: {
+    name:"Kōwhaiwhai",colour:"#f39c12",realm:"Ture · Tikanga · Genealogy as law",
+    page:"motifs/kowhaiwhai.html",img:"assets/motifs/kowhaiwhai-dark-square.svg",
+    meaning:"The law written on the rafter. A clash between tikanga and statute, ancestral authority and state power.",
+    themes:{law:10,treaty:10,governance:9,sovereignty:8,language:7,land:6,data:6,protection:6,collective:6,extraction:5,resistance:6,future:5,renewal:5,cycles:6},
+    keywords:["law","act","bill","parliament","court","judge","tribunal","waitangi","treaty","principle","policy","regulation","rule","right","constitutional","legal","jurisdiction","authority","tikanga","custom","precedent","ruling","decision","legislation","amendment","repeal","review","inquiry","hearing","submission","debate","vote","FPIC","consent","indigenous rights","UN declaration","UNDRIP","constitution"],
+    core_logic:"This event is fundamentally about whose law governs.",
+    te_reo_hook:["Ko te tikanga te ture tuatahi","He tikanga tō ia āhua","Ko wai e whakahaere ana i ēnei ture?","Whakahokia mai — he tikanga tō tēnei"]
+  },
+  unaunahi: {
+    name:"Unaunahi",colour:"#1abc9c",realm:"Kotahitanga · Collective armour",
+    page:"motifs/unaunahi.html",img:"assets/motifs/unaunahi-dark-square.svg",
+    meaning:"Fish scales interlocking. This event calls for collective response — together they form armour.",
+    themes:{collective:10,resistance:8,protection:9,sovereignty:6,data:7,future:6,land:6,language:7,law:5,governance:6,treaty:5,extraction:6,renewal:6,cycles:5},
+    keywords:["together","unite","collective","community","alliance","coalition","movement","march","solidarity","mutual","cooperative","shared","common","network","organise","campaign","petition","support","join","response","stand","defend","protect","kotahitanga","aroha","APIB","COICA","COIAB","indigenous peoples","Pacific","Oceania","global","international","summit","forum"],
+    core_logic:"This event demands collective armour. No single scale holds the whole — but interlocked, the community cannot be broken.",
+    te_reo_hook:["Ko tātou he kahu","He waka eke noa","Kia tokomaha — ka taea","Kotahitanga ki runga i ngā mea katoa"]
+  },
+  takarangi: {
+    name:"Takarangi",colour:"#9b59b6",realm:"Anamata · Duality · Cycles of past and future",
+    page:"motifs/takarangi.html",img:"assets/motifs/takarangi-dark-square.svg",
+    meaning:"The double spiral — history repeating, past and future wound together.",
+    themes:{cycles:10,future:10,sovereignty:7,treaty:7,land:6,resistance:6,governance:7,collective:6,law:6,extraction:6,language:7,data:5,renewal:8,protection:5},
+    keywords:["again","repeat","history","same","another","once more","return","cycle","pattern","colonial","legacy","still","ongoing","not new","hundred years","generation","ancestor","future","vision","transform","long-term","endure","survive","continue","persist","spiral","echo","mirror","reflect","anniversary","remember","never forget","kia kaha","climate","sea level","generations","sovereignty"],
+    core_logic:"This event is a moment in a longer cycle. What past does this echo? What future is it turning toward?",
+    te_reo_hook:["Ko tātou te anamata rangatira","Ka huri ka huri — ōrite tonu","Kia whakatōmuri te haere whakamua","He āhuatanga hou? Kāo. He āhuatanga tawhito"]
+  }
+};
+
+/* ══════════════════════════════════════════════════════════════════════════
+   EVENT MAPPER (preserved from original)
+══════════════════════════════════════════════════════════════════════════ */
+function buildPosts(motif, eventText, activeThemes) {
+  const m = MOTIFS[motif];
+  const hook = m.te_reo_hook[Math.floor(Math.random()*m.te_reo_hook.length)];
+  const eventSnip = eventText.length > 80 ? eventText.slice(0,77)+"…" : eventText;
+  const tags = `#KiwiDialectic #${motif==='unaunahi'?'Unaunahi':motif==='pa'?'TePāTūwatawata':motif==='kow'?'KaupapaMāori':motif==='niho'?'Raupatu':motif==='takarangi'?'SovereignFutures':'Koru'} #IndigenousSovereignty #TinoRangatiratanga`;
+  const posts = {
+    x:[
+      `${hook}\n\n${eventSnip}\n\n${m.core_logic.slice(0,90)}.\n\nFree course 👉 [LINK]\n${tags}`,
+      `${eventSnip}\n\n${m.name}: ${m.meaning.slice(0,100)}.\n\n${hook} — kōrero mai.\n${tags}`,
+      `He aha tēnei? ${hook}\n\nThis is the ${m.name} moment. ${m.core_logic.slice(0,80)}.\n\nMore 👉 [LINK]\n${tags}`
+    ],
+    ig:[
+      `${hook}\n\n${eventText.slice(0,120)}\n\nThis is the ${m.name} moment.\n\n${m.meaning.slice(0,100)}.\n\n${m.core_logic.slice(0,100)}.\n\nFree course on indigenous data sovereignty, AI, and indigenous futures. Link in bio.\n\n${tags} #Aotearoa #TeReoMāori #IndigenousRights #Amazon #WestPapua #Guarani`,
+    ],
+    fb:[
+      `${hook}\n\n${eventText}\n\nThe Māori motif for this moment is ${m.name} — ${m.realm}.\n\n${m.meaning}\n\n${m.core_logic}\n\nFree course on indigenous sovereignty, data, and digital futures: [LINK]\n\nShare this.\n\n${tags}`,
+    ],
+    tt:[
+      `Hook (first 3 seconds): "${hook}"\n\nContext: "${eventSnip}. This is ${m.name} — ${m.realm.split('·')[0].trim()}."\n\nCTA: "Free course on indigenous sovereignty — link in bio. ${tags}"`,
+    ],
+    thread:[
+      `1/ ${hook}\n\n${eventSnip}\n\nHere's why this matters. 🧵 ${tags}\n\n2/ The motif for this moment is ${m.name}. ${m.realm}.\n\n${m.meaning}\n\n3/ ${m.core_logic}\n\nThis echoes [HISTORICAL PARALLEL — add yours].\n\n4/ What can we do?\n→ Name it for what it is\n→ Share this thread\n→ Learn more: free 6-module course 👉 [LINK]\n→ Tag your people\n\n5/ ${m.te_reo_hook[0]}\n\nKo tātou te anamata rangatira. We are the sovereign future.\n\n#KiwiDialectic #IndigenousSovereignty #TinoRangatiratanga`
+    ]
+  };
+  return {x:posts.x[Math.floor(Math.random()*posts.x.length)],ig:posts.ig[0],fb:posts.fb[0],tt:posts.tt[0],thread:posts.thread[0]};
+}
+
+function scoreMotifs(eventText, activeThemes) {
+  const text = eventText.toLowerCase();
+  const scores = {};
+  for (const [key,motif] of Object.entries(MOTIFS)) {
+    let score = 0;
+    for (const theme of activeThemes) { if (motif.themes[theme]) score += motif.themes[theme] * 2.5; }
+    for (const kw of motif.keywords) { if (text.includes(kw.toLowerCase())) { score += 6; if (text.split(kw.toLowerCase()).length > 2) score += 3; } }
+    scores[key] = Math.min(100, Math.round(score));
+  }
+  return Object.entries(scores).sort((a,b)=>b[1]-a[1]);
+}
+
+const memoryStore = {};
+const safeStore = {
+  get(k,fb=null){try{const v=localStorage.getItem(k);return v===null?fb:v;}catch(e){return Object.prototype.hasOwnProperty.call(memoryStore,k)?memoryStore[k]:fb;}},
+  set(k,v){try{localStorage.setItem(k,v);}catch(e){memoryStore[k]=v;}},
+  remove(k){try{localStorage.removeItem(k);}catch(e){delete memoryStore[k];}}
+};
+
+let currentResult=null,currentPlatform='x';
+
+function runMapper() {
+  const eventText = document.getElementById('eventInput').value.trim();
+  if (!eventText||eventText.length<8) {
+    document.getElementById('eventInput').style.borderColor='#e74c3c';
+    setTimeout(()=>document.getElementById('eventInput').style.borderColor='',1200);
+    return;
+  }
+  const activeThemes=[...document.querySelectorAll('.chip.active')].map(c=>c.dataset.theme);
+  const spinner=document.getElementById('spinner'),btn=document.getElementById('mapBtn');
+  spinner.className='spinner visible'; btn.disabled=true;
+  setTimeout(()=>{
+    const ranked=scoreMotifs(eventText,activeThemes);
+    const primaryKey=ranked[0][0],primaryMotif=MOTIFS[primaryKey];
+    const posts=buildPosts(primaryKey,eventText,activeThemes);
+    currentResult={ranked,primaryKey,eventText,activeThemes,posts};
+    const card=document.getElementById('primaryMotifCard');
+    const second=ranked[1],secondM=MOTIFS[second[0]];
+    card.style.borderLeft=`4px solid ${primaryMotif.colour}`;
+    card.innerHTML=`
       <div>
         <img src="${primaryMotif.img}" class="motif-img-sm" alt="${primaryMotif.name}" onerror="this.style.display='none'"/>
-        <div style="margin-top:.6rem;text-align:center">
-          <a href="${primaryMotif.page}" target="_blank"
-             style="font-size:.78rem;color:${primaryMotif.colour};text-decoration:none;font-family:var(--font-sans)">
-             Deep dive →
-          </a>
-        </div>
+        <div style="margin-top:.6rem;text-align:center"><a href="${primaryMotif.page}" target="_blank" style="font-size:.78rem;color:${primaryMotif.colour};text-decoration:none;font-family:var(--font-sans)">Deep dive →</a></div>
       </div>
       <div>
         <p style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:${primaryMotif.colour};font-family:var(--font-sans);margin:0 0 4px">Primary match</p>
         <h2 style="font-family:var(--font-serif);font-size:1.8rem;margin:0 0 4px">${primaryMotif.name}</h2>
         <p style="font-size:.85rem;opacity:.65;margin:0 0 .8rem;font-family:var(--font-sans)">${primaryMotif.realm}</p>
         <p style="font-size:.92rem;line-height:1.65;margin:0 0 1rem">${primaryMotif.meaning}</p>
-
         <div class="match-bar-wrap">
           <span class="match-label">Match strength</span>
           <div class="match-bar"><div class="match-fill" style="background:${primaryMotif.colour}" id="primaryFill"></div></div>
         </div>
         <div class="match-bar-wrap" style="margin-top:.5rem">
           <span class="match-label" style="color:${secondM.colour}">Secondary: ${secondM.name}</span>
-          <div class="match-bar">
-            <div class="match-fill" style="background:${secondM.colour}" id="secondFill"></div>
-          </div>
+          <div class="match-bar"><div class="match-fill" style="background:${secondM.colour}" id="secondFill"></div></div>
         </div>
-
-        <p style="font-size:.8rem;color:var(--fg-muted);margin:.8rem 0 0;font-family:var(--font-sans)">
-          Te reo hook: <strong style="color:${primaryMotif.colour}">${primaryMotif.te_reo_hook[Math.floor(Math.random()*primaryMotif.te_reo_hook.length)]}</strong>
-        </p>
+        <p style="font-size:.8rem;color:var(--fg-muted);margin:.8rem 0 0;font-family:var(--font-sans)">Te reo hook: <strong style="color:${primaryMotif.colour}">${primaryMotif.te_reo_hook[Math.floor(Math.random()*primaryMotif.te_reo_hook.length)]}</strong></p>
       </div>`;
-
-    // animate bars
-    setTimeout(() => {
-      const p1 = Math.min(100, Math.round(ranked[0][1]/Math.max(...ranked.map(r=>r[1]))*100));
-      const p2 = Math.min(100, Math.round(ranked[1][1]/Math.max(...ranked.map(r=>r[1]))*100));
-      document.getElementById('primaryFill').style.width = p1 + '%';
-      document.getElementById('secondFill').style.width = p2 + '%';
-    }, 100);
-
-    // SCORE TABLE
-    const table = document.getElementById('scoreTable');
-    const maxS = ranked[0][1] || 1;
-    table.innerHTML = `<tr><th>Motif</th><th>Score</th><th>Match bar</th></tr>` +
-      ranked.map(([k,s]) => {
-        const m = MOTIFS[k];
-        const pct = Math.round(s/maxS*100);
-        return `<tr>
-          <td><span class="score-dot" style="background:${m.colour}"></span>${m.name}</td>
-          <td style="font-family:monospace;color:${m.colour}">${pct}%</td>
-          <td style="min-width:120px"><div class="match-bar" style="max-width:200px"><div class="match-fill" style="background:${m.colour};width:${pct}%"></div></div></td>
-        </tr>`;
-      }).join('');
-
-    // RATIONALE
-    const rationaleGrid = document.getElementById('rationaleGrid');
-    const matchedThemes = activeThemes.filter(t => MOTIFS[primaryKey].themes[t] >= 6);
-    const matchedKWs = MOTIFS[primaryKey].keywords.filter(kw => eventText.toLowerCase().includes(kw.toLowerCase())).slice(0,5);
-
-    rationaleGrid.innerHTML = `
-      <div class="rationale-card b-${primaryKey === 'unaunahi' ? 'unaunahi' : primaryKey}" style="border-left-color:${primaryMotif.colour}">
-        <p class="rc-label" style="color:${primaryMotif.colour}">Core logic</p>
-        <p>${primaryMotif.core_logic}</p>
-      </div>
-      <div class="rationale-card" style="border-left-color:${primaryMotif.colour}">
-        <p class="rc-label" style="color:${primaryMotif.colour}">Matched themes</p>
-        <p>${matchedThemes.length ? matchedThemes.map(t => `<strong>${t}</strong>`).join(', ') : 'Keyword-based match — add theme chips above for stronger results'}</p>
-      </div>
-      <div class="rationale-card" style="border-left-color:${primaryMotif.colour}">
-        <p class="rc-label" style="color:${primaryMotif.colour}">Keywords found</p>
-        <p>${matchedKWs.length ? matchedKWs.join(', ') : 'General pattern match'}</p>
-      </div>
-      <div class="rationale-card" style="border-left-color:${primaryMotif.colour}">
-        <p class="rc-label" style="color:${primaryMotif.colour}">Second strongest</p>
-        <p><strong>${secondM.name}</strong> — ${secondM.realm}. Also consider this motif if your framing leans toward ${secondM.meaning.slice(0,60)}…</p>
-      </div>`;
-
-    // POSTS
-    showPost('x', null, posts);
-
-    // ASSETS
-    const assetLinks = document.getElementById('assetLinks');
-    assetLinks.innerHTML = [
-      [`social-kit/motifs/${primaryKey}/${primaryKey}-x-01-${Object.values({koru:'who_built_this',pa:'hold_your_p\u0101',niho:'it_still_has_teeth',kow:'tikanga_first',unaunahi:'we_are_armour',takarangi:'we_are_the_future'})[Object.keys(MOTIFS).indexOf(primaryKey)]}.svg`, `X card — ${primaryMotif.name}`],
-      [`social-kit/motifs/${primaryKey}/${primaryKey}-instagram-01-${Object.values({koru:'who_built_this',pa:'hold_your_p\u0101',niho:'it_still_has_teeth',kow:'tikanga_first',unaunahi:'we_are_armour',takarangi:'we_are_the_future'})[Object.keys(MOTIFS).indexOf(primaryKey)]}.svg`, `Instagram — ${primaryMotif.name}`],
-      [`assets/motifs/${primaryKey}-dark-square.svg`, `${primaryMotif.name} motif SVG`],
-      [`motifs/${primaryMotif.page.split('/')[1]}`, `${primaryMotif.name} deep dive page`],
-    ].map(([href,label]) =>
-      `<a href="${href}" download style="padding:8px 16px;background:var(--bg-raised);border:1px solid ${primaryMotif.colour}55;border-radius:999px;text-decoration:none;color:${primaryMotif.colour};font-size:.8rem;font-family:var(--font-sans)">↓ ${label}</a>`
-    ).join('');
-
-    // save to history
-    saveHistory(eventText, primaryKey, primaryMotif.name);
-
-    // show
-    document.getElementById('resultSection').className = 'result-section visible';
-    document.getElementById('resultSection').scrollIntoView({behavior:'smooth', block:'start'});
-    spinner.className = 'spinner';
-    btn.disabled = false;
-  }, 800); // artificial delay for UX
+    setTimeout(()=>{
+      const maxS=Math.max(...ranked.map(r=>r[1]))||1;
+      document.getElementById('primaryFill').style.width=Math.round(ranked[0][1]/maxS*100)+'%';
+      document.getElementById('secondFill').style.width=Math.round(ranked[1][1]/maxS*100)+'%';
+    },100);
+    const table=document.getElementById('scoreTable');
+    const maxS=ranked[0][1]||1;
+    table.innerHTML=`<tr><th>Motif</th><th>Score</th><th>Match</th></tr>`+ranked.map(([k,s])=>{const m=MOTIFS[k],pct=Math.round(s/maxS*100);return`<tr><td><span class="score-dot" style="background:${m.colour}"></span>${m.name}</td><td style="font-family:monospace;color:${m.colour}">${pct}%</td><td style="min-width:120px"><div class="match-bar" style="max-width:200px"><div class="match-fill" style="background:${m.colour};width:${pct}%"></div></div></td></tr>`;}).join('');
+    const rationaleGrid=document.getElementById('rationaleGrid');
+    const matchedThemes=activeThemes.filter(t=>MOTIFS[primaryKey].themes[t]>=6);
+    const matchedKWs=MOTIFS[primaryKey].keywords.filter(kw=>eventText.toLowerCase().includes(kw.toLowerCase())).slice(0,5);
+    rationaleGrid.innerHTML=`
+      <div class="rationale-card" style="border-left-color:${primaryMotif.colour}"><p class="rc-label" style="color:${primaryMotif.colour}">Core logic</p><p>${primaryMotif.core_logic}</p></div>
+      <div class="rationale-card" style="border-left-color:${primaryMotif.colour}"><p class="rc-label" style="color:${primaryMotif.colour}">Matched themes</p><p>${matchedThemes.length?matchedThemes.map(t=>`<strong>${t}</strong>`).join(', '):'Keyword-based match — add theme chips above for stronger results'}</p></div>
+      <div class="rationale-card" style="border-left-color:${primaryMotif.colour}"><p class="rc-label" style="color:${primaryMotif.colour}">Keywords found</p><p>${matchedKWs.length?matchedKWs.join(', '):'General pattern match'}</p></div>
+      <div class="rationale-card" style="border-left-color:${primaryMotif.colour}"><p class="rc-label" style="color:${primaryMotif.colour}">Second strongest</p><p><strong>${secondM.name}</strong> — ${secondM.realm}. Also consider if your framing leans toward ${secondM.meaning.slice(0,60)}…</p></div>`;
+    showPost('x',null,posts);
+    const assetLinks=document.getElementById('assetLinks');
+    assetLinks.innerHTML=[
+      [`social-kit/motifs/${primaryKey}/${primaryKey}-x-01-${{'koru':'who_built_this','pa':'hold_your_pā','niho':'it_still_has_teeth','kow':'tikanga_first','unaunahi':'we_are_armour','takarangi':'we_are_the_future'}[primaryKey]}.svg`,`X card — ${primaryMotif.name}`],
+      [`assets/motifs/${primaryKey}-dark-square.svg`,`${primaryMotif.name} motif SVG`],
+      [`motifs/${primaryMotif.page.split('/')[1]}`,`${primaryMotif.name} deep dive`],
+    ].map(([href,label])=>`<a href="${href}" download style="padding:8px 16px;background:var(--bg-raised);border:1px solid ${primaryMotif.colour}55;border-radius:999px;text-decoration:none;color:${primaryMotif.colour};font-size:.8rem;font-family:var(--font-sans)">↓ ${label}</a>`).join('');
+    saveHistory(eventText,primaryKey,primaryMotif.name);
+    document.getElementById('resultSection').className='result-section visible';
+    document.getElementById('resultSection').scrollIntoView({behavior:'smooth',block:'start'});
+    spinner.className='spinner'; btn.disabled=false;
+  },800);
 }
 
-/* ══════════════════════════════════════════════════════════════════════════
-   POST DISPLAY
-══════════════════════════════════════════════════════════════════════════ */
-function showPost(platform, btn, posts) {
-  currentPlatform = platform;
-  if (btn) {
-    document.querySelectorAll('.post-tab').forEach(t => t.classList.remove('active'));
-    btn.classList.add('active');
-  }
-  const p = posts || currentResult?.posts;
-  if (!p) return;
-  const text = p[platform] || '';
-  document.getElementById('postText').textContent = text;
-  const cc = document.getElementById('charCount');
-  const len = text.length;
-  cc.textContent = `${len} characters${platform==='x'?' (X limit: 280 per tweet)':platform==='ig'?' (IG limit: 2200)':''}`;
-  cc.className = 'char-count' + (platform==='x'&&len>280?' over':'');
+function showPost(platform,btn,posts){
+  currentPlatform=platform;
+  if(btn){document.querySelectorAll('.post-tab').forEach(t=>t.classList.remove('active'));btn.classList.add('active');}
+  const p=posts||currentResult?.posts; if(!p)return;
+  const text=p[platform]||'';
+  document.getElementById('postText').textContent=text;
+  const cc=document.getElementById('charCount'),len=text.length;
+  cc.textContent=`${len} characters${platform==='x'?' (X limit: 280 per tweet)':platform==='ig'?' (IG limit: 2200)':''}`;
+  cc.className='char-count'+(platform==='x'&&len>280?' over':'');
 }
+function regenPost(){if(!currentResult)return;const posts=buildPosts(currentResult.primaryKey,currentResult.eventText,currentResult.activeThemes);currentResult.posts=posts;showPost(currentPlatform,null,posts);}
+function copyPost(){const text=document.getElementById('postText').textContent;navigator.clipboard.writeText(text).then(()=>{const btn=document.querySelector('.copy-btn');btn.textContent='Copied ✓';btn.classList.add('copied');setTimeout(()=>{btn.textContent='Copy';btn.classList.remove('copied');},2000);});}
+function forceMotif(){const modal=document.getElementById('overrideModal');document.getElementById('motifOverrideBtns').innerHTML=Object.entries(MOTIFS).map(([k,m])=>`<button onclick="applyOverride('${k}')" style="padding:10px 14px;border-radius:8px;border:2px solid ${m.colour};background:${m.colour}22;color:${m.colour};font-weight:700;font-family:var(--font-sans);cursor:pointer;font-size:.88rem">${m.name}</button>`).join('');modal.style.display='flex';}
+function applyOverride(key){document.getElementById('overrideModal').style.display='none';if(!currentResult)return;currentResult.primaryKey=key;const posts=buildPosts(key,currentResult.eventText,currentResult.activeThemes);currentResult.posts=posts;showPost(currentPlatform,null,posts);document.getElementById('primaryMotifCard').style.borderLeft=`4px solid ${MOTIFS[key].colour}`;}
+function saveHistory(eventText,motifKey,motifName){const history=JSON.parse(safeStore.get('kd-rhizome-history','[]'));history.unshift({eventText:eventText.slice(0,120),motifKey,motifName,ts:Date.now()});history.splice(8);safeStore.set('kd-rhizome-history',JSON.stringify(history));renderHistory();}
+function renderHistory(){const history=JSON.parse(safeStore.get('kd-rhizome-history','[]'));const section=document.getElementById('historySection'),list=document.getElementById('historyList');if(!history.length){section.style.display='none';return;}section.style.display='block';list.innerHTML=history.map((h,i)=>{const m=MOTIFS[h.motifKey];const date=new Date(h.ts).toLocaleDateString('en-NZ',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});return`<div class="history-item" onclick="reloadHistory(${i})"><div class="history-dot" style="background:${m?.colour||'#888'}"></div><div><div class="history-text">${h.eventText}</div><div class="history-tag">${h.motifName} · ${date}</div></div></div>`;}).join('');}
+function reloadHistory(i){const history=JSON.parse(safeStore.get('kd-rhizome-history','[]'));const h=history[i];if(!h)return;document.getElementById('eventInput').value=h.eventText;window.scrollTo({top:0,behavior:'smooth'});}
+function clearHistory(){safeStore.remove('kd-rhizome-history');renderHistory();}
 
-function regenPost() {
-  if (!currentResult) return;
-  const posts = buildPosts(currentResult.primaryKey, currentResult.eventText, currentResult.activeThemes);
-  currentResult.posts = posts;
-  showPost(currentPlatform, null, posts);
-}
-
-function copyPost() {
-  const text = document.getElementById('postText').textContent;
-  navigator.clipboard.writeText(text).then(() => {
-    const btn = document.querySelector('.copy-btn');
-    btn.textContent = 'Copied ✓';
-    btn.classList.add('copied');
-    setTimeout(() => { btn.textContent='Copy'; btn.classList.remove('copied'); }, 2000);
-  });
-}
-
-/* ══════════════════════════════════════════════════════════════════════════
-   MOTIF OVERRIDE
-══════════════════════════════════════════════════════════════════════════ */
-function forceMotif() {
-  const modal = document.getElementById('overrideModal');
-  const btns = document.getElementById('motifOverrideBtns');
-  btns.innerHTML = Object.entries(MOTIFS).map(([k,m]) =>
-    `<button onclick="applyOverride('${k}')"
-      style="padding:10px 14px;border-radius:8px;border:2px solid ${m.colour};
-             background:${m.colour}22;color:${m.colour};font-weight:700;
-             font-family:var(--font-sans);cursor:pointer;font-size:.88rem">
-      ${m.name}
-    </button>`
-  ).join('');
-  modal.style.display = 'flex';
-}
-
-function applyOverride(key) {
-  document.getElementById('overrideModal').style.display = 'none';
-  if (!currentResult) return;
-  currentResult.primaryKey = key;
-  const posts = buildPosts(key, currentResult.eventText, currentResult.activeThemes);
-  currentResult.posts = posts;
-  showPost(currentPlatform, null, posts);
-  // update primary card heading colour
-  document.getElementById('primaryMotifCard').style.borderLeft = `4px solid ${MOTIFS[key].colour}`;
-}
-
-/* ══════════════════════════════════════════════════════════════════════════
-   HISTORY
-══════════════════════════════════════════════════════════════════════════ */
-function saveHistory(eventText, motifKey, motifName) {
-  const history = JSON.parse(safeStore.get('kd-rhizome-history', '[]'));
-  history.unshift({ eventText: eventText.slice(0,120), motifKey, motifName, ts: Date.now() });
-  history.splice(8); // keep last 8
-  safeStore.set('kd-rhizome-history', JSON.stringify(history));
-  renderHistory();
-}
-
-function renderHistory() {
-  const history = JSON.parse(safeStore.get('kd-rhizome-history', '[]'));
-  const section = document.getElementById('historySection');
-  const list = document.getElementById('historyList');
-  if (!history.length) { section.style.display='none'; return; }
-  section.style.display = 'block';
-  list.innerHTML = history.map((h,i) => {
-    const m = MOTIFS[h.motifKey];
-    const date = new Date(h.ts).toLocaleDateString('en-NZ',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
-    return `<div class="history-item" onclick="reloadHistory(${i})">
-      <div class="history-dot" style="background:${m?.colour||'#888'}"></div>
-      <div>
-        <div class="history-text">${h.eventText}</div>
-        <div class="history-tag">${h.motifName} · ${date}</div>
-      </div>
-    </div>`;
-  }).join('');
-}
-
-function reloadHistory(i) {
-  const history = JSON.parse(safeStore.get('kd-rhizome-history', '[]'));
-  const h = history[i];
-  if (!h) return;
-  document.getElementById('eventInput').value = h.eventText;
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-
-function clearHistory() {
-  safeStore.remove('kd-rhizome-history');
-  renderHistory();
-}
-
-/* ══════════════════════════════════════════════════════════════════════════
-   THEME CHIP TOGGLE
-══════════════════════════════════════════════════════════════════════════ */
-document.querySelectorAll('.chip').forEach(chip => {
-  chip.addEventListener('click', () => chip.classList.toggle('active'));
-});
+document.querySelectorAll('.chip').forEach(chip=>{chip.addEventListener('click',()=>chip.classList.toggle('active'));});
+document.getElementById('eventInput')?.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key==='Enter')runMapper();});
 
 /* ══════════════════════════════════════════════════════════════════════════
    THEME TOGGLE
 ══════════════════════════════════════════════════════════════════════════ */
-const tBtn = document.getElementById('themeToggle');
-const html = document.documentElement;
-const saved = safeStore.get('kd-theme', 'dark');
-html.setAttribute('data-theme', saved);
-tBtn.textContent = saved === 'dark' ? 'Light' : 'Dark';
-tBtn.addEventListener('click', () => {
-  const cur = html.getAttribute('data-theme');
-  const next = cur === 'dark' ? 'light' : 'dark';
-  html.setAttribute('data-theme', next);
-  safeStore.set('kd-theme', next);
-  tBtn.textContent = next === 'dark' ? 'Light' : 'Dark';
-  // redraw D3 rhizome on theme change
-  if (currentResult && typeof drawRhizomeD3 === 'function') {
-    const maxS = currentResult.ranked[0][1] || 1;
-    drawRhizomeD3(currentResult.ranked.map(([k,s]) => [k, Math.round(s/maxS*100)]), currentResult.eventText);
-  }
+const tBtn=document.getElementById('themeToggle');
+const html=document.documentElement;
+const saved=safeStore.get('kd-theme','dark');
+html.setAttribute('data-theme',saved);
+tBtn.textContent=saved==='dark'?'Light':'Dark';
+tBtn.addEventListener('click',()=>{
+  const cur=html.getAttribute('data-theme'),next=cur==='dark'?'light':'dark';
+  html.setAttribute('data-theme',next);safeStore.set('kd-theme',next);
+  tBtn.textContent=next==='dark'?'Light':'Dark';
+  drawNetwork();
 });
 
-/* ══════════════════════════════════════════════════════════════════════════
-   KEYBOARD SHORTCUT — Ctrl+Enter to map
-══════════════════════════════════════════════════════════════════════════ */
-document.getElementById('eventInput').addEventListener('keydown', e => {
-  if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') runMapper();
-});
-
-// init
 renderHistory();
 </script>
 
-<!-- ── D3.js v7 + Rhizome force-directed graph ─────────────────────── -->
-<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
-<script src="assets/rhizome-d3.js"></script>
+<!-- D3.js v7 -->
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" defer></script>
+<script defer>
+  // init after D3 loads
+  document.addEventListener('DOMContentLoaded', () => { drawNetwork(); });
+  // fallback if DOMContentLoaded already fired
+  if (document.readyState === 'complete') drawNetwork();
+</script>
 
-<!-- ── PWA Service Worker ──────────────────────────────────────────── -->
+<!-- PWA Service Worker -->
 <script>
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js')
@@ -847,4 +1244,3 @@ renderHistory();
 </script>
 </body>
 </html>
-
