@@ -598,18 +598,29 @@
       </div>
 
       <div class="smkit-hashtag-group">
-        <p class="smkit-region-label" style="color:#9b59b6">Global</p>
+        <p class="smkit-region-label" style="color:#e74c3c">North America / Turtle Island</p>
+        <div class="smkit-tags">
+          <span class="smkit-tag" style="border-color:#e74c3c55;color:#e74c3c">#LANDBACK</span>
+          <span class="smkit-tag" style="border-color:#e74c3c55;color:#e74c3c">#IdleNoMore</span>
+          <span class="smkit-tag" style="border-color:#e74c3c55;color:#e74c3c">#NoDAPL</span>
+          <span class="smkit-tag" style="border-color:#e74c3c55;color:#e74c3c">#WetsuwetunStrong</span>
+          <span class="smkit-tag" style="border-color:#e74c3c55;color:#e74c3c">#FirstNations</span>
+        </div>
+      </div>
+
+      <div class="smkit-hashtag-group">
+        <p class="smkit-region-label" style="color:#9b59b6">Global / Ōrite / Opaite Yvy / Lalolagi</p>
         <div class="smkit-tags">
           <span class="smkit-tag" style="border-color:#9b59b655;color:#9b59b6">#IndigenousDataSovereignty</span>
           <span class="smkit-tag" style="border-color:#9b59b655;color:#9b59b6">#UNDRIP</span>
           <span class="smkit-tag" style="border-color:#9b59b655;color:#9b59b6">#CARE</span>
           <span class="smkit-tag" style="border-color:#9b59b655;color:#9b59b6">#StopDataColonialism</span>
-          <span class="smkit-tag" style="border-color:#9b59b655;color:#9b59b6">#LANDBACK</span>
+          <span class="smkit-tag" style="border-color:#9b59b655;color:#9b59b6">#AIIsNotIndigenous</span>
         </div>
       </div>
 
       <p style="font-size:.78rem;color:var(--fg-muted);margin:.8rem 0 0;font-family:var(--font-sans)">
-        Click any node in the map above to see its detail panel, then use the link to share that organisation's page directly.
+        Click any node in the map above → click <strong>✍ Generate post →</strong> in the detail panel to create a post in your chosen language with that org's hashtags.
       </p>
     </div>
 
@@ -1357,6 +1368,110 @@ const REGION_COLOUR = {
   europe: '#1abc9c',
   asia: '#e91e63'
 };
+
+/* ══ Org hashtags (injected) ══ */
+const ORG_HASHTAGS = {
+  "te-mana-raraunga": { en:"#TeManaRaraunga #M\u0101oriDataSov", pt:"#SoberaniaDadosM\u0101ori", gn:"#DatosSoberan\u00eda", sm:"#PuleFa\u02bbamaumauga" },
+  "te-kahui-raraunga": { en:"#TeManaRaraunga #KahuiRaraunga", pt:"#Governan\u00e7aDados", gn:"#TekoPyporu", sm:"#PuleRaraunga" },
+  "maori-ai-advisory": { en:"#M\u0101oriAI #AIForum", pt:"#IAind\u00edgena", gn:"#IATekojoja", sm:"#AIFa\u02bbas\u0101moa" },
+  "te-kohanga-reo": { en:"#TeK\u014dhangaReo #TeReoM\u0101ori", pt:"#L\u00ednguaInd\u00edgena", gn:"#\u00d1e'\u1ebd", sm:"#GaganaS\u0101moa" },
+  "te-kura": { en:"#TeKura #TeReoM\u0101ori", pt:"#Educa\u00e7\u00e3oInd\u00edgena", gn:"#KoatepajeyhaKo'\u1ebd", sm:"#A\u02bboa\u02bboFa\u02bbaS\u0101moa" },
+  "te-pati-maori": { en:"#TeP\u0101tiM\u0101ori #TinoRangatiratanga", pt:"#PartidoM\u0101ori", gn:"#TekoPypykue", sm:"#Pule\u0101M\u0101ori" },
+  "soul-ihumatao": { en:"#SOUL #Ihum\u0101tao #ProtectIhumatao", pt:"#TerrasIhum\u0101tao", gn:"#YvyIhum\u0101tao", sm:"#FanuaIhum\u0101tao" },
+  "waitangi-tribunal": { en:"#WaitangiTribunal #Tiriti", pt:"#TratadoWaitangi", gn:"#\u00d1embohekatup\u00e3Tiriti", sm:"#TiritiWaitangi" },
+  "tino-rangatiratanga": { en:"#TinoRangatiratanga #M\u0101oriSovereignty", pt:"#SoberaniaAbsoluta", gn:"#JekoviMborayhu", sm:"#TinoRangatiratanga" },
+  "te-wai-maori": { en:"#TeWaiM\u0101ori #WaterRights", pt:"#Direitos\u00c1gua", gn:"#Yporekovia", sm:"#AigaVai" },
+  "wai-262": { en:"#Wai262 #M\u0101taurangaM\u0101ori", pt:"#ConhecimentoInd\u00edgena", gn:"#TekojojaMba'e", sm:"#SaililoaFanua" },
+  "ngai-tahu": { en:"#Ng\u0101iTahu #TeWaiPounamu", pt:"#Ng\u0101iTahuTreaty", gn:"#Ng\u0101iTahuYvy", sm:"#Ng\u0101iTahuFanua" },
+  "ulmwp": { en:"#FreeWestPapua #ULMWP", pt:"#PapuaLivre", gn:"#PapuaTekopyahu", sm:"#FreeWestPapua" },
+  "knpb": { en:"#FreeWestPapua #KNPB", pt:"#PapuaOcidental", gn:"#PapuaHeta", sm:"#WestPapua" },
+  "flnks-orig": { en:"#Kanaky #FLNKS", pt:"#KanakySoberania", gn:"#KanakyTekojoaju", sm:"#KanakyPule" },
+  "350-pacific-orig": { en:"#PacificClimate #350Pacific", pt:"#ClimaPac\u00edfico", gn:"#Ko\u02bb\u1ebdPasifika", sm:"#AeaAeaFanua" },
+  "oha": { en:"#HawaiianSovereignty #OHA", pt:"#SoberaniaHavaiana", gn:"#HawaiiTekopyahu", sm:"#HawaiiPule" },
+  "ka-lahui-hawaii": { en:"#KaL\u0101hui #HawaiianNation", pt:"#Na\u00e7\u00e3oHavaiana", gn:"#Hawaii\u00d1emity", sm:"#KaLahui" },
+  "kahaa": { en:"#Aloha\u0100ina #HawaiianRights", pt:"#DireitosHawaiano", gn:"#HawaiiMba'e", sm:"#AlohaAina" },
+  "melanesian-spearhead-group": { en:"#MSG #MelanesianRights", pt:"#DireitosMelan\u00e9sios", gn:"#MelanesiaTeko", sm:"#MSG" },
+  "tuvalu-sovereignty": { en:"#TuvaluRising #ClimateJustice", pt:"#Justi\u00e7aClim\u00e1tica", gn:"#Ko'\u1ebdJojopy", sm:"#TuvaluRising" },
+  "fiji-indigenous-peoples-foundation": { en:"#FijiIndigenous #FijiRights", pt:"#PovosInd\u00edgenasFiji", gn:"#FijiTeko", sm:"#FijiPule" },
+  "pacific-concerns-resource-centre": { en:"#PacificPeoples #PCRC", pt:"#PovosDosPac\u00edfico", gn:"#PasifikaTeko", sm:"#Pasifika" },
+  "west-papua-parliament": { en:"#FreeWestPapua #WestPapuaParliament", pt:"#ParlamentoPapua", gn:"#PapuaTekojoja", sm:"#WestPapuaParliament" },
+  "maiam_nayri_wingara": { en:"#IndigenousDataSovereignty #OCAP", pt:"#SoberaniaDadosAboriginal", gn:"#TekoDatosPyahu", sm:"#PuleFa\u02bbamaumauga" },
+  "aiatsis": { en:"#AIATSIS #AboriginalRights", pt:"#DireitosAborigenes", gn:"#AboriginalTeko", sm:"#AIATSIS" },
+  "aipp": { en:"#AIPP #AsianIndigenousPeoples", pt:"#PovosInd\u00edgenasAsia", gn:"#AsiaTekopyahu", sm:"#AIPP" },
+  "pacific_data_sovereignty_trust": { en:"#PacificDataSovereignty #PacificData", pt:"#SoberaniaDadosPac\u00edfico", gn:"#DatosPasifika", sm:"#PuleDataPasifika" },
+  "magabala_books": { en:"#MagabalaBooks #AboriginalLiterature #ForaGarimpo", pt:"#LiteraturaAboriginal", gn:"#Aboriginal\u00d1e'\u1ebdpor\u00e3", sm:"#MagabalaBooks" },
+  "siufofoga_laumua": { en:"#SamoanMedia #GaganaS\u0101moa", pt:"#M\u00eddiaSamoana", gn:"#SamoaMba'e", sm:"#GaganaS\u0101moa #S\u0101moa" },
+  "pacific_broadband": { en:"#PacificDigital #DigitalSovereignty", pt:"#SoberaniaDigital", gn:"#DigitalPasifika", sm:"#Fa\u02bbatekonolositPasifika" },
+  "sprep": { en:"#SPREP #PacificEnvironment", pt:"#AmbientePac\u00edfico", gn:"#Ko'\u1ebdPasifikaMba'e", sm:"#SiosiomaSPREP" },
+  "spc": { en:"#PacificCommunity #SPC", pt:"#ComunidadePac\u00edfico", gn:"#Pasifika\u00d1emity", sm:"#SPC #Pasifika" },
+  "pasefika-proud": { en:"#PasefikaProud #PacificIdentity", pt:"#OrgulhoPac\u00edfico", gn:"#PasifikaPyahupoty", sm:"#PasefikaProud" },
+  "faasamoa-arts": { en:"#FaasamoaArts #SamoanCulture", pt:"#CulturaSamoana", gn:"#SamoaTeko", sm:"#Fa\u02bbaS\u0101moa #S\u0101moa" },
+  "samoan-language-commission": { en:"#GaganaS\u0101moa #SamoanLanguage", pt:"#L\u00ednguaSamoana", gn:"#Samoa\u00d1e'\u1ebd", sm:"#GaganaS\u0101moa" },
+  "free-west-papua": { en:"#FreeWestPapua #WestPapua", pt:"#PapuaLivre", gn:"#PapuaTekopyahu", sm:"#FreeWestPapua" },
+  "ipwp": { en:"#FreeWestPapua #IPWP", pt:"#ParlamentaresPapua", gn:"#PapuaParlamenta", sm:"#WestPapuaIPWP" },
+  "pican": { en:"#PacificClimate #PICAN", pt:"#ClimaPac\u00edfico", gn:"#Ko'\u1ebdPasifika", sm:"#AeaPasifika" },
+  "uluru-statement": { en:"#UluruStatement #AboriginalVoice", pt:"#VozAboriginal", gn:"#Aboriginal\u00d1e'\u1ebd", sm:"#UluruStatement" },
+  "nitv": { en:"#NITV #IndigenousMedia", pt:"#M\u00eddiaInd\u00edgena", gn:"#MediaTekopyahu", sm:"#MediaIndigenous" },
+  "ku-kiai-mauna": { en:"#K\u016bKiaiMauna #MaunaKea", pt:"#MaunaKea", gn:"#MaunaKea", sm:"#MaunaKeaProtectors" },
+  "tuvalu-falepili-union": { en:"#TuvaluFalepili #ClimateJustice", pt:"#Justi\u00e7aTuvalu", gn:"#TuvaluKo'\u1ebd", sm:"#TuvaluFalepili" },
+  "usp-pace-sd": { en:"#USPPacific #PacificEnvironment", pt:"#UniversidadePac\u00edfico", gn:"#PasifikaYvyMba'e", sm:"#USP #PacificSustainable" },
+  "apib": { en:"#APIB #TerrasInd\u00edgenas", pt:"#APIB #TerrasInd\u00edgenas", gn:"#APIB #\u00d1aneYvy", sm:"#APIB" },
+  "coiab": { en:"#COIAB #Amaz\u00f4nia", pt:"#COIAB #Amaz\u00f4nia", gn:"#COIAB #Amazonia", sm:"#COIAB" },
+  "coica": { en:"#COICA #AmazonBasin", pt:"#COICA #BaciaAmaz\u00f4nica", gn:"#COICA #Amazonia", sm:"#COICA" },
+  "funai": { en:"#FUNAI #IndigenousBrazil", pt:"#FUNAI #PovosInd\u00edgenas", gn:"#FUNAITekopyahu", sm:"#FUNAI" },
+  "amazon-watch": { en:"#AmazonWatch #SaveTheAmazon", pt:"#AmazonWatch #Amaz\u00f4nia", gn:"#Amazonia #Tet\u00e3Oguah\u1ebd", sm:"#AmazonWatch" },
+  "cir": { en:"#CIR #IndigenousRoraima", pt:"#CIR #Roraima", gn:"#RoraimaTekopyahu", sm:"#CIR #Roraima" },
+  "survival-international-brazil": { en:"#SurvivalInternational #UncontactedTribes", pt:"#Sobreviv\u00eanciaBrasil", gn:"#SurvivalBrasil", sm:"#SurvivalInternational" },
+  "mst": { en:"#MST #LandReform", pt:"#MST #ReformaAgr\u00e1ria", gn:"#MST #YvyJeporeka", sm:"#MST #LandReform" },
+  "fapi": { en:"#FAPI #GuaraniRights", pt:"#FAPI #DireitosGuarani", gn:"#FAPI #GuaraniTekojoaju", sm:"#FAPI" },
+  "indi": { en:"#INDI #ParaguayIndigenous", pt:"#INDI #Paraguai", gn:"#INDI #Paragu\u00e1i", sm:"#INDI" },
+  "guarani-vikipeta": { en:"#GuaraniWikipedia #GuaraniLanguage", pt:"#L\u00ednguaGuarani", gn:"#Guarani\u00d1e'\u1ebd", sm:"#GuaraniLanguage" },
+  "portal-guarani": { en:"#GuaraniCulture #PortalGuarani", pt:"#CulturaGuarani", gn:"#GuaraniAranduka", sm:"#GuaraniCulture" },
+  "isa-brazil": { en:"#ISASocioambiental #Amazon", pt:"#ISA #Socioambiental", gn:"#ISABrasil", sm:"#ISABrazil" },
+  "hutukara-yanomami": { en:"#Yanomami #YanomaminRights", pt:"#Yanomami #HAY", gn:"#Yanomami", sm:"#Yanomami" },
+  "cimi-brazil": { en:"#CIMI #IndigenousMissions", pt:"#CIMI #Miss\u00f5es", gn:"#CIMITeko", sm:"#CIMI" },
+  "alianza-ceibo-ecuador": { en:"#CeiboAlliance #AmazonEcuador", pt:"#Alian\u00e7aCeibo", gn:"#CeiboTekojoaju", sm:"#CeiboAlliance" },
+  "digital-democracy": { en:"#DigitalDemocracy #MapAmazonia", pt:"#DemocraciaDigital", gn:"#TekojojaMba'e", sm:"#DigitalDemocracy" },
+  "conaie-ecuador": { en:"#CONAIE #EcuadorIndigenous", pt:"#CONAIE #Equador", gn:"#CONAIETeko", sm:"#CONAIE" },
+  "cidob-bolivia": { en:"#CIDOB #BoliviaIndigenous", pt:"#CIDOB #Bol\u00edvia", gn:"#CIDOB #Bolivia", sm:"#CIDOB" },
+  "cenia-chile-latamgpt": { en:"#LatamGPT #IndigenousAI", pt:"#LatamGPT #IAboriginal", gn:"#LatamGPT #IATeko", sm:"#LatamGPT" },
+  "conapi-paraguay": { en:"#CONAPI #IndigenousParaguay", pt:"#CONAPI #Paraguai", gn:"#CONAPI #Paragu\u00e1i", sm:"#CONAPI" },
+  "aty-guasu-brazil": { en:"#AtyGuasu #GuaraniKaiowa", pt:"#AtyGuas\u00fa #GuaraniKaiw\u00e1", gn:"#AtyGuas\u00fa #Guarani", sm:"#AtyGuasu" },
+  "conap-peru": { en:"#CONAP #AmazonPeru", pt:"#CONAP #Amaz\u00f4nia", gn:"#CONAP #PeruAmazonia", sm:"#CONAP" },
+  "fnigc": { en:"#FNIGC #FirstNationsData", pt:"#DadosPrimeirasNa\u00e7\u00f5es", gn:"#PrimeirasNa\u00e7\u00f5esTeko", sm:"#FNIGC" },
+  "fntc": { en:"#FirstNationsTech #IndigenousTech", pt:"#TecnologiaInd\u00edgena", gn:"#TekopyahuTeko", sm:"#FirstNationsTech" },
+  "usidsn": { en:"#USIDSN #IndigenousDataSovereignty", pt:"#SoberaniaDadosUSA", gn:"#DataSoberan\u00eda", sm:"#USIDSNData" },
+  "collaboratory_idg": { en:"#IndigenousDataGovernance", pt:"#Governan\u00e7aDadosInd\u00edgena", gn:"#TekoDatos", sm:"#DataGovernance" },
+  "native_biodata": { en:"#NativeBioData #IndigenousGenomics", pt:"#BiodadosNativos", gn:"#BioDataTeko", sm:"#NativeBioData" },
+  "honor_the_earth": { en:"#HonorTheEarth #StopDataColonialism", pt:"#HonrarATerra", gn:"#Pya\u0294\u00e9Yvy", sm:"#HonorTheEarth" },
+  "center_tribal_digital_sovereignty": { en:"#TribalDigitalSovereignty", pt:"#SoberaniaDigitalTribal", gn:"#DigitalTeko", sm:"#TribalDigital" },
+  "aboriginal_territories_cyberspace": { en:"#AbTeC #IndigenousCyberspace", pt:"#Territ\u00f3riosAboriginal", gn:"#AbTeC", sm:"#AbTeC" },
+  "ndn-collective": { en:"#NDNCollective #LANDBACK", pt:"#NDN #LANDBACK", gn:"#LANDBACK", sm:"#LANDBACK" },
+  "landback-network": { en:"#LANDBACK #IndigenousLand", pt:"#LANDBACK #TerraInd\u00edgena", gn:"#LANDBACK #Yvy", sm:"#LANDBACK" },
+  "indigenous-environmental-network": { en:"#IEN #IndigenousEnvironment", pt:"#IEN #AmbienteInd\u00edgena", gn:"#IENTeko", sm:"#IEN" },
+  "idle-no-more": { en:"#IdleNoMore #FirstNations", pt:"#IdleNoMore #PrimeirasNa\u00e7\u00f5es", gn:"#IdleNoMore", sm:"#IdleNoMore" },
+  "cherokee-nation-data-sovereignty": { en:"#CherokeeNation #TribalData", pt:"#Na\u00e7\u00e3oCherokee", gn:"#CherokeeTeko", sm:"#CherokeeNation" },
+  "gida": { en:"#GIDA #CARE #IndigenousData", pt:"#GIDA #DadosInd\u00edgenas", gn:"#GIDATeko", sm:"#GIDA #PuleFa\u02bbamaumauga" },
+  "local_contexts_org": { en:"#LocalContexts #TKLabels", pt:"#ContextosLocais", gn:"#TKLabels", sm:"#LocalContexts" },
+  "ipai": { en:"#IPAI #IndigenousAI #AIProtocol", pt:"#IAInd\u00edgena", gn:"#IATekopyahu", sm:"#IndigenousAI" },
+  "cultural_survival": { en:"#CulturalSurvival #IndigenousRights", pt:"#Sobreviv\u00eanciaCultural", gn:"#TekoPyahuMba'e", sm:"#CulturalSurvival" },
+  "rda_idsig": { en:"#RDA #IndigenousDataSovereignty", pt:"#SoberaniaDados", gn:"#DatosTekojoaju", sm:"#RDA #PuleData" },
+  "flair_initiative": { en:"#FLAIR #IndigenousLanguageAI", pt:"#IARescis\u00e3oL\u00edngua", gn:"#FLAIR\u00d1e'\u1ebd", sm:"#FLAIR #GaganaAI" },
+  "ipacc": { en:"#IPACC #AfricanIndigenous", pt:"#PovosInd\u00edgenas\u00c1frica", gn:"#\u00c1frikaTekopyahu", sm:"#IPACC #Africa" },
+  "paradigm_initiative": { en:"#ParadigmInit #DigitalRightsAfrica", pt:"#DireitosDigitais\u00c1frica", gn:"#\u00c1frikaDigital", sm:"#ParadigmAfrica" },
+  "gida_sapmi": { en:"#GIDA #S\u00e1mi #S\u00e1miRights", pt:"#DireitosS\u00e1mi", gn:"#S\u00e1miTekopyahu", sm:"#Sami #GIDASapmi" },
+};
+
+const REGION_HASHTAGS = {
+  "maori": { en:"#TinoRangatiratanga #M\u0101oriDataSovereignty #TeReoM\u0101ori #KiwiDialectic", pt:"#SoberaniaM\u0101ori #DadosM\u0101ori #TeReoM\u0101ori #KiwiDialectic", gn:"#M\u0101oriTekojoaju #\u00d1e'\u1ebdM\u0101ori #TinoRangatiratanga", sm:"#M\u0101oriPule #GaganaM\u0101ori #TinoRangatiratanga" },
+  "oceania": { en:"#PacificDataSovereignty #OceaniaRising #PasifikaProud #GaganaS\u0101moa", pt:"#SoberaniaDadosPac\u00edfico #OceaniaSobe #Pasif\u00edkaS\u0101moa", gn:"#PasifikaTekojoaju #OceaniaMba'e #GaganaS\u0101moa", sm:"#PuleDataPasifika #OceaniaRising #GaganaS\u0101moa #Pasifika" },
+  "south_america": { en:"#TerrasInd\u00edgenas #Amaz\u00f4nia #IndigenousBrazil #APIB", pt:"#TerrasInd\u00edgenas #Amaz\u00f4nia #PovosInd\u00edgenas #APIB", gn:"#\u00d1aneYvy #Amazonia #PovosInd\u00edgenas #APIB", sm:"#TerrasIndigenous #Amazonia #APIB" },
+  "north_america": { en:"#LANDBACK #IdleNoMore #FirstNations #IndigenousDataSovereignty", pt:"#LANDBACK #PrimeirasNa\u00e7\u00f5es #SoberaniaDados", gn:"#LANDBACK #PrimeirasNa\u00e7\u00f5esTeko #DatosTekojoaju", sm:"#LANDBACK #FirstNations #IndigenousData" },
+  "global": { en:"#IndigenousDataSovereignty #UNDRIP #CARE #StopDataColonialism", pt:"#SoberaniaDadosGlobal #UNDRIP #PovosInd\u00edgenas", gn:"#TekojoajuGlobal #UNDRIP #CARE", sm:"#PuleDataGlobal #UNDRIP #CARE" },
+  "africa": { en:"#IndigenousAfrica #DigitalRightsAfrica #IPACC", pt:"#Ind\u00edgena\u00c1frica #DireitosDigitais", gn:"#\u00c1frikaTekopyahu #Digital\u00c1frika", sm:"#AfricaIndigenous #DigitalAfrica" },
+  "europe": { en:"#S\u00e1miRights #IndigenousEurope #UNDRIP", pt:"#DireitosS\u00e1mi #Europa", gn:"#S\u00e1miTekopyahu #Europa", sm:"#SamiPule #EuropeIndigenous" },
+};
+
 const CAUSE_COLOURS = {
   'land rights': '#e74c3c',
   'political sovereignty': '#3498db',
@@ -1674,11 +1789,62 @@ function showNodePanel(d) {
     <a class="node-link" href="${d.url}" target="_blank" rel="noopener" style="background:${colour}">
       Visit ${d.name.split('–')[0].split('(')[0].trim()} →
     </a>
+    <button onclick="generateOrgPost()" title="Generate a social post about this org"
+      style="margin-top:.7rem;display:inline-block;padding:6px 14px;background:${colour}22;border:1px solid ${colour}55;border-radius:999px;color:${colour};font-size:.78rem;font-family:var(--font-sans);cursor:pointer;font-weight:600">
+      ✍ Generate post →
+    </button>
     <button onclick="document.getElementById('nodePanel').classList.remove('visible')"
       style="margin-left:.8rem;font-size:.8rem;color:var(--fg-muted);background:none;border:none;cursor:pointer">✕ Close</button>
   `;
+  // Track active org for hashtag generation in buildPosts
+  window._activeMapOrg = d;
   panel.classList.add('visible');
   panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   GENERATE POST FROM NODE PANEL
+══════════════════════════════════════════════════════════════════════════ */
+function generateOrgPost() {
+  const org = window._activeMapOrg;
+  if (!org) return;
+  const _lang = (typeof currentLang !== 'undefined' ? currentLang : 'en');
+  const orgTags = (ORG_HASHTAGS[org.id] && ORG_HASHTAGS[org.id][_lang]) ? ORG_HASHTAGS[org.id][_lang] : '';
+  const regionTags = (REGION_HASHTAGS[org.region] && REGION_HASHTAGS[org.region][_lang]) ? REGION_HASHTAGS[org.region][_lang] : '#IndigenousSovereignty';
+  const fullTags = `#KiwiDialectic ${regionTags}${orgTags ? ' ' + orgTags : ''}`.trim();
+  const desc = org.description.length > 160 ? org.description.slice(0, 157) + '…' : org.description;
+  const post = `${org.name}\n\n${desc}\n\n${fullTags}\n\n🔗 ${org.url}`;
+  // Switch to Event Mapper tab and pre-fill post output
+  setMode('event');
+  document.getElementById('eventInput').value = org.description.slice(0, 220);
+  // Also directly show the post in a modal/overlay
+  showOrgPostModal(org, post, fullTags, _lang);
+}
+
+function showOrgPostModal(org, post, tags, lang) {
+  let modal = document.getElementById('orgPostModal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'orgPostModal';
+    modal.style.cssText = 'position:fixed;inset:0;background:#000c;z-index:9999;display:flex;align-items:center;justify-content:center;padding:1rem';
+    document.body.appendChild(modal);
+  }
+  const colour = REGION_COLOUR[org.region] || '#888';
+  const orgTagsHtml = tags.split(' ').map(t => `<span style="display:inline-block;margin:2px 4px;padding:2px 8px;border-radius:999px;border:1px solid ${colour}55;color:${colour};font-size:.78rem;font-family:var(--font-sans)">${t}</span>`).join('');
+  modal.innerHTML = `
+    <div style="background:var(--bg-card);border:1px solid ${colour}44;border-radius:16px;max-width:540px;width:100%;padding:1.5rem;position:relative;max-height:85vh;overflow-y:auto">
+      <button onclick="document.getElementById('orgPostModal').style.display='none'" style="position:absolute;top:.8rem;right:.8rem;background:none;border:none;color:var(--fg-muted);font-size:1.2rem;cursor:pointer">✕</button>
+      <p style="font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:${colour};font-family:var(--font-sans);margin:0 0 .5rem;font-weight:700">✍ Post — ${org.name}</p>
+      <textarea id="orgPostText" style="width:100%;min-height:160px;background:var(--bg-raised);border:1px solid ${colour}33;border-radius:8px;padding:.8rem;color:var(--fg);font-size:.88rem;line-height:1.6;resize:vertical;font-family:var(--font-sans)" readonly>${post}</textarea>
+      <div style="margin:.6rem 0">${orgTagsHtml}</div>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.8rem">
+        <button onclick="navigator.clipboard.writeText(document.getElementById('orgPostText').value).then(()=>{this.textContent='Copied ✓';this.style.background='${colour}33';setTimeout(()=>{this.textContent='Copy post';this.style.background='';},2000);})" style="padding:8px 16px;background:${colour}22;border:1px solid ${colour}55;border-radius:999px;color:${colour};font-weight:700;font-family:var(--font-sans);cursor:pointer;font-size:.82rem">Copy post</button>
+        <a href="https://twitter.com/intent/tweet?text=${encodeURIComponent(post.slice(0,260))}" target="_blank" rel="noopener" style="padding:8px 16px;background:#1DA1F222;border:1px solid #1DA1F255;border-radius:999px;color:#1DA1F2;font-weight:700;font-family:var(--font-sans);text-decoration:none;font-size:.82rem">Post to X →</a>
+        <button onclick="document.getElementById('orgPostModal').style.display='none'" style="padding:8px 16px;background:var(--bg-raised);border:1px solid var(--border);border-radius:999px;color:var(--fg-muted);font-family:var(--font-sans);cursor:pointer;font-size:.82rem">Close</button>
+      </div>
+      <p style="font-size:.72rem;color:var(--fg-muted);margin:.6rem 0 0;font-family:var(--font-sans)">Language: <strong>${lang.toUpperCase()}</strong> · Hashtags auto-selected for ${org.region} region</p>
+    </div>`;
+  modal.style.display = 'flex';
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -1766,7 +1932,15 @@ function buildPosts(motif, eventText, activeThemes) {
   const m = MOTIFS[motif];
   const hook = m.te_reo_hook[Math.floor(Math.random()*m.te_reo_hook.length)];
   const eventSnip = eventText.length > 80 ? eventText.slice(0,77)+"…" : eventText;
-  const tags = `#KiwiDialectic #${motif==='unaunahi'?'Unaunahi':motif==='pa'?'TePāTūwatawata':motif==='kow'?'KaupapaMāori':motif==='niho'?'Raupatu':motif==='takarangi'?'SovereignFutures':'Koru'} #IndigenousSovereignty #TinoRangatiratanga`;
+  // Build hashtag set: motif tag + region tags + org-specific tags, in active language
+  const _lang = (typeof currentLang !== 'undefined' ? currentLang : 'en');
+  const _motifTag = motif==='unaunahi'?'#Unaunahi':motif==='pa'?'#TePāTūwatawata':motif==='kow'?'#KaupapaMāori':motif==='niho'?'#Raupatu':motif==='takarangi'?'#SovereignFutures':'#Koru';
+  // Pick up active org if one is selected in the map
+  const _activeOrg = (typeof window._activeMapOrg !== 'undefined' && window._activeMapOrg) ? window._activeMapOrg : null;
+  const _regionKey = _activeOrg ? (_activeOrg.region || 'global') : 'global';
+  const _regionTags = (REGION_HASHTAGS[_regionKey] && REGION_HASHTAGS[_regionKey][_lang]) || '#IndigenousSovereignty #TinoRangatiratanga';
+  const _orgTags = (_activeOrg && ORG_HASHTAGS[_activeOrg.id] && ORG_HASHTAGS[_activeOrg.id][_lang]) ? ORG_HASHTAGS[_activeOrg.id][_lang] : '';
+  const tags = `#KiwiDialectic ${_motifTag} ${_regionTags}${_orgTags ? ' ' + _orgTags : ''}`.trim();
   const posts = {
     x:[
       `${hook}\n\n${eventSnip}\n\n${m.core_logic.slice(0,90)}.\n\nFree course 👉 [LINK]\n${tags}`,
