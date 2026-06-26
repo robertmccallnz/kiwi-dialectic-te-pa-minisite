@@ -899,6 +899,54 @@
       </p>
     </div>
 
+    <!-- ── TEACHING KITS ─────────────────────────────────────────────── -->
+    <div class="smkit-section" id="teachingKitsSection" style="margin-top:2rem">
+      <p class="section-tag2">Ngā kete whakaako — Teaching kits</p>
+      <h2 class="smkit-title">Teaching Kits — Download by Language</h2>
+      <p style="font-size:.87rem;color:var(--fg-muted);line-height:1.65;margin:0 0 1.2rem">
+        Full PDF teaching kits covering the motif bank, meme library, course modules, social media strategy, and rhizome mapper instructions — one kit per language.
+        Each kit is stored on Cloudflare R2 for fast global access.
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.8rem;margin-top:.8rem">
+        <a class="kit-btn" href="https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-teaching-kit-en.pdf" target="_blank" rel="noopener"
+           style="display:flex;flex-direction:column;align-items:flex-start;gap:.3rem;padding:.9rem 1rem;border:1px solid var(--border);border-radius:10px;text-decoration:none;background:var(--bg-raised);transition:border-color .2s" onclick="trackKit('en')">
+          <span style="font-size:1.3rem">🇳🇿</span>
+          <span style="font-family:var(--font-serif);font-size:1rem;color:var(--fg)">English</span>
+          <span style="font-size:.78rem;color:var(--fg-muted)">Te Pā Teaching Kit</span>
+          <span style="font-size:.72rem;color:var(--accent);font-family:var(--font-sans)">↓ Download PDF</span>
+        </a>
+        <a class="kit-btn" href="https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-teaching-kit-mi.pdf" target="_blank" rel="noopener"
+           style="display:flex;flex-direction:column;align-items:flex-start;gap:.3rem;padding:.9rem 1rem;border:1px solid var(--border);border-radius:10px;text-decoration:none;background:var(--bg-raised);transition:border-color .2s" onclick="trackKit('mi')">
+          <span style="font-size:1.3rem">🌿</span>
+          <span style="font-family:var(--font-serif);font-size:1rem;color:var(--fg)">Te Reo Māori</span>
+          <span style="font-size:.78rem;color:var(--fg-muted)">Kete Whakaako</span>
+          <span style="font-size:.72rem;color:#2ecc71;font-family:var(--font-sans)">↓ Tikiake PDF</span>
+        </a>
+        <a class="kit-btn" href="https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-teaching-kit-pt.pdf" target="_blank" rel="noopener"
+           style="display:flex;flex-direction:column;align-items:flex-start;gap:.3rem;padding:.9rem 1rem;border:1px solid var(--border);border-radius:10px;text-decoration:none;background:var(--bg-raised);transition:border-color .2s" onclick="trackKit('pt')">
+          <span style="font-size:1.3rem">🇧🇷</span>
+          <span style="font-family:var(--font-serif);font-size:1rem;color:var(--fg)">Português</span>
+          <span style="font-size:.78rem;color:var(--fg-muted)">Kit de Ensino</span>
+          <span style="font-size:.72rem;color:#e67e22;font-family:var(--font-sans)">↓ Baixar PDF</span>
+        </a>
+        <a class="kit-btn" href="https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-teaching-kit-gn.pdf" target="_blank" rel="noopener"
+           style="display:flex;flex-direction:column;align-items:flex-start;gap:.3rem;padding:.9rem 1rem;border:1px solid var(--border);border-radius:10px;text-decoration:none;background:var(--bg-raised);transition:border-color .2s" onclick="trackKit('gn')">
+          <span style="font-size:1.3rem">🌱</span>
+          <span style="font-family:var(--font-serif);font-size:1rem;color:var(--fg)">Avañe'ẽ — Guaraní</span>
+          <span style="font-size:.78rem;color:var(--fg-muted)">Mbo'esyryry Kuaa</span>
+          <span style="font-size:.72rem;color:#e67e22;font-family:var(--font-sans)">↓ Embosako'i PDF</span>
+        </a>
+        <a class="kit-btn" href="https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-teaching-kit-sm.pdf" target="_blank" rel="noopener"
+           style="display:flex;flex-direction:column;align-items:flex-start;gap:.3rem;padding:.9rem 1rem;border:1px solid var(--border);border-radius:10px;text-decoration:none;background:var(--bg-raised);transition:border-color .2s" onclick="trackKit('sm')">
+          <span style="font-size:1.3rem">🌊</span>
+          <span style="font-family:var(--font-serif);font-size:1rem;color:var(--fg)">Gagana Samoa</span>
+          <span style="font-size:.78rem;color:var(--fg-muted)">Fa'alapotopotoga A'oa'oga</span>
+          <span style="font-size:.72rem;color:#3498db;font-family:var(--font-sans)">↓ Sii PDF</span>
+        </a>
+      </div>
+      <p style="font-size:.75rem;color:var(--fg-muted);margin:.8rem 0 0">Hosted on Cloudflare R2 · CC BY-NC-SA 4.0 · Te Pā Charitable Trust 2026</p>
+    </div>
+
   </div><!-- /network-section -->
 
   <!-- ══════════════════════════════════════════════════════
@@ -2989,6 +3037,20 @@ document.addEventListener('click', function(e) {
 
 renderHistory();
 renderCampaigns();
+
+// ── Teaching Kit download tracking ─────────────────────────────────
+// Kit hover glow effect
+document.querySelectorAll('.kit-btn').forEach(btn => {
+  btn.addEventListener('mouseenter', () => { btn.style.borderColor = 'var(--accent)'; });
+  btn.addEventListener('mouseleave', () => { btn.style.borderColor = 'var(--border)'; });
+});
+
+function trackKit(langCode) {
+  trackEvent('kit_download', null, {
+    kit_language: langCode,
+    kit_url: `https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-teaching-kit-${langCode}.pdf`,
+  });
+}
 </script>
 
 <!-- D3.js v7 -->
