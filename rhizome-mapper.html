@@ -389,6 +389,116 @@
       .campaigns-grid { grid-template-columns: 1fr; }
       .frameworks-grid { grid-template-columns: 1fr; }
     }
+
+    /* ── analytics pulse rings ── */
+    .pulse-ring {
+      animation: pulseRing 2s ease-out infinite;
+      transform-origin: center;
+      pointer-events: none;
+    }
+    @keyframes pulseRing {
+      0%   { r: calc(var(--base-r) + 2px); opacity: 0.7; }
+      70%  { r: calc(var(--base-r) + 14px); opacity: 0; }
+      100% { r: calc(var(--base-r) + 14px); opacity: 0; }
+    }
+
+    /* ── analytics panel overlay ── */
+    #analyticsPanel {
+      display: none;
+      position: fixed;
+      top: 60px;
+      right: 16px;
+      z-index: 8000;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.2rem 1.4rem;
+      min-width: 280px;
+      max-width: 340px;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 8px 32px #0008;
+    }
+    #analyticsPanel.open { display: block; }
+    .ap-title {
+      font-family: var(--font-sans);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+      margin: 0 0 .8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .ap-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .45rem 0;
+      border-bottom: 1px solid var(--border);
+      font-family: var(--font-sans);
+      font-size: .82rem;
+    }
+    .ap-row:last-child { border-bottom: none; }
+    .ap-org-name { color: var(--fg); flex: 1; }
+    .ap-count {
+      font-weight: 700;
+      font-size: .88rem;
+      min-width: 28px;
+      text-align: right;
+    }
+    .ap-bar {
+      height: 4px;
+      border-radius: 2px;
+      margin-top: 2px;
+      transition: width .4s ease;
+    }
+    .ap-section-head {
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--fg-muted);
+      margin: .8rem 0 .3rem;
+      font-family: var(--font-sans);
+      font-weight: 700;
+    }
+    .ap-global-stat {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      margin-bottom: .5rem;
+    }
+    .ap-stat-chip {
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 4px 10px;
+      font-size: .78rem;
+      font-family: var(--font-sans);
+      color: var(--fg);
+    }
+    .ap-stat-chip strong { color: var(--accent); }
+    .analytics-toggle-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 20px;
+      z-index: 7999;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      padding: 9px 18px;
+      font-family: var(--font-sans);
+      font-size: .78rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 16px #0006;
+      transition: background .2s;
+    }
+    .analytics-toggle-btn:hover { background: var(--accent2); }
+
   </style>
 </head>
 <body>
@@ -2089,6 +2199,198 @@ tBtn.addEventListener('click',()=>{
   drawNetwork();
 });
 
+
+/* ══════════════════════════════════════════════════════════════════════════
+   ANALYTICS LAYER — Share / View / Download Tracking
+   Storage: localStorage key 'kd-analytics-v1'
+   Schema: { views: {orgId: n}, shares: {orgId: n}, copies: {orgId: n},
+             xClicks: {orgId: n}, motifRuns: n, lastSeen: iso }
+══════════════════════════════════════════════════════════════════════════ */
+const ANALYTICS_KEY = 'kd-analytics-v1';
+
+function getAnalytics() {
+  try {
+    const raw = localStorage.getItem(ANALYTICS_KEY);
+    if (!raw) return { views:{}, shares:{}, copies:{}, xClicks:{}, motifRuns:0, lastSeen: new Date().toISOString() };
+    return JSON.parse(raw);
+  } catch(e) { return { views:{}, shares:{}, copies:{}, xClicks:{}, motifRuns:0, lastSeen: new Date().toISOString() }; }
+}
+
+function saveAnalytics(data) {
+  try { localStorage.setItem(ANALYTICS_KEY, JSON.stringify(data)); } catch(e) {}
+}
+
+function trackEvent(type, orgId) {
+  const data = getAnalytics();
+  if (type === 'motifRun') {
+    data.motifRuns = (data.motifRuns || 0) + 1;
+  } else {
+    if (!data[type]) data[type] = {};
+    data[type][orgId] = (data[type][orgId] || 0) + 1;
+  }
+  data.lastSeen = new Date().toISOString();
+  saveAnalytics(data);
+  // refresh pulse rings after tracking
+  refreshPulseRings();
+}
+
+function clearAnalytics() {
+  localStorage.removeItem(ANALYTICS_KEY);
+  refreshPulseRings();
+  renderAnalyticsPanel();
+}
+
+/* ── Pulse rings on D3 nodes ── */
+function refreshPulseRings() {
+  const data = getAnalytics();
+  // combine all interaction types per org
+  const heat = {};
+  ['views','shares','copies','xClicks'].forEach(type => {
+    Object.entries(data[type] || {}).forEach(([id, n]) => {
+      heat[id] = (heat[id] || 0) + n;
+    });
+  });
+  if (!Object.keys(heat).length) return;
+
+  const maxHeat = Math.max(...Object.values(heat));
+
+  // select all node groups in the D3 SVG
+  d3.selectAll('.node-g').each(function(d) {
+    const g = d3.select(this);
+    if (!d || !d.id) return;
+    const count = heat[d.id] || 0;
+    if (count === 0) return;
+
+    // remove old pulse ring if any
+    g.selectAll('.pulse-ring').remove();
+
+    const baseR = 12 + d.cause.length * 2;
+    const intensity = count / maxHeat; // 0–1
+    const colour = REGION_COLOUR[d.region] || '#888';
+    const opacity = 0.3 + intensity * 0.5;
+
+    // static heat glow (outer circle)
+    g.insert('circle', ':first-child')
+      .attr('class', 'pulse-ring')
+      .attr('r', baseR + 4 + intensity * 10)
+      .attr('fill', 'none')
+      .attr('stroke', colour)
+      .attr('stroke-width', 1.5 + intensity * 2)
+      .attr('stroke-opacity', opacity)
+      .attr('style', `--base-r: ${baseR}px; animation-delay: ${Math.random() * 1.5}s`);
+  });
+}
+
+/* ── Analytics Panel rendering ── */
+function openAnalyticsPanel() {
+  renderAnalyticsPanel();
+  document.getElementById('analyticsPanel').classList.add('open');
+}
+
+function renderAnalyticsPanel() {
+  const data = getAnalytics();
+
+  // global stats
+  const totalViews = Object.values(data.views || {}).reduce((a,b)=>a+b, 0);
+  const totalShares = Object.values(data.shares || {}).reduce((a,b)=>a+b, 0);
+  const totalCopies = Object.values(data.copies || {}).reduce((a,b)=>a+b, 0);
+  const totalX = Object.values(data.xClicks || {}).reduce((a,b)=>a+b, 0);
+
+  document.getElementById('apGlobalStats').innerHTML = `
+    <div class="ap-stat-chip"><strong>${totalViews}</strong> views</div>
+    <div class="ap-stat-chip"><strong>${totalShares}</strong> X shares</div>
+    <div class="ap-stat-chip"><strong>${totalCopies}</strong> copies</div>
+    <div class="ap-stat-chip"><strong>${data.motifRuns||0}</strong> motif runs</div>
+  `;
+
+  function renderTopList(containerId, typeData, colour) {
+    const sorted = Object.entries(typeData || {})
+      .sort((a,b) => b[1]-a[1]).slice(0,8);
+    const max = sorted[0]?.[1] || 1;
+    document.getElementById(containerId).innerHTML = sorted.length
+      ? sorted.map(([id, n]) => {
+          const node = (typeof NODES !== 'undefined' ? NODES : []).find(nd => nd.id === id);
+          const name = node ? node.name.slice(0,30) : id;
+          const c = node ? (REGION_COLOUR[node.region]||colour) : colour;
+          const pct = Math.round((n/max)*100);
+          return `<div class="ap-row">
+            <div style="flex:1">
+              <div class="ap-org-name">${name}</div>
+              <div class="ap-bar" style="width:${pct}%;background:${c}55"></div>
+            </div>
+            <div class="ap-count" style="color:${c}">${n}</div>
+          </div>`;
+        }).join('')
+      : '<div style="color:var(--fg-muted);font-size:.8rem;padding:.4rem 0">No data yet</div>';
+  }
+
+  renderTopList('apTopViewed', data.views, '#3498db');
+  renderTopList('apTopShared', data.shares, '#e74c3c');
+  renderTopList('apTopCopied', data.copies, '#2ecc71');
+}
+
+/* ── Hook into existing functions ── */
+
+// Wrap showNodePanel to track org views
+const _origShowNodePanel = showNodePanel;
+showNodePanel = function(d) {
+  _origShowNodePanel(d);
+  if (d && d.id) trackEvent('views', d.id);
+};
+
+// Wrap copyPost to track copies
+const _origCopyPost = copyPost;
+copyPost = function() {
+  _origCopyPost();
+  const org = window._activeMapOrg;
+  if (org && org.id) trackEvent('copies', org.id);
+};
+
+// Wrap runMapper to count motif runs
+const _origRunMapper = runMapper;
+runMapper = function() {
+  _origRunMapper();
+  trackEvent('motifRun', null);
+};
+
+// Track "Post to X" clicks — patch showOrgPostModal to add listener on X button
+const _origShowOrgPostModal = showOrgPostModal;
+showOrgPostModal = function(org, post, tags, lang) {
+  _origShowOrgPostModal(org, post, tags, lang);
+  // after modal renders, wire X button click
+  setTimeout(() => {
+    const modal = document.getElementById('orgPostModal');
+    if (!modal) return;
+    const xBtn = modal.querySelector('a[href*="twitter.com"], a[href*="x.com"]');
+    if (xBtn && !xBtn.dataset.tracked) {
+      xBtn.dataset.tracked = '1';
+      xBtn.addEventListener('click', () => {
+        if (org && org.id) trackEvent('xClicks', org.id);
+        if (org && org.id) trackEvent('shares', org.id);
+      });
+    }
+  }, 150);
+};
+
+// Refresh pulse rings after network redraws
+const _origDrawNetwork = drawNetwork;
+drawNetwork = function() {
+  _origDrawNetwork();
+  // slight delay to let D3 settle
+  setTimeout(refreshPulseRings, 600);
+};
+
+/* ── Download motif tracking ── */
+// Track clicks on motif image links / download buttons
+document.addEventListener('click', function(e) {
+  const target = e.target.closest('a[download], a[href*="motif"], button[data-motif]');
+  if (target) {
+    const motifKey = target.dataset.motif || target.getAttribute('href') || '';
+    trackEvent('views', 'motif:' + motifKey.split('/').pop().replace(/\..+$/, ''));
+  }
+});
+
+
 renderHistory();
 renderCampaigns();
 </script>
@@ -2110,5 +2412,29 @@ renderCampaigns();
       .catch(e => console.warn('[KD] SW registration failed:', e));
   }
 </script>
+
+<!-- ── Analytics Panel ── -->
+<div id="analyticsPanel" role="dialog" aria-label="Share Analytics">
+  <div class="ap-title">
+    <span>📊 Share Analytics</span>
+    <button onclick="document.getElementById('analyticsPanel').classList.remove('open')"
+      style="background:none;border:none;color:var(--fg-muted);cursor:pointer;font-size:1.1rem">✕</button>
+  </div>
+  <div class="ap-global-stat" id="apGlobalStats"></div>
+  <div class="ap-section-head">Top viewed orgs</div>
+  <div id="apTopViewed"></div>
+  <div class="ap-section-head">Top shared posts</div>
+  <div id="apTopShared"></div>
+  <div class="ap-section-head">Top copied posts</div>
+  <div id="apTopCopied"></div>
+  <button onclick="if(confirm('Clear all analytics data?')){clearAnalytics();}" 
+    style="margin-top:1rem;font-size:.75rem;color:var(--fg-muted);background:none;border:none;cursor:pointer;padding:.2rem 0">
+    Clear analytics data
+  </button>
+</div>
+<button class="analytics-toggle-btn" onclick="openAnalyticsPanel()" title="View share analytics">
+  📊 Analytics
+</button>
+
 </body>
 </html>
