@@ -98,6 +98,62 @@
     #nodePanel.visible { display: block; }
     @keyframes slideIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
 
+    /* ── Motif Bank Strip ─────────────────────────────── */
+    #motifBankStrip {
+      margin-top: 1.2rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+    }
+    .motif-strip-label {
+      font-size: .68rem; text-transform: uppercase; letter-spacing: .12em;
+      font-weight: 700; font-family: var(--font-sans); color: var(--fg-muted);
+      margin: 0 0 .6rem;
+    }
+    .motif-strip-row {
+      display: flex; gap: .75rem; overflow-x: auto; padding-bottom: .5rem;
+      scrollbar-width: thin; scrollbar-color: var(--border) transparent;
+    }
+    .motif-card {
+      flex: 0 0 90px; display: flex; flex-direction: column; align-items: center;
+      gap: .35rem; cursor: pointer; transition: transform .15s;
+    }
+    .motif-card:hover { transform: translateY(-3px); }
+    .motif-card img {
+      width: 82px; height: 82px; border-radius: 10px;
+      border: 2px solid var(--border-bold); object-fit: cover;
+      background: #0d1117;
+    }
+    .motif-card-name {
+      font-size: .65rem; font-family: var(--font-sans); font-weight: 700;
+      color: var(--fg); text-align: center; line-height: 1.2; max-width: 90px;
+    }
+    .motif-card-sub {
+      font-size: .6rem; color: var(--fg-muted); text-align: center;
+      line-height: 1.2; max-width: 90px;
+    }
+    .motif-expanded {
+      margin-top: .8rem; display: none;
+      background: var(--bg-card); border: 1px solid var(--border-bold);
+      border-radius: 10px; padding: .9rem;
+    }
+    .motif-expanded.open { display: block; }
+    .motif-expanded img {
+      width: 100%; max-width: 260px; border-radius: 8px;
+      display: block; margin: 0 auto .6rem;
+    }
+    .motif-expanded h4 {
+      font-family: var(--font-serif); font-size: 1.1rem; margin: 0 0 .3rem;
+    }
+    .motif-expanded p {
+      font-size: .84rem; line-height: 1.6; color: var(--fg-muted); margin: 0 0 .6rem;
+    }
+    .motif-download-btn {
+      display: inline-block; padding: 5px 14px;
+      border-radius: 999px; font-family: var(--font-sans); font-size: .75rem;
+      font-weight: 700; text-decoration: none; color: #fff;
+      background: var(--accent); border: none; cursor: pointer;
+    }
+
     .node-region-tag {
       font-size: .68rem; letter-spacing: .12em; text-transform: uppercase;
       font-weight: 700; font-family: var(--font-sans); margin: 0 0 4px;
@@ -2015,10 +2071,85 @@ function showNodePanel(d) {
     <button onclick="document.getElementById('nodePanel').classList.remove('visible')"
       style="margin-left:.8rem;font-size:.8rem;color:var(--fg-muted);background:none;border:none;cursor:pointer">✕ Close</button>
   `;
+  // Motif bank strip placeholder — populated async below
+  const _mLang = (typeof currentLang !== 'undefined' ? currentLang : 'en');
+  const nodePanelEl = document.getElementById('nodePanelContent');
+  nodePanelEl.insertAdjacentHTML('beforeend',
+    `<div id="motifBankStrip">
+       <p class="motif-strip-label">&#x25C6; ${MOTIF_LABELS[_mLang] || 'Cultural Motifs'} &mdash; ${regionLabel}</p>
+       <div class="motif-strip-row" id="motifStripRow"><span style="font-size:.75rem;color:var(--fg-muted);font-family:var(--font-sans)">Loading motifs&#x2026;</span></div>
+       <div id="motifExpanded" class="motif-expanded"></div>
+     </div>`);
+
   // Track active org for hashtag generation in buildPosts
   window._activeMapOrg = d;
   panel.classList.add('visible');
   panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+  // Async fetch motifs for this region
+  const _mRegion = d.region;
+  fetch(`${ANALYTICS_WORKER_URL}/motifs?region=${encodeURIComponent(_mRegion)}&lang=${_mLang}`)
+    .then(r => r.json())
+    .then(data => {
+      const row = document.getElementById('motifStripRow');
+      if (!row) return;
+      if (!data.motifs || !data.motifs.length) {
+        row.innerHTML = '<span style="font-size:.75rem;color:var(--fg-muted);font-family:var(--font-sans)">No motifs yet for this region.</span>';
+        return;
+      }
+      row.innerHTML = data.motifs.map((m, i) => {
+        const pngUrl = m.svg_r2_url || '';
+        const label  = m.name_indigenous || m.name_en || m.id;
+        const cult   = m.culture.charAt(0).toUpperCase() + m.culture.slice(1);
+        const safeId = 'mc_' + m.id.replace(/[^a-z0-9]/gi, '_');
+        const colour = m.colour_primary || '#888';
+        return `<div class="motif-card" id="${safeId}" onclick="expandMotif('${safeId}',${JSON.stringify(JSON.stringify(m))})" title="${m.name_en}">
+          ${pngUrl
+            ? `<img src="${pngUrl}" alt="${label}" loading="lazy" style="border-color:${colour}66" onerror="this.style.display='none'">`
+            : `<div style="width:82px;height:82px;border-radius:10px;border:2px solid ${colour}55;background:#0d1117;display:flex;align-items:center;justify-content:center;font-size:1.6rem">◆</div>`}
+          <span class="motif-card-name" style="color:${colour}">${label}</span>
+          <span class="motif-card-sub">${cult}</span>
+        </div>`;
+      }).join('');
+    })
+    .catch(() => {
+      const row = document.getElementById('motifStripRow');
+      if (row) row.innerHTML = '';
+    });
+}
+
+/* ── Motif labels i18n ── */
+const MOTIF_LABELS = { en: 'Cultural Motifs', pt: 'Motivos Culturais', gn: 'Motivã Ñe’ẽ', sm: 'Fa\'asinomaga Aganuu' };
+
+/* ── Expand a motif card ── */
+function expandMotif(cardId, mJson) {
+  const m = JSON.parse(mJson);
+  const expanded = document.getElementById('motifExpanded');
+  if (!expanded) return;
+  const _mLang = (typeof currentLang !== 'undefined' ? currentLang : 'en');
+  const meaning = m[`meaning_${_mLang}`] || m.meaning_en || '';
+  const colour  = m.colour_primary || '#888';
+  const pngUrl  = m.svg_r2_url || '';
+  const themes  = Array.isArray(m.political_themes) ? m.political_themes : [];
+  const themeHtml = themes.length
+    ? `<div style="margin:.4rem 0;display:flex;flex-wrap:wrap;gap:.3rem">${themes.map(t=>`<span style="display:inline-block;padding:2px 8px;border-radius:999px;border:1px solid ${colour}44;color:${colour};font-size:.68rem;font-family:var(--font-sans)">${t}</span>`).join('')}</div>`
+    : '';
+  const resistHtml = m.resistance_use
+    ? `<p style="font-size:.8rem;color:var(--fg-muted);margin:.4rem 0;font-style:italic;line-height:1.5">${m.resistance_use}</p>`
+    : '';
+  expanded.innerHTML = `
+    ${pngUrl ? `<img src="${pngUrl}" alt="${m.name_en}" loading="lazy">` : ''}
+    <h4 style="color:${colour}">${m.name_indigenous || m.name_en}</h4>
+    <span style="font-size:.7rem;color:var(--fg-muted);font-family:var(--font-sans);text-transform:uppercase;letter-spacing:.1em">${m.culture} &middot; ${m.form_geometry||''}</span>
+    ${themeHtml}
+    <p style="font-size:.85rem;line-height:1.6;color:var(--fg);margin:.6rem 0">${meaning}</p>
+    ${resistHtml}
+    ${pngUrl ? `<a href="${pngUrl}" download="${m.id}.png" class="motif-download-btn" style="background:${colour}" data-motif="${m.id}" onclick="trackEvent('download','${m.id}')">&#x2913; Download PNG</a>` : ''}
+  `;
+  expanded.classList.add('open');
+  expanded.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  // track motif view
+  trackEvent('motif_view', m.id);
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
