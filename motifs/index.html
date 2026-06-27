@@ -11,18 +11,24 @@
   <link rel="stylesheet" href="../assets/kiwi-dialectic.css"/>
   <link rel="manifest" href="/kiwi-dialectic-te-pa-minisite/manifest.json">
   <meta name="theme-color" content="#c0392b">
+<link rel="stylesheet" href="../assets/nav.css">
 </head>
 <body>
 <span class="motif-stripe" role="presentation" aria-hidden="true"></span>
 <div class="shell">
 
-<nav class="site-nav">
-  <a class="nav-brand" href="https://www.kiwidialectic.com" target="_blank">The Kiwi Dialectic</a>
+<nav class="site-nav shell" aria-label="Primary">
+  <a class="nav-brand" href="../">Te Pā Tūwatawata</a>
   <div class="nav-links">
-    <a href="../index.html">Home</a>
-    <a href="../index.html#modules">Modules</a>
-    <a href="../index.html#social-kit">Social Kit</a>
-    <button class="theme-btn" id="tt">Dark</button>
+    <a href="../">Home</a>
+    <a href="../launch-mediakit/">Mediakit</a>
+    <a href="../social-kit/">Social Kit</a>
+    <a href="../teaching-kits/">Teaching</a>
+    <a href="../stickers/">Stickers</a>
+    <a href="../campaign-generator/">Generator</a>
+    <a href="../solidarity/australia/">Solidarity</a>
+    <a href="../partner-onboarding/">Partners</a>
+    <a href="https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite" rel="noopener">GitHub</a>
   </div>
 </nav>
 
@@ -128,7 +134,8 @@
 <script>
 const b=document.getElementById('tt'),h=document.documentElement;
 const s=localStorage.getItem('kd-theme')||'light';
-h.setAttribute('data-theme',s);b.textContent=s==='dark'?'Light':'Dark';
-b.addEventListener('click',()=>{const c=h.getAttribute('data-theme'),n=c==='dark'?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('kd-theme',n);b.textContent=n==='dark'?'Light':'Dark';});
+h.setAttribute('data-theme',s);
+if(b){b.textContent=s==='dark'?'Light':'Dark';
+b.addEventListener('click',()=>{const c=h.getAttribute('data-theme'),n=c==='dark'?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('kd-theme',n);b.textContent=n==='dark'?'Light':'Dark';});}
 </script>
 </body></html>
