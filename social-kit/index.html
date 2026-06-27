@@ -282,15 +282,29 @@ function chip(label, value, group, state) {
 
 function basename(p) { return p.split('/').pop(); }
 
+// R2 CDN base for assets not deployed to Vercel (memes live here under motifs/memes/)
+var R2_BASE = 'https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev';
+
+// Resolve a catalog path to a fetchable URL.
+// Memes (path starts with 'memes/') are hosted on R2 at /motifs/memes/.
+// Everything else is served from the same origin (Vercel) via relative path.
+function resolveUrl(p) {
+  if (!p) return p;
+  if (/^https?:\/\//.test(p)) return p;
+  if (p.indexOf('memes/') === 0) return R2_BASE + '/motifs/' + p;
+  return p;
+}
+
 function card(asset, opts) {
   opts = opts || {};
   var c = el('article', { class: 'asset-card' });
   var prev = el('div', { class: 'preview' + (opts.previewClass ? ' ' + opts.previewClass : '') });
+  var url = resolveUrl(asset.path);
   // Use <object> for SVG (loads vector), <img> for PNG
   if (asset.path.endsWith('.svg')) {
-    prev.appendChild(el('object', { data: asset.path, type: 'image/svg+xml', 'aria-label': basename(asset.path) }));
+    prev.appendChild(el('object', { data: url, type: 'image/svg+xml', 'aria-label': basename(asset.path) }));
   } else {
-    prev.appendChild(el('img', { src: asset.path, alt: basename(asset.path), loading: 'lazy' }));
+    prev.appendChild(el('img', { src: url, alt: basename(asset.path), loading: 'lazy' }));
   }
   c.appendChild(prev);
 
@@ -303,10 +317,10 @@ function card(asset, opts) {
   }
 
   var dl = el('div', { class: 'dl-row' });
-  var a = el('a', { href: asset.path, download: '' });
+  var a = el('a', { href: url, download: '' });
   a.textContent = '⬇ ' + (asset.path.split('.').pop().toUpperCase());
   dl.appendChild(a);
-  var v = el('a', { href: asset.path, target: '_blank', rel: 'noopener' });
+  var v = el('a', { href: url, target: '_blank', rel: 'noopener' });
   v.textContent = 'View';
   dl.appendChild(v);
   c.appendChild(dl);

@@ -4,9 +4,9 @@
 # Audit: see docs/audit-report-* — referenced social-kit files audited
 # 2026-06-27 (48 files, ~3.2MB).
 
-# Heavy unreferenced trees served from R2 instead
+# Memes served from R2 (motifs/memes/* on pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev)
+# Motifs deployed via Vercel (~7.8MB / 768 SVGs — referenced from /social-kit/ and /rhizome-mapper.html)
 social-kit/memes/
-social-kit/motifs/
 
 # Heavy platform tree — re-include the 5 referenced X-share renders below
 social-kit/platform/*
