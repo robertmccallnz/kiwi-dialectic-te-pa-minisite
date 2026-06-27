@@ -1,0 +1,618 @@
+{
+  "lang": "en",
+  "name": "English",
+  "native_name": "English",
+  "region": "Global / Pacific",
+  "version": "1.0.0",
+  "generated_at": "2026-06-27T01:40:00Z",
+  "assets": {
+    "teaching_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-teaching-kit-en.pdf",
+    "student_activity_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-student-activity-sheets.pdf",
+    "social_media_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-social-media-kit.pdf"
+  },
+  "motifs": [
+    {
+      "id": "koru",
+      "culture": "maori",
+      "name": "Koru",
+      "meaning": "New life, unfurling potential, the origin point of all things. Something is beginning — or being prevented from beginning.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/koru.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_koru.png"
+    },
+    {
+      "id": "pa_tuwatawata",
+      "culture": "maori",
+      "name": "Pa Tuwatawata",
+      "meaning": "The fortified palisade — collective protection, sovereignty over space and governance.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/pa_tuwatawata.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_pa_tuwatawata.png"
+    },
+    {
+      "id": "niho_taniwha",
+      "culture": "maori",
+      "name": "Niho Taniwha",
+      "meaning": "The taniwha's teeth — the colonial bite, extraction without consent, harm that must be named.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/niho_taniwha.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_taniwha.png"
+    },
+    {
+      "id": "kowhaiwhai",
+      "culture": "maori",
+      "name": "Kowhaiwhai",
+      "meaning": "The law written on the rafter. A clash between tikanga and statute, ancestral authority and state power.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/kowhaiwhai.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_kowhaiwhai.png"
+    },
+    {
+      "id": "unaunahi",
+      "culture": "maori",
+      "name": "Unaunahi",
+      "meaning": "Fish scales interlocking. This event calls for collective response — together they form armour.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/unaunahi.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_unaunahi.png"
+    },
+    {
+      "id": "takarangi",
+      "culture": "maori",
+      "name": "Takarangi",
+      "meaning": "The double spiral — history repeating, past and future wound together.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/takarangi.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_takarangi.png"
+    },
+    {
+      "id": "pikorua",
+      "culture": "maori",
+      "name": "Pikorua",
+      "meaning": "The double twist — two lives, two cultures, forever joined. Paths that separate always return. The symbol of inter-tribal gift, solidarity, eternal bond.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/pikorua.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_pikorua.png"
+    },
+    {
+      "id": "manaia",
+      "culture": "maori",
+      "name": "Manaia",
+      "meaning": "The spiritual guardian — messenger between the living world and the spirit realm. Protector. The spiritual double of a person. Keeper of balance between seen and unseen.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/manaia.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_manaia.png"
+    },
+    {
+      "id": "mangopare",
+      "culture": "maori",
+      "name": "Mangopare",
+      "meaning": "The hammerhead shark — courage, determination, strength. The fighter who does not turn back. Warrior resolve.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/mangopare.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_mangopare.png"
+    },
+    {
+      "id": "niho_mano",
+      "culture": "samoan",
+      "name": "Niho Mano",
+      "meaning": "Strength, protection, guidance and ferocity. The shark is a revered guardian spirit (aitu) in Polynesian cosmology. In the pe'a and malu tattoos, this motif signals warrior readiness and the wearer's ",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/niho_mano.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_mano.png"
+    },
+    {
+      "id": "atualoa",
+      "culture": "samoan",
+      "name": "Atualoa",
+      "meaning": "Strength, endurance, and commitment to extended family (aiga). The centipede is venomous and symbolises danger and power; it also represents a creature that tends to its many offspring, standing for f",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/atualoa.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_atualoa.png"
+    },
+    {
+      "id": "fetu",
+      "culture": "samoan",
+      "name": "Fetu",
+      "meaning": "Navigation, hope, and spiritual connection to ancestors and the heavens. Stars guided Polynesian voyagers across the Pacific and symbolise divine guidance. In tattooing, fetu marks the wearer's ancest",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/fetu.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_fetu.png"
+    },
+    {
+      "id": "malu_diamond",
+      "culture": "samoan",
+      "name": "Malu Diamond",
+      "meaning": "Protection and shelter. The entire female tattoo takes its name from this motif. 'Malu' means 'to protect, to shelter' in Samoan. The motif signifies the woman's role as keeper of heritage and protect",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/malu_diamond.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_malu_diamond.png"
+    },
+    {
+      "id": "aso",
+      "culture": "samoan",
+      "name": "Aso",
+      "meaning": "Shelter, protection, family, and home. The 'aso represents the structural rafters of the traditional oval Samoan house (fale). Carrying this motif signals devotion to family (aiga) and communal life. ",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/aso.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_aso.png"
+    },
+    {
+      "id": "fa_a_aupega",
+      "culture": "samoan",
+      "name": "Fa A Aupega",
+      "meaning": "Community interdependence, collective effort, and the practice of fishing. The net (upega) motif symbolises traditional nets for catching sea turtles and pigeons. In tattooing, the net pattern relates",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/fa_a_aupega.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_fa_a_aupega.png"
+    },
+    {
+      "id": "pea",
+      "culture": "samoan",
+      "name": "Pea",
+      "meaning": "Sacred rite of passage marking Samoan manhood, social standing, and covenant with ancestors. 'Pe'a' means the Samoan flying fox. The composition is a living genealogical record: each motif band narrat",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/pea.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_pea.png"
+    },
+    {
+      "id": "va_a_waka",
+      "culture": "pacific",
+      "name": "Va A Waka",
+      "meaning": "Voyaging, ancestry, freedom, and the claim to the Pacific Ocean as indigenous homeland. The outrigger canoe enabled the settlement of the entire Pacific. In resistance contexts, it is the motif most d",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/pacific/va_a_waka.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_va_a_waka.png"
+    },
+    {
+      "id": "manulua",
+      "culture": "tongan",
+      "name": "Manulua",
+      "meaning": "Unity, alliance, and the binding of social relationships. 'Two birds' — the paired forms represent unity and the binding of alliances between families and chiefs. A kupesi 'eiki (chiefly design) from ",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/tongan/manulua.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_manulua.png"
+    },
+    {
+      "id": "masi_kesa",
+      "culture": "fijian",
+      "name": "Masi Kesa",
+      "meaning": "Clan identity, rank, and spiritual protection. Each sub-clan (tokatoka) owns specific masi motifs (draudrau) that are their intellectual property. The stencilling technique (kesakesa) is unique to Fij",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/fijian/masi_kesa.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_masi_kesa.png"
+    },
+    {
+      "id": "vonu",
+      "culture": "fijian",
+      "name": "Vonu",
+      "meaning": "Longevity, endurance, navigation, and the connection between land and sea. The vonu is a symbol of wisdom and the link between the terrestrial (vanua) and oceanic realms. Key symbol in Pacific climate",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/fijian/vonu.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_vonu.png"
+    },
+    {
+      "id": "yvy_mara_ey",
+      "culture": "guarani",
+      "name": "Yvy Mara Ey",
+      "meaning": "The mythical Guaraní paradise — a land free of hunger, war, and disease. The soul must achieve a state of perfection (aguyjé) to reach it. Associated with eastward migration, prophetic leadership, and",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/yvy_mara_ey.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yvy_mara_ey.png"
+    },
+    {
+      "id": "cuaracy_ra_angaba",
+      "culture": "guarani",
+      "name": "Cuaracy Ra Angaba",
+      "meaning": "An astronomical stone calendar used by the Guaraní to track seasons, solstices, moon phases, and cardinal directions. 'Cuaracy' means 'sun' and 'Ra'angaba' means 'image.' The sun is the greatest deity",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/cuaracy_ra_angaba.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_cuaracy_ra_angaba.png"
+    },
+    {
+      "id": "nanduti",
+      "culture": "guarani",
+      "name": "Nanduti",
+      "meaning": "Traditional Paraguayan needle lace whose name means 'spider web' in Guaraní. Created by mestizo Guaraní women blending European needle-lace technique with indigenous craft. The spider-web form echoes ",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/nanduti.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_nanduti.png"
+    },
+    {
+      "id": "kene_shipibo",
+      "culture": "shipibo",
+      "name": "Kene Shipibo",
+      "meaning": "The Shipibo-Conibo traditional geometric designs painted on ceramics, textiles, and bodies. They express the cosmological worldview: the universe is structured by intricate vibrational patterns first ",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/shipibo/kene_shipibo.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_kene_shipibo.png"
+    },
+    {
+      "id": "ronin_kuin",
+      "culture": "shipibo",
+      "name": "Ronin Kuin",
+      "meaning": "The primordial anaconda that, according to Shipibo-Conibo cosmology, sang the universe into existence. The pattern of her skin became the template for all kené designs. She is the 'mother of designs' ",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/shipibo/ronin_kuin.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_ronin_kuin.png"
+    },
+    {
+      "id": "mola_guna",
+      "culture": "guna",
+      "name": "Mola Guna",
+      "meaning": "Hand-stitched textile panels worn by Guna women of the San Blas Archipelago (Guna Yala), Panama. Its designs may be residuals of pre-Hispanic body-painting patterns. Traditional abstract designs are b",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guna/mola_guna.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_mola_guna.png"
+    },
+    {
+      "id": "jagua_pyta",
+      "culture": "guarani",
+      "name": "Jagua Pyta",
+      "meaning": "In Guaraní cosmology, the Blue Jaguar (Jaguarový) is contained inside Nhamandu's hut at Yvy Marã Eÿ. If released, it would destroy humanity. The Red Jaguar is a guardian force. The jaguar motif in bod",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/jagua_pyta.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_jagua_pyta.png"
+    },
+    {
+      "id": "kayapo_jaguar_division",
+      "culture": "kayapo",
+      "name": "Kayapo Jaguar Division",
+      "meaning": "The jaguar is the apex predator and spiritual power animal of Kayapó cosmology. Jaguar-pattern body paint marks warriors, chiefs, and ceremony participants. Bilateral body division into upper (red, vi",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/kayapo/kayapo_jaguar_division.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_kayapo_jaguar_division.png"
+    },
+    {
+      "id": "yanomami_urihi",
+      "culture": "yanomami",
+      "name": "Yanomami Urihi",
+      "meaning": "Urihi a ('forest-land') is the Yanomami concept for the inhabited world — the second lowest of four cosmic layers. Davi Kopenawa's cosmology, recorded in 'The Falling Sky,' describes the entire cosmos",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/yanomami/yanomami_urihi.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yanomami_urihi.png"
+    },
+    {
+      "id": "luta_pela_vida",
+      "culture": "amazonian",
+      "name": "Luta Pela Vida",
+      "meaning": "The Luta pela Vida (Struggle for Life) camp by APIB in Brasília (August–September 2021) was the largest indigenous mobilisation in Brazilian history. Body paint was simultaneously an act of cultural a",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/amazonian/luta_pela_vida.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_luta_pela_vida.png"
+    }
+  ],
+  "modules": [
+    {
+      "id": "module_1",
+      "title": "What is Data? Indigenous Knowledges and the Digital World",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_1",
+      "care": "C (Collective Benefit) — data ecosystems must serve Indigenous peoples",
+      "motif_ids": [
+        "koru",
+        "pa_tuwatawata",
+        "va_a_waka",
+        "yvy_mara_ey"
+      ]
+    },
+    {
+      "id": "module_2",
+      "title": "Data Colonialism: Who Took Our Data?",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_2",
+      "care": "A (Authority to Control) — recognising rights and interests in data",
+      "motif_ids": [
+        "niho_taniwha",
+        "mangopare",
+        "luta_pela_vida",
+        "kayapo_jaguar_division",
+        "yanomami_urihi"
+      ]
+    },
+    {
+      "id": "module_3",
+      "title": "CARE & OCAP: Frameworks for Data Sovereignty",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_3",
+      "care": "Full CARE framework — all four principles",
+      "motif_ids": [
+        "kowhaiwhai",
+        "manaia",
+        "malu_diamond",
+        "mola_guna"
+      ]
+    },
+    {
+      "id": "module_4",
+      "title": "Land, Territory, and Digital Sovereignty",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_4",
+      "care": "R (Responsibility) — for positive relationships and expanding capability",
+      "motif_ids": [
+        "takarangi",
+        "unaunahi",
+        "pikorua",
+        "nanduti",
+        "masi_kesa",
+        "vonu",
+        "manulua"
+      ]
+    },
+    {
+      "id": "module_5",
+      "title": "Collective Knowledge and Network Thinking",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_5",
+      "care": "C (Collective Benefit) and R (Responsibility) together",
+      "motif_ids": [
+        "fa_a_aupega",
+        "fetu",
+        "atualoa",
+        "kene_shipibo",
+        "ronin_kuin",
+        "cuaracy_ra_angaba"
+      ]
+    },
+    {
+      "id": "module_6",
+      "title": "Building Indigenous AI: Resistance and Future Visions",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_6",
+      "care": "E (Ethics) — minimising harm, justice, and future use",
+      "motif_ids": [
+        "niho_mano",
+        "pea",
+        "aso",
+        "jagua_pyta",
+        "pikorua"
+      ]
+    }
+  ],
+  "cultures": "all",
+  "hashtags": [
+    "#DataSovereignty",
+    "#IndigenousAI",
+    "#TePa",
+    "#CARE",
+    "#AIRights",
+    "#IndigenousData"
+  ],
+  "social_graphics": [
+    {
+      "motif_id": "koru",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_koru.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/koru.png",
+      "caption": "New life, unfurling potential, the origin point of all things. Something is beginning — or being prevented from beginnin"
+    },
+    {
+      "motif_id": "pa_tuwatawata",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_pa_tuwatawata.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/pa_tuwatawata.png",
+      "caption": "The fortified palisade — collective protection, sovereignty over space and governance."
+    },
+    {
+      "motif_id": "niho_taniwha",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_taniwha.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/niho_taniwha.png",
+      "caption": "The taniwha's teeth — the colonial bite, extraction without consent, harm that must be named."
+    },
+    {
+      "motif_id": "kowhaiwhai",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_kowhaiwhai.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/kowhaiwhai.png",
+      "caption": "The law written on the rafter. A clash between tikanga and statute, ancestral authority and state power."
+    },
+    {
+      "motif_id": "unaunahi",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_unaunahi.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/unaunahi.png",
+      "caption": "Fish scales interlocking. This event calls for collective response — together they form armour."
+    },
+    {
+      "motif_id": "takarangi",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_takarangi.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/takarangi.png",
+      "caption": "The double spiral — history repeating, past and future wound together."
+    },
+    {
+      "motif_id": "pikorua",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_pikorua.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/pikorua.png",
+      "caption": "The double twist — two lives, two cultures, forever joined. Paths that separate always return. The symbol of inter-triba"
+    },
+    {
+      "motif_id": "manaia",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_manaia.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/manaia.png",
+      "caption": "The spiritual guardian — messenger between the living world and the spirit realm. Protector. The spiritual double of a p"
+    },
+    {
+      "motif_id": "mangopare",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_mangopare.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/mangopare.png",
+      "caption": "The hammerhead shark — courage, determination, strength. The fighter who does not turn back. Warrior resolve."
+    },
+    {
+      "motif_id": "niho_mano",
+      "culture": "samoan",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_mano.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/niho_mano.png",
+      "caption": "Strength, protection, guidance and ferocity. The shark is a revered guardian spirit (aitu) in Polynesian cosmology. In t"
+    },
+    {
+      "motif_id": "atualoa",
+      "culture": "samoan",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_atualoa.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/atualoa.png",
+      "caption": "Strength, endurance, and commitment to extended family (aiga). The centipede is venomous and symbolises danger and power"
+    },
+    {
+      "motif_id": "fetu",
+      "culture": "samoan",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_fetu.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/fetu.png",
+      "caption": "Navigation, hope, and spiritual connection to ancestors and the heavens. Stars guided Polynesian voyagers across the Pac"
+    },
+    {
+      "motif_id": "malu_diamond",
+      "culture": "samoan",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_malu_diamond.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/malu_diamond.png",
+      "caption": "Protection and shelter. The entire female tattoo takes its name from this motif. 'Malu' means 'to protect, to shelter' i"
+    },
+    {
+      "motif_id": "aso",
+      "culture": "samoan",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_aso.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/aso.png",
+      "caption": "Shelter, protection, family, and home. The 'aso represents the structural rafters of the traditional oval Samoan house ("
+    },
+    {
+      "motif_id": "fa_a_aupega",
+      "culture": "samoan",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_fa_a_aupega.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/fa_a_aupega.png",
+      "caption": "Community interdependence, collective effort, and the practice of fishing. The net (upega) motif symbolises traditional "
+    },
+    {
+      "motif_id": "pea",
+      "culture": "samoan",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_pea.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/pea.png",
+      "caption": "Sacred rite of passage marking Samoan manhood, social standing, and covenant with ancestors. 'Pe'a' means the Samoan fly"
+    },
+    {
+      "motif_id": "va_a_waka",
+      "culture": "pacific",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_va_a_waka.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/pacific/va_a_waka.png",
+      "caption": "Voyaging, ancestry, freedom, and the claim to the Pacific Ocean as indigenous homeland. The outrigger canoe enabled the "
+    },
+    {
+      "motif_id": "manulua",
+      "culture": "tongan",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_manulua.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/tongan/manulua.png",
+      "caption": "Unity, alliance, and the binding of social relationships. 'Two birds' — the paired forms represent unity and the binding"
+    },
+    {
+      "motif_id": "masi_kesa",
+      "culture": "fijian",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_masi_kesa.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/fijian/masi_kesa.png",
+      "caption": "Clan identity, rank, and spiritual protection. Each sub-clan (tokatoka) owns specific masi motifs (draudrau) that are th"
+    },
+    {
+      "motif_id": "vonu",
+      "culture": "fijian",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_vonu.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/fijian/vonu.png",
+      "caption": "Longevity, endurance, navigation, and the connection between land and sea. The vonu is a symbol of wisdom and the link b"
+    },
+    {
+      "motif_id": "yvy_mara_ey",
+      "culture": "guarani",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yvy_mara_ey.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/yvy_mara_ey.png",
+      "caption": "The mythical Guaraní paradise — a land free of hunger, war, and disease. The soul must achieve a state of perfection (ag"
+    },
+    {
+      "motif_id": "cuaracy_ra_angaba",
+      "culture": "guarani",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_cuaracy_ra_angaba.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/cuaracy_ra_angaba.png",
+      "caption": "An astronomical stone calendar used by the Guaraní to track seasons, solstices, moon phases, and cardinal directions. 'C"
+    },
+    {
+      "motif_id": "nanduti",
+      "culture": "guarani",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_nanduti.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/nanduti.png",
+      "caption": "Traditional Paraguayan needle lace whose name means 'spider web' in Guaraní. Created by mestizo Guaraní women blending E"
+    },
+    {
+      "motif_id": "kene_shipibo",
+      "culture": "shipibo",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_kene_shipibo.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/shipibo/kene_shipibo.png",
+      "caption": "The Shipibo-Conibo traditional geometric designs painted on ceramics, textiles, and bodies. They express the cosmologica"
+    },
+    {
+      "motif_id": "ronin_kuin",
+      "culture": "shipibo",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_ronin_kuin.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/shipibo/ronin_kuin.png",
+      "caption": "The primordial anaconda that, according to Shipibo-Conibo cosmology, sang the universe into existence. The pattern of he"
+    },
+    {
+      "motif_id": "mola_guna",
+      "culture": "guna",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_mola_guna.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guna/mola_guna.png",
+      "caption": "Hand-stitched textile panels worn by Guna women of the San Blas Archipelago (Guna Yala), Panama. Its designs may be resi"
+    },
+    {
+      "motif_id": "jagua_pyta",
+      "culture": "guarani",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_jagua_pyta.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/jagua_pyta.png",
+      "caption": "In Guaraní cosmology, the Blue Jaguar (Jaguarový) is contained inside Nhamandu's hut at Yvy Marã Eÿ. If released, it wou"
+    },
+    {
+      "motif_id": "kayapo_jaguar_division",
+      "culture": "kayapo",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_kayapo_jaguar_division.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/kayapo/kayapo_jaguar_division.png",
+      "caption": "The jaguar is the apex predator and spiritual power animal of Kayapó cosmology. Jaguar-pattern body paint marks warriors"
+    },
+    {
+      "motif_id": "yanomami_urihi",
+      "culture": "yanomami",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yanomami_urihi.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/yanomami/yanomami_urihi.png",
+      "caption": "Urihi a ('forest-land') is the Yanomami concept for the inhabited world — the second lowest of four cosmic layers. Davi "
+    },
+    {
+      "motif_id": "luta_pela_vida",
+      "culture": "amazonian",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_luta_pela_vida.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/amazonian/luta_pela_vida.png",
+      "caption": "The Luta pela Vida (Struggle for Life) camp by APIB in Brasília (August–September 2021) was the largest indigenous mobil"
+    }
+  ],
+  "educator_notes": "Download the teaching kit PDF and pair each motif with its module activities. Share motif memes via your classroom social media channels using the hashtags above."
+}

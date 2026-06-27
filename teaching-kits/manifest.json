@@ -1,0 +1,104 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-06-27T01:40:00Z",
+  "description": "Te Pā Teaching Kit Repository — Master Manifest",
+  "r2_base": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev",
+  "site_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app",
+  "languages": {
+    "en": {
+      "code": "en",
+      "name": "English",
+      "native_name": "English",
+      "region": "Global / Pacific",
+      "teaching_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-teaching-kit-en.pdf",
+      "student_activity_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-student-activity-sheets.pdf",
+      "social_media_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-social-media-kit.pdf",
+      "motif_count": 30,
+      "kit_manifest": "https://kiwi-dialectic-te-pa-minisite.vercel.app/teaching-kits/en/kit-manifest.json",
+      "hashtags": [
+        "#DataSovereignty",
+        "#IndigenousAI",
+        "#TePa",
+        "#CARE",
+        "#AIRights",
+        "#IndigenousData"
+      ]
+    },
+    "mi": {
+      "code": "mi",
+      "name": "Te Reo Māori",
+      "native_name": "Te Reo Māori",
+      "region": "Aotearoa New Zealand",
+      "teaching_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-teaching-kit-mi.pdf",
+      "student_activity_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-student-activity-sheets.pdf",
+      "social_media_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-social-media-kit.pdf",
+      "motif_count": 9,
+      "kit_manifest": "https://kiwi-dialectic-te-pa-minisite.vercel.app/teaching-kits/mi/kit-manifest.json",
+      "hashtags": [
+        "#ManaMotuhake",
+        "#ReoMāori",
+        "#TePa",
+        "#MātaurangaMāori",
+        "#HiahiaTiaki",
+        "#DataSovereignty"
+      ]
+    },
+    "pt": {
+      "code": "pt",
+      "name": "Portuguese",
+      "native_name": "Português",
+      "region": "Brazil / South America",
+      "teaching_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-teaching-kit-pt.pdf",
+      "student_activity_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-student-activity-sheets.pdf",
+      "social_media_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-social-media-kit.pdf",
+      "motif_count": 10,
+      "kit_manifest": "https://kiwi-dialectic-te-pa-minisite.vercel.app/teaching-kits/pt/kit-manifest.json",
+      "hashtags": [
+        "#SoberaniadeDados",
+        "#PovosIndígenas",
+        "#TePa",
+        "#AIIndígena",
+        "#CARE",
+        "#NaçõesIndígenas"
+      ]
+    },
+    "gn": {
+      "code": "gn",
+      "name": "Guaraní",
+      "native_name": "Avañe'ẽ",
+      "region": "Paraguay / Brazil / Argentina",
+      "teaching_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-teaching-kit-gn.pdf",
+      "student_activity_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-student-activity-sheets.pdf",
+      "social_media_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-social-media-kit.pdf",
+      "motif_count": 4,
+      "kit_manifest": "https://kiwi-dialectic-te-pa-minisite.vercel.app/teaching-kits/gn/kit-manifest.json",
+      "hashtags": [
+        "#TekoteviPorãvéva",
+        "#ÑanderuviPorã",
+        "#TePa",
+        "#Guaraní",
+        "#CARE",
+        "#SoberaniadeDados"
+      ]
+    },
+    "sm": {
+      "code": "sm",
+      "name": "Samoan",
+      "native_name": "Gagana Samoa",
+      "region": "Oceania / Pacific",
+      "teaching_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-teaching-kit-sm.pdf",
+      "student_activity_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-student-activity-sheets.pdf",
+      "social_media_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-social-media-kit.pdf",
+      "motif_count": 11,
+      "kit_manifest": "https://kiwi-dialectic-te-pa-minisite.vercel.app/teaching-kits/sm/kit-manifest.json",
+      "hashtags": [
+        "#TaofiFaaSamoa",
+        "#GaganaOLomuamua",
+        "#TePa",
+        "#DataSovereignty",
+        "#Oceania",
+        "#TaifaaSamoa"
+      ]
+    }
+  }
+}

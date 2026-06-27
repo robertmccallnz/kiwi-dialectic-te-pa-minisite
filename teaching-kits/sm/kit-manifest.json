@@ -1,0 +1,300 @@
+{
+  "lang": "sm",
+  "name": "Samoan",
+  "native_name": "Gagana Samoa",
+  "region": "Oceania / Pacific",
+  "version": "1.0.0",
+  "generated_at": "2026-06-27T01:40:00Z",
+  "assets": {
+    "teaching_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-teaching-kit-sm.pdf",
+    "student_activity_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-student-activity-sheets.pdf",
+    "social_media_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-social-media-kit.pdf"
+  },
+  "motifs": [
+    {
+      "id": "niho_mano",
+      "culture": "samoan",
+      "name": "Niho Mano",
+      "meaning": "Malosi, puipuiga, taitaiga ma le fefete. O le malie ose aitu puipui i le tu ma aga faasamoa. I le pe'a ma le malu, o lenei fa'ailoga e fa'aalia ai le saogalemu o le aiga.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/niho_mano.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_mano.png"
+    },
+    {
+      "id": "atualoa",
+      "culture": "samoan",
+      "name": "Atualoa",
+      "meaning": "Malosi, onosa'i, ma le alofa fa'amaoni i le aiga. O le atualoa ose mea oona e fa'aalia ai le malosigatasi; o lo'o fa'atusalia fo'i le tautuaiga i le aiga. O lona toe fa'afouina i le siapo o se vaega o",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/atualoa.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_atualoa.png"
+    },
+    {
+      "id": "fetu",
+      "culture": "samoan",
+      "name": "Fetu",
+      "meaning": "Fa'atonuga o le vasa, fa'amoemoe, ma le feso'ota'iga agaga ma tupuga ma le lagi. Na taitaia ai e fetu fautasi o Polenesia i le Pasefika. I le tatau, o le fetu e fa'aalia ai le gafa ma le malaga o le o",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/fetu.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_fetu.png"
+    },
+    {
+      "id": "malu_diamond",
+      "culture": "samoan",
+      "name": "Malu Diamond",
+      "meaning": "Puipuiga ma le malu. O le tatau atoa a le fafine e fa'aigoa i lenei fa'ailoga. 'Malu' o lona uiga o le 'puipui, malu.' O le fa'ailoga e fa'aalia ai le matafaioi o le fafine o le fai tautuaiga ma le pu",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/malu_diamond.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_malu_diamond.png"
+    },
+    {
+      "id": "aso",
+      "culture": "samoan",
+      "name": "Aso",
+      "meaning": "O le fale, puipuiga, aiga, ma le faiāoga. O le 'aso e fa'atusalia ai aso o le fale samoana fa'aleaganu'u. O le amo o lenei fa'ailoga e fa'aalia ai le alofa i le aiga ma le olaga fa'afāgota.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/aso.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_aso.png"
+    },
+    {
+      "id": "fa_a_aupega",
+      "culture": "samoan",
+      "name": "Fa A Aupega",
+      "meaning": "Feso'ota'iga fa'alapotopotoga, taumafaiga fa'atasi, ma le fagofago. O le upega e fa'atusalia ai upega fa'aleaganu'u. I le tatau, e fa'aalia ai le feso'ota'iga o le nu'u ma le fesoasoani fa'atasi.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/fa_a_aupega.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_fa_a_aupega.png"
+    },
+    {
+      "id": "pea",
+      "culture": "samoan",
+      "name": "Pea",
+      "meaning": "Sauniga paia e fa'aalia ai le tane samoana, tulaga fa'aaloalo, ma le feagaiga ma tupuga. 'Pe'a' o lona uiga o le pe'a samoana. O le fa'asologa o fa'ailoga o se tusi gafa ola: e tala e faitatau ma ona ",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/pea.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_pea.png"
+    },
+    {
+      "id": "va_a_waka",
+      "culture": "pacific",
+      "name": "Va A Waka",
+      "meaning": "Malaga, gafa, sa'olotoga, ma le tagi'aga i le Atu-a-'Oa o le Pasifika. O le va'a na mafai ai ona nofoia le Pasifika atoa. I le tau tauiviga, o le va'a e fa'atusalia ai le pule i le vasa ma le taumafai",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/pacific/va_a_waka.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_va_a_waka.png"
+    },
+    {
+      "id": "manulua",
+      "culture": "tongan",
+      "name": "Manulua",
+      "meaning": "Lotogatasi, feagaiga, ma le fusia o sootaga fa'aagafesootai. 'Manu e lua' — o faiga mautinoa e lua e fa'atusalia ai le lotogatasi ma le fusia o feagaiga i le va o aiga ma ali'i. O se kupesi 'eiki mai ",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/tongan/manulua.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_manulua.png"
+    },
+    {
+      "id": "masi_kesa",
+      "culture": "fijian",
+      "name": "Masi Kesa",
+      "meaning": "Fa'ailoaina o le nu'u, tulaga fa'aaloalo, ma le puipuiga agaga. O tokatoka ta'itasi e iai ni fa'ailoga masi lava ia (draudrau) o lona mea fa'apitoa. O fa'ailoga e fa'aogaina ai gafa ma tagi'aga o fanu",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/fijian/masi_kesa.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_masi_kesa.png"
+    },
+    {
+      "id": "vonu",
+      "culture": "fijian",
+      "name": "Vonu",
+      "meaning": "Umi, onosa'i, fa'atonuga, ma le feso'ota'iga i le va o le eleele ma le vasa. O le vonu o se fa'ailoga o le poto ma le feso'ota'iga o le vanua ma le vasa. Fa'ailoga taua i le tau tauiviga o le Pasifika",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/fijian/vonu.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_vonu.png"
+    }
+  ],
+  "modules": [
+    {
+      "id": "module_1",
+      "title": "O le a le Fa'amaumauga? Fa'asinomaga Samoa ma le Lalolagi Faitau",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_1",
+      "care": "C (Collective Benefit) — data ecosystems must serve Indigenous peoples",
+      "motif_ids": [
+        "koru",
+        "pa_tuwatawata",
+        "va_a_waka",
+        "yvy_mara_ey"
+      ]
+    },
+    {
+      "id": "module_2",
+      "title": "Colonialism o Fa'amaumauga: O ai na ave a'e fa'amaumauga?",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_2",
+      "care": "A (Authority to Control) — recognising rights and interests in data",
+      "motif_ids": [
+        "niho_taniwha",
+        "mangopare",
+        "luta_pela_vida",
+        "kayapo_jaguar_division",
+        "yanomami_urihi"
+      ]
+    },
+    {
+      "id": "module_3",
+      "title": "CARE & OCAP: O fa'avā mo le fa'atonuga o fa'amaumauga",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_3",
+      "care": "Full CARE framework — all four principles",
+      "motif_ids": [
+        "kowhaiwhai",
+        "manaia",
+        "malu_diamond",
+        "mola_guna"
+      ]
+    },
+    {
+      "id": "module_4",
+      "title": "Fanua, Teritori, ma le Pule Fa'atekinolosi",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_4",
+      "care": "R (Responsibility) — for positive relationships and expanding capability",
+      "motif_ids": [
+        "takarangi",
+        "unaunahi",
+        "pikorua",
+        "nanduti",
+        "masi_kesa",
+        "vonu",
+        "manulua"
+      ]
+    },
+    {
+      "id": "module_5",
+      "title": "Poto Fa'aagāiga ma le Mafaufau Fa'afefiloi",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_5",
+      "care": "C (Collective Benefit) and R (Responsibility) together",
+      "motif_ids": [
+        "fa_a_aupega",
+        "fetu",
+        "atualoa",
+        "kene_shipibo",
+        "ronin_kuin",
+        "cuaracy_ra_angaba"
+      ]
+    },
+    {
+      "id": "module_6",
+      "title": "Fa'atuina o le AI Fa'a-Tagata-Atunu'u: Fa'ateteleina ma Tala o le Lumā",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_6",
+      "care": "E (Ethics) — minimising harm, justice, and future use",
+      "motif_ids": [
+        "niho_mano",
+        "pea",
+        "aso",
+        "jagua_pyta",
+        "pikorua"
+      ]
+    }
+  ],
+  "cultures": [
+    "samoan",
+    "pacific",
+    "tongan",
+    "fijian"
+  ],
+  "hashtags": [
+    "#TaofiFaaSamoa",
+    "#GaganaOLomuamua",
+    "#TePa",
+    "#DataSovereignty",
+    "#Oceania",
+    "#TaifaaSamoa"
+  ],
+  "social_graphics": [
+    {
+      "motif_id": "niho_mano",
+      "culture": "samoan",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_mano.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/niho_mano.png",
+      "caption": "Malosi, puipuiga, taitaiga ma le fefete. O le malie ose aitu puipui i le tu ma aga faasamoa. I le pe'a ma le malu, o len"
+    },
+    {
+      "motif_id": "atualoa",
+      "culture": "samoan",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_atualoa.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/atualoa.png",
+      "caption": "Malosi, onosa'i, ma le alofa fa'amaoni i le aiga. O le atualoa ose mea oona e fa'aalia ai le malosigatasi; o lo'o fa'atu"
+    },
+    {
+      "motif_id": "fetu",
+      "culture": "samoan",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_fetu.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/fetu.png",
+      "caption": "Fa'atonuga o le vasa, fa'amoemoe, ma le feso'ota'iga agaga ma tupuga ma le lagi. Na taitaia ai e fetu fautasi o Polenesi"
+    },
+    {
+      "motif_id": "malu_diamond",
+      "culture": "samoan",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_malu_diamond.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/malu_diamond.png",
+      "caption": "Puipuiga ma le malu. O le tatau atoa a le fafine e fa'aigoa i lenei fa'ailoga. 'Malu' o lona uiga o le 'puipui, malu.' O"
+    },
+    {
+      "motif_id": "aso",
+      "culture": "samoan",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_aso.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/aso.png",
+      "caption": "O le fale, puipuiga, aiga, ma le faiāoga. O le 'aso e fa'atusalia ai aso o le fale samoana fa'aleaganu'u. O le amo o len"
+    },
+    {
+      "motif_id": "fa_a_aupega",
+      "culture": "samoan",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_fa_a_aupega.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/fa_a_aupega.png",
+      "caption": "Feso'ota'iga fa'alapotopotoga, taumafaiga fa'atasi, ma le fagofago. O le upega e fa'atusalia ai upega fa'aleaganu'u. I l"
+    },
+    {
+      "motif_id": "pea",
+      "culture": "samoan",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_pea.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/pea.png",
+      "caption": "Sauniga paia e fa'aalia ai le tane samoana, tulaga fa'aaloalo, ma le feagaiga ma tupuga. 'Pe'a' o lona uiga o le pe'a sa"
+    },
+    {
+      "motif_id": "va_a_waka",
+      "culture": "pacific",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_va_a_waka.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/pacific/va_a_waka.png",
+      "caption": "Malaga, gafa, sa'olotoga, ma le tagi'aga i le Atu-a-'Oa o le Pasifika. O le va'a na mafai ai ona nofoia le Pasifika atoa"
+    },
+    {
+      "motif_id": "manulua",
+      "culture": "tongan",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_manulua.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/tongan/manulua.png",
+      "caption": "Lotogatasi, feagaiga, ma le fusia o sootaga fa'aagafesootai. 'Manu e lua' — o faiga mautinoa e lua e fa'atusalia ai le l"
+    },
+    {
+      "motif_id": "masi_kesa",
+      "culture": "fijian",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_masi_kesa.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/fijian/masi_kesa.png",
+      "caption": "Fa'ailoaina o le nu'u, tulaga fa'aaloalo, ma le puipuiga agaga. O tokatoka ta'itasi e iai ni fa'ailoga masi lava ia (dra"
+    },
+    {
+      "motif_id": "vonu",
+      "culture": "fijian",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_vonu.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/fijian/vonu.png",
+      "caption": "Umi, onosa'i, fa'atonuga, ma le feso'ota'iga i le va o le eleele ma le vasa. O le vonu o se fa'ailoga o le poto ma le fe"
+    }
+  ],
+  "educator_notes": "Sii le PDF o le kit a'oa'oina ma fa'apipi'i motifs uma i gaoioiga fa'avasega. Faasoa ata meme motif i lau vasega fa'asalalauga fa'aagafesootai i hashtag o lo'o i luga."
+}

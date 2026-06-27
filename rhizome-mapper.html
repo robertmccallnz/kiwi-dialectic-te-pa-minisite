@@ -778,6 +778,7 @@
       <div class="lang-switcher" id="langSwitcher">
         <span style="font-size:.68rem;color:var(--fg-muted);font-family:var(--font-sans);letter-spacing:.08em">LANG</span>
         <button class="lang-btn active" onclick="setLang('en')" data-lang="en">EN</button>
+        <button class="lang-btn" onclick="setLang('mi')" data-lang="mi">MI</button>
         <button class="lang-btn" onclick="setLang('pt')" data-lang="pt">PT</button>
         <button class="lang-btn" onclick="setLang('gn')" data-lang="gn">GN</button>
         <button class="lang-btn" onclick="setLang('sm')" data-lang="sm">SM</button>
@@ -1045,6 +1046,9 @@
         </a>
       </div>
       <p style="font-size:.75rem;color:var(--fg-muted);margin:.8rem 0 0">Hosted on Cloudflare R2 · CC BY-NC-SA 4.0 · Te Pā Charitable Trust 2026</p>
+
+      <!-- Dynamic kit panel — updated by setLang() -->
+      <div id="kit-download-panel" style="margin-top:1rem"></div>
     </div>
 
   </div><!-- /network-section -->
@@ -1329,6 +1333,41 @@ const STRINGS = {
     'ev-label': 'Mba\'e oiko?',
     'ev-themes': 'Mba\'erehegua nde rohayhu',
   },
+  mi: {
+    'tab-network': '⬡ Mahere Whatungarongaro',
+    'tab-event': '→ Kaitātari Kaupeka',
+    'ctrl-region': 'Rohe',
+    'all': 'Katoa',
+    'maori': 'Māori · Aotearoa',
+    'oceania': 'Oceania',
+    'south-america': 'Amerika ki te Tonga',
+    'north-america': 'Amerika ki te Raro',
+    'global': 'Ao Whānui',
+    'africa': 'Āwhērika',
+    'europe': 'Ūropi',
+    'ctrl-cause': 'Take',
+    'land-rights': 'Whenua',
+    'sovereignty': 'Rangatiratanga',
+    'data-sov': 'Raraunga / AI',
+    'language': 'Reo',
+    'environment': 'Taiao',
+    'search-placeholder': 'Rapua ngā rōpū…',
+    'stat-orgs': 'rōpū',
+    'stat-regions': 'rohe',
+    'stat-pt': 'me ngā rauemi Pōtiki',
+    'stat-gn': 'me ngā rauemi Guaraní',
+    'leg-maori': 'Māori / Aotearoa',
+    'leg-oceania': 'Oceania / Te Moananui-a-Kiwa',
+    'leg-sa': 'Amerika ki te Tonga / Amazonia',
+    'leg-link': 'Hononga take ōrite',
+    'leg-drag': 'Tōia · hurihia mō te zūmu · pāwhiri i te pōkanewha',
+    'ev-step1': 'Whakamārama mai i tētahi kaupeka tōrangapū — he ture, he whakataunga, he kōrero, he tūkino.',
+    'ev-step2': 'Tūtohua ngā kaupeka — rangatiratanga, tāheke, tū ake, mahi tōpū.',
+    'ev-step3': 'Ka ārahina ngā hōpua Māori e ono me te kimi i te hōpua tōtika.',
+    'ev-step4': 'Whiwhi tuhinga mō X, Instagram, Facebook, TikTok rānei.',
+    'ev-label': 'He aha te kaupaka?',
+    'ev-themes': 'Ngā kaupeka e kitea ana e koe',
+  },
   sm: {
     'tab-network': '⬡ Faʻafanua o le Fesoʻotaʻiga',
     'tab-event': '→ Faʻafanua o Mea Tutupu',
@@ -1368,6 +1407,59 @@ const STRINGS = {
 
 let currentLang = 'en';
 
+// Kit manifest cache
+const _kitManifestCache = {};
+let _currentKitManifest = null;
+
+async function fetchKitManifest(lang) {
+  if (_kitManifestCache[lang]) { _currentKitManifest = _kitManifestCache[lang]; return _currentKitManifest; }
+  try {
+    const r = await fetch(`/teaching-kits/${lang}/kit-manifest.json`);
+    if (!r.ok) throw new Error('not found');
+    const data = await r.json();
+    _kitManifestCache[lang] = data;
+    _currentKitManifest = data;
+    return data;
+  } catch(e) {
+    console.warn('[Te Pā] kit manifest not found for', lang, '— falling back to en');
+    if (lang !== 'en') return fetchKitManifest('en');
+    return null;
+  }
+}
+
+function renderKitPanel(manifest) {
+  const panel = document.getElementById('kit-download-panel');
+  if (!panel || !manifest) return;
+  const { assets, hashtags, educator_notes, name, lang } = manifest;
+  panel.innerHTML = `
+    <div style="padding:.6rem;background:rgba(0,0,0,.15);border-radius:6px;border:1px solid rgba(255,255,255,.08)">
+      <div style="font-size:.8rem;font-weight:600;color:var(--accent);margin-bottom:.4rem">${name} — Teaching Kit</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.5rem">
+        <a href="${assets.teaching_kit_pdf}" target="_blank" style="font-size:.72rem;padding:.25rem .5rem;background:var(--accent);color:#fff;border-radius:4px;text-decoration:none" onclick="trackKitDownload('${lang}','teaching_kit')">📄 Teaching Kit PDF</a>
+        <a href="${assets.student_activity_pdf}" target="_blank" style="font-size:.72rem;padding:.25rem .5rem;background:rgba(255,255,255,.1);color:var(--fg);border-radius:4px;text-decoration:none" onclick="trackKitDownload('${lang}','activity_sheet')">📋 Activity Sheets</a>
+        <a href="${assets.social_media_kit_pdf}" target="_blank" style="font-size:.72rem;padding:.25rem .5rem;background:rgba(255,255,255,.1);color:var(--fg);border-radius:4px;text-decoration:none" onclick="trackKitDownload('${lang}','social_kit')">📲 Social Kit</a>
+      </div>
+      <div style="font-size:.7rem;color:var(--fg-muted);line-height:1.4;margin-bottom:.4rem">${educator_notes}</div>
+      <div style="font-size:.68rem;color:var(--accent-2)">${(hashtags||[]).join(' ')}</div>
+    </div>
+  `;
+}
+
+function trackKitDownload(lang, kitType) {
+  fetch('https://te-pa-analytics.sketchschool.workers.dev/track', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      type: 'kit_download',
+      kit_language: lang,
+      lang: lang,
+      org_id: 'direct',
+      org_name: kitType,
+      platform: 'web',
+    })
+  }).catch(() => {});
+}
+
 function setLang(lang) {
   currentLang = lang;
   document.querySelectorAll('.lang-btn').forEach(b => {
@@ -1377,11 +1469,15 @@ function setLang(lang) {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
     if (STRINGS[lang] && STRINGS[lang][key]) el.textContent = STRINGS[lang][key];
+    else if (STRINGS['en'] && STRINGS['en'][key]) el.textContent = STRINGS['en'][key];
   });
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const key = el.dataset.i18nPlaceholder;
     if (STRINGS[lang] && STRINGS[lang][key]) el.placeholder = STRINGS[lang][key];
+    else if (STRINGS['en'] && STRINGS['en'][key]) el.placeholder = STRINGS['en'][key];
   });
+  // Fetch and render kit manifest for this language
+  fetchKitManifest(lang).then(manifest => renderKitPanel(manifest));
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -3671,7 +3767,9 @@ function trackKit(langCode) {
 <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" defer></script>
 <script defer>
   // init after D3 loads
-  document.addEventListener('DOMContentLoaded', () => { drawNetwork(); });
+  document.addEventListener('DOMContentLoaded', () => {
+  // Initialise kit panel for default language
+  fetchKitManifest('en').then(manifest => renderKitPanel(manifest)); drawNetwork(); });
   // fallback if DOMContentLoaded already fired
   if (document.readyState === 'complete') drawNetwork();
 </script>

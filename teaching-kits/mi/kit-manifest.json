@@ -1,0 +1,263 @@
+{
+  "lang": "mi",
+  "name": "Te Reo Māori",
+  "native_name": "Te Reo Māori",
+  "region": "Aotearoa New Zealand",
+  "version": "1.0.0",
+  "generated_at": "2026-06-27T01:40:00Z",
+  "assets": {
+    "teaching_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-teaching-kit-mi.pdf",
+    "student_activity_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-student-activity-sheets.pdf",
+    "social_media_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-social-media-kit.pdf"
+  },
+  "motifs": [
+    {
+      "id": "koru",
+      "culture": "maori",
+      "name": "Koru",
+      "meaning": "New life, unfurling potential, the origin point of all things. Something is beginning — or being prevented from beginning.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/koru.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_koru.png"
+    },
+    {
+      "id": "pa_tuwatawata",
+      "culture": "maori",
+      "name": "Pa Tuwatawata",
+      "meaning": "The fortified palisade — collective protection, sovereignty over space and governance.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/pa_tuwatawata.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_pa_tuwatawata.png"
+    },
+    {
+      "id": "niho_taniwha",
+      "culture": "maori",
+      "name": "Niho Taniwha",
+      "meaning": "The taniwha's teeth — the colonial bite, extraction without consent, harm that must be named.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/niho_taniwha.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_taniwha.png"
+    },
+    {
+      "id": "kowhaiwhai",
+      "culture": "maori",
+      "name": "Kowhaiwhai",
+      "meaning": "The law written on the rafter. A clash between tikanga and statute, ancestral authority and state power.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/kowhaiwhai.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_kowhaiwhai.png"
+    },
+    {
+      "id": "unaunahi",
+      "culture": "maori",
+      "name": "Unaunahi",
+      "meaning": "Fish scales interlocking. This event calls for collective response — together they form armour.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/unaunahi.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_unaunahi.png"
+    },
+    {
+      "id": "takarangi",
+      "culture": "maori",
+      "name": "Takarangi",
+      "meaning": "The double spiral — history repeating, past and future wound together.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/takarangi.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_takarangi.png"
+    },
+    {
+      "id": "pikorua",
+      "culture": "maori",
+      "name": "Pikorua",
+      "meaning": "The double twist — two lives, two cultures, forever joined. Paths that separate always return. The symbol of inter-tribal gift, solidarity, eternal bond.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/pikorua.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_pikorua.png"
+    },
+    {
+      "id": "manaia",
+      "culture": "maori",
+      "name": "Manaia",
+      "meaning": "The spiritual guardian — messenger between the living world and the spirit realm. Protector. The spiritual double of a person. Keeper of balance between seen and unseen.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/manaia.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_manaia.png"
+    },
+    {
+      "id": "mangopare",
+      "culture": "maori",
+      "name": "Mangopare",
+      "meaning": "The hammerhead shark — courage, determination, strength. The fighter who does not turn back. Warrior resolve.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/mangopare.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_mangopare.png"
+    }
+  ],
+  "modules": [
+    {
+      "id": "module_1",
+      "title": "He aha te raraunga? Ngā mātauranga Māori me te ao matihiko",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_1",
+      "care": "C (Collective Benefit) — data ecosystems must serve Indigenous peoples",
+      "motif_ids": [
+        "koru",
+        "pa_tuwatawata",
+        "va_a_waka",
+        "yvy_mara_ey"
+      ]
+    },
+    {
+      "id": "module_2",
+      "title": "Te Tāmitanga Raraunga: Nā wai i tangohia ō tātou raraunga?",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_2",
+      "care": "A (Authority to Control) — recognising rights and interests in data",
+      "motif_ids": [
+        "niho_taniwha",
+        "mangopare",
+        "luta_pela_vida",
+        "kayapo_jaguar_division",
+        "yanomami_urihi"
+      ]
+    },
+    {
+      "id": "module_3",
+      "title": "CARE me OCAP: Ngā anga mō te mana raraunga",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_3",
+      "care": "Full CARE framework — all four principles",
+      "motif_ids": [
+        "kowhaiwhai",
+        "manaia",
+        "malu_diamond",
+        "mola_guna"
+      ]
+    },
+    {
+      "id": "module_4",
+      "title": "Whenua, rohe, me te mana matihiko",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_4",
+      "care": "R (Responsibility) — for positive relationships and expanding capability",
+      "motif_ids": [
+        "takarangi",
+        "unaunahi",
+        "pikorua",
+        "nanduti",
+        "masi_kesa",
+        "vonu",
+        "manulua"
+      ]
+    },
+    {
+      "id": "module_5",
+      "title": "Te mātauranga ā-iwi me te whakaaro ā-whatungarongaro",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_5",
+      "care": "C (Collective Benefit) and R (Responsibility) together",
+      "motif_ids": [
+        "fa_a_aupega",
+        "fetu",
+        "atualoa",
+        "kene_shipibo",
+        "ronin_kuin",
+        "cuaracy_ra_angaba"
+      ]
+    },
+    {
+      "id": "module_6",
+      "title": "Te hanga AI Māori: Te whakaohooho me ngā āronui anamata",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_6",
+      "care": "E (Ethics) — minimising harm, justice, and future use",
+      "motif_ids": [
+        "niho_mano",
+        "pea",
+        "aso",
+        "jagua_pyta",
+        "pikorua"
+      ]
+    }
+  ],
+  "cultures": [
+    "maori"
+  ],
+  "hashtags": [
+    "#ManaMotuhake",
+    "#ReoMāori",
+    "#TePa",
+    "#MātaurangaMāori",
+    "#HiahiaTiaki",
+    "#DataSovereignty"
+  ],
+  "social_graphics": [
+    {
+      "motif_id": "koru",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_koru.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/koru.png",
+      "caption": "New life, unfurling potential, the origin point of all things. Something is beginning — or being prevented from beginnin"
+    },
+    {
+      "motif_id": "pa_tuwatawata",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_pa_tuwatawata.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/pa_tuwatawata.png",
+      "caption": "The fortified palisade — collective protection, sovereignty over space and governance."
+    },
+    {
+      "motif_id": "niho_taniwha",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_taniwha.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/niho_taniwha.png",
+      "caption": "The taniwha's teeth — the colonial bite, extraction without consent, harm that must be named."
+    },
+    {
+      "motif_id": "kowhaiwhai",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_kowhaiwhai.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/kowhaiwhai.png",
+      "caption": "The law written on the rafter. A clash between tikanga and statute, ancestral authority and state power."
+    },
+    {
+      "motif_id": "unaunahi",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_unaunahi.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/unaunahi.png",
+      "caption": "Fish scales interlocking. This event calls for collective response — together they form armour."
+    },
+    {
+      "motif_id": "takarangi",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_takarangi.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/takarangi.png",
+      "caption": "The double spiral — history repeating, past and future wound together."
+    },
+    {
+      "motif_id": "pikorua",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_pikorua.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/pikorua.png",
+      "caption": "The double twist — two lives, two cultures, forever joined. Paths that separate always return. The symbol of inter-triba"
+    },
+    {
+      "motif_id": "manaia",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_manaia.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/manaia.png",
+      "caption": "The spiritual guardian — messenger between the living world and the spirit realm. Protector. The spiritual double of a p"
+    },
+    {
+      "motif_id": "mangopare",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_mangopare.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/mangopare.png",
+      "caption": "The hammerhead shark — courage, determination, strength. The fighter who does not turn back. Warrior resolve."
+    }
+  ],
+  "educator_notes": "Tikiake i te PDF o te kohinga akoranga me hono ia hōpua ki ōna mahi akomanga. Toha i ngā meme hōpua mā ō tari pāpāho pāpori akomanga mā ngā tūmau kōrero o runga."
+}

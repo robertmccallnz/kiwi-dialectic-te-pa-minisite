@@ -1,0 +1,285 @@
+{
+  "lang": "pt",
+  "name": "Portuguese",
+  "native_name": "Português",
+  "region": "Brazil / South America",
+  "version": "1.0.0",
+  "generated_at": "2026-06-27T01:40:00Z",
+  "assets": {
+    "teaching_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-teaching-kit-pt.pdf",
+    "student_activity_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-student-activity-sheets.pdf",
+    "social_media_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-social-media-kit.pdf"
+  },
+  "motifs": [
+    {
+      "id": "yvy_mara_ey",
+      "culture": "guarani",
+      "name": "Yvy Mara Ey",
+      "meaning": "Terra sem males: paraíso mítico guaraní, livre de fome, guerra e doenças. Alcançável apenas por quem atingiu o estado espiritual de aguyjé. Ligado às grandes migrações tupi-guaraní. Conceito central n",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/yvy_mara_ey.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yvy_mara_ey.png"
+    },
+    {
+      "id": "cuaracy_ra_angaba",
+      "culture": "guarani",
+      "name": "Cuaracy Ra Angaba",
+      "meaning": "Relógio solar e lunar dos Guaraní. 'Cuaracy' = sol; 'Ra'angaba' = imagem. Símbolo do círculo eterno e da continuidade. O sol é a divindade suprema Ñamandu.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/cuaracy_ra_angaba.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_cuaracy_ra_angaba.png"
+    },
+    {
+      "id": "nanduti",
+      "culture": "guarani",
+      "name": "Nanduti",
+      "meaning": "Renda paraguaia tradicional cujo nome em guaraní significa 'teia de aranha'. Criada por mulheres guaraní mestiças em Itauguá, combinando técnicas europeias de renda com a artesania indígena. Símbolo n",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/nanduti.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_nanduti.png"
+    },
+    {
+      "id": "kene_shipibo",
+      "culture": "shipibo",
+      "name": "Kene Shipibo",
+      "meaning": "Padrões geométricos tradicionais shipibo-conibo pintados em cerâmica, têxteis e corpos. Expressam a cosmovisão: o universo é estruturado por padrões vibracionais cantados à existência pela anaconda pr",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/shipibo/kene_shipibo.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_kene_shipibo.png"
+    },
+    {
+      "id": "ronin_kuin",
+      "culture": "shipibo",
+      "name": "Ronin Kuin",
+      "meaning": "A anaconda primordial que cantou o universo à existência na cosmologia shipibo-conibo. O padrão de sua pele é o modelo para todos os kené. Ela é a 'mãe dos desenhos' (rono ewa). O motivo anaconda é us",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/shipibo/ronin_kuin.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_ronin_kuin.png"
+    },
+    {
+      "id": "mola_guna",
+      "culture": "guna",
+      "name": "Mola Guna",
+      "meaning": "Painéis têxteis artesanais usados pelas mulheres guna do Arquipélago de San Blas, Panamá. Seus designs podem ser resíduos de padrões de pintura corporal pré-hispânicos. Os designs geométricos abstrato",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guna/mola_guna.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_mola_guna.png"
+    },
+    {
+      "id": "jagua_pyta",
+      "culture": "guarani",
+      "name": "Jagua Pyta",
+      "meaning": "Na cosmologia guaraní, o Jaguar Azul (Jaguarový) está contido na cabana de Nhamandu em Yvy Marã Eÿ. Se libertado, destruiria a humanidade. O Jaguar Vermelho é guardião. O motivo jaguar carrega carga c",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/jagua_pyta.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_jagua_pyta.png"
+    },
+    {
+      "id": "kayapo_jaguar_division",
+      "culture": "kayapo",
+      "name": "Kayapo Jaguar Division",
+      "meaning": "A onça é o animal-espírito por excelência dos Kayapó. A divisão bilateral do corpo em metade vermelha (superior — social, vital) e metade preta (inferior — natureza selvagem) codifica a cosmologia Kay",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/kayapo/kayapo_jaguar_division.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_kayapo_jaguar_division.png"
+    },
+    {
+      "id": "yanomami_urihi",
+      "culture": "yanomami",
+      "name": "Yanomami Urihi",
+      "meaning": "Urihi a = floresta-terra: o mundo habitado dos Yanomami. A cosmovisão estratificada em camadas. 'A queda do céu' (Davi Kopenawa, 2013) descreve o colapso do cosmos se a floresta for destruída — usado ",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/yanomami/yanomami_urihi.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yanomami_urihi.png"
+    },
+    {
+      "id": "luta_pela_vida",
+      "culture": "amazonian",
+      "name": "Luta Pela Vida",
+      "meaning": "O acampamento 'Luta pela Vida' (agosto-setembro 2021), organizado pela APIB em Brasília, foi a maior mobilização indígena da história brasileira. A pintura corporal foi simultaneamente afirmação cultu",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/amazonian/luta_pela_vida.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_luta_pela_vida.png"
+    }
+  ],
+  "modules": [
+    {
+      "id": "module_1",
+      "title": "O que são dados? Conhecimentos indígenas e o mundo digital",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_1",
+      "care": "C (Collective Benefit) — data ecosystems must serve Indigenous peoples",
+      "motif_ids": [
+        "koru",
+        "pa_tuwatawata",
+        "va_a_waka",
+        "yvy_mara_ey"
+      ]
+    },
+    {
+      "id": "module_2",
+      "title": "Colonialismo de Dados: Quem tomou nossos dados?",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_2",
+      "care": "A (Authority to Control) — recognising rights and interests in data",
+      "motif_ids": [
+        "niho_taniwha",
+        "mangopare",
+        "luta_pela_vida",
+        "kayapo_jaguar_division",
+        "yanomami_urihi"
+      ]
+    },
+    {
+      "id": "module_3",
+      "title": "CARE e OCAP: Frameworks para a soberania de dados",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_3",
+      "care": "Full CARE framework — all four principles",
+      "motif_ids": [
+        "kowhaiwhai",
+        "manaia",
+        "malu_diamond",
+        "mola_guna"
+      ]
+    },
+    {
+      "id": "module_4",
+      "title": "Terra, Território e Soberania Digital",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_4",
+      "care": "R (Responsibility) — for positive relationships and expanding capability",
+      "motif_ids": [
+        "takarangi",
+        "unaunahi",
+        "pikorua",
+        "nanduti",
+        "masi_kesa",
+        "vonu",
+        "manulua"
+      ]
+    },
+    {
+      "id": "module_5",
+      "title": "Conhecimento Coletivo e Pensamento em Rede",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_5",
+      "care": "C (Collective Benefit) and R (Responsibility) together",
+      "motif_ids": [
+        "fa_a_aupega",
+        "fetu",
+        "atualoa",
+        "kene_shipibo",
+        "ronin_kuin",
+        "cuaracy_ra_angaba"
+      ]
+    },
+    {
+      "id": "module_6",
+      "title": "Construindo IA Indígena: Resistência e Visões de Futuro",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_6",
+      "care": "E (Ethics) — minimising harm, justice, and future use",
+      "motif_ids": [
+        "niho_mano",
+        "pea",
+        "aso",
+        "jagua_pyta",
+        "pikorua"
+      ]
+    }
+  ],
+  "cultures": [
+    "guarani",
+    "shipibo",
+    "guna",
+    "kayapo",
+    "yanomami",
+    "amazonian"
+  ],
+  "hashtags": [
+    "#SoberaniadeDados",
+    "#PovosIndígenas",
+    "#TePa",
+    "#AIIndígena",
+    "#CARE",
+    "#NaçõesIndígenas"
+  ],
+  "social_graphics": [
+    {
+      "motif_id": "yvy_mara_ey",
+      "culture": "guarani",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yvy_mara_ey.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/yvy_mara_ey.png",
+      "caption": "Terra sem males: paraíso mítico guaraní, livre de fome, guerra e doenças. Alcançável apenas por quem atingiu o estado es"
+    },
+    {
+      "motif_id": "cuaracy_ra_angaba",
+      "culture": "guarani",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_cuaracy_ra_angaba.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/cuaracy_ra_angaba.png",
+      "caption": "Relógio solar e lunar dos Guaraní. 'Cuaracy' = sol; 'Ra'angaba' = imagem. Símbolo do círculo eterno e da continuidade. O"
+    },
+    {
+      "motif_id": "nanduti",
+      "culture": "guarani",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_nanduti.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/nanduti.png",
+      "caption": "Renda paraguaia tradicional cujo nome em guaraní significa 'teia de aranha'. Criada por mulheres guaraní mestiças em Ita"
+    },
+    {
+      "motif_id": "kene_shipibo",
+      "culture": "shipibo",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_kene_shipibo.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/shipibo/kene_shipibo.png",
+      "caption": "Padrões geométricos tradicionais shipibo-conibo pintados em cerâmica, têxteis e corpos. Expressam a cosmovisão: o univer"
+    },
+    {
+      "motif_id": "ronin_kuin",
+      "culture": "shipibo",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_ronin_kuin.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/shipibo/ronin_kuin.png",
+      "caption": "A anaconda primordial que cantou o universo à existência na cosmologia shipibo-conibo. O padrão de sua pele é o modelo p"
+    },
+    {
+      "motif_id": "mola_guna",
+      "culture": "guna",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_mola_guna.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guna/mola_guna.png",
+      "caption": "Painéis têxteis artesanais usados pelas mulheres guna do Arquipélago de San Blas, Panamá. Seus designs podem ser resíduo"
+    },
+    {
+      "motif_id": "jagua_pyta",
+      "culture": "guarani",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_jagua_pyta.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/jagua_pyta.png",
+      "caption": "Na cosmologia guaraní, o Jaguar Azul (Jaguarový) está contido na cabana de Nhamandu em Yvy Marã Eÿ. Se libertado, destru"
+    },
+    {
+      "motif_id": "kayapo_jaguar_division",
+      "culture": "kayapo",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_kayapo_jaguar_division.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/kayapo/kayapo_jaguar_division.png",
+      "caption": "A onça é o animal-espírito por excelência dos Kayapó. A divisão bilateral do corpo em metade vermelha (superior — social"
+    },
+    {
+      "motif_id": "yanomami_urihi",
+      "culture": "yanomami",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yanomami_urihi.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/yanomami/yanomami_urihi.png",
+      "caption": "Urihi a = floresta-terra: o mundo habitado dos Yanomami. A cosmovisão estratificada em camadas. 'A queda do céu' (Davi K"
+    },
+    {
+      "motif_id": "luta_pela_vida",
+      "culture": "amazonian",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_luta_pela_vida.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/amazonian/luta_pela_vida.png",
+      "caption": "O acampamento 'Luta pela Vida' (agosto-setembro 2021), organizado pela APIB em Brasília, foi a maior mobilização indígen"
+    }
+  ],
+  "educator_notes": "Baixe o PDF do kit de ensino e conecte cada motivo com as atividades do módulo. Compartilhe os memes de motivos pelas redes sociais da sua sala de aula usando as hashtags acima."
+}

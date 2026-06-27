@@ -1,0 +1,178 @@
+{
+  "lang": "gn",
+  "name": "Guaraní",
+  "native_name": "Avañe'ẽ",
+  "region": "Paraguay / Brazil / Argentina",
+  "version": "1.0.0",
+  "generated_at": "2026-06-27T01:40:00Z",
+  "assets": {
+    "teaching_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-teaching-kit-gn.pdf",
+    "student_activity_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-student-activity-sheets.pdf",
+    "social_media_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-social-media-kit.pdf"
+  },
+  "motifs": [
+    {
+      "id": "yvy_mara_ey",
+      "culture": "guarani",
+      "name": "Yvy Mara Ey",
+      "meaning": "Yvy marã e'ỹ: yvy = yvy; marã = vai/mbaasy; e'ỹ = ndaipóri. 'Yvy marã e'ỹ.' Oñeha'ã APIB ñe'ẽngue ha tetã ñorairõ reheve.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/yvy_mara_ey.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yvy_mara_ey.png"
+    },
+    {
+      "id": "cuaracy_ra_angaba",
+      "culture": "guarani",
+      "name": "Cuaracy Ra Angaba",
+      "meaning": "Kuarahy Ra'angaba: Kuarahy = Kuarahy (kuarahy); Ra'angaba = ra'angaba/ñemoarandu. Símbolo sagrado del ciclo eterno. Kuarahy oñeha'ã divindad sili Ñamandu reheve.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/cuaracy_ra_angaba.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_cuaracy_ra_angaba.png"
+    },
+    {
+      "id": "nanduti",
+      "culture": "guarani",
+      "name": "Nanduti",
+      "meaning": "Ñandutí = ñandu (araña) + ti (blanco/teia). 'Teia araña pytã.' Ñandutí ohechauka Paraguái ñande rekove ha kuña mbarete.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/nanduti.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_nanduti.png"
+    },
+    {
+      "id": "jagua_pyta",
+      "culture": "guarani",
+      "name": "Jagua Pyta",
+      "meaning": "Jaguarový = jaguar (onça) + ovy (hovy). Jagua pytã = jaguar pytã. Jagua = onça guaraní ñe'ẽme. Oñeha'ã APIB fa'ailoga ha ñorairõ tetã reheve.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/jagua_pyta.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_jagua_pyta.png"
+    }
+  ],
+  "modules": [
+    {
+      "id": "module_1",
+      "title": "Mba'épa tembiasakue? Ñane reko rekove ha tecnologia",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_1",
+      "care": "C (Collective Benefit) — data ecosystems must serve Indigenous peoples",
+      "motif_ids": [
+        "koru",
+        "pa_tuwatawata",
+        "va_a_waka",
+        "yvy_mara_ey"
+      ]
+    },
+    {
+      "id": "module_2",
+      "title": "Colonialismo tembiasakuégui: Mava'e oñemono ñane tembiasakue?",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_2",
+      "care": "A (Authority to Control) — recognising rights and interests in data",
+      "motif_ids": [
+        "niho_taniwha",
+        "mangopare",
+        "luta_pela_vida",
+        "kayapo_jaguar_division",
+        "yanomami_urihi"
+      ]
+    },
+    {
+      "id": "module_3",
+      "title": "CARE ha OCAP: Ñane rekove tembiasakue rekovepyrã",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_3",
+      "care": "Full CARE framework — all four principles",
+      "motif_ids": [
+        "kowhaiwhai",
+        "manaia",
+        "malu_diamond",
+        "mola_guna"
+      ]
+    },
+    {
+      "id": "module_4",
+      "title": "Yvy, Tekoha ha Soberanía Digital",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_4",
+      "care": "R (Responsibility) — for positive relationships and expanding capability",
+      "motif_ids": [
+        "takarangi",
+        "unaunahi",
+        "pikorua",
+        "nanduti",
+        "masi_kesa",
+        "vonu",
+        "manulua"
+      ]
+    },
+    {
+      "id": "module_5",
+      "title": "Ñane aranduka ha ñandejee tekove",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_5",
+      "care": "C (Collective Benefit) and R (Responsibility) together",
+      "motif_ids": [
+        "fa_a_aupega",
+        "fetu",
+        "atualoa",
+        "kene_shipibo",
+        "ronin_kuin",
+        "cuaracy_ra_angaba"
+      ]
+    },
+    {
+      "id": "module_6",
+      "title": "Ñane AI ojejapo: Ñane mbarete ha ñane rekove aja",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_6",
+      "care": "E (Ethics) — minimising harm, justice, and future use",
+      "motif_ids": [
+        "niho_mano",
+        "pea",
+        "aso",
+        "jagua_pyta",
+        "pikorua"
+      ]
+    }
+  ],
+  "cultures": [
+    "guarani"
+  ],
+  "hashtags": [
+    "#TekoteviPorãvéva",
+    "#ÑanderuviPorã",
+    "#TePa",
+    "#Guaraní",
+    "#CARE",
+    "#SoberaniadeDados"
+  ],
+  "social_graphics": [
+    {
+      "motif_id": "yvy_mara_ey",
+      "culture": "guarani",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yvy_mara_ey.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/yvy_mara_ey.png",
+      "caption": "Yvy marã e'ỹ: yvy = yvy; marã = vai/mbaasy; e'ỹ = ndaipóri. 'Yvy marã e'ỹ.' Oñeha'ã APIB ñe'ẽngue ha tetã ñorairõ reheve"
+    },
+    {
+      "motif_id": "cuaracy_ra_angaba",
+      "culture": "guarani",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_cuaracy_ra_angaba.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/cuaracy_ra_angaba.png",
+      "caption": "Kuarahy Ra'angaba: Kuarahy = Kuarahy (kuarahy); Ra'angaba = ra'angaba/ñemoarandu. Símbolo sagrado del ciclo eterno. Kuar"
+    },
+    {
+      "motif_id": "nanduti",
+      "culture": "guarani",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_nanduti.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/nanduti.png",
+      "caption": "Ñandutí = ñandu (araña) + ti (blanco/teia). 'Teia araña pytã.' Ñandutí ohechauka Paraguái ñande rekove ha kuña mbarete."
+    },
+    {
+      "motif_id": "jagua_pyta",
+      "culture": "guarani",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_jagua_pyta.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/jagua_pyta.png",
+      "caption": "Jaguarový = jaguar (onça) + ovy (hovy). Jagua pytã = jaguar pytã. Jagua = onça guaraní ñe'ẽme. Oñeha'ã APIB fa'ailoga ha"
+    }
+  ],
+  "educator_notes": "Monguejávo PDF kit mbo'epyrã ha emomba'apo peteĩ peteĩ kuarahy ra'ãnga ndive imodulovégui. Emomba'e meme kuarahy ra'ãnga ne aranduhare redemi'u ñe'ẽnguéra rupive."
+}
