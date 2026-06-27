@@ -367,6 +367,40 @@
     </div>
   </section>
 
+  <!-- ─── Protest categories — live feed from /campaign-generator/ ─── -->
+  <section class="kit-section" aria-labelledby="protest-h" style="background:#fff8f1;border-left:4px solid #c1712f;padding:1.4rem 1.6rem;border-radius:8px;">
+    <h2 id="protest-h">Protest categories — live</h2>
+    <p class="sec-sub">A curated list of indigenous-led campaigns. Slogans come from the movements themselves — not invented by us. A weekly automatic check pulls new headlines from indigenous-led news (ICT News, Cultural Survival, Waatea, Survival International, Guardian First Nations) into the matching category. <strong>To turn any of these into a printable sticker, poster, or wheatpaste piece</strong>, open the <a href="/campaign-generator/">street campaign generator</a> — pick a category, edit the slogan, embed a QR code, download SVG or PNG.</p>
+    <ul id="protest-cats" style="list-style:none;padding:0;margin:1rem 0 0 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0.6rem;">
+      <li><em>Loading categories…</em></li>
+    </ul>
+    <p class="feed-meta" id="protest-stamp" style="font-size:0.78rem;color:#8a7e63;margin-top:0.8rem;"></p>
+    <p style="margin-top:0.8rem;"><a class="bundle-btn" href="/campaign-generator/">→ Open the campaign generator</a></p>
+    <script>
+    (function(){
+      fetch('../data/campaign-categories.json', {cache:'no-cache'})
+        .then(function(r){return r.json();})
+        .then(function(d){
+          var host = document.getElementById('protest-cats');
+          var stamp = document.getElementById('protest-stamp');
+          if (d.feed_last_refreshed) {
+            var t = new Date(d.feed_last_refreshed);
+            stamp.textContent = 'Feed last refreshed ' + t.toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'}) + ' · ' + (d.current_headlines||[]).length + ' headlines routed';
+          }
+          host.innerHTML = (d.categories||[]).map(function(c){
+            var fresh = (d.current_headlines||[]).filter(function(h){return h.category===c.id;}).length;
+            var freshTag = fresh ? ' <span style="background:#c1712f;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.7rem;letter-spacing:0.05em;">'+fresh+' fresh</span>' : '';
+            return '<li style="background:#fff;border:1px solid #e6e2d6;border-radius:6px;padding:0.6rem 0.7rem;">' +
+              '<a href="/campaign-generator/#' + c.id + '" style="font-weight:600;color:#2d2d2d;text-decoration:none;">' + c.label + '</a>' + freshTag +
+              '<br><span style="font-size:0.78rem;color:#6a6353;">' + (c.scope||'') + '</span>' +
+            '</li>';
+          }).join('');
+        })
+        .catch(function(){ document.getElementById('protest-cats').innerHTML = '<li><em>Could not load campaign feed.</em></li>'; });
+    })();
+    </script>
+  </section>
+
   <!-- ─── QR target picker ─── -->
   <section class="kit-section" aria-labelledby="qr-h">
     <h2 id="qr-h">QR codes — choose your link</h2>

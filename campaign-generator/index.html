@@ -1,0 +1,944 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Street Campaign Generator — Te Pā Tūwatawata</title>
+<meta name="description" content="Build a sticker, wheatpaste poster, or banner for an active indigenous-led campaign. Choose a category, edit the message, embed a QR code, download SVG or PNG, print, paste up. Curated baseline + weekly live headlines. CC BY-NC-SA 4.0.">
+<meta name="keywords" content="Te Pā Tūwatawata, campaign generator, sticker maker, poster maker, indigenous activism, QR sticker, wheatpaste, te reo, Tino Rangatiratanga, data sovereignty, MMIW, West Papua, land back, Toitū Te Tiriti">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://te-pa.org/campaign-generator/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Street Campaign Generator — Te Pā Tūwatawata">
+<meta property="og:description" content="Choose a live campaign, edit a slogan, embed a QR, download an SVG poster or sticker. Updated weekly from indigenous-led news. CC BY-NC-SA 4.0.">
+<meta property="og:url" content="https://te-pa.org/campaign-generator/">
+<meta property="og:image" content="https://te-pa.org/social-kit/posters/una-poster-a3-data-sovereignty.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Street Campaign Generator — Te Pā Tūwatawata">
+<meta name="twitter:description" content="Build a poster or sticker for a live indigenous-led campaign in your browser. Free, ethical, kaupapa Māori.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/kiwi-dialectic.css">
+<link rel="stylesheet" href="../assets/nav.css">
+<link rel="stylesheet" href="../assets/mediakit.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Street Campaign Generator — Te Pā Tūwatawata",
+  "description": "Browser-based generator for printable stickers, posters, and wheatpaste artwork supporting active indigenous-led campaigns. Curated category baseline merged weekly with headlines from indigenous-led news.",
+  "url": "https://te-pa.org/campaign-generator/",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "inLanguage": ["en","mi","sm","pt","gn","ar"],
+  "creator": {"@type":"Organization","name":"Te Pā Tūwatawata Charitable Trust","url":"https://te-pa.org"}
+}
+</script>
+
+<style>
+:root {
+  --paper: #F5EDDC;
+  --ink: #2D2D2D;
+  --ochre: #C1712F;
+  --red: #D7263D;
+  --line: #e6e2d6;
+}
+body { font-family: 'Work Sans', system-ui, sans-serif; background: var(--paper); color: var(--ink); }
+.gen-shell {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+@media (min-width: 1000px) {
+  .gen-shell { grid-template-columns: 420px 1fr; align-items: start; }
+}
+.gen-panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+.gen-panel h2 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 400;
+}
+.gen-panel h3 {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8a7e63;
+  margin: 1.25rem 0 0.5rem 0;
+  font-weight: 600;
+}
+.gen-field { display: block; margin-bottom: 0.75rem; }
+.gen-field label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+.gen-field select,
+.gen-field input[type=text],
+.gen-field input[type=url],
+.gen-field textarea {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font: inherit;
+  background: #fff;
+  color: var(--ink);
+  box-sizing: border-box;
+}
+.gen-field textarea { resize: vertical; min-height: 70px; font-family: 'Instrument Serif', serif; font-size: 1.2rem; line-height: 1.15; }
+.gen-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+.gen-row .gen-field { margin-bottom: 0; }
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+.chip {
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--ink);
+}
+.chip[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.palette-swatches { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.palette-swatch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 0.3rem 0.55rem 0.3rem 0.3rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-family: inherit;
+}
+.palette-swatch[aria-pressed="true"] { outline: 2px solid var(--ink); outline-offset: 2px; }
+.palette-swatch .sw {
+  width: 18px; height: 18px; border-radius: 4px;
+  background: linear-gradient(90deg, var(--p-bg, #000) 50%, var(--p-fg, #fff) 50%);
+  border: 1px solid rgba(0,0,0,0.2);
+}
+.btn-primary, .btn-secondary, .btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  font: inherit;
+  font-weight: 600;
+  padding: 0.55rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-secondary { background: #fff; color: var(--ink); }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+.preview-wrap {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: sticky;
+  top: 1rem;
+}
+.preview-stage {
+  background: #f0efe9;
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 320px;
+}
+.preview-stage svg { max-width: 100%; max-height: 60vh; height: auto; display: block; box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+.format-toggle {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+  background: #fff;
+}
+.format-toggle button {
+  background: transparent;
+  border: none;
+  padding: 0.45rem 0.95rem;
+  font: inherit;
+  cursor: pointer;
+  color: var(--ink);
+}
+.format-toggle button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.meta-block {
+  font-size: 0.78rem;
+  color: #6a6353;
+  line-height: 1.45;
+  border-top: 1px dashed var(--line);
+  padding-top: 0.75rem;
+  margin-top: 0.5rem;
+}
+.headline-list { list-style: none; padding: 0; margin: 0.4rem 0 0 0; max-height: 260px; overflow-y: auto; }
+.headline-list li { padding: 0.45rem 0; border-bottom: 1px dashed var(--line); font-size: 0.85rem; line-height: 1.35; }
+.headline-list li:last-child { border-bottom: 0; }
+.headline-list .h-cat { display: inline-block; font-size: 0.68rem; background: var(--ochre); color: #fff; padding: 1px 6px; border-radius: 3px; margin-right: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+.headline-list a { color: var(--ink); }
+.instructions-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+@media (min-width: 700px) { .instructions-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1100px) { .instructions-grid { grid-template-columns: repeat(3, 1fr); } }
+.instr-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+}
+.instr-card h4 { font-family: 'Instrument Serif', serif; font-weight: 400; margin: 0 0 0.4rem 0; font-size: 1.1rem; }
+.instr-card ol { padding-left: 1.2rem; margin: 0; font-size: 0.88rem; line-height: 1.45; }
+.instr-card[dir="rtl"] { text-align: right; }
+.instr-card[dir="rtl"] ol { padding-left: 0; padding-right: 1.2rem; }
+.geo-hints {
+  background: #fffaf0;
+  border: 1px solid #f0e2c2;
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  margin-top: 1rem;
+  font-size: 0.88rem;
+}
+.geo-hints h3 { margin-top: 0; }
+.disclaimer {
+  background: #fff8f1;
+  border-left: 4px solid var(--ochre);
+  padding: 0.8rem 1rem;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin: 1rem 0;
+  border-radius: 6px;
+}
+.principles {
+  font-size: 0.85rem;
+  background: #fafaf3;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  line-height: 1.45;
+}
+.principles li { margin-bottom: 0.3rem; }
+.kicker { font-family: 'Instrument Serif', serif; font-size: 2.5rem; line-height: 1.05; margin: 0.5rem 0; }
+.kicker em { color: var(--ochre); font-style: italic; }
+.section-pad { padding: 1.5rem 1rem; max-width: 1280px; margin: 0 auto; }
+.feed-meta { font-size: 0.78rem; color: #8a7e63; margin-top: 0.4rem; }
+.sr-only { position: absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="/">Te Pā Tūwatawata</a>
+    <nav>
+      <a href="/launch-mediakit/">Mediakit</a>
+      <a href="/social-kit/">Social Kit</a>
+      <a href="/stickers/">Stickers</a>
+      <a href="/campaign-generator/" aria-current="page">Generator</a>
+      <a href="/solidarity/australia/">Solidarity</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===================== INTRO ===================== -->
+<section class="section-pad">
+  <p class="eyebrow" style="text-transform:uppercase;letter-spacing:0.1em;font-size:0.78rem;color:#8a7e63;margin:0;">Street campaign generator · live</p>
+  <h1 class="kicker">Build a poster <em>for what's happening right now</em>.</h1>
+  <p style="max-width:62ch;font-size:1.05rem;line-height:1.55;">
+    Pick a live indigenous-led campaign. Edit the slogan. Embed a QR code that links back to context.
+    Download as SVG or PNG. Print A4 or A3 at home, the library, or any copy shop. Paste up legally.
+    Every output respects the ethical protocols on this site — no AI-generated motifs, no language text published
+    outside its community's consent, slogans sourced from real movements, not invented.
+  </p>
+
+  <div class="disclaimer">
+    <strong>How this stays current.</strong> Thirteen curated categories are the spine — slogans, movement leaders, and source links
+    come from public statements by the movements themselves. Once a week an automatic check reads RSS feeds from
+    indigenous-led news outlets (ICT News, Cultural Survival, Waatea News, Survival International, Guardian First Nations)
+    and routes new headlines into the matching category so what's on this page reflects what's on the streets.
+    <span id="feed-stamp" class="feed-meta"></span>
+  </div>
+
+  <ul class="principles" id="principles-list"></ul>
+</section>
+
+<!-- ===================== GENERATOR ===================== -->
+<section class="section-pad" aria-label="Generator">
+<div class="gen-shell">
+
+  <!-- LEFT PANEL: controls -->
+  <div class="gen-panel" aria-label="Generator controls">
+    <h2>Generator</h2>
+
+    <div class="gen-field">
+      <label for="cat-select">1 · Choose a campaign</label>
+      <select id="cat-select"></select>
+      <p id="cat-meta" class="feed-meta" style="margin-top:0.4rem;"></p>
+    </div>
+
+    <div class="gen-field">
+      <label for="slogan-select">2 · Pick a slogan from the movement</label>
+      <select id="slogan-select"></select>
+    </div>
+
+    <div class="gen-field">
+      <label for="slogan-edit">…or edit it (keep it true to the movement)</label>
+      <textarea id="slogan-edit" rows="2" aria-describedby="slogan-help"></textarea>
+      <p id="slogan-help" class="feed-meta">Your edits never overwrite the curated baseline. The download embeds attribution if you keep the original.</p>
+    </div>
+
+    <h3>Format</h3>
+    <div class="chip-row" role="group" aria-label="Format">
+      <button type="button" class="chip" data-format="sticker" aria-pressed="true">Sticker · 100×100mm</button>
+      <button type="button" class="chip" data-format="poster-a4">Poster · A4</button>
+      <button type="button" class="chip" data-format="poster-a3">Poster · A3</button>
+      <button type="button" class="chip" data-format="banner">Banner · 1000×400mm</button>
+    </div>
+
+    <h3>Palette</h3>
+    <div class="palette-swatches" id="palette-swatches" role="group" aria-label="Palette"></div>
+    <p id="palette-credit" class="feed-meta" style="margin-top:0.4rem;"></p>
+
+    <h3>QR code target</h3>
+    <div class="gen-field">
+      <input type="url" id="qr-target" value="https://te-pa.org/launch-mediakit/" aria-label="QR code target URL">
+      <p class="feed-meta">Defaults to the campaign context page. You can point it elsewhere — but please keep it linked to source material, not a personal profile.</p>
+    </div>
+
+    <h3>Attribution line (optional)</h3>
+    <div class="gen-field">
+      <input type="text" id="attribution" placeholder="e.g. supports Toitū Te Tiriti · te-pa.org">
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-primary" id="btn-download-svg">Download SVG</button>
+      <button class="btn-secondary" id="btn-download-png">Download PNG</button>
+      <button class="btn-ghost" id="btn-submit-gallery">Submit to gallery</button>
+    </div>
+    <p class="feed-meta" style="margin-top:0.6rem;">SVG scales to any size without quality loss — best for print. PNG is for sharing online. The gallery button opens a pre-filled GitHub issue; submissions are reviewed manually before appearing on <a href="/stickers/gallery/">/stickers/gallery/</a>.</p>
+  </div>
+
+  <!-- RIGHT PANEL: preview + live headlines -->
+  <div>
+    <div class="preview-wrap">
+      <div class="preview-stage" id="preview-stage" aria-live="polite"></div>
+      <div class="format-toggle" role="group" aria-label="Preview zoom">
+        <button type="button" data-zoom="fit" aria-pressed="true">Fit</button>
+        <button type="button" data-zoom="100">100%</button>
+      </div>
+      <div class="meta-block" id="preview-meta"></div>
+    </div>
+
+    <div class="gen-panel" style="margin-top:1.5rem;">
+      <h2>Live headlines · this category</h2>
+      <p class="feed-meta">Source headlines routed to the selected category from the latest weekly refresh. Treat them as prompts, not source-of-truth — click through and verify before using a quote.</p>
+      <ul class="headline-list" id="headline-list"></ul>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- ===================== INSTRUCTIONS (6 languages) ===================== -->
+<section class="section-pad" aria-label="Print and paste instructions">
+  <h2 class="kicker" style="font-size:1.8rem;">Print &amp; paste-up instructions</h2>
+  <p>Same steps in six site languages. Pick what's clearest for your crew.</p>
+  <div class="instructions-grid" id="instr-grid"></div>
+
+  <div class="geo-hints" id="geo-hints">
+    <h3>Where to print near you</h3>
+    <p id="geo-text">Detecting your region…</p>
+    <p class="feed-meta">Detection uses your browser's reported timezone, not your IP. If it's wrong, just ignore the hints — the universal advice still applies: cheapest is a public library or a Warehouse Stationery / Officeworks / Staples / FedEx Office self-serve copier.</p>
+  </div>
+
+  <div class="disclaimer" style="margin-top:1.5rem;">
+    <strong>Know your rights.</strong> Postering and wheatpasting rules vary by city. As a baseline:
+    <ul style="margin:0.4rem 0 0 0;padding-left:1.2rem;font-size:0.92rem;">
+      <li><strong>Aotearoa NZ:</strong> Most councils restrict postering to designated boards. Private property — owner's permission only. <a href="https://www.communitylaw.org.nz/community-law-manual/chapter-29-public-protest-and-public-spaces/" rel="noopener">Community Law NZ</a>.</li>
+      <li><strong>Australia:</strong> Local council bylaws govern; "bill-posting" is generally an offence on public infrastructure. <a href="https://www.alhr.org.au/" rel="noopener">ALHR resources</a>.</li>
+      <li><strong>USA:</strong> First Amendment protects content; local "anti-posting" ordinances regulate placement. <a href="https://www.aclu.org/know-your-rights/protesters-rights" rel="noopener">ACLU Know Your Rights</a>.</li>
+      <li><strong>UK/EU:</strong> Flyposting laws apply; check council/borough rules.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== ATTRIBUTION + FOOTER ===================== -->
+<section class="section-pad">
+  <h2 class="kicker" style="font-size:1.5rem;">Movement attribution</h2>
+  <p>Every category here exists because of real organisers. If you adapt their slogans, name them. If you print at scale, donate to them.</p>
+  <div id="attribution-list"></div>
+</section>
+
+<footer style="border-top:1px solid var(--line);padding:2rem 1rem;text-align:center;font-size:0.85rem;color:#6a6353;">
+  <p>Te Pā Tūwatawata Charitable Trust · Port Chalmers · CC BY-NC-SA 4.0</p>
+  <p><a href="/">Home</a> · <a href="/launch-mediakit/">Mediakit</a> · <a href="/stickers/">Stickers</a> · <a href="/stickers/gallery/">Gallery</a> · <a href="/solidarity/australia/">Solidarity AU</a></p>
+</footer>
+
+<!-- QR library (used by stickers page already, same CDN) -->
+<script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+
+<script>
+// ============================================================
+// Campaign Generator — client-side, no build step
+// ============================================================
+const DATA_URL = '../data/campaign-categories.json';
+
+const FORMATS = {
+  'sticker':    { w: 1000, h: 1000, label: 'Sticker 100×100 mm',  pxPerMm: 10 },
+  'poster-a4':  { w: 2100, h: 2970, label: 'Poster A4 210×297mm', pxPerMm: 10 },
+  'poster-a3':  { w: 2970, h: 4200, label: 'Poster A3 297×420mm', pxPerMm: 10 },
+  'banner':     { w: 4000, h: 1600, label: 'Banner 1000×400 mm',  pxPerMm: 4 },
+};
+
+// 6 site languages — translations of the print/paste instructions.
+// Direction set per-language; Arabic is RTL.
+const INSTRUCTIONS = {
+  en: {
+    name: 'English',
+    dir: 'ltr',
+    steps: [
+      'Download the SVG (best for print) or PNG.',
+      'Open the file. Print at 100% scale, no fit-to-page.',
+      'For wheatpaste: mix 1 cup flour + 4 cups water, simmer to a glue, cool.',
+      'Brush paste on wall, place poster, brush over the top to seal.',
+      'For stickers: print on adhesive paper or use a sticker printer.',
+      'Scan the QR with any phone to verify the source.',
+    ],
+  },
+  mi: {
+    name: 'Te Reo Māori',
+    dir: 'ltr',
+    steps: [
+      'Tikina te SVG (he pai mō te tā) me te PNG rānei.',
+      'Whakatuwheratia te kōnae. Tā ki te 100% — kaua e whakaitihia.',
+      'Mō te whītau parāoa: kotahi kapu parāoa, e whā kapu wai, kōhua, whakamātaohia.',
+      'Pania te whītau ki te pakitara, whakanohoia te pānui, pania anō ki runga.',
+      'Mō ngā whakapiri: tāngia ki te pepa whakapiri.',
+      'Mātakitaki i te QR — ka kitea te pūtake.',
+    ],
+  },
+  sm: {
+    name: 'Gagana Samoa',
+    dir: 'ltr',
+    steps: [
+      'Sii mai le SVG (e sili mo le lomiga) po o le PNG.',
+      'Tatala le faila. Lomi i le 100%, aua le faaitiitia.',
+      'Mo le kelu falaoa: 1 ipu falaoamata, 4 ipu vai, faavela, faamalulu.',
+      'Vali le kelu i luga o le puipui, tuu le pepa, vali foi i luga.',
+      'Mo faailoga: lomi i pepa pipii.',
+      'Asiasi le QR i lau telefoni e faamaonia le puna.',
+    ],
+  },
+  pt: {
+    name: 'Português',
+    dir: 'ltr',
+    steps: [
+      'Baixe o SVG (melhor para impressão) ou PNG.',
+      'Abra o arquivo. Imprima em 100%, sem ajustar à página.',
+      'Para colagem com cola caseira: 1 xícara de farinha + 4 de água, cozinhe, esfrie.',
+      'Passe cola na parede, fixe o cartaz, passe cola por cima para selar.',
+      'Para adesivos: imprima em papel adesivo.',
+      'Aponte a câmera para o QR para verificar a fonte.',
+    ],
+  },
+  gn: {
+    name: 'Avañe\u02bce\u0303 (Guaraní)',
+    dir: 'ltr',
+    steps: [
+      'Eguenohẽ SVG (iporãvéva impresión-pe) térã PNG.',
+      'Ejehechauka pe archivo. Eikuatia 100%-pe, ani embokangy.',
+      'Ejapo hag̃ua hetenduha: 1 taza harína + 4 taza y, embopupu, embopo\'i.',
+      'Embojahu pe paredpe, emoĩ pe cartel, embojahu jey hi\'ári.',
+      'Pegatína-pe: eikuatia papel pegajoso-pe.',
+      'Emañáke QR-re ne celular reheve ehechakuaa hag̃ua oúha.',
+    ],
+  },
+  ar: {
+    name: 'العربية',
+    dir: 'rtl',
+    steps: [
+      'حمّل ملف SVG (الأفضل للطباعة) أو PNG.',
+      'افتح الملف، اطبع بنسبة 100% دون ملاءمة الصفحة.',
+      'لصق بالعجين: كوب طحين + 4 أكواب ماء، يُغلى ويُبرَّد.',
+      'ادهن الجدار، ثبّت الملصق، ثم ادهن من فوقه.',
+      'للملصقات اللاصقة: اطبع على ورق لاصق.',
+      'امسح رمز QR بهاتفك للتحقق من المصدر.',
+    ],
+  },
+};
+
+// Geo hints by detected timezone region.
+const GEO_HINTS = {
+  'Pacific/Auckland':   { region: 'Aotearoa NZ',  chains: 'Warehouse Stationery · Officeworks·NZ · public libraries', paper: 'A4 / A3 most common · 80gsm or 100gsm', rights: 'https://www.communitylaw.org.nz/community-law-manual/chapter-29-public-protest-and-public-spaces/' },
+  'Pacific/Chatham':    { region: 'Aotearoa NZ',  chains: 'Warehouse Stationery · public libraries', paper: 'A4 / A3 · 80gsm', rights: 'https://www.communitylaw.org.nz/community-law-manual/chapter-29-public-protest-and-public-spaces/' },
+  'Australia/Sydney':   { region: 'Australia',    chains: 'Officeworks · Snap Print · public libraries', paper: 'A4 / A3 · 80gsm', rights: 'https://www.alhr.org.au/' },
+  'Australia/Melbourne':{ region: 'Australia',    chains: 'Officeworks · Snap Print · public libraries', paper: 'A4 / A3 · 80gsm', rights: 'https://www.alhr.org.au/' },
+  'Australia/Brisbane': { region: 'Australia',    chains: 'Officeworks · Snap Print · public libraries', paper: 'A4 / A3 · 80gsm', rights: 'https://www.alhr.org.au/' },
+  'Australia/Perth':    { region: 'Australia',    chains: 'Officeworks · public libraries', paper: 'A4 / A3 · 80gsm', rights: 'https://www.alhr.org.au/' },
+  'America/Los_Angeles':{ region: 'United States', chains: 'FedEx Office · Staples · public libraries', paper: 'US Letter / Tabloid · 24lb', rights: 'https://www.aclu.org/know-your-rights/protesters-rights' },
+  'America/New_York':   { region: 'United States', chains: 'FedEx Office · Staples · public libraries', paper: 'US Letter / Tabloid · 24lb', rights: 'https://www.aclu.org/know-your-rights/protesters-rights' },
+  'America/Chicago':    { region: 'United States', chains: 'FedEx Office · Staples · public libraries', paper: 'US Letter / Tabloid · 24lb', rights: 'https://www.aclu.org/know-your-rights/protesters-rights' },
+  'Europe/London':      { region: 'United Kingdom', chains: 'Ryman · Snappy Snaps · public libraries', paper: 'A4 / A3 · 80gsm', rights: 'https://www.libertyhumanrights.org.uk/advice_information/' },
+  'Europe/Berlin':      { region: 'Germany',       chains: 'Copyshop chains · Müller · libraries', paper: 'A4 / A3 · 80gsm', rights: '' },
+  'America/Sao_Paulo':  { region: 'Brasil',        chains: 'Kalunga · papelarias · bibliotecas públicas', paper: 'A4 / A3 · 75g/m²', rights: '' },
+  'Pacific/Apia':       { region: 'Sāmoa',         chains: 'Print shops in Apia · libraries', paper: 'A4 · 80gsm', rights: '' },
+  'Pacific/Honolulu':   { region: 'Hawaiʻi',       chains: 'FedEx Office · public libraries', paper: 'US Letter / Tabloid · 24lb', rights: 'https://www.aclu.org/know-your-rights/protesters-rights' },
+};
+
+// ============================================================
+// State
+// ============================================================
+const state = {
+  data: null,
+  catId: null,
+  paletteId: null,
+  format: 'sticker',
+  slogan: '',
+  qrTarget: 'https://te-pa.org/launch-mediakit/',
+  attribution: '',
+};
+
+// ============================================================
+// DOM refs
+// ============================================================
+const $ = (id) => document.getElementById(id);
+
+// ============================================================
+// Boot
+// ============================================================
+async function boot() {
+  try {
+    const resp = await fetch(DATA_URL, { cache: 'no-cache' });
+    state.data = await resp.json();
+  } catch (e) {
+    $('preview-stage').innerHTML = '<p>Couldn\u2019t load campaign data. Please refresh.</p>';
+    console.error(e);
+    return;
+  }
+
+  renderPrinciples();
+  renderFeedStamp();
+  renderCategorySelect();
+  renderPaletteSwatches();
+  renderFormatChips();
+  renderInstructions();
+  renderGeoHints();
+  renderAttributionList();
+
+  // initial selection: first category
+  selectCategory(state.data.categories[0].id);
+  bindControls();
+}
+
+function renderPrinciples() {
+  const ul = $('principles-list');
+  ul.innerHTML = '<strong>Ethical principles:</strong>' +
+    (state.data.principles || []).map((p) => '<li>' + escapeHtml(p) + '</li>').join('');
+}
+
+function renderFeedStamp() {
+  const stamp = $('feed-stamp');
+  const t = state.data.feed_last_refreshed;
+  if (!t) { stamp.textContent = ''; return; }
+  const d = new Date(t);
+  stamp.textContent = '  ·  Feed last refreshed ' + d.toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: 'numeric' });
+}
+
+function renderCategorySelect() {
+  const sel = $('cat-select');
+  sel.innerHTML = state.data.categories.map((c) =>
+    '<option value="' + c.id + '">' + escapeHtml(c.label || c.id) + (c.scope ? ' · ' + escapeHtml(c.scope) : '') + '</option>'
+  ).join('');
+}
+
+function renderPaletteSwatches() {
+  const host = $('palette-swatches');
+  host.innerHTML = Object.entries(state.data.palettes).map(([id, p]) =>
+    '<button type="button" class="palette-swatch" data-pal="' + id + '" style="--p-bg:' + p.bg + ';--p-fg:' + p.fg + '">' +
+      '<span class="sw"></span>' + escapeHtml(p.name) +
+    '</button>'
+  ).join('');
+}
+
+function renderFormatChips() {
+  document.querySelectorAll('.chip[data-format]').forEach((b) => {
+    b.setAttribute('aria-pressed', b.dataset.format === state.format ? 'true' : 'false');
+  });
+}
+
+function renderInstructions() {
+  $('instr-grid').innerHTML = Object.entries(INSTRUCTIONS).map(([code, t]) =>
+    '<div class="instr-card" lang="' + code + '" dir="' + t.dir + '">' +
+      '<h4>' + escapeHtml(t.name) + '</h4>' +
+      '<ol>' + t.steps.map((s) => '<li>' + escapeHtml(s) + '</li>').join('') + '</ol>' +
+    '</div>'
+  ).join('');
+}
+
+function renderGeoHints() {
+  const tz = (Intl.DateTimeFormat().resolvedOptions().timeZone) || '';
+  const hint = GEO_HINTS[tz];
+  if (!hint) {
+    $('geo-text').textContent = 'Region not auto-detected (' + tz + '). Universal advice: cheapest is your local public library, otherwise any office-supplies store or copy shop with self-serve printing.';
+    return;
+  }
+  let html = '<strong>' + escapeHtml(hint.region) + '</strong> · cheap print options near you: ' + escapeHtml(hint.chains) + '<br>Common paper sizes: ' + escapeHtml(hint.paper) + '.';
+  if (hint.rights) html += '<br>Know your rights: <a href="' + hint.rights + '" rel="noopener">link</a>.';
+  $('geo-text').innerHTML = html;
+}
+
+function renderAttributionList() {
+  const host = $('attribution-list');
+  host.innerHTML = state.data.categories.map((c) => {
+    const leaders = (c.movement_leaders || []).map((l) => '<li>' + escapeHtml(l) + '</li>').join('');
+    const sources = (c.sources || []).map((s) => '<li><a href="' + s.url + '" rel="noopener">' + escapeHtml(s.label) + '</a></li>').join('');
+    return '<details style="margin-bottom:0.4rem;border:1px solid var(--line);border-radius:6px;padding:0.6rem 0.8rem;background:#fff;">' +
+      '<summary style="cursor:pointer;font-weight:600;">' + escapeHtml(c.label || c.id) + '</summary>' +
+      '<div style="margin-top:0.5rem;font-size:0.88rem;line-height:1.5;">' +
+        '<p style="margin:0 0 0.4rem 0;"><strong>Movement leaders:</strong></p>' +
+        '<ul style="margin:0 0 0.6rem 0;padding-left:1.2rem;">' + leaders + '</ul>' +
+        '<p style="margin:0 0 0.4rem 0;"><strong>Sources:</strong></p>' +
+        '<ul style="margin:0;padding-left:1.2rem;">' + sources + '</ul>' +
+      '</div>' +
+    '</details>';
+  }).join('');
+}
+
+function selectCategory(id) {
+  const cat = state.data.categories.find((c) => c.id === id);
+  if (!cat) return;
+  state.catId = id;
+  state.paletteId = cat.palette;
+  state.slogan = cat.slogans[0] || '';
+  $('cat-select').value = id;
+  $('cat-meta').textContent = (cat.scope ? cat.scope + ' · ' : '') + ((cat.movement_leaders || []).join(' · '));
+  $('qr-target').value = cat.context_url || 'https://te-pa.org/';
+  state.qrTarget = $('qr-target').value;
+  // Populate slogan select
+  const ss = $('slogan-select');
+  ss.innerHTML = (cat.slogans || []).map((s, i) => '<option value="' + i + '">' + escapeHtml(s) + '</option>').join('');
+  $('slogan-edit').value = state.slogan;
+  // Palette pressed state
+  document.querySelectorAll('.palette-swatch').forEach((b) => {
+    b.setAttribute('aria-pressed', b.dataset.pal === state.paletteId ? 'true' : 'false');
+  });
+  $('palette-credit').textContent = state.data.palettes[state.paletteId].credit;
+  // headlines
+  renderHeadlines(id);
+  redraw();
+}
+
+function renderHeadlines(catId) {
+  const list = $('headline-list');
+  const items = (state.data.current_headlines || []).filter((h) => h.category === catId);
+  if (!items.length) {
+    list.innerHTML = '<li><em>No fresh headlines routed to this category yet — the curated baseline above is the source of truth.</em></li>';
+    return;
+  }
+  list.innerHTML = items.map((h) =>
+    '<li><span class="h-cat">' + escapeHtml(h.source) + '</span> ' +
+    '<a href="' + h.link + '" rel="noopener">' + escapeHtml(h.title) + '</a></li>'
+  ).join('');
+}
+
+function bindControls() {
+  $('cat-select').addEventListener('change', (e) => selectCategory(e.target.value));
+  $('slogan-select').addEventListener('change', (e) => {
+    const cat = state.data.categories.find((c) => c.id === state.catId);
+    state.slogan = cat.slogans[parseInt(e.target.value, 10)] || '';
+    $('slogan-edit').value = state.slogan;
+    redraw();
+  });
+  $('slogan-edit').addEventListener('input', (e) => { state.slogan = e.target.value; redraw(); });
+  $('qr-target').addEventListener('input', (e) => { state.qrTarget = e.target.value; redraw(); });
+  $('attribution').addEventListener('input', (e) => { state.attribution = e.target.value; redraw(); });
+  document.querySelectorAll('.chip[data-format]').forEach((b) => {
+    b.addEventListener('click', () => {
+      state.format = b.dataset.format;
+      renderFormatChips();
+      redraw();
+    });
+  });
+  document.querySelectorAll('.palette-swatch').forEach((b) => {
+    b.addEventListener('click', () => {
+      state.paletteId = b.dataset.pal;
+      document.querySelectorAll('.palette-swatch').forEach((x) => x.setAttribute('aria-pressed', x.dataset.pal === state.paletteId ? 'true' : 'false'));
+      $('palette-credit').textContent = state.data.palettes[state.paletteId].credit;
+      redraw();
+    });
+  });
+  $('btn-download-svg').addEventListener('click', downloadSVG);
+  $('btn-download-png').addEventListener('click', downloadPNG);
+  $('btn-submit-gallery').addEventListener('click', submitToGallery);
+}
+
+// ============================================================
+// Render SVG
+// ============================================================
+function buildSVG() {
+  const f = FORMATS[state.format];
+  const p = state.data.palettes[state.paletteId];
+  const cat = state.data.categories.find((c) => c.id === state.catId);
+  const slogan = (state.slogan || '').trim() || (cat.slogans[0] || '');
+  const banner = state.format === 'banner';
+  const w = f.w, h = f.h;
+  const padding = Math.round(w * 0.06);
+
+  // Typography: choose font size by slogan length and format
+  const maxChars = Math.max(8, slogan.length);
+  const baseSize = banner ? h * 0.45 : Math.min(w, h) * 0.16;
+  // Reduce as length grows
+  const lengthScale = Math.min(1, 18 / Math.sqrt(maxChars));
+  const fontSize = Math.round(baseSize * lengthScale);
+
+  // Wrap slogan into lines
+  const targetCharsPerLine = banner ? 24 : 16;
+  const lines = wrapText(slogan, targetCharsPerLine);
+  const lineHeight = Math.round(fontSize * 1.05);
+  const textBlockH = lines.length * lineHeight;
+  const textY = banner ? h / 2 - textBlockH / 2 + lineHeight * 0.8 : padding + Math.round(h * 0.10) + lineHeight;
+
+  // QR code data URL (PNG, embedded as <image>)
+  const qrSize = Math.round(Math.min(w, h) * (banner ? 0.20 : 0.18));
+  const qrPadding = Math.round(qrSize * 0.10);
+  const qrDataUrl = generateQRDataURL(state.qrTarget, qrSize);
+
+  // Attribution text
+  const attribution = (state.attribution || '').trim();
+  const ctxLine = 'te-pa.org' + (attribution ? '  ·  ' + attribution : '');
+
+  // Build SVG string. Pure SVG — no external font, uses generic stack.
+  const fontFamily = 'Work Sans, Helvetica, Arial, sans-serif';
+  const titleFamily = 'Instrument Serif, Georgia, serif';
+
+  const linesSvg = lines.map((line, i) => {
+    const y = textY + i * lineHeight;
+    return '<text x="' + padding + '" y="' + y + '" font-family="' + titleFamily + '" font-size="' + fontSize + '" font-weight="400" fill="' + p.fg + '" xml:space="preserve">' + escapeXml(line) + '</text>';
+  }).join('');
+
+  // Accent bar
+  const accentH = Math.round(h * (banner ? 0.04 : 0.012));
+  const accentY = textY + textBlockH + Math.round(lineHeight * 0.4);
+  const accentW = Math.round(w * 0.30);
+
+  // Bottom footer: category label + context
+  const footerFontSize = Math.round(Math.min(w, h) * (banner ? 0.05 : 0.035));
+  const footerY = h - padding - Math.round(footerFontSize * 0.4);
+  const footerLabel = (cat.label || cat.id).toUpperCase();
+  const footerCtxY = footerY - Math.round(footerFontSize * 1.3);
+
+  // QR pos: bottom right
+  const qrX = w - padding - qrSize;
+  const qrY = h - padding - qrSize;
+
+  const svg =
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + w + ' ' + h + '" width="' + w + '" height="' + h + '" role="img" aria-label="' + escapeXml(slogan) + ' poster">' +
+      '<rect width="' + w + '" height="' + h + '" fill="' + p.bg + '"/>' +
+      // Top eyebrow
+      '<text x="' + padding + '" y="' + (padding + Math.round(footerFontSize * 0.9)) + '" font-family="' + fontFamily + '" font-size="' + Math.round(footerFontSize * 0.7) + '" letter-spacing="2" fill="' + p.accent + '" font-weight="600">' + escapeXml(footerLabel) + '</text>' +
+      // Slogan
+      linesSvg +
+      // Accent bar
+      '<rect x="' + padding + '" y="' + accentY + '" width="' + accentW + '" height="' + accentH + '" fill="' + p.accent + '"/>' +
+      // Footer context line
+      '<text x="' + padding + '" y="' + footerCtxY + '" font-family="' + fontFamily + '" font-size="' + Math.round(footerFontSize * 0.75) + '" fill="' + p.fg + '" font-weight="500" opacity="0.85">' + escapeXml(ctxLine) + '</text>' +
+      '<text x="' + padding + '" y="' + footerY + '" font-family="' + fontFamily + '" font-size="' + Math.round(footerFontSize * 0.6) + '" fill="' + p.fg + '" opacity="0.65">CC BY-NC-SA 4.0  ·  scan to verify</text>' +
+      // QR
+      (qrDataUrl ? '<rect x="' + (qrX - qrPadding) + '" y="' + (qrY - qrPadding) + '" width="' + (qrSize + qrPadding * 2) + '" height="' + (qrSize + qrPadding * 2) + '" fill="#FFFFFF"/>' +
+                    '<image href="' + qrDataUrl + '" x="' + qrX + '" y="' + qrY + '" width="' + qrSize + '" height="' + qrSize + '"/>' : '') +
+    '</svg>';
+  return svg;
+}
+
+function wrapText(text, maxChars) {
+  const words = text.split(/\s+/);
+  const lines = [];
+  let line = '';
+  for (const w of words) {
+    if (!line) { line = w; continue; }
+    if ((line + ' ' + w).length <= maxChars) {
+      line += ' ' + w;
+    } else {
+      lines.push(line);
+      line = w;
+    }
+  }
+  if (line) lines.push(line);
+  return lines;
+}
+
+function generateQRDataURL(text, size) {
+  if (!text) return '';
+  try {
+    // qrcodejs renders into a div; we extract the resulting <img src>.
+    const host = document.createElement('div');
+    host.style.position = 'absolute';
+    host.style.left = '-9999px';
+    document.body.appendChild(host);
+    // eslint-disable-next-line no-undef
+    new QRCode(host, { text: text, width: size, height: size, correctLevel: QRCode.CorrectLevel.M });
+    const img = host.querySelector('img');
+    const canvas = host.querySelector('canvas');
+    let dataUrl = '';
+    if (img && img.src) dataUrl = img.src;
+    else if (canvas) dataUrl = canvas.toDataURL('image/png');
+    document.body.removeChild(host);
+    return dataUrl;
+  } catch (e) {
+    console.warn('QR generation failed', e);
+    return '';
+  }
+}
+
+function redraw() {
+  const svg = buildSVG();
+  $('preview-stage').innerHTML = svg;
+  const f = FORMATS[state.format];
+  const p = state.data.palettes[state.paletteId];
+  $('preview-meta').innerHTML =
+    '<strong>' + escapeHtml(f.label) + '</strong> · palette: ' + escapeHtml(p.name) +
+    '<br>QR target: <code>' + escapeHtml(state.qrTarget) + '</code>' +
+    '<br>' + escapeHtml(p.credit);
+}
+
+// ============================================================
+// Download
+// ============================================================
+function downloadSVG() {
+  const svg = buildSVG();
+  const blob = new Blob([svg], { type: 'image/svg+xml' });
+  triggerDownload(blob, fileName('svg'));
+}
+
+function downloadPNG() {
+  const svg = buildSVG();
+  const f = FORMATS[state.format];
+  const img = new Image();
+  const blob = new Blob([svg], { type: 'image/svg+xml' });
+  const url = URL.createObjectURL(blob);
+  img.onload = () => {
+    const canvas = document.createElement('canvas');
+    // Cap dimension so memory stays reasonable
+    const maxDim = 3000;
+    const scale = Math.min(1, maxDim / Math.max(f.w, f.h));
+    canvas.width = Math.round(f.w * scale);
+    canvas.height = Math.round(f.h * scale);
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    canvas.toBlob((png) => {
+      triggerDownload(png, fileName('png'));
+      URL.revokeObjectURL(url);
+    }, 'image/png');
+  };
+  img.onerror = () => { alert('PNG export failed in this browser. Try downloading the SVG instead.'); URL.revokeObjectURL(url); };
+  img.src = url;
+}
+
+function fileName(ext) {
+  const slug = (state.catId || 'campaign') + '-' + state.format;
+  return 'te-pa-' + slug + '.' + ext;
+}
+
+function triggerDownload(blob, name) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = name;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+// ============================================================
+// Submit to gallery — opens pre-filled GitHub issue
+// ============================================================
+function submitToGallery() {
+  const cat = state.data.categories.find((c) => c.id === state.catId);
+  const title = 'Gallery submission · ' + (cat.label || cat.id) + ' · ' + state.format;
+  const body = [
+    '### Campaign submission',
+    '',
+    '- Category: **' + (cat.label || cat.id) + '**',
+    '- Format: **' + FORMATS[state.format].label + '**',
+    '- Palette: **' + state.data.palettes[state.paletteId].name + '**',
+    '- QR target: ' + state.qrTarget,
+    '',
+    '### Slogan',
+    '> ' + (state.slogan || ''),
+    '',
+    '### Attribution line',
+    state.attribution || '_(none provided)_',
+    '',
+    '### How I will use this',
+    '_(brief — e.g. "wheatpaste in Dunedin", "stickered in West End", "shared on Bluesky")_',
+    '',
+    '### Movement consent confirmed',
+    'I confirm that the slogan reflects a public statement of the movement, not my own invention.  [ ] yes',
+    '',
+    '---',
+    '_Submitted via /campaign-generator/ on te-pa.org. SVG can be attached as a file to this issue._',
+  ].join('\n');
+  const url = 'https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite/issues/new?title=' +
+    encodeURIComponent(title) + '&body=' + encodeURIComponent(body) + '&labels=' + encodeURIComponent('gallery-submission');
+  window.open(url, '_blank', 'noopener');
+}
+
+// ============================================================
+// utils
+// ============================================================
+function escapeHtml(s) {
+  return String(s || '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+function escapeXml(s) {
+  return String(s || '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;' }[c]));
+}
+
+boot();
+</script>
+</body>
+</html>
