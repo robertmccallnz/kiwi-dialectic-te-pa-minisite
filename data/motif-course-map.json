@@ -1,0 +1,2256 @@
+{
+  "version": "1.0",
+  "course_modules": [
+    {
+      "id": "module_1",
+      "title": {
+        "en": "What is Data? Indigenous Knowledges and the Digital World",
+        "mi": "He aha te raraunga? Ngā mātauranga Māori me te ao matihiko",
+        "pt": "O que são dados? Conhecimentos indígenas e o mundo digital",
+        "gn": "Mba'épa tembiasakue? Ñane reko rekove ha tecnologia",
+        "sm": "O le a le Fa'amaumauga? Fa'asinomaga Samoa ma le Lalolagi Faitau"
+      },
+      "theme": "data_definition_indigenous_knowledge",
+      "care_principle": "C (Collective Benefit) — data ecosystems must serve Indigenous peoples",
+      "motif_ids": [
+        "koru",
+        "pa_tuwatawata",
+        "va_a_waka",
+        "yvy_mara_ey"
+      ]
+    },
+    {
+      "id": "module_2",
+      "title": {
+        "en": "Data Colonialism: Who Took Our Data?",
+        "mi": "Te Tāmitanga Raraunga: Nā wai i tangohia ō tātou raraunga?",
+        "pt": "Colonialismo de Dados: Quem tomou nossos dados?",
+        "gn": "Colonialismo tembiasakuégui: Mava'e oñemono ñane tembiasakue?",
+        "sm": "Colonialism o Fa'amaumauga: O ai na ave a'e fa'amaumauga?"
+      },
+      "theme": "data_colonialism_extraction",
+      "care_principle": "A (Authority to Control) — recognising rights and interests in data",
+      "motif_ids": [
+        "niho_taniwha",
+        "mangopare",
+        "luta_pela_vida",
+        "kayapo_jaguar_division",
+        "yanomami_urihi"
+      ]
+    },
+    {
+      "id": "module_3",
+      "title": {
+        "en": "CARE & OCAP: Frameworks for Data Sovereignty",
+        "mi": "CARE me OCAP: Ngā anga mō te mana raraunga",
+        "pt": "CARE e OCAP: Frameworks para a soberania de dados",
+        "gn": "CARE ha OCAP: Ñane rekove tembiasakue rekovepyrã",
+        "sm": "CARE & OCAP: O fa'avā mo le fa'atonuga o fa'amaumauga"
+      },
+      "theme": "governance_frameworks",
+      "care_principle": "Full CARE framework — all four principles",
+      "motif_ids": [
+        "kowhaiwhai",
+        "manaia",
+        "malu_diamond",
+        "mola_guna"
+      ]
+    },
+    {
+      "id": "module_4",
+      "title": {
+        "en": "Land, Territory, and Digital Sovereignty",
+        "mi": "Whenua, rohe, me te mana matihiko",
+        "pt": "Terra, Território e Soberania Digital",
+        "gn": "Yvy, Tekoha ha Soberanía Digital",
+        "sm": "Fanua, Teritori, ma le Pule Fa'atekinolosi"
+      },
+      "theme": "land_territory_sovereignty",
+      "care_principle": "R (Responsibility) — for positive relationships and expanding capability",
+      "motif_ids": [
+        "takarangi",
+        "unaunahi",
+        "pikorua",
+        "nanduti",
+        "masi_kesa",
+        "vonu",
+        "manulua"
+      ]
+    },
+    {
+      "id": "module_5",
+      "title": {
+        "en": "Collective Knowledge and Network Thinking",
+        "mi": "Te mātauranga ā-iwi me te whakaaro ā-whatungarongaro",
+        "pt": "Conhecimento Coletivo e Pensamento em Rede",
+        "gn": "Ñane aranduka ha ñandejee tekove",
+        "sm": "Poto Fa'aagāiga ma le Mafaufau Fa'afefiloi"
+      },
+      "theme": "collective_knowledge_network",
+      "care_principle": "C (Collective Benefit) and R (Responsibility) together",
+      "motif_ids": [
+        "fa_a_aupega",
+        "fetu",
+        "atualoa",
+        "kene_shipibo",
+        "ronin_kuin",
+        "cuaracy_ra_angaba"
+      ]
+    },
+    {
+      "id": "module_6",
+      "title": {
+        "en": "Building Indigenous AI: Resistance and Future Visions",
+        "mi": "Te hanga AI Māori: Te whakaohooho me ngā āronui anamata",
+        "pt": "Construindo IA Indígena: Resistência e Visões de Futuro",
+        "gn": "Ñane AI ojejapo: Ñane mbarete ha ñane rekove aja",
+        "sm": "Fa'atuina o le AI Fa'a-Tagata-Atunu'u: Fa'ateteleina ma Tala o le Lumā"
+      },
+      "theme": "indigenous_ai_futures",
+      "care_principle": "E (Ethics) — minimising harm, justice, and future use",
+      "motif_ids": [
+        "niho_mano",
+        "pea",
+        "aso",
+        "jagua_pyta",
+        "pikorua"
+      ]
+    }
+  ],
+  "motifs": [
+    {
+      "id": "koru",
+      "culture": "maori",
+      "language_primary": "mi",
+      "module": "module_1",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_koru.png",
+      "course_text": {
+        "en": "Like the koru unfurling from darkness into light, Indigenous data sovereignty begins when communities reclaim the right to tell their own story. Data is not neutral — it grows from land, language, and whakapapa.",
+        "mi": "Anō te koru e hora ana ki te ao mārama, ko te mana raraunga ka tipu ake i te putanga o ngā kōrero ā-iwi. Ko te raraunga he mauri, ā, ka tipu mai i te whenua, i te reo, i te whakapapa.",
+        "pt": "Como o koru que se desdobra da escuridão para a luz, a soberania de dados indígena começa quando as comunidades recuperam o direito de contar sua própria história. Os dados não são neutros — crescem da terra, da língua e da whakapapa.",
+        "gn": "Koru ojejapo ao maramágui, soberanía tembiasakue taketake oñepyrũ tekove omoingo haguã ñane ayvu. Tembiasakue ndopeteĩi — otipu yvy, ñe'ẽ ha whakapapa rupi.",
+        "sm": "E pei o le koru e tatala mai le pouri i le malamalama, e amata le fa'atonuga o fa'amaumauga fa'aagāiga pe ā toe maua e nu'u le aia tatau e tala ai lo latou tala. E le sa'o le fa'amaumauga — e tupu mai i le fanua, gagana, ma le gafa."
+      },
+      "meme_caption": {
+        "en": "Every story begins as a spiral. Reclaim your data. #IndigenousDataSovereignty #LandBack",
+        "pt": "Cada história começa como uma espiral. Retome seus dados. #SoberaniaDeDados #DemarcaçãoJá",
+        "gn": "Opaite ayvu peteĩ iruzu'ãgui oñepyrũ. Embyasy ñane tembiasakue. #TekojojaDigital #Guarani",
+        "sm": "O tala uma e amata ma se iʻu solo. Toe maua lau fa'amaumauga. #SamoanSovereignty #Indigenous",
+        "mi": "Ko ia ake kōrero ka tipu mai i tētahi koru. Tōia mai ō raraunga. #ManaRaraunga #LandBack"
+      },
+      "hashtags": {
+        "en": [
+          "#WhatIsData",
+          "#IndigenousKnowledge",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE",
+          "#OCAP"
+        ],
+        "mi": [
+          "#RaraungaMaori",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#ConhecimentoIndígena",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#AranduGuarani",
+          "#Guarani",
+          "#Tekoha",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#PotoFaaSamoa",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_1"
+    },
+    {
+      "id": "pa_tuwatawata",
+      "culture": "maori",
+      "language_primary": "mi",
+      "module": "module_1",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_pa_tuwatawata.png",
+      "course_text": {
+        "en": "The pā tūwatawata — the fortified palisade — was built not by individuals but by the whole hapū working in unison. Each stake interlocked with the next, creating a boundary no single attacker could breach alone. Data sovereignty requires the same collective architecture: interlocking protocols, shared governance, and community standing together as one.",
+        "mi": "Ko te pā tūwatawata i hangaia ehara nā tētahi, nā te hapū katoa ē mahi tahi ana. Ko ia ake ia tūāhu i tūhonohono ki tōna hoa, ā, ka hanga i tētahi rohe e kore e pahure noa iho e tētahi kaipatu anake. Ko te mana raraunga ka hiahia ana ki tērā whare ā-iwi anō: ngā tikanga tūhonohono, te kāwanatanga tūhono, me te hapori e tū tahi ana.",
+        "pt": "O pā tūwatawata — a paliçada fortificada — foi construído não por indivíduos, mas pela hapū inteira trabalhando em uníssono. Cada estaca interlocking com a próxima, criando um limite que nenhum invasor poderia romper sozinho. A soberania de dados requer a mesma arquitetura coletiva: protocolos interligados, governança compartilhada e comunidade de pé juntos.",
+        "gn": "Pā tūwatawata — tava'anga ryguata — ojejapo ndopeteĩi peteĩ ñane rupi, hapū opaichagua omba'apo añeteva. Opaite tūāhu oñemoinge tóva reheve, ojapo rokẽ peteĩ kaipatu anake ndojahéi. Soberanía raraunga ojerure ko'ã whare ā-iwi avei: tikanga tūhono, gobernanza ñepyrũ ha tetã e tū tahi.",
+        "sm": "O le pā tūwatawata — o le palisade fa'amautu — na faia e le hapū atoa galulue fa'atasi, ae le o tagata to'atasi. Sa feso'otai pou ta'itasi ma le isi, ma faia ai se tuaoi e le mafai e se osofaʻi to'atasi ona solia. E manaomia e le fa'atonuga o fa'amaumauga le fa'atulagaina e tutusa: faiga feso'otai, pulega fa'atasi, ma nu'u tu fa'atasi."
+      },
+      "meme_caption": {
+        "en": "The palisade wasn't built by one person. Data sovereignty isn't won by one nation. Build the wall together. #DataSovereignty #Kotahitanga",
+        "mi": "Ehara te pā i hangaia e tētahi. Ehara te mana raraunga i tūwhera e tētahi iwi. Hangaia tahi te pā. #ManaRaraunga #Kotahitanga",
+        "pt": "A paliçada não foi construída por uma pessoa. A soberania de dados não é conquistada por uma nação. Construam juntos. #SoberaniaDeDados #Kotahitanga",
+        "gn": "Pā tūwatawata ndojejapo'ỹ peteĩva rupi. Mana raraunga ndoñehupytyvy'ỹ tetã peteĩ rupi. Ejapo oñondive. #SoberaníaData #Kotahitanga",
+        "sm": "E le'o faia le pa e se tagata e tasi. E le o manumalo le fa'atonuga o fa'amaumauga e se atunu'u e tasi. Fausia fa'atasi. #DataSovereignty #Kotahitanga"
+      },
+      "hashtags": {
+        "en": [
+          "#WhatIsData",
+          "#IndigenousKnowledge",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE",
+          "#OCAP"
+        ],
+        "mi": [
+          "#RaraungaMaori",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#ConhecimentoIndígena",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#AranduGuarani",
+          "#Guarani",
+          "#Tekoha",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#PotoFaaSamoa",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_1"
+    },
+    {
+      "id": "va_a_waka",
+      "culture": "pacific",
+      "language_primary": "sm",
+      "module": "module_1",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_va_a_waka.png",
+      "course_text": {
+        "en": "The va'a / waka crossed the world's largest ocean — not by accident, but through centuries of accumulated Indigenous knowledge: star maps, current patterns, bird flight paths, and wave reading. This knowledge system was sovereign, communal, and ungoverned by outsiders. Digital data sovereignty asks the same: who owns the navigation knowledge of our communities, and who has the right to chart our digital course?",
+        "mi": "I kauhoe te va'a / waka i te moana nui rawa atu o te ao — ehara nā te āhuareka, engari nā ngā rautau o te mātauranga taketake i kohikohi: ngā mahere whetū, ngā tauira ia, ngā ara rerenga manu, me te pānui ngaru. Ko tēnei pūnaha mātauranga he ā-mana, ā-iwi, ā-kore here ki waho. Ko te mana raraunga matihiko ka pātai ana ērā pātai anō: nā wai ngā mātauranga whakatere o ō tātou hapori, ā, mā wai te tika ki te tauira i tō tātou ara matihiko?",
+        "pt": "A va'a / waka cruzou o maior oceano do mundo — não por acidente, mas através de séculos de conhecimento indígena acumulado: mapas estelares, padrões de corrente, rotas de voo de aves e leitura de ondas. Este sistema de conhecimento era soberano, comunal e não governado por estranhos. A soberania de dados digitais pergunta o mesmo: quem possui o conhecimento de navegação de nossas comunidades e quem tem o direito de traçar nosso curso digital?",
+        "gn": "Va'a / waka ojehasa moana nui rawa atu — ndopeteĩi mbeguekatu'ỹ, ha rautau arandu taketake i kohikohi: mahere tatachina, tauira y rekove, taka tape ha ngaru oheka. Ko'ã pūnaha arandu he ā-mana, ā-iwi, ā-kore here ki waho. Soberanía raraunga matihiko opytyvõ ko'ã pätai: ava'e orekóva ñane tetã arandu whakatere, ha mava'e tika ñane ara matihiko oñe'ẽ?",
+        "sm": "Na faimalaga le va'a / waka i le sami tele o le lalolagi — e le o se mea na tupu fa'afuase'i, ae o seneturi o le poto fa'aagāiga ua faapotopoto: fa'afanua fetu, mamanu o le au, ala o le lele o manu, ma le faitau galu. O lenei faiga o poto na pule e le nu'u, fa'alagāpotopoto, e le o fa'atoilaloina e tagata mai fafo. E fesili lenei uiga o le fa'atonuga o fa'amaumauga faitau: o ai e umia poto faimalaga o o tatou nu'u, ma o ai e aia tatau e fafau lo tatou ala faitau?"
+      },
+      "meme_caption": {
+        "en": "The va'a didn't drift here. Our ancestors navigated with data. Reclaim your right to chart your own digital course. #PacificSovereignty #DataBack",
+        "mi": "Kāore te waka i tau noa mai. I whakatere mai ō tātou tūpuna ki ngā raraunga. Tōia mai tō tika ki te tauira i tō ara matihiko. #WakaSovereignty #DataBack",
+        "pt": "A va'a não derivou até aqui. Nossos ancestrais navegaram com dados. Reivindique seu direito de traçar seu próprio curso digital. #SoberaniaDigital #DataBack",
+        "gn": "Va'a ndojapi porã kóãpe. Ñande ru oguata arandu reheve. Emoinge ñane derecho ñane ara digital oñe'ẽ haguã. #SoberaníaDigital #DataBack",
+        "sm": "E le'i feōasoasoi le va'a iinei. Na fa'avao ā tātou tupuna i fa'amaumauga. Toe maua lau aia tatau e fafau ai lau ala faitau. #PacificSovereignty #DataBack"
+      },
+      "hashtags": {
+        "en": [
+          "#WhatIsData",
+          "#IndigenousKnowledge",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE",
+          "#OCAP"
+        ],
+        "mi": [
+          "#RaraungaMaori",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#ConhecimentoIndígena",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#AranduGuarani",
+          "#Guarani",
+          "#Tekoha",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#PotoFaaSamoa",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_1"
+    },
+    {
+      "id": "yvy_mara_ey",
+      "culture": "guarani",
+      "language_primary": "gn",
+      "module": "module_1",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yvy_mara_ey.png",
+      "course_text": {
+        "en": "Yvy Marã Eÿ — the Land Without Evil — is the Guaraní vision of a world free from hunger, disease, and colonial domination. It is reached not by passive waiting but by collective spiritual and political movement. In the data age, yvy marã eÿ is a world where Indigenous knowledge systems exist free from extraction, where communities control their own data and AI systems are designed in service of life.",
+        "mi": "Ko Yvy Marã Eÿ — te Whenua Kore Kino — ko te aro o ngā Guaraní ki tētahi ao hau noa, māuiui, me te ringa whakahaere ā-kāwanatanga. Ka tūtakina ehara mā te tūāwaiwai engari mā te neke ā-wairua ā-torangapū ā-iwi. I te ao raraunga, ko te yvy marã eÿ tētahi ao e noho ana ngā pūnaha mātauranga taketake me te kore tangohia, e whakahaere ana ngā hapori i ō rātou raraunga ake, ā, ko ngā pūnaha AI i hangaia hei ratonga o te ora.",
+        "pt": "Yvy Marã Eÿ — a Terra Sem Males — é a visão guaraní de um mundo livre de fome, doença e dominação colonial. É alcançada não pela espera passiva, mas pelo movimento espiritual e político coletivo. Na era dos dados, yvy marã eÿ é um mundo onde os sistemas de conhecimento indígena existem livres de extração, onde as comunidades controlam seus próprios dados e os sistemas de IA são projetados a serviço da vida.",
+        "gn": "Yvy Marã Eÿ — Yvy Vai'ỹva — ko Guaraní aro peteĩ yvy ãng'ỹva, mba'asy'ỹva ha raupatu ñepyrũ ñepyrũ'ỹva. Ohupytyvõ ndopeteĩi tūāwaiwai engari neke ā-wairua ā-torangapū ā-iwi. Tembiasakue arajekove-pe, yvy marã eÿ peteĩ yvy e noho arandu taketake pūnaha mba'ererekóngue mona'ỹ, e whakahaere tetã ñane raraunga ha AI pūnaha ojapo tekove ratonga haguã.",
+        "sm": "Yvy Marã Eÿ — le Fanua E Aunoa ma le Leaga — o le va'aiga o Guaraní i se lalolagi e aunoa ma le fia'ai, ma'i, ma le pulega colonial. E ausia e le faatali mautu ae o le gaoioiga fa'aleagaga ma fa'apolokiki fa'alagāpotopoto. I le vaitaimi o fa'amaumauga, o yvy marã eÿ o se lalolagi e ola ai faiga o poto fa'aagāiga e aunoa ma le fa'agāsolo, e pule ai nu'u i latou lava fa'amaumauga ma fausia AI mo le tautua i le ola."
+      },
+      "meme_caption": {
+        "en": "Yvy Marã Eÿ: the land without evil. Build that world in the digital realm too. Our data must be free. #YvyMaraEy #Guarani #DataSovereignty",
+        "mi": "Yvy Marã Eÿ: te whenua kore kino. Hangaia tērā ao i roto i te ao matihiko anō. Me tū noa ō tātou raraunga. #YvyMaraEy #DataSovereignty",
+        "pt": "Yvy Marã Eÿ: a terra sem males. Construa esse mundo no digital também. Nossos dados devem ser livres. #YvyMaraEy #Guarani #SoberaniaDeDados",
+        "gn": "Yvy Marã Eÿ: yvy vai'ỹva. Ejapo ko'ã yvy digitalia-pe avei. Ñane tembiasakue me teko sa'y. #YvyMaraEy #Guarani #DataSoberanía",
+        "sm": "Yvy Marã Eÿ: le fanua e aunoa ma le leaga. Fausia lena lalolagi i le lalolagi faitau fo'i. E tatau ona sa'oloto a tatou fa'amaumauga. #YvyMaraEy #Guarani #DataSovereignty"
+      },
+      "hashtags": {
+        "en": [
+          "#WhatIsData",
+          "#IndigenousKnowledge",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE",
+          "#OCAP"
+        ],
+        "mi": [
+          "#RaraungaMaori",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#ConhecimentoIndígena",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#AranduGuarani",
+          "#Guarani",
+          "#Tekoha",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#PotoFaaSamoa",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_1"
+    },
+    {
+      "id": "niho_taniwha",
+      "culture": "maori",
+      "language_primary": "mi",
+      "module": "module_2",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_taniwha.png",
+      "course_text": {
+        "en": "The taniwha's teeth — niho taniwha — represent the bite of colonial extraction: sharp, relentless, and destructive. In data colonialism, these teeth take the form of surveillance systems, biometric databases, and algorithmic profiling that target Indigenous communities without consent. To name the niho taniwha is the first step in resistance — you cannot fight what you cannot see.",
+        "mi": "Ko ngā niho taniwha — ko te ngau o te tango ā-kāwanatanga: māia, toitū, whakakorea. I roto i te tāmitanga raraunga, ko ēnei niho ko ngā pūnaha aroturuki, ko ngā pūtengi koiora, me ngā aratohu algorithm e arotahi ana ki ngā hapori taketake me te kore whakaae. Ko te ingoa i te niho taniwha ko te tīmatanga o te whakahē — kāore e āhei e kē ana ki ngā mea e kore e kitea.",
+        "pt": "Os dentes do taniwha — niho taniwha — representam a mordida da extração colonial: afiada, implacável e destrutiva. No colonialismo de dados, esses dentes tomam a forma de sistemas de vigilância, bancos de dados biométricos e perfis algorítmicos que visam comunidades indígenas sem consentimento. Nomear o niho taniwha é o primeiro passo na resistência — você não pode lutar contra o que não pode ver.",
+        "gn": "Taniwha rembe — niho taniwha — ohechauka tango colonial ngau: māia, toitū ha whakakorea. Data colonialismo-pe, ko'ã rembe ko pūnaha aroturuki, pūtengi koiora ha algoritmo arõ e arotahi ana tetã taketake mbeguekatu'ỹva. Niho taniwha reina he'ise ñorairõ tīmatanga — ñañorairõ'ỹ mba'e ñañe'ẽ'ỹva.",
+        "sm": "O nifo o le taniwha — niho taniwha — e fa'atusalia ai le 'ai o le fa'agāsolo colonial: māia, tumau, ma faaleagaina. I le colonialism o fa'amaumauga, o nifo nei e oo mai i le tulaga o faiga mata'ituina, faletusi biometric, ma fa'asologa algorithm e tauia ai nu'u fa'aagāiga e aunoa ma le maliega. O le fa'aigoaina o le niho taniwha o le laasaga muamua i le tetee — e le mafai ona e tauivi i mea e le mafai ona e va'ai."
+      },
+      "meme_caption": {
+        "en": "Name the taniwha. Surveillance, extraction, algorithmic profiling — these are the teeth. Name them to fight them. #NihoTaniwha #DataColonialism",
+        "mi": "Ingoa te taniwha. Ko te aroturuki, ko te tango, ko te aratohu algorithm — ēnei ko ngā niho. Ingoa kia whawhai. #NihoTaniwha #TāmitangaRaraunga",
+        "pt": "Nomeie o taniwha. Vigilância, extração, perfilamento algorítmico — esses são os dentes. Nomeie-os para combatê-los. #NihoTaniwha #DataColonialism",
+        "gn": "Eikuaa taniwha. Aroturuki, tango ha algoritmo arõ — ko'ã ko niho. Eindoa ikuaaukávo ñorairõ haguã. #NihoTaniwha #ColonialismoData",
+        "sm": "Fa'aigoaina le taniwha. O le mata'ituina, fa'agāsolo, fa'asologa algorithm — o nifo ia. Fa'aigoa ina ia mafai ona tauivi. #NihoTaniwha #ColonialismData"
+      },
+      "hashtags": {
+        "en": [
+          "#DataColonialism",
+          "#ExtractiveAlgorithms",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE",
+          "#OCAP"
+        ],
+        "mi": [
+          "#TāmitangaRaraunga",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#ColonialismoDigital",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#ColonialismoData",
+          "#Guarani",
+          "#Tekoha",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#ColonialismFaaMaumauga",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_2"
+    },
+    {
+      "id": "mangopare",
+      "culture": "maori",
+      "language_primary": "mi",
+      "module": "module_2",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_mangopare.png",
+      "course_text": {
+        "en": "The hammerhead shark does not turn back from the current — it uses the current. Mangopare teaches us that resistance to data colonialism is not just refusal, it is adaptation and persistence. We do not fight the digital ocean; we learn to navigate it on our terms.",
+        "mi": "Kāore te mangopare e huri i te ia o te wai — ka whakamahia e ia te ia. Māhia ana e te mangopare, ehara te whakahē ki te tāmitanga raraunga i tērā anake, ko te urupounamu, ko te toitū hoki. Kāore e whawhai ana ki te moana matihiko — ka ako tātou ki te kauhoe i ruia i ō tātou tikanga.",
+        "pt": "O tubarão-martelo não recua da corrente — ele usa a corrente. Mangopare nos ensina que a resistência ao colonialismo de dados não é apenas recusa, é adaptação e persistência. Não lutamos contra o oceano digital; aprendemos a navegá-lo em nossos próprios termos.",
+        "gn": "Mangopare ndojekuéi y rekove rupi — oiporu y rekove. Mangopare rohayhu oñe'ẽ: ñorairõ data colonialismo reheve ndopeteĩi mboyve, ko urupounamu ha toitū avei. Ñañorairõ'ỹ moana matihiko ári — ñako porã moana matihiko-pe ñane tikanga rupi.",
+        "sm": "E le toe fo'i le malie niho hammerhead i le au — e fa'aaogaina e ia le au. E aʻoaʻo mai Mangopare ia i tatou e le o le teena'i le colonialism o fa'amaumauga na'o le tali ese, o le fa'aleleia ma le tumau fo'i. E le tatou tauivi i le sami faitau; e matua a'o i le fa'avao i tatou lava."
+      },
+      "meme_caption": {
+        "en": "The hammerhead navigates with its whole head. Navigate your data rights with your whole community. #Mangopare #LandBack",
+        "pt": "O tubarão-martelo navega com toda a sua cabeça. Navegue seus direitos de dados com toda a sua comunidade. #ResistênciaIndígena",
+        "gn": "Mangopare iguataha oguata mba'yvate rupi. Eñangareko ñane derecho digitalgui ñande rekopete. #MbaretePy",
+        "sm": "E fa'avao le maʻo hammerhead i lana ulu atoa. Fa'avao au aia tatau o fa'amaumauga ma lau nu'u atoa. #Mangopare #Indigenous",
+        "mi": "Ka whakatere te mangopare i tōna uru katoa. Whakaterea ō tika raraunga me tō hapori katoa. #Mangopare #ManaRaraunga"
+      },
+      "hashtags": {
+        "en": [
+          "#DataColonialism",
+          "#ExtractiveAlgorithms",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE",
+          "#OCAP"
+        ],
+        "mi": [
+          "#TāmitangaRaraunga",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#ColonialismoDigital",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#ColonialismoData",
+          "#Guarani",
+          "#Tekoha",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#ColonialismFaaMaumauga",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_2"
+    },
+    {
+      "id": "luta_pela_vida",
+      "culture": "amazonian",
+      "language_primary": "pt",
+      "module": "module_2",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_luta_pela_vida.png",
+      "course_text": {
+        "en": "The Luta pela Vida — Struggle for Life — was the largest Indigenous mobilisation in Brazilian history, gathering thousands of painted and adorned bodies in front of Brazil's parliament. Body paint is not decoration; it is a political claim. Every geometric line on the skin is a data point of resistance: this body, this land, this knowledge system cannot be taken without our consent.",
+        "mi": "Ko te Luta pela Vida — te Tauiviga mō te Ora — ko te huihuinga ā-iwi nui rawa atu i te hītori o Pēretiria, e kohikohi ana i ngā mano tinana kua tāia me ngā whakapaipai i mua i te pāremata o Pēretiria. Ehara te tā tinana i tōku whakapaipai; he kēme tōrangapū ia. Ko ia ake ia raina hangarite i runga i te kiri he pūanga whakahē: ko tēnei tinana, ko tēnei whenua, ko tēnei pūnaha mātauranga e kore e tangohia me te kore whakaae.",
+        "pt": "A Luta pela Vida foi a maior mobilização indígena da história brasileira, reunindo milhares de corpos pintados e adornados diante do parlamento brasileiro. A pintura corporal não é decoração; é uma reivindicação política. Cada linha geométrica na pele é um ponto de dados de resistência: este corpo, esta terra, este sistema de conhecimento não pode ser tomado sem nosso consentimento.",
+        "gn": "Luta pela Vida — Tauiviga rekove haguã — ko Brasil hītori nui rawa atu, mano tinana tāia me whakapaipai oñemoñepyrũ pāremata Brazil mboyve. Tā tinana ndopeteĩi whakapaipai; he kēme tōrangapū ia. Opaite raina hangarite i kiri rupi peteĩ pūanga whakahē: ko'ã tinana, ko'ã yvy, ko'ã pūnaha arandu ndojehéi mbeguekatu'ỹva.",
+        "sm": "O le Luta pela Vida — Tauiviga mo le Ola — o le fa'aputuputuina tele o tagata fa'aagāiga i le talafaasolopito o Pasila, faapotopoto afe o tino ua peina ma teuina i luma o le fono o Pasila. E le o ni fa'apaopao le peina o le tino; o se tagi'aga faʻapolokiki. O laina geometric ta'itasi i luga o le pa'u o se fa'amaumauga o le tetee: o lenei tino, o lenei fanua, o lenei faiga poto e le mafai ona aveesea e aunoa ma lo tatou maliega."
+      },
+      "meme_caption": {
+        "en": "Painted bodies in front of parliament. Our existence is political. Our data is our body. They took neither. #LutaPelaVida #APIB #DataBack",
+        "pt": "Corpos pintados em frente ao parlamento. Nossa existência é política. Nossos dados são nosso corpo. Não levaram nem um nem outro. #LutaPelaVida #APIB",
+        "mi": "Ngā tinana tāia i mua o te pāremata. He mahi tōrangapū tō tātou oranga. Ko ō tātou raraunga ko ō tātou tinana. Kāore i tangohia tētahi. #LutaPelaVida #DataBack",
+        "gn": "Tino tāia pāremata mboyve. Ñane tekove oñepyrũ ā-tōrangapū. Ñane raraunga ñane tino. Ndoñemono'ỹ peteĩ. #LutaPelaVida #APIB #DataBack",
+        "sm": "Tino ua peina i luma o le fono. O lo tatou ola o se fa'apolokiki. O a tatou fa'amaumauga o lo tatou tino. E le'i ave soona. #LutaPelaVida #APIB #DataBack"
+      },
+      "hashtags": {
+        "en": [
+          "#DataColonialism",
+          "#ExtractiveAlgorithms",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE",
+          "#OCAP"
+        ],
+        "mi": [
+          "#TāmitangaRaraunga",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#ColonialismoDigital",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#ColonialismoData",
+          "#Guarani",
+          "#Tekoha",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#ColonialismFaaMaumauga",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_2"
+    },
+    {
+      "id": "kayapo_jaguar_division",
+      "culture": "kayapo",
+      "language_primary": "pt",
+      "module": "module_2",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_kayapo_jaguar_division.png",
+      "course_text": {
+        "en": "Kayapó leaders like Raoni Metuktire have stood before world leaders at climate summits, faces painted in bold red and black geometric patterns, demanding that Amazonian sovereignty be recognised. The jaguar division is not costume — it is the full cosmological authority of a people who have governed the Amazon for thousands of years. Data colonialism threatens this governance. Kayapó data sovereignty means the right to map, monitor, and protect their territory without extractive outsider control.",
+        "mi": "Ko ngā rangatira Kayapó pēnei i a Raoni Metuktire i tū ana i mua i ngā rangatira o te ao i ngā huihuinga taiao, ko ō rātou kanohi i tāia ki ngā tauira hangarite māia whero me pango, e tono ana kia aro noa te mana taketake o Amazonia. Ehara te wehenga jaguar i he kākahu — ko te mana cosmological katoa ia o tētahi iwi e kāwanatia ana te Amazonia mō ngā mano tau. Ko te tāmitanga raraunga e whakakorea ana tēnei kāwanatanga. Ko te mana raraunga Kayapō ko te tika ki te mahere, ki te aroturuki, me te tiaki i tō rātou rohe me te kore here ā-waho tango.",
+        "pt": "Líderes Kayapó como Raoni Metuktire se posicionaram diante de líderes mundiais em cúpulas climáticas, rostos pintados em negrito padrões geométricos vermelho e preto, exigindo que a soberania amazônica seja reconhecida. A divisão jaguar não é fantasia — é a autoridade cosmológica completa de um povo que governou a Amazônia por milhares de anos. O colonialismo de dados ameaça essa governança. A soberania de dados Kayapó significa o direito de mapear, monitorar e proteger seu território sem controle externo extrativista.",
+        "gn": "Rangatira Kayapó pēnei Raoni Metuktire i tū ana i mua i rangatira ao i huihuinga taiao, kanhi i tāia tauira hangarite māia whero me pango, e tono kia aro mana taketake Amazonia. Wehenga jaguar ndopeteĩi kākahu — mana cosmological katoa ia iwi e kāwanatia ana Amazonia mano tau-pe. Tāmitanga raraunga e whakakorea ko'ã kāwanatanga. Mana raraunga Kayapó he'ise tika ki mahere, ki aroturuki ha tiaki rohe mbeguekatu'ỹva tango ā-waho.",
+        "sm": "Na tu taitai Kayapó pei o Raoni Metuktire i luma o taitai o le lalolagi i aoaiga tau, foliga ua peina i mamanu geometric māia mumu ma uliuli, e mana'omia le fa'aaogaina o le pule o Amazonia. O le vaeluaga jaguar e le o se ofu — o le pule cosmological atoa o se nu'u na pule ai le Amazon mo afe o tausaga. O le colonialism o fa'amaumauga e fa'amata'u ai lenei pulega. O le fa'atonuga o fa'amaumauga Kayapó o le aia tatau e fafau, mata'i, ma puipui lo latou teritori e aunoa ma le pule mai fafo e fa'agāsolo."
+      },
+      "meme_caption": {
+        "en": "Raoni stood at COP wearing the jaguar. Indigenous cosmology is not costume — it is governance. Whose AI governs the Amazon? #Kayapo #IndigenousAI #AmazonRights",
+        "pt": "Raoni ficou na COP usando o jaguar. A cosmologia indígena não é fantasia — é governança. Qual IA governa a Amazônia? #Kayapo #IAIndígena #AmazonRights",
+        "mi": "I tū a Raoni ki te COP me te jaguar. Ko te ao cosmological taketake ehara i te kākahu — ko te kāwanatanga ia. Ko tēhea AI e kāwanatia ana te Amazonia? #Kayapo #AITaketake",
+        "gn": "Raoni i tū COP-pe me jaguar. Ao cosmological taketake ndopeteĩi kākahu — ko kāwanatanga. Mava'e AI ekāwanatia ana Amazonia? #Kayapo #AIIndígena",
+        "sm": "Na tu Raoni i le COP ma le jaguar. O le cosmology fa'aagāiga e le o ni ofu — o le pulega. O le AI o ai e pule i le Amazon? #Kayapo #IndigenousAI #AmazonRights"
+      },
+      "hashtags": {
+        "en": [
+          "#DataColonialism",
+          "#ExtractiveAlgorithms",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE",
+          "#OCAP"
+        ],
+        "mi": [
+          "#TāmitangaRaraunga",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#ColonialismoDigital",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#ColonialismoData",
+          "#Guarani",
+          "#Tekoha",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#ColonialismFaaMaumauga",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_2"
+    },
+    {
+      "id": "yanomami_urihi",
+      "culture": "yanomami",
+      "language_primary": "pt",
+      "module": "module_2",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yanomami_urihi.png",
+      "course_text": {
+        "en": "Davi Kopenawa's words — 'The sky is falling' — are not metaphor. In Yanomami cosmology, the destruction of the Amazon forest causes the literal collapse of the cosmic layers that hold existence together. Data colonialism is part of the same destruction: when corporations extract data from Yanomami territories to train AI systems, they participate in the collapse of urihi — the forest-land that makes Yanomami life possible.",
+        "mi": "Ko ngā kōrero a Davi Kopenawa — 'Ka hinga te rangi' — ehara i te kupu whakaahua. I roto i te ao cosmological Yanomami, ko te whakakorea o te ngahere Amazonia ka whakakorea i ngā papanga cosmological e pupuri ana i te ao. Ko te tāmitanga raraunga he wāhanga o tērā whakakorea anō: ina kohikohi ngā kamupene i ngā raraunga i ngā whenua Yanomami hei whakaako i ngā pūnaha AI, ka uru ana ki te hekenga o te urihi — ko te ngahere-whenua e āhei ana i te ora Yanomami.",
+        "pt": "As palavras de Davi Kopenawa — 'O céu está caindo' — não são metáfora. Na cosmologia Yanomami, a destruição da floresta amazônica causa o colapso literal das camadas cósmicas que mantêm a existência unida. O colonialismo de dados faz parte da mesma destruição: quando as corporações extraem dados dos territórios Yanomami para treinar sistemas de IA, elas participam do colapso do urihi — a floresta-terra que torna possível a vida Yanomami.",
+        "gn": "Davi Kopenawa ñe'ẽ — 'Yvaga ogueko' — ndopeteĩi kupu whakaahua. Yanomami ao cosmological-pe, Amazonia ngahere whakakorea ojapo papanga cosmological e pupuri ao oñembyaipa. Tāmitanga raraunga he wāhanga ko'ã whakakorea: ina kamupene oñemono raraunga Yanomami yvy-pe AI pūnaha rehe, oikuaave urihi hekenga — ngahere-whenua e āhei Yanomami tekove.",
+        "sm": "O upu a Davi Kopenawa — 'O lo'o pa'ū le lagi' — e le o ni fa'ata'ita'iga. I le cosmology Yanomami, o le faʻaumatia o le togavao Amazon e mafua ai le pa'ū moni o lau cosmic e taofia ai le olataga. O le colonialism o fa'amaumauga o se vaega o lenei fa'aleagaina: pe ā ave e kamupeni fa'amaumauga mai eleele Yanomami e a'oina ai AI, latou te auai i le pa'ū o urihi — o le togavao-fanua e mafai ai ola Yanomami."
+      },
+      "meme_caption": {
+        "en": "The sky is falling because the forest is falling. Every algorithm trained on stolen Amazonian data pulls the sky down further. #YanomamiFuture #DataColonialism #AmazonRights",
+        "pt": "O céu está caindo porque a floresta está caindo. Cada algoritmo treinado em dados amazônicos roubados puxa o céu para baixo. #YanomamiFuture #DataColonialism",
+        "mi": "Ka hinga te rangi nā te hinga o te ngahere. Ko ia algorithm i whakaakoako ki ngā raraunga Amazonia i tangohia ka tō iho anō i te rangi. #YanomamiFuture #TāmitangaRaraunga",
+        "gn": "Yvaga ogueko yvyra ogueko haguã. Opaite algoritmo entrenado raraunga Amazonia mombyry-pe yvaga ohypy. #YanomamiFuture #ColonialismoData",
+        "sm": "O lo'o pa'ū le lagi ona o lo'o pa'ū le togavao. O faigaigoa algorithm ta'itasi na a'oina i fa'amaumauga Amazon ua ave e toso ifo le lagi. #YanomamiFuture #DataColonialism"
+      },
+      "hashtags": {
+        "en": [
+          "#DataColonialism",
+          "#ExtractiveAlgorithms",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE",
+          "#OCAP"
+        ],
+        "mi": [
+          "#TāmitangaRaraunga",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#ColonialismoDigital",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#ColonialismoData",
+          "#Guarani",
+          "#Tekoha",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#ColonialismFaaMaumauga",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_2"
+    },
+    {
+      "id": "kowhaiwhai",
+      "culture": "maori",
+      "language_primary": "mi",
+      "module": "module_3",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_kowhaiwhai.png",
+      "course_text": {
+        "en": "Kowhaiwhai patterns on the wharenui ridgepole encode the genealogy of an iwi — each curve a generation, each line a connection. Indigenous data has its own whakapapa: who collected it, why, and for whom. Knowing data lineage is data sovereignty.",
+        "mi": "Ko ngā tauira kowhaiwhai i runga i te tāhuhu o te whare, ko te whakapapa o te iwi e tuhia ana — ko ia ake ia kopa he reanga, ko ia raina he hononga. He whakapapa anō tō ō tātou raraunga: nā wai i kohikohi, he aha te take, mō wai.",
+        "pt": "Os padrões kowhaiwhai no cume do wharenui codificam a genealogia de um iwi — cada curva uma geração, cada linha uma conexão. Os dados indígenas têm sua própria whakapapa: quem os coletou, por quê e para quem. Conhecer a linhagem dos dados é soberania de dados.",
+        "gn": "Kowhaiwhai tauira wharenui tatarupa-pe oñe'ẽ iwi whakapapa — opaite kopa peteĩ reanga, opaite raina peteĩ hononga. Ñane raraunga taketake owhakapaavé: ava'e ikohikohi, hemante haguã, mava'e haguã. Ñane raraunga whakapapa rohenyhẽ ko soberanía raraunga.",
+        "sm": "O fa'ailoga kowhaiwhai i luga o le tāhuhu o le wharenui e fa'ailo ai le gafa o le iwi — o fa'asologa ta'itasi o se tupulaga, o laina ta'itasi o se feso'otaiga. E iai fo'i le gafa o fa'amaumauga fa'aagāiga: o ai na aoina, o aisea, ma mo ai. O le iloa o le gafa o fa'amaumauga o le fa'atonuga o fa'amaumauga lea."
+      },
+      "meme_caption": {
+        "en": "Data has a whakapapa too. Who collected yours? Who owns it? #DataLineage #ManaRaraunga",
+        "pt": "Os dados também têm genealogia. Quem coletou os seus? Quem os possui? #SoberaniaDeDados",
+        "gn": "Tembiasakue rehe oikove whakapapa. Ava'e omono? Mava'e oiporu? #ÑaneRekove #DataBack",
+        "sm": "E iai fo'i le gafa o fa'amaumauga. O ai na aoina? O ai lo'o umia? #PacificData #FaaSamoa",
+        "mi": "He whakapapa anō tō ngā raraunga. Nā wai i kohikohi? Nā wai i whai? #KōwhaiwhaData #ManaRaraunga"
+      },
+      "hashtags": {
+        "en": [
+          "#CAREPrinciples",
+          "#OCAP",
+          "#DataGovernance",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE"
+        ],
+        "mi": [
+          "#TeManaRaraunga",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#CAREData",
+          "#OCAP",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#GobernanzaData",
+          "#Guarani",
+          "#Tekoha",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#PuleFaaMaumauga",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_3"
+    },
+    {
+      "id": "manaia",
+      "culture": "maori",
+      "language_primary": "mi",
+      "module": "module_3",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_manaia.png",
+      "course_text": {
+        "en": "The manaia exists between worlds — part bird, part human, part fish — a guardian who can move between the living and the spirit realm. In CARE governance, the manaia represents the responsibility of data stewards: those who stand between communities and institutions, between the visible data and its invisible consequences. The manaia does not choose a side; it holds the balance.",
+        "mi": "Ka noho te manaia i waenganui i ngā ao — āpiti manu, āpiti tangata, āpiti ika — he kaitiaki e āhei ana ki te haere i waenganui i ngā ora me te ao wairua. I roto i te kāwanatanga CARE, ko te manaia e tohu ana i te haepapa o ngā kaitiaki raraunga: ko rātou e tū ana i waenganui i ngā hapori me ngā umanga, i waenganui i ngā raraunga kitea me ōna hua kore kitea. Kāore te manaia e kōwhiri ana i tētahi taha; ka pupuri i te taurite.",
+        "pt": "O manaia existe entre mundos — parte pássaro, parte humano, parte peixe — um guardião que pode se mover entre o mundo dos vivos e o reino espiritual. Na governança CARE, o manaia representa a responsabilidade dos administradores de dados: aqueles que ficam entre comunidades e instituições, entre os dados visíveis e suas consequências invisíveis. O manaia não escolhe um lado; ele mantém o equilíbrio.",
+        "gn": "Manaia oiko ao i waenganui — āpiti manu, āpiti ñande, āpiti pira — kaitiaki e āhei haere i waenganui ñande ha ao wairua. CARE kāwanatanga-pe, manaia ohechauka haepapa kaitiaki raraunga: opamba'e e tū ana i waenganui tetã ha umanga, i waenganui raraunga kitea ha ōna hua kore kitea. Manaia ndokōwhiri taha; ka pupuri taurite.",
+        "sm": "E nonofo le manaia i le va o lalolagi — vaega manu, vaega tagata, vaega i'a — o se leoleo e mafai ona gaoioi i le va o tagata ola ma le lalolagi agaga. I le pulega CARE, o le manaia e fa'atusalia ai le tinauga o tagata tausi fa'amaumauga: o i latou e tu i le va o nu'u ma fale'aiga, i le va o fa'amaumauga e vaaia ma ana taunuuga e le vaaia. E le filifili le manaia i se itu; e taofia le paleni."
+      },
+      "meme_caption": {
+        "en": "The manaia stands between worlds. So do data stewards. Are you protecting the community or serving the institution? #CARE #DataGovernance #Manaia",
+        "mi": "Ka tū te manaia i waenganui i ngā ao. Ka pērā anō ngā kaitiaki raraunga. E tiaki ana koe i te hapori, e ratonga ana rānei ki te umanga? #CARE #KaitiakiRaraunga",
+        "pt": "O manaia fica entre os mundos. O mesmo acontece com os administradores de dados. Você está protegendo a comunidade ou servindo à instituição? #CARE #DataGovernance",
+        "gn": "Manaia i tū ana i waenganui i ngā ao. Ka pērā kaitiaki raraunga. Etaiaki tetã ara eratonga umanga? #CARE #DataGovernance #Manaia",
+        "sm": "E tu le manaia i le va o lalolagi. E faapea fo'i tagata tausi fa'amaumauga. O lo'o e puipui le nu'u pe o lo'o e tautua le fale'aiga? #CARE #DataGovernance #Manaia"
+      },
+      "hashtags": {
+        "en": [
+          "#CAREPrinciples",
+          "#OCAP",
+          "#DataGovernance",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE"
+        ],
+        "mi": [
+          "#TeManaRaraunga",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#CAREData",
+          "#OCAP",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#GobernanzaData",
+          "#Guarani",
+          "#Tekoha",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#PuleFaaMaumauga",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_3"
+    },
+    {
+      "id": "malu_diamond",
+      "culture": "samoan",
+      "language_primary": "sm",
+      "module": "module_3",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_malu_diamond.png",
+      "course_text": {
+        "en": "The malu is placed behind the knee — the hinge that enables movement, the joint that must be protected. Those who work with Indigenous data occupy this position: they are the hinge between communities and institutions. The malu asks: are you sheltering or exposing? This is the Responsibility principle of CARE.",
+        "mi": "Ko te malu kei muri o te turi — ko te hononga e āhei ai te neke, ko te tūāhu me tiakina. Ko rātou e mahi ana ki ngā raraunga taketake kei tēnei tūnga: ko te hononga i waenganui i ngā hapori me ngā umanga. Ko te malu e pātai ana: e āhuru ana, e whakaatu ana rānei? Ko tēnei ko te mātāpono Haepapa o CARE.",
+        "pt": "O malu é colocado atrás do joelho — a dobradiça que permite o movimento, a articulação que deve ser protegida. Aqueles que trabalham com dados indígenas ocupam esta posição: são a dobradiça entre comunidades e instituições. O malu pergunta: você está abrigando ou expondo? Este é o princípio de Responsabilidade do CARE.",
+        "gn": "Malu oñemohenda turi rakangue — hononga ojejapo neke haguã, tūāhu oñejerure ñangareko. Opamba'e omba'apo raraunga taketake reheve ko'ã tūnga-pe: hononga comunidad ha umanga entre. Malu opytyvõ: eñangareko ara ojerure? Ko'ã ko CARE Haepapa mātāpono.",
+        "sm": "O le malu ua tu'u i tua o le tulivae — o le feso'otaiga e mafai ai le gaoioi, o le fasi e tatau ona puipuia. O i latou e galulue i fa'amaumauga fa'aagāiga e nonofo i lenei tulaga: o le feso'otaiga i le va o nu'u ma fale'aiga. E fesili le malu: e te fa'amalu pe fa'aalia? O le matāupū lea o le Fa'amaoniaina i CARE."
+      },
+      "meme_caption": {
+        "en": "The malu means shelter. Does your data system shelter or expose Indigenous communities? #CARE #Responsibility #Malu",
+        "pt": "O malu significa abrigo. O seu sistema de dados abriga ou expõe comunidades indígenas? #CARE #Responsabilidade",
+        "gn": "Malu oñemoñe'ẽ mboepykuaa. Ne sistema tembiasakue omboepykuaa ára ñane recove? #CARE #Haepapa",
+        "sm": "O le malu o le fa'amalu. O lo'o fa'amalu pe fa'aalia e lau faiga fa'amaumauga nu'u fa'aagāiga? #CARE #Responsibility",
+        "mi": "Ko te malu ko te āhuru. E āhuru ana, e whakaatu ana rānei tō pūnaha raraunga ngā hapori taketake? #CARE #Malu"
+      },
+      "hashtags": {
+        "en": [
+          "#CAREPrinciples",
+          "#OCAP",
+          "#DataGovernance",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE"
+        ],
+        "mi": [
+          "#TeManaRaraunga",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#CAREData",
+          "#OCAP",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#GobernanzaData",
+          "#Guarani",
+          "#Tekoha",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#PuleFaaMaumauga",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_3"
+    },
+    {
+      "id": "mola_guna",
+      "culture": "guna",
+      "language_primary": "pt",
+      "module": "module_3",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_mola_guna.png",
+      "course_text": {
+        "en": "The mola is not fabric — it is a governance document. Each panel, crafted by Guna women through layers of reverse appliqué, encodes clan identity, territorial claims, and cosmological law. When the Guna of San Blas achieved autonomous comarca status, the mola was central to their political identity. Today, Guna data sovereignty means protecting the knowledge encoded in these textiles from appropriation by fashion brands and bioprospectors.",
+        "mi": "Ehara te mola i te kiri — he tuhinga kāwanatanga ia. Ko ia ake ia papa, i hangaia e ngā wāhine Guna mā ngā papanga whakaheke, e kōrero ana mō ngā tohu ā-iwi, ngā kēme whenua, me ngā ture cosmological. I te wā i whiwhi ai ngā Guna o San Blas i te tūnga comarca motuhake, ko te mola i tū hei mana tōrangapū mō rātou. Inaianei, ko te mana raraunga Guna ko te tiaki i ngā mātauranga i kodea i ēnei tauira tuhono i ngā kamupene haumaru me ngā kaihoko koiora.",
+        "pt": "O mola não é tecido — é um documento de governança. Cada painel, criado por mulheres guna através de camadas de appliqué reverso, codifica identidade de clã, reivindicações territoriais e lei cosmológica. Quando os Guna de San Blas alcançaram o status de comarca autônoma, o mola foi central para sua identidade política. Hoje, a soberania de dados Guna significa proteger o conhecimento codificado nesses têxteis da apropriação por marcas de moda e bioprospectores.",
+        "gn": "Mola ndopeteĩi kiri — tuhinga kāwanatanga ia. Opaite papa, ojejapo kuña Guna mā papanga whakaheke, oñe'ẽ tohu ā-iwi, kēme whenua ha ture cosmological. Guna San Blas-pegua ohupyty comarca motuhake tūnga, mola i tū mana tōrangapū. Ko'ãga, mana raraunga Guna he'ise tiaki arandu i kodea ko'ã tauira tuhono kamupene haumaru ha kaihoko koiora guive.",
+        "sm": "O le mola e le o se 'ie — o se pepa o pulega. O pa'u ta'itasi, na faia e fafine Guna e ala i lau o le reverse appliqué, e fa'ailo ai fa'ailoaina o le nu'u, tagi'aga fanua, ma tulafono cosmological. Na mauaina e Guna o San Blas tulaga comarca pule, o le mola na tāua tele i lo latou fa'ailoaina faʻapolokiki. O onapō, o le fa'atonuga o fa'amaumauga Guna o le puipuiga o le poto ua fa'ailoa i nei 'ie mai le fa'aogaina e kamupeni ofu ma fa'amauvaiga."
+      },
+      "meme_caption": {
+        "en": "Every mola layer is a data right. Guna women built governance into fabric. What did Big Tech build into your phone? #MolaGuna #DataRights #GunaYala",
+        "pt": "Cada camada mola é um direito de dados. As mulheres Guna construíram governança em tecido. O que a Big Tech construiu em seu telefone? #MolaGuna #DireitoDeDados",
+        "mi": "Ko ia ake papa mola he tika raraunga. I hangaia e ngā wāhine Guna te kāwanatanga ki roto i te kiri. I hanga ai a Big Tech ki roto i tō waea? #MolaGuna #TikaRaraunga",
+        "gn": "Opaite papa mola he tika raraunga. Kuña Guna ojapo gobernanza kiri-pe. Mba'e Big Tech ojapo ne waea pype? #MolaGuna #DataRights #GunaYala",
+        "sm": "O papa ta'itasi o le mola o se aia tatau o fa'amaumauga. Na fausia e fafine Guna le pulega i totonu o 'ie. O a'u na fausia e Big Tech i totonu o lau telefoni? #MolaGuna #DataRights"
+      },
+      "hashtags": {
+        "en": [
+          "#CAREPrinciples",
+          "#OCAP",
+          "#DataGovernance",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE"
+        ],
+        "mi": [
+          "#TeManaRaraunga",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#CAREData",
+          "#OCAP",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#GobernanzaData",
+          "#Guarani",
+          "#Tekoha",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#PuleFaaMaumauga",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_3"
+    },
+    {
+      "id": "takarangi",
+      "culture": "maori",
+      "language_primary": "mi",
+      "module": "module_4",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_takarangi.png",
+      "course_text": {
+        "en": "The double spiral of takarangi winds past and future together — the colonial cycle of extraction has repeated before, and without active resistance, it will repeat again. In the digital age, data colonialism is the latest iteration of this spiral. Takarangi reminds us: we have been here before. We survived. We remember the pattern — and we can break it.",
+        "mi": "Ko te takarangi e nonoi ana i ngā rārangi o mua me ngā rārangi o muri — ko te hurihanga tāmitanga o te tango i āhua hurihia, ā, ki te kore he whakahē, ka huri anō. I te ao matihiko, ko te tāmitanga raraunga ko tērā hurihanga hou o tēnei takarangi. Ka whakamaharatia ana e te takarangi: kei konei tātou i mua ake. Ka ora. Ka mōhio ana tātou ki te tauira — ā, ka taea e tātou te whakahau.",
+        "pt": "A espiral dupla do takarangi entrelaça passado e futuro — o ciclo colonial de extração se repetiu antes e, sem resistência ativa, se repetirá novamente. Na era digital, o colonialismo de dados é a iteração mais recente desta espiral. Takarangi nos lembra: já estivemos aqui antes. Sobrevivemos. Lembramos o padrão — e podemos quebrá-lo.",
+        "gn": "Takarangi mboypy mokõi oñemoinge ára ohasava ha oúva — hurihanga tāmitanga tango ojevy i mua, ā, kore whakahē'ỹ ramo, ojevy añe. Ao matihiko-pe, tāmitanga raraunga ko térã hurihanga pyahu takarangi. Takarangi oñemomaharatia: kóãpe ñande i mua ake. Ñaora. Ñañe'ẽ tauira — ha ñatāi oñemboasakã.",
+        "sm": "O le manofou lua o takarangi e fau fa'atasi ai le anamua ma le lumā — o le ta'amilosaga colonial o le fa'agāsolo ua faia muamua, ma e aunoa ma le tetee malosi, o le a toe faia. I le vaitaimi faitau, o le colonialism o fa'amaumauga o le toe fa'asologa fou o lenei manofou. E fa'amanatu mai Takarangi: sa tatou i iinei muamua. Na tatou ola. E tatou manatua le mamanu — ma e mafai ona tatou faaleaogaina."
+      },
+      "meme_caption": {
+        "en": "The colonial spiral has spun before — land theft, then data theft. Same pattern, new spiral. Break the cycle. #Takarangi #DataColonialism #LandBack",
+        "mi": "Kua takahuri te takarangi kāwanatanga i mua — ko te tango whenua, ā inaianei ko te tango raraunga. Ko te tauira anō, he hurihanga hou. Whakakore i te hurihanga. #Takarangi #DataBack",
+        "pt": "O espiral colonial já girou antes — roubo de terra, depois roubo de dados. Mesmo padrão, nova espiral. Quebre o ciclo. #Takarangi #DataColonialism",
+        "gn": "Mboypy colonial ojevy i mua — tango yvy, ko'ãga tango raraunga. Tauira ñepyrũ, mboypy pyahu. Emoinge hurihanga. #Takarangi #ColonialismoData",
+        "sm": "Na ta'amilo le manofou colonial muamua — ave fanua, ona ave lea fa'amaumauga. Mamanu e tasi, manofou fou. Faaleaoga le ta'amilosaga. #Takarangi #DataColonialism"
+      },
+      "hashtags": {
+        "en": [
+          "#LandSovereignty",
+          "#DigitalTerritory",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE",
+          "#OCAP"
+        ],
+        "mi": [
+          "#Whenua",
+          "#TeRohe",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#TerritórioDigital",
+          "#TerraNosso",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#YvySoberanía",
+          "#Tekoha",
+          "#Guarani",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#FanuaDigital",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_4"
+    },
+    {
+      "id": "unaunahi",
+      "culture": "maori",
+      "language_primary": "mi",
+      "module": "module_4",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_unaunahi.png",
+      "course_text": {
+        "en": "Unaunahi — the interlocking fish scales — create armour from collective overlap. No single scale provides full protection; only together do they form an impenetrable shield. This is the model for Indigenous data coalitions: Te Mana Raraunga, the Global Indigenous Data Alliance, APIB's data campaigns — each scale different, all interlocking, collectively sovereign.",
+        "mi": "Ko Unaunahi — ngā ngapypy ika tūhonohono — ka hanga i te kākahu o te pakiaka i te kapua ā-iwi. Kāore tētahi ngapypy takitahi e āhei ana ki te tiaki katoa; ko ō rātou kotahitanga anake e hanga ana i tētahi ahuru e kore e pahure. Ko tēnei te tauira mō ngā mahi kotahi raraunga taketake: ko Te Mana Raraunga, ko te Global Indigenous Data Alliance, ko ngā kaupeka raraunga a APIB — ko ia ngapypy motuhake, katoa tūhonohono, ā-mana kotahi.",
+        "pt": "Unaunahi — as escamas de peixe interligadas — criam armadura a partir da sobreposição coletiva. Nenhuma escama única fornece proteção total; só juntas formam um escudo impenetrável. Este é o modelo para coalizões de dados indígenas: Te Mana Raraunga, a Aliança Global de Dados Indígenas, as campanhas de dados da APIB — cada escama diferente, todas interligadas, coletivamente soberanas.",
+        "gn": "Unaunahi — ngapypy ika tūhonohono — ojapo ñangareko kapua ā-iwi guive. Kore ngapypy takitahi e āhei katoa ñangareko; ko rātou kotahitanga anake e hanga ahuru e kore e pahure. Ko'ã ko tauira raraunga taketake kotahitanga: Te Mana Raraunga, Global Indigenous Data Alliance, APIB kaupeka raraunga — opaite ngapypy eseese, opaite tūhonohono, ā-mana kotahi.",
+        "sm": "Unaunahi — feau o i'a e feso'ota'i — e faia ai se 'ie puipui mai le tapea fa'alagāpotopoto. E le mafai e se feau to'atasi e maua ai le puipuiga atoa; na'o lo latou tu fa'atasi e faia ai se 'ie e le mafai ona solia. O lenei o le fa'ata'ita'iga mo filiga fa'amaumauga fa'aagāiga: Te Mana Raraunga, le Global Indigenous Data Alliance, fa'asalalauga fa'amaumauga a APIB — o feau ta'itasi eseese, uma feso'otai, fa'atasi pule."
+      },
+      "meme_caption": {
+        "en": "Fish scales interlock to form armour. Indigenous data coalitions work the same way — no gaps, no single point of failure. #Unaunahi #Kotahitanga #DataSovereignty",
+        "mi": "Ka tūhonohono ngā ngapypy ika hei ākiri. Ka pērā anō ngā kotahitanga raraunga taketake — kāore he āputa, kāore he pūanga taki takitahi. #Unaunahi #Kotahitanga",
+        "pt": "Escamas de peixe se interligam para formar armadura. As coalizões de dados indígenas funcionam da mesma forma — sem lacunas, sem ponto único de falha. #Unaunahi",
+        "gn": "Ngapypy ika oñemoinge hei ākiri. Kotahitanga raraunga taketake upéicha avei — kore āputa, kore pūanga takitahi. #Unaunahi #Kotahitanga",
+        "sm": "E feso'otai feau o i'a e faia ai 'ie puipui. E galulue fa'alagāpotopoto o fa'amaumauga fa'aagāiga e tutusa — e leai ni avanoa, e leai se taulaiga e tasi. #Unaunahi #Kotahitanga"
+      },
+      "hashtags": {
+        "en": [
+          "#LandSovereignty",
+          "#DigitalTerritory",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE",
+          "#OCAP"
+        ],
+        "mi": [
+          "#Whenua",
+          "#TeRohe",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#TerritórioDigital",
+          "#TerraNosso",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#YvySoberanía",
+          "#Tekoha",
+          "#Guarani",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#FanuaDigital",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_4"
+    },
+    {
+      "id": "pikorua",
+      "culture": "maori",
+      "language_primary": "mi",
+      "module": "module_4",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_pikorua.png",
+      "course_text": {
+        "en": "The pikorua — the double twist — represents two paths that weave together, separate, and always return to each other. In the context of Indigenous AI futures, pikorua represents the relationship between cultural tradition and technological innovation: two paths that need not oppose each other, but can weave together into something stronger than either alone.",
+        "mi": "Ko te pikorua — ko te reo aho rua — e tohu ana i ngā ara e rua e whatu tahi ana, e wehewehe ana, ā, ka hoki tonu ki tōna hoa. I te horopaki o ngā anamata AI taketake, ko te pikorua e tohu ana i te hononga i waenganui i te tikanga ahurea me te auahatanga hangarau: ko ngā ara e rua e kore e taurite, engari ka taea te whatu tahi i tōna mea e kaha ake ana.",
+        "pt": "O pikorua — a torção dupla — representa dois caminhos que se tecem juntos, se separam e sempre retornam um ao outro. No contexto dos futuros da IA indígena, pikorua representa a relação entre tradição cultural e inovação tecnológica: dois caminhos que não precisam se opor, mas podem se tecer em algo mais forte do que qualquer um sozinho.",
+        "gn": "Pikorua — mboypy mokõi — ohechauka tape mokõi e whatu tahi, e wehewehe, ā, ka hoki tonu ki tóva. AI anamata taketake horopaki-pe, pikorua ohechauka hononga tikanga ahurea ha auahatanga hangarau i waenganui: tape mokõi ndojejoja'ỹgui, ha ojewhatu tahi i mba'e e kaha ake ana.",
+        "sm": "O le pikorua — o le feau lua — e fa'atusalia ai ala e lua e ta'ila fa'atasi, vavae, ma e toe fo'i pea. I le tulaga o lumā AI fa'aagāiga, o le pikorua e fa'atusalia ai le sootaga i le va o tu fa'aleaganuu ma le fou o tekonolosi: ala e lua e le manaomia ona feteena'i, ae mafai ona ta'ila fa'atasi i se mea e malosi atu nai lo soona."
+      },
+      "meme_caption": {
+        "en": "Two paths that always return to each other. Tradition and technology don't have to fight — they can twist into something stronger. #Pikorua #IndigenousAI #Futures",
+        "mi": "E rua ara ka hoki tonu ki tōna hoa. Ehara te tikanga me te hangarau i ngā mea whawhai — ka tāhurihia ki tōna mea e kaha ake ana. #Pikorua #AITaketake #Anamata",
+        "pt": "Dois caminhos que sempre retornam um ao outro. Tradição e tecnologia não precisam lutar — podem se torcer em algo mais forte. #Pikorua #IAIndígena #Futuro",
+        "gn": "Tape mokõi ka hoki tonu ki tóva. Tikanga ha hangarau ndojejoja'ỹgui — oñetāhuri i mba'e e kaha ake ana. #Pikorua #AIIndígena #Arajekove",
+        "sm": "Ala e lua e toe fo'i pea i le isi. E le manaomia ona feteena'i le tu ma le tekonolosi — e mafai ona fau i mea e malosi atu. #Pikorua #IndigenousAI #Futures"
+      },
+      "hashtags": {
+        "en": [
+          "#LandSovereignty",
+          "#DigitalTerritory",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE",
+          "#OCAP"
+        ],
+        "mi": [
+          "#Whenua",
+          "#TeRohe",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#TerritórioDigital",
+          "#TerraNosso",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#YvySoberanía",
+          "#Tekoha",
+          "#Guarani",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#FanuaDigital",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_4"
+    },
+    {
+      "id": "nanduti",
+      "culture": "guarani",
+      "language_primary": "gn",
+      "module": "module_4",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_nanduti.png",
+      "course_text": {
+        "en": "Ñandutí — the spider web — is built radially from a single centre outward, yet no strand is more important than another. The whole web only functions if every thread holds. This is the architecture of decentralised Indigenous data governance: no single platform, no single controller, but a radial web of community nodes where every thread of knowledge matters equally.",
+        "mi": "Ko te ñandutí — te whatunga pūngāwerewere — ka hangaia ā-peka mai i tētahi pokapū ake ki waho, engari ehara ia aho i te rangatira ake i tōna hoa. Ka mahi katoa te whatunga mēnā ko ia aho katoa e mau ana. Ko tēnei te hanganga o te kāwanatanga raraunga taketake huarahi-kore: kāore he papatono takitahi, kāore he kaipupuri takitahi, engari he whatunga pūpūtanga ā-hapori e ōrite ana ngā taumata o ngā mātauranga katoa.",
+        "pt": "Ñandutí — a teia de aranha — é construída radialmente de um único centro para fora, mas nenhum fio é mais importante que outro. A teia inteira só funciona se cada fio segurar. Esta é a arquitetura da governança de dados indígena descentralizada: nenhuma plataforma única, nenhum controlador único, mas uma teia radial de nós comunitários onde cada fio de conhecimento importa igualmente.",
+        "gn": "Ñandutí — upepoti pūngāwerewere — ojejapo ā-peka peteĩ pokapuygui peve, ha kore ia aho e rangatira ake tóva guive. Whatunga mba'etépa omba'apo mēnā opaite aho omau. Ko'ã ko hanganga kāwanatanga raraunga taketake huarahi-kore: kore papatono takitahi, kore kaipupuri takitahi, ha whatunga ā-hapori e ōrite arandu opaichagua mba'erehegua.",
+        "sm": "O Ñandutí — le upega o le apogaleveleve — e fausia i tua mai le totonugalemu e tasi i fafo, ae e le sili se filo i le isi. E galulue le upega atoa pe afai e taofia filo ta'itasi. O lenei o le fa'atulagaina o le pulega fa'amaumauga fa'aagāiga fa'amalolo: e leai se faufa'atasi e tasi, e leai se pule e tasi, ae o se upega taiū o nodo nu'u e tutusa ai le taua o filo ta'itasi o le poto."
+      },
+      "meme_caption": {
+        "en": "The spider web doesn't hoard — it catches and holds for the community. Build data systems that work the same way. #Nanduti #CollectiveKnowledge #Guarani",
+        "pt": "A teia de aranha não acumula — ela captura e retém para a comunidade. Construa sistemas de dados que funcionem da mesma forma. #Ñandutí #ConhecimentoColetivo",
+        "mi": "Kāore te whatunga pūngāwerewere e kōpae — ka hopu, ka mau mō te hapori. Hangaia ngā pūnaha raraunga e pērā ana. #Ñandutí #MātaurangaĀIwi",
+        "gn": "Ñandutí upepoti ndokōpae'ỹ — ohopu ha omau tetã haguã. Ejapo pūnaha raraunga upéicha avei. #Ñandutí #AranduColectivo #Guarani",
+        "sm": "E le fa'aputu le upega o le apogaleveleve — e maua ma taofia mo le nu'u. Fausia faiga fa'amaumauga e galulue e tutusa. #Nanduti #CollectiveKnowledge #Guarani"
+      },
+      "hashtags": {
+        "en": [
+          "#LandSovereignty",
+          "#DigitalTerritory",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE",
+          "#OCAP"
+        ],
+        "mi": [
+          "#Whenua",
+          "#TeRohe",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#TerritórioDigital",
+          "#TerraNosso",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#YvySoberanía",
+          "#Tekoha",
+          "#Guarani",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#FanuaDigital",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_4"
+    },
+    {
+      "id": "masi_kesa",
+      "culture": "fijian",
+      "language_primary": "sm",
+      "module": "module_4",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_masi_kesa.png",
+      "course_text": {
+        "en": "Masi kesa is not just beautiful cloth — each tokatoka (sub-clan) owns specific motifs (draudrau) as their intellectual property. This is Indigenous data rights in material form: encoded knowledge that belongs to specific communities and cannot be replicated without permission. When corporations reproduce masi patterns without consent, they perform the same act as data extraction — taking what is not theirs.",
+        "mi": "Ehara te masi kesa i te kiri ātaahua noa — ko ia ake tokatoka e whai ana i ngā tauira motuhake (draudrau) hei rawa mōhiotanga māu ake. Ko ēnei ko ngā tika raraunga taketake i roto i te āhua ā-tinana: ko te mātauranga kōdea e nō ana ki ngā hapori motuhake, e kore e tāruatia me te kore āta whakaae. Ina tāruatia ngā tauira masi e ngā kamupene me te kore whakaae, ko te mahi anō ia i te tango raraunga — ko te tango i ngā mea ehara nō rātou.",
+        "pt": "O masi kesa não é apenas um belo tecido — cada tokatoka (sub-clã) possui motivos específicos (draudrau) como sua propriedade intelectual. Isso é direitos de dados indígenas em forma material: conhecimento codificado que pertence a comunidades específicas e não pode ser replicado sem permissão. Quando as corporações reproduzem padrões masi sem consentimento, realizam o mesmo ato de extração de dados — pegando o que não é deles.",
+        "gn": "Masi kesa ndopeteĩi kiri ātaahua noa — opaite tokatoka orekóva tauira motuhake (draudrau) hei rawa mōhiotanga. Ko'ã ko tika raraunga taketake āhua ā-tinana-pe: arandu kōdea e nō ana hapori motuhake-pe, e kore tāruatia whakaae'ỹva. Ina kamupene ombyaipa tauira masi whakaae'ỹ, ko mahi anō tango raraunga — tango mba'etépa ndahéiva.",
+        "sm": "O le masi kesa e le o na'o 'ie matagofie — o tokatoka ta'itasi e umia fa'ailoga fa'apitoa (draudrau) o lo latou mea fa'apitoa. O lenei o aia tatau o fa'amaumauga fa'aagāiga i tulaga fa'anatura: poto ua fa'ailoa e nō ane i nu'u fa'apitoa ma e le mafai ona gaosia e aunoa ma le faatagaga. Pe ā fau kamupeni mamanu masi e aunoa ma le maliega, e faia le galuega e tutusa ma le fa'agāsolo o fa'amaumauga — e ave le mea e le o a latou."
+      },
+      "meme_caption": {
+        "en": "The draudrau pattern belongs to the tokatoka. Clan intellectual property is older than copyright law. Respect it. #MasiKesa #IndigenousIP #Fiji",
+        "pt": "O padrão draudrau pertence ao tokatoka. A propriedade intelectual do clã é mais antiga do que a lei de direitos autorais. Respeite-a. #MasiKesa #PropriedadeIntelectualIndígena",
+        "mi": "Ko te tauira draudrau nō te tokatoka. Ko te mahi mōhiotanga ā-iwi he mea tawhito ake i te ture mōhiotanga. Whakakorea. #MasiKesa #RingaringarahiTaketake",
+        "gn": "Draudrau tauira nō te tokatoka. Aty mōhiotanga mahi he mea tawhito ake copyright ture guive. Emoañete. #MasiKesa #PropiiedadIntelectualIndígena",
+        "sm": "O le mamanu draudrau e nō ane i le tokatoka. O mea fa'apitoa o le nu'u o le mea matua atu ia i le tulafono o le copyright. Fa'aaloalo. #MasiKesa #IndigenousIP"
+      },
+      "hashtags": {
+        "en": [
+          "#LandSovereignty",
+          "#DigitalTerritory",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE",
+          "#OCAP"
+        ],
+        "mi": [
+          "#Whenua",
+          "#TeRohe",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#TerritórioDigital",
+          "#TerraNosso",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#YvySoberanía",
+          "#Tekoha",
+          "#Guarani",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#FanuaDigital",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_4"
+    },
+    {
+      "id": "vonu",
+      "culture": "fijian",
+      "language_primary": "sm",
+      "module": "module_4",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_vonu.png",
+      "course_text": {
+        "en": "The vonu (sea turtle) navigates thousands of kilometres and always returns to the beach where it was born. In Pacific climate activism, the vonu is a symbol of both endangerment and resilience — a species whose survival is tied to the health of the ocean. For data sovereignty, vonu teaches us that knowledge should always return to its source community, and that protecting the ocean (the data commons) protects all species within it.",
+        "mi": "Ka haere te vonu i ngā mano kiromita, ā, ka hoki tonu ia ki te one i whānau mai ai. I roto i ngā mahi ā-taiao o Te Moana-nui-a-Kiwa, ko te vonu he tohu o te mate me te manawaroa — ko ia me tōna moana ka hono ana. Mō te mana raraunga, ka āko ana te vonu: ko ngā mātauranga me hoki tonu ki ōna hapori puna, ā, ko te tiaki i te moana (ko te roto raraunga ā-iwi) ka tiaki i ngā mea katoa kei roto.",
+        "pt": "O vonu (tartaruga marinha) navega milhares de quilômetros e sempre retorna à praia onde nasceu. No ativismo climático do Pacífico, o vonu é um símbolo tanto de ameaça quanto de resiliência — uma espécie cuja sobrevivência está ligada à saúde do oceano. Para a soberania de dados, vonu nos ensina que o conhecimento deve sempre retornar à sua comunidade de origem, e que proteger o oceano (os bens comuns de dados) protege todas as espécies dentro dele.",
+        "gn": "Vonu (tortuga) oguata mano kiromita, ā, ka hoki tonu ko'ã one-pe i whānau mai ai. Moana-nui-a-Kiwa mahi ā-taiao-pe, vonu he tohu mate ha manawaroa — mba'e tekove e honona orekóva moana marã. Mana raraunga haguã, vonu oaʼo: arandu me hoki tonu tetã puna-pe, ha moana ñangareko (roto raraunga ā-iwi) ñangareko mba'evéva kei roto.",
+        "sm": "O le vonu (fonu o le sami) e faimalaga i afe o kilomita ma e toe fo'i pea i le matāfaga na fananau ai. I le tauiviga tau o Pasefika, o le vonu o se fa'ailoga o le fa'amata'u ma le mana'omia — o se mea ola o lona ola e feso'otai i le soifua mālōlōina o le sami. Mo le fa'atonuga o fa'amaumauga, e aʻo mai le vonu: e tatau ona toe fo'i le poto i lona nu'u puna, ma o le puipuiga o le sami (commons o fa'amaumauga) e puipui uma mea ola i totonu."
+      },
+      "meme_caption": {
+        "en": "The vonu always returns home. Does the data taken from your community ever return? Demand it does. #Vonu #CARE #PacificClimateWarriors",
+        "pt": "O vonu sempre volta para casa. Os dados retirados de sua comunidade algum dia retornam? Exija que retornem. #Vonu #CARE #PacificoClimate",
+        "mi": "Ka hoki tonu te vonu ki tōna kāinga. Ka hoki ranei ngā raraunga i tangohia i tō hapori? Tōia mai. #Vonu #CARE #ManaRaraunga",
+        "gn": "Vonu oguejy teko'ape. Tembiasakue oñemono ne tetãgui oguejy jevy? Emoinge ojevy. #Vonu #CARE #PacificoClimate",
+        "sm": "E toe fo'i pea le vonu i le fale. E toe fo'i ea fa'amaumauga na ave mai lau nu'u? Manaomia ia toe fo'i. #Vonu #CARE #PacificClimateWarriors"
+      },
+      "hashtags": {
+        "en": [
+          "#LandSovereignty",
+          "#DigitalTerritory",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE",
+          "#OCAP"
+        ],
+        "mi": [
+          "#Whenua",
+          "#TeRohe",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#TerritórioDigital",
+          "#TerraNosso",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#YvySoberanía",
+          "#Tekoha",
+          "#Guarani",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#FanuaDigital",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_4"
+    },
+    {
+      "id": "manulua",
+      "culture": "tongan",
+      "language_primary": "sm",
+      "module": "module_4",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_manulua.png",
+      "course_text": {
+        "en": "Manulua: two become one without either disappearing. This is the model for Indigenous data networks — distinct communities sharing knowledge in ways that strengthen each without erasing any. Not a merger, not a data lake, but a living weave of sovereign nodes.",
+        "mi": "Ko te Manulua: e rua e huri ana hei kotahi, kāore tētahi e ngaro ana. Ko tēnei te tauira mō ngā whatunga raraunga taketake — ngā hapori motuhake e tohatoha ana i ō rātou mātauranga i ngā ara e kaha ake ai ia tētahi ake, kāore e möhio ana. Ehara i te hono, ehara i te roto raraunga, engari he whatu ora o ngā pūpūtanga mana.",
+        "pt": "Manulua: dois se tornam um sem que nenhum desapareça. Este é o modelo para redes de dados indígenas — comunidades distintas compartilhando conhecimento de formas que fortalecem cada uma sem apagar nenhuma. Não uma fusão, não um data lake, mas uma trama viva de nós soberanos.",
+        "gn": "Manulua: mokõi ojejapo peteĩ ndaipóri peteĩ ngaro. Ko'ã ko tauira raraunga tatachina taketake haguã — tetã motuhake oñotoha arandu ara e kaha haguã ia peteĩ peteĩ, ndaipóri oñembyaipa. Ndopeteĩi hono, ndopeteĩi roto raraunga, ha peteĩ tatachina orekóva pūpūtanga mana.",
+        "sm": "Manulua: e lua e fai ai le tasi e aunoa ma le lilo o soona. O lenei o le fa'ata'ita'iga mo fili fa'amaumauga fa'aagāiga — nu'u eseese e fefaasoa'i i poto i auala e fa'amalosia ai ta'itasi e aunoa ma le fa'amāuina soona. E le se fa'atasi, e le se vaitafe o fa'amaumauga, ae o se ta'ila ola o nodo pule."
+      },
+      "meme_caption": {
+        "en": "Manulua: two become one. Indigenous data networks — many sovereigns, one weave. #Manulua #CollectiveKnowledge",
+        "pt": "Manulua: dois se tornam um. Redes de dados indígenas — muitos soberanos, uma trama. #ConhecimentoColetivo",
+        "gn": "Manulua: mokõi ojejapo peteĩ. Tembiasakue tatachina ryvaa — hetave soberano, peteĩ tatachina. #Manulua #ÑandejeeData",
+        "sm": "Manulua: e lua e fai ai le tasi. O fili fa'amaumauga fa'aagāiga — tele pule, tasi faufau. #Manulua #CollectiveData",
+        "mi": "Manulua: ka rua, ka huri ko tahi. Ko ngā whatunga raraunga taketake — he maha ngā rangatira, he kotahi te whatu. #Manulua #ManaRaraunga"
+      },
+      "hashtags": {
+        "en": [
+          "#LandSovereignty",
+          "#DigitalTerritory",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE",
+          "#OCAP"
+        ],
+        "mi": [
+          "#Whenua",
+          "#TeRohe",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#TerritórioDigital",
+          "#TerraNosso",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#YvySoberanía",
+          "#Tekoha",
+          "#Guarani",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#FanuaDigital",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_4"
+    },
+    {
+      "id": "fa_a_aupega",
+      "culture": "samoan",
+      "language_primary": "sm",
+      "module": "module_5",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_fa_a_aupega.png",
+      "course_text": {
+        "en": "The net (upega) catches without hoarding — it works collectively, holds what is needed, and releases what is not. Indigenous data networks function the same way: designed to catch community knowledge, share it across nodes, and ensure no single entity controls the entire catch.",
+        "mi": "Ka hopu te upega, kāore ia e kōpae — ka mahi ia hei rōpū, ka mau ki ngā mea e hiahiatia ana, ka tukua atu ērā mea e kore e hiahiatia ana. Ka pērā anō ngā whatunga raraunga taketake: i hangaia ki te hopu mātauranga ā-hapori, ki te tohatoha i ngā pūpūtanga, ā, ki te whakaū kāore tētahi e whai mana ana ki te hopu katoa.",
+        "pt": "A rede (upega) captura sem acumular — trabalha coletivamente, retém o que é necessário e libera o que não é. As redes de dados indígenas funcionam da mesma forma: projetadas para capturar o conhecimento comunitário, compartilhá-lo entre nós e garantir que nenhuma entidade controle toda a captura.",
+        "gn": "Upega ohopu mbeguekatu'ỹ oñekōpae'ỹ — omba'apo ñepyrũ, omou oguereko mba'etépa oñejerurevái, omboi mba'etépa ndojerurekuaái. Raraunga tatachina taketake upéicha avei: ojapo haguã ohopu tetã arandu, otoha nodo-pe, ha oñejerure ojeikuaa peteĩ entidad ndorekóiva ohopu opaichagua.",
+        "sm": "E maua e le upega e aunoa ma le fa'aputuina — e galulue fa'atasi, e taofia mea e manaomia, ma e tuuina mea e le manaomia. O fili fa'amaumauga fa'aagāiga e faigofie e tutusa: ua mamanu e maua poto o nu'u, faasoa i luga o nodo, ma fa'amautū e le mafai e se faufau e pule i le maua atoa."
+      },
+      "meme_caption": {
+        "en": "No single strand holds the net. No single nation holds Indigenous data sovereignty alone. Weave together. #CollectiveData #IndigenousRights",
+        "pt": "Nenhum fio único sustenta a rede. Nenhuma nação única detém a soberania de dados indígenas sozinha. Teçam juntos. #DadosColetivos",
+        "gn": "Kore aho takitahi opupuri upega. Kore tetã takitahi orekóva soberanía tembiasakue taketake peteĩ rupi. Erojavy. #DataColectivo",
+        "sm": "E le taofi e se filo e tasi le upega. E le umia e se atunu'u e tasi le fa'atonuga o fa'amaumauga fa'aagāiga na'o ia. Ta'ila fa'atasi. #CollectiveData",
+        "mi": "Kāore tētahi aho takitahi e pupuri ana i te kupenga. Kāore tētahi iwi e whai ana i te mana raraunga taketake na ia anake. Whatua tahi. #Upega #ManaRaraunga"
+      },
+      "hashtags": {
+        "en": [
+          "#CollectiveKnowledge",
+          "#NetworkThinking",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE",
+          "#OCAP"
+        ],
+        "mi": [
+          "#MātaurangaĀIwi",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#ConhecimentoColetivo",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#AranduColectivo",
+          "#Guarani",
+          "#Tekoha",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#PotoFaatasi",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_5"
+    },
+    {
+      "id": "fetu",
+      "culture": "samoan",
+      "language_primary": "sm",
+      "module": "module_5",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_fetu.png",
+      "course_text": {
+        "en": "Pacific navigators read the stars as data — patterns, positions, and predictions that encoded the entire ocean. This was Indigenous data science: systematic, communal, and sovereign. Your community's knowledge systems are also star maps. They deserve the same protection.",
+        "mi": "Ko ngā kaihautū o Te Moana-nui-a-Kiwa i pānui i ngā whetū hei raraunga — ko ngā tauira, ko ngā tūnga, ko ngā matapae i hopukina ai te moana katoa. Ko tēnei te pūtaiao raraunga taketake: pūhehea, ā-iwi, ā-mana. Ko ngā pūnaha mātauranga o tō hapori ko ngā mahere whetū anō. Me ārahina ōna tika.",
+        "pt": "Os navegadores do Pacífico liam as estrelas como dados — padrões, posições e previsões que codificavam todo o oceano. Isso era ciência de dados indígena: sistemática, comunal e soberana. Os sistemas de conhecimento da sua comunidade também são mapas estelares. Eles merecem a mesma proteção.",
+        "gn": "Marangatu Pasifiko oheka tatachina hei raraunga — tauira, tūnga ha matapae i hopukina moana opaichagua. Ko'ã ko pūtaiao raraunga taketake: pūhehea, ā-iwi, ā-mana. Ne tetã arandu pūnaha ko tatachina mahere avei. Oñejerure ñangareko mba'ete.",
+        "sm": "Na faitau tama folau Pasefika fetu e pei o fa'amaumauga — mamanu, tūlaga, ma vavalofa na fa'ailo ai le sami atoa. O lenei o le saienisi o fa'amaumauga fa'aagāiga: fa'atulafonoina, fa'alagāpotopoto, ma pule. O faiga fa'amaumauga o lau nu'u o fa'afanua o fetu fo'i. E tatau ona maua le puipuiga e tasi."
+      },
+      "meme_caption": {
+        "en": "Before GPS, Pacific navigators had their own data system — the stars. Indigenous knowledge IS data sovereignty. #PacificNavigation #DataBack",
+        "pt": "Antes do GPS, os navegadores do Pacífico tinham seu próprio sistema de dados — as estrelas. Conhecimento indígena É soberania de dados. #NavegaçãoPassifika",
+        "gn": "GPS mboyve, marangatu Pasifiko oikuaa haguã yvaga ao — tatachina. Ñane arandu IKO soberanía tembiasakue. #Fetu #DataSoberanía",
+        "sm": "A o lei'ai le GPS, sa iai i tama folau Pasefika la latou faiga fa'amaumauga — o fetu. O le poto fa'aagāiga O le fa'atonuga o fa'amaumauga. #Fetu #Navigation",
+        "mi": "I mua ake i te GPS, ko ngā kaihautū o Te Moana-nui-a-Kiwa ō rātou pūnaha raraunga ake — ko ngā whetū. Ko te mātauranga taketake HE mana raraunga. #Fetu #DataSovereignty"
+      },
+      "hashtags": {
+        "en": [
+          "#CollectiveKnowledge",
+          "#NetworkThinking",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE",
+          "#OCAP"
+        ],
+        "mi": [
+          "#MātaurangaĀIwi",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#ConhecimentoColetivo",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#AranduColectivo",
+          "#Guarani",
+          "#Tekoha",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#PotoFaatasi",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_5"
+    },
+    {
+      "id": "atualoa",
+      "culture": "samoan",
+      "language_primary": "sm",
+      "module": "module_5",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_atualoa.png",
+      "course_text": {
+        "en": "The centipede in Samoan culture is venomous and fierce but also known for its deep commitment to extended family — it shelters and defends. Indigenous AI must carry this same dual nature: fierce in protecting community rights, nurturing in building collective futures. Resilience is not just surviving; it is thriving in relationship.",
+        "mi": "Ko te atola i te tikanga Samoa he tupu, he mārohirohi anō, ōna reo anō mō tōna hono ki tōna whānau — ka tiaki, ka ārai. Ko te AI taketake me iri ki tēnei āhua rau: māia ki te ārai i ngā tika hapori, āronui ki te hanga i ngā anamata ā-iwi. Ehara te manawaroa i te oranga noa; ko te tupu tahi i roto i ngā hononga.",
+        "pt": "O centopeia na cultura samoana é venenoso e feroz, mas também conhecido por seu profundo compromisso com a família extensa — ele abriga e defende. A IA indígena deve carregar esta mesma natureza dual: feroz na proteção dos direitos comunitários, nutritiva na construção de futuros coletivos.",
+        "gn": "Atola cultura samoanogua-pe oñemomba'e ha mbarete, oguereko avei ñangareko teko'a reheve — ombyta ha ñangareko. AI taketake me iri ko'ã mba'eapo mokõi: mbarete ñangareko tetã ñemyrõ reheve, mombyry tekove arajekove ohupytyvõ haguã.",
+        "sm": "O le atualoa i le aganuu Samoa e oona ma malosi ae o lo'o lauiloa fo'i mo lona alofa loloto i le aiga — e fa'amalu ma puipui. E tatau ona aumaia e le AI fa'aagāiga lenei natura lua: malosi i le puipuiga o aia tatau o nu'u, fa'amālosia i le fausia o lumā fa'alagāpotopoto."
+      },
+      "meme_caption": {
+        "en": "The centipede endures and protects its whole family. Build AI that does the same. #IndigenousAI #Resilience #FaaSamoa",
+        "pt": "O centopeia suporta e protege toda a sua família. Construa IA que faça o mesmo. #IAIndígena #Resiliência",
+        "gn": "Atola ombarete ha oñangareko teko'a opaichagua. Ejapo AI upéicha avei. #AIIndígena #Mbarete",
+        "sm": "E onosa'i le atualoa ma puipui lona 'aiga atoa. Fausia le AI e fai fo'i. #IndigenousAI #FaaSamoa",
+        "mi": "Ka toitū te atualoa, ka tiaki i tōna whānau katoa. Hanga AI e pērā ana. #AITaketake #Manawaroa"
+      },
+      "hashtags": {
+        "en": [
+          "#CollectiveKnowledge",
+          "#NetworkThinking",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE",
+          "#OCAP"
+        ],
+        "mi": [
+          "#MātaurangaĀIwi",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#ConhecimentoColetivo",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#AranduColectivo",
+          "#Guarani",
+          "#Tekoha",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#PotoFaatasi",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_5"
+    },
+    {
+      "id": "kene_shipibo",
+      "culture": "shipibo",
+      "language_primary": "pt",
+      "module": "module_5",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_kene_shipibo.png",
+      "course_text": {
+        "en": "The Shipibo Kené is not decoration — it is a living cosmological language. Each pattern encodes relationship, healing, and ecological knowledge. Data sovereignty for the Shipibo means the right to write, read, and transmit this living language without external control or appropriation.",
+        "mi": "Ehara te Kené Shipibo i tētahi tohu whakapaipai — he reo cosmological ora ia. Ka kōrero ia aho tauira i ngā hononga, te whakamāui, me te mātauranga taiao. Ko te mana raraunga mō ngā Shipibo ko te tika ki te tuhi, ki te pānui, me te whakawhiti i tēnei reo ora me te kore here ā-waho, kore hokona.",
+        "pt": "O Kené Shipibo não é decoração — é uma linguagem cosmológica viva. Cada padrão codifica relacionamentos, cura e conhecimento ecológico. A soberania de dados para os Shipibo significa o direito de escrever, ler e transmitir esta linguagem viva sem controle externo ou apropriação.",
+        "gn": "Kené Shipibo ndopeteĩi papaícha — reo cosmológico orekóva ia. Opaite tauira oñe'ẽ hononga, mboasakã ha mba'ererekóngue arandu. Soberanía tembiasakue Shipibo-peguarã he'ise derecho ohai, oheka ha owhakawhiti ko'ã reo orekóva me'ã'ỹ mboyve teko'a'ỹva.",
+        "sm": "O le Kené Shipibo e le o fa'ailoga fa'apaopao — o se gagana cosmological ola. E fa'ailo e fa'ailoga ta'itasi sootaga, foma'i, ma poto fa'a-eleele. O le fa'atonuga o fa'amaumauga mo le Shipibo o le aia tatau e tusi, faitau, ma faʻasoa lenei gagana ola e aunoa ma le pule mai fafo."
+      },
+      "meme_caption": {
+        "en": "The Shipibo kené is a sacred visual language — an entire cosmology encoded in geometry. Who owns the code? #KeneShipibo #DataSovereignty #Amazonian",
+        "pt": "O kené shipibo é uma linguagem visual sagrada — toda uma cosmologia codificada em geometria. Quem possui o código? #KeneShipibo #SoberaniaDeDados",
+        "mi": "Ko te kené Shipibo he reo ā-kanohi tapu — ko tētahi cosmology katoa e kōdea ana i roto i ngā hangarite. Mā wai ngā waehere? #KeneShipibo #DataSovereignty",
+        "gn": "Kené Shipibo he reo ā-kanohi tapu — cosmology katoa kodea hangarite-pe. Mava'e orekóva código? #KeneShipibo #DataSoberanía #Amazonian",
+        "sm": "O le kené Shipibo o se gagana tino paia — o cosmology atoa ua fa'ailoa i le geometry. O ai e umia le code? #KeneShipibo #DataSovereignty #Amazonian"
+      },
+      "hashtags": {
+        "en": [
+          "#CollectiveKnowledge",
+          "#NetworkThinking",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE",
+          "#OCAP"
+        ],
+        "mi": [
+          "#MātaurangaĀIwi",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#ConhecimentoColetivo",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#AranduColectivo",
+          "#Guarani",
+          "#Tekoha",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#PotoFaatasi",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_5"
+    },
+    {
+      "id": "ronin_kuin",
+      "culture": "shipibo",
+      "language_primary": "pt",
+      "module": "module_5",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_ronin_kuin.png",
+      "course_text": {
+        "en": "The primordial anaconda Ronin Kuin sang the universe into existence — her skin is the template for all kené patterns. For the Shipibo, data and cosmos are inseparable. Protecting Shipibo data is protecting the song that holds the world together.",
+        "mi": "Ko te Ronin Kuin, te anaconda tuatahi, i waiata ai i te ao ki tōna oranga — ko tōna kiri te tauira mō ngā tauira kené katoa. Mō ngā Shipibo, ko ngā raraunga me te ao he mea kotahi. Ko te tiaki i ngā raraunga Shipibo ko te tiaki i te waiata e pupuri ana i te ao.",
+        "pt": "A anaconda primordial Ronin Kuin cantou o universo à existência — sua pele é o modelo para todos os padrões kené. Para os Shipibo, dados e cosmos são inseparáveis. Proteger os dados Shipibo é proteger a canção que mantém o mundo unido.",
+        "gn": "Anaconda primordial Ronin Kuin oñe'ẽ yvy orekóva haguã — ipire ko template kené tauira opaivagua haguã. Shipibo-peguarã, raraunga ha ao ndahesapéi. Ñangareko raraunga Shipibo-pegua he'ise ñangareko waiata e pupuri yvy.",
+        "sm": "Na pese le Ronin Kuin, le 'ana primordial, le lalolagi i totonu — o lona pa'u o le fa'ata'ita'iga mo fa'ailoga kené uma. Mo le Shipibo, o fa'amaumauga ma le lalolagi e le masani ona vavaeeseina. O le puipuiga o fa'amaumauga Shipibo o le puipuiga lea o le pese e taofia ai le lalolagi."
+      },
+      "meme_caption": {
+        "en": "The anaconda's song created the universe. Big Tech's algorithm reshapes it. Which cosmology do you trust? #RoninKuin #Shipibo #DataSovereignty",
+        "pt": "O canto da anaconda criou o universo. O algoritmo da Big Tech o remodela. Em qual cosmologia você confia? #RoninKuin #Shipibo #SoberaniaDeDados",
+        "mi": "Ko te waiata o te ronin i hanga ai te ao. Ko te algorithm a Big Tech e hanga anō ana. Ko tēhea cosmology e whakaaro ana koe? #RoninKuin #Shipibo",
+        "gn": "Ronin waiata ojapo yvy. Big Tech algoritmo oheja jevy. Mava'e cosmology ereikuaa? #RoninKuin #Shipibo #DataSoberanía",
+        "sm": "O le pese o le ana na faia ai le lalolagi. O le algorithm a Big Tech e toe fausia. O le cosmology o fea e faatuatua iai oe? #RoninKuin #Shipibo #DataSovereignty"
+      },
+      "hashtags": {
+        "en": [
+          "#CollectiveKnowledge",
+          "#NetworkThinking",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE",
+          "#OCAP"
+        ],
+        "mi": [
+          "#MātaurangaĀIwi",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#ConhecimentoColetivo",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#AranduColectivo",
+          "#Guarani",
+          "#Tekoha",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#PotoFaatasi",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_5"
+    },
+    {
+      "id": "cuaracy_ra_angaba",
+      "culture": "guarani",
+      "language_primary": "gn",
+      "module": "module_5",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_cuaracy_ra_angaba.png",
+      "course_text": {
+        "en": "The Cuaracy Ra'Angaba is a solar calendar — a data system encoding the movement of celestial bodies, agricultural cycles, ceremonial timing, and seasonal ecological knowledge. This is precisely what data sovereignty means for the Guaraní: the right to maintain, interpret, and transmit their own knowledge systems without external interference. The sun does not ask permission to rise; neither should Indigenous knowledge systems.",
+        "mi": "Ko te Cuaracy Ra'Angaba he maramataka rā — he pūnaha raraunga e kōdea ana i ngā neke o ngā rangi ira, ngā hurihanga māra, ngā wā tikanga, me ngā mātauranga taiao ā-tau. Ko tēnei te tikanga o te mana raraunga mō ngā Guaraní: ko te tika ki te pupuri, ki te whakamārama, me te whakawhiti i ō rātou pūnaha mātauranga me te kore whakaeke ā-waho. Kāore te rā e tono whakaaetanga ki te ara; ā, kāore hoki ngā pūnaha mātauranga taketake.",
+        "pt": "O Cuaracy Ra'Angaba é um calendário solar — um sistema de dados que codifica o movimento dos corpos celestes, ciclos agrícolas, timing cerimonial e conhecimento ecológico sazonal. Isso é precisamente o que a soberania de dados significa para os Guaraní: o direito de manter, interpretar e transmitir seus próprios sistemas de conhecimento sem interferência externa. O sol não pede permissão para nascer; os sistemas de conhecimento indígenas também não deveriam.",
+        "gn": "Cuaracy Ra'Angaba ko maramataka rā — pūnaha raraunga e kōdea kuarahy, neke māra, tikanga wā ha arandu taiao ā-tau. Ko'ã tika he'ise mana raraunga Guaraní-peguarã: tika ki pupuri, whakamārama ha whakawhiti ñane arandu pūnaha whakaeke'ỹva ā-waho. Kuarahy ndopyta'ỹ whakaaetanga ki oñepyrũ; upéicha avei arandu pūnaha taketake ndaipótavéi.",
+        "sm": "O le Cuaracy Ra'Angaba o se kalena la — o se faiga fa'amaumauga e fa'ailo ai le gaoioiga o tino lagi, ta'amilosaga fa'ato'aga, fa'asologa o togafiti, ma le poto fa'a-eleele o vaitau. O lenei moni lona uiga o le fa'atonuga o fa'amaumauga mo Guaraní: le aia tatau e taofi, faaliliu, ma fa'asoa o latou lava faiga poto e aunoa ma le faʻalavelave mai fafo. E le fesili le la i le faatagaga e tulou mai; e tatau fo'i aua faiga poto fa'aagāiga."
+      },
+      "meme_caption": {
+        "en": "The Guaraní tracked the sun, moon, and stars for thousands of years without Silicon Valley. Indigenous knowledge IS data science. #CuaracyRaAngaba #Guarani #IndigenousSTEM",
+        "pt": "Os Guaraní rastrearam o sol, a lua e as estrelas por milhares de anos sem o Silicon Valley. O conhecimento indígena É ciência de dados. #CuaracyRaAngaba #Guarani",
+        "mi": "Ko ngā Guaraní i aroturuki i te rā, te marama, me ngā whetū mō ngā mano tau me te kore Silicon Valley. Ko te mātauranga taketake HE pūtaiao raraunga. #CuaracyRaAngaba",
+        "gn": "Guaraní oñeñomongu'e kuarahy, jasy ha tatachina mano tau rupi Silicon Valley'ỹ. Ñane arandu taketake IKO pūtaiao raraunga. #CuaracyRaAngaba #Guarani",
+        "sm": "Na su'esu'e Guaraní le la, masina, ma fetu mo afe o tausaga e aunoa ma Silicon Valley. O le poto fa'aagāiga O le saienisi o fa'amaumauga. #CuaracyRaAngaba #Guarani"
+      },
+      "hashtags": {
+        "en": [
+          "#CollectiveKnowledge",
+          "#NetworkThinking",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE",
+          "#OCAP"
+        ],
+        "mi": [
+          "#MātaurangaĀIwi",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#ConhecimentoColetivo",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#AranduColectivo",
+          "#Guarani",
+          "#Tekoha",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#PotoFaatasi",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_5"
+    },
+    {
+      "id": "niho_mano",
+      "culture": "samoan",
+      "language_primary": "sm",
+      "module": "module_6",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_mano.png",
+      "course_text": {
+        "en": "Niho mano marks the boundary of the body — a declaration that this person carries the protection of the shark. Data rights are a boundary too. OCAP and CARE principles are our niho mano: they declare that our communities cannot be entered without consent, that our data has teeth.",
+        "mi": "Ko te niho mano e tohu ana i te rohe o te tinana — he whakaaro: he āhua ārahina nō te tangata nei, nō te mango. Ko ngā tika raraunga he rohe anō. Ko ngā mātāpono OCAP me CARE ko ō tātou niho mano: ka kī ake, kāore e tūkua ana ō tātou hapori ki roto me te āta whakaae, he niho ō ō tātou raraunga.",
+        "pt": "Niho mano marca o limite do corpo — uma declaração de que esta pessoa carrega a proteção do tubarão. Os direitos de dados também são um limite. Os princípios OCAP e CARE são nosso niho mano: declaram que nossas comunidades não podem ser acessadas sem consentimento, que nossos dados têm dentes.",
+        "gn": "Niho mano oñe'ẽ tino rokẽ — ohechauka ko'ã ñande ñangareko pira raity reheve orekóva. Tembiasakue derecho avei rokẽ. OCAP ha CARE mātāpono ñane niho mano: oñe'ẽ ñane tekove ndaikatúi ojupyty mbeguekatu'ỹva, ñane raraunga orekóva taguato.",
+        "sm": "E fa'ailo e niho mano le tuaoi o le tino — o se tautinoga e umia e lenei tagata le puipuiga o le malie. O aia tatau o fa'amaumauga fo'i o se tuaoi. O matāupū OCAP ma CARE o lo tatou niho mano: e fa'ailoa mai e le mafai ona ulufale atu i o tatou nu'u e aunoa ma le maliega, e iai niho o o tatou fa'amaumauga."
+      },
+      "meme_caption": {
+        "en": "Niho mano: every tooth a boundary. Every data protocol is a shark tooth protecting the community. #OCAP #IndigenousRights",
+        "pt": "Niho mano: cada dente, uma fronteira. Cada protocolo de dados é um dente de tubarão protegendo a comunidade. #OCAP",
+        "gn": "Niho mano: opaite taguato peteĩ rokẽ. Opaite protocolo tembiasakue peteĩ niho mano ñane rekove jepeguapã. #NihoMano",
+        "sm": "Niho mano: o niho uma o se tua'oi. O faiga ta'itasi o fa'amaumauga o se niho mano e puipui ai le nu'u. #OCAP #Samoa",
+        "mi": "Niho mano: ko ia niho he rohe. Ko ia tikanga raraunga he niho mano e tiaki ana i te hapori. #OCAP #NihoMano"
+      },
+      "hashtags": {
+        "en": [
+          "#IndigenousAI",
+          "#AIFutures",
+          "#NothingAboutUsWithoutUs",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE"
+        ],
+        "mi": [
+          "#AITaketake",
+          "#Anamata",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#IAIndígena",
+          "#FuturoDigital",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#AIIndígena",
+          "#Arajekove",
+          "#Guarani",
+          "#Tekoha",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#AIFaaSamoa",
+          "#LumaFaitau",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_6"
+    },
+    {
+      "id": "pea",
+      "culture": "samoan",
+      "language_primary": "sm",
+      "module": "module_6",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_pea.png",
+      "course_text": {
+        "en": "The pe'a was suppressed by colonial missionaries in the 1830s — its survival is one of the most powerful acts of Indigenous data resistance in history. The pe'a is a living genealogical record: each band of motifs narrates lineage, spiritual covenants, and social responsibilities. In the AI era, the pe'a asks: who has the right to read, store, and transmit the most sacred encodings of a people?",
+        "mi": "Ko te pe'a i aukatia e ngā mīhana kāwanatanga i ngā tau 1830 — ko tōna oranga toitū ko tētahi o ngā mahi whakahē raraunga taketake e tino kaha ana i roto i te hītori. Ko te pe'a he rekoata whakapapa ora: ko ia ake ia rārangi tauira ka kōrero ana i te whakapapa, ngā kawenata wairua, me ngā haepapa hapori. I te ao AI, ka pātai ana te pe'a: mā wai te tika ki te pānui, ki te tiaki, me te whakawhiti i ngā whakaahua tapu rawa atu o tētahi iwi?",
+        "pt": "O pe'a foi suprimido por missionários coloniais na década de 1830 — sua sobrevivência é um dos atos mais poderosos de resistência de dados indígenas na história. O pe'a é um registro genealógico vivo: cada faixa de motivos narra linhagem, alianças espirituais e responsabilidades sociais. Na era da IA, o pe'a pergunta: quem tem o direito de ler, armazenar e transmitir as codificações mais sagradas de um povo?",
+        "gn": "Pe'a oñemboyke mīhana kāwanatanga 1830 ara-pe — oranga toitū ko tétã o mahi whakahē raraunga taketake kaha rawa atu hītori-pe. Pe'a he rekoata whakapapa ora: opaite rārangi tauira okōrero whakapapa, kawenata wairua ha haepapa hapori. AI arajekove-pe, pe'a opytyvõ: mava'e tika ki oheka, ki tiaki ha ki whakawhiti arandu tapu rawa atu peteĩ iwi-pegua?",
+        "sm": "Na fa'ata'atia le pe'a e missionary colonial i le 1830s — o lona ola o se galuega malosi tele o le tetee fa'amaumauga fa'aagāiga i le talafaasolopito. O le pe'a o se tusi gafa ola: o faitatau ta'itasi e tala gafa, feagaiga agaga, ma tinauga fa'alagāpotopoto. I le vaitaimi AI, e fesili le pe'a: o ai e aia tatau e faitau, teuina, ma fa'asoa ai fa'ailoga sili ona paia o se nu'u?"
+      },
+      "meme_caption": {
+        "en": "Missionaries tried to erase the pe'a in the 1830s. They failed. What will you do when they try to erase your data? #Pea #Samoa #DataResistance",
+        "pt": "Os missionários tentaram apagar o pe'a na década de 1830. Falharam. O que você fará quando tentarem apagar seus dados? #Pea #Samoa #DataResistance",
+        "mi": "I ngana ngā mīhana ki te muku i te pe'a i ngā tau 1830. I hinga rātou. He aha tāu e mahi ai ina ngana ana rātou ki te muku ō raraunga? #Pea #DataResistance",
+        "gn": "Mīhana oñemoñe'ẽ omomuku pe'a 1830 ara-pe. Ohupa. Mba'e erejapo ina oñemoñe'ẽ omomuku ñane raraunga? #Pea #Samoa #DataResistance",
+        "sm": "Na taumafai missionary e fa'aumatia le pe'a i le 1830s. Na fai sese. O le a lau mea e faia pe taumafai latou e fa'aumatia lau fa'amaumauga? #Pea #Samoa #DataResistance"
+      },
+      "hashtags": {
+        "en": [
+          "#IndigenousAI",
+          "#AIFutures",
+          "#NothingAboutUsWithoutUs",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE"
+        ],
+        "mi": [
+          "#AITaketake",
+          "#Anamata",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#IAIndígena",
+          "#FuturoDigital",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#AIIndígena",
+          "#Arajekove",
+          "#Guarani",
+          "#Tekoha",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#AIFaaSamoa",
+          "#LumaFaitau",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_6"
+    },
+    {
+      "id": "aso",
+      "culture": "samoan",
+      "language_primary": "sm",
+      "module": "module_6",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_aso.png",
+      "course_text": {
+        "en": "The aso — the rafters of the Samoan fale — shelter everyone within the house equally. The fale is an open structure with no walls; protection comes from above, not from barriers. This architecture models how Indigenous AI should be built: open to the community, protective from above through shared protocols, and designed so that no one within is excluded from its shelter.",
+        "mi": "Ko ngā aso — ko ngā kaho o te fale Samoa — ka āhuru i ngā tangata katoa kei roto i te whare i ruia i ōrite. Ko te fale he hanganga tuwhera kāore he pakitara; ka heke mai te āhuru i runga, kaua i ngā ārai. Ka arotahi tēnei hanganga ki te AI taketake me pēhea e hangaia: tuwhera ki te hapori, āhuru mai i runga mā ngā tikanga tūhono, ā, i hangaia hei āhuru kia kore tētahi kei roto e mahue ake.",
+        "pt": "Os aso — as vigas do fale samoano — abrigam todos dentro da casa igualmente. O fale é uma estrutura aberta sem paredes; a proteção vem de cima, não de barreiras. Esta arquitetura modela como a IA indígena deve ser construída: aberta à comunidade, protetora de cima através de protocolos compartilhados e projetada para que ninguém dentro seja excluído de seu abrigo.",
+        "gn": "Aso — kaho fale Samoa-pegua — oāhuru tagata opaichagua i roto i te whare i ruia i ōrite. Fale he hanganga tuwhera kore pakitara; āhuru oheke mai i runga, kaua i ārai guive. Ko'ã hanganga arofa AI taketake me pēhea ojejapo: tuwhera tetã-pe, āhuru mai i runga tikanga tūhono ñepyrũ rupi, ha ojejapo hei āhuru kia kore peteĩ kei roto omahue.",
+        "sm": "O aso — o aso o le fale Samoa — e fa'amalu uma tagata i totonu o le fale e tutusa. O le fale o se fale tatala e leai ni puipui; e sau le puipuiga mai luga, ae le o paleni. E fa'aata lenei fa'atulagaina pe fa'apefea ona fausia le AI fa'aagāiga: tatala i le nu'u, puipuia mai luga e ala i faiga feso'otai tutasi, ma mamanu ina ia lē tulafonoina soona i totonu mai lona fa'amalu."
+      },
+      "meme_caption": {
+        "en": "The aso shelters everyone equally. Does your AI shelter Indigenous communities equally? Build the fale. #Aso #FaaSamoa #IndigenousAI",
+        "pt": "Os aso abrigam todos igualmente. O seu AI abriga comunidades indígenas igualmente? Construa o fale. #Aso #FaaSamoa #IAIndígena",
+        "mi": "Ka āhuru ngā aso i ngā tāngata katoa i ruia i ōrite. Ka āhuru ana tō AI ngā hapori taketake i ruia i ōrite? Hangaia te fale. #Aso #FaaSamoa #AITaketake",
+        "gn": "Aso oāhuru tagata opaichagua i ōrite. Ñane AI oāhuru tetã taketake i ōrite? Ejapo fale. #Aso #FaaSamoa #AIIndígena",
+        "sm": "E fa'amalu uma tagata e tutusa le aso. O lo'o fa'amalu e lau AI nu'u fa'aagāiga e tutusa? Fausia le fale. #Aso #FaaSamoa #IndigenousAI"
+      },
+      "hashtags": {
+        "en": [
+          "#IndigenousAI",
+          "#AIFutures",
+          "#NothingAboutUsWithoutUs",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE"
+        ],
+        "mi": [
+          "#AITaketake",
+          "#Anamata",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#IAIndígena",
+          "#FuturoDigital",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#AIIndígena",
+          "#Arajekove",
+          "#Guarani",
+          "#Tekoha",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#AIFaaSamoa",
+          "#LumaFaitau",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_6"
+    },
+    {
+      "id": "jagua_pyta",
+      "culture": "guarani",
+      "language_primary": "gn",
+      "module": "module_6",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_jagua_pyta.png",
+      "course_text": {
+        "en": "The Guaraní cosmic jaguar holds the boundary between order and chaos — it is the force that keeps the cosmos intact when threatened. In the context of Indigenous AI futures, jagua pytã represents the fierce protective intelligence that communities need to govern their own data: not a passive guardian, but an active force that patrols the border between what can be shared and what must remain sovereign.",
+        "mi": "Ko te jaguar cosmological Guaraní e pupuri ana i te rohe i waenganui i te āhua me te raruraru — ko ia te kaha e pupuri ana i te ao ina whakawehi ana. I te horopaki o ngā anamata AI taketake, ko te jagua pytã e tohu ana i te māramatanga tiaki māia e hiahiatia ana e ngā hapori ki te whakahaere i ō rātou raraunga: ehara i te kaitiaki noho, engari he kaha ā-mahi e tiaki ana i te rohe i waenganui i ngā mea ka taea te tohatoha me ngā mea me noho tonu ā-mana.",
+        "pt": "O jaguar cósmico Guaraní mantém o limite entre ordem e caos — é a força que mantém o cosmos intacto quando ameaçado. No contexto dos futuros da IA indígena, jagua pytã representa a inteligência protetora feroz que as comunidades precisam para governar seus próprios dados: não um guardião passivo, mas uma força ativa que patrulha a fronteira entre o que pode ser compartilhado e o que deve permanecer soberano.",
+        "gn": "Jaguar cosmological Guaraní-pegua opupuri rokẽ āhua ha raruraru i waenganui — he kaha e pupuri ana ao ina whakawehi ana. AI anamata taketake horopaki-pe, jagua pytã ohechauka māramatanga tiaki māia ojerure tetã ñane raraunga gobernanza haguã: ndokaitiaki'ỹ noho, ha he kaha ā-mahi e tiaki ana rokẽ mba'e ojotoha ha mba'e me noho tonu ā-mana i waenganui.",
+        "sm": "O le jaguar cosmic Guaraní e taofia ai le tuaoi i le va o le fa'atulagaga ma le faosauā — o le malosi lea e taofi ai le cosmos e aunoa ma le faaleaga. I le tulaga o lumā AI fa'aagāiga, o le jagua pytã e fa'atusalia ai le atamai puipui malosi e manaomia e nu'u e pule ai a latou lava fa'amaumauga: e le o se leoleo mafanafana, ae o se malosi galulue e oʻo i le tuaoi i le va o le mafai ona faasoa ma mea e tatau ona tumau pule."
+      },
+      "meme_caption": {
+        "en": "The jaguar guards the border between order and chaos. Guard the border of your data with the same ferocity. #JaguaPyta #Guarani #DataSovereignty",
+        "pt": "O jaguar guarda a fronteira entre ordem e caos. Guarde a fronteira de seus dados com a mesma ferocidade. #JaguaPyta #Guarani #SoberaniaDeDados",
+        "mi": "Ko te jaguar e tiaki ana i te rohe i waenganui i te āhua me te raruraru. Tiakina te rohe o ō raraunga me tērā kōakanga anō. #JaguaPyta #DataSovereignty",
+        "gn": "Jagua opupuri rokẽ āhua ha raruraru i waenganui. Epupuri ñane raraunga rokẽ upéicha avei mbarete ramo. #JaguaPyta #Guarani #DataSoberanía",
+        "sm": "E leoleo le jaguar le tuaoi i le va o le fa'atulagaga ma le fetunaiga. Leoleo le tuaoi o lau fa'amaumauga ma le toatoa e tutusa. #JaguaPyta #Guarani #DataSovereignty"
+      },
+      "hashtags": {
+        "en": [
+          "#IndigenousAI",
+          "#AIFutures",
+          "#NothingAboutUsWithoutUs",
+          "#IndigenousDataSovereignty",
+          "#DataBack",
+          "#LandBack",
+          "#IndigenousRights",
+          "#CARE"
+        ],
+        "mi": [
+          "#AITaketake",
+          "#Anamata",
+          "#ManaRaraunga",
+          "#TinoRangatiratanga",
+          "#Aotearoa",
+          "#TeReo",
+          "#Kotahitanga",
+          "#IndigenousDataSovereignty"
+        ],
+        "pt": [
+          "#IAIndígena",
+          "#FuturoDigital",
+          "#SoberaniaDeDados",
+          "#DemarcaçãoJá",
+          "#DireitosIndígenas",
+          "#PovosIndígenas",
+          "#APIB",
+          "#DataBack"
+        ],
+        "gn": [
+          "#AIIndígena",
+          "#Arajekove",
+          "#Guarani",
+          "#Tekoha",
+          "#Tekojoja",
+          "#AvañeẽData",
+          "#DataSoberanía",
+          "#TembiasakueSoberanía"
+        ],
+        "sm": [
+          "#AIFaaSamoa",
+          "#LumaFaitau",
+          "#FaaSamoa",
+          "#PacificDataSovereignty",
+          "#Pasifika",
+          "#Samoa",
+          "#IndigenousRights",
+          "#DataBack"
+        ]
+      },
+      "course_link": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_6"
+    }
+  ]
+}
