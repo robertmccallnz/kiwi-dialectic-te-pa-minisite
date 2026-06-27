@@ -1,4 +1,12 @@
 {
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.te-pa.org" }],
+      "destination": "https://te-pa.org/$1",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -10,7 +18,7 @@
         { "key": "Permissions-Policy",       "value": "geolocation=(), microphone=(), camera=(), payment=()" },
         { "key": "Strict-Transport-Security","value": "max-age=63072000; includeSubDomains; preload" },
         { "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none';"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://te-pa-analytics.sketchschool.workers.dev https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev; frame-ancestors 'none';"
         }
       ]
     },
