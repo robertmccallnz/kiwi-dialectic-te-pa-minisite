@@ -1,0 +1,463 @@
+{
+  "schema_version": "1.0",
+  "campaign": "Te Pā Tūwatawata — Ngā meme whakahau",
+  "course_url": "https://kiwidialectic.com",
+  "image_base_url": "https://te-pa.org/social-kit",
+  "languages": {
+    "mi": {
+      "name": "Te Reo Māori",
+      "is_primary": true
+    },
+    "en": {
+      "name": "English"
+    },
+    "pt": {
+      "name": "Português"
+    },
+    "gn": {
+      "name": "Avañe’ẽ (Guaraní)"
+    },
+    "sm": {
+      "name": "Gagana Sāmoa"
+    }
+  },
+  "platform_limits": {
+    "x_twitter": 280,
+    "bluesky": 300,
+    "mastodon_default": 500
+  },
+  "cards": [
+    {
+      "card_id": "raupatu",
+      "title_mi": "Raupatu — He raupatu tonu",
+      "title_en": "Raupatu — It is still raupatu",
+      "image_bilingual": "https://te-pa.org/social-kit/campaign-raupatu.png",
+      "image_by_lang": {
+        "en": "https://te-pa.org/social-kit/campaign-raupatu-en.png",
+        "mi": "https://te-pa.org/social-kit/campaign-raupatu-mi.png",
+        "pt": "https://te-pa.org/social-kit/campaign-raupatu-pt.png",
+        "gn": "https://te-pa.org/social-kit/campaign-raupatu-gn.png",
+        "sm": "https://te-pa.org/social-kit/campaign-raupatu-sm.png"
+      },
+      "captions": {
+        "mi": {
+          "text": "Ehara te raupatu i ngā rā o mua. Kua hangaia matihikotia.\nHe raupatu tonu tēnei — kāore he whakaaetanga, kāore he whakahokinga.\n\nAkoranga kore utu → kiwidialectic.com\n#Raupatu #TeManaRaraunga",
+          "data_copy_text": "Ehara te raupatu i ngā rā o mua. Kua hangaia matihikotia.&#10;He raupatu tonu tēnei — kāore he whakaaetanga, kāore he whakahokinga.&#10;&#10;Akoranga kore utu → kiwidialectic.com&#10;#Raupatu #TeManaRaraunga",
+          "char_count": 191,
+          "hashtags": [
+            "#Raupatu",
+            "#TeManaRaraunga"
+          ]
+        },
+        "en": {
+          "text": "Ehara te raupatu i ngā rā o mua. Kua hangaia matihikotia.\nRaupatu is not history. It became digital.\n\nAkoranga kore utu → kiwidialectic.com\n#Raupatu #TeManaRaraunga",
+          "data_copy_text": "Ehara te raupatu i ngā rā o mua. Kua hangaia matihikotia.&#10;Raupatu is not history. It became digital.&#10;&#10;Akoranga kore utu → kiwidialectic.com&#10;#Raupatu #TeManaRaraunga",
+          "char_count": 164,
+          "hashtags": [
+            "#Raupatu",
+            "#TeManaRaraunga"
+          ]
+        },
+        "pt": {
+          "text": "Ehara te raupatu i ngā rā o mua. Kua hangaia matihikotia.\nA confiscação não é história. Tornou-se digital.\n\nCurso gratuito → kiwidialectic.com\n#Raupatu #SoberaniaDeDados",
+          "data_copy_text": "Ehara te raupatu i ngā rā o mua. Kua hangaia matihikotia.&#10;A confiscação não é história. Tornou-se digital.&#10;&#10;Curso gratuito → kiwidialectic.com&#10;#Raupatu #SoberaniaDeDados",
+          "char_count": 169,
+          "hashtags": [
+            "#Raupatu",
+            "#SoberaniaDeDados"
+          ]
+        },
+        "gn": {
+          "text": "Ehara te raupatu i ngā rā o mua. Kua hangaia matihikotia.\nPe ñemboyke ndaha’éi tembiasakue. Oñembohasa dihitálpe.\n\nMbo’esyry reigua → kiwidialectic.com\n#Raupatu #TeManaRaraunga",
+          "data_copy_text": "Ehara te raupatu i ngā rā o mua. Kua hangaia matihikotia.&#10;Pe ñemboyke ndaha’éi tembiasakue. Oñembohasa dihitálpe.&#10;&#10;Mbo’esyry reigua → kiwidialectic.com&#10;#Raupatu #TeManaRaraunga",
+          "char_count": 176,
+          "hashtags": [
+            "#Raupatu",
+            "#TeManaRaraunga"
+          ]
+        },
+        "sm": {
+          "text": "Ehara te raupatu i ngā rā o mua. Kua hangaia matihikotia.\nO le aveeseina e lē o se talafaasolopito. Ua avea ma mea fa‘atekonolosi.\n\nA‘oa‘oga e leai se totogi → kiwidialectic.com\n#Raupatu #TeManaRaraunga",
+          "data_copy_text": "Ehara te raupatu i ngā rā o mua. Kua hangaia matihikotia.&#10;O le aveeseina e lē o se talafaasolopito. Ua avea ma mea fa‘atekonolosi.&#10;&#10;A‘oa‘oga e leai se totogi → kiwidialectic.com&#10;#Raupatu #TeManaRaraunga",
+          "char_count": 202,
+          "hashtags": [
+            "#Raupatu",
+            "#TeManaRaraunga"
+          ]
+        }
+      }
+    },
+    {
+      "card_id": "3-questions",
+      "title_mi": "He aha ōu pātai?",
+      "title_en": "3 Questions",
+      "image_bilingual": "https://te-pa.org/social-kit/campaign-3-questions.png",
+      "image_by_lang": {
+        "en": "https://te-pa.org/social-kit/campaign-3-questions-en.png",
+        "mi": "https://te-pa.org/social-kit/campaign-3-questions-mi.png",
+        "pt": "https://te-pa.org/social-kit/campaign-3-questions-pt.png",
+        "gn": "https://te-pa.org/social-kit/campaign-3-questions-gn.png",
+        "sm": "https://te-pa.org/social-kit/campaign-3-questions-sm.png"
+      },
+      "captions": {
+        "mi": {
+          "text": "E toru ngā pātai i mua i tō ‘whakaae’:\n1. Nā wai ēnei raraunga?\n2. Mō wai te painga?\n3. Mā wai e whakatau?\n\nAkoranga kore utu → kiwidialectic.com\n#HeAhaŌuPātai",
+          "data_copy_text": "E toru ngā pātai i mua i tō ‘whakaae’:&#10;1. Nā wai ēnei raraunga?&#10;2. Mō wai te painga?&#10;3. Mā wai e whakatau?&#10;&#10;Akoranga kore utu → kiwidialectic.com&#10;#HeAhaŌuPātai",
+          "char_count": 159,
+          "hashtags": [
+            "#HeAhaŌuPātai"
+          ]
+        },
+        "en": {
+          "text": "E toru ngā pātai i mua i tō ‘whakaae’:\n1. Nā wai? 2. Mō wai te painga? 3. Mā wai e whakatau?\n\nBefore you click ‘accept’, ask: whose, who profits, who decides.\n\nAkoranga kore utu → kiwidialectic.com\n#HeAhaŌuPātai",
+          "data_copy_text": "E toru ngā pātai i mua i tō ‘whakaae’:&#10;1. Nā wai? 2. Mō wai te painga? 3. Mā wai e whakatau?&#10;&#10;Before you click ‘accept’, ask: whose, who profits, who decides.&#10;&#10;Akoranga kore utu → kiwidialectic.com&#10;#HeAhaŌuPātai",
+          "char_count": 211,
+          "hashtags": [
+            "#HeAhaŌuPātai"
+          ]
+        },
+        "pt": {
+          "text": "E toru ngā pātai i mua i tō ‘whakaae’:\n1. Nā wai? 2. Mō wai te painga? 3. Mā wai e whakatau?\n\nAntes de aceitar, pergunte: de quem, quem lucra, quem decide.\n\nCurso gratuito → kiwidialectic.com\n#HeAhaŌuPātai",
+          "data_copy_text": "E toru ngā pātai i mua i tō ‘whakaae’:&#10;1. Nā wai? 2. Mō wai te painga? 3. Mā wai e whakatau?&#10;&#10;Antes de aceitar, pergunte: de quem, quem lucra, quem decide.&#10;&#10;Curso gratuito → kiwidialectic.com&#10;#HeAhaŌuPātai",
+          "char_count": 205,
+          "hashtags": [
+            "#HeAhaŌuPātai"
+          ]
+        },
+        "gn": {
+          "text": "E toru ngā pātai i mua i tō ‘whakaae’:\n1. Nā wai? 2. Mō wai te painga? 3. Mā wai e whakatau?\n\nEporandu raẽ: mávapa, máva oñemoirũ, máva odesidi.\n\nMbo’esyry reigua → kiwidialectic.com\n#HeAhaŌuPātai",
+          "data_copy_text": "E toru ngā pātai i mua i tō ‘whakaae’:&#10;1. Nā wai? 2. Mō wai te painga? 3. Mā wai e whakatau?&#10;&#10;Eporandu raẽ: mávapa, máva oñemoirũ, máva odesidi.&#10;&#10;Mbo’esyry reigua → kiwidialectic.com&#10;#HeAhaŌuPātai",
+          "char_count": 196,
+          "hashtags": [
+            "#HeAhaŌuPātai"
+          ]
+        },
+        "sm": {
+          "text": "E toru ngā pātai i mua i tō ‘whakaae’:\n1. Nā wai? 2. Mō wai te painga? 3. Mā wai e whakatau?\n\nA‘o le e te taliaina: a ai, a ai e maua le tupe, a ai e filifili.\n\nA‘oa‘oga e leai se totogi → kiwidialectic.com\n#HeAhaŌuPātai",
+          "data_copy_text": "E toru ngā pātai i mua i tō ‘whakaae’:&#10;1. Nā wai? 2. Mō wai te painga? 3. Mā wai e whakatau?&#10;&#10;A‘o le e te taliaina: a ai, a ai e maua le tupe, a ai e filifili.&#10;&#10;A‘oa‘oga e leai se totogi → kiwidialectic.com&#10;#HeAhaŌuPātai",
+          "char_count": 220,
+          "hashtags": [
+            "#HeAhaŌuPātai"
+          ]
+        }
+      }
+    },
+    {
+      "card_id": "te-mana-raraunga",
+      "title_mi": "Te Mana Raraunga",
+      "title_en": "Data sovereignty",
+      "image_bilingual": "https://te-pa.org/social-kit/campaign-te-mana-raraunga.png",
+      "image_by_lang": {
+        "en": "https://te-pa.org/social-kit/campaign-te-mana-raraunga-en.png",
+        "mi": "https://te-pa.org/social-kit/campaign-te-mana-raraunga-mi.png",
+        "pt": "https://te-pa.org/social-kit/campaign-te-mana-raraunga-pt.png",
+        "gn": "https://te-pa.org/social-kit/campaign-te-mana-raraunga-gn.png",
+        "sm": "https://te-pa.org/social-kit/campaign-te-mana-raraunga-sm.png"
+      },
+      "captions": {
+        "mi": {
+          "text": "Ko te tangata e pupuri ana i ō raraunga, ko ia e pupuri ana i tō anamata.\nTe mana raraunga — ko te tino rangatiratanga tērā.\n\nAkoranga kore utu → kiwidialectic.com\n#TeManaRaraunga",
+          "data_copy_text": "Ko te tangata e pupuri ana i ō raraunga, ko ia e pupuri ana i tō anamata.&#10;Te mana raraunga — ko te tino rangatiratanga tērā.&#10;&#10;Akoranga kore utu → kiwidialectic.com&#10;#TeManaRaraunga",
+          "char_count": 179,
+          "hashtags": [
+            "#TeManaRaraunga"
+          ]
+        },
+        "en": {
+          "text": "Ko te tangata e pupuri ana i ō raraunga, ko ia e pupuri ana i tō anamata.\nWhoever holds your data holds your future. Te mana raraunga = tino rangatiratanga.\n\nAkoranga kore utu → kiwidialectic.com\n#TeManaRaraunga",
+          "data_copy_text": "Ko te tangata e pupuri ana i ō raraunga, ko ia e pupuri ana i tō anamata.&#10;Whoever holds your data holds your future. Te mana raraunga = tino rangatiratanga.&#10;&#10;Akoranga kore utu → kiwidialectic.com&#10;#TeManaRaraunga",
+          "char_count": 211,
+          "hashtags": [
+            "#TeManaRaraunga"
+          ]
+        },
+        "pt": {
+          "text": "Ko te tangata e pupuri ana i ō raraunga, ko ia e pupuri ana i tō anamata.\nQuem detém os teus dados detém o teu futuro. Soberania de dados = autodeterminação.\n\nCurso gratuito → kiwidialectic.com\n#TeManaRaraunga",
+          "data_copy_text": "Ko te tangata e pupuri ana i ō raraunga, ko ia e pupuri ana i tō anamata.&#10;Quem detém os teus dados detém o teu futuro. Soberania de dados = autodeterminação.&#10;&#10;Curso gratuito → kiwidialectic.com&#10;#TeManaRaraunga",
+          "char_count": 209,
+          "hashtags": [
+            "#TeManaRaraunga"
+          ]
+        },
+        "gn": {
+          "text": "Ko te tangata e pupuri ana i ō raraunga, ko ia e pupuri ana i tō anamata.\nPe ojagarrávape nde mba’ekuaa, ha’e ojagarra nde tenonderã.\n\nMbo’esyry reigua → kiwidialectic.com\n#TeManaRaraunga",
+          "data_copy_text": "Ko te tangata e pupuri ana i ō raraunga, ko ia e pupuri ana i tō anamata.&#10;Pe ojagarrávape nde mba’ekuaa, ha’e ojagarra nde tenonderã.&#10;&#10;Mbo’esyry reigua → kiwidialectic.com&#10;#TeManaRaraunga",
+          "char_count": 187,
+          "hashtags": [
+            "#TeManaRaraunga"
+          ]
+        },
+        "sm": {
+          "text": "Ko te tangata e pupuri ana i ō raraunga, ko ia e pupuri ana i tō anamata.\nO lē e umia au fa‘amaumauga, e umia foi lou lumana‘i.\n\nA‘oa‘oga e leai se totogi → kiwidialectic.com\n#TeManaRaraunga",
+          "data_copy_text": "Ko te tangata e pupuri ana i ō raraunga, ko ia e pupuri ana i tō anamata.&#10;O lē e umia au fa‘amaumauga, e umia foi lou lumana‘i.&#10;&#10;A‘oa‘oga e leai se totogi → kiwidialectic.com&#10;#TeManaRaraunga",
+          "char_count": 190,
+          "hashtags": [
+            "#TeManaRaraunga"
+          ]
+        }
+      }
+    },
+    {
+      "card_id": "data-sovereignty",
+      "title_mi": "E whā ngā mātāpono tikanga",
+      "title_en": "Data sovereignty — 4 tikanga principles",
+      "image_bilingual": "https://te-pa.org/social-kit/campaign-data-sovereignty.png",
+      "image_by_lang": {
+        "en": "https://te-pa.org/social-kit/campaign-data-sovereignty-en.png",
+        "mi": "https://te-pa.org/social-kit/campaign-data-sovereignty-mi.png",
+        "pt": "https://te-pa.org/social-kit/campaign-data-sovereignty-pt.png",
+        "gn": "https://te-pa.org/social-kit/campaign-data-sovereignty-gn.png",
+        "sm": "https://te-pa.org/social-kit/campaign-data-sovereignty-sm.png"
+      },
+      "captions": {
+        "mi": {
+          "text": "E whā ngā mātāpono o te mana raraunga:\nWhakapapa · Mana · Tapu · Utu\n\nHe titiro ki te ao — ehara i te rārangi arowhai noa.\n\nAkoranga kore utu → kiwidialectic.com\n#Tikanga #TeManaRaraunga",
+          "data_copy_text": "E whā ngā mātāpono o te mana raraunga:&#10;Whakapapa · Mana · Tapu · Utu&#10;&#10;He titiro ki te ao — ehara i te rārangi arowhai noa.&#10;&#10;Akoranga kore utu → kiwidialectic.com&#10;#Tikanga #TeManaRaraunga",
+          "char_count": 186,
+          "hashtags": [
+            "#Tikanga",
+            "#TeManaRaraunga"
+          ]
+        },
+        "en": {
+          "text": "E whā ngā mātāpono o te mana raraunga:\nWhakapapa · Mana · Tapu · Utu\n\nSource, kaitiaki, what to protect, what returns to the iwi.\n\nAkoranga kore utu → kiwidialectic.com\n#Tikanga #TeManaRaraunga",
+          "data_copy_text": "E whā ngā mātāpono o te mana raraunga:&#10;Whakapapa · Mana · Tapu · Utu&#10;&#10;Source, kaitiaki, what to protect, what returns to the iwi.&#10;&#10;Akoranga kore utu → kiwidialectic.com&#10;#Tikanga #TeManaRaraunga",
+          "char_count": 193,
+          "hashtags": [
+            "#Tikanga",
+            "#TeManaRaraunga"
+          ]
+        },
+        "pt": {
+          "text": "E whā ngā mātāpono o te mana raraunga:\nWhakapapa · Mana · Tapu · Utu\n\nOrigem, guardiães, o que proteger, o que retorna ao povo.\n\nCurso gratuito → kiwidialectic.com\n#Tikanga #SoberaniaDeDados",
+          "data_copy_text": "E whā ngā mātāpono o te mana raraunga:&#10;Whakapapa · Mana · Tapu · Utu&#10;&#10;Origem, guardiães, o que proteger, o que retorna ao povo.&#10;&#10;Curso gratuito → kiwidialectic.com&#10;#Tikanga #SoberaniaDeDados",
+          "char_count": 190,
+          "hashtags": [
+            "#Tikanga",
+            "#SoberaniaDeDados"
+          ]
+        },
+        "gn": {
+          "text": "E whā ngā mātāpono o te mana raraunga:\nWhakapapa · Mana · Tapu · Utu\n\nMoñepyrũ, mo’ãhára, mba’épa oñeñangareko, mba’épa ojevy tetãygua.\n\nMbo’esyry reigua → kiwidialectic.com\n#Tikanga #TeManaRaraunga",
+          "data_copy_text": "E whā ngā mātāpono o te mana raraunga:&#10;Whakapapa · Mana · Tapu · Utu&#10;&#10;Moñepyrũ, mo’ãhára, mba’épa oñeñangareko, mba’épa ojevy tetãygua.&#10;&#10;Mbo’esyry reigua → kiwidialectic.com&#10;#Tikanga #TeManaRaraunga",
+          "char_count": 198,
+          "hashtags": [
+            "#Tikanga",
+            "#TeManaRaraunga"
+          ]
+        },
+        "sm": {
+          "text": "E whā ngā mātāpono o te mana raraunga:\nWhakapapa · Mana · Tapu · Utu\n\nTupu‘aga, leoleo, mea e tatau ona puipuia, mea e toe fo‘i atu i le nu‘u.\n\nA‘oa‘oga e leai se totogi → kiwidialectic.com\n#Tikanga #TeManaRaraunga",
+          "data_copy_text": "E whā ngā mātāpono o te mana raraunga:&#10;Whakapapa · Mana · Tapu · Utu&#10;&#10;Tupu‘aga, leoleo, mea e tatau ona puipuia, mea e toe fo‘i atu i le nu‘u.&#10;&#10;A‘oa‘oga e leai se totogi → kiwidialectic.com&#10;#Tikanga #TeManaRaraunga",
+          "char_count": 214,
+          "hashtags": [
+            "#Tikanga",
+            "#TeManaRaraunga"
+          ]
+        }
+      }
+    },
+    {
+      "card_id": "enrol",
+      "title_mi": "Kuhu mai — Akoranga kore utu",
+      "title_en": "Enrol — Free course CTA",
+      "image_bilingual": "https://te-pa.org/social-kit/campaign-enrol.png",
+      "image_by_lang": {
+        "en": "https://te-pa.org/social-kit/campaign-enrol-en.png",
+        "mi": "https://te-pa.org/social-kit/campaign-enrol-mi.png",
+        "pt": "https://te-pa.org/social-kit/campaign-enrol-pt.png",
+        "gn": "https://te-pa.org/social-kit/campaign-enrol-gn.png",
+        "sm": "https://te-pa.org/social-kit/campaign-enrol-sm.png"
+      },
+      "captions": {
+        "mi": {
+          "text": "Akona, ora ai, tiakina.\nTe Pā Tūwatawata — akoranga kore utu mō te mana raraunga, te tikanga, me te raupatu matihiko. E tuwhera ana ki te katoa.\n\n→ kiwidialectic.com\n#TePāTūwatawata #AkoranganKoreUtu",
+          "data_copy_text": "Akona, ora ai, tiakina.&#10;Te Pā Tūwatawata — akoranga kore utu mō te mana raraunga, te tikanga, me te raupatu matihiko. E tuwhera ana ki te katoa.&#10;&#10;→ kiwidialectic.com&#10;#TePāTūwatawata #AkoranganKoreUtu",
+          "char_count": 199,
+          "hashtags": [
+            "#TePāTūwatawata",
+            "#AkoranganKoreUtu"
+          ]
+        },
+        "en": {
+          "text": "Akona, ora ai, tiakina.\nLearn it, live it, defend it. Free course on data sovereignty, tikanga, and the digital raupatu. Open to all.\n\n→ kiwidialectic.com\n#TePāTūwatawata #AkoranganKoreUtu",
+          "data_copy_text": "Akona, ora ai, tiakina.&#10;Learn it, live it, defend it. Free course on data sovereignty, tikanga, and the digital raupatu. Open to all.&#10;&#10;→ kiwidialectic.com&#10;#TePāTūwatawata #AkoranganKoreUtu",
+          "char_count": 188,
+          "hashtags": [
+            "#TePāTūwatawata",
+            "#AkoranganKoreUtu"
+          ]
+        },
+        "pt": {
+          "text": "Akona, ora ai, tiakina.\nAprende, vive, defende. Curso gratuito sobre soberania de dados, tikanga e a confiscação digital. Aberto a todos.\n\n→ kiwidialectic.com\n#TePāTūwatawata #CursoGratuito",
+          "data_copy_text": "Akona, ora ai, tiakina.&#10;Aprende, vive, defende. Curso gratuito sobre soberania de dados, tikanga e a confiscação digital. Aberto a todos.&#10;&#10;→ kiwidialectic.com&#10;#TePāTūwatawata #CursoGratuito",
+          "char_count": 189,
+          "hashtags": [
+            "#TePāTūwatawata",
+            "#CursoGratuito"
+          ]
+        },
+        "gn": {
+          "text": "Akona, ora ai, tiakina.\nEñembo’e, eiko, eñangareko. Mbo’esyry reigua mba’ekuaa mba’apo, tikanga ha ñemboyke dihitalgua rehe. Opavavépe.\n\n→ kiwidialectic.com\n#TePāTūwatawata",
+          "data_copy_text": "Akona, ora ai, tiakina.&#10;Eñembo’e, eiko, eñangareko. Mbo’esyry reigua mba’ekuaa mba’apo, tikanga ha ñemboyke dihitalgua rehe. Opavavépe.&#10;&#10;→ kiwidialectic.com&#10;#TePāTūwatawata",
+          "char_count": 172,
+          "hashtags": [
+            "#TePāTūwatawata"
+          ]
+        },
+        "sm": {
+          "text": "Akona, ora ai, tiakina.\nA‘oa‘o, ola ai, puipuia. A‘oa‘oga e leai se totogi i le pulea o fa‘amaumauga, tikanga, ma le aveeseina fa‘atekonolosi. Mo tagata uma.\n\n→ kiwidialectic.com\n#TePāTūwatawata",
+          "data_copy_text": "Akona, ora ai, tiakina.&#10;A‘oa‘o, ola ai, puipuia. A‘oa‘oga e leai se totogi i le pulea o fa‘amaumauga, tikanga, ma le aveeseina fa‘atekonolosi. Mo tagata uma.&#10;&#10;→ kiwidialectic.com&#10;#TePāTūwatawata",
+          "char_count": 194,
+          "hashtags": [
+            "#TePāTūwatawata"
+          ]
+        }
+      }
+    },
+    {
+      "card_id": "anamata",
+      "title_mi": "Anamata — Ko tātou te anamata",
+      "title_en": "Anamata — We are the future",
+      "image_bilingual": "https://te-pa.org/social-kit/campaign-anamata.png",
+      "image_by_lang": {
+        "en": "https://te-pa.org/social-kit/campaign-anamata-en.png",
+        "mi": "https://te-pa.org/social-kit/campaign-anamata-mi.png",
+        "pt": "https://te-pa.org/social-kit/campaign-anamata-pt.png",
+        "gn": "https://te-pa.org/social-kit/campaign-anamata-gn.png",
+        "sm": "https://te-pa.org/social-kit/campaign-anamata-sm.png"
+      },
+      "captions": {
+        "mi": {
+          "text": "Ko tātou te anamata.\nWhakahokia mai ngā taputapu. Whakahokia mai te kōrero. Whakahokia mai te raraunga.\n\nAkoranga kore utu → kiwidialectic.com\n#Anamata #TeManaRaraunga",
+          "data_copy_text": "Ko tātou te anamata.&#10;Whakahokia mai ngā taputapu. Whakahokia mai te kōrero. Whakahokia mai te raraunga.&#10;&#10;Akoranga kore utu → kiwidialectic.com&#10;#Anamata #TeManaRaraunga",
+          "char_count": 167,
+          "hashtags": [
+            "#Anamata",
+            "#TeManaRaraunga"
+          ]
+        },
+        "en": {
+          "text": "Ko tātou te anamata.\nWe are the future. The next century of te reo and mātauranga will be built — or stolen — in code.\n\nAkoranga kore utu → kiwidialectic.com\n#Anamata #TeManaRaraunga",
+          "data_copy_text": "Ko tātou te anamata.&#10;We are the future. The next century of te reo and mātauranga will be built — or stolen — in code.&#10;&#10;Akoranga kore utu → kiwidialectic.com&#10;#Anamata #TeManaRaraunga",
+          "char_count": 182,
+          "hashtags": [
+            "#Anamata",
+            "#TeManaRaraunga"
+          ]
+        },
+        "pt": {
+          "text": "Ko tātou te anamata.\nNós somos o futuro. O próximo século de língua e saber será construído — ou roubado — em código.\n\nCurso gratuito → kiwidialectic.com\n#Anamata #SoberaniaDeDados",
+          "data_copy_text": "Ko tātou te anamata.&#10;Nós somos o futuro. O próximo século de língua e saber será construído — ou roubado — em código.&#10;&#10;Curso gratuito → kiwidialectic.com&#10;#Anamata #SoberaniaDeDados",
+          "char_count": 180,
+          "hashtags": [
+            "#Anamata",
+            "#SoberaniaDeDados"
+          ]
+        },
+        "gn": {
+          "text": "Ko tātou te anamata.\nÑande hína pe tenonderã. Pe siglo oúva ñe’ẽ ha arandúpe ojejapóta — térã oñembyaíta — kódigope.\n\nMbo’esyry reigua → kiwidialectic.com\n#Anamata #TeManaRaraunga",
+          "data_copy_text": "Ko tātou te anamata.&#10;Ñande hína pe tenonderã. Pe siglo oúva ñe’ẽ ha arandúpe ojejapóta — térã oñembyaíta — kódigope.&#10;&#10;Mbo’esyry reigua → kiwidialectic.com&#10;#Anamata #TeManaRaraunga",
+          "char_count": 179,
+          "hashtags": [
+            "#Anamata",
+            "#TeManaRaraunga"
+          ]
+        },
+        "sm": {
+          "text": "Ko tātou te anamata.\nO i tatou o le lumana‘i. O le isi seneturi o le gagana ma le poto masani o le a fausia — pe gaoia — i le code.\n\nA‘oa‘oga e leai se totogi → kiwidialectic.com\n#Anamata #TeManaRaraunga",
+          "data_copy_text": "Ko tātou te anamata.&#10;O i tatou o le lumana‘i. O le isi seneturi o le gagana ma le poto masani o le a fausia — pe gaoia — i le code.&#10;&#10;A‘oa‘oga e leai se totogi → kiwidialectic.com&#10;#Anamata #TeManaRaraunga",
+          "char_count": 203,
+          "hashtags": [
+            "#Anamata",
+            "#TeManaRaraunga"
+          ]
+        }
+      }
+    }
+  ],
+  "register_notes": {
+    "sm_softening": {
+      "from": "faoa",
+      "to": "aveeseina",
+      "applies_to": [
+        "raupatu:sm",
+        "enrol:sm"
+      ],
+      "rationale": "‘faoa’ connotes armed seizure; ‘aveeseina’ (passive: being taken away) keeps political bite without sounding warlike."
+    },
+    "sm_retained_hard_word": {
+      "term": "gaoia",
+      "applies_to": [
+        "anamata:sm"
+      ],
+      "rationale": "‘built — or stolen — in code’ parallel needs the harder verb to land."
+    },
+    "gn_softening": {
+      "from": "ñemonda",
+      "to": "ñemboyke",
+      "applies_to": [
+        "raupatu:gn",
+        "enrol:gn"
+      ],
+      "rationale": "‘ñemonda’ reads as criminal theft; ‘ñemboyke’ (dispossession / being set aside) is the term used in Paraguayan Indigenous land-rights discourse."
+    },
+    "gn_verb_softening": {
+      "from": "oñemondáta",
+      "to": "oñembyaíta",
+      "applies_to": [
+        "anamata:gn"
+      ],
+      "rationale": "‘will be stolen’ → ‘will be undone/lost’, matching the rhetorical parallel without criminal framing."
+    },
+    "review_required": [
+      "All MI lines should be checked by a kaitiaki reo, especially cards 1, 3, 6.",
+      "SM: aveeseina fa‘atekonolosi (enrol) is a coined collocation; needs native review.",
+      "GN: ñemboyke dihitalgua and ñemboyke dihitálpe are coinages; needs Paraguayan native review."
+    ]
+  },
+  "char_count_summary": {
+    "raupatu": {
+      "mi": 191,
+      "en": 164,
+      "pt": 169,
+      "gn": 176,
+      "sm": 202
+    },
+    "3-questions": {
+      "mi": 159,
+      "en": 211,
+      "pt": 205,
+      "gn": 196,
+      "sm": 220
+    },
+    "te-mana-raraunga": {
+      "mi": 179,
+      "en": 211,
+      "pt": 209,
+      "gn": 187,
+      "sm": 190
+    },
+    "data-sovereignty": {
+      "mi": 186,
+      "en": 193,
+      "pt": 190,
+      "gn": 198,
+      "sm": 214
+    },
+    "enrol": {
+      "mi": 199,
+      "en": 188,
+      "pt": 189,
+      "gn": 172,
+      "sm": 194
+    },
+    "anamata": {
+      "mi": 167,
+      "en": 182,
+      "pt": 180,
+      "gn": 179,
+      "sm": 203
+    }
+  }
+}
