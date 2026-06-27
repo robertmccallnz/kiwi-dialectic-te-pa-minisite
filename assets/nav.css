@@ -1,0 +1,233 @@
+/* ============================================================
+   Te Pā — Refined navigation (additive, layered over kiwi-dialectic.css)
+   Adds: grouped dropdowns, language switcher, mobile drawer.
+   Existing .site-nav rules still apply for outer container.
+   ============================================================ */
+
+.site-nav { position: relative; gap: 14px; }
+
+/* Group buttons that trigger dropdowns */
+.nav-group {
+  position: relative;
+}
+.nav-group > .nav-group-btn {
+  background: none;
+  border: none;
+  color: var(--fg);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+  opacity: .85;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.nav-group > .nav-group-btn:hover,
+.nav-group > .nav-group-btn:focus,
+.nav-group[data-open="true"] > .nav-group-btn {
+  opacity: 1;
+  background: var(--bg-raised, rgba(255,255,255,.04));
+}
+.nav-group > .nav-group-btn::after {
+  content: "";
+  width: 0; height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid currentColor;
+  margin-left: 4px;
+  opacity: .6;
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 220px;
+  background: var(--bg, #0d0d0d);
+  border: 1px solid var(--border-bold, #2a2a2a);
+  border-radius: 8px;
+  padding: 6px;
+  display: none;
+  flex-direction: column;
+  z-index: 100;
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+}
+[data-theme="light"] .nav-dropdown {
+  background: #fff;
+  border-color: #d8d4cb;
+}
+.nav-group[data-open="true"] > .nav-dropdown,
+.nav-group:hover > .nav-dropdown,
+.nav-group:focus-within > .nav-dropdown {
+  display: flex;
+}
+.nav-dropdown a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--fg);
+  font-size: .95rem;
+  opacity: .9;
+}
+.nav-dropdown a:hover {
+  background: var(--bg-raised, rgba(255,255,255,.05));
+  color: var(--accent, #c0392b);
+  opacity: 1;
+}
+.nav-dropdown .nav-dropdown-tag {
+  font-size: .68rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--fg-muted, #9a9080);
+  padding: 8px 12px 4px;
+  font-weight: 700;
+}
+
+/* Language switcher */
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--border-bold, #2a2a2a);
+  border-radius: 999px;
+  margin-left: 8px;
+}
+.lang-switcher button {
+  background: none;
+  border: none;
+  color: var(--fg);
+  font-family: inherit;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  border-radius: 999px;
+  cursor: pointer;
+  opacity: .55;
+  transition: all .15s ease;
+}
+.lang-switcher button:hover { opacity: 1; }
+.lang-switcher button[aria-pressed="true"] {
+  background: var(--accent, #c0392b);
+  color: #fff;
+  opacity: 1;
+}
+/* Per-language accent on active pill */
+.lang-switcher button[data-lang-set="mi"][aria-pressed="true"] { background: #c0392b; }
+.lang-switcher button[data-lang-set="sm"][aria-pressed="true"] { background: #1c3a6e; }
+.lang-switcher button[data-lang-set="pt"][aria-pressed="true"] { background: #006233; }
+.lang-switcher button[data-lang-set="gn"][aria-pressed="true"] { background: #5b7553; }
+.lang-switcher button[data-lang-set="ar"][aria-pressed="true"] { background: #2e2a5c; }
+
+/* Subtle top-border accent per active language (applied to <html data-lang=…>) */
+html[data-lang="mi"] .motif-stripe { background: linear-gradient(90deg,#c0392b 0%,#0d0d0d 50%,#d4a544 100%); }
+html[data-lang="sm"] .motif-stripe { background: linear-gradient(90deg,#1c3a6e 0%,#c0392b 50%,#f4f0e8 100%); }
+html[data-lang="pt"] .motif-stripe { background: linear-gradient(90deg,#006233 0%,#d4a544 100%); }
+html[data-lang="gn"] .motif-stripe { background: linear-gradient(90deg,#5b7553 0%,#d4a544 50%,#8b5a2b 100%); }
+html[data-lang="ar"] .motif-stripe { background: linear-gradient(90deg,#2e2a5c 0%,#d4a544 100%); }
+
+/* RTL support */
+html[dir="rtl"] .nav-dropdown { left: auto; right: 0; }
+html[dir="rtl"] .lang-switcher { margin-left: 0; margin-right: 8px; }
+html[dir="rtl"] body { text-align: right; }
+
+/* Mobile drawer */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border-bold, #2a2a2a);
+  color: var(--fg);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .nav-toggle { display: inline-block; }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch !important;
+    background: var(--bg, #0d0d0d);
+    border: 1px solid var(--border-bold, #2a2a2a);
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 8px;
+    display: none !important;
+    z-index: 90;
+  }
+  .site-nav[data-mobile-open="true"] .nav-links { display: flex !important; }
+  .nav-group { width: 100%; }
+  .nav-dropdown {
+    position: static;
+    box-shadow: none;
+    background: transparent;
+    border: none;
+    padding-left: 12px;
+    border-left: 2px solid var(--border-bold, #2a2a2a);
+    border-radius: 0;
+    margin: 4px 0 8px;
+  }
+  .lang-switcher { margin: 8px 0 0; }
+}
+
+/* Skip-to-content for accessibility */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--accent, #c0392b);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 1000;
+  text-decoration: none;
+}
+.skip-link:focus { left: 8px; top: 8px; }
+
+/* Culture chip grid for slimmed social-kit overview */
+.culture-chips {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px;
+  margin: 1.4rem 0 2rem;
+}
+.culture-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 14px 12px;
+  background: var(--bg-raised, rgba(255,255,255,.03));
+  border: 1px solid var(--border-bold, #2a2a2a);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--fg);
+  transition: all .15s ease;
+}
+.culture-chip:hover {
+  border-color: var(--accent, #c0392b);
+  transform: translateY(-2px);
+}
+.culture-chip-name {
+  font-weight: 700;
+  font-size: .95rem;
+  letter-spacing: -.01em;
+}
+.culture-chip-meta {
+  font-size: .72rem;
+  color: var(--fg-muted, #9a9080);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.culture-chip[data-region="aotearoa"] { border-left: 3px solid #c0392b; }
+.culture-chip[data-region="pacific"]  { border-left: 3px solid #1c3a6e; }
+.culture-chip[data-region="amazonia"] { border-left: 3px solid #5b7553; }

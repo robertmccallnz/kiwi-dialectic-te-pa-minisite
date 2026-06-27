@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
           http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
@@ -8,6 +9,13 @@
     <lastmod>2026-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://te-pa.org/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="mi" href="https://te-pa.org/?lang=mi"/>
+    <xhtml:link rel="alternate" hreflang="sm" href="https://te-pa.org/?lang=sm"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://te-pa.org/?lang=pt"/>
+    <xhtml:link rel="alternate" hreflang="gn" href="https://te-pa.org/?lang=gn"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://te-pa.org/?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://te-pa.org/"/>
   </url>
   <url>
     <loc>https://te-pa.org/rhizome-mapper.html</loc>
@@ -200,5 +208,59 @@
     <lastmod>2026-06-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://te-pa.org/launch-mediakit/</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://te-pa.org/launch-mediakit/threads/launch-en.md</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://te-pa.org/launch-mediakit/threads/launch-mi.md</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://te-pa.org/launch-mediakit/threads/launch-sm.md</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://te-pa.org/launch-mediakit/threads/launch-pt.md</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://te-pa.org/launch-mediakit/threads/launch-gn.md</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://te-pa.org/launch-mediakit/threads/launch-ar.md</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://te-pa.org/partner-onboarding/te-pa-partner-onboarding-en.md</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://te-pa.org/partner-onboarding/te-pa-partner-onboarding-mi.md</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

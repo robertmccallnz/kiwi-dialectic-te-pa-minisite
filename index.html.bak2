@@ -25,146 +25,29 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap"></noscript>
   <link rel="preload" href="assets/kiwi-dialectic.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="assets/kiwi-dialectic.css"></noscript>
-  <link rel="stylesheet" href="assets/nav.css">
   <link rel="manifest" href="/kiwi-dialectic-te-pa-minisite/manifest.json">
   <meta name="theme-color" content="#c0392b">
-  <link rel="canonical" href="https://te-pa.org/" />
-  <link rel="alternate" hreflang="en" href="https://te-pa.org/?lang=en" />
-  <link rel="alternate" hreflang="mi" href="https://te-pa.org/?lang=mi" />
-  <link rel="alternate" hreflang="sm" href="https://te-pa.org/?lang=sm" />
-  <link rel="alternate" hreflang="pt" href="https://te-pa.org/?lang=pt" />
-  <link rel="alternate" hreflang="gn" href="https://te-pa.org/?lang=gn" />
-  <link rel="alternate" hreflang="ar" href="https://te-pa.org/?lang=ar" />
-  <link rel="alternate" hreflang="x-default" href="https://te-pa.org/" />
-
-  <!-- JSON-LD: EducationalOrganization -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "name": "Te Pā Tūwatawata Charitable Trust",
-    "alternateName": "The Kiwi Dialectic",
-    "url": "https://te-pa.org",
-    "logo": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/social-webp/kiwi-dialectic-x-card.webp",
-    "description": "Bilingual educational mini-site on AI, Māori data sovereignty, tikanga, and Indigenous control over digital infrastructure.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "2 Mount Street",
-      "addressLocality": "Port Chalmers",
-      "addressRegion": "Otago",
-      "postalCode": "9023",
-      "addressCountry": "NZ"
-    },
-    "sameAs": ["https://www.kiwidialectic.com"]
-  }
-  </script>
-
-  <!-- JSON-LD: Course series -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Course",
-    "name": "Te Pā Tūwatawata — AI, Data Sovereignty & Tikanga",
-    "description": "Six bilingual modules exploring AI, Māori data sovereignty, tikanga, and Indigenous control over digital infrastructure.",
-    "provider": {
-      "@type": "EducationalOrganization",
-      "name": "Te Pā Tūwatawata Charitable Trust",
-      "sameAs": "https://te-pa.org"
-    },
-    "inLanguage": ["en", "mi"],
-    "isAccessibleForFree": true,
-    "hasCourseInstance": [
-      {"@type":"CourseInstance","courseMode":"online","name":"Module 1","url":"https://te-pa.org/modules/module-1.html"},
-      {"@type":"CourseInstance","courseMode":"online","name":"Module 2","url":"https://te-pa.org/modules/module-2.html"},
-      {"@type":"CourseInstance","courseMode":"online","name":"Module 3","url":"https://te-pa.org/modules/module-3.html"},
-      {"@type":"CourseInstance","courseMode":"online","name":"Module 4","url":"https://te-pa.org/modules/module-4.html"},
-      {"@type":"CourseInstance","courseMode":"online","name":"Module 5","url":"https://te-pa.org/modules/module-5.html"},
-      {"@type":"CourseInstance","courseMode":"online","name":"Module 6","url":"https://te-pa.org/modules/module-6.html"}
-    ]
-  }
-  </script>
-
-  <!-- JSON-LD: WebSite + SearchAction -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Te Pā Tūwatawata",
-    "url": "https://te-pa.org",
-    "inLanguage": ["en", "mi", "sm", "pt", "gn", "ar"],
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://te-pa.org/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
 </head>
 <body>
 
   <!-- Te Whai Ao — the realm of Coming into Being — red stripe -->
   <span class="motif-stripe" role="presentation" aria-hidden="true"></span>
 
-  <a href="#main" class="skip-link">Skip to content</a>
   <div class="shell">
-    <nav class="site-nav" id="site-nav" aria-label="Primary">
+    <nav class="site-nav">
       <a class="nav-brand" href="https://www.kiwidialectic.com" target="_blank" rel="noopener noreferrer">The Kiwi Dialectic</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-      <div class="nav-links" id="navLinks">
-
-        <a href="rhizome-mapper.html" style="color:var(--accent);font-weight:700" data-i18n="nav_mapper">⬡ Rhizome Mapper</a>
-
-        <div class="nav-group">
-          <button class="nav-group-btn" type="button" aria-haspopup="true" aria-expanded="false" data-i18n="nav_learn">Learn</button>
-          <div class="nav-dropdown" role="menu">
-            <a href="#modules" data-i18n="nav_modules">Modules</a>
-            <a href="rhizome-mapper.html" data-i18n="nav_mapper">Rhizome Mapper</a>
-            <a href="#symbolism" data-i18n="nav_symbolism">Symbolism</a>
-            <a href="#rhizome">Pakiaka</a>
-          </div>
-        </div>
-
-        <div class="nav-group">
-          <button class="nav-group-btn" type="button" aria-haspopup="true" aria-expanded="false" data-i18n="nav_motifs">Motifs</button>
-          <div class="nav-dropdown" role="menu">
-            <div class="nav-dropdown-tag">All 30 motifs</div>
-            <a href="motifs/index.html">Motif index</a>
-            <div class="nav-dropdown-tag">By culture</div>
-            <a href="#sk-maori" data-i18n="nav_motifs_maori">Māori</a>
-            <a href="#sk-pacific" data-i18n="nav_motifs_pacific">Pacific</a>
-            <a href="#sk-amazonian" data-i18n="nav_motifs_amazonian">Amazonian</a>
-          </div>
-        </div>
-
-        <div class="nav-group">
-          <button class="nav-group-btn" type="button" aria-haspopup="true" aria-expanded="false" data-i18n="nav_resources">Resources</button>
-          <div class="nav-dropdown" role="menu">
-            <a href="#toolkit" data-i18n="nav_teaching_kit">Teaching Kit</a>
-            <a href="#social-kit" data-i18n="nav_social_kit">Social Kit</a>
-            <a href="#stickers" data-i18n="nav_stickers">Stickers</a>
-            <a href="#unaunahi-series" data-i18n="nav_unaunahi">Unaunahi Series</a>
-            <a href="launch-mediakit/" data-i18n="nav_launch_kit">Launch Media Kit</a>
-          </div>
-        </div>
-
-        <div class="nav-group">
-          <button class="nav-group-btn" type="button" aria-haspopup="true" aria-expanded="false" data-i18n="nav_about">About</button>
-          <div class="nav-dropdown" role="menu">
-            <a href="#sources" data-i18n="nav_sources">Sources</a>
-            <a href="https://www.kiwidialectic.com" target="_blank" rel="noopener noreferrer" data-i18n="nav_substack">Substack</a>
-            <a href="partner-onboarding/te-pa-partner-onboarding-en.md" data-i18n="nav_partner">Partner Onboarding</a>
-          </div>
-        </div>
-
-        <div class="lang-switcher" role="group" aria-label="Language">
-          <button type="button" data-lang-set="en" aria-pressed="true" title="English">EN</button>
-          <button type="button" data-lang-set="mi" aria-pressed="false" title="Te Reo Māori">MI</button>
-          <button type="button" data-lang-set="sm" aria-pressed="false" title="Gagana Sāmoa">SM</button>
-          <button type="button" data-lang-set="pt" aria-pressed="false" title="Português">PT</button>
-          <button type="button" data-lang-set="gn" aria-pressed="false" title="Avañe'ẽ Guaraní">GN</button>
-          <button type="button" data-lang-set="ar" aria-pressed="false" title="العربية">AR</button>
-        </div>
-
+      <div class="nav-links">
+        <a href="#modules">Modules</a>
+        <a href="#symbolism">Symbolism</a>
+        <a href="motifs/index.html">Motifs</a>
+        <a href="rhizome-mapper.html" style="color:var(--accent);font-weight:700">⬡ Mapper</a>
+        <a href="#toolkit">Teaching Kit</a>
+        <a href="#social-kit">Social Kit</a>
+        <a href="#rhizome">Pakiaka</a>
+        <a href="#stickers">Stickers</a>
+        <a href="#unaunahi-series">Unaunahi Series</a>
+        <a href="#sources">Sources</a>
+        <a href="https://www.kiwidialectic.com" target="_blank" rel="noopener noreferrer">Substack</a>
         <button class="theme-btn" id="themeToggle" aria-label="Toggle dark mode">Dark</button>
         <!-- Fuse.js search -->
         <div class="search-wrap" id="searchWrap">
@@ -208,18 +91,17 @@
               fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
       </svg>
 
-      <p class="hero-tag" data-i18n="hero_tag">Educational Course · Bilingual · AI &amp; Māori Data Sovereignty</p>
-      <h1 data-i18n="hero_title">Te Pā Tūwatawata</h1>
-      <p class="hero-sub" data-i18n="hero_sub">
+      <p class="hero-tag">Educational Course · Bilingual · AI &amp; Māori Data Sovereignty</p>
+      <h1>Te Pā Tūwatawata</h1>
+      <p class="hero-sub">
         Six modules exploring AI, Māori data sovereignty, tikanga, and Indigenous control over digital infrastructure — taught bilingually in te reo Māori and English.
       </p>
       <div class="btn-row">
-        <a class="btn btn--solid" href="#modules" data-i18n="cta_start">Tīmata — Start learning</a>
-        <a class="btn btn--red" href="https://www.kiwidialectic.com" target="_blank" rel="noopener noreferrer" data-i18n="cta_substack">Follow The Kiwi Dialectic</a>
-        <a class="btn" href="#sources" data-i18n="cta_sources">Ngā puna — Sources</a>
+        <a class="btn btn--solid" href="#modules">Tīmata — Start learning</a>
+        <a class="btn btn--red" href="https://www.kiwidialectic.com" target="_blank" rel="noopener noreferrer">Follow The Kiwi Dialectic</a>
+        <a class="btn" href="#sources">Ngā puna — Sources</a>
       </div>
     </header>
-    <main id="main">
 
     <!-- ABOUT SECTION -->
     <section>
@@ -632,43 +514,6 @@ Facebook: "If you're teaching anything about data, AI, technology rights, or ind
         30 motifs across 11 cultures — Māori, Samoan, Pacific, Tongan, Fijian, Guaraní, Shipibo-Conibo, Guna, Kayapó, Yanomami, and Amazonian. Each with activist meme images, motif artwork, hashtag sets, and course module links. All content CC BY-NC-SA 4.0 — free to use and share.
       </p>
 
-      <!-- Culture chip overview — jump-links to subsections -->
-      <p style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted,#9a9080);font-weight:700;margin:1.4rem 0 .4rem" data-i18n="culture_explore">Explore by culture</p>
-      <nav class="culture-chips" aria-label="Cultures">
-        <a class="culture-chip" data-region="aotearoa" href="#sk-maori">
-          <span class="culture-chip-name">Māori</span>
-          <span class="culture-chip-meta">Aotearoa · 6 motifs</span>
-        </a>
-        <a class="culture-chip" data-region="pacific" href="#sk-pacific">
-          <span class="culture-chip-name">Pacific</span>
-          <span class="culture-chip-meta">Samoan · Tongan · Fijian</span>
-        </a>
-        <a class="culture-chip" data-region="amazonia" href="#sk-guarani">
-          <span class="culture-chip-name">Guaraní</span>
-          <span class="culture-chip-meta">Paraguay · Brazil</span>
-        </a>
-        <a class="culture-chip" data-region="amazonia" href="#sk-shipibo">
-          <span class="culture-chip-name">Shipibo-Conibo</span>
-          <span class="culture-chip-meta">Peruvian Amazon</span>
-        </a>
-        <a class="culture-chip" data-region="amazonia" href="#sk-guna">
-          <span class="culture-chip-name">Guna</span>
-          <span class="culture-chip-meta">Panama · Colombia</span>
-        </a>
-        <a class="culture-chip" data-region="amazonia" href="#sk-kayapo">
-          <span class="culture-chip-name">Kayapó</span>
-          <span class="culture-chip-meta">Brazilian Amazon</span>
-        </a>
-        <a class="culture-chip" data-region="amazonia" href="#sk-yanomami">
-          <span class="culture-chip-name">Yanomami</span>
-          <span class="culture-chip-meta">Brazil · Venezuela</span>
-        </a>
-        <a class="culture-chip" data-region="amazonia" href="#sk-amazonian">
-          <span class="culture-chip-name">Amazônia</span>
-          <span class="culture-chip-meta">Pan-Amazonian</span>
-        </a>
-      </nav>
-
       <!-- Niho divider -->
       <div class="niho-divider" aria-hidden="true"></div>
 
@@ -685,7 +530,7 @@ Facebook: "If you're teaching anything about data, AI, technology rights, or ind
 
       <!-- ── CULTURE: MAORI ──────────────────────── -->
       <div class="niho-divider" aria-hidden="true" style="margin:2rem 0 1.6rem"></div>
-      <div id="sk-maori" style="margin-bottom:2.4rem;scroll-margin-top:5rem">
+      <div style="margin-bottom:2.4rem">
         <p style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);font-weight:600;margin:0 0 .2rem">Culture / Cultura</p>
         <h3 style="font-size:1.3rem;font-weight:800;color:var(--text);margin:0 0 .2rem;letter-spacing:-.01em">Māori</h3>
         <p style="font-size:.82rem;color:var(--text-muted);margin:0 0 .4rem">Te Reo Māori · Aotearoa New Zealand</p>
@@ -1091,7 +936,7 @@ Facebook: "If you're teaching anything about data, AI, technology rights, or ind
 
       <!-- ── CULTURE: PACIFIC ──────────────────────── -->
       <div class="niho-divider" aria-hidden="true" style="margin:2rem 0 1.6rem"></div>
-      <div id="sk-pacific" style="margin-bottom:2.4rem;scroll-margin-top:5rem">
+      <div style="margin-bottom:2.4rem">
         <p style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);font-weight:600;margin:0 0 .2rem">Culture / Cultura</p>
         <h3 style="font-size:1.3rem;font-weight:800;color:var(--text);margin:0 0 .2rem;letter-spacing:-.01em">Te Moana-nui-a-Kiwa — Pacific</h3>
         <p style="font-size:.82rem;color:var(--text-muted);margin:0 0 .4rem">Pacific languages · Pacific Ocean</p>
@@ -1220,7 +1065,7 @@ Facebook: "If you're teaching anything about data, AI, technology rights, or ind
 
       <!-- ── CULTURE: GUARANI ──────────────────────── -->
       <div class="niho-divider" aria-hidden="true" style="margin:2rem 0 1.6rem"></div>
-      <div id="sk-guarani" style="margin-bottom:2.4rem;scroll-margin-top:5rem">
+      <div style="margin-bottom:2.4rem">
         <p style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);font-weight:600;margin:0 0 .2rem">Culture / Cultura</p>
         <h3 style="font-size:1.3rem;font-weight:800;color:var(--text);margin:0 0 .2rem;letter-spacing:-.01em">Guaraní</h3>
         <p style="font-size:.82rem;color:var(--text-muted);margin:0 0 .4rem">Avañe'ẽ (Guaraní) · Paraguay / Brazil / Bolivia</p>
@@ -1327,7 +1172,7 @@ Facebook: "If you're teaching anything about data, AI, technology rights, or ind
 
       <!-- ── CULTURE: SHIPIBO ──────────────────────── -->
       <div class="niho-divider" aria-hidden="true" style="margin:2rem 0 1.6rem"></div>
-      <div id="sk-shipibo" style="margin-bottom:2.4rem;scroll-margin-top:5rem">
+      <div style="margin-bottom:2.4rem">
         <p style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);font-weight:600;margin:0 0 .2rem">Culture / Cultura</p>
         <h3 style="font-size:1.3rem;font-weight:800;color:var(--text);margin:0 0 .2rem;letter-spacing:-.01em">Shipibo-Conibo</h3>
         <p style="font-size:.82rem;color:var(--text-muted);margin:0 0 .4rem">Shipibo-Conibo · Peruvian Amazon</p>
@@ -1386,7 +1231,7 @@ Facebook: "If you're teaching anything about data, AI, technology rights, or ind
 
       <!-- ── CULTURE: GUNA ──────────────────────── -->
       <div class="niho-divider" aria-hidden="true" style="margin:2rem 0 1.6rem"></div>
-      <div id="sk-guna" style="margin-bottom:2.4rem;scroll-margin-top:5rem">
+      <div style="margin-bottom:2.4rem">
         <p style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);font-weight:600;margin:0 0 .2rem">Culture / Cultura</p>
         <h3 style="font-size:1.3rem;font-weight:800;color:var(--text);margin:0 0 .2rem;letter-spacing:-.01em">Guna (Kuna)</h3>
         <p style="font-size:.82rem;color:var(--text-muted);margin:0 0 .4rem">Dulegaya · Panama / Colombia</p>
@@ -1421,7 +1266,7 @@ Facebook: "If you're teaching anything about data, AI, technology rights, or ind
 
       <!-- ── CULTURE: KAYAPO ──────────────────────── -->
       <div class="niho-divider" aria-hidden="true" style="margin:2rem 0 1.6rem"></div>
-      <div id="sk-kayapo" style="margin-bottom:2.4rem;scroll-margin-top:5rem">
+      <div style="margin-bottom:2.4rem">
         <p style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);font-weight:600;margin:0 0 .2rem">Culture / Cultura</p>
         <h3 style="font-size:1.3rem;font-weight:800;color:var(--text);margin:0 0 .2rem;letter-spacing:-.01em">Kayapó</h3>
         <p style="font-size:.82rem;color:var(--text-muted);margin:0 0 .4rem">Kayapó · Brazilian Amazon (Pará)</p>
@@ -1456,7 +1301,7 @@ Facebook: "If you're teaching anything about data, AI, technology rights, or ind
 
       <!-- ── CULTURE: YANOMAMI ──────────────────────── -->
       <div class="niho-divider" aria-hidden="true" style="margin:2rem 0 1.6rem"></div>
-      <div id="sk-yanomami" style="margin-bottom:2.4rem;scroll-margin-top:5rem">
+      <div style="margin-bottom:2.4rem">
         <p style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);font-weight:600;margin:0 0 .2rem">Culture / Cultura</p>
         <h3 style="font-size:1.3rem;font-weight:800;color:var(--text);margin:0 0 .2rem;letter-spacing:-.01em">Yanomami</h3>
         <p style="font-size:.82rem;color:var(--text-muted);margin:0 0 .4rem">Yanomami · Brazil / Venezuela Amazon</p>
@@ -1491,7 +1336,7 @@ Facebook: "If you're teaching anything about data, AI, technology rights, or ind
 
       <!-- ── CULTURE: AMAZONIAN ──────────────────────── -->
       <div class="niho-divider" aria-hidden="true" style="margin:2rem 0 1.6rem"></div>
-      <div id="sk-amazonian" style="margin-bottom:2.4rem;scroll-margin-top:5rem">
+      <div style="margin-bottom:2.4rem">
         <p style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);font-weight:600;margin:0 0 .2rem">Culture / Cultura</p>
         <h3 style="font-size:1.3rem;font-weight:800;color:var(--text);margin:0 0 .2rem;letter-spacing:-.01em">Amazônia — Pan-Amazonian</h3>
         <p style="font-size:.82rem;color:var(--text-muted);margin:0 0 .4rem">Português / Indigenous · Brazil / Pan-Amazon</p>
@@ -1998,8 +1843,6 @@ TikTok hook: "I printed indigenous data sovereignty stickers for 50 cents each. 
       </div>
 
     
-    </main>
-
         <footer class="site-footer">
       <p>
         <a href="https://www.kiwidialectic.com" target="_blank" rel="noopener noreferrer">The Kiwi Dialectic</a>
@@ -2077,46 +1920,6 @@ TikTok hook: "I printed indigenous data sovereignty stickers for 50 cents each. 
   </script>
 
   <!-- ── FUSE.JS SEARCH ──────────────────────────────────────────────── -->
-  <script>
-    (function(){
-      var nav = document.getElementById('site-nav');
-      var toggle = document.getElementById('navToggle');
-      if (toggle && nav) {
-        toggle.addEventListener('click', function() {
-          var open = nav.getAttribute('data-mobile-open') === 'true';
-          nav.setAttribute('data-mobile-open', open ? 'false' : 'true');
-          toggle.setAttribute('aria-expanded', open ? 'false' : 'true');
-        });
-      }
-      document.querySelectorAll('.nav-group').forEach(function(group){
-        var btn = group.querySelector('.nav-group-btn');
-        if (!btn) return;
-        btn.addEventListener('click', function(e){
-          e.preventDefault();
-          var open = group.getAttribute('data-open') === 'true';
-          document.querySelectorAll('.nav-group[data-open="true"]').forEach(function(g){
-            if (g !== group) { g.setAttribute('data-open','false'); var b = g.querySelector('.nav-group-btn'); if (b) b.setAttribute('aria-expanded','false'); }
-          });
-          group.setAttribute('data-open', open ? 'false' : 'true');
-          btn.setAttribute('aria-expanded', open ? 'false' : 'true');
-        });
-      });
-      document.addEventListener('click', function(e){
-        if (!e.target.closest('.nav-group')) {
-          document.querySelectorAll('.nav-group[data-open="true"]').forEach(function(g){
-            g.setAttribute('data-open','false');
-            var b = g.querySelector('.nav-group-btn'); if (b) b.setAttribute('aria-expanded','false');
-          });
-        }
-      });
-      document.querySelectorAll('.nav-dropdown a, .culture-chip').forEach(function(a){
-        a.addEventListener('click', function(){
-          if (nav) { nav.setAttribute('data-mobile-open','false'); if(toggle) toggle.setAttribute('aria-expanded','false'); }
-        });
-      });
-    })();
-  </script>
-  <script src="assets/i18n.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" defer></script>
   <script src="assets/search.js" defer></script>
 
