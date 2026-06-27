@@ -782,6 +782,7 @@
         <button class="lang-btn" onclick="setLang('pt')" data-lang="pt">PT</button>
         <button class="lang-btn" onclick="setLang('gn')" data-lang="gn">GN</button>
         <button class="lang-btn" onclick="setLang('sm')" data-lang="sm">SM</button>
+        <button class="lang-btn" onclick="setLang('ar')" data-lang="ar" style="font-family:serif">AR</button>
       </div>
       <button class="theme-btn" id="themeToggle">Light</button>
     </div>
@@ -1368,6 +1369,41 @@ const STRINGS = {
     'ev-label': 'He aha te kaupaka?',
     'ev-themes': 'Ngā kaupeka e kitea ana e koe',
   },
+  ar: {
+    'tab-network': '⬡ خريطة الشبكة',
+    'tab-event': '→ محلّل الأحداث',
+    'ctrl-region': 'المنطقة',
+    'all': 'الكل',
+    'maori': 'ماوري · أوتياروا',
+    'oceania': 'أوقيانوسيا',
+    'south-america': 'أمريكا الجنوبية',
+    'north-america': 'أمريكا الشمالية',
+    'global': 'عالمي',
+    'africa': 'أفريقيا',
+    'europe': 'أوروبا',
+    'ctrl-cause': 'القضية',
+    'land-rights': 'الأرض',
+    'sovereignty': 'السيادة',
+    'data-sov': 'البيانات / الذكاء الاصطناعي',
+    'language': 'اللغة',
+    'environment': 'البيئة',
+    'search-placeholder': 'ابحث عن المنظمات…',
+    'stat-orgs': 'منظمة',
+    'stat-regions': 'منطقة',
+    'stat-pt': 'بموارد باللغة البرتغالية',
+    'stat-gn': 'بموارد بلغة الغواراني',
+    'leg-maori': 'ماوري / أوتياروا',
+    'leg-oceania': 'أوقيانوسيا / تي موانا-نوي-أ-كيوا',
+    'leg-sa': 'أمريكا الجنوبية / الأمازون',
+    'leg-link': 'روابط القضايا المشتركة',
+    'leg-drag': 'اسحب · مرّر للتكبير · انقر على العقدة للتفاصيل',
+    'ev-step1': 'صِف أو الصق حدثاً سياسياً — قانون، قرار، خطاب، احتجاج.',
+    'ev-step2': 'حدّد الموضوعات — السيادة، الاستخراج، المقاومة، العمل الجماعي.',
+    'ev-step3': 'يُقيّم المحلّل جميع النقوش الستة الماورية ويجد أعمق توافق.',
+    'ev-step4': 'احصل على مسوّدة منشور ثنائية اللغة لـ X أو إنستغرام أو فيسبوك أو تيك توك.',
+    'ev-label': 'ما هو الحدث؟',
+    'ev-themes': 'الموضوعات التي تراها في هذا الحدث',
+  },
   sm: {
     'tab-network': '⬡ Faʻafanua o le Fesoʻotaʻiga',
     'tab-event': '→ Faʻafanua o Mea Tutupu',
@@ -1465,6 +1501,11 @@ function setLang(lang) {
   document.querySelectorAll('.lang-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.lang === lang);
   });
+  // RTL support for Arabic
+  const isRTL = lang === 'ar';
+  document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+  document.documentElement.setAttribute('lang', lang);
+  document.body.style.textAlign = isRTL ? 'right' : '';
   // update all i18n elements
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;

@@ -99,6 +99,27 @@
         "#Oceania",
         "#TaifaaSamoa"
       ]
+    },
+    "ar": {
+      "code": "ar",
+      "name": "Arabic",
+      "native_name": "العربية",
+      "region": "الشرق الأوسط وشمال أفريقيا",
+      "direction": "rtl",
+      "teaching_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-teaching-kit-ar.pdf",
+      "student_activity_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-student-activity-sheets.pdf",
+      "social_media_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-social-media-kit.pdf",
+      "motif_count": 30,
+      "kit_manifest": "https://kiwi-dialectic-te-pa-minisite.vercel.app/teaching-kits/ar/kit-manifest.json",
+      "hashtags": [
+        "#سيادة_البيانات",
+        "#الذكاء_الاصطناعي_الأصلي",
+        "#TePa",
+        "#CARE",
+        "#حقوق_البيانات",
+        "#الشعوب_الأصلية",
+        "#مبادئ_كير"
+      ]
     }
   }
 }

@@ -1,0 +1,648 @@
+{
+  "lang": "ar",
+  "name": "Arabic",
+  "native_name": "العربية",
+  "region": "الشرق الأوسط وشمال أفريقيا / العالم الإسلامي",
+  "version": "1.0.0",
+  "generated_at": "2026-06-27T01:52:00Z",
+  "direction": "rtl",
+  "assets": {
+    "teaching_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-teaching-kit-ar.pdf",
+    "student_activity_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-student-activity-sheets.pdf",
+    "social_media_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-social-media-kit.pdf"
+  },
+  "motifs": [
+    {
+      "id": "koru",
+      "culture": "maori",
+      "name": "Koru",
+      "meaning": "الحياة الجديدة والإمكانيات المتفتحة — نقطة البداية لكل شيء. شيء ما يبدأ، ينبثق، يتكشّف. هذه اللحظة هي لحظة ولادة.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/koru.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_koru.png"
+    },
+    {
+      "id": "pa_tuwatawata",
+      "culture": "maori",
+      "name": "Pa Tuwatawata",
+      "meaning": "السياج المحصّن — الحماية الجماعية، السيادة على المكان والحوكمة الذاتية. لا يُدخَل إلا بإذن.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/pa_tuwatawata.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_pa_tuwatawata.png"
+    },
+    {
+      "id": "niho_taniwha",
+      "culture": "maori",
+      "name": "Niho Taniwha",
+      "meaning": "أسنان التانيوها — العضة الاستعمارية، الاستخراج دون موافقة، الأذى الذي يترك أثراً. البيانات المسروقة هي هذا الأذى.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/niho_taniwha.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_taniwha.png"
+    },
+    {
+      "id": "kowhaiwhai",
+      "culture": "maori",
+      "name": "Kowhaiwhai",
+      "meaning": "القانون المكتوب على العارضة. صراع بين التيكانغا والتشريع، والسلطة الأجدادية مقابل التشريع المفروض.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/kowhaiwhai.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_kowhaiwhai.png"
+    },
+    {
+      "id": "unaunahi",
+      "culture": "maori",
+      "name": "Unaunahi",
+      "meaning": "حراشف السمك المتشابكة. هذا الحدث يستدعي استجابة جماعية — معاً نشكّل الدرع التي تحمي مجتمعنا.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/unaunahi.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_unaunahi.png"
+    },
+    {
+      "id": "takarangi",
+      "culture": "maori",
+      "name": "Takarangi",
+      "meaning": "اللولب المزدوج — التاريخ يعيد نفسه، الماضي والمستقبل ملتفّان معاً.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/takarangi.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_takarangi.png"
+    },
+    {
+      "id": "pikorua",
+      "culture": "maori",
+      "name": "Pikorua",
+      "meaning": "الالتواء المزدوج — حياتان، ثقافتان، متحدتان إلى الأبد. مسارات تتباعد وتتقاطع، وحياة تُبنى من الاتصال.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/pikorua.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_pikorua.png"
+    },
+    {
+      "id": "manaia",
+      "culture": "maori",
+      "name": "Manaia",
+      "meaning": "الحارس الروحي — رسول بين عالم الأحياء وعالم الأرواح. القيادة التي تجمع بين العالمَين.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/manaia.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_manaia.png"
+    },
+    {
+      "id": "mangopare",
+      "culture": "maori",
+      "name": "Mangopare",
+      "meaning": "القرش المطرقي — الشجاعة والإصرار والقوة. المقاتل الذي لا يتراجع أبداً.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/mangopare.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_mangopare.png"
+    },
+    {
+      "id": "niho_mano",
+      "culture": "samoan",
+      "name": "Niho Mano",
+      "meaning": "القوة والحماية والإرشاد والشراسة. القرش روح حارسة معظّمة في الثقافة السامواية — قوة المجتمع وكرامته.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/niho_mano.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_mano.png"
+    },
+    {
+      "id": "atualoa",
+      "culture": "samoan",
+      "name": "Atualoa",
+      "meaning": "القوة والتحمّل والالتزام بالعائلة الممتدة (آيغا). المئوية تمثّل الترابط المجتمعي والمرونة الجماعية.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/atualoa.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_atualoa.png"
+    },
+    {
+      "id": "fetu",
+      "culture": "samoan",
+      "name": "Fetu",
+      "meaning": "الملاحة والأمل والارتباط الروحي بالأجداد والسماوات. النجوم ترشد الرحلات عبر المحيط.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/fetu.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_fetu.png"
+    },
+    {
+      "id": "malu_diamond",
+      "culture": "samoan",
+      "name": "Malu Diamond",
+      "meaning": "الحماية والمأوى. الوشم الكامل للمرأة يأخذ اسمه من هذا النقش — الهوية والصمود الأنثوي.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/malu_diamond.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_malu_diamond.png"
+    },
+    {
+      "id": "aso",
+      "culture": "samoan",
+      "name": "Aso",
+      "meaning": "المأوى والحماية والعائلة والبيت. تمثّل الخشبة الهيكلية في فالي — أعمدة المجتمع السامواي.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/aso.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_aso.png"
+    },
+    {
+      "id": "fa_a_aupega",
+      "culture": "samoan",
+      "name": "Fa A Aupega",
+      "meaning": "التعاون المجتمعي والجهد الجماعي وممارسة الصيد. الشبكة ترمز إلى الاعتماد المتبادل والموارد المشتركة.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/fa_a_aupega.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_fa_a_aupega.png"
+    },
+    {
+      "id": "pea",
+      "culture": "samoan",
+      "name": "Pea",
+      "meaning": "طقس المرور المقدس المميّز للرجولة والمكانة الاجتماعية والميثاق مع المجتمع في الثقافة السامواية.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/pea.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_pea.png"
+    },
+    {
+      "id": "va_a_waka",
+      "culture": "pacific",
+      "name": "Va A Waka",
+      "meaning": "الإبحار والأجداد والحرية والمطالبة بالمحيط الهادئ كموطن أصلي للشعوب البولينيزية.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/pacific/va_a_waka.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_va_a_waka.png"
+    },
+    {
+      "id": "manulua",
+      "culture": "tongan",
+      "name": "Manulua",
+      "meaning": "الوحدة والتحالف وربط العلاقات الاجتماعية. 'طائران' — الزوج الذي يمثّل التوازن والشراكة.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/tongan/manulua.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_manulua.png"
+    },
+    {
+      "id": "masi_kesa",
+      "culture": "fijian",
+      "name": "Masi Kesa",
+      "meaning": "هوية العشيرة والمكانة والحماية الروحية. كل مجموعة فرعية (توكاتوكا) تمتلك تصاميم ماسي خاصة بها.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/fijian/masi_kesa.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_masi_kesa.png"
+    },
+    {
+      "id": "vonu",
+      "culture": "fijian",
+      "name": "Vonu",
+      "meaning": "الطول والتحمّل والملاحة والارتباط بين البر والبحر. السلحفاة تتنقّل بين العالمَين وتحمل الحكمة الأجدادية.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/fijian/vonu.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_vonu.png"
+    },
+    {
+      "id": "yvy_mara_ey",
+      "culture": "guarani",
+      "name": "Yvy Mara Ey",
+      "meaning": "الفردوس الغواراني الأسطوري — أرض خالية من الجوع والحرب والمرض. حلم السيادة الأصلية حياً في كل نضال.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/yvy_mara_ey.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yvy_mara_ey.png"
+    },
+    {
+      "id": "cuaracy_ra_angaba",
+      "culture": "guarani",
+      "name": "Cuaracy Ra Angaba",
+      "meaning": "تقويم حجري فلكي استخدمه الغواراني لتتبّع الفصول والانقلابَين ومسارات النجوم. السيادة على الزمن والمعرفة.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/cuaracy_ra_angaba.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_cuaracy_ra_angaba.png"
+    },
+    {
+      "id": "nanduti",
+      "culture": "guarani",
+      "name": "Nanduti",
+      "meaning": "الدانتيل الإبري الباراغوياني التقليدي الذي يعني اسمه 'شبكة العنكبوت' بالغوارانية. الجمال المنسوج من المعرفة الأصلية.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/nanduti.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_nanduti.png"
+    },
+    {
+      "id": "kene_shipibo",
+      "culture": "shipibo",
+      "name": "Kene Shipibo",
+      "meaning": "التصاميم الهندسية التقليدية للشيبيبو-كونيبو المرسومة على الفخار والمنسوجات والجلد والجسد. البيانات والمعرفة كفن حيّ.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/shipibo/kene_shipibo.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_kene_shipibo.png"
+    },
+    {
+      "id": "ronin_kuin",
+      "culture": "shipibo",
+      "name": "Ronin Kuin",
+      "meaning": "الأناكوندا الأزلية التي، وفق كوزمولوجيا الشيبيبو-كونيبو، غنّت الكون إلى الوجود. الأغنية هي البيانات الأولى.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/shipibo/ronin_kuin.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_ronin_kuin.png"
+    },
+    {
+      "id": "mola_guna",
+      "culture": "guna",
+      "name": "Mola Guna",
+      "meaning": "لوحات نسيجية مطرّزة يدوياً ترتديها نساء غونا من أرخبيل سان بلاس. الهوية والمقاومة والسيادة الثقافية.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guna/mola_guna.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_mola_guna.png"
+    },
+    {
+      "id": "jagua_pyta",
+      "culture": "guarani",
+      "name": "Jagua Pyta",
+      "meaning": "في كوزمولوجيا الغواراني، النمر الأزرق (خاغواروفي) محتوى داخل نهامانيو — روح الأسلاف الحارسة للمعرفة.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/jagua_pyta.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_jagua_pyta.png"
+    },
+    {
+      "id": "kayapo_jaguar_division",
+      "culture": "kayapo",
+      "name": "Kayapo Jaguar Division",
+      "meaning": "النمر هو الحيوان الروحي الأعلى في كوزمولوجيا الكيابو. تقسيمات المجتمع المرتبطة بالنمر تحكم القانون الأصلي.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/kayapo/kayapo_jaguar_division.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_kayapo_jaguar_division.png"
+    },
+    {
+      "id": "yanomami_urihi",
+      "culture": "yanomami",
+      "name": "Yanomami Urihi",
+      "meaning": "أوريهي أ ('أرض الغابة') هو مفهوم اليانومامي للعالم المأهول — الغابة المحيطة كيان حيّ يربط البشر بالأجداد.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/yanomami/yanomami_urihi.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yanomami_urihi.png"
+    },
+    {
+      "id": "luta_pela_vida",
+      "culture": "amazonian",
+      "name": "Luta Pela Vida",
+      "meaning": "مخيّم 'النضال من أجل الحياة' لـ APIB في برازيليا — الاتحاد الأمازوني الأصلي يقاوم تشريعات الإبادة. البقاء هو المقاومة.",
+      "module": "",
+      "care_principle": "",
+      "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/amazonian/luta_pela_vida.png",
+      "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_luta_pela_vida.png"
+    }
+  ],
+  "modules": [
+    {
+      "id": "module_1",
+      "title": "ما هي البيانات؟ المعارف الأصلية والعالم الرقمي",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_1",
+      "care": "C (Collective Benefit) — data ecosystems must serve Indigenous peoples",
+      "motif_ids": [
+        "koru",
+        "pa_tuwatawata",
+        "va_a_waka",
+        "yvy_mara_ey"
+      ]
+    },
+    {
+      "id": "module_2",
+      "title": "الاستعمار الرقمي للبيانات",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_2",
+      "care": "A (Authority to Control) — recognising rights and interests in data",
+      "motif_ids": [
+        "niho_taniwha",
+        "mangopare",
+        "luta_pela_vida",
+        "kayapo_jaguar_division",
+        "yanomami_urihi"
+      ]
+    },
+    {
+      "id": "module_3",
+      "title": "مبادئ CARE والسيادة على البيانات",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_3",
+      "care": "Full CARE framework — all four principles",
+      "motif_ids": [
+        "kowhaiwhai",
+        "manaia",
+        "malu_diamond",
+        "mola_guna"
+      ]
+    },
+    {
+      "id": "module_4",
+      "title": "الأرض والإقليم في عصر البيانات",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_4",
+      "care": "R (Responsibility) — for positive relationships and expanding capability",
+      "motif_ids": [
+        "takarangi",
+        "unaunahi",
+        "pikorua",
+        "nanduti",
+        "masi_kesa",
+        "vonu",
+        "manulua"
+      ]
+    },
+    {
+      "id": "module_5",
+      "title": "المعرفة الجماعية والذاكرة الأصلية",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_5",
+      "care": "C (Collective Benefit) and R (Responsibility) together",
+      "motif_ids": [
+        "fa_a_aupega",
+        "fetu",
+        "atualoa",
+        "kene_shipibo",
+        "ronin_kuin",
+        "cuaracy_ra_angaba"
+      ]
+    },
+    {
+      "id": "module_6",
+      "title": "مستقبل الذكاء الاصطناعي الأصلي",
+      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_6",
+      "care": "E (Ethics) — minimising harm, justice, and future use",
+      "motif_ids": [
+        "niho_mano",
+        "pea",
+        "aso",
+        "jagua_pyta",
+        "pikorua"
+      ]
+    }
+  ],
+  "cultures": "all",
+  "hashtags": [
+    "#سيادة_البيانات",
+    "#الذكاء_الاصطناعي_الأصلي",
+    "#TePa",
+    "#CARE",
+    "#حقوق_البيانات",
+    "#الشعوب_الأصلية",
+    "#مبادئ_كير"
+  ],
+  "social_graphics": [
+    {
+      "motif_id": "koru",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_koru.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/koru.png",
+      "caption": "الحياة الجديدة والإمكانيات المتفتحة — نقطة البداية لكل شيء. شيء ما يبدأ، ينبثق، يتكشّف. هذه اللحظة هي لحظة ولادة."
+    },
+    {
+      "motif_id": "pa_tuwatawata",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_pa_tuwatawata.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/pa_tuwatawata.png",
+      "caption": "السياج المحصّن — الحماية الجماعية، السيادة على المكان والحوكمة الذاتية. لا يُدخَل إلا بإذن."
+    },
+    {
+      "motif_id": "niho_taniwha",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_taniwha.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/niho_taniwha.png",
+      "caption": "أسنان التانيوها — العضة الاستعمارية، الاستخراج دون موافقة، الأذى الذي يترك أثراً. البيانات المسروقة هي هذا الأذى."
+    },
+    {
+      "motif_id": "kowhaiwhai",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_kowhaiwhai.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/kowhaiwhai.png",
+      "caption": "القانون المكتوب على العارضة. صراع بين التيكانغا والتشريع، والسلطة الأجدادية مقابل التشريع المفروض."
+    },
+    {
+      "motif_id": "unaunahi",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_unaunahi.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/unaunahi.png",
+      "caption": "حراشف السمك المتشابكة. هذا الحدث يستدعي استجابة جماعية — معاً نشكّل الدرع التي تحمي مجتمعنا."
+    },
+    {
+      "motif_id": "takarangi",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_takarangi.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/takarangi.png",
+      "caption": "اللولب المزدوج — التاريخ يعيد نفسه، الماضي والمستقبل ملتفّان معاً."
+    },
+    {
+      "motif_id": "pikorua",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_pikorua.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/pikorua.png",
+      "caption": "الالتواء المزدوج — حياتان، ثقافتان، متحدتان إلى الأبد. مسارات تتباعد وتتقاطع، وحياة تُبنى من الاتصال."
+    },
+    {
+      "motif_id": "manaia",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_manaia.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/manaia.png",
+      "caption": "الحارس الروحي — رسول بين عالم الأحياء وعالم الأرواح. القيادة التي تجمع بين العالمَين."
+    },
+    {
+      "motif_id": "mangopare",
+      "culture": "maori",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_mangopare.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/mangopare.png",
+      "caption": "القرش المطرقي — الشجاعة والإصرار والقوة. المقاتل الذي لا يتراجع أبداً."
+    },
+    {
+      "motif_id": "niho_mano",
+      "culture": "samoan",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_mano.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/niho_mano.png",
+      "caption": "القوة والحماية والإرشاد والشراسة. القرش روح حارسة معظّمة في الثقافة السامواية — قوة المجتمع وكرامته."
+    },
+    {
+      "motif_id": "atualoa",
+      "culture": "samoan",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_atualoa.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/atualoa.png",
+      "caption": "القوة والتحمّل والالتزام بالعائلة الممتدة (آيغا). المئوية تمثّل الترابط المجتمعي والمرونة الجماعية."
+    },
+    {
+      "motif_id": "fetu",
+      "culture": "samoan",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_fetu.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/fetu.png",
+      "caption": "الملاحة والأمل والارتباط الروحي بالأجداد والسماوات. النجوم ترشد الرحلات عبر المحيط."
+    },
+    {
+      "motif_id": "malu_diamond",
+      "culture": "samoan",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_malu_diamond.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/malu_diamond.png",
+      "caption": "الحماية والمأوى. الوشم الكامل للمرأة يأخذ اسمه من هذا النقش — الهوية والصمود الأنثوي."
+    },
+    {
+      "motif_id": "aso",
+      "culture": "samoan",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_aso.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/aso.png",
+      "caption": "المأوى والحماية والعائلة والبيت. تمثّل الخشبة الهيكلية في فالي — أعمدة المجتمع السامواي."
+    },
+    {
+      "motif_id": "fa_a_aupega",
+      "culture": "samoan",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_fa_a_aupega.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/fa_a_aupega.png",
+      "caption": "التعاون المجتمعي والجهد الجماعي وممارسة الصيد. الشبكة ترمز إلى الاعتماد المتبادل والموارد المشتركة."
+    },
+    {
+      "motif_id": "pea",
+      "culture": "samoan",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_pea.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/pea.png",
+      "caption": "طقس المرور المقدس المميّز للرجولة والمكانة الاجتماعية والميثاق مع المجتمع في الثقافة السامواية."
+    },
+    {
+      "motif_id": "va_a_waka",
+      "culture": "pacific",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_va_a_waka.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/pacific/va_a_waka.png",
+      "caption": "الإبحار والأجداد والحرية والمطالبة بالمحيط الهادئ كموطن أصلي للشعوب البولينيزية."
+    },
+    {
+      "motif_id": "manulua",
+      "culture": "tongan",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_manulua.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/tongan/manulua.png",
+      "caption": "الوحدة والتحالف وربط العلاقات الاجتماعية. 'طائران' — الزوج الذي يمثّل التوازن والشراكة."
+    },
+    {
+      "motif_id": "masi_kesa",
+      "culture": "fijian",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_masi_kesa.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/fijian/masi_kesa.png",
+      "caption": "هوية العشيرة والمكانة والحماية الروحية. كل مجموعة فرعية (توكاتوكا) تمتلك تصاميم ماسي خاصة بها."
+    },
+    {
+      "motif_id": "vonu",
+      "culture": "fijian",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_vonu.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/fijian/vonu.png",
+      "caption": "الطول والتحمّل والملاحة والارتباط بين البر والبحر. السلحفاة تتنقّل بين العالمَين وتحمل الحكمة الأجدادية."
+    },
+    {
+      "motif_id": "yvy_mara_ey",
+      "culture": "guarani",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yvy_mara_ey.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/yvy_mara_ey.png",
+      "caption": "الفردوس الغواراني الأسطوري — أرض خالية من الجوع والحرب والمرض. حلم السيادة الأصلية حياً في كل نضال."
+    },
+    {
+      "motif_id": "cuaracy_ra_angaba",
+      "culture": "guarani",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_cuaracy_ra_angaba.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/cuaracy_ra_angaba.png",
+      "caption": "تقويم حجري فلكي استخدمه الغواراني لتتبّع الفصول والانقلابَين ومسارات النجوم. السيادة على الزمن والمعرفة."
+    },
+    {
+      "motif_id": "nanduti",
+      "culture": "guarani",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_nanduti.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/nanduti.png",
+      "caption": "الدانتيل الإبري الباراغوياني التقليدي الذي يعني اسمه 'شبكة العنكبوت' بالغوارانية. الجمال المنسوج من المعرفة الأصلية."
+    },
+    {
+      "motif_id": "kene_shipibo",
+      "culture": "shipibo",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_kene_shipibo.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/shipibo/kene_shipibo.png",
+      "caption": "التصاميم الهندسية التقليدية للشيبيبو-كونيبو المرسومة على الفخار والمنسوجات والجلد والجسد. البيانات والمعرفة كفن حيّ."
+    },
+    {
+      "motif_id": "ronin_kuin",
+      "culture": "shipibo",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_ronin_kuin.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/shipibo/ronin_kuin.png",
+      "caption": "الأناكوندا الأزلية التي، وفق كوزمولوجيا الشيبيبو-كونيبو، غنّت الكون إلى الوجود. الأغنية هي البيانات الأولى."
+    },
+    {
+      "motif_id": "mola_guna",
+      "culture": "guna",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_mola_guna.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guna/mola_guna.png",
+      "caption": "لوحات نسيجية مطرّزة يدوياً ترتديها نساء غونا من أرخبيل سان بلاس. الهوية والمقاومة والسيادة الثقافية."
+    },
+    {
+      "motif_id": "jagua_pyta",
+      "culture": "guarani",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_jagua_pyta.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/jagua_pyta.png",
+      "caption": "في كوزمولوجيا الغواراني، النمر الأزرق (خاغواروفي) محتوى داخل نهامانيو — روح الأسلاف الحارسة للمعرفة."
+    },
+    {
+      "motif_id": "kayapo_jaguar_division",
+      "culture": "kayapo",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_kayapo_jaguar_division.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/kayapo/kayapo_jaguar_division.png",
+      "caption": "النمر هو الحيوان الروحي الأعلى في كوزمولوجيا الكيابو. تقسيمات المجتمع المرتبطة بالنمر تحكم القانون الأصلي."
+    },
+    {
+      "motif_id": "yanomami_urihi",
+      "culture": "yanomami",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yanomami_urihi.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/yanomami/yanomami_urihi.png",
+      "caption": "أوريهي أ ('أرض الغابة') هو مفهوم اليانومامي للعالم المأهول — الغابة المحيطة كيان حيّ يربط البشر بالأجداد."
+    },
+    {
+      "motif_id": "luta_pela_vida",
+      "culture": "amazonian",
+      "meme_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_luta_pela_vida.png",
+      "motif_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/amazonian/luta_pela_vida.png",
+      "caption": "مخيّم 'النضال من أجل الحياة' لـ APIB في برازيليا — الاتحاد الأمازوني الأصلي يقاوم تشريعات الإبادة. البقاء هو المقاومة."
+    }
+  ],
+  "educator_notes": "حمّل ملف PDF للحقيبة التعليمية وربط كل نقش بأنشطة الوحدة المقابلة. شارك الصور المرئية عبر قنوات التواصل الاجتماعي في فصلك الدراسي مستخدماً الوسوم أعلاه. ابدأ بالمعرفة الثقافية أولاً — التكنولوجيا هي النتيجة وليست نقطة البداية.",
+  "indigenous_communities_arabic": [
+    {
+      "name": "الأمازيغ (البربر)",
+      "region": "شمال أفريقيا",
+      "note": "أصحاب الأرض الأصليون في المغرب والجزائر وتونس وليبيا وموريتانيا"
+    },
+    {
+      "name": "البدو",
+      "region": "شبه الجزيرة العربية والشام والصحراء الكبرى",
+      "note": "شعوب رحّالة لها حقوق تاريخية في الأراضي والموارد"
+    },
+    {
+      "name": "النوبيون",
+      "region": "مصر والسودان",
+      "note": "شعب أصلي أُجبر على التهجير جراء بناء السد العالي"
+    },
+    {
+      "name": "التوارق",
+      "region": "الصحراء الكبرى — مالي والنيجر والجزائر وليبيا وبوركينا فاسو",
+      "note": "شعب صحراوي أصلي ذو سيادة ثقافية وإقليمية مهددة"
+    },
+    {
+      "name": "البدون (الكويت والإمارات)",
+      "region": "الخليج العربي",
+      "note": "مجتمعات عديمة الجنسية لها حقوق بيانات محدودة"
+    }
+  ],
+  "data_sovereignty_context_ar": "في العالم الناطق بالعربية، تواجه الشعوب الأصلية والأقليات تحديات مزدوجة: الاستعمار الرقمي من الشركات العالمية والتهميش من الدول القومية. مبادئ CARE — الفائدة الجماعية، السلطة، المسؤولية، الأخلاقيات — تُوفّر إطاراً عالمياً لاستعادة السيادة على البيانات."
+}
