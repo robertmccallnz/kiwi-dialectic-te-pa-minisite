@@ -1,0 +1,512 @@
+{
+  "$schema": "Curated baseline of protest categories — the messaging on each card comes from the named movement's own public communications, not invented here. The cron may append timely headlines under each category but will not alter the curated `slogans`, `attribution`, or `source` fields.",
+  "version": "2026-06-28",
+  "license": "CC BY-NC-SA 4.0",
+  "principles": [
+    "Every category names the affected community AND who leads the movement.",
+    "Slogans are sourced from public movement statements, not invented.",
+    "Typography-led only. No AI-generated motifs. No region-specific figurative traditions.",
+    "Users pick the category. The user takes responsibility for context.",
+    "Each generated piece displays a QR code back to te-pa.org for context and a 'how this was made' note."
+  ],
+  "categories": [
+    {
+      "id": "data-sovereignty",
+      "label": "Indigenous data sovereignty",
+      "scope": "global",
+      "movement_leaders": [
+        "Te Mana Raraunga (Aotearoa)",
+        "Maiam nayri Wingara (Australia)",
+        "First Nations Information Governance Centre (Canada)",
+        "U.S. Indigenous Data Sovereignty Network",
+        "GIDA — Global Indigenous Data Alliance"
+      ],
+      "slogans": [
+        "Our data. Our terms. Our future.",
+        "Nothing about us, without us — in data too.",
+        "Sovereignty includes the database.",
+        "CARE principles, not just FAIR.",
+        "Consent precedes data."
+      ],
+      "palette": "tino",
+      "context_url": "https://te-pa.org/launch-mediakit/",
+      "sources": [
+        {
+          "label": "Te Mana Raraunga",
+          "url": "https://www.temanararaunga.maori.nz"
+        },
+        {
+          "label": "Maiam nayri Wingara Principles",
+          "url": "https://www.maiamnayriwingara.org/mnw-principles"
+        },
+        {
+          "label": "CARE Principles (GIDA)",
+          "url": "https://www.gida-global.org/care-principles-copy"
+        }
+      ]
+    },
+    {
+      "id": "mauna-kea",
+      "label": "Mauna Kea — Kū Kiaʻi Mauna",
+      "scope": "hawaiʻi",
+      "movement_leaders": [
+        "Pu'uhonua o Pu'uhuluhulu",
+        "Kānaka 'Ōiwi protectors"
+      ],
+      "slogans": [
+        "Kū Kiaʻi Mauna",
+        "We are the mountain.",
+        "No TMT on Mauna a Wākea.",
+        "Aloha 'āina is resistance."
+      ],
+      "palette": "earth",
+      "context_url": "https://www.puuhonua.com",
+      "sources": [
+        {
+          "label": "Pu'uhonua o Pu'uhuluhulu",
+          "url": "https://www.puuhonua.com"
+        },
+        {
+          "label": "Office of Hawaiian Affairs",
+          "url": "https://www.oha.org"
+        }
+      ]
+    },
+    {
+      "id": "west-papua",
+      "label": "West Papua — free and sovereign",
+      "scope": "west-papua",
+      "movement_leaders": [
+        "ULMWP — United Liberation Movement for West Papua",
+        "Komite Nasional Papua Barat"
+      ],
+      "slogans": [
+        "Free West Papua.",
+        "Papua Merdeka.",
+        "Stop the slow genocide.",
+        "Pacific solidarity with West Papua.",
+        "One people, one soul."
+      ],
+      "palette": "morning-star",
+      "context_url": "https://www.ulmwp.org",
+      "sources": [
+        {
+          "label": "ULMWP",
+          "url": "https://www.ulmwp.org"
+        },
+        {
+          "label": "West Papua Media",
+          "url": "https://westpapuamedia.info"
+        }
+      ]
+    },
+    {
+      "id": "mmiw",
+      "label": "MMIW — Missing & Murdered Indigenous Women",
+      "scope": "turtle-island",
+      "movement_leaders": [
+        "Coalition to Stop Violence Against Native Women",
+        "Native Women's Association of Canada",
+        "Sovereign Bodies Institute"
+      ],
+      "slogans": [
+        "No more stolen sisters.",
+        "MMIW — say their names.",
+        "Justice for Indigenous women.",
+        "We are still here."
+      ],
+      "palette": "red",
+      "context_url": "https://www.csvanw.org",
+      "sources": [
+        {
+          "label": "Coalition to Stop Violence Against Native Women",
+          "url": "https://www.csvanw.org"
+        },
+        {
+          "label": "NWAC",
+          "url": "https://nwac.ca"
+        },
+        {
+          "label": "Sovereign Bodies Institute",
+          "url": "https://www.sovereign-bodies.org"
+        }
+      ]
+    },
+    {
+      "id": "land-back",
+      "label": "Land Back",
+      "scope": "turtle-island",
+      "movement_leaders": [
+        "NDN Collective (Lakota-led)",
+        "Indigenous Environmental Network"
+      ],
+      "slogans": [
+        "Land Back.",
+        "Return the land. Restore the relations.",
+        "Decolonise the map.",
+        "Treaties are the law."
+      ],
+      "palette": "earth",
+      "context_url": "https://landback.org",
+      "sources": [
+        {
+          "label": "NDN Collective — LANDBACK",
+          "url": "https://landback.org"
+        },
+        {
+          "label": "Indigenous Environmental Network",
+          "url": "https://www.ienearth.org"
+        }
+      ]
+    },
+    {
+      "id": "treaty-aotearoa",
+      "label": "Honour Te Tiriti — Aotearoa",
+      "scope": "aotearoa",
+      "movement_leaders": [
+        "Toitū Te Tiriti",
+        "Te Pāti Māori",
+        "Iwi Chairs Forum"
+      ],
+      "slogans": [
+        "Toitū Te Tiriti.",
+        "Honour the Treaty.",
+        "Mana Motuhake.",
+        "Tino rangatiratanga.",
+        "Ka whawhai tonu mātou — ake ake ake."
+      ],
+      "palette": "tino",
+      "context_url": "https://www.toitutetiriti.org.nz",
+      "sources": [
+        {
+          "label": "Toitū Te Tiriti",
+          "url": "https://www.toitutetiriti.org.nz"
+        },
+        {
+          "label": "Waitangi Tribunal",
+          "url": "https://www.waitangitribunal.govt.nz"
+        }
+      ]
+    },
+    {
+      "id": "ihumatao",
+      "label": "Ihumātao & Land Protectors — Aotearoa",
+      "scope": "aotearoa",
+      "movement_leaders": [
+        "SOUL — Save Our Unique Landscape",
+        "Pania Newton & whānau"
+      ],
+      "slogans": [
+        "Protect Ihumātao.",
+        "Whenua, not concrete.",
+        "Kaitiakitanga.",
+        "We are protectors, not protesters."
+      ],
+      "palette": "tino",
+      "context_url": "https://www.protectihumatao.com",
+      "sources": [
+        {
+          "label": "Protect Ihumātao (archived)",
+          "url": "https://www.protectihumatao.com"
+        }
+      ]
+    },
+    {
+      "id": "palestine-indigenous-solidarity",
+      "label": "Indigenous solidarity with Palestine",
+      "scope": "palestine",
+      "movement_leaders": [
+        "Red Nation",
+        "Indigenous Action",
+        "NDN Collective statements on Palestine"
+      ],
+      "slogans": [
+        "From Aotearoa to Palestine — occupation is a crime.",
+        "Settler colonialism is settler colonialism.",
+        "Indigenous liberation is indivisible.",
+        "Free Palestine."
+      ],
+      "palette": "red",
+      "context_url": "https://therednation.org",
+      "sources": [
+        {
+          "label": "The Red Nation",
+          "url": "https://therednation.org"
+        },
+        {
+          "label": "Indigenous Action",
+          "url": "https://www.indigenousaction.org"
+        }
+      ]
+    },
+    {
+      "id": "language-revitalisation",
+      "label": "Language revitalisation",
+      "scope": "global",
+      "movement_leaders": [
+        "Te Wānanga o Aotearoa",
+        "First Languages Australia",
+        "First Peoples' Cultural Council (BC)",
+        "UNESCO Decade of Indigenous Languages 2022–2032"
+      ],
+      "slogans": [
+        "Speak it. Sign it. Sing it.",
+        "Every language is a worldview.",
+        "Kia kaha te reo Māori.",
+        "Our languages are not dying — they are being killed."
+      ],
+      "palette": "earth",
+      "context_url": "https://te-pa.org/teaching-kits/",
+      "sources": [
+        {
+          "label": "UNESCO Decade of Indigenous Languages",
+          "url": "https://idil2022-2032.org"
+        },
+        {
+          "label": "First Languages Australia",
+          "url": "https://www.firstlanguages.org.au"
+        }
+      ]
+    },
+    {
+      "id": "climate-frontlines",
+      "label": "Indigenous climate frontlines",
+      "scope": "global",
+      "movement_leaders": [
+        "350 Pacific / Pacific Climate Warriors",
+        "Indigenous Environmental Network",
+        "Sámi Council"
+      ],
+      "slogans": [
+        "We are not drowning — we are fighting.",
+        "Just transition starts with consent.",
+        "Stop the oil. Stop the colony.",
+        "The land remembers."
+      ],
+      "palette": "earth",
+      "context_url": "https://350pacific.org",
+      "sources": [
+        {
+          "label": "350 Pacific",
+          "url": "https://350pacific.org"
+        },
+        {
+          "label": "Indigenous Environmental Network",
+          "url": "https://www.ienearth.org"
+        }
+      ]
+    },
+    {
+      "id": "ai-sovereignty",
+      "label": "AI &amp; algorithmic sovereignty",
+      "scope": "global",
+      "movement_leaders": [
+        "Indigenous Protocol and AI working group",
+        "First Languages AI Reality",
+        "Te Kāhui Māori Atamai Iahiko"
+      ],
+      "slogans": [
+        "Train AI with consent or not at all.",
+        "Our reo is not training data.",
+        "Algorithmic sovereignty is sovereignty.",
+        "If it is about us, we govern it."
+      ],
+      "palette": "tino",
+      "context_url": "https://www.indigenous-ai.net",
+      "sources": [
+        {
+          "label": "Indigenous Protocol and AI",
+          "url": "https://www.indigenous-ai.net"
+        },
+        {
+          "label": "First Languages AI Reality (MILA)",
+          "url": "https://mila.quebec/en/ai4humanity/applied-projects/first-languages-ai-reality"
+        }
+      ]
+    },
+    {
+      "id": "anti-extraction",
+      "label": "Anti-extraction — mines, dams, pipelines",
+      "scope": "global",
+      "movement_leaders": [
+        "Standing Rock Sioux Tribe & Water Protectors",
+        "Anishinaabe Line 3 resistance",
+        "Wet'suwet'en Hereditary Chiefs"
+      ],
+      "slogans": [
+        "Water is life. Mni Wiconi.",
+        "No pipeline. No consent.",
+        "We are still here.",
+        "The land is not for sale."
+      ],
+      "palette": "earth",
+      "context_url": "https://www.ienearth.org",
+      "sources": [
+        {
+          "label": "Indigenous Environmental Network",
+          "url": "https://www.ienearth.org"
+        },
+        {
+          "label": "Honor the Earth",
+          "url": "https://www.honorearth.org"
+        }
+      ]
+    },
+    {
+      "id": "anti-racism-policing",
+      "label": "Anti-racism & policing",
+      "scope": "global",
+      "movement_leaders": [
+        "Black Lives Matter",
+        "Indigenous Action",
+        "Stop Black Deaths In Custody (Australia)"
+      ],
+      "slogans": [
+        "Black lives matter — including Aboriginal lives.",
+        "Stop Black deaths in custody.",
+        "Defund. Disarm. Decolonise.",
+        "Our communities, our safety."
+      ],
+      "palette": "red",
+      "context_url": "https://www.indigenousaction.org",
+      "sources": [
+        {
+          "label": "Indigenous Action",
+          "url": "https://www.indigenousaction.org"
+        }
+      ]
+    }
+  ],
+  "palettes": {
+    "tino": {
+      "name": "Tino Rangatiratanga",
+      "bg": "#000000",
+      "fg": "#FFFFFF",
+      "accent": "#D7263D",
+      "credit": "Designed by Hiraina Marsden, Jan Dobson Smith, Linda Munn · 1989"
+    },
+    "earth": {
+      "name": "Earth · ochre",
+      "bg": "#F5EDDC",
+      "fg": "#2D2D2D",
+      "accent": "#C1712F",
+      "credit": "Neutral ochre — no claim to specific Country"
+    },
+    "red": {
+      "name": "Red hand",
+      "bg": "#1A0F0E",
+      "fg": "#F5EDDC",
+      "accent": "#B53F24",
+      "credit": "MMIW red hand symbolism — community-originated"
+    },
+    "morning-star": {
+      "name": "West Papua morning star",
+      "bg": "#FFFFFF",
+      "fg": "#C8102E",
+      "accent": "#0066B3",
+      "credit": "Morning Star flag colours — West Papuan national flag, 1961"
+    }
+  },
+  "current_headlines": [
+    {
+      "title": "ICT NEWSCAST: Ho-Chunk land return, boarding school healing, a tribal micro grid and more",
+      "link": "https://ictnews.org/newscasts/ict-newscast-ho-chunk-land-return-boarding-school-healing-a-tribal-micro-grid-and-more/",
+      "source": "ICT News (Indian Country Today)",
+      "source_id": "ictnews",
+      "published": "2026-06-26T21:00:00+00:00",
+      "category": "land-back"
+    },
+    {
+      "title": "Online racism is significantly affecting mental health, First Nations people say: ‘It’s like carrying a bully in your pocket’",
+      "link": "https://www.theguardian.com/australia-news/2026/jun/13/online-racism-mental-health-first-nations-australians-social-media-ntwnfb",
+      "source": "The Guardian — First Nations AU",
+      "source_id": "first-nations-tg",
+      "published": "2026-06-12T15:00:50+00:00",
+      "category": "ai-sovereignty"
+    },
+    {
+      "title": "NSW police sergeant avoids jail over death of 16-year-old Indigenous teenager Jai Wright",
+      "link": "https://www.theguardian.com/australia-news/2026/jun/05/jai-wright-indigenous-teenager-collision-death-police-officer-avoids-jail-ntwnfb",
+      "source": "The Guardian — First Nations AU",
+      "source_id": "first-nations-tg",
+      "published": "2026-06-05T15:28:22+00:00",
+      "category": "ai-sovereignty"
+    },
+    {
+      "title": "NDIS overhaul will ‘harm’ Australians with disabilities, government’s own committee warns",
+      "link": "https://www.theguardian.com/australia-news/2026/jun/03/ndis-budget-cuts-overhaul-material-harm-australians-with-disabilities-government-advisory-committee-warns",
+      "source": "The Guardian — First Nations AU",
+      "source_id": "first-nations-tg",
+      "published": "2026-06-02T15:00:27+00:00",
+      "category": "anti-extraction"
+    },
+    {
+      "title": "When racism is so entrenched in Australia, could paying lip service to multiculturalism do more harm than good? | Anhaar Kareem",
+      "link": "https://www.theguardian.com/commentisfree/2026/jun/28/racism-entrenched-in-australia-multiculturalism-lip-service-ntwnfb",
+      "source": "The Guardian — First Nations AU",
+      "source_id": "first-nations-tg",
+      "published": "2026-06-27T20:00:15+00:00",
+      "category": "anti-racism-policing"
+    },
+    {
+      "title": "Here we Joh again? The spectre of Bjelke-Petersen still looms large over Queensland",
+      "link": "https://www.theguardian.com/australia-news/2026/jun/27/joh-bjelke-petersen-queensland-politics-ntwnfb",
+      "source": "The Guardian — First Nations AU",
+      "source_id": "first-nations-tg",
+      "published": "2026-06-26T15:00:15+00:00",
+      "category": "anti-racism-policing"
+    },
+    {
+      "title": "Death of Indigenous teen found on rail tracks with towel under head ‘suspicious’, NSW coroner says",
+      "link": "https://www.theguardian.com/australia-news/2026/jun/18/racism-hindered-nsw-police-investigation-into-the-1988-death-of-indigenous-teenager-mark-haines-inquest-found-ntwnfb",
+      "source": "The Guardian — First Nations AU",
+      "source_id": "first-nations-tg",
+      "published": "2026-06-18T04:53:18+00:00",
+      "category": "anti-racism-policing"
+    },
+    {
+      "title": "Man claiming to be One Nation branch official defended Hitler Youth and called Aboriginal people ‘stone age’ in racist posts",
+      "link": "https://www.theguardian.com/australia-news/2026/jun/16/one-nation-hitler-youth-john-drew-ntwnfb",
+      "source": "The Guardian — First Nations AU",
+      "source_id": "first-nations-tg",
+      "published": "2026-06-15T15:00:29+00:00",
+      "category": "anti-racism-policing"
+    }
+  ],
+  "feed_last_refreshed": "2026-06-27T23:09:34.133158+00:00",
+  "feed_sources": {
+    "ok": [
+      {
+        "id": "ictnews",
+        "name": "ICT News (Indian Country Today)",
+        "url": "https://ictnews.org/feed",
+        "items_seen": 10
+      },
+      {
+        "id": "cultural-survival",
+        "name": "Cultural Survival",
+        "url": "https://www.culturalsurvival.org/rss.xml",
+        "items_seen": 10
+      },
+      {
+        "id": "survival",
+        "name": "Survival International",
+        "url": "https://www.survivalinternational.org/news.rss",
+        "items_seen": 8
+      },
+      {
+        "id": "waatea",
+        "name": "Waatea News (Māori)",
+        "url": "https://waateanews.com/feed/",
+        "items_seen": 10
+      },
+      {
+        "id": "first-nations-tg",
+        "name": "The Guardian — First Nations AU",
+        "url": "https://www.theguardian.com/australia-news/indigenous-australians/rss",
+        "items_seen": 20
+      }
+    ],
+    "failed": []
+  }
+}
