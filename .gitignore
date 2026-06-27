@@ -1,2 +1,5 @@
 .vercel
 index.html.bak2
+__pycache__/
+*.pyc
+social-kit-verification.json
