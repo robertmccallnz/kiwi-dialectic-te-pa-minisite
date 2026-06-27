@@ -1,0 +1,15 @@
+{
+  "name": "kiwi-dialectic-te-pa-minisite",
+  "version": "1.0.0",
+  "description": "Te Pā Tūwatawata — Indigenous language motif platform and partner onboarding system",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "add-language": "node scripts/add-language.js",
+    "generate-docs": "node scripts/generate-partner-docs.js",
+    "generate-docs:upload": "node scripts/generate-partner-docs.js --upload"
+  },
+  "license": "CC-BY-NC-SA-4.0"
+}

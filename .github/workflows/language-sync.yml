@@ -1,0 +1,291 @@
+name: Language Sync — Partner Onboarding Docs
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Triggers:
+#   1. Push to main — when _template.json, motif-bank-master.json,
+#      or any script is changed (new language added or existing one edited)
+#   2. Manual dispatch — run on demand with optional language filter
+#
+# What it does:
+#   a) Detects which languages are defined in _template.json
+#   b) Detects which languages are MISSING from partner-onboarding/ docs
+#   c) For each missing language: runs add-language.js in CI mode
+#   d) Checks all motif-bank-master.json entries for [TRANSLATE] stubs
+#   e) If any stubs or missing docs found → opens a PR with all changes
+#      so the maintainer can review and hand off to translators
+#   f) Posts a PR comment listing exactly what needs human attention
+#   g) If everything is already in sync → posts a commit status ✓ and exits
+# ─────────────────────────────────────────────────────────────────────────────
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'partner-onboarding/_template.json'
+      - 'data/motif-bank-master.json'
+      - 'teaching-kits/manifest.json'
+      - 'scripts/add-language.js'
+      - 'scripts/generate-partner-docs.js'
+  workflow_dispatch:
+    inputs:
+      lang:
+        description: 'Specific language code to process (leave blank for all)'
+        required: false
+        default: ''
+      force_regenerate:
+        description: 'Force regenerate all docs even if up to date'
+        required: false
+        default: 'false'
+
+jobs:
+  language-sync:
+    name: Sync Partner Onboarding Docs
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      # ── 1. Checkout ────────────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # ── 2. Set up Node ─────────────────────────────────────────────────────
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # ── 3. Detect languages in template ───────────────────────────────────
+      - name: Detect languages in template
+        id: detect
+        run: |
+          node - <<'EOF'
+          const fs = require('fs');
+          const path = require('path');
+
+          const tpl     = JSON.parse(fs.readFileSync('partner-onboarding/_template.json', 'utf8'));
+          const defined = Object.keys(tpl.languages);
+
+          // Which docs already exist?
+          const existing = defined.filter(code =>
+            fs.existsSync(`partner-onboarding/te-pa-partner-onboarding-${code}.md`)
+          );
+          const missing = defined.filter(code =>
+            !fs.existsSync(`partner-onboarding/te-pa-partner-onboarding-${code}.md`)
+          );
+
+          // Which motifs have [TRANSLATE] stubs?
+          const bank    = JSON.parse(fs.readFileSync('data/motif-bank-master.json', 'utf8'));
+          const motifs  = bank.motifs || bank;
+          const mlist   = Array.isArray(motifs) ? motifs : Object.values(motifs);
+
+          const stubReport = {};
+          for (const lang of defined) {
+            const field = `meaning_${lang}`;
+            const stubs = mlist.filter(m => (m[field] || '').startsWith('[TRANSLATE]'));
+            if (stubs.length) stubReport[lang] = stubs.map(m => m.id);
+          }
+
+          // Write outputs
+          const output = [
+            `defined=${defined.join(',')}`,
+            `missing=${missing.join(',')}`,
+            `existing=${existing.join(',')}`,
+            `has_missing=${missing.length > 0}`,
+            `has_stubs=${Object.keys(stubReport).length > 0}`,
+            `needs_work=${missing.length > 0 || Object.keys(stubReport).length > 0}`,
+          ];
+
+          // Append to GITHUB_OUTPUT
+          const outFile = process.env.GITHUB_OUTPUT;
+          if (outFile) fs.appendFileSync(outFile, output.join('\n') + '\n');
+
+          // Write stub report for later steps
+          fs.writeFileSync('/tmp/stub_report.json', JSON.stringify(stubReport, null, 2));
+          fs.writeFileSync('/tmp/missing_langs.txt', missing.join('\n'));
+
+          console.log('Defined languages:', defined.join(', '));
+          console.log('Missing docs:', missing.join(', ') || 'none');
+          console.log('Stub languages:', Object.keys(stubReport).join(', ') || 'none');
+          EOF
+
+      # ── 4. Run add-language.js for each missing language ──────────────────
+      - name: Generate missing onboarding docs
+        if: steps.detect.outputs.has_missing == 'true' || github.event.inputs.force_regenerate == 'true'
+        run: |
+          while IFS= read -r lang; do
+            if [ -n "$lang" ]; then
+              echo "▶ Processing language: $lang"
+              node scripts/add-language.js \
+                --lang="$lang" \
+                --ci \
+                --name="$(node -e "const t=require('./partner-onboarding/_template.json'); console.log(t.languages['$lang']?.name || '$lang')")" \
+                --native="$(node -e "const t=require('./partner-onboarding/_template.json'); console.log(t.languages['$lang']?.native_name || '$lang')")" \
+                --region="$(node -e "const t=require('./partner-onboarding/_template.json'); console.log(t.languages['$lang']?.region || 'Global')")"
+            fi
+          done < /tmp/missing_langs.txt
+
+      # ── 5. Always regenerate all docs (keeps index + all in sync) ─────────
+      - name: Regenerate all partner onboarding docs
+        run: node scripts/generate-partner-docs.js
+
+      # ── 6. Check for any changes to commit ────────────────────────────────
+      - name: Check for changes
+        id: changes
+        run: |
+          git add -A
+          if git diff --staged --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No file changes detected."
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Changes detected:"
+            git diff --staged --stat
+          fi
+
+      # ── 7. Build PR body with stub report ─────────────────────────────────
+      - name: Build PR description
+        if: steps.changes.outputs.changed == 'true'
+        id: pr_body
+        run: |
+          node - <<'JSEOF'
+          const fs   = require('fs');
+          const stubs = JSON.parse(fs.readFileSync('/tmp/stub_report.json', 'utf8'));
+
+          const missing = fs.readFileSync('/tmp/missing_langs.txt', 'utf8').trim().split('\n').filter(Boolean);
+
+          const tpl      = JSON.parse(fs.readFileSync('partner-onboarding/_template.json', 'utf8'));
+          const bank     = JSON.parse(fs.readFileSync('data/motif-bank-master.json', 'utf8'));
+          const motifs   = bank.motifs || bank;
+          const mlist    = Array.isArray(motifs) ? motifs : Object.values(motifs);
+          const total    = mlist.length;
+
+          let body = `## 🌐 Language Sync — Partner Onboarding Docs Updated\n\n`;
+          body += `This PR was opened automatically by the **Language Sync** workflow.\n\n`;
+          body += `It regenerates partner onboarding docs whenever a new language is defined in \`partner-onboarding/_template.json\` or \`data/motif-bank-master.json\` changes.\n\n`;
+
+          if (missing.length) {
+            body += `### 🆕 New Languages Detected\n\n`;
+            for (const code of missing) {
+              const l = tpl.languages[code] || {};
+              body += `- **${code}** — ${l.native_name || ''} (${l.region || ''})\n`;
+            }
+            body += `\n`;
+          }
+
+          if (Object.keys(stubs).length) {
+            body += `### ✏️ Translation Stubs Needing Human Review\n\n`;
+            body += `The following languages have \`[TRANSLATE]\` placeholders in \`data/motif-bank-master.json\`.\n`;
+            body += `Search for \`[TRANSLATE]\` in the file and replace with the correct translation.\n\n`;
+            body += `| Language | Motifs needing translation | Total |\n|---|---|---|\n`;
+            for (const [code, motifIds] of Object.entries(stubs)) {
+              const l = tpl.languages[code] || {};
+              body += `| **${code}** — ${l.native_name || code} | ${motifIds.slice(0, 5).join(', ')}${motifIds.length > 5 ? ` ... +${motifIds.length - 5} more` : ''} | ${motifIds.length}/${total} |\n`;
+            }
+            body += `\n`;
+          }
+
+          body += `### ✅ Files Updated\n\n`;
+          body += `- \`partner-onboarding/index.md\` — language index regenerated\n`;
+          for (const code of Object.keys(tpl.languages)) {
+            body += `- \`partner-onboarding/te-pa-partner-onboarding-${code}.md\`\n`;
+          }
+          body += `\n`;
+
+          body += `### 🔗 Resources\n\n`;
+          body += `- [Public API Docs](https://te-pa-analytics.sketchschool.workers.dev/api)\n`;
+          body += `- [Partner Onboarding Index](https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/partner-onboarding/index.md)\n`;
+          body += `- [Motif Bank JSON](data/motif-bank-master.json)\n\n`;
+
+          body += `---\n*Generated by \`.github/workflows/language-sync.yml\` · Te Pā Tūwatawata*\n`;
+
+          // Write to file so next step can read it
+          fs.writeFileSync('/tmp/pr_body.md', body);
+          console.log('PR body written.');
+          JSEOF
+
+      # ── 8. Create branch and open PR ──────────────────────────────────────
+      - name: Create PR branch and commit
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name  "Te Pā Language Sync Bot"
+          git config user.email "robertmorrisportraits@gmail.com"
+
+          BRANCH="language-sync/$(date +%Y%m%d-%H%M%S)"
+          git checkout -b "$BRANCH"
+          git add -A
+          git commit -m "chore(i18n): auto-sync partner onboarding docs — $(date +%Y-%m-%d)
+
+          Triggered by push to main. Languages processed: ${{ steps.detect.outputs.defined }}
+          Missing docs generated: ${{ steps.detect.outputs.missing }}
+          Translation stubs present: run 'node scripts/generate-partner-docs.js' after translating.
+
+          See PR description for full stub report and translation checklist."
+
+          git push origin "$BRANCH"
+          echo "branch=$BRANCH" >> $GITHUB_OUTPUT
+        id: branch
+
+      - name: Open Pull Request
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_BODY=$(cat /tmp/pr_body.md)
+          gh pr create \
+            --base main \
+            --head "${{ steps.branch.outputs.branch }}" \
+            --title "🌐 Language Sync: partner onboarding docs updated ($(date +%Y-%m-%d))" \
+            --body "$PR_BODY" \
+            --label "documentation,i18n,automated" 2>/dev/null || \
+          gh pr create \
+            --base main \
+            --head "${{ steps.branch.outputs.branch }}" \
+            --title "🌐 Language Sync: partner onboarding docs updated ($(date +%Y-%m-%d))" \
+            --body "$PR_BODY"
+
+      # ── 9. Post summary to workflow run ───────────────────────────────────
+      - name: Post job summary
+        if: always()
+        run: |
+          node - <<'JSEOF'
+          const fs = require('fs');
+          const tpl = JSON.parse(fs.readFileSync('partner-onboarding/_template.json', 'utf8'));
+          const langs = Object.keys(tpl.languages);
+          let stubs = {};
+          try { stubs = JSON.parse(fs.readFileSync('/tmp/stub_report.json', 'utf8')); } catch(_) {}
+          const missing = fs.existsSync('/tmp/missing_langs.txt')
+            ? fs.readFileSync('/tmp/missing_langs.txt', 'utf8').trim().split('\n').filter(Boolean)
+            : [];
+
+          let md = `## 🌐 Language Sync Summary\n\n`;
+          md += `| Language | Doc exists | Stubs remaining |\n|---|---|---|\n`;
+          for (const code of langs) {
+            const l    = tpl.languages[code];
+            const exists = fs.existsSync(`partner-onboarding/te-pa-partner-onboarding-${code}.md`) ? '✅' : '❌';
+            const stubCount = (stubs[code] || []).length;
+            md += `| **${code}** — ${l.native_name} | ${exists} | ${stubCount ? `⚠️ ${stubCount} stubs` : '✅ clean'} |\n`;
+          }
+
+          if (missing.length) {
+            md += `\n> **New languages detected:** ${missing.join(', ')} — docs generated, PR opened.\n`;
+          } else if (Object.keys(stubs).length) {
+            md += `\n> **Translation stubs found** — PR opened with placeholders for human translators.\n`;
+          } else {
+            md += `\n> **All languages in sync.** No PR needed.\n`;
+          }
+
+          const summary = process.env.GITHUB_STEP_SUMMARY;
+          if (summary) fs.appendFileSync(summary, md);
+          console.log(md);
+          JSEOF
+
+      # ── 10. If nothing changed, confirm sync status ────────────────────────
+      - name: Confirm already in sync
+        if: steps.changes.outputs.changed == 'false'
+        run: |
+          echo "✅ All partner onboarding docs are up to date. No PR needed."
