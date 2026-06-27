@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Partner Onboarding — Te Pā Tūwatawata</title>
+<meta name="description" content="Partner onboarding guide for Te Pā Tūwatawata. Six-language docs, public read-only API, motif library, teaching kits, and asset CDN paths. CC BY-NC-SA 4.0.">
+<meta name="keywords" content="Te Pā Tūwatawata, partner onboarding, indigenous data sovereignty, motif API, teaching kit, CC BY-NC-SA, public API">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://te-pa.org/partner-onboarding/">
+
+<!-- Open Graph / X share card -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Te Pā Tūwatawata — Partner Onboarding">
+<meta property="og:description" content="Six-language partner onboarding guide. Public motif API, teaching kits, CDN paths. CC BY-NC-SA 4.0.">
+<meta property="og:url" content="https://te-pa.org/partner-onboarding/">
+<meta property="og:locale" content="en">
+<meta property="og:locale:alternate" content="mi">
+<meta property="og:locale:alternate" content="sm">
+<meta property="og:locale:alternate" content="pt">
+<meta property="og:locale:alternate" content="gn">
+<meta property="og:locale:alternate" content="ar">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Te Pā Tūwatawata — Partner Onboarding">
+<meta name="twitter:description" content="Six-language partner onboarding guide and public motif API. CC BY-NC-SA 4.0.">
+
+<!-- Fonts (match site) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/kiwi-dialectic.css">
+<link rel="stylesheet" href="../assets/nav.css">
+
+<style>
+  /* Page-local styles only — global look comes from kiwi-dialectic.css */
+  .po-hero {
+    padding: 3.2rem 0 1.6rem;
+  }
+  .po-hero .eyebrow {
+    font-size: .78rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    margin: 0 0 .8rem;
+  }
+  .po-hero h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    line-height: 1.05;
+    margin: 0 0 1rem;
+    color: var(--fg);
+  }
+  .po-hero .lede {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--fg-muted);
+    max-width: 56ch;
+    margin: 0 0 1.6rem;
+  }
+  .po-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .7rem;
+    margin-top: 1.2rem;
+  }
+  .po-btn {
+    display: inline-block;
+    padding: .7rem 1.1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: .92rem;
+    border: 1px solid transparent;
+    transition: transform .12s ease, opacity .12s ease;
+  }
+  .po-btn.primary {
+    background: var(--accent, #b03a2e);
+    color: #fff;
+  }
+  .po-btn.ghost {
+    background: transparent;
+    color: var(--accent, #b03a2e);
+    border-color: var(--accent, #b03a2e);
+  }
+  .po-btn.muted {
+    background: transparent;
+    color: var(--fg);
+    border-color: var(--border, #ddd);
+  }
+  .po-btn:hover { transform: translateY(-1px); opacity: .92; }
+
+  /* Language picker */
+  .lang-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+    margin: 1.4rem 0 2rem;
+  }
+  .lang-card {
+    background: var(--bg-raised, #fff);
+    border: 1px solid var(--border, #e5e2dd);
+    border-radius: 12px;
+    padding: 1.1rem 1.2rem;
+    transition: border-color .15s ease, transform .12s ease;
+  }
+  .lang-card:hover {
+    border-color: var(--accent, #b03a2e);
+    transform: translateY(-2px);
+  }
+  .lang-card .lang-native {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.55rem;
+    line-height: 1.1;
+    color: var(--fg);
+    margin: 0 0 .15rem;
+  }
+  .lang-card .lang-english {
+    font-size: .8rem;
+    color: var(--fg-muted);
+    margin: 0 0 .15rem;
+  }
+  .lang-card .lang-region {
+    font-size: .72rem;
+    color: var(--fg-muted);
+    letter-spacing: .04em;
+    margin: 0 0 .8rem;
+    font-style: italic;
+  }
+  .lang-links {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+  }
+  .lang-links a {
+    font-size: .78rem;
+    padding: .35rem .6rem;
+    border-radius: 6px;
+    text-decoration: none;
+    background: var(--bg, #faf7f2);
+    color: var(--accent, #b03a2e);
+    border: 1px solid var(--border, #e5e2dd);
+    font-weight: 600;
+  }
+  .lang-links a:hover {
+    background: var(--accent, #b03a2e);
+    color: #fff;
+    border-color: var(--accent, #b03a2e);
+  }
+  .lang-card[dir="rtl"] .lang-native,
+  .lang-card[dir="rtl"] .lang-english,
+  .lang-card[dir="rtl"] .lang-region {
+    text-align: right;
+  }
+
+  /* Section blocks */
+  .po-section {
+    padding: 2.4rem 0 1.8rem;
+    border-top: 1px solid var(--border, #e5e2dd);
+  }
+  .po-section h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+    margin: 0 0 .4rem;
+    color: var(--fg);
+  }
+  .po-section .sub {
+    font-size: .9rem;
+    color: var(--fg-muted);
+    margin: 0 0 1.4rem;
+    max-width: 60ch;
+  }
+
+  /* What you get list */
+  .perks {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: .9rem;
+    list-style: none;
+    padding: 0;
+    margin: 1.2rem 0;
+  }
+  .perks li {
+    background: var(--bg-raised, #fff);
+    border: 1px solid var(--border, #e5e2dd);
+    border-left: 3px solid var(--accent, #b03a2e);
+    border-radius: 8px;
+    padding: .85rem 1rem;
+    font-size: .9rem;
+    color: var(--fg);
+    line-height: 1.55;
+  }
+
+  /* API table */
+  .api-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0 .6rem;
+    font-size: .88rem;
+  }
+  .api-table th,
+  .api-table td {
+    text-align: left;
+    padding: .65rem .8rem;
+    border-bottom: 1px solid var(--border, #e5e2dd);
+    vertical-align: top;
+  }
+  .api-table th {
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--fg-muted);
+    font-weight: 700;
+  }
+  .api-table code {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: .82rem;
+    background: var(--bg, #faf7f2);
+    padding: .15rem .4rem;
+    border-radius: 4px;
+    color: var(--accent, #b03a2e);
+    white-space: nowrap;
+  }
+  .api-base {
+    background: var(--bg-raised, #fff);
+    border: 1px solid var(--border, #e5e2dd);
+    border-radius: 8px;
+    padding: .85rem 1rem;
+    margin: .8rem 0 1.4rem;
+    font-size: .88rem;
+    color: var(--fg-muted);
+  }
+  .api-base strong { color: var(--fg); }
+  .api-base code {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: .85rem;
+    background: var(--bg, #faf7f2);
+    padding: .15rem .45rem;
+    border-radius: 4px;
+    color: var(--accent, #b03a2e);
+  }
+
+  /* Code block */
+  pre.code-block {
+    background: #1a1a1a;
+    color: #f4ede4;
+    border-radius: 10px;
+    padding: 1.2rem;
+    overflow-x: auto;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: .82rem;
+    line-height: 1.55;
+    margin: 1rem 0;
+  }
+  pre.code-block .c-comment { color: #999; font-style: italic; }
+  pre.code-block .c-string  { color: #c1d6a1; }
+  pre.code-block .c-keyword { color: #f4a261; }
+  pre.code-block .c-fn      { color: #d2c2e0; }
+
+  /* Asset path table */
+  .asset-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: .85rem; }
+  .asset-table th, .asset-table td {
+    text-align: left;
+    padding: .55rem .8rem;
+    border-bottom: 1px solid var(--border, #e5e2dd);
+    vertical-align: top;
+  }
+  .asset-table th {
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--fg-muted);
+    font-weight: 700;
+  }
+  .asset-table code {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: .78rem;
+    background: var(--bg, #faf7f2);
+    padding: .1rem .4rem;
+    border-radius: 4px;
+    color: var(--accent, #b03a2e);
+    word-break: break-all;
+    white-space: normal;
+  }
+
+  /* Attribution block */
+  .attribution-box {
+    background: var(--bg-raised, #fff);
+    border: 1px solid var(--border, #e5e2dd);
+    border-left: 4px solid var(--accent, #b03a2e);
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.05rem;
+    color: var(--fg);
+  }
+
+  /* Contact strip */
+  .contact-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: .8rem;
+    margin: 1rem 0;
+  }
+  .contact-strip a {
+    display: block;
+    padding: .8rem 1rem;
+    background: var(--bg-raised, #fff);
+    border: 1px solid var(--border, #e5e2dd);
+    border-radius: 8px;
+    color: var(--fg);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: .9rem;
+    transition: border-color .12s ease, color .12s ease;
+  }
+  .contact-strip a:hover {
+    border-color: var(--accent, #b03a2e);
+    color: var(--accent, #b03a2e);
+  }
+  .contact-strip a .label {
+    display: block;
+    font-size: .7rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--fg-muted);
+    font-weight: 700;
+    margin-bottom: .25rem;
+  }
+
+  footer.po-footer {
+    border-top: 1px solid var(--border, #e5e2dd);
+    margin-top: 2.4rem;
+    padding: 1.6rem 0 2.4rem;
+    font-size: .8rem;
+    color: var(--fg-muted);
+    text-align: center;
+    line-height: 1.7;
+  }
+</style>
+
+</head>
+<body>
+
+<!-- ─── PRIMARY NAV (unified site nav) ─────────────────────────────── -->
+<nav class="site-nav shell" aria-label="Primary">
+  <a class="nav-brand" href="../">Te Pā Tūwatawata</a>
+  <div class="nav-links">
+    <a href="../">Home</a>
+    <a href="../launch-mediakit/">Mediakit</a>
+    <a href="../social-kit/">Social Kit</a>
+    <a href="../teaching-kits/">Teaching</a>
+    <a href="../stickers/">Stickers</a>
+    <a href="../campaign-generator/">Generator</a>
+    <a href="../solidarity/australia/">Solidarity</a>
+    <a href="../partner-onboarding/" aria-current="page">Partners</a>
+    <a href="https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite" rel="noopener">GitHub</a>
+  </div>
+</nav>
+
+<main class="shell">
+
+  <!-- ─── HERO ─────────────────────────────────────────────────────── -->
+  <section class="po-hero">
+    <p class="eyebrow">He hoa mahi — Partner onboarding</p>
+    <h1>Build with Te Pā.</h1>
+    <p class="lede">
+      Six-language onboarding guides, a public read-only motif API, 30 cultural motifs across 11 cultures,
+      and teaching kits — free under CC BY-NC-SA 4.0. Everything you need to integrate Te Pā into your
+      platform, publication, or educational programme.
+    </p>
+    <div class="po-cta-row">
+      <a class="po-btn primary" href="#languages">Read the guide</a>
+      <a class="po-btn ghost" href="#api">Public API</a>
+      <a class="po-btn muted" href="#contact">Talk to us</a>
+    </div>
+  </section>
+
+  <!-- ─── LANGUAGES ────────────────────────────────────────────────── -->
+  <section class="po-section" id="languages">
+    <h2>Choose your language.</h2>
+    <p class="sub">
+      The full onboarding guide is available in six languages. Markdown source is on GitHub;
+      PDFs are on our CDN. Arabic reads right-to-left.
+    </p>
+
+    <div class="lang-grid">
+
+      <article class="lang-card">
+        <h3 class="lang-native">English</h3>
+        <p class="lang-english">English</p>
+        <p class="lang-region">Global / Pacific</p>
+        <div class="lang-links">
+          <a href="te-pa-partner-onboarding-en.md">Markdown</a>
+          <a href="https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/partner-onboarding/te-pa-partner-onboarding-en.pdf">PDF</a>
+        </div>
+      </article>
+
+      <article class="lang-card">
+        <h3 class="lang-native">Te Reo Māori</h3>
+        <p class="lang-english">Māori (mi)</p>
+        <p class="lang-region">Aotearoa New Zealand</p>
+        <div class="lang-links">
+          <a href="te-pa-partner-onboarding-mi.md">Markdown</a>
+          <a href="https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/partner-onboarding/te-pa-partner-onboarding-mi.pdf">PDF</a>
+        </div>
+      </article>
+
+      <article class="lang-card">
+        <h3 class="lang-native">Português</h3>
+        <p class="lang-english">Portuguese (pt)</p>
+        <p class="lang-region">Brasil / América do Sul</p>
+        <div class="lang-links">
+          <a href="te-pa-partner-onboarding-pt.md">Markdown</a>
+          <a href="https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/partner-onboarding/te-pa-partner-onboarding-pt.pdf">PDF</a>
+        </div>
+      </article>
+
+      <article class="lang-card">
+        <h3 class="lang-native">Avañe'ẽ</h3>
+        <p class="lang-english">Guaraní (gn)</p>
+        <p class="lang-region">Paraguay / Brasil / Argentina</p>
+        <div class="lang-links">
+          <a href="te-pa-partner-onboarding-gn.md">Markdown</a>
+          <a href="https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/partner-onboarding/te-pa-partner-onboarding-gn.pdf">PDF</a>
+        </div>
+      </article>
+
+      <article class="lang-card">
+        <h3 class="lang-native">Gagana Samoa</h3>
+        <p class="lang-english">Samoan (sm)</p>
+        <p class="lang-region">Oceania / Pasefika</p>
+        <div class="lang-links">
+          <a href="te-pa-partner-onboarding-sm.md">Markdown</a>
+          <a href="https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/partner-onboarding/te-pa-partner-onboarding-sm.pdf">PDF</a>
+        </div>
+      </article>
+
+      <article class="lang-card" dir="rtl">
+        <h3 class="lang-native">العربية</h3>
+        <p class="lang-english">Arabic (ar)</p>
+        <p class="lang-region">الشرق الأوسط وشمال أفريقيا</p>
+        <div class="lang-links">
+          <a href="te-pa-partner-onboarding-ar.md">Markdown</a>
+          <a href="https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/partner-onboarding/te-pa-partner-onboarding-ar.pdf">PDF</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ─── WHAT YOU GET ─────────────────────────────────────────────── -->
+  <section class="po-section" id="what-you-get">
+    <h2>What partners get.</h2>
+    <p class="sub">
+      Everything is open and free. No keys, no contracts, no commercial gates. Commercial use requires a separate agreement — see the licence below.
+    </p>
+    <ul class="perks">
+      <li><strong>30 cultural motifs</strong> across 11 cultures — PNG artwork, SVG vectors, activist meme images.</li>
+      <li><strong>Teaching kits</strong> in 6 languages — printable, classroom-ready PDFs.</li>
+      <li><strong>Public read-only API</strong> — 100 requests/hour per IP, no key required.</li>
+      <li><strong>Social media kit</strong> — 624 platform-optimised SVG cards for Facebook, Instagram, TikTok, X.</li>
+      <li><strong>Activist meme PNGs</strong> for all 30 motifs × 6 languages.</li>
+      <li><strong>CC BY-NC-SA 4.0</strong> — free to use and adapt with attribution.</li>
+    </ul>
+  </section>
+
+  <!-- ─── API ─────────────────────────────────────────────────────── -->
+  <section class="po-section" id="api">
+    <h2>Public API.</h2>
+    <p class="sub">
+      Read-only. No authentication. Every response returns JSON with attribution built in.
+    </p>
+
+    <div class="api-base">
+      <strong>Base URL</strong> — <code>https://te-pa-analytics.sketchschool.workers.dev</code><br>
+      <strong>Rate limit</strong> — 100 requests/hour per IP &middot;
+      <strong>Courtesy header</strong> — <code>X-TePa-Use: &lt;your-project-name&gt;</code>
+    </div>
+
+    <table class="api-table">
+      <thead>
+        <tr><th>Endpoint</th><th>Description</th><th>Example</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>GET /api/motifs</code></td>
+          <td>All 30 motifs with meanings, CDN URLs, and meme links.</td>
+          <td><code>/api/motifs?culture=maori&amp;lang=en</code></td>
+        </tr>
+        <tr>
+          <td><code>GET /api/motifs/:id</code></td>
+          <td>Single motif by ID — full asset listing.</td>
+          <td><code>/api/motifs/koru</code></td>
+        </tr>
+        <tr>
+          <td><code>GET /api/cultures</code></td>
+          <td>List all 11 cultures with motif counts.</td>
+          <td><code>/api/cultures</code></td>
+        </tr>
+        <tr>
+          <td><code>GET /api/meme</code></td>
+          <td>CDN URL for a language-specific meme PNG.</td>
+          <td><code>/api/meme?id=koru&amp;lang=sm</code></td>
+        </tr>
+        <tr>
+          <td><code>GET /api/kit</code></td>
+          <td>Teaching kit PDF CDN URL for a given language.</td>
+          <td><code>/api/kit?lang=ar</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="font-family:'Instrument Serif',serif;font-size:1.3rem;margin:1.6rem 0 .4rem">Quick start — code example</h3>
+<pre class="code-block"><span class="c-comment">// Fetch all Māori motifs in English</span>
+<span class="c-keyword">fetch</span>(<span class="c-string">'https://te-pa-analytics.sketchschool.workers.dev/api/motifs?culture=maori&amp;lang=en'</span>, {
+  headers: { <span class="c-string">'X-TePa-Use'</span>: <span class="c-string">'YourProjectName'</span> }
+})
+.<span class="c-fn">then</span>(r =&gt; r.<span class="c-fn">json</span>())
+.<span class="c-fn">then</span>(data =&gt; {
+  data.motifs.<span class="c-fn">forEach</span>(m =&gt; {
+    console.<span class="c-fn">log</span>(m.name_en, m.assets.meme_png);
+  });
+});</pre>
+  </section>
+
+  <!-- ─── ASSETS / CDN ─────────────────────────────────────────────── -->
+  <section class="po-section" id="assets">
+    <h2>Downloading assets.</h2>
+    <p class="sub">
+      All assets are served directly from our Cloudflare R2 CDN. Substitute the bracketed placeholders.
+    </p>
+    <table class="asset-table">
+      <thead>
+        <tr><th>Asset</th><th>Path</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Motif PNG artwork</td>
+          <td><code>https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/{culture}/{id}.png</code></td>
+        </tr>
+        <tr>
+          <td>Motif SVG vector</td>
+          <td><code>https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/{culture}/{id}.svg</code></td>
+        </tr>
+        <tr>
+          <td>Activist meme (per language)</td>
+          <td><code>https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_{id}_{lang}.png</code></td>
+        </tr>
+        <tr>
+          <td>Teaching kit PDF</td>
+          <td><code>https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-teaching-kit-{lang}.pdf</code></td>
+        </tr>
+        <tr>
+          <td>Partner onboarding PDF</td>
+          <td><code>https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/partner-onboarding/te-pa-partner-onboarding-{lang}.pdf</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ─── ATTRIBUTION ──────────────────────────────────────────────── -->
+  <section class="po-section" id="attribution">
+    <h2>Attribution &amp; licence.</h2>
+    <p class="sub">
+      All Te Pā motifs, images, and teaching materials are published under
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color:var(--accent);font-weight:600">CC BY-NC-SA 4.0</a>.
+      You are free to share and adapt for non-commercial use, provided you credit the project as follows:
+    </p>
+    <div class="attribution-box">
+      Te Pā Tūwatawata (te-pa.org) — CC BY-NC-SA 4.0
+    </div>
+    <p class="sub" style="margin-top:1rem">
+      Commercial use requires a separate agreement — please get in touch.
+    </p>
+  </section>
+
+  <!-- ─── ADDING A LANGUAGE ────────────────────────────────────────── -->
+  <section class="po-section" id="add-language">
+    <h2>Adding a new language.</h2>
+    <p class="sub">
+      For maintainers and community contributors. All onboarding docs are auto-generated from a single template.
+    </p>
+    <ol style="padding-left:1.2rem;color:var(--fg);font-size:.92rem;line-height:1.7;max-width:62ch">
+      <li>Add a new language block to <code style="font-family:'JetBrains Mono',monospace;font-size:.82rem;background:var(--bg);padding:.1rem .4rem;border-radius:4px;color:var(--accent)">partner-onboarding/_template.json</code>.</li>
+      <li>Add a matching <code style="font-family:'JetBrains Mono',monospace;font-size:.82rem;background:var(--bg);padding:.1rem .4rem;border-radius:4px;color:var(--accent)">meaning_{code}</code> field to every motif in <code style="font-family:'JetBrains Mono',monospace;font-size:.82rem;background:var(--bg);padding:.1rem .4rem;border-radius:4px;color:var(--accent)">data/motif-bank-master.json</code>.</li>
+      <li>Run <code style="font-family:'JetBrains Mono',monospace;font-size:.82rem;background:var(--bg);padding:.1rem .4rem;border-radius:4px;color:var(--accent)">node scripts/generate-partner-docs.js</code> — onboarding docs regenerate automatically.</li>
+      <li>Run <code style="font-family:'JetBrains Mono',monospace;font-size:.82rem;background:var(--bg);padding:.1rem .4rem;border-radius:4px;color:var(--accent)">node scripts/add-language.js --lang={code}</code> to generate memes and teaching kit assets.</li>
+    </ol>
+  </section>
+
+  <!-- ─── CONTACT ──────────────────────────────────────────────────── -->
+  <section class="po-section" id="contact">
+    <h2>Contact &amp; community.</h2>
+    <p class="sub">
+      Te Pā Tūwatawata Charitable Trust &middot; 2 Mount Street, Port Chalmers, Dunedin 9023, Aotearoa New Zealand.
+    </p>
+    <div class="contact-strip">
+      <a href="https://te-pa.org">
+        <span class="label">Website</span>
+        te-pa.org
+      </a>
+      <a href="https://te-pa.org/rhizome-mapper.html">
+        <span class="label">Network</span>
+        Rhizome Mapper
+      </a>
+      <a href="https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite" rel="noopener">
+        <span class="label">Source</span>
+        GitHub repository
+      </a>
+      <a href="https://te-pa-analytics.sketchschool.workers.dev/api">
+        <span class="label">API docs</span>
+        Live endpoints
+      </a>
+    </div>
+  </section>
+
+  <footer class="po-footer">
+    Te Pā Tūwatawata Charitable Trust &middot; <a href="https://te-pa.org" style="color:var(--accent);text-decoration:none;font-weight:600">te-pa.org</a> &middot;
+    CC BY-NC-SA 4.0 &middot; Built with kindness in Ōtepoti Dunedin.
+  </footer>
+
+</main>
+
+</body>
+</html>

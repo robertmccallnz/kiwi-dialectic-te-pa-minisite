@@ -288,6 +288,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://te-pa.org/partner-onboarding/</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://te-pa.org/partner-onboarding/te-pa-partner-onboarding-en.md</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>monthly</changefreq>
