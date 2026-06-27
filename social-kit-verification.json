@@ -1,0 +1,916 @@
+{
+  "base_url": "https://te-pa.org/social-kit/",
+  "fetched_at": "2026-06-27T20:05+1200",
+  "files": [
+    {
+      "kind": "cover",
+      "meme": "raupatu",
+      "lang": null,
+      "url": "https://te-pa.org/social-kit/campaign-raupatu.png",
+      "http_status": 200,
+      "bytes": 92410,
+      "size_ok": true,
+      "sha256": "c1a134e309552ff90ff392b3c86bcc373e3384972760bf75774f20476eb90fd6",
+      "distinct_from_master": null,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": null,
+      "issues": []
+    },
+    {
+      "kind": "cover",
+      "meme": "3-questions",
+      "lang": null,
+      "url": "https://te-pa.org/social-kit/campaign-3-questions.png",
+      "http_status": 200,
+      "bytes": 113752,
+      "size_ok": true,
+      "sha256": "2c3eabac6db29dafca76b234cb00841a63839304490e86b61df23508aa29b041",
+      "distinct_from_master": null,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": null,
+      "issues": []
+    },
+    {
+      "kind": "cover",
+      "meme": "te-mana-raraunga",
+      "lang": null,
+      "url": "https://te-pa.org/social-kit/campaign-te-mana-raraunga.png",
+      "http_status": 200,
+      "bytes": 114517,
+      "size_ok": true,
+      "sha256": "f88e1fd2f0b84b4ccc550c86e0e48ece23634e270c04a7306fae31091e61b05b",
+      "distinct_from_master": null,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": null,
+      "issues": []
+    },
+    {
+      "kind": "cover",
+      "meme": "data-sovereignty",
+      "lang": null,
+      "url": "https://te-pa.org/social-kit/campaign-data-sovereignty.png",
+      "http_status": 200,
+      "bytes": 110572,
+      "size_ok": true,
+      "sha256": "ed1364e9526c45c6260c1b251ae45a36343a8b16e70fd6a74c1b287099e79265",
+      "distinct_from_master": null,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": null,
+      "issues": []
+    },
+    {
+      "kind": "cover",
+      "meme": "enrol",
+      "lang": null,
+      "url": "https://te-pa.org/social-kit/campaign-enrol.png",
+      "http_status": 200,
+      "bytes": 93203,
+      "size_ok": true,
+      "sha256": "819ead187e0beec7f83331034e22061458e823eb198d96aaf09b26c0e906e7fa",
+      "distinct_from_master": null,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": null,
+      "issues": []
+    },
+    {
+      "kind": "cover",
+      "meme": "anamata",
+      "lang": null,
+      "url": "https://te-pa.org/social-kit/campaign-anamata.png",
+      "http_status": 200,
+      "bytes": 85336,
+      "size_ok": true,
+      "sha256": "b026e89fec826385a76e6cabd7a9ee95b339c112035285abbd6b050dd7691d33",
+      "distinct_from_master": null,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": null,
+      "issues": []
+    },
+    {
+      "kind": "variant",
+      "meme": "raupatu",
+      "lang": "en",
+      "url": "https://te-pa.org/social-kit/campaign-raupatu-en.png",
+      "http_status": 200,
+      "bytes": 92410,
+      "size_ok": true,
+      "sha256": "c1a134e309552ff90ff392b3c86bcc373e3384972760bf75774f20476eb90fd6",
+      "distinct_from_master": false,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": null,
+      "issues": [
+        "identical_to_bilingual_master"
+      ]
+    },
+    {
+      "kind": "variant",
+      "meme": "raupatu",
+      "lang": "mi",
+      "url": "https://te-pa.org/social-kit/campaign-raupatu-mi.png",
+      "http_status": 200,
+      "bytes": 96097,
+      "size_ok": true,
+      "sha256": "b16ea4f262b0b0ebaf08413c131996e81532ce822223be286282755caa3fc6b7",
+      "distinct_from_master": true,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": null,
+      "issues": []
+    },
+    {
+      "kind": "variant",
+      "meme": "raupatu",
+      "lang": "pt",
+      "url": "https://te-pa.org/social-kit/campaign-raupatu-pt.png",
+      "http_status": 200,
+      "bytes": 104011,
+      "size_ok": true,
+      "sha256": "65e9a4bc9fece018f258aed8448a6528f33baba4d008b2dee4a108eef0a093b8",
+      "distinct_from_master": true,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": null,
+      "issues": []
+    },
+    {
+      "kind": "variant",
+      "meme": "raupatu",
+      "lang": "gn",
+      "url": "https://te-pa.org/social-kit/campaign-raupatu-gn.png",
+      "http_status": 200,
+      "bytes": 107421,
+      "size_ok": true,
+      "sha256": "a6fff007c28204e7056484aa9ff9fd64d2a51dd6e30c3dd27c840bc4eac9a47c",
+      "distinct_from_master": true,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": {
+        "motif": "takua_bamboo",
+        "present": false,
+        "bands_with_motif": [],
+        "edges": {
+          "top": {
+            "transitions": 0,
+            "counts": {
+              "R": 530,
+              "B": 0,
+              "C": 0,
+              "?": 0
+            }
+          },
+          "bottom": {
+            "transitions": 58,
+            "counts": {
+              "R": 87,
+              "B": 443,
+              "C": 0,
+              "?": 0
+            }
+          }
+        }
+      },
+      "issues": [
+        "takua_motif_not_detected"
+      ]
+    },
+    {
+      "kind": "variant",
+      "meme": "raupatu",
+      "lang": "sm",
+      "url": "https://te-pa.org/social-kit/campaign-raupatu-sm.png",
+      "http_status": 200,
+      "bytes": 95902,
+      "size_ok": true,
+      "sha256": "e2f90696420ff1ea64af1f0ae528bcbe7f5a246e4f60cf907c045238929113ed",
+      "distinct_from_master": true,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": {
+        "motif": "siapo_faaaliao",
+        "present": false,
+        "bands_with_motif": [],
+        "edges": {
+          "top": {
+            "transitions": 0,
+            "counts": {
+              "R": 530,
+              "B": 0,
+              "C": 0,
+              "?": 0
+            }
+          },
+          "bottom": {
+            "transitions": 58,
+            "counts": {
+              "R": 87,
+              "B": 443,
+              "C": 0,
+              "?": 0
+            }
+          }
+        }
+      },
+      "issues": [
+        "siapo_motif_not_detected"
+      ]
+    },
+    {
+      "kind": "variant",
+      "meme": "3-questions",
+      "lang": "en",
+      "url": "https://te-pa.org/social-kit/campaign-3-questions-en.png",
+      "http_status": 200,
+      "bytes": 113752,
+      "size_ok": true,
+      "sha256": "2c3eabac6db29dafca76b234cb00841a63839304490e86b61df23508aa29b041",
+      "distinct_from_master": false,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": null,
+      "issues": [
+        "identical_to_bilingual_master"
+      ]
+    },
+    {
+      "kind": "variant",
+      "meme": "3-questions",
+      "lang": "mi",
+      "url": "https://te-pa.org/social-kit/campaign-3-questions-mi.png",
+      "http_status": 200,
+      "bytes": 102682,
+      "size_ok": true,
+      "sha256": "e2ffc5bd274ac75173e49e5eb7be2b99bdcf98c0ecf86742882f500d4aeac235",
+      "distinct_from_master": true,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": null,
+      "issues": []
+    },
+    {
+      "kind": "variant",
+      "meme": "3-questions",
+      "lang": "pt",
+      "url": "https://te-pa.org/social-kit/campaign-3-questions-pt.png",
+      "http_status": 200,
+      "bytes": 116281,
+      "size_ok": true,
+      "sha256": "804cee78313226638a4532c66680eaad8b259b624fff3e0aa427eee112c68441",
+      "distinct_from_master": true,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": null,
+      "issues": []
+    },
+    {
+      "kind": "variant",
+      "meme": "3-questions",
+      "lang": "gn",
+      "url": "https://te-pa.org/social-kit/campaign-3-questions-gn.png",
+      "http_status": 200,
+      "bytes": 111506,
+      "size_ok": true,
+      "sha256": "2f217ba9aed84dc3f9224fcb286a245701b867df507803ea93c6cb908169c90a",
+      "distinct_from_master": true,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": {
+        "motif": "takua_bamboo",
+        "present": false,
+        "bands_with_motif": [],
+        "edges": {
+          "top": {
+            "transitions": 66,
+            "counts": {
+              "R": 365,
+              "B": 165,
+              "C": 0,
+              "?": 0
+            }
+          },
+          "bottom": {
+            "transitions": 66,
+            "counts": {
+              "R": 365,
+              "B": 165,
+              "C": 0,
+              "?": 0
+            }
+          }
+        }
+      },
+      "issues": [
+        "takua_motif_not_detected"
+      ]
+    },
+    {
+      "kind": "variant",
+      "meme": "3-questions",
+      "lang": "sm",
+      "url": "https://te-pa.org/social-kit/campaign-3-questions-sm.png",
+      "http_status": 200,
+      "bytes": 102163,
+      "size_ok": true,
+      "sha256": "bb8583496cc304767d80d3448dc7d02d4081d86a9ac49a828e1b384f84964deb",
+      "distinct_from_master": true,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": {
+        "motif": "siapo_faaaliao",
+        "present": false,
+        "bands_with_motif": [],
+        "edges": {
+          "top": {
+            "transitions": 66,
+            "counts": {
+              "R": 365,
+              "B": 165,
+              "C": 0,
+              "?": 0
+            }
+          },
+          "bottom": {
+            "transitions": 66,
+            "counts": {
+              "R": 365,
+              "B": 165,
+              "C": 0,
+              "?": 0
+            }
+          }
+        }
+      },
+      "issues": [
+        "siapo_motif_not_detected"
+      ]
+    },
+    {
+      "kind": "variant",
+      "meme": "te-mana-raraunga",
+      "lang": "en",
+      "url": "https://te-pa.org/social-kit/campaign-te-mana-raraunga-en.png",
+      "http_status": 200,
+      "bytes": 114517,
+      "size_ok": true,
+      "sha256": "f88e1fd2f0b84b4ccc550c86e0e48ece23634e270c04a7306fae31091e61b05b",
+      "distinct_from_master": false,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": null,
+      "issues": [
+        "identical_to_bilingual_master"
+      ]
+    },
+    {
+      "kind": "variant",
+      "meme": "te-mana-raraunga",
+      "lang": "mi",
+      "url": "https://te-pa.org/social-kit/campaign-te-mana-raraunga-mi.png",
+      "http_status": 200,
+      "bytes": 103893,
+      "size_ok": true,
+      "sha256": "f340cc2fefc7bb6cd9bcfc69773586d8defe381e973a3521434728195ab4b141",
+      "distinct_from_master": true,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": null,
+      "issues": []
+    },
+    {
+      "kind": "variant",
+      "meme": "te-mana-raraunga",
+      "lang": "pt",
+      "url": "https://te-pa.org/social-kit/campaign-te-mana-raraunga-pt.png",
+      "http_status": 200,
+      "bytes": 117433,
+      "size_ok": true,
+      "sha256": "49d55f0b9b2805bd56d917ba0c5b2c5f239217bfd31bc1680d07e86e5ae1f3ca",
+      "distinct_from_master": true,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": null,
+      "issues": []
+    },
+    {
+      "kind": "variant",
+      "meme": "te-mana-raraunga",
+      "lang": "gn",
+      "url": "https://te-pa.org/social-kit/campaign-te-mana-raraunga-gn.png",
+      "http_status": 200,
+      "bytes": 115670,
+      "size_ok": true,
+      "sha256": "f62dc4cb7f690871bf2e3c86a4e91f4c39b3e67b200f89668c585358adf2ec2a",
+      "distinct_from_master": true,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": {
+        "motif": "takua_bamboo",
+        "present": false,
+        "bands_with_motif": [],
+        "edges": {
+          "top": {
+            "transitions": 66,
+            "counts": {
+              "R": 497,
+              "B": 33,
+              "C": 0,
+              "?": 0
+            }
+          },
+          "bottom": {
+            "transitions": 66,
+            "counts": {
+              "R": 365,
+              "B": 165,
+              "C": 0,
+              "?": 0
+            }
+          }
+        }
+      },
+      "issues": [
+        "takua_motif_not_detected"
+      ]
+    },
+    {
+      "kind": "variant",
+      "meme": "te-mana-raraunga",
+      "lang": "sm",
+      "url": "https://te-pa.org/social-kit/campaign-te-mana-raraunga-sm.png",
+      "http_status": 200,
+      "bytes": 108590,
+      "size_ok": true,
+      "sha256": "b1adf0b8963be1c1535ea507e620f8415ccb9de5c79dac881cde31f6bcbfe64a",
+      "distinct_from_master": true,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": {
+        "motif": "siapo_faaaliao",
+        "present": false,
+        "bands_with_motif": [],
+        "edges": {
+          "top": {
+            "transitions": 66,
+            "counts": {
+              "R": 497,
+              "B": 33,
+              "C": 0,
+              "?": 0
+            }
+          },
+          "bottom": {
+            "transitions": 66,
+            "counts": {
+              "R": 365,
+              "B": 165,
+              "C": 0,
+              "?": 0
+            }
+          }
+        }
+      },
+      "issues": [
+        "siapo_motif_not_detected"
+      ]
+    },
+    {
+      "kind": "variant",
+      "meme": "data-sovereignty",
+      "lang": "en",
+      "url": "https://te-pa.org/social-kit/campaign-data-sovereignty-en.png",
+      "http_status": 200,
+      "bytes": 110572,
+      "size_ok": true,
+      "sha256": "ed1364e9526c45c6260c1b251ae45a36343a8b16e70fd6a74c1b287099e79265",
+      "distinct_from_master": false,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": null,
+      "issues": [
+        "identical_to_bilingual_master"
+      ]
+    },
+    {
+      "kind": "variant",
+      "meme": "data-sovereignty",
+      "lang": "mi",
+      "url": "https://te-pa.org/social-kit/campaign-data-sovereignty-mi.png",
+      "http_status": 200,
+      "bytes": 105361,
+      "size_ok": true,
+      "sha256": "5750d05b71efc915d1f5f7c77e2a563f301663cc3ca60fb7fc7b575919c836f3",
+      "distinct_from_master": true,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": null,
+      "issues": []
+    },
+    {
+      "kind": "variant",
+      "meme": "data-sovereignty",
+      "lang": "pt",
+      "url": "https://te-pa.org/social-kit/campaign-data-sovereignty-pt.png",
+      "http_status": 200,
+      "bytes": 115393,
+      "size_ok": true,
+      "sha256": "790c53ddd0f7900f55ee571859d305a9d85b35900856deffbb7342580bd6103f",
+      "distinct_from_master": true,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": null,
+      "issues": []
+    },
+    {
+      "kind": "variant",
+      "meme": "data-sovereignty",
+      "lang": "gn",
+      "url": "https://te-pa.org/social-kit/campaign-data-sovereignty-gn.png",
+      "http_status": 200,
+      "bytes": 119744,
+      "size_ok": true,
+      "sha256": "0c4e5b0d7d3d26f7c20bcfade145b317395973847342b201c1fd1631bcfca412",
+      "distinct_from_master": true,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": {
+        "motif": "takua_bamboo",
+        "present": false,
+        "bands_with_motif": [],
+        "edges": {
+          "top": {
+            "transitions": 66,
+            "counts": {
+              "R": 365,
+              "B": 165,
+              "C": 0,
+              "?": 0
+            }
+          },
+          "bottom": {
+            "transitions": 66,
+            "counts": {
+              "R": 365,
+              "B": 165,
+              "C": 0,
+              "?": 0
+            }
+          }
+        }
+      },
+      "issues": [
+        "takua_motif_not_detected"
+      ]
+    },
+    {
+      "kind": "variant",
+      "meme": "data-sovereignty",
+      "lang": "sm",
+      "url": "https://te-pa.org/social-kit/campaign-data-sovereignty-sm.png",
+      "http_status": 200,
+      "bytes": 104535,
+      "size_ok": true,
+      "sha256": "3ce3f02a1c6064821441b41f22367541bffe52dd5cf36416f60f6b6cd19743cc",
+      "distinct_from_master": true,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": {
+        "motif": "siapo_faaaliao",
+        "present": false,
+        "bands_with_motif": [],
+        "edges": {
+          "top": {
+            "transitions": 66,
+            "counts": {
+              "R": 365,
+              "B": 165,
+              "C": 0,
+              "?": 0
+            }
+          },
+          "bottom": {
+            "transitions": 66,
+            "counts": {
+              "R": 365,
+              "B": 165,
+              "C": 0,
+              "?": 0
+            }
+          }
+        }
+      },
+      "issues": [
+        "siapo_motif_not_detected"
+      ]
+    },
+    {
+      "kind": "variant",
+      "meme": "enrol",
+      "lang": "en",
+      "url": "https://te-pa.org/social-kit/campaign-enrol-en.png",
+      "http_status": 200,
+      "bytes": 93203,
+      "size_ok": true,
+      "sha256": "819ead187e0beec7f83331034e22061458e823eb198d96aaf09b26c0e906e7fa",
+      "distinct_from_master": false,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": null,
+      "issues": [
+        "identical_to_bilingual_master"
+      ]
+    },
+    {
+      "kind": "variant",
+      "meme": "enrol",
+      "lang": "mi",
+      "url": "https://te-pa.org/social-kit/campaign-enrol-mi.png",
+      "http_status": 200,
+      "bytes": 97748,
+      "size_ok": true,
+      "sha256": "9a4d8c8815ee2e718936d0fc7ec534bebc3b17c202e7a5802e98c227a9e4a3e4",
+      "distinct_from_master": true,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": null,
+      "issues": []
+    },
+    {
+      "kind": "variant",
+      "meme": "enrol",
+      "lang": "pt",
+      "url": "https://te-pa.org/social-kit/campaign-enrol-pt.png",
+      "http_status": 200,
+      "bytes": 99416,
+      "size_ok": true,
+      "sha256": "ddb487ef4354a3b06b7282bfb7fb6a7a853eb25d16b31ab3972b5e953accf3fb",
+      "distinct_from_master": true,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": null,
+      "issues": []
+    },
+    {
+      "kind": "variant",
+      "meme": "enrol",
+      "lang": "gn",
+      "url": "https://te-pa.org/social-kit/campaign-enrol-gn.png",
+      "http_status": 200,
+      "bytes": 97882,
+      "size_ok": true,
+      "sha256": "5e77dfea4e8aa5fa9ea92bce531ad24937721774a4106b1aff5734e8381c0796",
+      "distinct_from_master": true,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": {
+        "motif": "takua_bamboo",
+        "present": false,
+        "bands_with_motif": [],
+        "edges": {
+          "top": {
+            "transitions": 58,
+            "counts": {
+              "R": 145,
+              "B": 385,
+              "C": 0,
+              "?": 0
+            }
+          },
+          "bottom": {
+            "transitions": 58,
+            "counts": {
+              "R": 145,
+              "B": 385,
+              "C": 0,
+              "?": 0
+            }
+          }
+        }
+      },
+      "issues": [
+        "takua_motif_not_detected"
+      ]
+    },
+    {
+      "kind": "variant",
+      "meme": "enrol",
+      "lang": "sm",
+      "url": "https://te-pa.org/social-kit/campaign-enrol-sm.png",
+      "http_status": 200,
+      "bytes": 90649,
+      "size_ok": true,
+      "sha256": "86fd08b735bb9a4b3c0f0000e0337d36938e0ff0af1205a062b5ff28ffefb782",
+      "distinct_from_master": true,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": {
+        "motif": "siapo_faaaliao",
+        "present": false,
+        "bands_with_motif": [],
+        "edges": {
+          "top": {
+            "transitions": 58,
+            "counts": {
+              "R": 145,
+              "B": 385,
+              "C": 0,
+              "?": 0
+            }
+          },
+          "bottom": {
+            "transitions": 58,
+            "counts": {
+              "R": 145,
+              "B": 385,
+              "C": 0,
+              "?": 0
+            }
+          }
+        }
+      },
+      "issues": [
+        "siapo_motif_not_detected"
+      ]
+    },
+    {
+      "kind": "variant",
+      "meme": "anamata",
+      "lang": "en",
+      "url": "https://te-pa.org/social-kit/campaign-anamata-en.png",
+      "http_status": 200,
+      "bytes": 85336,
+      "size_ok": true,
+      "sha256": "b026e89fec826385a76e6cabd7a9ee95b339c112035285abbd6b050dd7691d33",
+      "distinct_from_master": false,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": null,
+      "issues": [
+        "identical_to_bilingual_master"
+      ]
+    },
+    {
+      "kind": "variant",
+      "meme": "anamata",
+      "lang": "mi",
+      "url": "https://te-pa.org/social-kit/campaign-anamata-mi.png",
+      "http_status": 200,
+      "bytes": 82483,
+      "size_ok": true,
+      "sha256": "20a050915d68b264a39822849c9c2d2f3bab8f2dca90a1e7549333eea09011b6",
+      "distinct_from_master": true,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": null,
+      "issues": []
+    },
+    {
+      "kind": "variant",
+      "meme": "anamata",
+      "lang": "pt",
+      "url": "https://te-pa.org/social-kit/campaign-anamata-pt.png",
+      "http_status": 200,
+      "bytes": 87544,
+      "size_ok": true,
+      "sha256": "9e46f55ba5955f5abc9b644ca2d96f4eafa39c1573369b90792c380c7d0fbfd3",
+      "distinct_from_master": true,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": null,
+      "issues": []
+    },
+    {
+      "kind": "variant",
+      "meme": "anamata",
+      "lang": "gn",
+      "url": "https://te-pa.org/social-kit/campaign-anamata-gn.png",
+      "http_status": 200,
+      "bytes": 87808,
+      "size_ok": true,
+      "sha256": "f7aaee740fe41f255f7dcf243b75fa3c49c392e88f3362dd01605d78b2874123",
+      "distinct_from_master": true,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": {
+        "motif": "takua_bamboo",
+        "present": false,
+        "bands_with_motif": [],
+        "edges": {
+          "top": {
+            "transitions": 66,
+            "counts": {
+              "R": 365,
+              "B": 165,
+              "C": 0,
+              "?": 0
+            }
+          },
+          "bottom": {
+            "transitions": 66,
+            "counts": {
+              "R": 365,
+              "B": 165,
+              "C": 0,
+              "?": 0
+            }
+          }
+        }
+      },
+      "issues": [
+        "takua_motif_not_detected"
+      ]
+    },
+    {
+      "kind": "variant",
+      "meme": "anamata",
+      "lang": "sm",
+      "url": "https://te-pa.org/social-kit/campaign-anamata-sm.png",
+      "http_status": 200,
+      "bytes": 82880,
+      "size_ok": true,
+      "sha256": "5acff1f39fc83d7992a4fad029107310d7c9a1687c09c4046b547ffb2d999b7b",
+      "distinct_from_master": true,
+      "content_type": "image/png",
+      "cache_control": "public, max-age=31536000, immutable",
+      "etag": null,
+      "motif_probe": {
+        "motif": "siapo_faaaliao",
+        "present": false,
+        "bands_with_motif": [],
+        "edges": {
+          "top": {
+            "transitions": 66,
+            "counts": {
+              "R": 365,
+              "B": 165,
+              "C": 0,
+              "?": 0
+            }
+          },
+          "bottom": {
+            "transitions": 66,
+            "counts": {
+              "R": 365,
+              "B": 165,
+              "C": 0,
+              "?": 0
+            }
+          }
+        }
+      },
+      "issues": [
+        "siapo_motif_not_detected"
+      ]
+    }
+  ],
+  "summary": {
+    "total_files": 36,
+    "fully_clean": 18,
+    "with_issues": 18,
+    "issue_breakdown": {
+      "identical_to_bilingual_master": 6,
+      "takua_motif_not_detected": 6,
+      "siapo_motif_not_detected": 6
+    }
+  }
+}

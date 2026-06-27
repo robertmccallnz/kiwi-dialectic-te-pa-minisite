@@ -19,7 +19,9 @@ social-kit/platform/*
 # Distribution bundles — ship via teaching-kits/ + R2, not via static deploy
 social-kit/*.zip
 social-kit/*.pdf
-social-kit/stickers/te-pa-sticker-kit.zip
+# Exception: sticker-kit zip is referenced from #stickers section of index.html
+# and is small (898KB), so keep it in the static deploy.
+!social-kit/stickers/te-pa-sticker-kit.zip
 
 # Standalone large social-media source PNGs not embedded in the site
 assets/social/kiwi-dialectic-banner-x.png
