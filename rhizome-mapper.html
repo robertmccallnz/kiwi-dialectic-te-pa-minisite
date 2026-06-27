@@ -1050,6 +1050,7 @@
 
       <!-- Dynamic kit panel — updated by setLang() -->
       <div id="kit-download-panel" style="margin-top:1rem"></div>
+      <div id="calendar-today-panel"></div>
     </div>
 
   </div><!-- /network-section -->
@@ -1496,6 +1497,89 @@ function trackKitDownload(lang, kitType) {
   }).catch(() => {});
 }
 
+// ── Social Calendar Integration ───────────────────────────────────────────
+let _calendarData = null;
+
+async function fetchCalendar() {
+  if (_calendarData) return _calendarData;
+  try {
+    const r = await fetch('/data/social-calendar.json');
+    if (!r.ok) throw new Error('calendar not found');
+    _calendarData = await r.json();
+    return _calendarData;
+  } catch(e) {
+    console.warn('[Te Pā] social calendar fetch failed:', e.message);
+    return null;
+  }
+}
+
+async function getTodayMotif() {
+  const cal = await fetchCalendar();
+  if (!cal) return null;
+  const today = new Date();
+  const start = new Date('2026-07-01');
+  const diffDays = Math.floor((today - start) / 86400000);
+  const dayIndex = ((diffDays % 30) + 30) % 30; // cycle through 30 days
+  return cal.days[dayIndex] || cal.days[0];
+}
+
+async function renderCalendarPanel(lang) {
+  const panel = document.getElementById('calendar-today-panel');
+  if (!panel) return;
+  const day = await getTodayMotif();
+  if (!day) return;
+  const ld = day.languages[lang] || day.languages['en'];
+  const posts = ld.posts;
+  const orgsHtml = (day.orgs || []).slice(0, 3).map(o =>
+    `<a href="${o.url}" target="_blank" style="font-size:.68rem;color:var(--accent-2);text-decoration:none;border:1px solid rgba(255,255,255,.1);padding:.15rem .35rem;border-radius:3px;white-space:nowrap">${o.name.split('(')[0].trim().slice(0,28)}</a>`
+  ).join(' ');
+  
+  panel.innerHTML = `
+    <div style="border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.8rem;background:rgba(0,0,0,.2);margin-top:.8rem">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+        <span style="font-size:.75rem;font-weight:700;color:var(--accent)">📅 Today's Motif — Day ${day.day}</span>
+        <span style="font-size:.68rem;color:var(--fg-muted)">${day.date}</span>
+      </div>
+      <div style="font-size:.82rem;font-weight:600;color:var(--fg);margin-bottom:.3rem">${day.motif_id.replace(/_/g,' ').toUpperCase()}</div>
+      <div style="font-size:.72rem;color:var(--fg-muted);line-height:1.4;margin-bottom:.5rem">${ld.meaning_short || ''}</div>
+      ${orgsHtml ? `<div style="display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:.5rem">${orgsHtml}</div>` : ''}
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:.4rem">
+        <button onclick="copyPost('x_intro','${day.day}','${lang}')" style="font-size:.68rem;padding:.2rem .45rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:4px;color:var(--fg);cursor:pointer">🐦 Copy X Post</button>
+        <button onclick="copyPost('ig_caption','${day.day}','${lang}')" style="font-size:.68rem;padding:.2rem .45rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:4px;color:var(--fg);cursor:pointer">📸 Copy IG Caption</button>
+        <button onclick="copyPost('tiktok','${day.day}','${lang}')" style="font-size:.68rem;padding:.2rem .45rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:4px;color:var(--fg);cursor:pointer">🎵 Copy TikTok</button>
+      </div>
+      <div style="display:flex;gap:.4rem">
+        <a href="${day.motif_png}" target="_blank" style="font-size:.65rem;color:var(--accent);text-decoration:none">🖼️ PNG</a>
+        <a href="${day.meme_png}" target="_blank" style="font-size:.65rem;color:var(--accent);text-decoration:none">📲 Meme</a>
+        <a href="${ld.pdf_url}" target="_blank" style="font-size:.65rem;color:var(--accent);text-decoration:none">📄 Kit PDF</a>
+      </div>
+    </div>
+  `;
+}
+
+// Copy post to clipboard
+const _postCache = {};
+async function copyPost(postKey, dayNum, lang) {
+  const cacheKey = `${dayNum}-${lang}`;
+  if (!_postCache[cacheKey]) {
+    const cal = await fetchCalendar();
+    const day = cal.days.find(d => d.day == dayNum) || cal.days[0];
+    _postCache[cacheKey] = day;
+  }
+  const day = _postCache[cacheKey];
+  const text = day.languages[lang]?.posts?.[postKey] || '';
+  try {
+    await navigator.clipboard.writeText(text);
+    const btn = event.target;
+    const orig = btn.textContent;
+    btn.textContent = '✅ Copied!';
+    btn.style.color = '#2ecc71';
+    setTimeout(() => { btn.textContent = orig; btn.style.color = ''; }, 1800);
+  } catch(e) {
+    console.warn('Clipboard copy failed:', e);
+  }
+}
+
 function setLang(lang) {
   currentLang = lang;
   document.querySelectorAll('.lang-btn').forEach(b => {
@@ -1519,6 +1603,8 @@ function setLang(lang) {
   });
   // Fetch and render kit manifest for this language
   fetchKitManifest(lang).then(manifest => renderKitPanel(manifest));
+  // Update today's calendar panel for this language
+  renderCalendarPanel(lang);
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -3810,7 +3896,9 @@ function trackKit(langCode) {
   // init after D3 loads
   document.addEventListener('DOMContentLoaded', () => {
   // Initialise kit panel for default language
-  fetchKitManifest('en').then(manifest => renderKitPanel(manifest)); drawNetwork(); });
+  fetchKitManifest('en').then(manifest => renderKitPanel(manifest));
+  // Initialise today's calendar panel
+  renderCalendarPanel('en'); drawNetwork(); });
   // fallback if DOMContentLoaded already fired
   if (document.readyState === 'complete') drawNetwork();
 </script>
