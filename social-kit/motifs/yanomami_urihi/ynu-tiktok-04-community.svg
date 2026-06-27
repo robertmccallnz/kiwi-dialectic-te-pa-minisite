@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+<rect width="1080" height="1920" fill="#0d0d0d"/>
+<rect x="511.5" y="672.0" width="57.0" height="237.6" fill="#c0392b" opacity="0.7"/>
+<polygon points="540,434.4 397.44,719.52 682.56,719.52" fill="none" stroke="#c0392b" stroke-width="2.5" opacity="0.9"/>
+<polygon points="540,529.44 433.08,778.92 646.92,778.92" fill="none" stroke="#c0392b" stroke-width="2" opacity="0.7"/>
+<rect x="0" y="0" width="1080" height="24" fill="#c0392b"/>
+<rect x="0" y="1783" width="1080" height="137" fill="#0d0d0d"/>
+<text x="540" y="1190" font-family="Georgia,serif" font-size="105" font-weight="bold"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">Yanomami Urihi</text>
+<text x="540" y="1344" font-family="Arial,sans-serif" font-size="76"
+  font-weight="bold" fill="#c0392b" text-anchor="middle" dominant-baseline="middle">COMMUNITY FIRST</text>
+<text x="540" y="1498" font-family="Arial,sans-serif" font-size="42"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">Whakapapa and kinship over algorithm.</text>
+<text x="540" y="1632" font-family="Arial,sans-serif" font-size="34"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle" opacity="0.7">Forest-land — living territory and ancestral rights</text>
+<text x="540" y="1852" font-family="Arial,sans-serif" font-size="30" font-weight="bold"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">TE PĀ TŪWATAWATA · te-pa.org · Yanomami</text>
+</svg>

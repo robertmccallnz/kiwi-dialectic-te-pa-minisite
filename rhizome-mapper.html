@@ -2781,7 +2781,8 @@ function expandMotif(cardId, mJson) {
   const _mLang = (typeof currentLang !== 'undefined' ? currentLang : 'en');
   const meaning   = m[`meaning_${_mLang}`] || m.meaning_en || '';
   const colour    = m.colour_primary || '#888';
-  const pngUrl    = m.svg_r2_url   || '';
+  const svgUrl    = m.svg_r2_url   || '';
+  const pngUrl    = m.motif_png_url || m.svg_r2_url || '';
   const memeUrl   = m.meme_r2_url  || '';
   const module    = m.course_module || '';
   const courseUrl = module ? `https://kiwi-dialectic-te-pa-minisite.vercel.app#${module}` : '';
@@ -2842,12 +2843,29 @@ function expandMotif(cardId, mJson) {
            style="display:inline-flex;align-items:center;gap:4px;padding:6px 13px;border-radius:999px;border:1px dashed ${colour}44;background:transparent;color:${colour};font-size:.72rem;font-family:var(--font-sans);cursor:pointer;font-weight:600;text-decoration:none"
            onclick="trackEvent('download','${m.id}-motif')">&#x2913; Motif PNG</a>
       ` : ''}
+      ${svgUrl ? `
+        <a href="${svgUrl}" download="${m.id}-motif.svg"
+           style="display:inline-flex;align-items:center;gap:4px;padding:6px 13px;border-radius:999px;border:1px dashed ${colour}66;background:${colour}11;color:${colour};font-size:.72rem;font-family:var(--font-sans);cursor:pointer;font-weight:600;text-decoration:none"
+           onclick="trackEvent('download','${m.id}-svg')">&#x2913; Motif SVG</a>
+      ` : ''}
       ${courseUrl ? `
         <a href="${courseUrl}" target="_blank" rel="noopener"
            style="display:inline-flex;align-items:center;gap:4px;padding:6px 13px;border-radius:999px;border:1px solid #ffffff44;background:#ffffff11;color:#fff;font-size:.74rem;font-family:var(--font-sans);cursor:pointer;font-weight:700;text-decoration:none">
           &#x1F4D6; ${modLabel}
         </a>
       ` : ''}
+    </div>
+    <div style="margin-top:1rem;padding:.75rem;background:${colour}11;border:1px solid ${colour}33;border-radius:8px">
+      <p style="font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:${colour};font-weight:700;font-family:var(--font-sans);margin:0 0 .5rem">&#x1F4DA; Teaching Kit — Download by Language</p>
+      <div style="display:flex;flex-wrap:wrap;gap:.4rem">
+        ${['en','mi','pt','gn','sm','ar'].map(lc => {
+          const KIT_LABELS = {en:'English',mi:'Te Reo',pt:'Português',gn:"Avañe'ẽ",sm:'Samoa',ar:'عربي'};
+          const kitUrl = `https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-teaching-kit-${lc}.pdf`;
+          return `<a href="${kitUrl}" download="te-pa-teaching-kit-${lc}.pdf" target="_blank"
+            style="display:inline-flex;align-items:center;gap:3px;padding:5px 10px;border-radius:999px;border:1px solid ${colour}44;background:${colour}15;color:${colour};font-size:.7rem;font-family:var(--font-sans);font-weight:600;text-decoration:none"
+            onclick="trackEvent('kit_download_${lc}','${m.id}')">&#x2913; ${KIT_LABELS[lc]}</a>`;
+        }).join('')}
+      </div>
     </div>
   `;
   expanded.classList.add('open');

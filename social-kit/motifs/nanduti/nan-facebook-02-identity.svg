@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#0d0d0d"/>
+<line x1="797.4" y1="176.4" x2="797.4" y2="453.6" stroke="#e74c3c" stroke-width="1.5" opacity="0.7"/>
+<line x1="852.8" y1="176.4" x2="852.8" y2="453.6" stroke="#e74c3c" stroke-width="1.5" opacity="0.7"/>
+<line x1="908.3" y1="176.4" x2="908.3" y2="453.6" stroke="#e74c3c" stroke-width="1.5" opacity="0.7"/>
+<line x1="963.7" y1="176.4" x2="963.7" y2="453.6" stroke="#e74c3c" stroke-width="1.5" opacity="0.7"/>
+<line x1="1019.2" y1="176.4" x2="1019.2" y2="453.6" stroke="#e74c3c" stroke-width="1.5" opacity="0.7"/>
+<line x1="1074.6" y1="176.4" x2="1074.6" y2="453.6" stroke="#e74c3c" stroke-width="1.5" opacity="0.7"/>
+<line x1="797.4" y1="176.4" x2="1074.6" y2="176.4" stroke="#e74c3c" stroke-width="1.5" opacity="0.7"/>
+<line x1="797.4" y1="231.8" x2="1074.6" y2="231.8" stroke="#e74c3c" stroke-width="1.5" opacity="0.7"/>
+<line x1="797.4" y1="287.3" x2="1074.6" y2="287.3" stroke="#e74c3c" stroke-width="1.5" opacity="0.7"/>
+<line x1="797.4" y1="342.7" x2="1074.6" y2="342.7" stroke="#e74c3c" stroke-width="1.5" opacity="0.7"/>
+<line x1="797.4" y1="398.2" x2="1074.6" y2="398.2" stroke="#e74c3c" stroke-width="1.5" opacity="0.7"/>
+<line x1="797.4" y1="453.6" x2="1074.6" y2="453.6" stroke="#e74c3c" stroke-width="1.5" opacity="0.7"/>
+<line x1="797.4" y1="176.4" x2="1074.6" y2="453.6" stroke="#e74c3c" stroke-width="1.5" opacity="0.5"/>
+<line x1="1074.6" y1="176.4" x2="797.4" y2="453.6" stroke="#e74c3c" stroke-width="1.5" opacity="0.5"/>
+<circle cx="936.0" cy="315.0" r="138.6" fill="none" stroke="#e74c3c" stroke-width="2" opacity="0.8"/>
+<rect x="0" y="0" width="1200" height="8" fill="#e74c3c"/>
+<rect x="0" y="575" width="1200" height="55" fill="#0d0d0d"/>
+<text x="456" y="113" font-family="Georgia,serif" font-size="56" font-weight="bold"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">Ñandutí</text>
+<text x="456" y="202" font-family="Arial,sans-serif" font-size="40"
+  font-weight="bold" fill="#e74c3c" text-anchor="middle" dominant-baseline="middle">IDENTITY IS POWER</text>
+<text x="456" y="315" font-family="Arial,sans-serif" font-size="23"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">Culture encoded in every line.</text>
+<text x="456" y="403" font-family="Arial,sans-serif" font-size="17"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle" opacity="0.7">Spider web lace — feminine artisan sovereignty</text>
+<text x="600" y="603" font-family="Arial,sans-serif" font-size="15" font-weight="bold"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">TE PĀ TŪWATAWATA · te-pa.org · Guaraní</text>
+</svg>

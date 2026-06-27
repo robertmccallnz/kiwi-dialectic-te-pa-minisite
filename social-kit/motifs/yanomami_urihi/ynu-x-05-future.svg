@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#0d0d0d"/>
+<rect x="1224.2" y="450.0" width="47.5" height="198.0" fill="#c0392b" opacity="0.7"/>
+<polygon points="1248.0,252.0 1129.2,489.6 1366.8,489.6" fill="none" stroke="#c0392b" stroke-width="2.5" opacity="0.9"/>
+<polygon points="1248.0,331.2 1158.9,539.1 1337.1,539.1" fill="none" stroke="#c0392b" stroke-width="2" opacity="0.7"/>
+<rect x="0" y="0" width="1600" height="11" fill="#c0392b"/>
+<rect x="0" y="836" width="1600" height="64" fill="#0d0d0d"/>
+<text x="608" y="162" font-family="Georgia,serif" font-size="81" font-weight="bold"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">Yanomami Urihi</text>
+<text x="608" y="288" font-family="Arial,sans-serif" font-size="58"
+  font-weight="bold" fill="#c0392b" text-anchor="middle" dominant-baseline="middle">FUTURE ANCESTORS</text>
+<text x="608" y="450" font-family="Arial,sans-serif" font-size="34"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">Build the world your grandchildren inherit.</text>
+<text x="608" y="576" font-family="Arial,sans-serif" font-size="25"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle" opacity="0.7">Forest-land — living territory and ancestral rights</text>
+<text x="800" y="868" font-family="Arial,sans-serif" font-size="22" font-weight="bold"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">TE PĀ TŪWATAWATA · te-pa.org · Yanomami</text>
+</svg>

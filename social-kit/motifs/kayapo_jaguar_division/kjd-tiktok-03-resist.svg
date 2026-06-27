@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+<rect width="1080" height="1920" fill="#0d0d0d"/>
+<polygon points="540,434.4 777.6,672.0 540,909.6 302.4,672.0" fill="none" stroke="#f39c12" stroke-width="3" opacity="0.9"/><polygon points="540,553.2 658.8,672.0 540,790.8 421.2,672.0" fill="none" stroke="#f39c12" stroke-width="2" opacity="0.6"/>
+<rect x="0" y="0" width="1080" height="24" fill="#f39c12"/>
+<rect x="0" y="1783" width="1080" height="137" fill="#0d0d0d"/>
+<text x="540" y="1190" font-family="Georgia,serif" font-size="105" font-weight="bold"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">Kayapó Jaguar Division</text>
+<text x="540" y="1344" font-family="Arial,sans-serif" font-size="76"
+  font-weight="bold" fill="#f39c12" text-anchor="middle" dominant-baseline="middle">RESIST EXTRACTION</text>
+<text x="540" y="1498" font-family="Arial,sans-serif" font-size="42"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">Land, language, data — all connected.</text>
+<text x="540" y="1632" font-family="Arial,sans-serif" font-size="34"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle" opacity="0.7">Jaguar warrior society — ecological guardianship</text>
+<text x="540" y="1852" font-family="Arial,sans-serif" font-size="30" font-weight="bold"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">TE PĀ TŪWATAWATA · te-pa.org · Kayapó</text>
+</svg>

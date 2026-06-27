@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#0d0d0d"/>
+<rect x="919.4" y="315.0" width="33.3" height="138.6" fill="#27ae60" opacity="0.7"/>
+<polygon points="936.0,176.4 852.84,342.72 1019.16,342.72" fill="none" stroke="#27ae60" stroke-width="2.5" opacity="0.9"/>
+<polygon points="936.0,231.84 873.63,377.37 998.37,377.37" fill="none" stroke="#27ae60" stroke-width="2" opacity="0.7"/>
+<rect x="0" y="0" width="1200" height="8" fill="#27ae60"/>
+<rect x="0" y="575" width="1200" height="55" fill="#0d0d0d"/>
+<text x="456" y="113" font-family="Georgia,serif" font-size="56" font-weight="bold"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">Luta Pela Vida</text>
+<text x="456" y="202" font-family="Arial,sans-serif" font-size="40"
+  font-weight="bold" fill="#27ae60" text-anchor="middle" dominant-baseline="middle">COMMUNITY FIRST</text>
+<text x="456" y="315" font-family="Arial,sans-serif" font-size="23"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">Whakapapa and kinship over algorithm.</text>
+<text x="456" y="403" font-family="Arial,sans-serif" font-size="17"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle" opacity="0.7">Struggle for life — resistance and survival</text>
+<text x="600" y="603" font-family="Arial,sans-serif" font-size="15" font-weight="bold"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">TE PĀ TŪWATAWATA · te-pa.org · Amazonian</text>
+</svg>

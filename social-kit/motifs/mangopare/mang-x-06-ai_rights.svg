@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#0d0d0d"/>
+<circle cx="1248.0" cy="450.0" r="198.0" fill="none" stroke="#2980b9" stroke-width="2.5" opacity="0.8"/>
+<circle cx="1248.0" cy="450.0" r="128.7" fill="none" stroke="#2980b9" stroke-width="2" opacity="0.7"/>
+<circle cx="1248.0" cy="450.0" r="69.3" fill="none" stroke="#2980b9" stroke-width="1.5" opacity="0.6"/>
+<line x1="1050.0" y1="450.0" x2="1446.0" y2="450.0" stroke="#2980b9" stroke-width="1.5" opacity="0.5"/>
+<line x1="1248.0" y1="252.0" x2="1248.0" y2="648.0" stroke="#2980b9" stroke-width="1.5" opacity="0.5"/>
+<rect x="0" y="0" width="1600" height="11" fill="#2980b9"/>
+<rect x="0" y="836" width="1600" height="64" fill="#0d0d0d"/>
+<text x="608" y="162" font-family="Georgia,serif" font-size="81" font-weight="bold"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">Mangopare</text>
+<text x="608" y="288" font-family="Arial,sans-serif" font-size="58"
+  font-weight="bold" fill="#2980b9" text-anchor="middle" dominant-baseline="middle">AI RIGHTS NOW</text>
+<text x="608" y="450" font-family="Arial,sans-serif" font-size="34"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">No AI training on our sacred knowledge.</text>
+<text x="608" y="576" font-family="Arial,sans-serif" font-size="25"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle" opacity="0.7">Hammerhead shark — strength and tenacity</text>
+<text x="800" y="868" font-family="Arial,sans-serif" font-size="22" font-weight="bold"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">TE PĀ TŪWATAWATA · te-pa.org · Māori</text>
+</svg>

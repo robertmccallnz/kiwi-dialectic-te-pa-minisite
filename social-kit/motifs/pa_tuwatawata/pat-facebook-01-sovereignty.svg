@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#0d0d0d"/>
+<circle cx="936.0" cy="315.0" r="138.6" fill="none" stroke="#d35400" stroke-width="2.5" opacity="0.8"/>
+<circle cx="936.0" cy="315.0" r="90.1" fill="none" stroke="#d35400" stroke-width="2" opacity="0.7"/>
+<circle cx="936.0" cy="315.0" r="48.5" fill="none" stroke="#d35400" stroke-width="1.5" opacity="0.6"/>
+<line x1="797.4" y1="315.0" x2="1074.6" y2="315.0" stroke="#d35400" stroke-width="1.5" opacity="0.5"/>
+<line x1="936.0" y1="176.4" x2="936.0" y2="453.6" stroke="#d35400" stroke-width="1.5" opacity="0.5"/>
+<rect x="0" y="0" width="1200" height="8" fill="#d35400"/>
+<rect x="0" y="575" width="1200" height="55" fill="#0d0d0d"/>
+<text x="456" y="113" font-family="Georgia,serif" font-size="56" font-weight="bold"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">Pā Tūwatawata</text>
+<text x="456" y="202" font-family="Arial,sans-serif" font-size="40"
+  font-weight="bold" fill="#d35400" text-anchor="middle" dominant-baseline="middle">DATA SOVEREIGNTY</text>
+<text x="456" y="315" font-family="Arial,sans-serif" font-size="23"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">Indigenous knowledge is not open source.</text>
+<text x="456" y="403" font-family="Arial,sans-serif" font-size="17"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle" opacity="0.7">Palisade fence — collective protection</text>
+<text x="600" y="603" font-family="Arial,sans-serif" font-size="15" font-weight="bold"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">TE PĀ TŪWATAWATA · te-pa.org · Māori</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+<rect width="1080" height="1920" fill="#0d0d0d"/>
+<line x1="302.4" y1="434.4" x2="302.4" y2="909.6" stroke="#e67e22" stroke-width="1.5" opacity="0.7"/>
+<line x1="397.4" y1="434.4" x2="397.4" y2="909.6" stroke="#e67e22" stroke-width="1.5" opacity="0.7"/>
+<line x1="492.5" y1="434.4" x2="492.5" y2="909.6" stroke="#e67e22" stroke-width="1.5" opacity="0.7"/>
+<line x1="587.5" y1="434.4" x2="587.5" y2="909.6" stroke="#e67e22" stroke-width="1.5" opacity="0.7"/>
+<line x1="682.6" y1="434.4" x2="682.6" y2="909.6" stroke="#e67e22" stroke-width="1.5" opacity="0.7"/>
+<line x1="777.6" y1="434.4" x2="777.6" y2="909.6" stroke="#e67e22" stroke-width="1.5" opacity="0.7"/>
+<line x1="302.4" y1="434.4" x2="777.6" y2="434.4" stroke="#e67e22" stroke-width="1.5" opacity="0.7"/>
+<line x1="302.4" y1="529.4" x2="777.6" y2="529.4" stroke="#e67e22" stroke-width="1.5" opacity="0.7"/>
+<line x1="302.4" y1="624.5" x2="777.6" y2="624.5" stroke="#e67e22" stroke-width="1.5" opacity="0.7"/>
+<line x1="302.4" y1="719.5" x2="777.6" y2="719.5" stroke="#e67e22" stroke-width="1.5" opacity="0.7"/>
+<line x1="302.4" y1="814.6" x2="777.6" y2="814.6" stroke="#e67e22" stroke-width="1.5" opacity="0.7"/>
+<line x1="302.4" y1="909.6" x2="777.6" y2="909.6" stroke="#e67e22" stroke-width="1.5" opacity="0.7"/>
+<line x1="302.4" y1="434.4" x2="777.6" y2="909.6" stroke="#e67e22" stroke-width="1.5" opacity="0.5"/>
+<line x1="777.6" y1="434.4" x2="302.4" y2="909.6" stroke="#e67e22" stroke-width="1.5" opacity="0.5"/>
+<circle cx="540" cy="672.0" r="237.6" fill="none" stroke="#e67e22" stroke-width="2" opacity="0.8"/>
+<rect x="0" y="0" width="1080" height="24" fill="#e67e22"/>
+<rect x="0" y="1783" width="1080" height="137" fill="#0d0d0d"/>
+<text x="540" y="1190" font-family="Georgia,serif" font-size="105" font-weight="bold"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">Fa'a Aupega</text>
+<text x="540" y="1344" font-family="Arial,sans-serif" font-size="76"
+  font-weight="bold" fill="#e67e22" text-anchor="middle" dominant-baseline="middle">RESIST EXTRACTION</text>
+<text x="540" y="1498" font-family="Arial,sans-serif" font-size="42"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">Land, language, data — all connected.</text>
+<text x="540" y="1632" font-family="Arial,sans-serif" font-size="34"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle" opacity="0.7">Net — communal bonds that hold society together</text>
+<text x="540" y="1852" font-family="Arial,sans-serif" font-size="30" font-weight="bold"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">TE PĀ TŪWATAWATA · te-pa.org · Samoan</text>
+</svg>

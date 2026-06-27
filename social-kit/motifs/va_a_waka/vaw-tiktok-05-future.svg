@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+<rect width="1080" height="1920" fill="#0d0d0d"/>
+<path d="M302.4,672.0 Q540,576.96 777.6,672.0 Q540,719.52 302.4,672.0 Z" fill="none" stroke="#2980b9" stroke-width="3" opacity="0.9"/><line x1="540" y1="588.84" x2="540" y2="481.91999999999996" stroke="#2980b9" stroke-width="2.5" opacity="0.8"/><line x1="456.84000000000003" y1="481.91999999999996" x2="623.16" y2="481.91999999999996" stroke="#2980b9" stroke-width="2" opacity="0.7"/>
+<rect x="0" y="0" width="1080" height="24" fill="#2980b9"/>
+<rect x="0" y="1783" width="1080" height="137" fill="#0d0d0d"/>
+<text x="540" y="1190" font-family="Georgia,serif" font-size="105" font-weight="bold"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">Va'a Waka</text>
+<text x="540" y="1344" font-family="Arial,sans-serif" font-size="76"
+  font-weight="bold" fill="#2980b9" text-anchor="middle" dominant-baseline="middle">FUTURE ANCESTORS</text>
+<text x="540" y="1498" font-family="Arial,sans-serif" font-size="42"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">Build the world your grandchildren inherit.</text>
+<text x="540" y="1632" font-family="Arial,sans-serif" font-size="34"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle" opacity="0.7">Canoe — voyaging and collective navigation</text>
+<text x="540" y="1852" font-family="Arial,sans-serif" font-size="30" font-weight="bold"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">TE PĀ TŪWATAWATA · te-pa.org · Pacific</text>
+</svg>

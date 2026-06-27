@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080">
+<rect width="1080" height="1080" fill="#0d0d0d"/>
+<line x1="302.4" y1="172.8" x2="302.4" y2="648.0" stroke="#e74c3c" stroke-width="1.5" opacity="0.7"/>
+<line x1="397.4" y1="172.8" x2="397.4" y2="648.0" stroke="#e74c3c" stroke-width="1.5" opacity="0.7"/>
+<line x1="492.5" y1="172.8" x2="492.5" y2="648.0" stroke="#e74c3c" stroke-width="1.5" opacity="0.7"/>
+<line x1="587.5" y1="172.8" x2="587.5" y2="648.0" stroke="#e74c3c" stroke-width="1.5" opacity="0.7"/>
+<line x1="682.6" y1="172.8" x2="682.6" y2="648.0" stroke="#e74c3c" stroke-width="1.5" opacity="0.7"/>
+<line x1="777.6" y1="172.8" x2="777.6" y2="648.0" stroke="#e74c3c" stroke-width="1.5" opacity="0.7"/>
+<line x1="302.4" y1="172.8" x2="777.6" y2="172.8" stroke="#e74c3c" stroke-width="1.5" opacity="0.7"/>
+<line x1="302.4" y1="267.8" x2="777.6" y2="267.8" stroke="#e74c3c" stroke-width="1.5" opacity="0.7"/>
+<line x1="302.4" y1="362.9" x2="777.6" y2="362.9" stroke="#e74c3c" stroke-width="1.5" opacity="0.7"/>
+<line x1="302.4" y1="457.9" x2="777.6" y2="457.9" stroke="#e74c3c" stroke-width="1.5" opacity="0.7"/>
+<line x1="302.4" y1="553.0" x2="777.6" y2="553.0" stroke="#e74c3c" stroke-width="1.5" opacity="0.7"/>
+<line x1="302.4" y1="648.0" x2="777.6" y2="648.0" stroke="#e74c3c" stroke-width="1.5" opacity="0.7"/>
+<line x1="302.4" y1="172.8" x2="777.6" y2="648.0" stroke="#e74c3c" stroke-width="1.5" opacity="0.5"/>
+<line x1="777.6" y1="172.8" x2="302.4" y2="648.0" stroke="#e74c3c" stroke-width="1.5" opacity="0.5"/>
+<circle cx="540" cy="410.4" r="237.6" fill="none" stroke="#e74c3c" stroke-width="2" opacity="0.8"/>
+<rect x="0" y="0" width="1080" height="13" fill="#e74c3c"/>
+<rect x="0" y="1003" width="1080" height="77" fill="#0d0d0d"/>
+<text x="540" y="670" font-family="Georgia,serif" font-size="70" font-weight="bold"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">Ñandutí</text>
+<text x="540" y="756" font-family="Arial,sans-serif" font-size="48"
+  font-weight="bold" fill="#e74c3c" text-anchor="middle" dominant-baseline="middle">RESIST EXTRACTION</text>
+<text x="540" y="842" font-family="Arial,sans-serif" font-size="30"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">Land, language, data — all connected.</text>
+<text x="540" y="929" font-family="Arial,sans-serif" font-size="23"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle" opacity="0.7">Spider web lace — feminine artisan sovereignty</text>
+<text x="540" y="1042" font-family="Arial,sans-serif" font-size="19" font-weight="bold"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">TE PĀ TŪWATAWATA · te-pa.org · Guaraní</text>
+</svg>

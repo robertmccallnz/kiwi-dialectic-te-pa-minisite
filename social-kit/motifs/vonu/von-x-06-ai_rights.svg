@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#0d0d0d"/>
+<ellipse cx="1248.0" cy="450.0" rx="138.6" ry="99.0" fill="none" stroke="#27ae60" stroke-width="3" opacity="0.9"/><polygon points="1248.0,351.0 1198.5,311.4 1297.5,311.4" fill="none" stroke="#27ae60" stroke-width="2" opacity="0.8"/><line x1="1109.4" y1="450.0" x2="1050.0" y2="410.4" stroke="#27ae60" stroke-width="2.5" opacity="0.7"/><line x1="1386.6" y1="450.0" x2="1446.0" y2="410.4" stroke="#27ae60" stroke-width="2.5" opacity="0.7"/><line x1="1109.4" y1="450.0" x2="1050.0" y2="489.6" stroke="#27ae60" stroke-width="2.5" opacity="0.7"/><line x1="1386.6" y1="450.0" x2="1446.0" y2="489.6" stroke="#27ae60" stroke-width="2.5" opacity="0.7"/>
+<rect x="0" y="0" width="1600" height="11" fill="#27ae60"/>
+<rect x="0" y="836" width="1600" height="64" fill="#0d0d0d"/>
+<text x="608" y="162" font-family="Georgia,serif" font-size="81" font-weight="bold"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">Vonu</text>
+<text x="608" y="288" font-family="Arial,sans-serif" font-size="58"
+  font-weight="bold" fill="#27ae60" text-anchor="middle" dominant-baseline="middle">AI RIGHTS NOW</text>
+<text x="608" y="450" font-family="Arial,sans-serif" font-size="34"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">No AI training on our sacred knowledge.</text>
+<text x="608" y="576" font-family="Arial,sans-serif" font-size="25"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle" opacity="0.7">Turtle shell — longevity and ocean connection</text>
+<text x="800" y="868" font-family="Arial,sans-serif" font-size="22" font-weight="bold"
+  fill="#f4f0e8" text-anchor="middle" dominant-baseline="middle">TE PĀ TŪWATAWATA · te-pa.org · Fijian</text>
+</svg>
