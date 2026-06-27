@@ -1,0 +1,403 @@
+{
+  "_meta": {
+    "description": "Master template for partner onboarding docs. Each language key maps to translated strings. Add a new language block here, then run scripts/generate-partner-docs.js to auto-generate all outputs.",
+    "auto_generate_on_add": true,
+    "output_formats": ["md", "pdf"],
+    "r2_path": "partner-onboarding/te-pa-partner-onboarding-{lang}.pdf",
+    "api_base": "https://te-pa-analytics.sketchschool.workers.dev/api"
+  },
+
+  "languages": {
+
+    "en": {
+      "code": "en",
+      "name": "English",
+      "native_name": "English",
+      "direction": "ltr",
+      "region": "Global / Pacific",
+      "hashtags": ["#DataSovereignty", "#IndigenousAI", "#TePa", "#CARE", "#AIRights"],
+
+      "doc": {
+        "title": "Te Pā Tūwatawata — Partner Onboarding Guide",
+        "subtitle": "Indigenous Data Sovereignty · AI Education · Motif Access API",
+        "welcome": "Welcome to the Te Pā Tūwatawata partner network. This guide gives you everything you need to access our motif library, teaching kits, and public API — and integrate them into your own platforms, publications, or educational programmes.",
+        "about_heading": "About Te Pā Tūwatawata",
+        "about_body": "Te Pā Tūwatawata is a Charitable Trust based in Port Chalmers, Aotearoa New Zealand. We build open educational infrastructure for indigenous data sovereignty, AI literacy, and decolonial knowledge systems — rooted in the cultural motif traditions of Māori, Samoan, Pacific, Guaraní, Shipibo, Guna, Kayapó, Yanomami, Fijian, Tongan, and Amazonian peoples.",
+        "what_you_get_heading": "What Partners Get",
+        "what_you_get": [
+          "Access to 30 indigenous cultural motifs — PNG artwork, SVG vector files, and activist meme images",
+          "Teaching kits in 6 languages (English, Te Reo Māori, Português, Avañe'ẽ, Gagana Samoa, Arabic)",
+          "Read-only public API — 100 free requests/hour, no key required",
+          "Social media kit — 624 platform-optimised SVG cards across Facebook, Instagram, TikTok, X",
+          "Language-specific meme PNGs for all 30 motifs × 6 languages",
+          "CC BY-NC-SA 4.0 licence — free to use and adapt with attribution"
+        ],
+        "api_heading": "Public API",
+        "api_intro": "Our read-only API requires no authentication. All endpoints return JSON with full attribution built in.",
+        "api_base_label": "Base URL",
+        "api_endpoints": [
+          { "endpoint": "GET /api/motifs", "description": "All 30 motifs with meanings, CDN image URLs, and meme links", "example": "/api/motifs?culture=maori&lang=en" },
+          { "endpoint": "GET /api/motifs/:id", "description": "Single motif by ID — full asset listing", "example": "/api/motifs/koru" },
+          { "endpoint": "GET /api/cultures", "description": "List all 11 cultures with motif counts", "example": "/api/cultures" },
+          { "endpoint": "GET /api/meme", "description": "CDN URL for a language-specific meme PNG", "example": "/api/meme?id=koru&lang=en" },
+          { "endpoint": "GET /api/kit", "description": "Teaching kit PDF CDN URL for a given language", "example": "/api/kit?lang=en" }
+        ],
+        "api_courtesy": "Please include the header X-TePa-Use: <your project name> in your requests. This helps us understand how the API is used and supports future funding applications.",
+        "rate_limit_heading": "Rate Limits",
+        "rate_limit_body": "100 requests per hour per IP address. If you need higher limits for a specific project, contact us at te-pa.org.",
+        "assets_heading": "Downloading Assets",
+        "assets_cdn": "All assets are served from our Cloudflare R2 CDN:",
+        "asset_paths": [
+          { "label": "Motif PNG artwork", "path": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/{culture}/{id}.png" },
+          { "label": "Motif SVG vector", "path": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/{culture}/{id}.svg" },
+          { "label": "Activist meme (language)", "path": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_{id}_{lang}.png" },
+          { "label": "Teaching kit PDF", "path": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-teaching-kit-{lang}.pdf" }
+        ],
+        "attribution_heading": "Attribution & Licence",
+        "attribution_body": "All Te Pā motifs, images, and teaching materials are published under CC BY-NC-SA 4.0. You are free to share and adapt for non-commercial use, provided you give credit as follows:",
+        "attribution_example": "Te Pā Tūwatawata (te-pa.org) — CC BY-NC-SA 4.0",
+        "attribution_note": "Commercial use requires a separate agreement. Contact us to discuss partnership arrangements.",
+        "social_heading": "Social Media Integration",
+        "social_body": "Each motif has a full social kit with platform-optimised cards. Recommended hashtags for your posts:",
+        "social_note": "When posting, tag @KiwiDialectic and link back to te-pa.org/rhizome-mapper.html so your audience can explore the full network.",
+        "code_example_heading": "Quick Start — Code Example",
+        "code_example": "// Fetch all Māori motifs in English\nfetch('https://te-pa-analytics.sketchschool.workers.dev/api/motifs?culture=maori&lang=en', {\n  headers: { 'X-TePa-Use': 'YourProjectName' }\n})\n.then(r => r.json())\n.then(data => {\n  data.motifs.forEach(m => {\n    console.log(m.name_en, m.assets.meme_png);\n  });\n});",
+        "contact_heading": "Contact & Community",
+        "contact_body": "Te Pā Tūwatawata\n2 Mount Street, Port Chalmers, Dunedin 9023, Aotearoa New Zealand",
+        "contact_links": [
+          { "label": "Website", "url": "https://te-pa.org" },
+          { "label": "Rhizome Mapper", "url": "https://te-pa.org/rhizome-mapper.html" },
+          { "label": "GitHub", "url": "https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite" },
+          { "label": "API Docs", "url": "https://te-pa-analytics.sketchschool.workers.dev/api" }
+        ],
+        "footer": "Te Pā Tūwatawata Charitable Trust — te-pa.org — CC BY-NC-SA 4.0 — Generated automatically"
+      }
+    },
+
+    "mi": {
+      "code": "mi",
+      "name": "Te Reo Māori",
+      "native_name": "Te Reo Māori",
+      "direction": "ltr",
+      "region": "Aotearoa New Zealand",
+      "hashtags": ["#ManaMotuhake", "#ReoMāori", "#TePa", "#MātaurangaMāori", "#DataSovereignty"],
+
+      "doc": {
+        "title": "Te Pā Tūwatawata — Aratohu Mō Ngā Hoa Mahi",
+        "subtitle": "Mana Raraunga Ataura · Mātauranga AI · Āhei Tauira",
+        "welcome": "Nau mai ki te whatunga hoa mahi o Te Pā Tūwatawata. Ko tēnei aratohu he tūhonohono māu ki ā mātou kohinga tauira, kete ako, me te API tūmatanui — ā, ka āhei ai koe ki ēnei i roto i ō ake kaupeka, tānga, me ngā hōtaka ako.",
+        "about_heading": "Ko Wai Te Pā Tūwatawata",
+        "about_body": "He Tōpūtanga Aroha Te Pā Tūwatawata e noho ana i Te Pōhatu Tūhono, Ōtepoti, Aotearoa. Ka hanga mātou i ngā ara mātauranga tuwhera mō te mana raraunga ataura, te mōhiotanga AI, me ngā pūnaha mātauranga whakakoretia-āihe — e ūhia ana i ngā ahurea tauira o Māori, Samoa, Pasifika, Guaraní, Shipibo, Guna, Kayapó, Yanomami, Fijian, Tonga, me ngā tāngata Amazonian.",
+        "what_you_get_heading": "He Aha Ngā Hua Mō Ngā Hoa Mahi",
+        "what_you_get": [
+          "Āhei ki ngā tauira ataura ataura 30 — PNG, SVG, me ngā āhua meme kaiwhakaaro",
+          "Ngā kete ako i roto i ngā reo 6 (Ingarihi, Te Reo Māori, Português, Avañe'ẽ, Gagana Samoa, Arapi)",
+          "API tūmatanui e pānui ana anake — 100 tono utu-kore ia hāora, kāore he kī e hiahiatia ana",
+          "Kete pāpāho pāpori — SVG 624 i whakaritea mō Facebook, Instagram, TikTok, X",
+          "Ngā PNG meme mō ngā tauira katoa × reo 6",
+          "Raihana CC BY-NC-SA 4.0 — hei whakamahi, hei tūhono, me te tuku whakamana"
+        ],
+        "api_heading": "Te API Tūmatanui",
+        "api_intro": "Ko tō mātou API e pānui ana anake, kāore he tohu whakaurunga e hiahiatia ana. Ko ngā pātai katoa ka whakahoki JSON me ngā tuhinga whakamana i roto.",
+        "api_base_label": "URL Matua",
+        "api_endpoints": [
+          { "endpoint": "GET /api/motifs", "description": "Ngā tauira katoa 30 me ngā tikanga, URL CDN, me ngā hononga meme", "example": "/api/motifs?culture=maori&lang=mi" },
+          { "endpoint": "GET /api/motifs/:id", "description": "Tauira kotahi mā te ID — rārangi rawa katoa", "example": "/api/motifs/koru" },
+          { "endpoint": "GET /api/cultures", "description": "Ngā ahurea katoa 11 me ngā tatau tauira", "example": "/api/cultures" },
+          { "endpoint": "GET /api/meme", "description": "URL CDN mō te PNG meme reo-motuhake", "example": "/api/meme?id=koru&lang=mi" },
+          { "endpoint": "GET /api/kit", "description": "URL PDF kete ako mō ia reo", "example": "/api/kit?lang=mi" }
+        ],
+        "api_courtesy": "Tēnā, whakaurua te mātāmua X-TePa-Use: <ingoa kaupeka> ki ō tono. Ka āwhina tēnei i a mātou ki te mārama he aha ngā tikanga o te API me te tautoko i ngā tono pūtea.",
+        "rate_limit_heading": "Ngā Tepe Tono",
+        "rate_limit_body": "100 tono ia hāora ia IP. Mēnā e hiahia ana koe ki ētahi tepe nui ake mō tētahi kaupeka, whakapā mai ki a mātou i te-pa.org.",
+        "assets_heading": "Tikiake Rawa",
+        "assets_cdn": "Ko ngā rawa katoa ka tukuna mai i tō mātou CDN Cloudflare R2:",
+        "asset_paths": [
+          { "label": "PNG tauira", "path": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/{ahurea}/{id}.png" },
+          { "label": "SVG tauira", "path": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/{ahurea}/{id}.svg" },
+          { "label": "Meme reo-motuhake", "path": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_{id}_{reo}.png" },
+          { "label": "PDF kete ako", "path": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-teaching-kit-{reo}.pdf" }
+        ],
+        "attribution_heading": "Whakamana me te Raihana",
+        "attribution_body": "Ko ngā tauira, ngā āhua, me ngā rauemi ako katoa a Te Pā Tūwatawata ka tukuna i raro i CC BY-NC-SA 4.0. Ka āhei koe ki te toha me te whakarereke mō ngā tikanga kore-arumoni, me te tuku whakamana pēnei:",
+        "attribution_example": "Te Pā Tūwatawata (te-pa.org) — CC BY-NC-SA 4.0",
+        "attribution_note": "Mō te whakamahi arumoni, me whiriwhiri me mātou. Whakapā mai ki a mātou.",
+        "social_heading": "Hononga Pāpāho Pāpori",
+        "social_body": "He kete pāpori tino mō ia tauira me ngā kāri i whakaritea mō ia paepae. Ko ngā tūtohu i tūtohungia mō ō tūāhono:",
+        "social_note": "I ō tūāhono, tūtohu @KiwiDialectic me te hononga ki te-pa.org/rhizome-mapper.html kia āhei ai ō hunga whai i te tūhura i te whatunga katoa.",
+        "code_example_heading": "Tīmatanga Tere — Tauira Waehere",
+        "code_example": "// Tikina ngā tauira Māori katoa i roto i te Reo Māori\nfetch('https://te-pa-analytics.sketchschool.workers.dev/api/motifs?culture=maori&lang=mi', {\n  headers: { 'X-TePa-Use': 'IngoaKaupeka' }\n})\n.then(r => r.json())\n.then(raraunga => {\n  raraunga.motifs.forEach(m => {\n    console.log(m.name_indigenous, m.assets.meme_png);\n  });\n});",
+        "contact_heading": "Whakapā Mai",
+        "contact_body": "Te Pā Tūwatawata\n2 Mount Street, Te Pōhatu Tūhono, Ōtepoti 9023, Aotearoa",
+        "contact_links": [
+          { "label": "Paetukutuku", "url": "https://te-pa.org" },
+          { "label": "Mahere Rizome", "url": "https://te-pa.org/rhizome-mapper.html" },
+          { "label": "GitHub", "url": "https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite" },
+          { "label": "Tuhinga API", "url": "https://te-pa-analytics.sketchschool.workers.dev/api" }
+        ],
+        "footer": "Tōpūtanga Aroha Te Pā Tūwatawata — te-pa.org — CC BY-NC-SA 4.0 — I hangaia aunoa"
+      }
+    },
+
+    "pt": {
+      "code": "pt",
+      "name": "Portuguese",
+      "native_name": "Português",
+      "direction": "ltr",
+      "region": "Brasil / América do Sul",
+      "hashtags": ["#SoberaniadeDados", "#PovosIndígenas", "#TePa", "#AIIndígena", "#CARE"],
+
+      "doc": {
+        "title": "Te Pā Tūwatawata — Guia de Integração para Parceiros",
+        "subtitle": "Soberania de Dados Indígena · Educação em IA · Acesso à API de Motivos",
+        "welcome": "Bem-vindo à rede de parceiros da Te Pā Tūwatawata. Este guia oferece tudo o que você precisa para acessar nossa biblioteca de motivos, kits de ensino e API pública — e integrá-los em suas próprias plataformas, publicações ou programas educacionais.",
+        "about_heading": "Sobre a Te Pā Tūwatawata",
+        "about_body": "A Te Pā Tūwatawata é um Trust Charitable sediado em Port Chalmers, Aotearoa Nova Zelândia. Construímos infraestrutura educacional aberta para soberania de dados indígena, alfabetização em IA e sistemas de conhecimento decoloniais — enraizados nas tradições de motivos culturais dos povos Māori, Samoano, Pacífico, Guaraní, Shipibo, Guna, Kayapó, Yanomami, Fijiano, Tonganês e Amazônico.",
+        "what_you_get_heading": "O Que os Parceiros Recebem",
+        "what_you_get": [
+          "Acesso a 30 motivos culturais indígenas — arte PNG, arquivos vetoriais SVG e imagens meme ativistas",
+          "Kits de ensino em 6 idiomas (Inglês, Te Reo Māori, Português, Avañe'ẽ, Gagana Samoa, Árabe)",
+          "API pública somente leitura — 100 solicitações gratuitas/hora, sem chave necessária",
+          "Kit de mídia social — 624 cards SVG otimizados para Facebook, Instagram, TikTok, X",
+          "PNGs de meme específicos por idioma para todos os 30 motivos × 6 idiomas",
+          "Licença CC BY-NC-SA 4.0 — livre para usar e adaptar com atribuição"
+        ],
+        "api_heading": "API Pública",
+        "api_intro": "Nossa API somente leitura não requer autenticação. Todos os endpoints retornam JSON com atribuição completa integrada.",
+        "api_base_label": "URL Base",
+        "api_endpoints": [
+          { "endpoint": "GET /api/motifs", "description": "Todos os 30 motivos com significados, URLs de CDN e links de meme", "example": "/api/motifs?culture=guarani&lang=pt" },
+          { "endpoint": "GET /api/motifs/:id", "description": "Motivo único por ID — listagem completa de assets", "example": "/api/motifs/yvy_mara_ey" },
+          { "endpoint": "GET /api/cultures", "description": "Listar todas as 11 culturas com contagens de motivos", "example": "/api/cultures" },
+          { "endpoint": "GET /api/meme", "description": "URL CDN para PNG de meme específico por idioma", "example": "/api/meme?id=yvy_mara_ey&lang=pt" },
+          { "endpoint": "GET /api/kit", "description": "URL PDF do kit de ensino para um idioma", "example": "/api/kit?lang=pt" }
+        ],
+        "api_courtesy": "Por favor, inclua o cabeçalho X-TePa-Use: <nome do seu projeto> em suas solicitações. Isso nos ajuda a entender como a API está sendo usada e apoia futuras solicitações de financiamento.",
+        "rate_limit_heading": "Limites de Taxa",
+        "rate_limit_body": "100 solicitações por hora por endereço IP. Se você precisar de limites mais altos para um projeto específico, entre em contato conosco em te-pa.org.",
+        "assets_heading": "Download de Assets",
+        "assets_cdn": "Todos os assets são servidos pelo nosso CDN Cloudflare R2:",
+        "asset_paths": [
+          { "label": "Arte PNG do motivo", "path": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/{cultura}/{id}.png" },
+          { "label": "Vetor SVG do motivo", "path": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/{cultura}/{id}.svg" },
+          { "label": "Meme ativista (idioma)", "path": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_{id}_{lang}.png" },
+          { "label": "PDF do kit de ensino", "path": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-teaching-kit-{lang}.pdf" }
+        ],
+        "attribution_heading": "Atribuição e Licença",
+        "attribution_body": "Todos os motivos, imagens e materiais de ensino da Te Pā são publicados sob CC BY-NC-SA 4.0. Você pode compartilhar e adaptar para uso não comercial, desde que dê crédito da seguinte forma:",
+        "attribution_example": "Te Pā Tūwatawata (te-pa.org) — CC BY-NC-SA 4.0",
+        "attribution_note": "O uso comercial requer um acordo separado. Entre em contato conosco para discutir arranjos de parceria.",
+        "social_heading": "Integração com Mídias Sociais",
+        "social_body": "Cada motivo tem um kit social completo com cards otimizados por plataforma. Hashtags recomendadas para suas postagens:",
+        "social_note": "Ao postar, marque @KiwiDialectic e adicione um link para te-pa.org/rhizome-mapper.html para que seu público explore a rede completa.",
+        "code_example_heading": "Início Rápido — Exemplo de Código",
+        "code_example": "// Buscar todos os motivos Guaraní em Português\nfetch('https://te-pa-analytics.sketchschool.workers.dev/api/motifs?culture=guarani&lang=pt', {\n  headers: { 'X-TePa-Use': 'NomeDoSeuProjeto' }\n})\n.then(r => r.json())\n.then(dados => {\n  dados.motifs.forEach(m => {\n    console.log(m.name_en, m.assets.meme_png);\n  });\n});",
+        "contact_heading": "Contato e Comunidade",
+        "contact_body": "Te Pā Tūwatawata\n2 Mount Street, Port Chalmers, Dunedin 9023, Aotearoa Nova Zelândia",
+        "contact_links": [
+          { "label": "Site", "url": "https://te-pa.org" },
+          { "label": "Mapa Rizoma", "url": "https://te-pa.org/rhizome-mapper.html" },
+          { "label": "GitHub", "url": "https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite" },
+          { "label": "Documentação da API", "url": "https://te-pa-analytics.sketchschool.workers.dev/api" }
+        ],
+        "footer": "Trust Charitable Te Pā Tūwatawata — te-pa.org — CC BY-NC-SA 4.0 — Gerado automaticamente"
+      }
+    },
+
+    "gn": {
+      "code": "gn",
+      "name": "Guaraní",
+      "native_name": "Avañe'ẽ",
+      "direction": "ltr",
+      "region": "Paraguay / Brasil / Argentina",
+      "hashtags": ["#TekoteviPorãvéva", "#ÑanderuviPorã", "#TePa", "#Guaraní", "#SoberaniadeDados"],
+
+      "doc": {
+        "title": "Te Pā Tūwatawata — Ñorairõ Rehegua Mba'eporu",
+        "subtitle": "Soberanía Datos Ñande reko rehegua · Mbo'esyry IA rehegua · API Motivo Jeike",
+        "welcome": "Eguahẽ porã Te Pā Tūwatawata ñorairõ peteĩ aty-pe. Ko mba'eporu oñeme'ẽva ndéve mba'e oñeikotevẽva oñemoarandu haguã ñande motivo raity, mbo'e jehayhu, ha API tūmatanui — ha oñemongu'e haguã nde atypy, moñe'ẽrã, térã mbo'epyrã-pe.",
+        "about_heading": "Mba'épa Te Pā Tūwatawata",
+        "about_body": "Te Pā Tūwatawata he'i peteĩ Tōpūtanga Aroha oikóva Port Chalmers-pe, Aotearoa Nueva Zelanda. Ojapo mba'eporu mbo'e hepyme'ẽva soberanía datos ñande reko rehegua, alfabetización AI rehegua, ha teko arandu ko'ã rehegua — oñemopyenda umi arandupykuéra Māori, Samoa, Pasifiko, Guaraní, Shipibo, Guna, Kayapó, Yanomami, Fijiano, Tonga, ha Amazónico rembiporu tauirã culturalpegua.",
+        "what_you_get_heading": "Mba'e Oñeme'ẽva Ñorairõháme",
+        "what_you_get": [
+          "Oñeike 30 motivo cultural ñande reko rehegua — PNG ñomongeta, SVG vector, ha imagen meme kaiwhakaaro",
+          "Mbo'e jehayhu reo 6-pe (Inglés, Te Reo Māori, Português, Avañe'ẽ, Gagana Samoa, Árabe)",
+          "API tūmatanui ohecha añoite — tono 100 hepyme'ẽ'ỹ ia hóra, ndaha'éi ñe'ẽsã oñeikotevẽva",
+          "Mbo'eporu papaho pāpori — SVG 624 Facebook, Instagram, TikTok, X-pe",
+          "PNG meme reo motuhake 30 motivo × reo 6 katupyry",
+          "Raihana CC BY-NC-SA 4.0 — hepyme'ẽ'ỹ oñeikuaa ha oñemyatyrõ oñembohovái rire"
+        ],
+        "api_heading": "API Tūmatanui",
+        "api_intro": "Ñande API ohecha añoite ndoikotevẽi autenticación. Pytyvõ oñemboguejy JSON oñemboyvéva ñorairõ mbohovái rehe.",
+        "api_base_label": "URL Yvypóra",
+        "api_endpoints": [
+          { "endpoint": "GET /api/motifs", "description": "Motivo 30 katupyry ñe'ẽ, CDN URL, ha meme hononga ndive", "example": "/api/motifs?culture=guarani&lang=gn" },
+          { "endpoint": "GET /api/motifs/:id", "description": "Motivo peteĩ ID ndive — rawa rārangi katupyry", "example": "/api/motifs/yvy_mara_ey" },
+          { "endpoint": "GET /api/cultures", "description": "Ahurea 11 katupyry tatau motivo ndive", "example": "/api/cultures" },
+          { "endpoint": "GET /api/meme", "description": "CDN URL meme PNG reo motuhake", "example": "/api/meme?id=yvy_mara_ey&lang=gn" },
+          { "endpoint": "GET /api/kit", "description": "PDF URL mbo'e jehayhu reo peteĩhápe", "example": "/api/kit?lang=gn" }
+        ],
+        "api_courtesy": "Tēnā embojoapy mātāmua X-TePa-Use: <nde mba'apo réra> ñe mboguejy-pe. Ko'ã oñemoñe'ẽva ndéve oñeikuaava mba'éichapa API ojeporúva ha oipytyvõva pĩ'a poteĩ ypykuéra.",
+        "rate_limit_heading": "Límite Mboguejy",
+        "rate_limit_body": "100 mboguejy ia hóra IP peteĩhápe. Emongakuaa tereho te-pa.org-pe mba'éicharõ eikotevẽ límite tuichave peteĩ mba'apo rehegua.",
+        "assets_heading": "Eñemohu'ã Rawa",
+        "assets_cdn": "Rawa katupyry oguejy CDN Cloudflare R2 ñande-gui:",
+        "asset_paths": [
+          { "label": "PNG motivo ñomongeta", "path": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/{ahurea}/{id}.png" },
+          { "label": "SVG motivo vector", "path": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/{ahurea}/{id}.svg" },
+          { "label": "Meme reo motuhake", "path": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_{id}_{reo}.png" },
+          { "label": "PDF mbo'e jehayhu", "path": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-teaching-kit-{reo}.pdf" }
+        ],
+        "attribution_heading": "Mbohovái ha Raihana",
+        "attribution_body": "Motivo, imagen, ha mbo'epyrã katupyry Te Pā oñepyrũva CC BY-NC-SA 4.0 ndive. Ikatu eike ha emyatyrõ arumoni'ỹ rehe, emoñe'ẽ porã ko'ãicha:",
+        "attribution_example": "Te Pā Tūwatawata (te-pa.org) — CC BY-NC-SA 4.0",
+        "attribution_note": "Arumoni rehegua jeporúpegua oñeikotevẽ acuerdo peteĩ. Emoñe'ẽ ñandéve.",
+        "social_heading": "Papaho Pāpori Ñembojoaju",
+        "social_body": "Motivo peteĩháme oĩ kit social katupyry kāri oñemopyendáva plataforma peteĩhápe. Hashtag oñeporúva porã tūāhono-pe:",
+        "social_note": "Embohovái rire, e'ata @KiwiDialectic ha eñe'ẽ te-pa.org/rhizome-mapper.html-pe kia āhei ai ō hunga whai i te tūhura i te whatunga katoa.",
+        "code_example_heading": "Tīmatanga Tere — Tauira Waehere",
+        "code_example": "// Eñemohu'ã motivo Guaraní katupyry Avañe'ẽ-pe\nfetch('https://te-pa-analytics.sketchschool.workers.dev/api/motifs?culture=guarani&lang=gn', {\n  headers: { 'X-TePa-Use': 'NdeMba'apoRéra' }\n})\n.then(r => r.json())\n.then(mba'e => {\n  mba'e.motifs.forEach(m => {\n    console.log(m.name_en, m.assets.meme_png);\n  });\n});",
+        "contact_heading": "Emoñe'ẽ Ñandéve",
+        "contact_body": "Te Pā Tūwatawata\n2 Mount Street, Port Chalmers, Dunedin 9023, Aotearoa Nueva Zelanda",
+        "contact_links": [
+          { "label": "Tenda Yvypóra", "url": "https://te-pa.org" },
+          { "label": "Mapa Rizoma", "url": "https://te-pa.org/rhizome-mapper.html" },
+          { "label": "GitHub", "url": "https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite" },
+          { "label": "API Mboepyrã", "url": "https://te-pa-analytics.sketchschool.workers.dev/api" }
+        ],
+        "footer": "Te Pā Tūwatawata Tōpūtanga Aroha — te-pa.org — CC BY-NC-SA 4.0 — Oñemoheñói aunoa"
+      }
+    },
+
+    "sm": {
+      "code": "sm",
+      "name": "Samoan",
+      "native_name": "Gagana Samoa",
+      "direction": "ltr",
+      "region": "Oceania / Pasefika",
+      "hashtags": ["#TaofiFaaSamoa", "#GaganaOLomuamua", "#TePa", "#DataSovereignty", "#Oceania"],
+
+      "doc": {
+        "title": "Te Pā Tūwatawata — Fa'amatalaga mo Paaga fou",
+        "subtitle": "Pule Fa'apitoa i Faamaumauga Tuto'atasi · A'oa'oga AI · Fa'aogaina o le API Motif",
+        "welcome": "Afio mai i le fesoasoani a Te Pā Tūwatawata. O lenei fa'amatalaga e tu'uina atu ai mea uma e te mana'omia e fa'aogaina ai la matou faletusi o motif, seti a'oa'oga, ma le API fa'alaua'itele — ma fa'afesoota'i i lou lava platformi, fa'asalalauga, po'o polokalame a'oa'oga.",
+        "about_heading": "O ai Te Pā Tūwatawata",
+        "about_body": "O Te Pā Tūwatawata o se Fa'alapotopotoga Alofa e nofo i Port Chalmers, Aotearoa Niu Sila. Matou te fausia atiina'e a'oa'oga tatala mo pule fa'apitoa i faamaumauga tuto'atasi, iloa AI, ma faiga o malamalama fa'a-decolonial — e aʻafia ai tu ma aga o Māori, Samoa, Pasifika, Guaraní, Shipibo, Guna, Kayapó, Yanomami, Fijiano, Tonga, ma Amazonian.",
+        "what_you_get_heading": "O le a Maua e Paaga",
+        "what_you_get": [
+          "Fa'aogaina o motif faaleaganuu 30 — ata PNG, faila vector SVG, ma ata meme fa'aalia",
+          "Seti a'oa'oga i gagana e 6 (Igilisi, Te Reo Māori, Português, Avañe'ẽ, Gagana Samoa, Arapi)",
+          "API fa'alaua'itele faitau-na'o — talosaga 100 fua ia itula, e le mana'omia se ki",
+          "Seti fa'asalalauga fa'aagafesootai — SVG 624 mo Facebook, Instagram, TikTok, X",
+          "PNG meme fa'a-gagana mo motif uma 30 × gagana 6",
+          "Laisene CC BY-NC-SA 4.0 — saoloto e fa'aoga ma fa'aleleia ma fa'amaonia"
+        ],
+        "api_heading": "Le API Fa'alaua'itele",
+        "api_intro": "O la matou API faitau-na'o e le mana'omia se fa'amaonia. O endpoint uma e toe fo'i JSON ma fa'amaonia atoatoa i totonu.",
+        "api_base_label": "URL Autu",
+        "api_endpoints": [
+          { "endpoint": "GET /api/motifs", "description": "Motif uma 30 ma uiga, URL CDN, ma feso'ota'iga meme", "example": "/api/motifs?culture=samoan&lang=sm" },
+          { "endpoint": "GET /api/motifs/:id", "description": "Motif tasi e ala i le ID — lisi atoatoa o kolekita", "example": "/api/motifs/niho_mano" },
+          { "endpoint": "GET /api/cultures", "description": "Lisi aganuu uma 11 ma fuainumera o motif", "example": "/api/cultures" },
+          { "endpoint": "GET /api/meme", "description": "URL CDN mo le PNG meme fa'a-gagana", "example": "/api/meme?id=niho_mano&lang=sm" },
+          { "endpoint": "GET /api/kit", "description": "URL PDF o seti a'oa'oga mo se gagana", "example": "/api/kit?lang=sm" }
+        ],
+        "api_courtesy": "Fa'amolemole fa'aopoopo le ulutala X-TePa-Use: <igoa o lau poloketi> i au talosaga. E fesoasoani tele lenei ia matou malamalama pe fa'afefea ona fa'aogaina le API ma lagolagoina talosaga mo tupe.",
+        "rate_limit_heading": "Tumau o Talosaga",
+        "rate_limit_body": "Talosaga 100 ia itula ia IP. Afai e te mana'omia fa'atupuina mo se poloketi fa'apitoa, fa'afesoota'i mai ia i matou i te-pa.org.",
+        "assets_heading": "Soo'ia Kolekita",
+        "assets_cdn": "Kolekita uma e tu'uina atu mai le CDN Cloudflare R2 a matou:",
+        "asset_paths": [
+          { "label": "Ata PNG motif", "path": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/{aganuu}/{id}.png" },
+          { "label": "Vector SVG motif", "path": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/{aganuu}/{id}.svg" },
+          { "label": "Meme fa'a-gagana", "path": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_{id}_{gagana}.png" },
+          { "label": "PDF seti a'oa'oga", "path": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-teaching-kit-{gagana}.pdf" }
+        ],
+        "attribution_heading": "Fa'amaonia ma Laisene",
+        "attribution_body": "Motif uma, ata, ma mea a'oa'oga a Te Pā e fa'asalalauina i lalo o CC BY-NC-SA 4.0. E mafai ona e fa'asoa ma fa'aleleia mo fa'aoga e le fa'apisinisi, ae tu'uina atu le fa'amaonia fa'apea:",
+        "attribution_example": "Te Pā Tūwatawata (te-pa.org) — CC BY-NC-SA 4.0",
+        "attribution_note": "Mo fa'aoga fa'apisinisi e mana'omia se maliega eseese. Fa'afesoota'i mai ia i matou.",
+        "social_heading": "Fa'afesoota'iga i Fa'asalalauga Fa'aagafesootai",
+        "social_body": "O motif ta'itasi e iai seti fa'aagafesootai atoatoa ma kata fa'aaogaina mo platformi ta'itasi. Hashtag fautuaina mo au fa'asalalauga:",
+        "social_note": "A e fa'asoa ai, fa'ailoa @KiwiDialectic ma fa'aopoopo le feso'ota'iga i te-pa.org/rhizome-mapper.html ina ia mafai e lau au ona su'esu'e le fesoasoani atoatoa.",
+        "code_example_heading": "Amata Vave — Fa'ata'ita'iga Koti",
+        "code_example": "// Maua motif Samoa uma i le Gagana Samoa\nfetch('https://te-pa-analytics.sketchschool.workers.dev/api/motifs?culture=samoan&lang=sm', {\n  headers: { 'X-TePa-Use': 'IgoaPoloketi' }\n})\n.then(r => r.json())\n.then(faamaumauga => {\n  faamaumauga.motifs.forEach(m => {\n    console.log(m.name_en, m.assets.meme_png);\n  });\n});",
+        "contact_heading": "Fa'afesoota'i Mai",
+        "contact_body": "Te Pā Tūwatawata\n2 Mount Street, Port Chalmers, Dunedin 9023, Aotearoa Niu Sila",
+        "contact_links": [
+          { "label": "Upega Tafaʻilagi", "url": "https://te-pa.org" },
+          { "label": "Fa'amaufa'ailoga Rizome", "url": "https://te-pa.org/rhizome-mapper.html" },
+          { "label": "GitHub", "url": "https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite" },
+          { "label": "Fa'amatalaga API", "url": "https://te-pa-analytics.sketchschool.workers.dev/api" }
+        ],
+        "footer": "Fa'alapotopotoga Alofa Te Pā Tūwatawata — te-pa.org — CC BY-NC-SA 4.0 — Gaosia otometi"
+      }
+    },
+
+    "ar": {
+      "code": "ar",
+      "name": "Arabic",
+      "native_name": "العربية",
+      "direction": "rtl",
+      "region": "الشرق الأوسط وشمال أفريقيا / عالمي",
+      "hashtags": ["#سيادة_البيانات", "#الذكاء_الاصطناعي_الأصلي", "#TePa", "#CARE", "#حقوق_البيانات", "#الشعوب_الأصلية"],
+
+      "doc": {
+        "title": "تي پا توواتاواتا — دليل تأهيل الشركاء",
+        "subtitle": "سيادة البيانات الأصلية · تعليم الذكاء الاصطناعي · الوصول إلى واجهة برمجة التطبيقات",
+        "welcome": "أهلاً بك في شبكة شركاء تي پا توواتاواتا. يمنحك هذا الدليل كل ما تحتاجه للوصول إلى مكتبة الزخارف والحقائب التعليمية وواجهة برمجة التطبيقات العامة — ودمجها في منصاتك وإصداراتك أو برامجك التعليمية.",
+        "about_heading": "عن تي پا توواتاواتا",
+        "about_body": "تي پا توواتاواتا هي مؤسسة خيرية مقرها في بورت تشالمرز، أوتياروا نيوزيلندا. نبني بنية تحتية تعليمية مفتوحة لسيادة البيانات الأصلية ومحو أمية الذكاء الاصطناعي وأنظمة المعرفة التحررية — متجذرة في تقاليد الزخارف الثقافية لشعوب ماوري وساموا والمحيط الهادئ والغواراني والشيبيبو وغونا وكايابو ويانومامي وفيجي وتونغا والأمازون.",
+        "what_you_get_heading": "ما يحصل عليه الشركاء",
+        "what_you_get": [
+          "الوصول إلى 30 زخرفة ثقافية أصلية — صور PNG وملفات متجهة SVG وصور ميم ناشطة",
+          "حقائب تعليمية بـ 6 لغات (الإنجليزية، التي ريو ماوري، البرتغالية، أڤانييي، الساموية، العربية)",
+          "واجهة برمجة تطبيقات عامة للقراءة فقط — 100 طلب مجاني/ساعة، لا يلزم مفتاح",
+          "مجموعة وسائل التواصل الاجتماعي — 624 بطاقة SVG محسّنة لفيسبوك وإنستغرام وتيكتوك وX",
+          "صور ميم PNG خاصة باللغة لجميع الزخارف الـ 30 × 6 لغات",
+          "رخصة CC BY-NC-SA 4.0 — مجانية الاستخدام والتكيف مع الإسناد"
+        ],
+        "api_heading": "واجهة برمجة التطبيقات العامة",
+        "api_intro": "لا تتطلب واجهة البرمجة للقراءة فقط أي مصادقة. جميع نقاط النهاية تُرجع JSON مع إسناد كامل مدمج.",
+        "api_base_label": "عنوان URL الأساسي",
+        "api_endpoints": [
+          { "endpoint": "GET /api/motifs", "description": "جميع الزخارف الـ 30 مع المعاني وعناوين CDN وروابط الميم", "example": "/api/motifs?lang=ar" },
+          { "endpoint": "GET /api/motifs/:id", "description": "زخرفة واحدة حسب المعرّف — قائمة كاملة بالأصول", "example": "/api/motifs/koru" },
+          { "endpoint": "GET /api/cultures", "description": "قائمة بجميع الثقافات الـ 11 مع أعداد الزخارف", "example": "/api/cultures" },
+          { "endpoint": "GET /api/meme", "description": "عنوان CDN لصورة ميم PNG بلغة محددة", "example": "/api/meme?id=koru&lang=ar" },
+          { "endpoint": "GET /api/kit", "description": "عنوان URL لملف PDF للحقيبة التعليمية بلغة محددة", "example": "/api/kit?lang=ar" }
+        ],
+        "api_courtesy": "يُرجى تضمين الترويسة X-TePa-Use: <اسم مشروعك> في طلباتك. يساعدنا ذلك على فهم كيفية استخدام الواجهة ودعم طلبات التمويل المستقبلية.",
+        "rate_limit_heading": "حدود المعدل",
+        "rate_limit_body": "100 طلب في الساعة لكل عنوان IP. إذا كنت بحاجة إلى حدود أعلى لمشروع معين، تواصل معنا على te-pa.org.",
+        "assets_heading": "تنزيل الأصول",
+        "assets_cdn": "جميع الأصول تُخدَّم من شبكة CDN الخاصة بنا على Cloudflare R2:",
+        "asset_paths": [
+          { "label": "صورة PNG للزخرفة", "path": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/{الثقافة}/{المعرف}.png" },
+          { "label": "متجه SVG للزخرفة", "path": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/{الثقافة}/{المعرف}.svg" },
+          { "label": "ميم ناشط (اللغة)", "path": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_{المعرف}_{اللغة}.png" },
+          { "label": "PDF الحقيبة التعليمية", "path": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-teaching-kit-{اللغة}.pdf" }
+        ],
+        "attribution_heading": "الإسناد والترخيص",
+        "attribution_body": "جميع زخارف وصور ومواد تعليم تي پا منشورة بموجب CC BY-NC-SA 4.0. يحق لك المشاركة والتكيف للاستخدام غير التجاري، شريطة ذكر المصدر على النحو التالي:",
+        "attribution_example": "تي پا توواتاواتا (te-pa.org) — CC BY-NC-SA 4.0",
+        "attribution_note": "يستلزم الاستخدام التجاري اتفاقية منفصلة. تواصل معنا لمناقشة ترتيبات الشراكة.",
+        "social_heading": "التكامل مع وسائل التواصل الاجتماعي",
+        "social_body": "كل زخرفة لها مجموعة اجتماعية كاملة مع بطاقات محسّنة لكل منصة. الوسوم الموصى بها لمنشوراتك:",
+        "social_note": "عند النشر، أشر إلى @KiwiDialectic وأضف رابطاً إلى te-pa.org/rhizome-mapper.html ليتمكن جمهورك من استكشاف الشبكة الكاملة.",
+        "code_example_heading": "البدء السريع — مثال كود",
+        "code_example": "// جلب جميع الزخارف باللغة العربية\nfetch('https://te-pa-analytics.sketchschool.workers.dev/api/motifs?lang=ar', {\n  headers: { 'X-TePa-Use': 'اسم-مشروعك' }\n})\n.then(r => r.json())\n.then(data => {\n  data.motifs.forEach(m => {\n    console.log(m.name_en, m.assets.meme_png);\n  });\n});",
+        "contact_heading": "التواصل والمجتمع",
+        "contact_body": "تي پا توواتاواتا\n2 Mount Street, Port Chalmers, Dunedin 9023, أوتياروا نيوزيلندا",
+        "contact_links": [
+          { "label": "الموقع الإلكتروني", "url": "https://te-pa.org" },
+          { "label": "خريطة الجذمور", "url": "https://te-pa.org/rhizome-mapper.html" },
+          { "label": "GitHub", "url": "https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite" },
+          { "label": "توثيق API", "url": "https://te-pa-analytics.sketchschool.workers.dev/api" }
+        ],
+        "footer": "مؤسسة تي پا توواتاواتا الخيرية — te-pa.org — CC BY-NC-SA 4.0 — تم الإنشاء تلقائياً"
+      }
+    }
+
+  }
+}
