@@ -30,7 +30,65 @@
     .leaflet-control-zoom a:hover { background: #01696F !important; color: #fff !important; }
     .leaflet-control-attribution { background: rgba(0,0,0,.5) !important; color: #777 !important; }
     .leaflet-control-attribution a { color: #888 !important; }
-  </style>
+  
+    /* ── Campaign nodes ── */
+    @keyframes campaign-pulse {
+      0%   { r: 18px; opacity: 0.7; }
+      50%  { r: 28px; opacity: 0.25; }
+      100% { r: 18px; opacity: 0.7; }
+    }
+    .campaign-pulse-ring {
+      fill: none;
+      stroke: #e74c3c;
+      stroke-width: 2.5;
+      animation: campaign-pulse 2.2s ease-in-out infinite;
+      pointer-events: none;
+    }
+    /* Campaign action card inside node panel */
+    .campaign-action-card {
+      margin: .9rem 0 .5rem;
+      padding: .85rem 1rem;
+      border: 2px solid #e74c3c55;
+      border-radius: 10px;
+      background: #e74c3c08;
+    }
+    .campaign-action-card .ca-label {
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-weight: 800;
+      color: #e74c3c;
+      font-family: var(--font-sans);
+      margin: 0 0 .35rem;
+    }
+    .campaign-action-card .ca-cta {
+      font-size: .82rem;
+      color: var(--fg-muted);
+      margin: 0 0 .65rem;
+      line-height: 1.5;
+    }
+    .campaign-action-card .ca-btn {
+      display: inline-block;
+      padding: 7px 16px;
+      background: #e74c3c;
+      color: #fff;
+      border-radius: 999px;
+      font-size: .82rem;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: .02em;
+      transition: background .15s;
+    }
+    .campaign-action-card .ca-btn:hover { background: #c0392b; }
+    .campaign-action-card .ca-hashtags {
+      margin-top: .6rem;
+      font-size: .75rem;
+      color: #e74c3c;
+      font-family: var(--font-sans);
+      word-break: break-word;
+    }
+</style>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
@@ -2040,20 +2098,149 @@ const NODES_DATA = [
     description:"Founded in 1987 and headquartered in Lima, CONAP represents over 40 federations and regional organisations of Amazonian indigenous peoples across Loreto, Amazonas, Junín, Pasco, Huánuco, Cuzco, and Ucayali.",
     url:"https://conapperu.org", campaigns:"Consulta Previa; Derechos Territoriales Amazónicos",
     lang_pt:false, lang_gn:false, lang_sm:false },
+  // ── ACTIVE CAMPAIGN NODES ──────────────────────────────────────────────
+  // type:"campaign" triggers pulsing ring + action CTA in the node panel
+  { id:"campaign-landback", name:"#LANDBACK", type:"campaign", region:"north_america", country:"USA",
+    cause:["land rights","political sovereignty"],
+    description:"The LANDBACK movement demands the return of stolen indigenous land — and now data — to indigenous stewardship. Actively organising land rematriations, federal land campaigns, and pipeline resistance.",
+    url:"https://landback.org",
+    action_url:"https://landback.org/contribute/",
+    action_label:"Join the LANDBACK movement →",
+    action_cta:"Sign & donate to LANDBACK land rematriations",
+    hashtags:"#LANDBACK #IndigenousLand #NDNCollective #LandIsLife",
+    linked_orgs:["ndn-collective","landback-network","indigenous-environmental-network","honor_the_earth"],
+    campaigns:"LANDBACK; Black Hills Return; Craven Canyon",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+
+  { id:"campaign-stop-data-colonialism", name:"#StopDataColonialism", type:"campaign", region:"north_america", country:"USA",
+    cause:["data sovereignty","land rights","environmental justice"],
+    description:"Honor the Earth coalition campaign against 100+ hyperscale AI data centres proposed on tribal and rural Native lands. Growing to a July 18 2026 nationwide day of action.",
+    url:"https://www.honorearth.org/stopdatacolonialism",
+    action_url:"https://www.honorearth.org/stopdatacolonialism",
+    action_label:"Take action — No Data Centers on Native Land →",
+    action_cta:"Add your name to the moratorium demand",
+    hashtags:"#StopDataColonialism #NoDataCenters #IndigenousDataSovereignty #HonorTheEarth",
+    linked_orgs:["honor_the_earth","ndn-collective","usidsn","indigenous-environmental-network"],
+    campaigns:"No Data Centers on Native Land; July 18 Day of Action",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+
+  { id:"campaign-apib-terras", name:"#TerrasIndígenas", type:"campaign", region:"south_america", country:"BR",
+    cause:["land rights","political sovereignty","environmental justice"],
+    description:"APIB's live campaign against the Marco Temporal law threatening indigenous demarcation across Brazil. STF hearing ongoing June–July 2026. APIB delegation in London, Paris & Brussels 22 Jun–3 Jul.",
+    url:"https://apiboficial.org/en/",
+    action_url:"https://apiboficial.org/en/",
+    action_label:"Support APIB — Defend indigenous territories →",
+    action_cta:"Share APIB's international campaign · #FightMarcoTemporal",
+    hashtags:"#TerrasIndígenas #APIB #FightMarcoTemporal #AmazoniaVive",
+    linked_orgs:["apib","coiab","coica","amazon-watch","hutukara-yanomami"],
+    campaigns:"Fight Marco Temporal; Acampamento Terra Livre",
+    lang_pt:true, lang_gn:true, lang_sm:false },
+
+  { id:"campaign-free-west-papua", name:"#FreeWestPapua", type:"campaign", region:"oceania", country:"PG",
+    cause:["political sovereignty","land rights"],
+    description:"Ongoing international campaign for a UN-supervised referendum on West Papuan self-determination. Indonesian military operations in Pyramid Village condemned June 2026. 37 Papuans killed by security forces in 2026.",
+    url:"https://www.ulmwp.org",
+    action_url:"https://www.ulmwp.org/interim-president-indonesia-must-cease-military-operations-in-pyramid-village",
+    action_label:"Read ULMWP urgent statement & share →",
+    action_cta:"Amplify: Indonesia must cease military operations now",
+    hashtags:"#FreeWestPapua #ULMWP #WestPapua #PapuaLibre",
+    linked_orgs:["ulmwp","knpb","west-papua-parliament","melanesian-spearhead-group"],
+    campaigns:"UN Referendum Petition; Pyramid Village; MSG Expulsion",
+    lang_pt:false, lang_gn:false, lang_sm:true },
+
+  { id:"campaign-pacific-data-sovereignty", name:"#PacificDataSovereignty", type:"campaign", region:"oceania", country:"NZ",
+    cause:["data sovereignty","political sovereignty"],
+    description:"The Pacific Data Sovereignty Trust asserts that data is the new land — Pacific peoples must govern Pacific data. Campaigning for regional data governance frameworks and AI ethics grounded in Pacific values.",
+    url:"https://pacificdatasovereignty.com",
+    action_url:"https://pacificdatasovereignty.com",
+    action_label:"Join the Pacific Data Sovereignty initiative →",
+    action_cta:"Connect with the Pacific Data Sovereignty Trust",
+    hashtags:"#PacificDataSovereignty #DataIsOurLand #OceaniaRising #PasifikaProud",
+    linked_orgs:["pacific_data_sovereignty_trust","350-pacific-orig","gida","ipai"],
+    campaigns:"Pacific Data Sovereignty Summit; AI Pacific Workshops",
+    lang_pt:false, lang_gn:false, lang_sm:true },
+
+  { id:"campaign-idle-no-more", name:"#IdleNoMore", type:"campaign", region:"north_america", country:"CAN",
+    cause:["political sovereignty","land rights","environmental justice"],
+    description:"Pan-Indigenous global movement launched 2012. Continues organising against resource extraction, pipeline projects, and treaty violations. Connecting solidarity across Turtle Island and the Pacific.",
+    url:"https://idlenomore.ca",
+    action_url:"https://idlenomore.ca/act/",
+    action_label:"Act with Idle No More →",
+    action_cta:"Join local actions · Follow #IdleNoMore for latest calls",
+    hashtags:"#IdleNoMore #FirstNations #TreatiesAreTheLaw #WaterIsLife",
+    linked_orgs:["idle-no-more","indigenous-environmental-network","fnigc","fntc"],
+    campaigns:"Treaty Rights; Pipeline Resistance; Solidarity Actions",
+    lang_pt:false, lang_gn:false, lang_sm:false },
+
+  { id:"campaign-ai-not-indigenous", name:"#AIIsNotIndigenous", type:"campaign", region:"global", country:"INT",
+    cause:["data sovereignty","AI ethics","cultural preservation"],
+    description:"Global artistic protest and policy campaign confronting AI appropriation of indigenous culture. Connects IPAI protocol work, Magabala Books' double-colonisation campaign, and CARE principles advocacy.",
+    url:"https://www.indigenous-ai.net",
+    action_url:"https://www.indigenous-ai.net/position-paper",
+    action_label:"Read the Indigenous AI Position Paper →",
+    action_cta:"Endorse indigenous protocols for AI — share the paper",
+    hashtags:"#AIIsNotIndigenous #IndigenousAI #IPAI #StopDataColonialism",
+    linked_orgs:["ipai","gida","magabala_books","cultural_survival","local_contexts_org"],
+    campaigns:"AI Protocol; IPAI Position Paper; Double Colonisation",
+    lang_pt:true, lang_gn:false, lang_sm:true },
+
+  { id:"campaign-wetsuweten", name:"#WetsuwetunStrong", type:"campaign", region:"north_america", country:"CAN",
+    cause:["land rights","political sovereignty","environmental justice"],
+    description:"Wet'suwet'en hereditary chiefs and Unist'ot'en Camp resistance to Coastal GasLink pipeline through unceded territory. Ongoing direct action, fundraising, and court challenges across British Columbia.",
+    url:"https://www.yintahaccess.com",
+    action_url:"https://www.yintahaccess.com/donate",
+    action_label:"Support Wet'suwet'en land defenders →",
+    action_cta:"Donate to Unist'ot'en Camp & share #WetsuwetunStrong",
+    hashtags:"#WetsuwetunStrong #WetsuwetenStrong #LandDefenders #CoastalGasLink",
+    linked_orgs:["landback-network","indigenous-environmental-network","ndn-collective"],
+    campaigns:"Coastal GasLink Resistance; Unist'ot'en Healing Centre",
+    lang_pt:false, lang_gn:false, lang_sm:false },
 ];
 
 /* ══════════════════════════════════════════════════════════════════════════
    CAMPAIGNS DATA
 ══════════════════════════════════════════════════════════════════════════ */
 const CAMPAIGNS_DATA = [
-  { hashtag:"#StopDataColonialism", name:"No Data Centers on Native Land", org:"Honor the Earth / No Data Center Coalition", description:"Campaign launched by Honor the Earth to resist hyperscale AI data centres being built on tribal and rural Native lands. Tracks over 100 proposed data centres near indigenous territories.", url:"https://www.honorearth.org/stopdatacolonialism" },
-  { hashtag:"#IdleNoMore", name:"Idle No More", org:"Idle No More (grassroots, Canada)", description:"Canadian First Nations grassroots movement launched November 2012 by four women in Saskatchewan, responding to omnibus Bill C-45 that threatened indigenous land and water sovereignty. Became a pan-Indigenous global movement.", url:"https://idlenomore.ca" },
-  { hashtag:"#NoDAPL", name:"NoDAPL — Standing Rock Dakota Access Pipeline Resistance", org:"Standing Rock Sioux Tribe / Indigenous youth Water Protectors", description:"Social media and direct action campaign launched 2016 by indigenous youth group ReZpect Our Water against the Dakota Access Pipeline threatening sacred sites and water sources. Grew to involve 20,000+ people at Standing Rock.", url:"https://www.standingrock.org" },
-  { hashtag:"#ForaGarimpoForaCovid", name:"Magabala Books / First Nations Authors vs Meta AI Training", org:"Magabala Books / Kirli Saunders / Australian First Nations creatives", description:"2025 campaign by Magabala Books and First Nations authors after discovery that Meta used 37 First Nations literary works without consent for AI training. Coined 'double colonisation' — first the body, now the mind.", url:"https://www.abc.net.au/news/2025-10-16/first-nations-creatives-warn-against-ai-double-colonisation/105889290" },
-  { hashtag:"#AIIsNotIndigenous", name:"AI Is Not Indigenous", org:"Andersson & Bergman (artists)", description:"Sustained artistic protest practice (2022–ongoing) confronting algorithmic appropriation and cultural erasure of indigenous culture by AI systems. Protest signs turned into artworks exposing the colonial logic of generative AI.", url:"https://www.artafter.ai/ai-is-not-indigenous" },
-  { hashtag:"#LANDBACK", name:"LANDBACK", org:"NDN Collective", description:"Movement demanding the return of stolen indigenous land to indigenous peoples. Has increasingly incorporated digital sovereignty dimensions, asserting that 'land back' includes data sovereignty — indigenous data must also be returned.", url:"https://landback.org" },
-  { hashtag:"#WetsuwetunStrong", name:"WetsuwetunStrong", org:"Wet'suwet'en hereditary chiefs / Unist'ot'en Camp", description:"Campaign led by Wet'suwet'en hereditary chiefs against the Coastal GasLink pipeline in northern British Columbia. Built on #NoDAPL tactics — resistance camps, social media organising, and online fundraising.", url:"https://www.yintahaccess.com" },
-  { hashtag:"#PacificDataSovereignty", name:"Pacific Data Sovereignty Initiative", org:"Pacific Data Sovereignty Trust / Moana Connect", description:"Initiative by the Pacific Data Sovereignty Trust (NZ) to assert that 'data is the new land' — Pacific data must be governed by Pacific peoples. Hosted AI Pacific workshops (2025) and Pacific Data Sovereignty Summits.", url:"https://pacificdatasovereignty.com" },
+  { hashtag:"#StopDataColonialism", name:"No Data Centers on Native Land", org:"Honor the Earth / No Data Center Coalition",
+    description:"Campaign launched by Honor the Earth to resist 100+ hyperscale AI data centres proposed on tribal and rural Native lands. Nationwide day of action: July 18 2026.",
+    url:"https://www.honorearth.org/stopdatacolonialism",
+    action_url:"https://www.honorearth.org/stopdatacolonialism",
+    action_label:"Add your name — moratorium demand →" },
+  { hashtag:"#IdleNoMore", name:"Idle No More", org:"Idle No More (grassroots, Canada)",
+    description:"Pan-Indigenous global movement launched November 2012. Continues organising against resource extraction, pipeline projects, and treaty violations connecting solidarity across Turtle Island and the Pacific.",
+    url:"https://idlenomore.ca",
+    action_url:"https://idlenomore.ca/act/",
+    action_label:"Act with Idle No More →" },
+  { hashtag:"#NoDAPL", name:"NoDAPL — Standing Rock Dakota Access Pipeline Resistance", org:"Standing Rock Sioux Tribe / Indigenous Youth Water Protectors",
+    description:"Social media and direct action campaign against the Dakota Access Pipeline threatening sacred sites and water sources. Grew to 20,000+ people at Standing Rock — now a template for indigenous resistance worldwide.",
+    url:"https://www.standingrock.org",
+    action_url:"https://www.standingrock.org",
+    action_label:"Support Standing Rock Sioux Tribe →" },
+  { hashtag:"#ForaGarimpoForaCovid", name:"First Nations Authors vs Meta AI Training", org:"Magabala Books / Kirli Saunders / Australian First Nations creatives",
+    description:"2025 campaign after Meta used 37 First Nations literary works without consent for AI training. Coined 'double colonisation' — first the body, now the mind. Driving global policy on indigenous AI copyright.",
+    url:"https://www.abc.net.au/news/2025-10-16/first-nations-creatives-warn-against-ai-double-colonisation/105889290",
+    action_url:"https://www.magabala.com",
+    action_label:"Support Magabala Books & indigenous authors →" },
+  { hashtag:"#AIIsNotIndigenous", name:"AI Is Not Indigenous", org:"IPAI / Andersson & Bergman (artists)",
+    description:"Sustained global artistic and policy protest (2022–ongoing) confronting AI appropriation of indigenous culture. Links IPAI protocol work, indigenous IP advocacy, and anti-extractive AI campaigns.",
+    url:"https://www.indigenous-ai.net",
+    action_url:"https://www.indigenous-ai.net/position-paper",
+    action_label:"Read & endorse the Indigenous AI position paper →" },
+  { hashtag:"#LANDBACK", name:"LANDBACK", org:"NDN Collective / LANDBACK Action Network",
+    description:"Movement demanding the return of stolen indigenous land — and now data — to indigenous stewardship. Actively organising rematriations, Black Hills federal land return, and pipeline resistance campaigns.",
+    url:"https://landback.org",
+    action_url:"https://landback.org/contribute/",
+    action_label:"Join the LANDBACK movement →" },
+  { hashtag:"#WetsuwetunStrong", name:"Wet'suwet'en Land Defenders", org:"Wet'suwet'en hereditary chiefs / Unist'ot'en Camp",
+    description:"Wet'suwet'en hereditary chiefs and Unist'ot'en Camp resistance to Coastal GasLink pipeline through unceded territory. Ongoing direct action, fundraising, and court challenges in British Columbia.",
+    url:"https://www.yintahaccess.com",
+    action_url:"https://www.yintahaccess.com/donate",
+    action_label:"Donate to Unist'ot'en Camp →" },
+  { hashtag:"#PacificDataSovereignty", name:"Pacific Data Sovereignty Initiative", org:"Pacific Data Sovereignty Trust / Moana Connect",
+    description:"Initiative asserting that 'data is the new land' — Pacific data must be governed by Pacific peoples. Campaigns for regional AI governance frameworks grounded in Pacific values and CARE principles.",
+    url:"https://pacificdatasovereignty.com",
+    action_url:"https://pacificdatasovereignty.com",
+    action_label:"Connect with the Pacific Data Sovereignty Trust →" },
 ];
 
 /* region / cause colours */
@@ -2296,6 +2483,7 @@ function drawNetwork() {
 
   // build links — connect nodes that share at least one cause
   const links = [];
+  const visibleIds = new Set(visible.map(d => d.id));
   for (let i = 0; i < visible.length; i++) {
     for (let j = i + 1; j < visible.length; j++) {
       const shared = visible[i].cause.filter(c => visible[j].cause.includes(c));
@@ -2304,6 +2492,20 @@ function drawNetwork() {
       }
     }
   }
+  // Campaign → org explicit edges (strong, styled red)
+  visible.filter(d => d.type === 'campaign' && d.linked_orgs).forEach(campaign => {
+    (campaign.linked_orgs || []).forEach(orgId => {
+      if (visibleIds.has(orgId)) {
+        links.push({
+          source: campaign.id,
+          target: orgId,
+          shared: campaign.cause,
+          strength: 3,
+          isCampaignLink: true
+        });
+      }
+    });
+  });
 
   // zoom container
   const g = svg.append('g').attr('class', 'zoom-g');
@@ -2356,9 +2558,10 @@ function drawNetwork() {
     .selectAll('line')
     .data(links)
     .join('line')
-    .attr('stroke', d => CAUSE_COLOURS[d.shared[0]] || '#888')
-    .attr('stroke-opacity', 0.18)
-    .attr('stroke-width', d => d.strength * 1.0);
+    .attr('stroke', d => d.isCampaignLink ? '#e74c3c' : (CAUSE_COLOURS[d.shared[0]] || '#888'))
+    .attr('stroke-opacity', d => d.isCampaignLink ? 0.55 : 0.18)
+    .attr('stroke-width', d => d.isCampaignLink ? 2.5 : (d.strength * 1.0))
+    .attr('stroke-dasharray', d => d.isCampaignLink ? '6 3' : 'none');
 
   // draw nodes
   const node = g.append('g').attr('class', 'nodes')
@@ -2380,14 +2583,23 @@ function drawNetwork() {
       })
     );
 
+  // campaign nodes: outer pulsing ring (rendered first = underneath circle)
+  node.filter(d => d.type === 'campaign')
+    .append('circle')
+    .attr('class', 'campaign-pulse-ring')
+    .attr('r', d => 18 + d.cause.length * 2)
+    .attr('stroke', '#e74c3c')
+    .attr('stroke-width', 2.5)
+    .attr('fill', 'none');
+
   // node circle
   node.append('circle')
     .attr('r', d => 12 + d.cause.length * 2)
-    .attr('fill', d => REGION_COLOUR[d.region] || '#888')
-    .attr('fill-opacity', 0.82)
-    .attr('stroke', '#fff')
-    .attr('stroke-width', 1.5)
-    .attr('stroke-opacity', 0.45);
+    .attr('fill', d => d.type === 'campaign' ? '#e74c3c' : (REGION_COLOUR[d.region] || '#888'))
+    .attr('fill-opacity', d => d.type === 'campaign' ? 0.93 : 0.82)
+    .attr('stroke', d => d.type === 'campaign' ? '#fff' : '#fff')
+    .attr('stroke-width', d => d.type === 'campaign' ? 2.5 : 1.5)
+    .attr('stroke-opacity', d => d.type === 'campaign' ? 0.9 : 0.45);
 
   // lang badge dots — PT (green), GN (orange), SM (teal)
   node.filter(d => d.lang_pt)
@@ -2482,11 +2694,24 @@ function showNodePanel(d) {
     campaignsHtml = `<div style="margin:.6rem 0"><span style="font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:var(--fg-muted);font-family:var(--font-sans)">Campaigns: </span>${chips}</div>`;
   }
 
+  // campaign action card (only for campaign nodes)
+  let campaignActionHtml = '';
+  if (d.type === 'campaign' && d.action_url) {
+    campaignActionHtml = `
+    <div class="campaign-action-card">
+      <p class="ca-label">⚡ Active Campaign — Take Action Now</p>
+      <p class="ca-cta">${d.action_cta || d.action_label}</p>
+      <a class="ca-btn" href="${d.action_url}" target="_blank" rel="noopener">${d.action_label || 'Take action →'}</a>
+      ${d.hashtags ? `<p class="ca-hashtags">${d.hashtags}</p>` : ''}
+    </div>`;
+  }
+
   document.getElementById('nodePanelContent').innerHTML = `
     <p class="node-region-tag" style="color:${colour}">${regionLabel} · ${d.country}</p>
     <h2 class="node-name">${d.name} ${langBadges}</h2>
     <div class="node-causes">${causePills}</div>
     <p class="node-desc">${d.description}</p>
+    ${campaignActionHtml}
     ${campaignsHtml}
     <a class="node-link" href="${d.url}" target="_blank" rel="noopener" style="background:${colour}">
       Visit ${d.name.split('–')[0].split('(')[0].trim()} →
@@ -2688,6 +2913,9 @@ function renderCampaigns() {
         : `<span class="campaign-none">No official hashtag</span>`}
       <div class="campaign-org">${c.org}</div>
       <p class="campaign-desc">${c.description}</p>
+      ${c.action_url
+        ? `<a class="ca-btn" style="display:inline-block;margin:.4rem 0 .5rem;padding:6px 14px;background:#e74c3c;color:#fff;border-radius:999px;font-size:.78rem;font-family:var(--font-sans);font-weight:700;text-decoration:none" href="${c.action_url}" target="_blank" rel="noopener">⚡ ${c.action_label || 'Take action →'}</a><br>`
+        : ''}
       <a class="campaign-link" href="${c.url}" target="_blank" rel="noopener">Learn more →</a>
     </div>
   `).join('');
