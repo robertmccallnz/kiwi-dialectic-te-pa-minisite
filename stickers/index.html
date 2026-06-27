@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stickers &amp; Street Activism — Te Pā Tūwatawata</title>
+<meta name="description" content="Print-ready stickers, wheatpaste posters, and banners for indigenous-led street activism on AI, data sovereignty, and te reo. Every sticker carries a QR code linking back to te-pa.org context. CC BY-NC-SA 4.0 — free to download, print, paste up, and remix.">
+<meta name="keywords" content="Te Pā Tūwatawata, sticker activism, wheatpaste, street art, indigenous activism, te reo, Tino Rangatiratanga, data sovereignty, QR sticker, free download, CC BY-NC-SA, kaupapa Māori">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://te-pa.org/stickers/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Te Pā Tūwatawata — Stickers &amp; Street Activism">
+<meta property="og:description" content="Print-ready stickers with QR codes, wheatpaste posters, banners. Grounded in Aotearoa Māori street-art lineage. CC BY-NC-SA 4.0.">
+<meta property="og:url" content="https://te-pa.org/stickers/">
+<meta property="og:image" content="https://te-pa.org/social-kit/posters/una-poster-a3-data-sovereignty.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Te Pā Tūwatawata — Stickers &amp; Street Activism">
+<meta name="twitter:description" content="Print, paste, distribute. QR codes link back to context. Free, kaupapa Māori, CC BY-NC-SA.">
+<meta name="twitter:image" content="https://te-pa.org/social-kit/posters/una-poster-a3-data-sovereignty.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/kiwi-dialectic.css">
+<link rel="stylesheet" href="../assets/nav.css">
+<link rel="stylesheet" href="../assets/mediakit.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Te Pā Tūwatawata — Stickers &amp; Street Activism",
+  "description": "Print-ready stickers with embedded QR codes, wheatpaste posters, banners, and a kaupapa-Māori grounded toolkit for street activism on AI, data sovereignty, and te reo Māori.",
+  "url": "https://te-pa.org/stickers/",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "creator": {
+    "@type": "Organization",
+    "name": "Te Pā Tūwatawata Charitable Trust",
+    "url": "https://te-pa.org"
+  },
+  "citation": [
+    {"@type": "CreativeWork", "name": "Toi i te Ara — Art in the Street", "url": "https://te-pa.org/pdfs/te-pa-street-art-research.pdf"},
+    {"@type": "Book", "name": "Pedagogy of the Oppressed", "author": "Paulo Freire"},
+    {"@type": "CreativeWork", "name": "I Will Not Speak Maori", "author": "Tame Iti &amp; Delaney Davidson"}
+  ]
+}
+</script>
+
+<style>
+/* sticker-card grid is heavier than mediakit's default — a few extras */
+.sticker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.2rem;
+  margin: 1.5rem 0;
+}
+.sticker-card {
+  background: #fff;
+  border: 1px solid #e6e2d6;
+  border-radius: 10px;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.sticker-preview {
+  background: #f0efe9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  min-height: 180px;
+  position: relative;
+}
+.sticker-preview img,
+.sticker-preview svg,
+.sticker-preview object {
+  max-width: 100%;
+  max-height: 200px;
+  height: auto;
+  display: block;
+}
+.sticker-qr {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 3px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sticker-qr img,
+.sticker-qr canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.sticker-body {
+  padding: 0.85rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+.sticker-name {
+  font-weight: 600;
+  font-size: 0.98rem;
+  line-height: 1.25;
+  margin: 0;
+}
+.sticker-meta {
+  font-size: 0.78rem;
+  color: #6c6a63;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.7rem;
+}
+.sticker-meta .tag {
+  background: #f0efe9;
+  border-radius: 3px;
+  padding: 1px 6px;
+  font-size: 0.72rem;
+}
+.sticker-actions {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+.sticker-actions a {
+  font-size: 0.82rem;
+  padding: 0.32rem 0.7rem;
+  border: 1px solid #c8c2b0;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #1a1815;
+  background: #fff;
+}
+.sticker-actions a.primary {
+  background: #c0392b;
+  color: #fff;
+  border-color: #c0392b;
+}
+.sticker-actions a:hover { filter: brightness(0.95); }
+
+.qr-target-box {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+.qr-target-box label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.qr-target-box select {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #c8c2b0;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  background: #fff;
+  max-width: 100%;
+}
+
+.lineage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin: 1.2rem 0;
+}
+.lineage-card {
+  background: #fff;
+  border-left: 3px solid #c0392b;
+  padding: 0.9rem 1rem;
+  border-radius: 0 6px 6px 0;
+  border-top: 1px solid #e6e2d6;
+  border-right: 1px solid #e6e2d6;
+  border-bottom: 1px solid #e6e2d6;
+}
+.lineage-card h4 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1rem;
+}
+.lineage-card p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: #3a3833;
+}
+.lineage-card .lineage-meta {
+  font-size: 0.75rem;
+  color: #6c6a63;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.25rem;
+}
+
+.phrase-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.92rem;
+}
+.phrase-table th,
+.phrase-table td {
+  text-align: left;
+  padding: 0.55rem 0.8rem;
+  border-bottom: 1px solid #e6e2d6;
+  vertical-align: top;
+}
+.phrase-table th {
+  background: #1a1815;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.phrase-table tr:nth-child(even) td { background: #faf8f3; }
+.phrase-mi {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.recipe-box {
+  background: #1a1815;
+  color: #f0efe9;
+  border-radius: 8px;
+  padding: 1.3rem 1.5rem;
+  margin: 1rem 0;
+}
+.recipe-box h3 {
+  color: #fff;
+  margin: 0 0 0.6rem 0;
+}
+.recipe-box ol, .recipe-box ul {
+  margin: 0.5rem 0;
+  padding-left: 1.3rem;
+}
+.recipe-box li { margin: 0.3rem 0; line-height: 1.5; }
+.recipe-box strong { color: #fff; }
+
+.toolkit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.2rem 0;
+}
+.toolkit-card {
+  background: #faf8f3;
+  border: 1px solid #e6e2d6;
+  border-radius: 6px;
+  padding: 0.9rem 1rem;
+}
+.toolkit-card h4 {
+  margin: 0 0 0.4rem 0;
+  font-size: 0.95rem;
+}
+.toolkit-card p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: #3a3833;
+}
+
+.consent-banner {
+  background: #fdf6e8;
+  border: 1px solid #e8c97c;
+  border-left: 4px solid #c0392b;
+  padding: 1rem 1.2rem;
+  border-radius: 4px;
+  margin: 1.5rem 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+.consent-banner strong { color: #1a1815; }
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.8rem 0 1rem;
+  align-items: center;
+}
+.filter-row .filter-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #6c6a63;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-right: 0.4rem;
+}
+.filter-chip {
+  background: #fff;
+  border: 1px solid #c8c2b0;
+  border-radius: 999px;
+  padding: 0.32rem 0.85rem;
+  font-size: 0.83rem;
+  cursor: pointer;
+  user-select: none;
+  font-family: inherit;
+}
+.filter-chip.active {
+  background: #c0392b;
+  color: #fff;
+  border-color: #c0392b;
+}
+.filter-chip:hover { filter: brightness(0.95); }
+.sticker-card.hidden { display: none; }
+</style>
+</head>
+<body>
+
+<div class="motif-stripe"></div>
+
+<nav class="site-nav shell">
+  <a class="nav-brand" href="../">Te Pā Tūwatawata</a>
+  <div class="nav-links">
+    <a href="../">Home</a>
+    <a href="../launch-mediakit/">Launch kit</a>
+    <a href="../social-kit/">Social kit</a>
+    <a href="../teaching-kits/">Teaching kits</a>
+    <a href="../partner-onboarding/">Partners</a>
+    <a href="https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite">GitHub</a>
+  </div>
+</nav>
+
+<div class="shell">
+  <div class="kit-crumb">
+    <a href="../">Home</a> <span class="breadcrumb-sep">/</span> <span>Stickers &amp; street activism</span>
+  </div>
+
+  <header class="kit-hero">
+    <h1>Stickers &amp; Street Activism</h1>
+    <p class="lede"><strong>Toi i te Ara — Art in the Street.</strong> Print-ready stickers, wheatpaste posters, and banners for indigenous-led street activism on AI, data sovereignty, and te reo Māori. Every sticker on this page can carry a QR code that points back to context on te-pa.org — turning each one into a small <em>public textbook</em> in the Freirean sense.</p>
+    <div class="meta-row">
+      <span><strong>Stickers:</strong> 26 designs</span>
+      <span><strong>Posters:</strong> 7 A3/A4 wheatpaste</span>
+      <span><strong>Banners:</strong> 2 large-format</span>
+      <span><strong>Palette:</strong> mangu · whero · mā</span>
+      <span><strong>Licence:</strong> CC BY-NC-SA 4.0</span>
+    </div>
+  </header>
+
+  <!-- ─── Consent banner: kaupapa-first framing ─── -->
+  <div class="consent-banner">
+    <strong>Before you paste up:</strong> these designs are descended from a documented lineage of Aotearoa Māori street art — TMD, Tame Iti &amp; Delaney Davidson, Hohepa Thompson — and global indigenous traditions (Zapatista, Idle No More, Standing Rock, Richard Bell). They are <strong>not neutral graphics</strong>. Use them in solidarity, with respect for tikanga, and never on private property without consent. Sticker bins, lamp posts, public utility boxes, and your own gear are fair game. Heritage sites, marae, urupā, and private homes are not.
+  </div>
+
+  <!-- ─── Download everything ─── -->
+  <section class="kit-section" aria-labelledby="bundles-h">
+    <h2 id="bundles-h">Download everything</h2>
+    <p class="sec-sub">One-click bundles for organisers, teachers, and rōpū on deadline.</p>
+    <div class="bundle-row">
+      <a class="bundle-btn" href="../social-kit/stickers/te-pa-sticker-kit.zip" download>⬇ Sticker kit ZIP (all 26 designs)</a>
+      <a class="bundle-btn ghost" href="../pdfs/te-pa-street-art-research.pdf" download>⬇ Toi i te Ara research PDF (12 pp)</a>
+      <a class="bundle-btn ghost" href="../pdfs/te-pa-arts-pedagogy-kit.pdf" download>⬇ Arts pedagogy kit PDF</a>
+      <a class="bundle-btn ghost" href="https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite/tree/main/social-kit/stickers">↗ Browse on GitHub</a>
+    </div>
+  </section>
+
+  <!-- ─── QR target picker ─── -->
+  <section class="kit-section" aria-labelledby="qr-h">
+    <h2 id="qr-h">QR codes — choose your link</h2>
+    <p class="sec-sub">Every sticker below shows a small live QR code. Pick where it points. When you download, you can grab the sticker on its own or with the QR rendered into a margin (right-click the QR &rarr; <em>Save image</em>).</p>
+    <div class="qr-target-box">
+      <label for="qr-target">QR points to:</label>
+      <select id="qr-target">
+        <option value="https://te-pa.org/" data-label="Te Pā homepage">Te Pā homepage — te-pa.org</option>
+        <option value="https://te-pa.org/launch-mediakit/" data-label="Launch media kit">Launch media kit</option>
+        <option value="https://te-pa.org/teaching-kits/" data-label="Teaching kits">Teaching kits — 6 languages</option>
+        <option value="https://te-pa.org/motifs/" data-label="Motif catalogue">Motif catalogue</option>
+        <option value="https://te-pa.org/modules/rhizome.html" data-label="Rhizome module">Rhizome — networks of resistance</option>
+        <option value="https://te-pa.org/pdfs/te-pa-street-art-research.pdf" data-label="Toi i te Ara">Toi i te Ara — street art research</option>
+        <option value="https://www.tetaurawhiri.govt.nz/" data-label="Te Taura Whiri">Te Taura Whiri i te Reo Māori</option>
+        <option value="https://www.temanararaunga.maori.nz/" data-label="Te Mana Raraunga">Te Mana Raraunga — data sovereignty network</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- ─── Sticker library ─── -->
+  <section class="kit-section" aria-labelledby="sticker-h">
+    <h2 id="sticker-h">Sticker library</h2>
+    <p class="sec-sub">26 print-ready designs. Click <em>SVG</em> or <em>PNG</em> to download. Each preview shows a live QR code keyed to the target above.</p>
+
+    <div class="filter-row">
+      <span class="filter-label">Filter:</span>
+      <button class="filter-chip active" data-filter="all">All</button>
+      <button class="filter-chip" data-filter="unaunahi">Unaunahi (8)</button>
+      <button class="filter-chip" data-filter="rhizome">Rhizome (4)</button>
+      <button class="filter-chip" data-filter="general">General (12)</button>
+      <button class="filter-chip" data-filter="sheet">Sheet (1 A4)</button>
+    </div>
+
+    <div class="sticker-grid" id="sticker-grid"></div>
+  </section>
+
+  <!-- ─── Wheatpaste posters ─── -->
+  <section class="kit-section" aria-labelledby="poster-h">
+    <h2 id="poster-h">Wheatpaste posters</h2>
+    <p class="sec-sub">A3 and A4 — designed for flour-paste application to legal paste-up boards, lamp posts, and utility boxes. Black/red/white for maximum legibility from 10 metres.</p>
+    <div class="sticker-grid" id="poster-grid"></div>
+  </section>
+
+  <!-- ─── Banners ─── -->
+  <section class="kit-section" aria-labelledby="banner-h">
+    <h2 id="banner-h">Banners &amp; large-format</h2>
+    <p class="sec-sub">Web-ready and print-ready banner files for hīkoi, occupations, and public meetings.</p>
+    <div class="sticker-grid" id="banner-grid"></div>
+  </section>
+
+  <!-- ─── Street-activism toolkit ─── -->
+  <section class="kit-section" aria-labelledby="toolkit-h">
+    <h2 id="toolkit-h">Street-activism toolkit</h2>
+    <p class="sec-sub">Standard sizes, design principles, and a tested wheatpaste recipe — all drawn from the project's own research foundation, <a href="../pdfs/te-pa-street-art-research.pdf"><em>Toi i te Ara</em></a>.</p>
+
+    <h3>Standard sizes</h3>
+    <div class="toolkit-grid">
+      <div class="toolkit-card"><h4>A6 / postcard — 105×148 mm</h4><p>Pocket-sized; hand distribution; most common small sticker.</p></div>
+      <div class="toolkit-card"><h4>A5 — 148×210 mm</h4><p>Lamp posts, utility boxes; readable from 2–3 metres.</p></div>
+      <div class="toolkit-card"><h4>Circle (small) — 75–100 mm</h4><p>Badge size; laptop, bag, helmet.</p></div>
+      <div class="toolkit-card"><h4>Rectangle die-cut — 90×55 mm</h4><p>Bulk printing; low cost; high-density distribution.</p></div>
+      <div class="toolkit-card"><h4>Wheatpaste — A4 / A3</h4><p>Cheapest mass format: 3–10 cents/sheet at any photocopier.</p></div>
+      <div class="toolkit-card"><h4>Wheatpaste — A2 / A1</h4><p>Standard political poster size and wall-scale paste-up.</p></div>
+    </div>
+
+    <h3>Design principles for street stickers</h3>
+    <div class="toolkit-grid">
+      <div class="toolkit-card"><h4>Legibility</h4><p>1-inch letters readable from 10 feet. Bold, thick letterforms — minimum 2–3 inches outdoors.</p></div>
+      <div class="toolkit-card"><h4>Contrast</h4><p>Black/white, white/red, black/yellow. Blues and blacks survive UV longest.</p></div>
+      <div class="toolkit-card"><h4>Simplicity</h4><p>Go big, go simple. Avoid gradients, halftones, complex shading — they collapse at small sizes.</p></div>
+      <div class="toolkit-card"><h4>Palette</h4><p>Max 3 colours. The Tino Rangatiratanga palette (red/black/white) reads immediately as Māori activist.</p></div>
+      <div class="toolkit-card"><h4>Weather</h4><p>Vinyl for outdoor durability. UV-blocking lamination extends life. Round corners reduce edge-peeling.</p></div>
+      <div class="toolkit-card"><h4>QR placement</h4><p>Bottom-right margin, white background, ≥20 mm square. Test the scan from 30 cm before printing 100.</p></div>
+    </div>
+
+    <div class="recipe-box">
+      <h3>Wheatpaste recipe (essentially free)</h3>
+      <ol>
+        <li>Mix <strong>1 part plain flour</strong> with <strong>3 parts cold water</strong> until smooth, no lumps.</li>
+        <li>Heat slowly in a pot, stirring constantly, until it thickens to a thin custard (around 5 minutes).</li>
+        <li>Let it cool to lukewarm. Decant into a sealed bucket — keeps 1–2 days refrigerated.</li>
+        <li>Use a 4-inch wide brush. Paint paste onto the wall first, press the poster on, then paint a second layer of paste <em>over the top</em>. This is what makes it last.</li>
+        <li>For added durability, add 1 tbsp white sugar per cup of paste (slightly stickier finish).</li>
+      </ol>
+      <p style="margin-top:0.8rem; font-size:0.85rem; opacity:0.85"><strong>Production cost reference:</strong> A4 photocopy 3–10 ¢/sheet · vinyl die-cut sticker ~$0.30–0.80 in bulk · wheatpaste itself essentially free.</p>
+    </div>
+  </section>
+
+  <!-- ─── Te reo phrase library ─── -->
+  <section class="kit-section" aria-labelledby="phrases-h">
+    <h2 id="phrases-h">Te reo phrase library for street use</h2>
+    <p class="sec-sub">All phrases below are drawn from documented protest contexts — Bastion Point, Ihumātao, Waikato, the 2024 Hīkoi mō Te Tiriti, and te reo language petitions. Use them on stickers, on wheatpastes, and on banners.</p>
+
+    <h3>Land &amp; sovereignty</h3>
+    <table class="phrase-table">
+      <thead><tr><th>Phrase</th><th>Meaning</th><th>Context</th></tr></thead>
+      <tbody>
+        <tr><td class="phrase-mi">Toitū te whenua</td><td>The land endures forever</td><td>Ihumātao, Bastion Point, Waikato</td></tr>
+        <tr><td class="phrase-mi">Ko au te whenua, ko te whenua, ko au</td><td>I am the land, and the land is me</td><td>Bastion Point occupation</td></tr>
+        <tr><td class="phrase-mi">Mana whenua</td><td>Authority over the land</td><td>Most Māori protest materials</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Treaty &amp; constitutional rights</h3>
+    <table class="phrase-table">
+      <thead><tr><th>Phrase</th><th>Meaning</th><th>Context</th></tr></thead>
+      <tbody>
+        <tr><td class="phrase-mi">Toitū Te Tiriti</td><td>The Treaty endures / Honour the Treaty</td><td>Central slogan of 2024 Hīkoi mō Te Tiriti</td></tr>
+        <tr><td class="phrase-mi">Tino Rangatiratanga</td><td>Full chieftainship / absolute self-determination</td><td>All protest contexts from 1840 to present</td></tr>
+        <tr><td class="phrase-mi">Mana Motuhake</td><td>Self-determination; independent mana</td><td>Used interchangeably with Tino Rangatiratanga</td></tr>
+        <tr><td class="phrase-mi">Ka whawhai tonu mātou</td><td>We will fight on forever — ake, ake, ake</td><td>Waikato war cry; ongoing resistance</td></tr>
+        <tr><td class="phrase-mi">Kotahitanga</td><td>Unity; collective solidarity</td><td>2024 hīkoi; banners, posters, chants</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Language rights</h3>
+    <table class="phrase-table">
+      <thead><tr><th>Phrase</th><th>Meaning</th><th>Context</th></tr></thead>
+      <tbody>
+        <tr><td class="phrase-mi">Ko te reo te mauri o te mana Māori</td><td>The language is the life force of Māori mana</td><td>Sir James Henare, 1988</td></tr>
+        <tr><td class="phrase-mi">Ka ngaro te reo, ka ngaro tātou</td><td>If the language is lost, we will be lost</td><td>Language petitions, Waitangi Tribunal</td></tr>
+        <tr><td class="phrase-mi">Akona te reo Māori</td><td>Learn the Māori language</td><td>Protest posters, 1970s onwards</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Data sovereignty</h3>
+    <table class="phrase-table">
+      <thead><tr><th>Phrase</th><th>Meaning</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td class="phrase-mi">Raraunga hei taonga</td><td>Data as treasure</td><td>Te Mana Raraunga</td></tr>
+        <tr><td class="phrase-mi">Rangatiratanga o te raraunga</td><td>Sovereignty over data</td><td>Direct parallel to Tino Rangatiratanga</td></tr>
+        <tr><td class="phrase-mi">Ko ā mātou raraunga, ko mātou anō</td><td>Our data, ourselves</td><td>Data as extension of identity and mana</td></tr>
+        <tr><td class="phrase-mi">Kaitiakitanga raraunga</td><td>Data guardianship / stewardship</td><td>Māori data governance</td></tr>
+        <tr><td class="phrase-mi">Tino rangatiratanga i roto i te ao hangarau</td><td>Self-determination in the digital world</td><td>Māori technology sovereignty</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ─── Lineage ─── -->
+  <section class="kit-section" aria-labelledby="lineage-h">
+    <h2 id="lineage-h">Lineage &amp; acknowledgements</h2>
+    <p class="sec-sub">These materials descend from — and acknowledge — a documented tradition of indigenous street activism. For full citations and bibliography, see the <a href="../pdfs/te-pa-street-art-research.pdf"><em>Toi i te Ara</em></a> research foundation.</p>
+
+    <div class="lineage-grid">
+      <div class="lineage-card">
+        <div class="lineage-meta">Aotearoa · 1997–</div>
+        <h4>TMD — The Most Dedicated</h4>
+        <p>The most influential street-art crew in Aotearoa's history, founded by Phat1 (Ngāpuhi, Ngāi Tūhoe, Ngāti Kahungunu) and Adict (Ngāpuhi). 35+ members across Aotearoa, Australia, Germany. Many founders are Māori and Pasifika.</p>
+      </div>
+      <div class="lineage-card">
+        <div class="lineage-meta">Aotearoa · 2022</div>
+        <h4>Tame Iti &amp; Delaney Davidson</h4>
+        <p><em>I Will Not Speak Maori</em> — bold typographic poster campaign re-weaponising what Iti was punished for writing as a child. Soviet-monumental graphic language used to infiltrate institutional space. Projected onto Te Papa, posted across Aotearoa.</p>
+      </div>
+      <div class="lineage-card">
+        <div class="lineage-meta">Aotearoa · Ōtaki</div>
+        <h4>Hohepa Thompson</h4>
+        <p>Placed te reo stickers (<em>Rāpihi</em> — rubbish) on community bins as everyday language activism. When called 'graffiti' he made it an exhibition. A direct model for sticker activism as te reo revitalisation.</p>
+      </div>
+      <div class="lineage-card">
+        <div class="lineage-meta">Mexico · 1994–</div>
+        <h4>Zapatista mural art (EZLN)</h4>
+        <p>Community-painted murals in autonomous <em>caracoles</em>. The community is the author, not the individual. Flat bold colour, integrated text, collective production. Aesthetic: 'unglamorous, persistent, slow, steady.'</p>
+      </div>
+      <div class="lineage-card">
+        <div class="lineage-meta">Turtle Island · 2012–</div>
+        <h4>Idle No More &amp; Standing Rock</h4>
+        <p>Christi Belcourt (Anishinaabe) and Isaac Murdoch produced banner art for mass actions, sending designs to water protectors across North America for free. 'Water is Life / Mni Wiconi' — the 'protector' framing shared with Ihumātao and Mauna Kea.</p>
+      </div>
+      <div class="lineage-card">
+        <div class="lineage-meta">Australia · 2003–</div>
+        <h4>Richard Bell &amp; proppaNOW</h4>
+        <p>Kamilaroi / Kooma / Jiman 'activist masquerading as an artist.' Blunt messages in bright colours; archival photographs of activists hidden in Aboriginal-looking motifs. 'You don't need permission to make it happen.'</p>
+      </div>
+      <div class="lineage-card">
+        <div class="lineage-meta">Brazil &amp; Mexico · 20C</div>
+        <h4>Freire &amp; Rivera</h4>
+        <p>Freire's 'coded pictures' as pedagogical prompts — art as <em>public textbook</em>. Rivera's mural programme: 'the people as heroes,' art embedded in ministries, hospitals, universities where people live and learn.</p>
+      </div>
+      <div class="lineage-card">
+        <div class="lineage-meta">Aotearoa · 1989</div>
+        <h4>Tino Rangatiratanga flag</h4>
+        <p>Designed by Hiraina Marsden, Jan Dobson Smith, Linda Munn for a Te Kawariki competition. Black / red / white = te pō / te whaiao / te ao mārama. The dominant Māori activist palette.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Press / journalist box ─── -->
+  <section class="kit-section" aria-labelledby="press-h">
+    <h2 id="press-h">For journalists &amp; partners</h2>
+    <div class="kit-callout">
+      <p>Te Pā Tūwatawata is operated by a Charitable Trust based in Port Chalmers, Aotearoa New Zealand. All assets on this page are free to repost, translate, and adapt with attribution to <strong>Te Pā Tūwatawata Charitable Trust</strong> under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> licence.</p>
+      <p>Press enquiries: open an issue on <a href="https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite">GitHub</a> or write via the Trust contact at <a href="../">te-pa.org</a>.</p>
+      <p><strong>Embargo:</strong> none. All stickers, posters, and street-activism materials may be published, printed, and distributed immediately.</p>
+    </div>
+  </section>
+
+  <!-- ─── Related kits ─── -->
+  <section class="kit-section" aria-labelledby="related-h">
+    <h2 id="related-h">Related kits</h2>
+    <div class="bundle-row">
+      <a class="bundle-btn ghost" href="../launch-mediakit/">→ Launch media kit (6 languages, threads + visuals)</a>
+      <a class="bundle-btn ghost" href="../social-kit/">→ Full social-media kit (~1,100 assets)</a>
+      <a class="bundle-btn ghost" href="../teaching-kits/">→ Teaching kits (6 languages, PDF)</a>
+      <a class="bundle-btn ghost" href="../partner-onboarding/">→ Partner onboarding</a>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <div class="shell">
+    <p>Te Pā Tūwatawata Charitable Trust · Port Chalmers, Aotearoa · CC BY-NC-SA 4.0</p>
+  </div>
+</footer>
+
+<!-- ─── QR code generator (qrcodejs, tiny, no deps) ─── -->
+<script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+
+<script>
+// Sticker / poster / banner catalogue — only paths that exist in repo
+const STICKERS = [
+  // Unaunahi family (the curated 8-sticker series)
+  {name: "Unaunahi — Armour",   slug: "una-armour",   cat: "unaunahi", png: "../social-kit/stickers/sticker-una-armour.svg",   svg: "../social-kit/stickers/sticker-una-armour.svg",   reo: "We are armour"},
+  {name: "Unaunahi — Build",    slug: "una-build",    cat: "unaunahi", png: "../social-kit/stickers/sticker-una-build.svg",    svg: "../social-kit/stickers/sticker-una-build.svg",    reo: "Hanga te pā"},
+  {name: "Unaunahi — Consent",  slug: "una-consent",  cat: "unaunahi", png: "../social-kit/stickers/sticker-una-consent.svg",  svg: "../social-kit/stickers/sticker-una-consent.svg",  reo: "Consent precedes data"},
+  {name: "Unaunahi — Data",     slug: "una-data",     cat: "unaunahi", png: "../social-kit/stickers/sticker-una-data.svg",     svg: "../social-kit/stickers/sticker-una-data.svg",     reo: "Raraunga hei taonga"},
+  {name: "Unaunahi — Future",   slug: "una-future",   cat: "unaunahi", png: "../social-kit/stickers/sticker-una-future.svg",   svg: "../social-kit/stickers/sticker-una-future.svg",   reo: "Anamata Māori"},
+  {name: "Unaunahi — Layers",   slug: "una-layers",   cat: "unaunahi", png: "../social-kit/stickers/sticker-una-layers.svg",   svg: "../social-kit/stickers/sticker-una-layers.svg",   reo: "Layered sovereignty"},
+  {name: "Unaunahi — Resist",   slug: "una-resist",   cat: "unaunahi", png: "../social-kit/stickers/sticker-una-resist.svg",   svg: "../social-kit/stickers/sticker-una-resist.svg",   reo: "Ka whawhai tonu mātou"},
+  {name: "Unaunahi — Tino",     slug: "una-tino",     cat: "unaunahi", png: "../social-kit/stickers/sticker-una-tino.svg",     svg: "../social-kit/stickers/sticker-una-tino.svg",     reo: "Tino rangatiratanga"},
+  // Rhizome family
+  {name: "Rhizome 01",          slug: "rhizome-s01",  cat: "rhizome",  png: "../social-kit/stickers/sticker-rhizome-s01.png"},
+  {name: "Rhizome 02",          slug: "rhizome-s02",  cat: "rhizome",  png: "../social-kit/stickers/sticker-rhizome-s02.png"},
+  {name: "Rhizome 03",          slug: "rhizome-s03",  cat: "rhizome",  png: "../social-kit/stickers/sticker-rhizome-s03.png"},
+  {name: "Rhizome 04",          slug: "rhizome-s04",  cat: "rhizome",  png: "../social-kit/stickers/sticker-rhizome-s04.png"},
+  // General
+  {name: "Sticker 01", slug: "s01", cat: "general", png: "../social-kit/stickers/sticker-s01.png"},
+  {name: "Sticker 02", slug: "s02", cat: "general", png: "../social-kit/stickers/sticker-s02.png"},
+  {name: "Sticker 03", slug: "s03", cat: "general", png: "../social-kit/stickers/sticker-s03.png"},
+  {name: "Sticker 04", slug: "s04", cat: "general", png: "../social-kit/stickers/sticker-s04.png"},
+  {name: "Sticker 05", slug: "s05", cat: "general", png: "../social-kit/stickers/sticker-s05.png"},
+  {name: "Sticker 06", slug: "s06", cat: "general", png: "../social-kit/stickers/sticker-s06.png"},
+  {name: "Sticker 07", slug: "s07", cat: "general", png: "../social-kit/stickers/sticker-s07.png"},
+  {name: "Sticker 08", slug: "s08", cat: "general", png: "../social-kit/stickers/sticker-s08.png"},
+  {name: "Sticker 09", slug: "s09", cat: "general", png: "../social-kit/stickers/sticker-s09.png"},
+  {name: "Sticker 10", slug: "s10", cat: "general", png: "../social-kit/stickers/sticker-s10.png"},
+  {name: "Sticker 11", slug: "s11", cat: "general", png: "../social-kit/stickers/sticker-s11.png"},
+  {name: "Sticker 12", slug: "s12", cat: "general", png: "../social-kit/stickers/sticker-s12.png"},
+  // A4 sheet
+  {name: "A4 sticker sheet (12-up)", slug: "sheet-a4", cat: "sheet", png: "../social-kit/stickers/sticker-sheet-a4.png", note: "Print on adhesive A4 — pre-laid out for kiss-cutting"}
+];
+
+const POSTERS = [
+  {name: "Data Sovereignty (A3)",        svg: "../social-kit/posters/una-poster-a3-data-sovereignty.svg"},
+  {name: "We Are Armour (A3)",           svg: "../social-kit/posters/una-poster-a3-we-are-armour.svg"},
+  {name: "AI Resist (A4)",               svg: "../social-kit/posters/una-poster-a4-ai-resist.svg"},
+  {name: "Future / Anamata (A4)",        svg: "../social-kit/posters/una-poster-a4-future.svg"},
+  {name: "Kotahitanga (A4)",             svg: "../social-kit/posters/una-poster-a4-kotahitanga.svg"},
+  {name: "Layered Sovereignty (A4)",     svg: "../social-kit/posters/una-poster-a4-layers.svg"},
+  {name: "Stand Firm (A4)",              svg: "../social-kit/posters/una-poster-a4-stand-firm.svg"}
+];
+
+const BANNERS = [
+  {name: "Facebook / LinkedIn cover (1640×624)", svg: "../social-kit/banners/una-facebook-linkedin-cover-1640x624.svg"},
+  {name: "X / Twitter banner (1500×500)",        svg: "../social-kit/banners/una-twitter-banner-1500x500.svg"}
+];
+
+function makeQR(target, size) {
+  const div = document.createElement("div");
+  new QRCode(div, { text: target, width: size, height: size, correctLevel: QRCode.CorrectLevel.M });
+  return div;
+}
+
+function renderSticker(item, target) {
+  const card = document.createElement("div");
+  card.className = "sticker-card";
+  card.dataset.cat = item.cat || "general";
+
+  const preview = document.createElement("div");
+  preview.className = "sticker-preview";
+  const img = document.createElement("img");
+  img.src = item.png || item.svg;
+  img.alt = item.name;
+  img.loading = "lazy";
+  preview.appendChild(img);
+
+  const qrBox = document.createElement("div");
+  qrBox.className = "sticker-qr";
+  qrBox.title = "QR code → " + target;
+  qrBox.appendChild(makeQR(target, 54));
+  preview.appendChild(qrBox);
+
+  const body = document.createElement("div");
+  body.className = "sticker-body";
+  body.innerHTML = `<h3 class="sticker-name">${item.name}</h3>` +
+    (item.reo ? `<div class="sticker-meta"><span class="tag">${item.reo}</span></div>` : "") +
+    (item.note ? `<div class="sticker-meta"><span class="tag">${item.note}</span></div>` : "");
+
+  const actions = document.createElement("div");
+  actions.className = "sticker-actions";
+  const primary = item.svg || item.png;
+  const link = document.createElement("a");
+  link.className = "primary";
+  link.href = primary;
+  link.download = "";
+  link.textContent = "⬇ " + (item.svg ? "SVG" : "PNG");
+  actions.appendChild(link);
+  if (item.svg && item.png && item.svg !== item.png) {
+    const png = document.createElement("a");
+    png.href = item.png; png.download = ""; png.textContent = "⬇ PNG";
+    actions.appendChild(png);
+  }
+  body.appendChild(actions);
+
+  card.appendChild(preview);
+  card.appendChild(body);
+  return card;
+}
+
+function renderPoster(item, target) {
+  const card = document.createElement("div");
+  card.className = "sticker-card";
+  card.dataset.cat = "poster";
+  card.innerHTML = `
+    <div class="sticker-preview">
+      <img src="${item.svg}" alt="${item.name}" loading="lazy">
+    </div>
+    <div class="sticker-body">
+      <h3 class="sticker-name">${item.name}</h3>
+      <div class="sticker-meta"><span class="tag">SVG · scalable</span><span class="tag">wheatpaste-ready</span></div>
+      <div class="sticker-actions">
+        <a class="primary" href="${item.svg}" download>⬇ SVG</a>
+        <a href="${item.svg}" target="_blank">View full</a>
+      </div>
+    </div>`;
+  // Poster preview is taller; QR sits outside the image so it doesn't cover the poster text
+  const qrBox = document.createElement("div");
+  qrBox.className = "sticker-qr";
+  qrBox.style.position = "static";
+  qrBox.style.width = "70px"; qrBox.style.height = "70px";
+  qrBox.style.margin = "0 auto";
+  qrBox.appendChild(makeQR(target, 64));
+  // append to body instead of preview, so the poster image is unobstructed
+  const body = card.querySelector(".sticker-body");
+  const qrRow = document.createElement("div");
+  qrRow.style.cssText = "display:flex; align-items:center; gap:0.6rem; font-size:0.78rem; color:#6c6a63;";
+  qrRow.innerHTML = '<span>QR&nbsp;→&nbsp;<a href="' + target + '" target="_blank" rel="noopener" style="color:#c0392b;text-decoration:none">' + (document.querySelector("#qr-target option:checked").dataset.label || "link") + '</a></span>';
+  qrRow.prepend(qrBox);
+  body.insertBefore(qrRow, body.querySelector(".sticker-actions"));
+  return card;
+}
+
+function renderBanner(item, target) {
+  const card = document.createElement("div");
+  card.className = "sticker-card";
+  card.dataset.cat = "banner";
+  card.innerHTML = `
+    <div class="sticker-preview">
+      <img src="${item.svg}" alt="${item.name}" loading="lazy">
+    </div>
+    <div class="sticker-body">
+      <h3 class="sticker-name">${item.name}</h3>
+      <div class="sticker-meta"><span class="tag">SVG · scalable</span></div>
+      <div class="sticker-actions">
+        <a class="primary" href="${item.svg}" download>⬇ SVG</a>
+        <a href="${item.svg}" target="_blank">View full</a>
+      </div>
+    </div>`;
+  return card;
+}
+
+function render() {
+  const target = document.getElementById("qr-target").value;
+  const sGrid = document.getElementById("sticker-grid");
+  const pGrid = document.getElementById("poster-grid");
+  const bGrid = document.getElementById("banner-grid");
+  sGrid.innerHTML = ""; pGrid.innerHTML = ""; bGrid.innerHTML = "";
+  STICKERS.forEach(s => sGrid.appendChild(renderSticker(s, target)));
+  POSTERS.forEach(p => pGrid.appendChild(renderPoster(p, target)));
+  BANNERS.forEach(b => bGrid.appendChild(renderBanner(b, target)));
+  applyFilter(document.querySelector(".filter-chip.active").dataset.filter);
+}
+
+function applyFilter(filter) {
+  document.querySelectorAll("#sticker-grid .sticker-card").forEach(c => {
+    c.classList.toggle("hidden", filter !== "all" && c.dataset.cat !== filter);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  render();
+  document.getElementById("qr-target").addEventListener("change", render);
+  document.querySelectorAll(".filter-chip").forEach(chip => {
+    chip.addEventListener("click", () => {
+      document.querySelectorAll(".filter-chip").forEach(c => c.classList.remove("active"));
+      chip.classList.add("active");
+      applyFilter(chip.dataset.filter);
+    });
+  });
+});
+</script>
+
+</body>
+</html>
