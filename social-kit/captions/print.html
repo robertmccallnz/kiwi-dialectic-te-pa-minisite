@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Te Pā Tūwatawata — Social kit (print)</title>
+<style>
+  @page {
+    size: A4;
+    margin: 14mm 12mm 14mm 12mm;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background:#0f0f10;
+    color:#f4ebd6;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+    font-size:10.5pt;
+    line-height:1.45;
+  }
+  .cover{
+    page-break-after: always;
+    padding: 14mm 8mm;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    min-height: 268mm;  /* A4 minus margins */
+  }
+  .cover .brand{
+    font-size:9pt;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:#c8402a;
+    font-weight:700;
+  }
+  .cover h1{
+    font-size:32pt;
+    line-height:1.1;
+    margin:8mm 0 6mm;
+    font-weight:800;
+  }
+  .cover h1 .mi{display:block}
+  .cover h1 .gloss{display:block;font-size:18pt;color:#a8a39a;font-weight:600;margin-top:4mm}
+  .cover .lead{
+    font-size:12pt;
+    line-height:1.5;
+    color:#f4ebd6;
+    max-width:160mm;
+  }
+  .cover .meta{
+    border-top:1px solid #2a2a2c;
+    padding-top:6mm;
+    color:#a8a39a;
+    font-size:9.5pt;
+    display:flex;
+    justify-content:space-between;
+    gap:6mm;
+    flex-wrap:wrap;
+  }
+  .cover .meta strong{color:#f4ebd6}
+  .cover .lang-pill{
+    display:inline-block;
+    background:#c8402a;color:#fff;
+    padding:2mm 5mm;border-radius:999px;
+    font-weight:700;letter-spacing:.06em;font-size:11pt;
+    margin-top:6mm;
+  }
+
+  .cards-wrap{
+    display:flex;flex-direction:column;gap:6mm;
+  }
+  .card{
+    page-break-inside: avoid;
+    background:#161617;
+    border:1px solid #2a2a2c;
+    border-radius:5mm;
+    padding:6mm;
+    display:grid;
+    grid-template-columns: 65mm 1fr;
+    gap:6mm;
+    align-items:start;
+    min-height: 0;
+  }
+  .card .img{
+    width:65mm;
+    height:65mm;
+    background:#000;
+    border-radius:3mm;
+    overflow:hidden;
+    border:1px solid #2a2a2c;
+  }
+  .card .img img{
+    width:100%;height:100%;object-fit:cover;display:block;
+  }
+  .card .body{display:flex;flex-direction:column;gap:4mm;min-width:0}
+  .card .head{display:flex;align-items:baseline;justify-content:space-between;gap:4mm;flex-wrap:wrap}
+  .card h2{
+    margin:0;
+    font-size:13pt;
+    line-height:1.25;
+    font-weight:800;
+    color:#f4ebd6;
+  }
+  .card .subtitle{color:#a8a39a;font-size:9pt;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+  .card .caption{
+    background:#1d1d1f;
+    border:1px solid #2a2a2c;
+    border-radius:3mm;
+    padding:3mm 4mm;
+    white-space:pre-wrap;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size:8.5pt;
+    line-height:1.5;
+    color:#f4ebd6;
+    margin:0;
+  }
+  .card .footer{
+    display:flex;justify-content:space-between;align-items:center;gap:4mm;
+    color:#a8a39a;font-size:8.5pt;flex-wrap:wrap;
+  }
+  .card .footer .chars{font-variant-numeric:tabular-nums}
+  .card .footer .links{display:flex;gap:2mm;flex-wrap:wrap}
+  .card .footer .links span{
+    background:#1d1d1f;
+    border:1px solid #2a2a2c;
+    padding:1mm 2.5mm;border-radius:999px;
+    font-size:8pt;color:#f4ebd6;
+  }
+  .card .image-url{
+    color:#a8a39a;font-size:7.5pt;
+    overflow-wrap:anywhere;word-break:normal;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    line-height:1.4;
+  }
+
+  .endpage{
+    page-break-before: always;
+    padding:14mm 8mm;
+    display:flex;flex-direction:column;gap:8mm;
+  }
+  .endpage h2{
+    font-size:18pt;font-weight:800;margin:0 0 2mm;color:#f4ebd6;
+  }
+  .endpage p, .endpage li{font-size:10pt;line-height:1.55;color:#f4ebd6}
+  .endpage .muted{color:#a8a39a}
+  .endpage table{
+    width:100%;border-collapse:collapse;font-size:9pt;
+  }
+  .endpage th, .endpage td{
+    text-align:left;padding:2mm 3mm;border-bottom:1px solid #2a2a2c;
+  }
+  .endpage th{color:#a8a39a;font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:8pt}
+  .endpage td.url{font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;font-size:8pt;color:#a8a39a;word-break:break-all}
+  .endpage .note{
+    background:#1d1d1f;border:1px solid #2a2a2c;border-radius:3mm;
+    padding:4mm 5mm;
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script>
+/* Pulls the language code from ?lang=xx in the URL, loads campaign-captions.json,
+   and renders a full print-ready document for that single language. */
+
+const params = new URLSearchParams(location.search);
+const LANG = params.get("lang") || "mi";
+const VARIANT = params.get("variant") || "per_card";  // 'per_card' or 'unified'
+const SRC = VARIANT === "unified" ? "campaign-captions-unified.json" : "campaign-captions.json";
+
+const LANG_INFO = {
+  mi: { name: "Te Reo Māori",          english_name: "Māori",       greeting: "Ngā mihi nui",     cta_word:"Akoranga kore utu" },
+  en: { name: "English",               english_name: "English",     greeting: "Kia ora",           cta_word:"Free course" },
+  pt: { name: "Português",             english_name: "Portuguese",  greeting: "Olá",               cta_word:"Curso gratuito" },
+  gn: { name: "Avañe’ẽ (Guaraní)",     english_name: "Guaraní",     greeting: "Mba’éichapa",       cta_word:"Mbo’esyry reigua" },
+  sm: { name: "Gagana Sāmoa",          english_name: "Sāmoan",      greeting: "Tālofa lava",       cta_word:"A‘oa‘oga e leai se totogi" },
+};
+
+async function main(){
+  const r = await fetch(SRC, {cache:"no-store"});
+  if (!r.ok) { document.body.innerHTML = `<p style="color:#fff;padding:20mm">Failed to load ${SRC}</p>`; return; }
+  const data = await r.json();
+  const root = document.getElementById("root");
+  const info = LANG_INFO[LANG];
+
+  // Cover
+  root.appendChild(renderCover(data, info));
+
+  // Cards (wrap them so flexbox handles spacing; page-break-inside:avoid on each card prints 2 per page)
+  const cardsWrap = el("div", {class:"cards-wrap"});
+  for (const card of data.cards) {
+    cardsWrap.appendChild(renderCard(card, data, info));
+  }
+  root.appendChild(cardsWrap);
+
+  // End / reference page
+  root.appendChild(renderEnd(data, info));
+
+  // Wait for images then signal ready
+  const imgs = Array.from(document.images);
+  await Promise.all(imgs.map(img => img.complete ? Promise.resolve()
+    : new Promise(res => { img.addEventListener("load", res); img.addEventListener("error", res); })));
+  document.title = `Te Pā Tūwatawata — ${info.english_name} social kit`;
+  document.body.setAttribute("data-ready", "true");
+}
+
+function el(tag, attrs={}, ...children){
+  const e = document.createElement(tag);
+  for (const [k,v] of Object.entries(attrs)){
+    if (k === "class") e.className = v;
+    else if (k === "html") e.innerHTML = v;
+    else e.setAttribute(k, v);
+  }
+  for (const c of children){
+    if (c == null) continue;
+    e.appendChild(typeof c === "string" ? document.createTextNode(c) : c);
+  }
+  return e;
+}
+
+function renderCover(data, info){
+  const wrap = el("section", {class:"cover"});
+  const top = el("div", {});
+  top.appendChild(el("div", {class:"brand"}, "Te Pā Tūwatawata · The Kiwi Dialectic"));
+  const h1 = el("h1", {});
+  h1.appendChild(el("span", {class:"mi"}, "Ngā meme whakahau"));
+  h1.appendChild(el("span", {class:"gloss"}, `Campaign memes — ${info.english_name} edition`));
+  top.appendChild(h1);
+  top.appendChild(el("p", {class:"lead"},
+    `Six campaign memes for sharing on social platforms. Each meme appears in this booklet with its full caption in ${info.english_name}, the bilingual cover image, and the URL of the single-language ${info.english_name} variant. All assets are CC-friendly and free to repost.`
+  ));
+  top.appendChild(el("span", {class:"lang-pill"}, `${LANG.toUpperCase()} · ${info.name}`));
+  wrap.appendChild(top);
+
+  const meta = el("div", {class:"meta"});
+  meta.appendChild(el("span", {html: `<strong>Course</strong><br>${data.course_url}`}));
+  meta.appendChild(el("span", {html: `<strong>Images</strong><br>${data.image_base_url}/`}));
+  meta.appendChild(el("span", {html: `<strong>Cards</strong><br>${data.cards.length} memes × 5 languages`}));
+  meta.appendChild(el("span", {html: `<strong>Hashtags</strong><br>${VARIANT === "unified" ? "unified" : "per-card"}`}));
+  wrap.appendChild(meta);
+  return wrap;
+}
+
+function renderCard(card, data, info){
+  const cap = card.captions[LANG];
+  const wrap = el("article", {class:"card"});
+
+  const imgWrap = el("div", {class:"img"});
+  const img = el("img", {
+    src: card.image_by_lang[LANG],
+    alt: `${card.title_mi} — ${info.english_name} campaign meme`
+  });
+  imgWrap.appendChild(img);
+  wrap.appendChild(imgWrap);
+
+  const body = el("div", {class:"body"});
+  const head = el("div", {class:"head"});
+  const titlePrimary = LANG === "mi" ? card.title_mi : card.title_en;
+  const titleSecondary = LANG === "mi" ? card.title_en : card.title_mi;
+  head.appendChild(el("h2", {}, titlePrimary));
+  head.appendChild(el("div", {class:"subtitle"}, `${titleSecondary} · ${card.card_id}`));
+  body.appendChild(head);
+
+  body.appendChild(el("pre", {class:"caption"}, cap.text));
+
+  const footer = el("div", {class:"footer"});
+  footer.appendChild(el("span", {class:"chars"}, `${cap.char_count} chars · fits X 280 · Bluesky 300 · Mastodon 500`));
+  const links = el("span", {class:"links"});
+  for (const lc of ["en","mi","pt","gn","sm"]) {
+    links.appendChild(el("span", {}, lc.toUpperCase()));
+  }
+  footer.appendChild(links);
+  body.appendChild(footer);
+
+  body.appendChild(el("div", {class:"image-url"}, `Image (${LANG.toUpperCase()}): ${card.image_by_lang[LANG]}`));
+  body.appendChild(el("div", {class:"image-url"}, `Image (bilingual): ${card.image_bilingual}`));
+
+  wrap.appendChild(body);
+  return wrap;
+}
+
+function renderEnd(data, info){
+  const wrap = el("section", {class:"endpage"});
+  wrap.appendChild(el("h2", {}, "How to use this kit"));
+  wrap.appendChild(el("p", {}, "Each card on the previous pages is a self-contained social post. Copy the caption text exactly as printed, attach the matching image (URLs are listed under each card), and post."));
+  const ol = el("ol", {});
+  ol.appendChild(el("li", {}, "Right-click / long-press the image inside this PDF — or visit the image URL listed — and save the PNG."));
+  ol.appendChild(el("li", {}, "Copy the caption text from the monospace block above the URLs."));
+  ol.appendChild(el("li", {}, `Post on X, Bluesky, Mastodon, Substack Notes, or anywhere else. All ${data.cards.length} captions fit X's 280-character limit.`));
+  ol.appendChild(el("li", {}, "Tag a friend, an MP, or a tech company. He raupatu tonu tēnei."));
+  wrap.appendChild(ol);
+
+  wrap.appendChild(el("h2", {}, "All image URLs"));
+  const table = el("table", {});
+  const thead = el("thead", {});
+  thead.appendChild(el("tr", {html:
+    `<th>Card</th><th>Bilingual</th><th>${LANG.toUpperCase()} only</th>`
+  }));
+  table.appendChild(thead);
+  const tbody = el("tbody", {});
+  for (const card of data.cards) {
+    const tr = el("tr", {});
+    tr.appendChild(el("td", {}, card.card_id));
+    tr.appendChild(el("td", {class:"url"}, card.image_bilingual));
+    tr.appendChild(el("td", {class:"url"}, card.image_by_lang[LANG]));
+    tbody.appendChild(tr);
+  }
+  table.appendChild(tbody);
+  wrap.appendChild(table);
+
+  const note = el("div", {class:"note"});
+  note.appendChild(el("p", {html:
+    `<strong>Course:</strong> ${data.course_url}<br>` +
+    `<strong>Images:</strong> ${data.image_base_url}/<br>` +
+    `<strong>This booklet:</strong> ${info.english_name} (${LANG.toUpperCase()}) edition · ${VARIANT === "unified" ? "unified hashtags" : "per-card hashtags"}`
+  }));
+  wrap.appendChild(note);
+
+  wrap.appendChild(el("p", {class:"muted"}, "Created by The Kiwi Dialectic · Ko tātou te anamata."));
+  return wrap;
+}
+
+main();
+</script>
+</body>
+</html>

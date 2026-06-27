@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Te Pā Tūwatawata — Social kit</title>
+<meta name="description" content="Bilingual campaign memes for Te Pā Tūwatawata · Te reo Māori, English, Português, Avañe’ẽ Guaraní, Gagana Sāmoa.">
+<style>
+  :root {
+    --bg:#0f0f10;
+    --surface:#161617;
+    --surface-2:#1d1d1f;
+    --line:#2a2a2c;
+    --text:#f4ebd6;
+    --muted:#a8a39a;
+    --accent:#c8402a;
+    --accent-2:#a8331f;
+    --ok:#2f7a3a;
+    --warn:#8a6d1d;
+    --fail:#555;
+    --radius:12px;
+    --fs-body:15px;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:var(--fs-body);line-height:1.5}
+  a{color:var(--text)}
+  a:hover{color:#fff}
+  .wrap{max-width:1180px;margin:0 auto;padding:2rem 1.25rem 4rem}
+
+  header.site{margin-bottom:1.5rem}
+  header.site h1{font-size:clamp(1.4rem,2.4vw,2rem);margin:0 0 .35rem;line-height:1.2}
+  header.site p.tag{margin:0;color:var(--muted);font-size:.95rem}
+
+  /* Controls */
+  .controls{
+    position:sticky;top:0;z-index:10;
+    background:rgba(15,15,16,.92);backdrop-filter:saturate(140%) blur(8px);
+    border-bottom:1px solid var(--line);
+    margin:1rem -1.25rem 1.5rem;padding:.75rem 1.25rem;
+    display:flex;flex-wrap:wrap;gap:.75rem 1.25rem;align-items:center;
+  }
+  .controls .group{display:flex;align-items:center;gap:.5rem}
+  .controls label{color:var(--muted);font-size:.85rem;letter-spacing:.02em}
+  .pill-row{display:flex;flex-wrap:wrap;gap:.35rem;background:var(--surface);padding:.25rem;border-radius:999px;border:1px solid var(--line)}
+  .pill{
+    appearance:none;background:transparent;color:var(--text);border:0;cursor:pointer;
+    padding:.35rem .75rem;font:inherit;font-size:.85rem;font-weight:600;border-radius:999px;
+    transition:background .15s ease, color .15s ease;
+  }
+  .pill[aria-pressed="true"]{background:var(--accent);color:#fff}
+  .pill:hover{background:var(--accent-2);color:#fff}
+
+  .switch{display:inline-flex;align-items:center;gap:.5rem;font-size:.85rem;color:var(--muted)}
+  .switch input{accent-color:var(--accent)}
+
+  /* Grid */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.25rem}
+
+  /* Card */
+  .card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:1rem;display:flex;flex-direction:column;gap:.75rem;
+  }
+  .card-head{display:flex;align-items:flex-start;gap:.75rem;justify-content:space-between}
+  .card-head h3{margin:0;font-size:1.05rem;line-height:1.3;flex:1}
+  .card-head .id{display:block;color:var(--muted);font-size:.75rem;font-weight:500;margin-top:.15rem}
+
+  .copy-btn{
+    flex:0 0 auto;appearance:none;border:1px solid var(--accent);background:var(--accent);color:#fff;
+    padding:.4rem .75rem;border-radius:8px;cursor:pointer;font:inherit;font-size:.8rem;font-weight:700;
+    transition:background .15s ease, transform .05s ease;letter-spacing:.02em;
+  }
+  .copy-btn:hover{background:var(--accent-2);border-color:var(--accent-2)}
+  .copy-btn:active{transform:scale(.97)}
+  .copy-btn:focus-visible{outline:2px solid var(--text);outline-offset:2px}
+  .copy-btn.is-copied{background:var(--ok);border-color:var(--ok)}
+  .copy-btn.is-failed{background:var(--fail);border-color:var(--fail)}
+
+  .img-wrap{display:block;border-radius:8px;overflow:hidden;background:#000;aspect-ratio:1/1;border:1px solid var(--line)}
+  .img-wrap img{display:block;width:100%;height:100%;object-fit:cover}
+
+  .caption{
+    background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:.75rem;
+    white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:.85rem;line-height:1.55;color:#f4ebd6;margin:0;
+  }
+
+  .meta{display:flex;align-items:center;justify-content:space-between;gap:.5rem;font-size:.78rem;color:var(--muted)}
+  .meta .count{font-variant-numeric:tabular-nums}
+  .meta .count.over{color:#e08a7a}
+  .meta .count.warn{color:#d6c07a}
+
+  .lang-links{display:flex;flex-wrap:wrap;gap:.4rem;font-size:.78rem}
+  .lang-links a{
+    display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+    background:var(--surface-2);border:1px solid var(--line);text-decoration:none;color:var(--text);
+  }
+  .lang-links a:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+
+  footer{margin-top:3rem;color:var(--muted);font-size:.8rem;text-align:center}
+
+  /* Loading + error states */
+  .status{padding:2rem;text-align:center;color:var(--muted)}
+  .status.error{color:#e08a7a}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <h1>Te Pā Tūwatawata — Ngā meme whakahau</h1>
+    <p class="tag">6 memes × 5 languages · Pick a language, copy a caption, attach the matching image, ship.</p>
+  </header>
+
+  <section class="controls" aria-label="Controls">
+    <div class="group">
+      <label id="lang-label">Language</label>
+      <div class="pill-row" role="radiogroup" aria-labelledby="lang-label" id="lang-row">
+        <button class="pill" role="radio" data-lang="mi" aria-pressed="true">MI</button>
+        <button class="pill" role="radio" data-lang="en" aria-pressed="false">EN</button>
+        <button class="pill" role="radio" data-lang="pt" aria-pressed="false">PT</button>
+        <button class="pill" role="radio" data-lang="gn" aria-pressed="false">GN</button>
+        <button class="pill" role="radio" data-lang="sm" aria-pressed="false">SM</button>
+      </div>
+    </div>
+    <div class="group">
+      <label class="switch">
+        <input type="checkbox" id="unified-toggle">
+        Unified campaign hashtags
+      </label>
+    </div>
+    <div class="group" style="margin-left:auto">
+      <label class="switch">
+        <label id="limit-label" style="font-size:.85rem;color:var(--muted)">Char budget</label>
+        <select id="platform-select" style="background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:.25rem .4rem;font:inherit;font-size:.85rem">
+          <option value="280">X / Twitter (280)</option>
+          <option value="300">Bluesky (300)</option>
+          <option value="500" selected>Mastodon (500)</option>
+          <option value="0">No limit</option>
+        </select>
+      </label>
+    </div>
+  </section>
+
+  <div id="status" class="status">Loading captions…</div>
+  <div id="grid" class="grid" hidden></div>
+
+  <footer>
+    Te Pā Tūwatawata · <a href="https://kiwidialectic.com">kiwidialectic.com</a><br>
+    Built by The Kiwi Dialectic · All meme assets on <a href="https://te-pa.org/social-kit/">te-pa.org/social-kit</a>
+  </footer>
+</div>
+
+<script>
+/* ---------------------------------------------------------------------- *
+ * Te Pā Tūwatawata — social kit page
+ * Loads campaign-captions.json (and -unified.json), renders the cards,
+ * provides a language switcher, char-budget meter, copy-to-clipboard.
+ * ---------------------------------------------------------------------- */
+
+const SRC_DEFAULT = "campaign-captions.json";
+const SRC_UNIFIED = "campaign-captions-unified.json";
+
+const state = {
+  data: null,
+  unified: null,
+  useUnified: false,
+  lang: "mi",
+  budget: 500,
+};
+
+const $ = (sel, root=document) => root.querySelector(sel);
+const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+
+async function loadJSON(url) {
+  const r = await fetch(url, {cache: "no-store"});
+  if (!r.ok) throw new Error(`Failed to load ${url}: HTTP ${r.status}`);
+  return r.json();
+}
+
+async function init() {
+  try {
+    state.data = await loadJSON(SRC_DEFAULT);
+  } catch (e) {
+    showError(`Could not load ${SRC_DEFAULT}. Place the JSON file next to this HTML, or serve via a local web server (file:// blocks fetch in some browsers). Error: ${e.message}`);
+    return;
+  }
+  // Unified is optional — fall back to in-memory rewrite if missing.
+  try {
+    state.unified = await loadJSON(SRC_UNIFIED);
+  } catch (_) {
+    state.unified = null; // toggle will fall back to in-memory rewrite
+  }
+
+  wireControls();
+  render();
+}
+
+function showError(msg) {
+  const s = $("#status");
+  s.className = "status error";
+  s.textContent = msg;
+}
+
+function wireControls() {
+  // Language pills
+  $$("#lang-row .pill").forEach(btn => {
+    btn.addEventListener("click", () => {
+      $$("#lang-row .pill").forEach(b => b.setAttribute("aria-pressed", "false"));
+      btn.setAttribute("aria-pressed", "true");
+      state.lang = btn.dataset.lang;
+      render();
+    });
+  });
+
+  // Unified hashtags toggle
+  $("#unified-toggle").addEventListener("change", e => {
+    state.useUnified = e.target.checked;
+    render();
+  });
+
+  // Platform select
+  $("#platform-select").addEventListener("change", e => {
+    state.budget = parseInt(e.target.value, 10) || 0;
+    render();
+  });
+}
+
+function activeData() {
+  if (!state.useUnified) return state.data;
+  if (state.unified) return state.unified;
+  // Fallback: rewrite hashtags in memory
+  return rewriteUnified(state.data);
+}
+
+function rewriteUnified(data) {
+  const tags = ["#TePāTūwatawata", "#TeManaRaraunga"];
+  const tagLine = tags.join(" ");
+  const clone = JSON.parse(JSON.stringify(data));
+  for (const card of clone.cards) {
+    for (const lang of Object.keys(card.captions)) {
+      const cap = card.captions[lang];
+      // Drop trailing hashtag line(s)
+      const lines = cap.text.split("\n");
+      while (lines.length && lines[lines.length-1].trimStart().startsWith("#")) lines.pop();
+      while (lines.length && lines[lines.length-1].trim() === "") lines.pop();
+      const newText = lines.join("\n") + "\n\n" + tagLine;
+      cap.text = newText;
+      cap.data_copy_text = newText.replace(/\n/g, "&#10;");
+      cap.char_count = newText.length;
+      cap.hashtags = tags.slice();
+    }
+  }
+  return clone;
+}
+
+function render() {
+  const data = activeData();
+  const grid = $("#grid");
+  const status = $("#status");
+  status.hidden = true;
+  grid.hidden = false;
+  grid.innerHTML = "";
+
+  for (const card of data.cards) {
+    const cap = card.captions[state.lang];
+    const titleMI = card.title_mi || "";
+    const titleEN = card.title_en || "";
+    const img = card.image_by_lang[state.lang] || card.image_bilingual;
+
+    const el = document.createElement("article");
+    el.className = "card";
+    el.dataset.cardId = card.card_id;
+
+    // Head: title + copy button
+    const head = document.createElement("div");
+    head.className = "card-head";
+
+    const titleWrap = document.createElement("h3");
+    const titlePrimary = state.lang === "mi" ? titleMI : titleEN;
+    const titleSecondary = state.lang === "mi" ? titleEN : titleMI;
+    titleWrap.innerHTML = `${escapeHTML(titlePrimary)}<span class="id">${escapeHTML(titleSecondary)} · ${escapeHTML(card.card_id)}</span>`;
+    head.appendChild(titleWrap);
+
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "copy-btn";
+    btn.textContent = "Copy";
+    btn.dataset.copy = cap.text;
+    btn.addEventListener("click", () => copyText(btn, cap.text));
+    head.appendChild(btn);
+    el.appendChild(head);
+
+    // Image
+    const imgLink = document.createElement("a");
+    imgLink.href = img;
+    imgLink.className = "img-wrap";
+    imgLink.setAttribute("aria-label", `Open ${state.lang.toUpperCase()} image for ${card.card_id} at full size`);
+    const imgEl = document.createElement("img");
+    imgEl.src = img;
+    imgEl.alt = `${titlePrimary} — ${state.lang.toUpperCase()} campaign meme`;
+    imgEl.loading = "lazy";
+    imgEl.decoding = "async";
+    imgEl.width = 1080; imgEl.height = 1080;
+    imgLink.appendChild(imgEl);
+    el.appendChild(imgLink);
+
+    // Caption
+    const pre = document.createElement("pre");
+    pre.className = "caption";
+    pre.textContent = cap.text;
+    el.appendChild(pre);
+
+    // Meta row: char count + language download links
+    const meta = document.createElement("div");
+    meta.className = "meta";
+
+    const count = document.createElement("span");
+    count.className = "count";
+    const n = cap.char_count;
+    let countLabel = `${n} chars`;
+    if (state.budget > 0) {
+      countLabel += ` / ${state.budget}`;
+      const ratio = n / state.budget;
+      if (n > state.budget) count.classList.add("over");
+      else if (ratio > 0.9) count.classList.add("warn");
+    }
+    count.textContent = countLabel;
+    meta.appendChild(count);
+
+    const links = document.createElement("span");
+    links.className = "lang-links";
+    for (const lc of ["en","mi","pt","gn","sm"]) {
+      const a = document.createElement("a");
+      a.href = card.image_by_lang[lc];
+      a.textContent = lc.toUpperCase();
+      a.title = `Download ${lc.toUpperCase()} image`;
+      links.appendChild(a);
+    }
+    const bi = document.createElement("a");
+    bi.href = card.image_bilingual;
+    bi.textContent = "↓ bilingual";
+    bi.title = "Download bilingual EN / MI image";
+    links.appendChild(bi);
+    meta.appendChild(links);
+
+    el.appendChild(meta);
+    grid.appendChild(el);
+  }
+}
+
+async function copyText(btn, text) {
+  let ok = false;
+  if (navigator.clipboard && window.isSecureContext) {
+    try { await navigator.clipboard.writeText(text); ok = true; }
+    catch (_) { ok = false; }
+  }
+  if (!ok) {
+    const ta = document.createElement("textarea");
+    ta.value = text; ta.setAttribute("readonly", "");
+    ta.style.position = "absolute"; ta.style.left = "-9999px";
+    document.body.appendChild(ta); ta.select();
+    try { ok = document.execCommand("copy"); } catch(_) {}
+    document.body.removeChild(ta);
+  }
+  const original = btn.textContent;
+  btn.textContent = ok ? "Copied ✓" : "Press Ctrl+C";
+  btn.classList.toggle("is-copied", ok);
+  btn.classList.toggle("is-failed", !ok);
+  setTimeout(() => {
+    btn.textContent = original;
+    btn.classList.remove("is-copied","is-failed");
+  }, 1800);
+}
+
+function escapeHTML(s) {
+  return String(s).replace(/[&<>"']/g, c => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
+  }[c]));
+}
+
+init();
+</script>
+</body>
+</html>
