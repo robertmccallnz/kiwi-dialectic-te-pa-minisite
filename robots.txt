@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block tracking and analytics endpoints from indexing
+Disallow: /api/
+Disallow: /cron_tracking/
+
+Sitemap: https://te-pa.org/sitemap.xml
