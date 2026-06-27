@@ -23,6 +23,7 @@ Brand:
 """
 import os
 import sys
+import math
 from PIL import Image, ImageDraw, ImageFont
 
 # ─── Paths ──────────────────────────────────────────────────────────────
@@ -127,10 +128,62 @@ def draw_text_block(draw, text, fnt, x, y, color=CREAM, max_w=None, line_gap=8, 
         cy += th + line_gap
     return cy
 
+# ─── Unaunahi (fish-scale) motif background ───────────────────────────
+def draw_unaunahi_motif(img, x0=0, y0=0, x1=None, y1=None, base_color=BLACK,
+                       scale=92, alpha=22, line_width=2):
+    """
+    Paint a low-opacity unaunahi (fish-scale) pattern across a region.
+    Uses a transparent overlay so the underlying flat color shows through.
+
+    Args:
+        img: PIL.Image (RGB) to paint onto
+        x0,y0,x1,y1: region bounds (defaults to full canvas)
+        base_color: BLACK or RED — controls highlight color used for arcs
+        scale: arc diameter in px (bigger = larger scales)
+        alpha: line opacity (0–255) — lower = more subtle
+        line_width: stroke thickness in px
+    """
+    if x1 is None:
+        x1 = img.width
+    if y1 is None:
+        y1 = img.height
+    w = x1 - x0
+    h = y1 - y0
+    if w <= 0 or h <= 0:
+        return
+    # Choose highlight color: on red use cream, on black use cream as well
+    # (subtle warm highlight reads as carved/painted texture either way)
+    if base_color == RED:
+        hi = (255, 230, 200, alpha)  # warm cream on red
+    else:
+        hi = (244, 237, 224, alpha)  # cream on black
+
+    overlay = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    od = ImageDraw.Draw(overlay)
+    r = scale // 2
+    # Stagger rows so scales overlap (each row offset by r horizontally)
+    row_step = int(r * 1.05)  # slight vertical compression so scales nest
+    rows = h // row_step + 2
+    cols = w // scale + 2
+    for ri in range(-1, rows):
+        cy_arc = ri * row_step
+        offset = (r if ri % 2 else 0)
+        for ci in range(-1, cols):
+            cx_arc = ci * scale + offset
+            # Draw the upper arc of the scale (a half-circle opening down)
+            bbox = [cx_arc, cy_arc - r, cx_arc + scale, cy_arc + r]
+            od.arc(bbox, start=180, end=360, fill=hi, width=line_width)
+    # Composite onto base image
+    img.paste(overlay, (x0, y0), overlay)
+
 # ─── Layout templates ──────────────────────────────────────────────────
-def base_canvas(bg=BLACK):
+def base_canvas(bg=BLACK, motif=True):
     img = Image.new("RGB", (W, H), bg)
     draw = ImageDraw.Draw(img)
+    if motif:
+        draw_unaunahi_motif(img, 0, 0, W, H, base_color=bg)
+        # re-bind draw to the same image (paste doesn't invalidate, but be safe)
+        draw = ImageDraw.Draw(img)
     return img, draw
 
 def add_footer(draw, footer="Te Pā Tūwatawata  ·  kiwidialectic.com",
@@ -153,6 +206,9 @@ def template_slogan(slogan_lines, italic_caption, accent_line, body, cta):
     img, draw = base_canvas(bg=RED)
     # bottom black half
     draw.rectangle([0, H // 2 + 30, W, H], fill=BLACK)
+    # re-apply unaunahi motif on the black bottom half (covered by the rectangle)
+    draw_unaunahi_motif(img, 0, H // 2 + 30, W, H, base_color=BLACK)
+    draw = ImageDraw.Draw(img)
     # niho divider in middle
     band_y = H // 2 - 20
     draw_niho_border_at(draw, y=band_y, color=BLACK, bg=RED, tooth_w=36, tooth_h=40, band_h=70, point="down")
@@ -171,10 +227,24 @@ def template_slogan(slogan_lines, italic_caption, accent_line, body, cta):
     sy = (H // 2 - 20 - total_h) // 2 + 20
     if sy < 90:
         sy = 90
+    last_baseline = sy
+    last_width = 0
     for line in slogan_lines:
         tw, th = measure(draw, line, f_slogan)
         draw.text(((W - tw) / 2, sy), line, font=f_slogan, fill=CREAM)
+        last_baseline = sy + th
+        last_width = max(last_width, tw)
         sy += line_h
+    # Typography accent: short cream bar centered below the slogan, just above
+    # the niho divider band (band_y = H//2 - 20). Clamp so it never overlaps text.
+    bar_w = min(160, max(80, last_width // 3))
+    bar_x = (W - bar_w) // 2
+    # niho band starts at band_y; place bar 24px above it but at least 20px below text
+    bar_y_target = band_y - 24
+    bar_y_min = last_baseline + 22
+    bar_y = max(bar_y_min, bar_y_target)
+    if bar_y + 4 < band_y - 6:
+        draw.rectangle([bar_x, bar_y, bar_x + bar_w, bar_y + 4], fill=CREAM)
     # Italic caption
     f_italic = font(F_SERIF_ITALIC, 40)
     f_accent = font(F_SERIF_BOLDITALIC, 44)
