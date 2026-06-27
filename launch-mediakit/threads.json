@@ -1,0 +1,117 @@
+{
+  "$schema": "https://te-pa.org/schemas/launch-threads-v1.json",
+  "project": "Te Pā Tūwatawata",
+  "url": "https://te-pa.org",
+  "version": "2026-06-27",
+  "licence": "CC BY-NC-SA 4.0",
+  "hashtags_global": ["#TePā", "#IndigenousData", "#DataSovereignty", "#AIActivism"],
+  "visuals": {
+    "card": "https://te-pa.org/launch-mediakit/visuals/launch-card.svg",
+    "banner": "https://te-pa.org/launch-mediakit/visuals/launch-banner.svg",
+    "poster": "https://te-pa.org/launch-mediakit/visuals/launch-poster.svg"
+  },
+  "threads": [
+    {
+      "lang": "en",
+      "language": "English",
+      "audience": "International + Aotearoa default",
+      "primary_visual": "card",
+      "hashtags": ["#TePā", "#IndigenousData", "#DataSovereignty", "#AIActivism", "#TeManaRaraunga"],
+      "posts": [
+        "🪶 Launching today: Te Pā Tūwatawata — a free, open educational platform for indigenous AI literacy and data sovereignty. 30 cultural motifs. 11 cultures. 6 languages. No login. No paywall. te-pa.org 🧵",
+        "2/ AI is the latest form of raupatu — confiscation. Tech companies train on Māori voices, faces, waiata, and stories without consent. Different century. Same logic. We built Te Pā as the educational answer.",
+        "3/ Six free modules, bilingual, grounded in Te Tiriti o Waitangi, tikanga Māori, and CARE/OCAP indigenous data principles. From rangatahi-friendly intros to deep policy critique.",
+        "4/ Every motif — koru, niho taniwha, takarangi, kowhaiwhai, fa'a aupega, kene shipibo, nanduti, mola guna, kayapo jaguar — comes with full attribution, cultural context, and printable teaching kit.",
+        "5/ Built with Te Mana Raraunga's principles. Built for community partners — translators, kaiako, organisers — to fork, remix, and self-host. CC BY-NC-SA 4.0.",
+        "6/ Public read-only API: 100 req/hour, no key. Pull motifs, memes, teaching kits straight into your own platform. Docs at te-pa.org/partner-onboarding.",
+        "7/ This is whakapapa-aware infrastructure. The future of AI in Aotearoa isn't being built by Big Tech alone. Ko tātou te anamata.",
+        "8/ Read. Fork. Share. Print the posters. Stick the stickers. Teach the modules. te-pa.org #TePāTūwatawata #TinoRangatiratanga"
+      ]
+    },
+    {
+      "lang": "mi",
+      "language": "Te Reo Māori",
+      "audience": "Te ao Māori — primary cultural audience",
+      "primary_visual": "card",
+      "hashtags": ["#TePā", "#TinoRangatiratanga", "#TeManaRaraunga", "#TeReoMāori", "#Raraunga"],
+      "posts": [
+        "🪶 Kua whakarewahia i tēnei rā: Te Pā Tūwatawata — he pae mātauranga utukore mō te mana raraunga me te mārama AI. 30 ngā tohu ahurea. 11 ngā ahurea. 6 ngā reo. te-pa.org 🧵",
+        "2/ Ko te AI ko te raupatu hou — ka tangohia ngā reo, ngā kanohi, ngā waiata, ngā kōrero Māori e ngā kamupene hangarau, kāore he whakaaetanga. He raupatu tonu tēnei. Nā reira tēnei pae.",
+        "3/ E ono ngā kōwae mātauranga, reorua, e tau ana ki Te Tiriti o Waitangi, ki ngā tikanga Māori, ki ngā mātāpono CARE me OCAP. Mai i ngā rangatahi ki ngā kaitorotoro kaupapa here.",
+        "4/ Ko ia tohu — koru, niho taniwha, takarangi, kōwhaiwhai, manaia, mangopare, pā tūwatawata, pikorua, unaunahi — me te whakamārama ahurea, me te kete whakaako tā.",
+        "5/ I hangaia i runga i ngā mātāpono o Te Mana Raraunga. I hangaia mō ngā hoa-mahi — kaiwhakamāori, kaiako, kaiwhakahaere — ki te wāwāhi, ki te whakahōu. CC BY-NC-SA 4.0.",
+        "6/ He API tūmatanui mō te pānui anake: 100 inoi ia haora, kāore he kī. Tikina ngā tohu, ngā miihini, ngā kete whakaako ki tō ake pae. Tirohia te-pa.org/partner-onboarding.",
+        "7/ He hanganga mōhio whakapapa tēnei. Ehara ko Big Tech anake e hanga ana i te anamata o te AI ki Aotearoa. Ko tātou te anamata.",
+        "8/ Pānuihia. Wāwāhia. Tohaina. Tāhia ngā pānui. Piritia ngā piriti. Whakaakohia ngā kōwae. te-pa.org #TePāTūwatawata"
+      ]
+    },
+    {
+      "lang": "sm",
+      "language": "Gagana Samoa",
+      "audience": "Sāmoan diaspora + Pacific partners",
+      "primary_visual": "card",
+      "hashtags": ["#TePā", "#TautuaSāmoa", "#FaaSāmoa", "#IndigenousData", "#Pasifika"],
+      "posts": [
+        "🪶 Ua faalauiloaina i le aso: Te Pā Tūwatawata — o se faiga aoaoga e leai se totogi mo le pulea o faamatalaga taua a tagatānuu ma le poto AI. 30 fa'ailoga aganu'u. 11 aganu'u. 6 gagana. te-pa.org 🧵",
+        "2/ O le AI o se tasi lea o ituaiga fou o le ave faamalosi — e a'oa'oina e kamupani tekonolosi ia leo, foliga, ma pese a tagata Māori ma Pasifika e aunoa ma se faatagaga. Sa matou fausia Te Pā e tali atu ai.",
+        "3/ E ono mata'upu aoaoga, e lua gagana, faavae i Te Tiriti o Waitangi, tu ma agaifanua a Māori, ma faavae faavaomalo CARE ma OCAP mo faamatalaga a tagatānuu.",
+        "4/ O fa'ailoga Sāmoa — aso, atualoa, fa'a aupega, fetu, malu diamond, niho mano, pea — e iai uma a latou faamatalaga aganu'u ma kiti aoaoga e mafai ona lolomi.",
+        "5/ Faia ma le matatau i mata'upu faavae a Te Mana Raraunga. Faia mo paaga — tagata fa'aliliuga, faiaoga, fa'amaopoopo — e mafai ona suia ma faaaogāina. CC BY-NC-SA 4.0.",
+        "6/ Ua avanoa le API lautele e faitau ai: 100 talosaga i le itula, e leai se ki. Aumai fa'ailoga, ata, ma kiti aoaoga i lou lava platform. te-pa.org/partner-onboarding.",
+        "7/ O se fausaga e iloa ai le gafa. E le na'o Big Tech o le a fauina le lumana'i o le AI i le Pasifika. O tatou o le lumana'i.",
+        "8/ Faitau. Fefa'asoaa'i. Lolomi pepa fa'asalalauga. Aoao mata'upu. te-pa.org #TePāTūwatawata #Pasifika"
+      ]
+    },
+    {
+      "lang": "pt",
+      "language": "Português",
+      "audience": "Brazil, Portugal, Lusophone partners (Amazonian motifs)",
+      "primary_visual": "card",
+      "hashtags": ["#TePā", "#SoberaniaDeDados", "#PovosOriginários", "#Amazônia", "#AIIndígena"],
+      "posts": [
+        "🪶 Lançamento hoje: Te Pā Tūwatawata — uma plataforma educacional gratuita e aberta para soberania de dados indígenas e letramento em IA. 30 grafismos culturais. 11 povos. 6 idiomas. te-pa.org 🧵",
+        "2/ A IA é a nova forma de confisco — empresas de tecnologia treinam modelos com vozes, rostos, cantos e histórias indígenas sem consentimento. Século diferente. Mesma lógica. Te Pā é a resposta educacional.",
+        "3/ Seis módulos gratuitos, bilíngues, ancorados no Tratado de Waitangi, em tikanga Māori e nos princípios indígenas internacionais CARE e OCAP.",
+        "4/ Cada grafismo — luta pela vida, kayapo jaguar division, kene shipibo, mola guna, jagua pyta, nanduti, yanomami urihi, yvy mara ey, cuaracy ra angaba — vem com contexto cultural e kit didático imprimível.",
+        "5/ Construído sobre os princípios de Te Mana Raraunga. Feito para parceiros — tradutores, professores, organizadores — replicarem, remixarem e auto-hospedarem. CC BY-NC-SA 4.0.",
+        "6/ API pública somente-leitura: 100 reqs/hora, sem chave. Integre grafismos, memes e kits didáticos em sua própria plataforma. te-pa.org/partner-onboarding.",
+        "7/ Esta é uma infraestrutura consciente de ancestralidade. O futuro da IA não pertence só às Big Techs. Yvy mara ey — a terra sem mal — é coletiva.",
+        "8/ Leia. Replique. Compartilhe. Imprima os pôsteres. Cole os adesivos. Ensine os módulos. te-pa.org #TePāTūwatawata"
+      ]
+    },
+    {
+      "lang": "gn",
+      "language": "Avañe'ẽ (Guaraní)",
+      "audience": "Paraguay + Guaraní-speaking communities",
+      "primary_visual": "card",
+      "hashtags": ["#TePā", "#YvyMaraEy", "#TekoApytéperã", "#AvañeẽMbohasa", "#PovosOriginários"],
+      "posts": [
+        "🪶 Roñepyrũ ko árape: Te Pā Tūwatawata — peteĩ tembiapo ñembo'erã reiete, ipotĩva, indígena-kuéra rembiapo ha AI rehegua. 30 ta'angarã teko. 11 teko. 6 ñe'ẽ. te-pa.org 🧵",
+        "2/ AI ha'e pyahuvéva ñemonda — kamby-tekno omongakuaa ipopógui Māori, Guaraní, Shipibo ñe'ẽ, hova, purahéi, ndahi'aréiri. Te Pā ojejapo ko'ã mba'épe oñembohovái.",
+        "3/ Seis módulo ñembo'erã reiete, mokõi ñe'ẽme, oñemopyenda Te Tiriti o Waitangi, tikanga Māori, ha CARE/OCAP — indígena-kuéra rembiapo ñembyaty rehegua.",
+        "4/ Opa ta'angarã — jagua pyta, ñanduti, yvy mara ey, cuaracy ra angaba — orekoma hekoiteva ha kit ñembo'erã ojepysóva.",
+        "5/ Ojejapo Te Mana Raraunga rehegua. Ojejapo irũnguérape ĝuarã — ñe'ẽmbohasahára, mbo'ehára, mongu'ehára — ikatu hag̃ua omoambue, omoñepyrũ jey. CC BY-NC-SA 4.0.",
+        "6/ API ipotĩva ojeporúva: 100 ñemoñe'ẽ aravópe, hi'ãi sapy'aiterã. Eraha ta'anga, meme, kit ñembo'erã nde plataforma-pe. te-pa.org/partner-onboarding.",
+        "7/ Ko peteĩ techa ojeikuaaháicha ypy. AI ára pyahu ndaha'éi Big Tech-pe año. Yvy mara ey — ñande mba'e.",
+        "8/ Emoñe'ẽ. Embohasa. Emboja'o. Embokuatia ñe'ẽmondo. Embo'e modulo. te-pa.org #TePāTūwatawata"
+      ]
+    },
+    {
+      "lang": "ar",
+      "language": "العربية",
+      "audience": "MENA region indigenous-rights partners",
+      "primary_visual": "card",
+      "hashtags": ["#تي_با", "#السيادة_البيانية", "#حقوق_السكان_الأصليين", "#الذكاء_الاصطناعي", "#TePā"],
+      "posts": [
+        "🪶 يُطلق اليوم: Te Pā Tūwatawata — منصة تعليمية مجانية ومفتوحة لسيادة البيانات للشعوب الأصلية ومحو أمية الذكاء الاصطناعي. 30 رمزًا ثقافيًا. 11 ثقافة. 6 لغات. te-pa.org 🧵",
+        "٢/ الذكاء الاصطناعي هو الشكل الجديد للاستيلاء — شركات التكنولوجيا تدرّب نماذجها على أصوات ووجوه وأغاني وقصص الشعوب الأصلية دون إذن. قرن مختلف، منطق واحد. Te Pā هو الردّ التعليمي.",
+        "٣/ ستّ وحدات مجانية، ثنائية اللغة، مرتكزة على معاهدة وايتانغي، وتقاليد tikanga Māori، ومبادئ CARE و OCAP الدولية لسيادة بيانات الشعوب الأصلية.",
+        "٤/ كل رمز — koru, niho taniwha, takarangi, kene shipibo, jagua pyta, mola guna, kayapo jaguar — مرفق بسياقه الثقافي الكامل وعدّة تدريسية قابلة للطباعة.",
+        "٥/ بُنيت على مبادئ Te Mana Raraunga. صُمّمت لشركاء — مترجمين، معلّمين، منظّمين — لإعادة الاستخدام والتعديل والاستضافة الذاتية. رخصة CC BY-NC-SA 4.0.",
+        "٦/ واجهة برمجية عامة للقراءة فقط: 100 طلب/ساعة، بدون مفتاح. اسحب الرموز والميمات وعدد التدريس إلى منصّتك. te-pa.org/partner-onboarding.",
+        "٧/ هذه بنية تحتية تعي النسب. مستقبل الذكاء الاصطناعي ليس حكرًا على شركات التكنولوجيا الكبرى. السيادة جماعية.",
+        "٨/ اقرأ. انسخ. شارك. اطبع الملصقات. علّم الوحدات. te-pa.org #TePāTūwatawata"
+      ]
+    }
+  ]
+}
