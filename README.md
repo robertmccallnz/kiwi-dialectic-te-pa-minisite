@@ -1,12 +1,12 @@
-# Te Pā Tūwatawata — The Kiwi Dialectic
+# Te Pā Tūwatawata
 
-![Ko te reo te mauri](assets/social/kiwi-dialectic-github-symbol.png)
+![Te Pā Tūwatawata — AI, tikanga & data sovereignty](og-image.png)
 
 **He akoranga hono AI ki te ao Māori, ki te tino rangatiratanga o te raraunga.**  
 A bilingual course connecting AI, Māori data sovereignty, and community activism.
 
-→ **Live site:** [robertmccallnz.github.io/kiwi-dialectic-te-pa-minisite](https://robertmccallnz.github.io/kiwi-dialectic-te-pa-minisite)  
-→ **Publication:** [kiwidialectic.com](https://www.kiwidialectic.com)
+→ **Live site:** [te-pa.org](https://te-pa.org)  
+→ **Repository:** [github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite](https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite)
 
 ---
 
@@ -16,6 +16,27 @@ Te Pā Tūwatawata is a six-module bilingual course — te reo Māori and Englis
 
 Pedagogy grounded in Freire · Graeber · Kropotkin · Kaupapa Māori.  
 Design grounded in the Tino Rangatiratanga palette: black, red, white.
+
+---
+
+## Site Map
+
+| Section | URL |
+|---------|-----|
+| Home | [te-pa.org](https://te-pa.org/) |
+| Mapper (rhizome navigation) | [te-pa.org/rhizome-mapper.html](https://te-pa.org/rhizome-mapper.html) |
+| Launch Mediakit | [te-pa.org/launch-mediakit/](https://te-pa.org/launch-mediakit/) |
+| Social Kit | [te-pa.org/social-kit/](https://te-pa.org/social-kit/) |
+| Stickers & Posters | [te-pa.org/stickers/](https://te-pa.org/stickers/) |
+| Teaching Kits | [te-pa.org/teaching-kits/](https://te-pa.org/teaching-kits/) |
+| Campaign Generator | [te-pa.org/campaign-generator/](https://te-pa.org/campaign-generator/) |
+| Solidarity (Australia) | [te-pa.org/solidarity/australia/](https://te-pa.org/solidarity/australia/) |
+| Partner Onboarding | [te-pa.org/partner-onboarding/](https://te-pa.org/partner-onboarding/) |
+| Motifs | [te-pa.org/motifs/](https://te-pa.org/motifs/) |
+| Modules | [te-pa.org/modules/](https://te-pa.org/modules/) |
+
+→ **Sitemap:** [te-pa.org/sitemap.xml](https://te-pa.org/sitemap.xml)  
+→ **Robots:** [te-pa.org/robots.txt](https://te-pa.org/robots.txt)
 
 ---
 
@@ -37,24 +58,34 @@ Design grounded in the Tino Rangatiratanga palette: black, red, white.
 
 ```
 index.html                    Main site — all modules, kits, social resources
+rhizome-mapper.html           Interactive rhizome / lines-of-flight mapper
 modules/                      Individual module pages + rhizome essay
-assets/
-  kiwi-dialectic.css          Shared design system
-  motifs/                     SVG motifs: koru, kōwhaiwhai, niho taniwha, unaunahi
-  social/                     Social media assets: banner, profile, symbol
-pdfs/
-  te-pa-teachers-handbook.pdf         Educator guide
-  te-pa-arts-pedagogy-kit.pdf         Creative pedagogy (Freire, Beuys, Graeber)
-  te-pa-student-activity-sheets.pdf   Six reproducible student handouts
-  te-pa-rhizome-framework.pdf         Deep research: rhizome theory + 8 activist tools
-  te-pa-street-art-research.pdf       Māori street art + te reo activist research
-social-kit/
-  *.png                        12 module + campaign memes
-  platform/                    96 B&W platform memes (X, Instagram, Facebook, TikTok)
-  stickers/                    16 activist stickers + A4 print sheet + zip
-  te-pa-meme-kit.zip           All 108 memes bundled
-  te-pa-social-media-kit.pdf   Campaign guide
+motifs/                       Per-motif explainer pages
+launch-mediakit/              Press/launch pack: thread reader, downloads
+social-kit/                   Banners, captions, unaunahi assets, posters
+stickers/                     17 typographic stickers + A4 sheet + gallery
+teaching-kits/                Per-language teaching PDFs + manifest
+campaign-generator/           Per-language campaign content generator
+solidarity/australia/         FPIC-gated cross-movement solidarity page
+partner-onboarding/           Partner intake docs in 6 languages
+data/                         JSON: motif bank, campaign categories, calendar
+pdfs/                         Teacher handbook, rhizome framework, etc.
+scripts/                      Generators (i18n stickers, campaign feed, etc.)
+assets/                       Shared CSS, JS, SVG motifs
+og-image.png                  1200×630 Open Graph card
+sitemap.xml / robots.txt      SEO
 ```
+
+---
+
+## SEO & Social Meta
+
+- Canonical URLs on every page → `https://te-pa.org/<path>`
+- Open Graph: `og:image` is `https://te-pa.org/og-image.png` (1200×630)
+- Twitter Card: `summary_large_image`
+- `og:locale` = `en_NZ`, alternate `mi_NZ`
+- Sitemap declares hreflang for 6 site languages: `en`, `mi`, `sm`, `pt`, `gn`, `ar` (Arabic RTL)
+- robots.txt blocks `/api/` and `/cron_tracking/` only
 
 ---
 
@@ -66,7 +97,7 @@ social-kit/
 | `#c0392b` Red | Whero | Te Whai Ao — mana, life force |
 | `#f0efe9` Off-white | Mā | Te Ao Mārama — light, clarity |
 
-Fonts: Work Sans (body) · Instrument Serif (pull quotes)
+Fonts: Work Sans (body) · Instrument Serif (pull quotes) · Inter / Lora (stickers)
 
 ---
 
@@ -78,6 +109,12 @@ Fonts: Work Sans (body) · Instrument Serif (pull quotes)
 - **Unaunahi** — fish scale, collective strength, many becoming one
 - **Takarangi** — spiral, cyclical time, mua/muri
 - **Pakiaka** — root network, rhizome, the underground web
+
+---
+
+## Languages
+
+Six site languages: **en · mi · sm · pt · gn · ar**. Arabic uses `dir="rtl"`. Aboriginal / Torres Strait Islander language text is intentionally not published in this repo until Free, Prior and Informed Consent (FPIC) is confirmed through a community partner.
 
 ---
 
