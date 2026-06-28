@@ -112,6 +112,35 @@
   <span class="motif-stripe" role="presentation" aria-hidden="true"></span>
 
   <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- KAITIAKI SEATS BANNER — expressions of interest for charitable trust board -->
+  <aside id="kaitiaki-banner" role="complementary" aria-label="Kaitiaki seats — expressions of interest"
+         style="background:#111;color:#f4f0e8;border-bottom:3px solid #c0392b;font-family:'Work Sans',system-ui,sans-serif">
+    <div style="max-width:1100px;margin:0 auto;padding:14px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px">
+      <span style="font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#c0392b;font-weight:700;flex:0 0 auto" data-i18n="kaitiaki_banner_tag">Kaitiaki seats · He karanga</span>
+      <p style="margin:0;font-size:.92rem;line-height:1.5;flex:1 1 320px" data-i18n="kaitiaki_banner_text">Te Pā Tūwatawata is moving from website to registered charitable trust. We are inviting expressions of interest for <strong>language-kaitiaki seats</strong> — one seat per language community, appointed by that community.</p>
+      <a href="#kaitiaki" style="padding:8px 16px;background:#c0392b;color:#fff;border-radius:999px;text-decoration:none;font-weight:700;font-size:.82rem;flex:0 0 auto" data-i18n="kaitiaki_banner_cta">Read more →</a>
+      <button type="button" id="kaitiaki-banner-close" aria-label="Dismiss"
+              style="background:transparent;border:1px solid rgba(244,240,232,.3);color:#f4f0e8;border-radius:999px;width:30px;height:30px;cursor:pointer;font-size:1rem;line-height:1;flex:0 0 auto">×</button>
+    </div>
+  </aside>
+  <script>
+    (function(){
+      try {
+        var banner = document.getElementById('kaitiaki-banner');
+        var btn = document.getElementById('kaitiaki-banner-close');
+        if (!banner || !btn) return;
+        if (localStorage.getItem('tepa-kaitiaki-banner-dismissed') === '1') {
+          banner.style.display = 'none';
+        }
+        btn.addEventListener('click', function(){
+          banner.style.display = 'none';
+          try { localStorage.setItem('tepa-kaitiaki-banner-dismissed','1'); } catch(e){}
+        });
+      } catch(e){}
+    })();
+  </script>
+
   <div class="shell">
     <nav class="site-nav shell" aria-label="Primary">
   <a class="nav-brand" href="./">Te Pā Tūwatawata</a>
@@ -125,6 +154,7 @@
     <a href="solidarity/australia/">Solidarity</a>
     <a href="/rhizome-mapper.html">Mapper</a>
     <a href="partner-onboarding/">Partners</a>
+    <a href="#kaitiaki" data-i18n="nav_kaitiaki">Kaitiaki</a>
     <a href="https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite" rel="noopener">GitHub</a>
   </div>
 </nav>
@@ -922,6 +952,65 @@ TikTok hook: "I printed indigenous data sovereignty stickers for 50 cents each. 
           </div>
 
         </div>
+
+        <!-- KAITIAKI SEATS — EXPRESSIONS OF INTEREST -->
+        <section id="kaitiaki" style="margin-top:2.5rem;margin-bottom:2.5rem">
+          <div class="section-head">
+            <p class="section-tag" data-i18n="kaitiaki_tag">He karanga — Kaitiaki seats</p>
+            <h2 data-i18n="kaitiaki_heading">Expressions of interest — language-kaitiaki seats</h2>
+          </div>
+
+          <p class="section-intro" data-i18n="kaitiaki_intro">Te Pā Tūwatawata is being established as a registered charitable trust in Aotearoa New Zealand. The trust deed reserves a <strong>kaitiaki seat for each language community</strong> hosted on this site. As te reo Māori, Gagana Sāmoa, Avañe&apos;ẽ (Guaraní), Português, العربية and others are added, a seat is held open for the community whose language is being carried — to be filled by that community, on their terms.</p>
+
+          <div style="background:var(--bg-raised);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:0 12px 12px 0;padding:20px 24px;margin:1.5rem 0">
+            <p style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 10px" data-i18n="kaitiaki_principles_tag">Ngā mātāpono — Principles</p>
+            <ul style="margin:0;padding-left:1.2rem;line-height:1.7;font-size:.95rem">
+              <li data-i18n="kaitiaki_principle_1"><strong>Māori-led governance.</strong> The deed requires majority Māori trusteeship and a Māori chair. Te Tiriti o Waitangi is the foundation, not an afterthought.</li>
+              <li data-i18n="kaitiaki_principle_2"><strong>One seat per language community.</strong> A kaitiaki seat opens only when a language goes live on the site — and is appointed by that community, not by the existing board.</li>
+              <li data-i18n="kaitiaki_principle_3"><strong>Free, prior and informed consent.</strong> No language is added without a community partner asking for it. This follows the Maiam nayri Wingara, CARE and OCAP principles already governing this site.</li>
+              <li data-i18n="kaitiaki_principle_4"><strong>Not open recruitment.</strong> Self-nomination to a kaitiaki seat is not how these seats are filled. We are inviting <em>expressions of interest</em> so communities can identify and put forward their own kaitiaki.</li>
+            </ul>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:1.5rem 0">
+
+            <div style="background:var(--bg-raised);border:1px solid var(--border);border-radius:12px;padding:18px 20px">
+              <p style="font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 6px">Te Reo Māori</p>
+              <p style="font-family:var(--font-serif);font-size:1.05rem;margin:0 0 6px" data-i18n="kaitiaki_seat_mi_status">Open — primary kaitiaki seats</p>
+              <p style="font-size:.82rem;color:var(--fg-muted);line-height:1.55;margin:0" data-i18n="kaitiaki_seat_mi_note">Multiple Māori seats including the chair. Appointment by hapū / iwi partners, with rangatiratanga of the kaupapa held by tangata whenua.</p>
+            </div>
+
+            <div style="background:var(--bg-raised);border:1px solid var(--border);border-radius:12px;padding:18px 20px">
+              <p style="font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 6px">Gagana Sāmoa</p>
+              <p style="font-family:var(--font-serif);font-size:1.05rem;margin:0 0 6px" data-i18n="kaitiaki_seat_sm_status">Open — expressions of interest</p>
+              <p style="font-size:.82rem;color:var(--fg-muted);line-height:1.55;margin:0" data-i18n="kaitiaki_seat_sm_note">Seat opens as Gagana Sāmoa goes live on the site. Appointment by a Samoan community partner.</p>
+            </div>
+
+            <div style="background:var(--bg-raised);border:1px solid var(--border);border-radius:12px;padding:18px 20px">
+              <p style="font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 6px">Avañe&apos;ẽ — Guaraní</p>
+              <p style="font-family:var(--font-serif);font-size:1.05rem;margin:0 0 6px" data-i18n="kaitiaki_seat_gn_status">Open — expressions of interest</p>
+              <p style="font-size:.82rem;color:var(--fg-muted);line-height:1.55;margin:0" data-i18n="kaitiaki_seat_gn_note">Seat opens as Avañe&apos;ẽ goes live. Appointment by a Guaraní community partner in consultation with the Te Pā board.</p>
+            </div>
+
+            <div style="background:var(--bg-raised);border:1px solid var(--border);border-radius:12px;padding:18px 20px">
+              <p style="font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 6px" data-i18n="kaitiaki_seat_more_tag">Other languages</p>
+              <p style="font-family:var(--font-serif);font-size:1.05rem;margin:0 0 6px" data-i18n="kaitiaki_seat_more_status">Held open</p>
+              <p style="font-size:.82rem;color:var(--fg-muted);line-height:1.55;margin:0" data-i18n="kaitiaki_seat_more_note">A seat is held open for any language community whose reo is added to the site — Aboriginal and Torres Strait Islander, Pasifika, Amazonian and others, only on community request.</p>
+            </div>
+
+          </div>
+
+          <div style="background:var(--mangu,#111);color:var(--ma,#f4f0e8);border-radius:12px;padding:24px 28px;margin-top:1.5rem">
+            <p style="font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#c0392b;font-weight:700;margin:0 0 10px" data-i18n="kaitiaki_eoi_tag">Register interest</p>
+            <p style="font-family:var(--font-serif);font-size:1.3rem;margin:0 0 10px" data-i18n="kaitiaki_eoi_heading">Ko wai mā te kaitiaki o tō reo?</p>
+            <p style="font-size:.92rem;opacity:.85;margin:0 0 16px;line-height:1.65" data-i18n="kaitiaki_eoi_body">If your language community would like to take up a kaitiaki seat — or recommend the person who should hold it — please get in touch. We are not asking individuals to self-nominate. We are asking communities to put forward their own kaitiaki, on their own terms, at their own pace.</p>
+            <div style="display:flex;gap:1rem;flex-wrap:wrap">
+              <a href="mailto:robertmccallnz@gmail.com?subject=Te%20P%C4%81%20%E2%80%94%20Kaitiaki%20seat%20expression%20of%20interest" style="padding:10px 20px;background:#c0392b;color:#fff;border-radius:999px;text-decoration:none;font-weight:700;font-size:.88rem" data-i18n="kaitiaki_eoi_email">Email — Register interest</a>
+              <a href="partner-onboarding/" style="padding:10px 20px;border:1px solid rgba(255,255,255,.3);color:#f4f0e8;border-radius:999px;text-decoration:none;font-size:.88rem" data-i18n="kaitiaki_eoi_partner">Partner onboarding</a>
+            </div>
+            <p style="font-size:.78rem;opacity:.6;margin:14px 0 0;line-height:1.55" data-i18n="kaitiaki_eoi_footnote">Te Pā Tūwatawata is being registered as a charitable trust under the Charitable Trusts Act 1957 and will apply for registration with Charities Services. Trustees become officers under the Charities Act 2005 and must be 18+ and not disqualified.</p>
+          </div>
+        </section>
 
         <!-- Final CTA -->
         <div style="background:var(--mangu,#111);color:var(--ma,#f4f0e8);border-radius:12px;padding:28px 32px;margin-top:1rem">
