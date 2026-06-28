@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="794" height="1123" viewBox="0 0 794 1123">
+<svg lang="ar" dir="rtl" xmlns="http://www.w3.org/2000/svg" width="794" height="1123" viewBox="0 0 794 1123">
 <title>Unaunahi — The Kiwi Dialectic</title>
 
 <rect width="794" height="1123" fill="#0d0d0d"/>
@@ -320,17 +320,17 @@
 <rect x="52" y="80" width="6" height="963" fill="#c0392b" opacity="0.6"/>
 <!-- line 1 -->
 <text x="88" y="200" font-family="Georgia, serif" font-size="88" font-weight="bold"
-      fill="#f4f0e8" letter-spacing="-2">EACH</text>
+      fill="#f4f0e8" letter-spacing="-2">KIA TŪ</text>
 <!-- line 2 -->
 <text x="88" y="310" font-family="Georgia, serif" font-size="88" font-weight="bold"
-      fill="#c0392b">SCALE</text>
+      fill="#c0392b">MĀIA</text>
 <!-- line 3 -->
 <text x="88" y="420" font-family="Georgia, serif" font-size="72" font-weight="bold"
-      fill="#f4f0e8" opacity="0.9">HOLDS THE NEXT</text>
+      fill="#f4f0e8" opacity="0.9">TINO RANGATIRATANGA</text>
 <!-- divider -->
 <line x1="88" y1="470" x2="714" y2="470" stroke="#c0392b" stroke-width="3"/>
 <!-- tag -->
-<text x="88" y="530" font-family="Arial, sans-serif" font-size="32" fill="#f4f0e8" opacity="0.7">Ethical design works in interlocking layers. Unaunahi.</text>
+<text x="88" y="530" font-family="Noto Naskh Arabic, Tahoma, Arial, sans-serif" font-size="32" fill="#f4f0e8" opacity="0.7">اِثْبُتْ. بَياناتُكَ. شُروطُكَ. دائِمًا.</text>
 <!-- large unaunahi decorative arc motif -->
 <circle cx="397" cy="783" r="220" fill="none" stroke="#f4f0e8" stroke-width="1.5" opacity="0.12"/>
 <circle cx="397" cy="783" r="170" fill="none" stroke="#c0392b" stroke-width="2" opacity="0.18"/>
@@ -342,6 +342,6 @@
       fill="#f4f0e8" text-anchor="middle" opacity="0.5">FISH SCALE · KOTAHITANGA · COLLECTIVE PROTECTION</text>
 <!-- footer -->
 <text x="397" y="1083" font-family="Arial, sans-serif" font-size="22"
-      fill="#f4f0e8" text-anchor="middle" opacity="0.6">TE PĀ TŪWATAWATA · te-pa.org/motifs/unaunahi.html</text>
+      fill="#f4f0e8" text-anchor="middle" opacity="0.6">TE PĀ TŪWATAWATA · te-pa.org/modules/rhizome.html</text>
 
 </svg>

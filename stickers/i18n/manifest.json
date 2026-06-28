@@ -1,0 +1,171 @@
+{
+  "stickers": {
+    "sticker-una-armour": {
+      "source_gloss": "WE ARE ARMOUR",
+      "languages": {
+        "en": "WE ARE ARMOUR",
+        "mi": "sacred — te reo source unchanged",
+        "sm": "O MATOU O FAATALITALI",
+        "pt": "SOMOS A ARMADURA",
+        "gn": "ÑANDE PYHARE",
+        "ar": "نَحْنُ الدِّرْعُ"
+      }
+    },
+    "sticker-una-build": {
+      "source_gloss": "BUILD YOUR OWN SYSTEMS",
+      "languages": {
+        "en": "BUILD YOUR OWN SYSTEMS",
+        "mi": "sacred — te reo source unchanged",
+        "sm": "FAU AU LAVA FAIGAOGANA",
+        "pt": "CONSTRUA SEUS SISTEMAS",
+        "gn": "EMOPU'Ã NE REMBIPORU",
+        "ar": "ابْنِ أنظِمَتَكَ"
+      }
+    },
+    "sticker-una-consent": {
+      "source_gloss": "HOLD YOUR CONSENT",
+      "languages": {
+        "en": "HOLD YOUR CONSENT",
+        "mi": "sacred — te reo source unchanged",
+        "sm": "TAOFI LOU IOEGA",
+        "pt": "MANTENHA SEU CONSENTIMENTO",
+        "gn": "EMOMBA NE PY'APY",
+        "ar": "احْفَظْ مُوافقَتَكَ"
+      }
+    },
+    "sticker-una-data": {
+      "source_gloss": "MAORI DATA SOVEREIGNTY",
+      "languages": {
+        "en": "MAORI DATA SOVEREIGNTY",
+        "mi": "sacred — te reo source unchanged",
+        "sm": "PULEAGA O TUSITUSIGA MAORI",
+        "pt": "SOBERANIA DE DADOS MĀORI",
+        "gn": "TETÃ MĀORI MARANDU REKO",
+        "ar": "سِيادَةُ بَياناتِ الماوْري"
+      }
+    },
+    "sticker-una-future": {
+      "source_gloss": "SOVEREIGN FUTURES",
+      "languages": {
+        "en": "SOVEREIGN FUTURES",
+        "mi": "sacred — te reo source unchanged",
+        "sm": "LUMANA'I PULEA",
+        "pt": "FUTUROS SOBERANOS",
+        "gn": "TENONDERÃ TETÃ",
+        "ar": "مُستَقبَلٌ سَيِّدٌ"
+      }
+    },
+    "sticker-una-layers": {
+      "source_gloss": "STRENGTH IN LAYERS",
+      "languages": {
+        "en": "STRENGTH IN LAYERS",
+        "mi": "sacred — te reo source unchanged",
+        "sm": "MALOSI I LAPALAPA",
+        "pt": "FORÇA EM CAMADAS",
+        "gn": "MBARETE OJUEHEGUI",
+        "ar": "قُوَّةٌ مُتَطَبِّقَةٌ"
+      }
+    },
+    "sticker-una-resist": {
+      "source_gloss": "STAND FIRM",
+      "languages": {
+        "en": "STAND FIRM",
+        "mi": "sacred — te reo source unchanged",
+        "sm": "TŪ MAU",
+        "pt": "MANTENHA-SE FIRME",
+        "gn": "EÑEMBO'Y MBARETE",
+        "ar": "اِثْبُتْ"
+      }
+    },
+    "sticker-una-tino": {
+      "source_gloss": "ABSOLUTE SOVEREIGNTY",
+      "languages": {
+        "en": "ABSOLUTE SOVEREIGNTY",
+        "mi": "sacred — te reo source unchanged",
+        "sm": "PULEA ATOATOA",
+        "pt": "SOBERANIA ABSOLUTA",
+        "gn": "TETÃREKO TUVICHA",
+        "ar": "السِّيادَةُ الكامِلَةُ"
+      }
+    }
+  },
+  "posters": {
+    "una-poster-a3-data-sovereignty": {
+      "source_tagline": "Our data. Our terms. Our future.",
+      "languages": {
+        "en": "Our data. Our terms. Our future.",
+        "mi": "sacred — te reo source unchanged",
+        "sm": "A matou tusitusiga. A matou tulafono. Lumana'i.",
+        "pt": "Nossos dados. Nossas regras. Nosso futuro.",
+        "gn": "Ñande marandu. Ñande py'apy. Ñande tenondegua.",
+        "ar": "بَياناتُنا. شُروطُنا. مُستَقبَلُنا."
+      }
+    },
+    "una-poster-a3-we-are-armour": {
+      "source_tagline": "We are layered. We are armoured. We endure.",
+      "languages": {
+        "en": "We are layered. We are armoured. We endure.",
+        "mi": "sacred — te reo source unchanged",
+        "sm": "Ua matou faaopoopo. Ua matou aautu. Ua matou tūmau.",
+        "pt": "Somos camadas. Somos armadura. Permanecemos.",
+        "gn": "Ñande ipara, ñande pyhare, ñande hekove.",
+        "ar": "نَحْنُ طَبَقاتٌ. نَحْنُ دِرْعٌ. نَحْنُ نَدومُ."
+      }
+    },
+    "una-poster-a4-ai-resist": {
+      "source_tagline": "AI does not own you. Stand firm.",
+      "languages": {
+        "en": "AI does not own you. Stand firm.",
+        "mi": "sacred — te reo source unchanged",
+        "sm": "E le pulea oe e le AI. Tū maluō.",
+        "pt": "A IA não te possui. Resiste firme.",
+        "gn": "AI ndoiporúi ndéve. Eñembo'y mbarete.",
+        "ar": "الذَّكاءُ الاصطِناعيُّ لا يَملِكُكَ. اِثْبُتْ."
+      }
+    },
+    "una-poster-a4-future": {
+      "source_tagline": "The future is ours to build.",
+      "languages": {
+        "en": "The future is ours to build.",
+        "mi": "sacred — te reo source unchanged",
+        "sm": "O le lumana'i o le ā matou faufau.",
+        "pt": "O futuro é nosso para construir.",
+        "gn": "Tenondegua ñande mba'e jajapo haĝua.",
+        "ar": "المُستَقبَلُ لَنا نَبْنيهِ."
+      }
+    },
+    "una-poster-a4-kotahitanga": {
+      "source_tagline": "Together we stand. Together we govern.",
+      "languages": {
+        "en": "Together we stand. Together we govern.",
+        "mi": "sacred — te reo source unchanged",
+        "sm": "Tā tatou tutū fa'atasi. Tā tatou pule fa'atasi.",
+        "pt": "Juntos estamos. Juntos governamos.",
+        "gn": "Oñondive ñañemboʼy. Oñondive ñasãmbyhy.",
+        "ar": "نَقومُ مَعًا. نَحكُمُ مَعًا."
+      }
+    },
+    "una-poster-a4-layers": {
+      "source_tagline": "Layer upon layer of sovereignty.",
+      "languages": {
+        "en": "Layer upon layer of sovereignty.",
+        "mi": "sacred — te reo source unchanged",
+        "sm": "Lapalapa ma lapalapa o le puleaga.",
+        "pt": "Camada após camada de soberania.",
+        "gn": "Pe pe rehe tetãreko.",
+        "ar": "طَبَقَةٌ فَوْقَ طَبَقَةٍ مِنَ السِّيادَةِ."
+      }
+    },
+    "una-poster-a4-stand-firm": {
+      "source_tagline": "Stand firm. Your data. Your terms. Always.",
+      "languages": {
+        "en": "Stand firm. Your data. Your terms. Always.",
+        "mi": "sacred — te reo source unchanged",
+        "sm": "Tū maluō. Au tusitusiga. Au tulafono. I taimi uma.",
+        "pt": "Resiste firme. Seus dados. Suas regras. Sempre.",
+        "gn": "Eñembo'y mbarete. Ne marandu. Ne reko. Akóinte.",
+        "ar": "اِثْبُتْ. بَياناتُكَ. شُروطُكَ. دائِمًا."
+      }
+    }
+  }
+}

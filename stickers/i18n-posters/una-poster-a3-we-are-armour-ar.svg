@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1754" height="1240" viewBox="0 0 1754 1240">
+<svg lang="ar" dir="rtl" xmlns="http://www.w3.org/2000/svg" width="1754" height="1240" viewBox="0 0 1754 1240">
 <title>Unaunahi — The Kiwi Dialectic</title>
 
 <rect width="1754" height="1240" fill="#0d0d0d"/>
@@ -583,7 +583,7 @@
 <text x="80" y="220" font-family="Georgia, serif" font-size="148" font-weight="bold"
       fill="#f4f0e8" letter-spacing="-3">KO TĀTOU HE KAHU</text>
 <!-- sub -->
-<text x="80" y="340" font-family="Arial, sans-serif" font-size="56" font-weight="bold"
+<text x="80" y="340" font-family="Noto Naskh Arabic, Tahoma, Arial, sans-serif" font-size="56" font-weight="bold"
       fill="#f4f0e8" letter-spacing="4">WE ARE THE ARMOUR</text>
 <!-- caption -->
 <text x="80" y="460" font-family="Arial, sans-serif" font-size="38"
