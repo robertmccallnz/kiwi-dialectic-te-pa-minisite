@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="794" height="1123" viewBox="0 0 794 1123">
+<svg lang="ar" dir="rtl" xmlns="http://www.w3.org/2000/svg" width="794" height="1123" viewBox="0 0 794 1123">
 <title>Unaunahi — The Kiwi Dialectic</title>
 
 <rect width="794" height="1123" fill="#0d0d0d"/>
@@ -330,7 +330,7 @@
 <!-- divider -->
 <line x1="88" y1="470" x2="714" y2="470" stroke="#c0392b" stroke-width="3"/>
 <!-- tag -->
-<text x="88" y="530" font-family="Arial, sans-serif" font-size="32" fill="#f4f0e8" opacity="0.7">Ethical design works in interlocking layers. Unaunahi.</text>
+<text x="88" y="530" font-family="Noto Naskh Arabic, Tahoma, Arial, sans-serif" font-size="32" fill="#f4f0e8" opacity="0.7">Ethical design works in interlocking layers. Unaunahi.</text>
 <!-- large unaunahi decorative arc motif -->
 <circle cx="397" cy="783" r="220" fill="none" stroke="#f4f0e8" stroke-width="1.5" opacity="0.12"/>
 <circle cx="397" cy="783" r="170" fill="none" stroke="#c0392b" stroke-width="2" opacity="0.18"/>
