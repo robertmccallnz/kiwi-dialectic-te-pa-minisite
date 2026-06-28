@@ -24,9 +24,11 @@
     document.querySelectorAll('[data-i18n]').forEach((el) => {
       const key = el.getAttribute('data-i18n');
       const attr = el.getAttribute('data-i18n-attr');
+      const asHtml = el.hasAttribute('data-i18n-html');
       const value = strings[key];
       if (value === undefined) return;
       if (attr) el.setAttribute(attr, value);
+      else if (asHtml) el.innerHTML = value;
       else el.textContent = value;
     });
 
