@@ -242,9 +242,9 @@
 <rect x="0" y="492" width="1500" height="8" fill="#c0392b"/>
 <!-- headline left -->
 <text x="80" y="160" font-family="Georgia, serif" font-size="88" font-weight="bold"
-      fill="#f4f0e8">THE KIWI</text>
+      fill="#f4f0e8">TE PĀ</text>
 <text x="80" y="270" font-family="Georgia, serif" font-size="88" font-weight="bold"
-      fill="#c0392b">DIALECTIC</text>
+      fill="#c0392b">TŪWATAWATA</text>
 <!-- unaunahi motif right side -->
 <text x="1000" y="200" font-family="Georgia, serif" font-size="64"
       fill="#f4f0e8" opacity="0.2" text-anchor="middle">UNAUNAHI</text>
@@ -255,7 +255,7 @@
       fill="#f4f0e8" opacity="0.5">AI Activism · Radical Pedagogy · Māori Data Sovereignty</text>
 <!-- domain -->
 <text x="80" y="470" font-family="Arial, sans-serif" font-size="22"
-      fill="#f4f0e8" opacity="0.5">www.kiwidialectic.com</text>
+      fill="#f4f0e8" opacity="0.5">te-pa.org</text>
 <!-- large decorative scale pattern right -->
 <circle cx="1300" cy="250" r="160" fill="none" stroke="#c0392b" stroke-width="2" opacity="0.3"/>
 <circle cx="1300" cy="250" r="110" fill="none" stroke="#f4f0e8" stroke-width="1.5" opacity="0.2"/>
