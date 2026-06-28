@@ -180,12 +180,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://te-pa.org/social-kit/te-pa-social-media-kit.pdf</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://te-pa.org/data/motif-bank-master.json</loc>
     <lastmod>2026-06-28</lastmod>
     <changefreq>weekly</changefreq>
