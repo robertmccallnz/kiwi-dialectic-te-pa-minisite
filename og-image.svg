@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="kww" x="0" y="0" width="120" height="60" patternUnits="userSpaceOnUse">
+      <rect width="120" height="60" fill="#0e0e0e"/>
+      <polygon points="0,0 24,0 12,20" fill="#c0392b"/>
+      <polygon points="24,0 48,0 36,20" fill="#c0392b"/>
+      <polygon points="48,0 72,0 60,20" fill="#c0392b"/>
+      <polygon points="72,0 96,0 84,20" fill="#c0392b"/>
+      <polygon points="96,0 120,0 108,20" fill="#c0392b"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#0e0e0e"/>
+  <rect x="0" y="0" width="1200" height="60" fill="url(#kww)"/>
+  <rect x="0" y="570" width="1200" height="60" fill="url(#kww)" transform="translate(0,630) scale(1,-1)"/>
+  <text x="60" y="180" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="34" font-weight="600" letter-spacing="6" fill="#c0392b">TE PĀ TŪWATAWATA</text>
+  <text x="60" y="290" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="96" font-weight="800" fill="#f4f0e8" letter-spacing="-2">Te Pā Tūwatawata</text>
+  <text x="60" y="360" font-family="'Lora','Georgia',serif" font-size="38" font-style="italic" fill="#bcb6a8">AI, tikanga &amp; data sovereignty</text>
+  <line x1="60" y1="420" x2="1140" y2="420" stroke="#3a3a3a" stroke-width="1"/>
+  <text x="60" y="475" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="26" font-weight="500" fill="#a39e90" letter-spacing="1">Six modules · Bilingual reo Māori &amp; English · CC BY-NC-SA 4.0</text>
+  <text x="60" y="520" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="700" fill="#f4f0e8" letter-spacing="3">TE-PA.ORG</text>
+</svg>
