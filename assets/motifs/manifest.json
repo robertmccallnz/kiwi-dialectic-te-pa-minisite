@@ -1,0 +1,363 @@
+{
+  "version": "1.0",
+  "generated_for": "Te Pā Tūwatawata + sibling sites",
+  "license": "CC BY-NC-SA 4.0",
+  "attribution": "Te Pā Tūwatawata — The Kiwi Dialectic",
+  "r2_base": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev",
+  "total": 34,
+  "assets": [
+    {
+      "file": "koru-dark-square.svg",
+      "stem": "koru-dark-square",
+      "motif_id": "koru",
+      "variant": "dark-square",
+      "local_path": "assets/motifs/koru-dark-square.svg",
+      "culture": "maori",
+      "name_en": "Koru",
+      "name_indigenous": "Koru",
+      "colour_primary": "#2ecc71",
+      "r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/koru.svg"
+    },
+    {
+      "file": "koru-dark-wide.svg",
+      "stem": "koru-dark-wide",
+      "motif_id": "koru",
+      "variant": "dark-wide",
+      "local_path": "assets/motifs/koru-dark-wide.svg",
+      "culture": "maori",
+      "name_en": "Koru",
+      "name_indigenous": "Koru",
+      "colour_primary": "#2ecc71",
+      "r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/koru.svg"
+    },
+    {
+      "file": "koru-light-square.svg",
+      "stem": "koru-light-square",
+      "motif_id": "koru",
+      "variant": "light-square",
+      "local_path": "assets/motifs/koru-light-square.svg",
+      "culture": "maori",
+      "name_en": "Koru",
+      "name_indigenous": "Koru",
+      "colour_primary": "#2ecc71",
+      "r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/koru.svg"
+    },
+    {
+      "file": "koru-light-wide.svg",
+      "stem": "koru-light-wide",
+      "motif_id": "koru",
+      "variant": "light-wide",
+      "local_path": "assets/motifs/koru-light-wide.svg",
+      "culture": "maori",
+      "name_en": "Koru",
+      "name_indigenous": "Koru",
+      "colour_primary": "#2ecc71",
+      "r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/koru.svg"
+    },
+    {
+      "file": "koru-red-square.svg",
+      "stem": "koru-red-square",
+      "motif_id": "koru",
+      "variant": "red-square",
+      "local_path": "assets/motifs/koru-red-square.svg",
+      "culture": "maori",
+      "name_en": "Koru",
+      "name_indigenous": "Koru",
+      "colour_primary": "#2ecc71",
+      "r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/koru.svg"
+    },
+    {
+      "file": "koru.svg",
+      "stem": "koru",
+      "motif_id": "koru",
+      "variant": "default",
+      "local_path": "assets/motifs/koru.svg",
+      "culture": "maori",
+      "name_en": "Koru",
+      "name_indigenous": "Koru",
+      "colour_primary": "#2ecc71",
+      "r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/koru.svg"
+    },
+    {
+      "file": "kowhaiwhai-band.svg",
+      "stem": "kowhaiwhai-band",
+      "motif_id": "kowhaiwhai",
+      "variant": "band",
+      "local_path": "assets/motifs/kowhaiwhai-band.svg",
+      "culture": "maori",
+      "name_en": "Kōwhaiwhai",
+      "name_indigenous": "Kōwhaiwhai",
+      "colour_primary": "#f39c12",
+      "r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/kowhaiwhai.svg"
+    },
+    {
+      "file": "kowhaiwhai-dark-square.svg",
+      "stem": "kowhaiwhai-dark-square",
+      "motif_id": "kowhaiwhai",
+      "variant": "dark-square",
+      "local_path": "assets/motifs/kowhaiwhai-dark-square.svg",
+      "culture": "maori",
+      "name_en": "Kōwhaiwhai",
+      "name_indigenous": "Kōwhaiwhai",
+      "colour_primary": "#f39c12",
+      "r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/kowhaiwhai.svg"
+    },
+    {
+      "file": "kowhaiwhai-dark-wide.svg",
+      "stem": "kowhaiwhai-dark-wide",
+      "motif_id": "kowhaiwhai",
+      "variant": "dark-wide",
+      "local_path": "assets/motifs/kowhaiwhai-dark-wide.svg",
+      "culture": "maori",
+      "name_en": "Kōwhaiwhai",
+      "name_indigenous": "Kōwhaiwhai",
+      "colour_primary": "#f39c12",
+      "r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/kowhaiwhai.svg"
+    },
+    {
+      "file": "kowhaiwhai-light-square.svg",
+      "stem": "kowhaiwhai-light-square",
+      "motif_id": "kowhaiwhai",
+      "variant": "light-square",
+      "local_path": "assets/motifs/kowhaiwhai-light-square.svg",
+      "culture": "maori",
+      "name_en": "Kōwhaiwhai",
+      "name_indigenous": "Kōwhaiwhai",
+      "colour_primary": "#f39c12",
+      "r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/kowhaiwhai.svg"
+    },
+    {
+      "file": "kowhaiwhai-light-wide.svg",
+      "stem": "kowhaiwhai-light-wide",
+      "motif_id": "kowhaiwhai",
+      "variant": "light-wide",
+      "local_path": "assets/motifs/kowhaiwhai-light-wide.svg",
+      "culture": "maori",
+      "name_en": "Kōwhaiwhai",
+      "name_indigenous": "Kōwhaiwhai",
+      "colour_primary": "#f39c12",
+      "r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/kowhaiwhai.svg"
+    },
+    {
+      "file": "kowhaiwhai-red-square.svg",
+      "stem": "kowhaiwhai-red-square",
+      "motif_id": "kowhaiwhai",
+      "variant": "red-square",
+      "local_path": "assets/motifs/kowhaiwhai-red-square.svg",
+      "culture": "maori",
+      "name_en": "Kōwhaiwhai",
+      "name_indigenous": "Kōwhaiwhai",
+      "colour_primary": "#f39c12",
+      "r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/kowhaiwhai.svg"
+    },
+    {
+      "file": "niho-taniwha-dark-square.svg",
+      "stem": "niho-taniwha-dark-square",
+      "motif_id": null,
+      "variant": "dark-square",
+      "local_path": "assets/motifs/niho-taniwha-dark-square.svg"
+    },
+    {
+      "file": "niho-taniwha-dark-wide.svg",
+      "stem": "niho-taniwha-dark-wide",
+      "motif_id": null,
+      "variant": "dark-wide",
+      "local_path": "assets/motifs/niho-taniwha-dark-wide.svg"
+    },
+    {
+      "file": "niho-taniwha-light-square.svg",
+      "stem": "niho-taniwha-light-square",
+      "motif_id": null,
+      "variant": "light-square",
+      "local_path": "assets/motifs/niho-taniwha-light-square.svg"
+    },
+    {
+      "file": "niho-taniwha-light-wide.svg",
+      "stem": "niho-taniwha-light-wide",
+      "motif_id": null,
+      "variant": "light-wide",
+      "local_path": "assets/motifs/niho-taniwha-light-wide.svg"
+    },
+    {
+      "file": "niho-taniwha-red-square.svg",
+      "stem": "niho-taniwha-red-square",
+      "motif_id": null,
+      "variant": "red-square",
+      "local_path": "assets/motifs/niho-taniwha-red-square.svg"
+    },
+    {
+      "file": "niho-taniwha.svg",
+      "stem": "niho-taniwha",
+      "motif_id": null,
+      "variant": "default",
+      "local_path": "assets/motifs/niho-taniwha.svg"
+    },
+    {
+      "file": "pa-tuwatawata-dark-square.svg",
+      "stem": "pa-tuwatawata-dark-square",
+      "motif_id": null,
+      "variant": "dark-square",
+      "local_path": "assets/motifs/pa-tuwatawata-dark-square.svg"
+    },
+    {
+      "file": "pa-tuwatawata-dark-wide.svg",
+      "stem": "pa-tuwatawata-dark-wide",
+      "motif_id": null,
+      "variant": "dark-wide",
+      "local_path": "assets/motifs/pa-tuwatawata-dark-wide.svg"
+    },
+    {
+      "file": "pa-tuwatawata-light-square.svg",
+      "stem": "pa-tuwatawata-light-square",
+      "motif_id": null,
+      "variant": "light-square",
+      "local_path": "assets/motifs/pa-tuwatawata-light-square.svg"
+    },
+    {
+      "file": "pa-tuwatawata-light-wide.svg",
+      "stem": "pa-tuwatawata-light-wide",
+      "motif_id": null,
+      "variant": "light-wide",
+      "local_path": "assets/motifs/pa-tuwatawata-light-wide.svg"
+    },
+    {
+      "file": "pa-tuwatawata-red-square.svg",
+      "stem": "pa-tuwatawata-red-square",
+      "motif_id": null,
+      "variant": "red-square",
+      "local_path": "assets/motifs/pa-tuwatawata-red-square.svg"
+    },
+    {
+      "file": "takarangi-dark-square.svg",
+      "stem": "takarangi-dark-square",
+      "motif_id": "takarangi",
+      "variant": "dark-square",
+      "local_path": "assets/motifs/takarangi-dark-square.svg",
+      "culture": "maori",
+      "name_en": "Takarangi",
+      "name_indigenous": "Takarangi",
+      "colour_primary": "#9b59b6",
+      "r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/takarangi.svg"
+    },
+    {
+      "file": "takarangi-dark-wide.svg",
+      "stem": "takarangi-dark-wide",
+      "motif_id": "takarangi",
+      "variant": "dark-wide",
+      "local_path": "assets/motifs/takarangi-dark-wide.svg",
+      "culture": "maori",
+      "name_en": "Takarangi",
+      "name_indigenous": "Takarangi",
+      "colour_primary": "#9b59b6",
+      "r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/takarangi.svg"
+    },
+    {
+      "file": "takarangi-light-square.svg",
+      "stem": "takarangi-light-square",
+      "motif_id": "takarangi",
+      "variant": "light-square",
+      "local_path": "assets/motifs/takarangi-light-square.svg",
+      "culture": "maori",
+      "name_en": "Takarangi",
+      "name_indigenous": "Takarangi",
+      "colour_primary": "#9b59b6",
+      "r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/takarangi.svg"
+    },
+    {
+      "file": "takarangi-light-wide.svg",
+      "stem": "takarangi-light-wide",
+      "motif_id": "takarangi",
+      "variant": "light-wide",
+      "local_path": "assets/motifs/takarangi-light-wide.svg",
+      "culture": "maori",
+      "name_en": "Takarangi",
+      "name_indigenous": "Takarangi",
+      "colour_primary": "#9b59b6",
+      "r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/takarangi.svg"
+    },
+    {
+      "file": "takarangi-red-square.svg",
+      "stem": "takarangi-red-square",
+      "motif_id": "takarangi",
+      "variant": "red-square",
+      "local_path": "assets/motifs/takarangi-red-square.svg",
+      "culture": "maori",
+      "name_en": "Takarangi",
+      "name_indigenous": "Takarangi",
+      "colour_primary": "#9b59b6",
+      "r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/takarangi.svg"
+    },
+    {
+      "file": "unaunahi-dark-square.svg",
+      "stem": "unaunahi-dark-square",
+      "motif_id": "unaunahi",
+      "variant": "dark-square",
+      "local_path": "assets/motifs/unaunahi-dark-square.svg",
+      "culture": "maori",
+      "name_en": "Unaunahi",
+      "name_indigenous": "Unaunahi",
+      "colour_primary": "#1abc9c",
+      "r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/unaunahi.svg"
+    },
+    {
+      "file": "unaunahi-dark-wide.svg",
+      "stem": "unaunahi-dark-wide",
+      "motif_id": "unaunahi",
+      "variant": "dark-wide",
+      "local_path": "assets/motifs/unaunahi-dark-wide.svg",
+      "culture": "maori",
+      "name_en": "Unaunahi",
+      "name_indigenous": "Unaunahi",
+      "colour_primary": "#1abc9c",
+      "r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/unaunahi.svg"
+    },
+    {
+      "file": "unaunahi-light-square.svg",
+      "stem": "unaunahi-light-square",
+      "motif_id": "unaunahi",
+      "variant": "light-square",
+      "local_path": "assets/motifs/unaunahi-light-square.svg",
+      "culture": "maori",
+      "name_en": "Unaunahi",
+      "name_indigenous": "Unaunahi",
+      "colour_primary": "#1abc9c",
+      "r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/unaunahi.svg"
+    },
+    {
+      "file": "unaunahi-light-wide.svg",
+      "stem": "unaunahi-light-wide",
+      "motif_id": "unaunahi",
+      "variant": "light-wide",
+      "local_path": "assets/motifs/unaunahi-light-wide.svg",
+      "culture": "maori",
+      "name_en": "Unaunahi",
+      "name_indigenous": "Unaunahi",
+      "colour_primary": "#1abc9c",
+      "r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/unaunahi.svg"
+    },
+    {
+      "file": "unaunahi-red-square.svg",
+      "stem": "unaunahi-red-square",
+      "motif_id": "unaunahi",
+      "variant": "red-square",
+      "local_path": "assets/motifs/unaunahi-red-square.svg",
+      "culture": "maori",
+      "name_en": "Unaunahi",
+      "name_indigenous": "Unaunahi",
+      "colour_primary": "#1abc9c",
+      "r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/unaunahi.svg"
+    },
+    {
+      "file": "unaunahi.svg",
+      "stem": "unaunahi",
+      "motif_id": "unaunahi",
+      "variant": "default",
+      "local_path": "assets/motifs/unaunahi.svg",
+      "culture": "maori",
+      "name_en": "Unaunahi",
+      "name_indigenous": "Unaunahi",
+      "colour_primary": "#1abc9c",
+      "r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/unaunahi.svg"
+    }
+  ]
+}

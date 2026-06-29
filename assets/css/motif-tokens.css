@@ -1,0 +1,100 @@
+/* motif-tokens.css — generated from data/motif-bank-master.json */
+/* DO NOT EDIT BY HAND. Run scripts/build-motif-tokens.py. */
+/* License: CC BY-NC-SA 4.0 — Te Pā Tūwatawata */
+
+:root {
+  /* default ecosystem palette (Te Pā / Māori) */
+  --motif-primary: #2ecc71;
+  --motif-secondary: #1a9e55;
+  --motif-accent: #c0392b;
+  --motif-attribution: 'Te Pā Tūwatawata · CC BY-NC-SA 4.0';
+}
+
+[data-culture="amazonian"] {
+  --motif-primary: #e74c3c;
+  --motif-secondary: #1a252f;
+  --motif-accent: #e74c3c;
+  --motif-culture: "amazonian";
+}
+
+[data-culture="fijian"] {
+  --motif-primary: #8b5e3c;
+  --motif-secondary: #6b4226;
+  --motif-accent: #6b4226;
+  --motif-culture: "fijian";
+}
+
+[data-culture="guarani"] {
+  --motif-primary: #27ae60;
+  --motif-secondary: #f39c12;
+  --motif-accent: #f39c12;
+  --motif-culture: "guarani";
+}
+
+[data-culture="guna"] {
+  --motif-primary: #e74c3c;
+  --motif-secondary: #f39c12;
+  --motif-accent: #e74c3c;
+  --motif-culture: "guna";
+}
+
+[data-culture="kayapo"] {
+  --motif-primary: #c0392b;
+  --motif-secondary: #2c3e50;
+  --motif-accent: #c0392b;
+  --motif-culture: "kayapo";
+}
+
+[data-culture="maori"] {
+  --motif-primary: #2ecc71;
+  --motif-secondary: #1a9e55;
+  --motif-accent: #3498db;
+  --motif-culture: "maori";
+}
+
+[data-culture="pacific"] {
+  --motif-primary: #00b4d8;
+  --motif-secondary: #f4a261;
+  --motif-accent: #00b4d8;
+  --motif-culture: "pacific";
+}
+
+[data-culture="samoan"] {
+  --motif-primary: #00b4d8;
+  --motif-secondary: #0077b6;
+  --motif-accent: #0077b6;
+  --motif-culture: "samoan";
+}
+
+[data-culture="shipibo"] {
+  --motif-primary: #8e44ad;
+  --motif-secondary: #2980b9;
+  --motif-accent: #2980b9;
+  --motif-culture: "shipibo";
+}
+
+[data-culture="tongan"] {
+  --motif-primary: #8b5e3c;
+  --motif-secondary: #c9a227;
+  --motif-accent: #8b5e3c;
+  --motif-culture: "tongan";
+}
+
+[data-culture="yanomami"] {
+  --motif-primary: #27ae60;
+  --motif-secondary: #e74c3c;
+  --motif-accent: #27ae60;
+  --motif-culture: "yanomami";
+}
+
+/* utility classes — opt-in */
+.motif-stripe-bg { background: var(--motif-primary); }
+.motif-stripe-border { border-color: var(--motif-primary); }
+.motif-stripe-text { color: var(--motif-primary); }
+.motif-accent-text { color: var(--motif-accent); }
+
+.motif-card {
+  border-left: 4px solid var(--motif-primary);
+  padding: 1rem 1.25rem;
+  background: color-mix(in srgb, var(--motif-primary) 6%, transparent);
+}
