@@ -10,7 +10,7 @@ Welcome to the Te Pā Tūwatawata partner network. This guide gives you everythi
 
 ## About Te Pā Tūwatawata
 
-Te Pā Tūwatawata is a Charitable Trust based in Port Chalmers, Aotearoa New Zealand. We build open educational infrastructure for indigenous data sovereignty, AI literacy, and decolonial knowledge systems — rooted in the cultural motif traditions of Māori, Samoan, Pacific, Guaraní, Shipibo, Guna, Kayapó, Yanomami, Fijian, Tongan, and Amazonian peoples.
+Te Pā Tūwatawata is an open educational kaupapa published from Ōtepoti Dunedin (Port Chalmers), Aotearoa New Zealand. A charitable trust is being established — expressions of interest open for founding board / kaitiaki seats. We build open educational infrastructure for indigenous data sovereignty, AI literacy, and decolonial knowledge systems — rooted in the cultural motif traditions of Māori, Samoan, Pacific, Guaraní, Shipibo, Guna, Kayapó, Yanomami, Fijian, Tongan, and Amazonian peoples.
 
 ---
 
@@ -113,4 +113,4 @@ Te Pā Tūwatawata
 
 ---
 
-*Te Pā Tūwatawata Charitable Trust — te-pa.org — CC BY-NC-SA 4.0 — Generated automatically*
+*Te Pā Tūwatawata — te-pa.org — CC BY-NC-SA 4.0 — Generated automatically*

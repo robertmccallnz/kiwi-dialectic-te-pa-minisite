@@ -50,7 +50,7 @@
 >
 > Ngā mihi nui,
 > **Robert McCall**
-> Te Pā Tūwatawata Charitable Trust
+> Te Pā Tūwatawata
 > Port Chalmers, Aotearoa New Zealand
 > [te-pa.org](https://te-pa.org) · [github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite](https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite)
 

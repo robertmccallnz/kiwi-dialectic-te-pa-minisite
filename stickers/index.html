@@ -38,7 +38,7 @@
   "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
   "creator": {
     "@type": "Organization",
-    "name": "Te Pā Tūwatawata Charitable Trust",
+    "name": "Te Pā Tūwatawata",
     "url": "https://te-pa.org"
   },
   "citation": [
@@ -648,7 +648,7 @@
   <section class="kit-section" aria-labelledby="press-h">
     <h2 id="press-h">For journalists &amp; partners</h2>
     <div class="kit-callout">
-      <p>Te Pā Tūwatawata is operated by a Charitable Trust based in Port Chalmers, Aotearoa New Zealand. All assets on this page are free to repost, translate, and adapt with attribution to <strong>Te Pā Tūwatawata Charitable Trust</strong> under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> licence.</p>
+      <p>Te Pā Tūwatawata is an open educational kaupapa published from Ōtepoti Dunedin, Aotearoa New Zealand. A charitable trust is being established — expressions of interest open for founding board / kaitiaki seats. All assets on this page are free to repost, translate, and adapt with attribution to <strong>Te Pā Tūwatawata</strong> under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> licence.</p>
       <p>Press enquiries: open an issue on <a href="https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite">GitHub</a> or write via the Trust contact at <a href="../">te-pa.org</a>.</p>
       <p><strong>Embargo:</strong> none. All stickers, posters, and street-activism materials may be published, printed, and distributed immediately.</p>
     </div>
@@ -746,7 +746,7 @@ function renderSticker(item, target) {
   const img = document.createElement("img");
   img.src = item.png || item.svg;
   img.alt = item.name;
-  img.loading = "lazy";
+  img.decoding = "async";
   preview.appendChild(img);
 
   const qrBox = document.createElement("div");
@@ -790,7 +790,7 @@ function renderPoster(item, target) {
   const viewSrc = item.png || item.svg;
   card.innerHTML = `
     <div class="sticker-preview">
-      <img src="${previewSrc}" alt="${item.name}" loading="lazy">
+      <img src="${previewSrc}" alt="${item.name}" decoding="async">
     </div>
     <div class="sticker-body">
       <h3 class="sticker-name">${item.name}</h3>
@@ -825,7 +825,7 @@ function renderBanner(item, target) {
   const previewSrc = item.png || item.svg;
   card.innerHTML = `
     <div class="sticker-preview">
-      <img src="${previewSrc}" alt="${item.name}" loading="lazy">
+      <img src="${previewSrc}" alt="${item.name}" decoding="async">
     </div>
     <div class="sticker-body">
       <h3 class="sticker-name">${item.name}</h3>
