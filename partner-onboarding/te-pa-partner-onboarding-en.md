@@ -106,8 +106,6 @@ Te Pā Tūwatawata
 
 - [Website](https://te-pa.org)
 - [Rhizome Mapper](https://te-pa.org/rhizome-mapper.html)
-- [Street Campaign Generator](https://te-pa.org/campaign-generator/) — build a sticker or poster for a live indigenous-led campaign in your browser
-- [Stickers & street activism](https://te-pa.org/stickers/)
 - [GitHub](https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite)
 - [API Docs](https://te-pa-analytics.sketchschool.workers.dev/api)
 
