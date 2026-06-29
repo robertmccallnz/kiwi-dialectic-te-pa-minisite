@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Motif Consumer Example — Te Pā Tūwatawata</title>
+<meta name="description" content="A drop-in single-file demo: how any Indigenous-culture site can consume the canonical motif API."/>
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --fg: #ede6d6;
+    --muted: #aaa;
+    --accent: #c8262a;
+    --motif-primary: #2ecc71;
+  }
+  body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background:var(--bg); color:var(--fg); line-height:1.55; }
+  header { padding: 2rem 1.5rem 1rem; border-bottom: 1px solid #222; }
+  h1 { margin:0 0 .25rem; font-weight:600; font-size:1.6rem; }
+  .sub { color:var(--muted); font-size:.95rem; }
+  main { padding: 1.5rem; max-width: 1000px; margin: 0 auto; }
+  .controls { display:flex; gap:.75rem; flex-wrap:wrap; margin-bottom:1.5rem; }
+  select, button { background:#1a1a1a; color:var(--fg); border:1px solid #333; padding:.5rem .75rem; border-radius:6px; font-size:.95rem; cursor:pointer; }
+  button:hover, select:hover { border-color: var(--motif-primary); }
+  #grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+  .card {
+    background:#141414;
+    border-radius: 10px;
+    border-left: 4px solid var(--motif-primary);
+    padding: 1rem 1.25rem;
+    transition: transform .15s ease;
+  }
+  .card:hover { transform: translateY(-2px); }
+  .card img { width: 64px; height: 64px; display:block; margin-bottom:.5rem; background:#1f1f1f; border-radius:6px; padding:8px; box-sizing:border-box; }
+  .card h3 { margin: .25rem 0 .15rem; font-size: 1.05rem; }
+  .card .indig { color: var(--motif-primary); font-style: italic; font-size:.9rem; }
+  .card p { font-size:.88rem; color:#ccc; margin:.5rem 0 0; }
+  .themes { margin-top:.5rem; display:flex; flex-wrap:wrap; gap:.25rem; }
+  .themes span { font-size:.7rem; background:#222; padding:.15rem .5rem; border-radius:99px; color:#aaa; }
+  footer { padding: 2rem 1.5rem; color:var(--muted); font-size:.85rem; border-top: 1px solid #222; margin-top:3rem; text-align:center; }
+  footer a { color: var(--motif-primary); }
+  .loading, .error { padding: 2rem; text-align:center; color: var(--muted); }
+  .error { color: var(--accent); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Motif Consumer Example</h1>
+  <p class="sub">A 90-line demo of how any site can render motifs from the public API. Change the dropdowns to filter live.</p>
+</header>
+
+<main>
+  <div class="controls">
+    <label>Culture
+      <select id="culture">
+        <option value="">All cultures</option>
+      </select>
+    </label>
+    <label>Language
+      <select id="lang">
+        <option value="en">English</option>
+        <option value="mi">Te Reo Māori</option>
+        <option value="sm">Samoan</option>
+        <option value="pt">Português</option>
+        <option value="gn">Guaraní</option>
+        <option value="ar">العربية</option>
+      </select>
+    </label>
+    <button id="reload">Reload</button>
+  </div>
+
+  <div id="grid"><div class="loading">Loading motifs…</div></div>
+</main>
+
+<footer>
+  Data: <a href="https://te-pa-analytics.sketchschool.workers.dev/api">Te Pā Motif API</a> ·
+  CC BY-NC-SA 4.0 ·
+  <span id="meta"></span>
+</footer>
+
+<script type="module">
+const API = 'https://te-pa-analytics.sketchschool.workers.dev/api';
+const $ = id => document.getElementById(id);
+
+async function loadCultures() {
+  const r = await fetch(`${API}/cultures`);
+  const { cultures } = await r.json();
+  const sel = $('culture');
+  for (const c of cultures) {
+    const o = document.createElement('option');
+    o.value = c.culture;
+    o.textContent = `${c.culture[0].toUpperCase()}${c.culture.slice(1)} (${c.motif_count})`;
+    sel.appendChild(o);
+  }
+}
+
+async function loadMotifs() {
+  const grid = $('grid');
+  grid.innerHTML = '<div class="loading">Loading…</div>';
+  const culture = $('culture').value;
+  const lang = $('lang').value;
+  const params = new URLSearchParams();
+  if (culture) params.set('culture', culture);
+  if (lang) params.set('lang', lang);
+
+  try {
+    const r = await fetch(`${API}/motifs?${params}`);
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    const { motifs, count, generated_at } = await r.json();
+    if (!motifs.length) {
+      grid.innerHTML = '<div class="loading">No motifs match.</div>';
+      return;
+    }
+    grid.innerHTML = motifs.map(m => `
+      <article class="card" style="--motif-primary:${m.colour_primary}" data-culture="${m.culture}">
+        <img src="${m.svg_url || m.png_url}" alt="${m.name_en}" loading="lazy"
+             onerror="this.style.display='none'"/>
+        <h3>${m.name_en}</h3>
+        <div class="indig">${m.name_indigenous || ''}</div>
+        <p>${m.meaning || ''}</p>
+        <div class="themes">
+          ${(m.political_themes||[]).slice(0,4).map(t => `<span>${t}</span>`).join('')}
+        </div>
+      </article>
+    `).join('');
+    $('meta').textContent = `${count} motifs · generated ${new Date(generated_at).toLocaleString()}`;
+  } catch (e) {
+    grid.innerHTML = `<div class="error">Could not load motifs: ${e.message}</div>`;
+  }
+}
+
+await loadCultures();
+await loadMotifs();
+$('culture').addEventListener('change', loadMotifs);
+$('lang').addEventListener('change', loadMotifs);
+$('reload').addEventListener('click', loadMotifs);
+</script>
+</body>
+</html>
