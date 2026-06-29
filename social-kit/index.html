@@ -88,7 +88,7 @@
       <a class="bundle-btn" href="/pdfs/te-pa-teaching-kit-en.pdf" download>⬇ Teaching kit PDF (overview)</a>
       <a class="bundle-btn ghost" href="stickers/te-pa-sticker-kit.zip" download>⬇ Sticker kit ZIP (print-ready)</a>
       <a class="bundle-btn ghost" href="captions/">↗ Ready-to-copy captions</a>
-      <a class="bundle-btn ghost" href="https://github.com/robertmccallnz/tree/main/social-kit">↗ Browse on GitHub</a>
+      <a class="bundle-btn ghost" href="https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite/tree/main/social-kit">↗ Browse on GitHub</a>
     </div>
   </section>
 
@@ -255,7 +255,7 @@ fetch('catalog.json')
   .then(init)
   .catch(function (e) {
     document.getElementById('motif-grid').innerHTML =
-      '<div class="empty-state"><strong>Could not load catalog.json.</strong> Try refreshing, or <a href="https://github.com/robertmccallnz/tree/main/social-kit">browse files on GitHub</a>.</div>';
+      '<div class="empty-state"><strong>Could not load catalog.json.</strong> Try refreshing, or <a href="https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite/tree/main/social-kit">browse files on GitHub</a>.</div>';
     console.error(e);
   });
 
@@ -390,7 +390,7 @@ function init(catalog) {
     });
     if (filtered.length > cap) {
       var more = el('div', { class: 'empty-state' });
-      more.innerHTML = 'Showing first <strong>' + cap + '</strong> of <strong>' + filtered.length + '</strong>. Narrow the filters to see specific motifs, or <a href="https://github.com/robertmccallnz/tree/main/social-kit/motifs">browse all on GitHub</a>.';
+      more.innerHTML = 'Showing first <strong>' + cap + '</strong> of <strong>' + filtered.length + '</strong>. Narrow the filters to see specific motifs, or <a href="https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite/tree/main/social-kit/motifs">browse all on GitHub</a>.';
       grid.appendChild(more);
     }
   }
