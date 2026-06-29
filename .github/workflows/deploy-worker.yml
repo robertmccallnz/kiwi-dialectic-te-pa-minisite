@@ -1,0 +1,50 @@
+name: Deploy Cloudflare Worker
+
+# Deploy the te-pa-analytics Worker whenever its source or config changes
+# on main. Also runs on manual dispatch so a deploy can be forced without a
+# code change (handy after editing secrets in the Cloudflare dashboard).
+#
+# Required GitHub secrets:
+#   CLOUDFLARE_API_TOKEN  — token with "Edit Cloudflare Workers" permissions
+#                           (Account / Workers Scripts / Edit) and access to
+#                           the te-pa-analytics D1 database.
+#   CLOUDFLARE_ACCOUNT_ID — your Cloudflare account ID (Dashboard → Workers
+#                           → right-hand "Account ID" panel).
+#
+# Until both secrets are present the workflow will fail-fast at the deploy
+# step with a clear "missing token" error from wrangler.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'worker/**'
+      - '.github/workflows/deploy-worker.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-worker
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Deploy with Wrangler
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: worker
+          wranglerVersion: '3'
+          command: deploy
