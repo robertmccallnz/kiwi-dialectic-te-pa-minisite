@@ -129,7 +129,7 @@ Learn more at [Global Indigenous Data Alliance](https://www.gida-global.org/care
 
 ---
 
-*Maintained by Te Pā Charitable Trust · 2 Mount Street, Port Chalmers, Dunedin 9023, Aotearoa New Zealand*
+*Maintained by Te Pā Tūwatawata · 2 Mount Street, Port Chalmers, Dunedin 9023, Aotearoa New Zealand*
 
 ---
 

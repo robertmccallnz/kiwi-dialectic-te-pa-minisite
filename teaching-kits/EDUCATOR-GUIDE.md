@@ -154,7 +154,7 @@ If you want your organisation listed on the Rhizome Mapper, register via the sit
 
 - **Platform:** [te-pa.org](https://te-pa.org)
 - **GitHub (materials, translations, issues):** [github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite](https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite)
-- **Trust contact:** Te Pā Charitable Trust · 2 Mount Street, Port Chalmers, Dunedin 9023, Aotearoa New Zealand
+- **Trust contact:** Te Pā Tūwatawata · 2 Mount Street, Port Chalmers, Dunedin 9023, Aotearoa New Zealand
 
 ---
 

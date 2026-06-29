@@ -25,7 +25,7 @@ Launch announcement assets for the 2026 public launch of [te-pa.org](https://te-
 
 ## Licence
 
-CC BY-NC-SA 4.0 — free to repost, translate, and adapt with attribution to **Te Pā Tūwatawata Charitable Trust**.
+CC BY-NC-SA 4.0 — free to repost, translate, and adapt with attribution to **Te Pā Tūwatawata**.
 
 ## Hashtags
 

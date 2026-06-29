@@ -22,7 +22,7 @@
         "subtitle": "Indigenous Data Sovereignty · AI Education · Motif Access API",
         "welcome": "Welcome to the Te Pā Tūwatawata partner network. This guide gives you everything you need to access our motif library, teaching kits, and public API — and integrate them into your own platforms, publications, or educational programmes.",
         "about_heading": "About Te Pā Tūwatawata",
-        "about_body": "Te Pā Tūwatawata is a Charitable Trust based in Port Chalmers, Aotearoa New Zealand. We build open educational infrastructure for indigenous data sovereignty, AI literacy, and decolonial knowledge systems — rooted in the cultural motif traditions of Māori, Samoan, Pacific, Guaraní, Shipibo, Guna, Kayapó, Yanomami, Fijian, Tongan, and Amazonian peoples.",
+        "about_body": "Te Pā Tūwatawata is an open educational kaupapa published from Ōtepoti Dunedin (Port Chalmers), Aotearoa New Zealand. A charitable trust is being established — expressions of interest open for founding board / kaitiaki seats. We build open educational infrastructure for indigenous data sovereignty, AI literacy, and decolonial knowledge systems — rooted in the cultural motif traditions of Māori, Samoan, Pacific, Guaraní, Shipibo, Guna, Kayapó, Yanomami, Fijian, Tongan, and Amazonian peoples.",
         "what_you_get_heading": "What Partners Get",
         "what_you_get": [
           "Access to 30 indigenous cultural motifs — PNG artwork, SVG vector files, and activist meme images",
@@ -70,7 +70,7 @@
           { "label": "GitHub", "url": "https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite" },
           { "label": "API Docs", "url": "https://te-pa-analytics.sketchschool.workers.dev/api" }
         ],
-        "footer": "Te Pā Tūwatawata Charitable Trust — te-pa.org — CC BY-NC-SA 4.0 — Generated automatically"
+        "footer": "Te Pā Tūwatawata — te-pa.org — CC BY-NC-SA 4.0 — Generated automatically"
       }
     },
 

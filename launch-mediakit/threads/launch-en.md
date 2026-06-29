@@ -11,7 +11,7 @@ Today we launch [te-pa.org](https://te-pa.org) — a free, open educational plat
 
 AI is the latest form of raupatu. Tech companies train models on Māori voices, faces, waiata, and stories without consent — different century, same logic. Te Pā Tūwatawata is the educational answer.
 
-We are a Charitable Trust based in Port Chalmers, Aotearoa New Zealand, building open educational infrastructure for indigenous data sovereignty, AI literacy, and decolonial knowledge systems — rooted in the cultural motif traditions of Māori, Samoan, Pacific, Guaraní, Shipibo, Guna, Kayapó, Yanomami, Fijian, Tongan, and Amazonian peoples.
+We are an open educational kaupapa published from Ōtepoti Dunedin (Port Chalmers), Aotearoa New Zealand. A charitable trust is being established — expressions of interest open for founding board / kaitiaki seats. We build open educational infrastructure for indigenous data sovereignty, AI literacy, and decolonial knowledge systems — rooted in the cultural motif traditions of Māori, Samoan, Pacific, Guaraní, Shipibo, Guna, Kayapó, Yanomami, Fijian, Tongan, and Amazonian peoples.
 
 ## What's live today
 
