@@ -6,99 +6,38 @@ Canonical reference: `lang/en.json` (59 leaf keys)
 
 | Locale | Coverage | Missing | Drifted | Untranslated (==en) | Empty |
 |---|---:|---:|---:|---:|---:|
-| `ar` (العربية (Arabic)) | 54.2% | 27 | 0 | 2 | 0 |
-| `gn` (Avañe'ẽ (Guaraní)) | 54.2% | 27 | 0 | 3 | 0 |
+| `ar` (العربية (Arabic)) | 100.0% | 0 | 0 | 3 | 0 |
+| `gn` (Avañe'ẽ (Guaraní)) | 100.0% | 0 | 0 | 5 | 0 |
 | `mi` (te reo Māori) | 100.0% | 0 | 0 | 5 | 0 |
-| `pt` (Português) | 54.2% | 27 | 0 | 3 | 0 |
-| `sm` (Gagana Sāmoa) | 54.2% | 27 | 0 | 3 | 0 |
+| `pt` (Português) | 100.0% | 0 | 0 | 5 | 0 |
+| `sm` (Gagana Sāmoa) | 100.0% | 0 | 0 | 5 | 0 |
 
 
 ## `ar` — العربية (Arabic)
 
-**Coverage:** 54.2%  ·  **Keys:** 32 / 59
-
-### Missing keys (27)
-
-Keys present in `en.json` but absent from this locale:
-
-- `kaitiaki_banner_cta` — en: `'Read more →'`
-- `kaitiaki_banner_tag` — en: `'Kaitiaki seats · Expressions of interest'`
-- `kaitiaki_banner_text` — en: `'Te Pā Tūwatawata is moving from website to registered charitable trust. We are inviting expressions of interest for <st`
-- `kaitiaki_eoi_body` — en: `'If your language community would like to take up a kaitiaki seat — or recommend the person who should hold it — please `
-- `kaitiaki_eoi_email` — en: `'Email — Register interest'`
-- `kaitiaki_eoi_footnote` — en: `'Te Pā Tūwatawata is being registered as a charitable trust under the Charitable Trusts Act 1957 and will apply for regi`
-- `kaitiaki_eoi_heading` — en: `'Ko wai mā te kaitiaki o tō reo?'`
-- `kaitiaki_eoi_partner` — en: `'Partner onboarding'`
-- `kaitiaki_eoi_tag` — en: `'Register interest'`
-- `kaitiaki_heading` — en: `'Expressions of interest — language-kaitiaki seats'`
-- `kaitiaki_intro` — en: `'Te Pā Tūwatawata is being established as a registered charitable trust in Aotearoa New Zealand. The trust deed reserves`
-- `kaitiaki_principle_1` — en: `'<strong>Māori-led governance.</strong> The deed requires majority Māori trusteeship and a Māori chair. Te Tiriti o Wait`
-- `kaitiaki_principle_2` — en: `'<strong>One seat per language community.</strong> A kaitiaki seat opens only when a language goes live on the site — an`
-- `kaitiaki_principle_3` — en: `'<strong>Free, prior and informed consent.</strong> No language is added without a community partner asking for it. This`
-- `kaitiaki_principle_4` — en: `'<strong>Not open recruitment.</strong> Self-nomination to a kaitiaki seat is not how these seats are filled. We are inv`
-- `kaitiaki_principles_tag` — en: `'Ngā mātāpono — Principles'`
-- `kaitiaki_seat_gn_note` — en: `'Seat opens as Avañe’ẽ goes live. Appointment by a Guaraní community partner in consultation with the Te Pā board.'`
-- `kaitiaki_seat_gn_status` — en: `'Open — expressions of interest'`
-- `kaitiaki_seat_mi_note` — en: `'Multiple Māori seats including the chair. Appointment by hapū / iwi partners, with rangatiratanga of the kaupapa held b`
-- `kaitiaki_seat_mi_status` — en: `'Open — primary kaitiaki seats'`
-- `kaitiaki_seat_more_note` — en: `'A seat is held open for any language community whose reo is added to the site — Aboriginal and Torres Strait Islander, `
-- `kaitiaki_seat_more_status` — en: `'Held open'`
-- `kaitiaki_seat_more_tag` — en: `'Other languages'`
-- `kaitiaki_seat_sm_note` — en: `'Seat opens as Gagana Sāmoa goes live on the site. Appointment by a Samoan community partner.'`
-- `kaitiaki_seat_sm_status` — en: `'Open — expressions of interest'`
-- `kaitiaki_tag` — en: `'He karanga — Kaitiaki seats'`
-- `nav_kaitiaki` — en: `'Kaitiaki'`
-
-### Untranslated (2) — value equals English
-
-These may be intentional (proper nouns) but most should be translated:
-
-- `hero_title` — `'Te Pā Tūwatawata'`
-- `nav_substack` — `'Substack'`
-
-
-## `gn` — Avañe'ẽ (Guaraní)
-
-**Coverage:** 54.2%  ·  **Keys:** 32 / 59
-
-### Missing keys (27)
-
-Keys present in `en.json` but absent from this locale:
-
-- `kaitiaki_banner_cta` — en: `'Read more →'`
-- `kaitiaki_banner_tag` — en: `'Kaitiaki seats · Expressions of interest'`
-- `kaitiaki_banner_text` — en: `'Te Pā Tūwatawata is moving from website to registered charitable trust. We are inviting expressions of interest for <st`
-- `kaitiaki_eoi_body` — en: `'If your language community would like to take up a kaitiaki seat — or recommend the person who should hold it — please `
-- `kaitiaki_eoi_email` — en: `'Email — Register interest'`
-- `kaitiaki_eoi_footnote` — en: `'Te Pā Tūwatawata is being registered as a charitable trust under the Charitable Trusts Act 1957 and will apply for regi`
-- `kaitiaki_eoi_heading` — en: `'Ko wai mā te kaitiaki o tō reo?'`
-- `kaitiaki_eoi_partner` — en: `'Partner onboarding'`
-- `kaitiaki_eoi_tag` — en: `'Register interest'`
-- `kaitiaki_heading` — en: `'Expressions of interest — language-kaitiaki seats'`
-- `kaitiaki_intro` — en: `'Te Pā Tūwatawata is being established as a registered charitable trust in Aotearoa New Zealand. The trust deed reserves`
-- `kaitiaki_principle_1` — en: `'<strong>Māori-led governance.</strong> The deed requires majority Māori trusteeship and a Māori chair. Te Tiriti o Wait`
-- `kaitiaki_principle_2` — en: `'<strong>One seat per language community.</strong> A kaitiaki seat opens only when a language goes live on the site — an`
-- `kaitiaki_principle_3` — en: `'<strong>Free, prior and informed consent.</strong> No language is added without a community partner asking for it. This`
-- `kaitiaki_principle_4` — en: `'<strong>Not open recruitment.</strong> Self-nomination to a kaitiaki seat is not how these seats are filled. We are inv`
-- `kaitiaki_principles_tag` — en: `'Ngā mātāpono — Principles'`
-- `kaitiaki_seat_gn_note` — en: `'Seat opens as Avañe’ẽ goes live. Appointment by a Guaraní community partner in consultation with the Te Pā board.'`
-- `kaitiaki_seat_gn_status` — en: `'Open — expressions of interest'`
-- `kaitiaki_seat_mi_note` — en: `'Multiple Māori seats including the chair. Appointment by hapū / iwi partners, with rangatiratanga of the kaupapa held b`
-- `kaitiaki_seat_mi_status` — en: `'Open — primary kaitiaki seats'`
-- `kaitiaki_seat_more_note` — en: `'A seat is held open for any language community whose reo is added to the site — Aboriginal and Torres Strait Islander, `
-- `kaitiaki_seat_more_status` — en: `'Held open'`
-- `kaitiaki_seat_more_tag` — en: `'Other languages'`
-- `kaitiaki_seat_sm_note` — en: `'Seat opens as Gagana Sāmoa goes live on the site. Appointment by a Samoan community partner.'`
-- `kaitiaki_seat_sm_status` — en: `'Open — expressions of interest'`
-- `kaitiaki_tag` — en: `'He karanga — Kaitiaki seats'`
-- `nav_kaitiaki` — en: `'Kaitiaki'`
+**Coverage:** 100.0%  ·  **Keys:** 59 / 59
 
 ### Untranslated (3) — value equals English
 
 These may be intentional (proper nouns) but most should be translated:
 
+- `hero_title` — `'Te Pā Tūwatawata'`
+- `kaitiaki_eoi_heading` — `'Ko wai mā te kaitiaki o tō reo?'`
+- `nav_substack` — `'Substack'`
+
+
+## `gn` — Avañe'ẽ (Guaraní)
+
+**Coverage:** 100.0%  ·  **Keys:** 59 / 59
+
+### Untranslated (5) — value equals English
+
+These may be intentional (proper nouns) but most should be translated:
+
 - `_meta.dir` — `'ltr'`
 - `hero_title` — `'Te Pā Tūwatawata'`
+- `kaitiaki_eoi_heading` — `'Ko wai mā te kaitiaki o tō reo?'`
+- `nav_kaitiaki` — `'Kaitiaki'`
 - `nav_substack` — `'Substack'`
 
 
@@ -119,90 +58,30 @@ These may be intentional (proper nouns) but most should be translated:
 
 ## `pt` — Português
 
-**Coverage:** 54.2%  ·  **Keys:** 32 / 59
+**Coverage:** 100.0%  ·  **Keys:** 59 / 59
 
-### Missing keys (27)
-
-Keys present in `en.json` but absent from this locale:
-
-- `kaitiaki_banner_cta` — en: `'Read more →'`
-- `kaitiaki_banner_tag` — en: `'Kaitiaki seats · Expressions of interest'`
-- `kaitiaki_banner_text` — en: `'Te Pā Tūwatawata is moving from website to registered charitable trust. We are inviting expressions of interest for <st`
-- `kaitiaki_eoi_body` — en: `'If your language community would like to take up a kaitiaki seat — or recommend the person who should hold it — please `
-- `kaitiaki_eoi_email` — en: `'Email — Register interest'`
-- `kaitiaki_eoi_footnote` — en: `'Te Pā Tūwatawata is being registered as a charitable trust under the Charitable Trusts Act 1957 and will apply for regi`
-- `kaitiaki_eoi_heading` — en: `'Ko wai mā te kaitiaki o tō reo?'`
-- `kaitiaki_eoi_partner` — en: `'Partner onboarding'`
-- `kaitiaki_eoi_tag` — en: `'Register interest'`
-- `kaitiaki_heading` — en: `'Expressions of interest — language-kaitiaki seats'`
-- `kaitiaki_intro` — en: `'Te Pā Tūwatawata is being established as a registered charitable trust in Aotearoa New Zealand. The trust deed reserves`
-- `kaitiaki_principle_1` — en: `'<strong>Māori-led governance.</strong> The deed requires majority Māori trusteeship and a Māori chair. Te Tiriti o Wait`
-- `kaitiaki_principle_2` — en: `'<strong>One seat per language community.</strong> A kaitiaki seat opens only when a language goes live on the site — an`
-- `kaitiaki_principle_3` — en: `'<strong>Free, prior and informed consent.</strong> No language is added without a community partner asking for it. This`
-- `kaitiaki_principle_4` — en: `'<strong>Not open recruitment.</strong> Self-nomination to a kaitiaki seat is not how these seats are filled. We are inv`
-- `kaitiaki_principles_tag` — en: `'Ngā mātāpono — Principles'`
-- `kaitiaki_seat_gn_note` — en: `'Seat opens as Avañe’ẽ goes live. Appointment by a Guaraní community partner in consultation with the Te Pā board.'`
-- `kaitiaki_seat_gn_status` — en: `'Open — expressions of interest'`
-- `kaitiaki_seat_mi_note` — en: `'Multiple Māori seats including the chair. Appointment by hapū / iwi partners, with rangatiratanga of the kaupapa held b`
-- `kaitiaki_seat_mi_status` — en: `'Open — primary kaitiaki seats'`
-- `kaitiaki_seat_more_note` — en: `'A seat is held open for any language community whose reo is added to the site — Aboriginal and Torres Strait Islander, `
-- `kaitiaki_seat_more_status` — en: `'Held open'`
-- `kaitiaki_seat_more_tag` — en: `'Other languages'`
-- `kaitiaki_seat_sm_note` — en: `'Seat opens as Gagana Sāmoa goes live on the site. Appointment by a Samoan community partner.'`
-- `kaitiaki_seat_sm_status` — en: `'Open — expressions of interest'`
-- `kaitiaki_tag` — en: `'He karanga — Kaitiaki seats'`
-- `nav_kaitiaki` — en: `'Kaitiaki'`
-
-### Untranslated (3) — value equals English
+### Untranslated (5) — value equals English
 
 These may be intentional (proper nouns) but most should be translated:
 
 - `_meta.dir` — `'ltr'`
 - `hero_title` — `'Te Pā Tūwatawata'`
+- `kaitiaki_eoi_heading` — `'Ko wai mā te kaitiaki o tō reo?'`
+- `nav_kaitiaki` — `'Kaitiaki'`
 - `nav_substack` — `'Substack'`
 
 
 ## `sm` — Gagana Sāmoa
 
-**Coverage:** 54.2%  ·  **Keys:** 32 / 59
+**Coverage:** 100.0%  ·  **Keys:** 59 / 59
 
-### Missing keys (27)
-
-Keys present in `en.json` but absent from this locale:
-
-- `kaitiaki_banner_cta` — en: `'Read more →'`
-- `kaitiaki_banner_tag` — en: `'Kaitiaki seats · Expressions of interest'`
-- `kaitiaki_banner_text` — en: `'Te Pā Tūwatawata is moving from website to registered charitable trust. We are inviting expressions of interest for <st`
-- `kaitiaki_eoi_body` — en: `'If your language community would like to take up a kaitiaki seat — or recommend the person who should hold it — please `
-- `kaitiaki_eoi_email` — en: `'Email — Register interest'`
-- `kaitiaki_eoi_footnote` — en: `'Te Pā Tūwatawata is being registered as a charitable trust under the Charitable Trusts Act 1957 and will apply for regi`
-- `kaitiaki_eoi_heading` — en: `'Ko wai mā te kaitiaki o tō reo?'`
-- `kaitiaki_eoi_partner` — en: `'Partner onboarding'`
-- `kaitiaki_eoi_tag` — en: `'Register interest'`
-- `kaitiaki_heading` — en: `'Expressions of interest — language-kaitiaki seats'`
-- `kaitiaki_intro` — en: `'Te Pā Tūwatawata is being established as a registered charitable trust in Aotearoa New Zealand. The trust deed reserves`
-- `kaitiaki_principle_1` — en: `'<strong>Māori-led governance.</strong> The deed requires majority Māori trusteeship and a Māori chair. Te Tiriti o Wait`
-- `kaitiaki_principle_2` — en: `'<strong>One seat per language community.</strong> A kaitiaki seat opens only when a language goes live on the site — an`
-- `kaitiaki_principle_3` — en: `'<strong>Free, prior and informed consent.</strong> No language is added without a community partner asking for it. This`
-- `kaitiaki_principle_4` — en: `'<strong>Not open recruitment.</strong> Self-nomination to a kaitiaki seat is not how these seats are filled. We are inv`
-- `kaitiaki_principles_tag` — en: `'Ngā mātāpono — Principles'`
-- `kaitiaki_seat_gn_note` — en: `'Seat opens as Avañe’ẽ goes live. Appointment by a Guaraní community partner in consultation with the Te Pā board.'`
-- `kaitiaki_seat_gn_status` — en: `'Open — expressions of interest'`
-- `kaitiaki_seat_mi_note` — en: `'Multiple Māori seats including the chair. Appointment by hapū / iwi partners, with rangatiratanga of the kaupapa held b`
-- `kaitiaki_seat_mi_status` — en: `'Open — primary kaitiaki seats'`
-- `kaitiaki_seat_more_note` — en: `'A seat is held open for any language community whose reo is added to the site — Aboriginal and Torres Strait Islander, `
-- `kaitiaki_seat_more_status` — en: `'Held open'`
-- `kaitiaki_seat_more_tag` — en: `'Other languages'`
-- `kaitiaki_seat_sm_note` — en: `'Seat opens as Gagana Sāmoa goes live on the site. Appointment by a Samoan community partner.'`
-- `kaitiaki_seat_sm_status` — en: `'Open — expressions of interest'`
-- `kaitiaki_tag` — en: `'He karanga — Kaitiaki seats'`
-- `nav_kaitiaki` — en: `'Kaitiaki'`
-
-### Untranslated (3) — value equals English
+### Untranslated (5) — value equals English
 
 These may be intentional (proper nouns) but most should be translated:
 
 - `_meta.dir` — `'ltr'`
 - `hero_title` — `'Te Pā Tūwatawata'`
+- `kaitiaki_eoi_heading` — `'Ko wai mā te kaitiaki o tō reo?'`
+- `nav_kaitiaki` — `'Kaitiaki'`
 - `nav_substack` — `'Substack'`
 
