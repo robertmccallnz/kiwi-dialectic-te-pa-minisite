@@ -60,7 +60,7 @@ Each `kit-manifest.json` is a machine-readable file you can load in your own app
 ```js
 const lang = 'gn'; // from user language selection
 const manifest = await fetch(
-  `https://kiwi-dialectic-te-pa-minisite.vercel.app/teaching-kits/${lang}/kit-manifest.json`
+  `https://te-pa.org/teaching-kits/${lang}/kit-manifest.json`
 ).then(r => r.json());
 
 // Teaching kit PDF
@@ -123,8 +123,8 @@ Learn more at [Global Indigenous Data Alliance](https://www.gida-global.org/care
 
 ## Live Platform
 
-- **Site:** [kiwi-dialectic-te-pa-minisite.vercel.app](https://kiwi-dialectic-te-pa-minisite.vercel.app)
-- **Rhizome Mapper:** [/rhizome-mapper.html](https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html)
+- **Site:** [te-pa.org](https://te-pa.org)
+- **Rhizome Mapper:** [/rhizome-mapper.html](https://te-pa.org/rhizome-mapper.html)
 - **Analytics API:** [te-pa-analytics.sketchschool.workers.dev](https://te-pa-analytics.sketchschool.workers.dev/stats)
 
 ---

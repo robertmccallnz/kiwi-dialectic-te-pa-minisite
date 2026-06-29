@@ -13,12 +13,12 @@ const IMAGE_CACHE   = `${CACHE_VERSION}-images`;
 const ALL_CACHES    = [STATIC_CACHE, IMAGE_CACHE];
 
 const PRECACHE_STATIC = [
-  '/kiwi-dialectic-te-pa-minisite/',
-  '/kiwi-dialectic-te-pa-minisite/index.html',
-  '/kiwi-dialectic-te-pa-minisite/assets/kiwi-dialectic.css',
-  '/kiwi-dialectic-te-pa-minisite/assets/search.js',
-  '/kiwi-dialectic-te-pa-minisite/assets/rhizome-d3.js',
-  '/kiwi-dialectic-te-pa-minisite/manifest.json',
+  '/',
+  '/index.html',
+  '/assets/kiwi-dialectic.css',
+  '/assets/search.js',
+  '/assets/rhizome-d3.js',
+  '/manifest.json',
 ];
 
 // ── INSTALL ──────────────────────────────────────────────────────────────
@@ -73,7 +73,7 @@ self.addEventListener('fetch', event => {
           return response;
         })
         .catch(() => caches.match(event.request)
-          .then(cached => cached || caches.match('/kiwi-dialectic-te-pa-minisite/index.html'))
+          .then(cached => cached || caches.match('/index.html'))
         )
     );
     return;

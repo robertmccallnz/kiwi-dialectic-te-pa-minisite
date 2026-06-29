@@ -1160,7 +1160,7 @@ TikTok hook: "I printed indigenous data sovereignty stickers for 50 cents each. 
   <!-- ── PWA SERVICE WORKER ─────────────────────────────────────────── -->
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/kiwi-dialectic-te-pa-minisite/sw.js')
+      navigator.serviceWorker.register('/sw.js')
         .then(r => console.log('[KD] SW registered:', r.scope))
         .catch(e => console.warn('[KD] SW registration failed:', e));
     }
