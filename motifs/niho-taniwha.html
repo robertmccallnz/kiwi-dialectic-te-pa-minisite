@@ -160,13 +160,7 @@ const grid=document.getElementById('cardGrid');
 const msgs=[1,2,3,4,5,6];
 const plats=[['x','X/Twitter 1200×675'],['instagram','Instagram 1080×1080'],['facebook','Facebook 1200×630'],['tiktok','TikTok 1080×1920']];
 const KEY='niho';
-plats.forEach(([plat,label])=>{
-  msgs.forEach(n=>{
-    const base=`../social-kit/motifs/niho/${KEY}-${plat}-${String(n).padStart(2,'0')}`;
-    // find matching file by listing known pattern
-    fetch(`${base}-who_built_this.svg`).then(()=>{}).catch(()=>{});
-  });
-});
+
 // simple approach — list known slugs
 const SLUGS={
   koru:['who_built_this','beginnings','old_gives_way','a_new_path','grow','to_learn'],
