@@ -3,7 +3,7 @@
   "generated_at": "2026-06-27T01:40:00Z",
   "description": "Te Pā Teaching Kit Repository — Master Manifest",
   "r2_base": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev",
-  "site_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app",
+  "site_url": "https://te-pa.org",
   "languages": {
     "en": {
       "code": "en",
@@ -14,7 +14,7 @@
       "student_activity_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-student-activity-sheets.pdf",
       "social_media_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-social-media-kit.pdf",
       "motif_count": 30,
-      "kit_manifest": "https://kiwi-dialectic-te-pa-minisite.vercel.app/teaching-kits/en/kit-manifest.json",
+      "kit_manifest": "https://te-pa.org/teaching-kits/en/kit-manifest.json",
       "hashtags": [
         "#DataSovereignty",
         "#IndigenousAI",
@@ -33,7 +33,7 @@
       "student_activity_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-student-activity-sheets.pdf",
       "social_media_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-social-media-kit.pdf",
       "motif_count": 9,
-      "kit_manifest": "https://kiwi-dialectic-te-pa-minisite.vercel.app/teaching-kits/mi/kit-manifest.json",
+      "kit_manifest": "https://te-pa.org/teaching-kits/mi/kit-manifest.json",
       "hashtags": [
         "#ManaMotuhake",
         "#ReoMāori",
@@ -52,7 +52,7 @@
       "student_activity_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-student-activity-sheets.pdf",
       "social_media_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-social-media-kit.pdf",
       "motif_count": 10,
-      "kit_manifest": "https://kiwi-dialectic-te-pa-minisite.vercel.app/teaching-kits/pt/kit-manifest.json",
+      "kit_manifest": "https://te-pa.org/teaching-kits/pt/kit-manifest.json",
       "hashtags": [
         "#SoberaniadeDados",
         "#PovosIndígenas",
@@ -71,7 +71,7 @@
       "student_activity_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-student-activity-sheets.pdf",
       "social_media_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-social-media-kit.pdf",
       "motif_count": 4,
-      "kit_manifest": "https://kiwi-dialectic-te-pa-minisite.vercel.app/teaching-kits/gn/kit-manifest.json",
+      "kit_manifest": "https://te-pa.org/teaching-kits/gn/kit-manifest.json",
       "hashtags": [
         "#TekoteviPorãvéva",
         "#ÑanderuviPorã",
@@ -90,7 +90,7 @@
       "student_activity_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-student-activity-sheets.pdf",
       "social_media_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-social-media-kit.pdf",
       "motif_count": 11,
-      "kit_manifest": "https://kiwi-dialectic-te-pa-minisite.vercel.app/teaching-kits/sm/kit-manifest.json",
+      "kit_manifest": "https://te-pa.org/teaching-kits/sm/kit-manifest.json",
       "hashtags": [
         "#TaofiFaaSamoa",
         "#GaganaOLomuamua",
@@ -110,7 +110,7 @@
       "student_activity_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-student-activity-sheets.pdf",
       "social_media_kit_pdf": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/teaching-kits/te-pa-social-media-kit.pdf",
       "motif_count": 30,
-      "kit_manifest": "https://kiwi-dialectic-te-pa-minisite.vercel.app/teaching-kits/ar/kit-manifest.json",
+      "kit_manifest": "https://te-pa.org/teaching-kits/ar/kit-manifest.json",
       "hashtags": [
         "#سيادة_البيانات",
         "#الذكاء_الاصطناعي_الأصلي",

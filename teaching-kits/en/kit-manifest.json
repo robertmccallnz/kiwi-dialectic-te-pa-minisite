@@ -316,7 +316,7 @@
     {
       "id": "module_1",
       "title": "What is Data? Indigenous Knowledges and the Digital World",
-      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_1",
+      "course_url": "https://te-pa.org#module_1",
       "care": "C (Collective Benefit) — data ecosystems must serve Indigenous peoples",
       "motif_ids": [
         "koru",
@@ -328,7 +328,7 @@
     {
       "id": "module_2",
       "title": "Data Colonialism: Who Took Our Data?",
-      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_2",
+      "course_url": "https://te-pa.org#module_2",
       "care": "A (Authority to Control) — recognising rights and interests in data",
       "motif_ids": [
         "niho_taniwha",
@@ -341,7 +341,7 @@
     {
       "id": "module_3",
       "title": "CARE & OCAP: Frameworks for Data Sovereignty",
-      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_3",
+      "course_url": "https://te-pa.org#module_3",
       "care": "Full CARE framework — all four principles",
       "motif_ids": [
         "kowhaiwhai",
@@ -353,7 +353,7 @@
     {
       "id": "module_4",
       "title": "Land, Territory, and Digital Sovereignty",
-      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_4",
+      "course_url": "https://te-pa.org#module_4",
       "care": "R (Responsibility) — for positive relationships and expanding capability",
       "motif_ids": [
         "takarangi",
@@ -368,7 +368,7 @@
     {
       "id": "module_5",
       "title": "Collective Knowledge and Network Thinking",
-      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_5",
+      "course_url": "https://te-pa.org#module_5",
       "care": "C (Collective Benefit) and R (Responsibility) together",
       "motif_ids": [
         "fa_a_aupega",
@@ -382,7 +382,7 @@
     {
       "id": "module_6",
       "title": "Building Indigenous AI: Resistance and Future Visions",
-      "course_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app#module_6",
+      "course_url": "https://te-pa.org#module_6",
       "care": "E (Ethics) — minimising harm, justice, and future use",
       "motif_ids": [
         "niho_mano",
