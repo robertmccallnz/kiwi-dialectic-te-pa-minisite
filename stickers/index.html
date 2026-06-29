@@ -746,7 +746,7 @@ function renderSticker(item, target) {
   const img = document.createElement("img");
   img.src = item.png || item.svg;
   img.alt = item.name;
-  img.loading = "lazy";
+  img.decoding = "async";
   preview.appendChild(img);
 
   const qrBox = document.createElement("div");
@@ -790,7 +790,7 @@ function renderPoster(item, target) {
   const viewSrc = item.png || item.svg;
   card.innerHTML = `
     <div class="sticker-preview">
-      <img src="${previewSrc}" alt="${item.name}" loading="lazy">
+      <img src="${previewSrc}" alt="${item.name}" decoding="async">
     </div>
     <div class="sticker-body">
       <h3 class="sticker-name">${item.name}</h3>
@@ -825,7 +825,7 @@ function renderBanner(item, target) {
   const previewSrc = item.png || item.svg;
   card.innerHTML = `
     <div class="sticker-preview">
-      <img src="${previewSrc}" alt="${item.name}" loading="lazy">
+      <img src="${previewSrc}" alt="${item.name}" decoding="async">
     </div>
     <div class="sticker-body">
       <h3 class="sticker-name">${item.name}</h3>
