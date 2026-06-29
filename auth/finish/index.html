@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finish signup — Te Pā Tūwatawata</title>
+  <link rel="canonical" href="https://te-pa.org/auth/finish/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/assets/kiwi-dialectic.css">
+  <link rel="stylesheet" href="/assets/nav.css">
+  <style>
+    .shell { max-width: 600px; margin: 80px auto 120px; padding: 0 24px; }
+    h1 { font-family:'Instrument Serif',serif; font-size: clamp(2.2rem,5vw,3rem); margin:0 0 12px; }
+    .lede { color: var(--fg-muted); margin:0 0 28px; line-height:1.6; }
+    .form-card { background:#fff; border:1px solid #e5e5e5; border-radius:14px; padding:32px; }
+    .form-row { margin-bottom:18px; }
+    .form-row label { display:block; font-weight:600; margin-bottom:6px; }
+    .form-row input, .form-row textarea { width:100%; padding:12px 14px; border:1px solid #ddd; border-radius:10px; font-size:1rem; box-sizing:border-box; font-family:inherit; }
+    .form-row textarea { min-height:96px; resize:vertical; }
+    .form-row small { color: var(--fg-muted); font-size:.85rem; }
+    .btn-primary { background: var(--accent, #c0392b); color:#fff; border:0; padding:14px 22px; border-radius:10px; font-weight:600; cursor:pointer; }
+    .msg { padding:12px; border-radius:8px; margin-top:14px; font-size:.92rem; }
+    .msg.err { background:#fdecec; border:1px solid #f0bcbc; color:#7a1b1b; }
+    #not-signed-in { display:none; }
+  </style>
+</head>
+<body>
+
+<header class="site-nav">
+  <a href="/" class="site-nav__logo">Te Pā Tūwatawata</a>
+  <nav>
+    <a href="/#modules">Modules</a>
+    <a href="/learners/">Learners</a>
+    <span data-te-pa-auth-slot></span>
+  </nav>
+</header>
+
+<main class="shell">
+  <div id="signed-in">
+    <h1>Kia ora — tell us your name</h1>
+    <p class="lede">Last step. Your name appears next to your earned pou tohu badges on your public profile page.</p>
+
+    <div class="form-card">
+      <form id="finish-form">
+        <div class="form-row">
+          <label for="display_name">Display name</label>
+          <input type="text" id="display_name" required maxlength="60" placeholder="e.g. Hana Kingi" />
+          <small>This appears on your badge profile at <code>/learners/your-name</code>.</small>
+        </div>
+        <div class="form-row">
+          <label for="pepeha">Pepeha or short bio <span style="opacity:.6">(optional)</span></label>
+          <textarea id="pepeha" maxlength="500" placeholder="Ko Aoraki te maunga…"></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Create my profile</button>
+      </form>
+      <div id="msg"></div>
+    </div>
+  </div>
+
+  <div id="not-signed-in">
+    <h1>Sign-in link expired</h1>
+    <p class="lede">Please <a href="/auth/signup/">start signup again</a>.</p>
+  </div>
+</main>
+
+<script>
+  window.TE_PA_PUBLIC_CONFIG = window.TE_PA_PUBLIC_CONFIG || {
+    supabaseUrl: 'TODO_SUPABASE_URL',
+    supabaseAnonKey: 'TODO_SUPABASE_ANON_KEY'
+  };
+</script>
+<script src="/assets/js/te-pa-auth.js"></script>
+<script>
+  (async () => {
+    const { user } = await window.TePa.getSession();
+    if (!user) {
+      document.getElementById('signed-in').style.display = 'none';
+      document.getElementById('not-signed-in').style.display = 'block';
+      return;
+    }
+    // If they already have a profile, send them to /profile
+    const me = await window.TePa.myProfile();
+    if (me?.learner) window.location.href = '/profile/';
+  })();
+
+  document.getElementById('finish-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const msg = document.getElementById('msg');
+    msg.innerHTML = '';
+    const display_name = document.getElementById('display_name').value.trim();
+    const pepeha = document.getElementById('pepeha').value.trim();
+    try {
+      await window.TePa.finishSignup({
+        display_name, pepeha, substack_confirmed: true,
+      });
+      window.location.href = '/profile/';
+    } catch (err) {
+      msg.innerHTML = `<div class="msg err">${err.message || 'Could not save profile.'}</div>`;
+    }
+  });
+</script>
+</body>
+</html>

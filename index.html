@@ -156,6 +156,8 @@
     <a href="/rhizome-mapper.html">Mapper</a>
     <a href="partner-onboarding/">Partners</a>
     <a href="#kaitiaki" data-i18n="nav_kaitiaki">Kaitiaki</a>
+    <a href="/learners/">Learners</a>
+    <span data-te-pa-auth-slot></span>
     <a href="https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite" rel="noopener">GitHub</a>
   </div>
 </nav>
@@ -193,7 +195,7 @@
         Six modules exploring AI, Māori data sovereignty, tikanga, and Indigenous control over digital infrastructure — taught bilingually in te reo Māori and English.
       </p>
       <div class="btn-row">
-        <a class="btn btn--solid" href="#modules" data-i18n="cta_start">Tīmata — Start learning</a>
+        <a class="btn btn--solid" href="/auth/signup/">Tīmata — Sign up &amp; start</a>
         <a class="btn btn--red" href="https://www.kiwidialectic.com" target="_blank" rel="noopener noreferrer" data-i18n="cta_substack">Follow The Kiwi Dialectic</a>
         <a class="btn" href="#sources" data-i18n="cta_sources">Ngā puna — Sources</a>
       </div>
@@ -1180,5 +1182,13 @@ TikTok hook: "I printed indigenous data sovereignty stickers for 50 cents each. 
         .catch(e => console.warn('[KD] SW registration failed:', e));
     }
   </script>
+  <!-- Te Pā auth (Supabase magic link) -->
+  <script>
+    window.TE_PA_PUBLIC_CONFIG = window.TE_PA_PUBLIC_CONFIG || {
+      supabaseUrl: 'TODO_SUPABASE_URL',
+      supabaseAnonKey: 'TODO_SUPABASE_ANON_KEY'
+    };
+  </script>
+  <script src="/assets/js/te-pa-auth.js" defer></script>
 </body>
 </html>

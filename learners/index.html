@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learners — Te Pā Tūwatawata</title>
+  <meta name="description" content="Te Pā Tūwatawata learners and the pou tohu they have earned." />
+  <link rel="canonical" href="https://te-pa.org/learners/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/assets/kiwi-dialectic.css">
+  <link rel="stylesheet" href="/assets/nav.css">
+  <style>
+    .shell { max-width: 1100px; margin: 60px auto 120px; padding: 0 24px; }
+    h1 { font-family:'Instrument Serif',serif; font-size: clamp(2.4rem,5vw,3.4rem); margin:0 0 8px; }
+    .lede { color: var(--fg-muted); font-size:1.05rem; max-width:680px; margin:0 0 40px; line-height:1.6; }
+
+    /* Single-learner view */
+    #single .pepeha { background:#fff; border:1px solid #e5e5e5; border-radius:14px; padding:24px; margin:0 0 28px; font-family:'Instrument Serif', serif; font-style: italic; font-size:1.1rem; line-height:1.7; }
+    #single .badges { display:grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap:20px; }
+    #single .badge { background:#fff; border:1px solid #e5e5e5; border-radius:14px; padding:18px; text-align:center; opacity:.3; filter:grayscale(1); }
+    #single .badge.earned { opacity:1; filter:none; }
+    #single .badge img { width:130px; height:130px; }
+    #single .badge .module { font-size:.78rem; color: var(--fg-muted); margin-top:8px; }
+    #single .badge .name { font-weight:600; font-size:.9rem; line-height:1.3; margin-top:2px; }
+    #single .badge .date { font-size:.75rem; color: var(--fg-muted); margin-top:6px; }
+
+    /* List view */
+    #list .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:20px; }
+    .learner-card { background:#fff; border:1px solid #e5e5e5; border-radius:14px; padding:22px; text-decoration:none; color:inherit; transition:transform .18s; }
+    .learner-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px -12px rgba(0,0,0,.18); }
+    .learner-card h3 { font-family:'Instrument Serif',serif; margin:0 0 6px; font-size:1.45rem; }
+    .learner-card .meta { font-size:.85rem; color: var(--fg-muted); margin:0 0 14px; }
+    .mini-badges { display:flex; flex-wrap:wrap; gap:6px; }
+    .mini-badges .pip {
+      width:30px; height:30px; border-radius:50%; background:#ddd;
+      display:inline-flex; align-items:center; justify-content:center;
+      font-size:.75rem; font-weight:600; color:#888;
+    }
+    .mini-badges .pip.earned { background: var(--accent, #c0392b); color:#fff; }
+
+    .empty { padding:60px 0; text-align:center; color: var(--fg-muted); }
+  </style>
+</head>
+<body>
+
+<header class="site-nav">
+  <a href="/" class="site-nav__logo">Te Pā Tūwatawata</a>
+  <nav>
+    <a href="/#modules">Modules</a>
+    <a href="/learners/">Learners</a>
+    <span data-te-pa-auth-slot></span>
+  </nav>
+</header>
+
+<main class="shell">
+  <div id="loading" class="empty">Loading…</div>
+
+  <!-- Single learner profile -->
+  <section id="single" style="display:none">
+    <h1 id="single-name"></h1>
+    <p class="lede" id="single-meta"></p>
+    <div class="pepeha" id="single-pepeha" style="display:none"></div>
+    <div class="badges" id="single-badges"></div>
+  </section>
+
+  <!-- Index of all public learners -->
+  <section id="list" style="display:none">
+    <h1>Ngā ākonga — learners</h1>
+    <p class="lede">
+      Everyone who has signed up and earned at least one pou tohu. Want to be here?
+      <a href="/auth/signup/">Create an account</a> and start with
+      <a href="/modules/module-1.html">Module 1</a>.
+    </p>
+    <div class="grid" id="learner-grid"></div>
+  </section>
+
+  <section id="not-found" style="display:none">
+    <h1>Learner not found</h1>
+    <p class="lede">
+      This profile may be private, or the link is incorrect.
+      <a href="/learners/">Back to all learners</a>.
+    </p>
+  </section>
+</main>
+
+<script>
+  const MODULES = [
+    { n: 1, name: 'Whakapapa o te raraunga', motif: 'koru' },
+    { n: 2, name: 'Te Pā Tūwatawata hei tauira', motif: 'pa-palisade' },
+    { n: 3, name: 'AI me te raupatu matihiko', motif: 'niho-taniwha' },
+    { n: 4, name: 'Tikanga, ture, mana whakahaere', motif: 'kowhaiwhai' },
+    { n: 5, name: 'Hoahoa tika', motif: 'unaunahi' },
+    { n: 6, name: 'He anamata rangatira', motif: 'takarangi' },
+  ];
+  const BADGE_PNG = (n) => `/assets/badges/te-pa-module-${n}-en.png`;
+
+  window.TE_PA_PUBLIC_CONFIG = window.TE_PA_PUBLIC_CONFIG || {
+    supabaseUrl: 'TODO_SUPABASE_URL',
+    supabaseAnonKey: 'TODO_SUPABASE_ANON_KEY'
+  };
+</script>
+<script src="/assets/js/te-pa-auth.js"></script>
+<script>
+  // Rewrite "/learners/jane-doe/" → slug=jane-doe via vercel.json rewrite
+  // OR client-side: path segment after /learners/
+  function getSlug() {
+    const m = location.pathname.match(/^\/learners\/([^\/]+)\/?$/);
+    if (m && m[1] && m[1] !== '') return decodeURIComponent(m[1]);
+    return null;
+  }
+
+  function renderSingle(profile) {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('single').style.display = 'block';
+    document.getElementById('single-name').textContent = profile.learner.display_name;
+    const completed = profile.completions.length;
+    document.getElementById('single-meta').textContent =
+      `${completed} of 6 pou tohu earned · joined ${new Date(profile.learner.created_at).toLocaleDateString('en-NZ')}`;
+    if (profile.learner.pepeha) {
+      const p = document.getElementById('single-pepeha');
+      p.textContent = profile.learner.pepeha;
+      p.style.display = 'block';
+    }
+    const earnedMap = new Map(profile.completions.map(c => [c.module_number, c.completed_at]));
+    document.getElementById('single-badges').innerHTML = MODULES.map(m => {
+      const earnedAt = earnedMap.get(m.n);
+      return `
+        <div class="badge ${earnedAt ? 'earned' : ''}">
+          <img src="${BADGE_PNG(m.n)}" alt="${m.name}" loading="lazy" />
+          <div class="module">Module ${m.n}</div>
+          <div class="name">${m.name}</div>
+          ${earnedAt ? `<div class="date">${new Date(earnedAt).toLocaleDateString('en-NZ')}</div>` : ''}
+        </div>`;
+    }).join('');
+    // Page title
+    document.title = `${profile.learner.display_name} — Te Pā Tūwatawata`;
+  }
+
+  function renderList(learners) {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('list').style.display = 'block';
+    if (!learners.length) {
+      document.getElementById('learner-grid').innerHTML =
+        '<p class="empty">No public learners yet — be the first.</p>';
+      return;
+    }
+    document.getElementById('learner-grid').innerHTML = learners.map(l => {
+      const earned = new Set(l.modules || []);
+      const pips = MODULES.map(m =>
+        `<span class="pip ${earned.has(m.n) ? 'earned' : ''}" title="Module ${m.n}: ${m.name}">${m.n}</span>`
+      ).join('');
+      return `
+        <a class="learner-card" href="/learners/${l.slug}/">
+          <h3>${l.display_name}</h3>
+          <p class="meta">${l.modules_completed || 0} of 6 pou tohu earned</p>
+          <div class="mini-badges">${pips}</div>
+        </a>`;
+    }).join('');
+  }
+
+  (async () => {
+    const slug = getSlug();
+    if (slug) {
+      const profile = await window.TePa.publicProfile(slug);
+      if (profile) renderSingle(profile);
+      else {
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('not-found').style.display = 'block';
+      }
+    } else {
+      const { learners } = await window.TePa.listLearners({ limit: 60 });
+      renderList(learners);
+    }
+  })();
+</script>
+</body>
+</html>

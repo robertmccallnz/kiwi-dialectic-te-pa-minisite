@@ -11,5 +11,9 @@
     "generate-docs": "node scripts/generate-partner-docs.js",
     "generate-docs:upload": "node scripts/generate-partner-docs.js --upload"
   },
+  "type": "module",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0"
+  },
   "license": "CC-BY-NC-SA-4.0"
 }

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign up — Te Pā Tūwatawata</title>
+  <meta name="description" content="Create a free Te Pā Tūwatawata learner account. Earn pou tohu badges as you complete each module." />
+  <link rel="canonical" href="https://te-pa.org/auth/signup/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/assets/kiwi-dialectic.css">
+  <link rel="stylesheet" href="/assets/nav.css">
+  <style>
+    .auth-shell { max-width: 560px; margin: 80px auto 120px; padding: 0 24px; }
+    .auth-shell h1 { font-family: 'Instrument Serif', serif; font-size: clamp(2.4rem, 5vw, 3.2rem); margin: 0 0 12px; line-height: 1.1; }
+    .auth-shell .lede { color: var(--fg-muted); font-size: 1.05rem; line-height: 1.6; margin: 0 0 32px; }
+    .form-card { background: var(--bg-card, #fff); border: 1px solid var(--border, #e5e5e5); border-radius: 14px; padding: 32px; }
+    .form-row { margin-bottom: 18px; }
+    .form-row label { display:block; font-weight:600; font-size:.92rem; margin-bottom:6px; letter-spacing:.02em; }
+    .form-row input[type=email], .form-row input[type=text], .form-row textarea {
+      width:100%; padding:12px 14px; border:1px solid var(--border, #ddd); border-radius:10px;
+      font-family:inherit; font-size:1rem; background:#fff; box-sizing:border-box;
+    }
+    .form-row textarea { min-height: 88px; resize: vertical; }
+    .form-row small { color: var(--fg-muted); font-size:.85rem; }
+    .substack-box { background:#fff7f3; border:1px solid #f3c9b3; border-radius:10px; padding:16px; margin:24px 0; }
+    .substack-box p { margin:0 0 10px; font-size:.92rem; line-height:1.55; }
+    .substack-box .btn { display:inline-block; margin-top:6px; }
+    .check-row { display:flex; gap:10px; align-items:flex-start; margin:18px 0; }
+    .check-row input { margin-top:4px; }
+    .check-row label { font-size:.92rem; line-height:1.5; }
+    .btn-primary { background: var(--accent, #c0392b); color:#fff; border:0; padding:14px 22px; border-radius:10px; font-weight:600; font-size:1rem; cursor:pointer; }
+    .btn-primary:hover { opacity:.92; }
+    .msg { padding:12px 14px; border-radius:8px; margin:14px 0; font-size:.92rem; line-height:1.5; }
+    .msg.ok    { background:#e8f6ea; border:1px solid #b9dfbe; color:#1f5224; }
+    .msg.err   { background:#fdecec; border:1px solid #f0bcbc; color:#7a1b1b; }
+    .step { display:none; }
+    .step.active { display:block; }
+  </style>
+</head>
+<body>
+
+<header class="site-nav">
+  <a href="/" class="site-nav__logo">Te Pā Tūwatawata</a>
+  <nav>
+    <a href="/#modules">Modules</a>
+    <a href="/learners/">Learners</a>
+    <span data-te-pa-auth-slot></span>
+  </nav>
+</header>
+
+<main class="auth-shell">
+
+  <h1>Tomo mai — sign up</h1>
+  <p class="lede">
+    Create a free learner account so your earned <strong>pou tohu</strong> badges
+    are tied to your name. Six modules. Six badges. No fees. No tracking ads.
+  </p>
+
+  <!-- Step 1: email + Substack confirm -->
+  <section class="step active" id="step-email">
+    <div class="form-card">
+      <form id="email-form">
+        <div class="form-row">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com" />
+          <small>We'll send a one-time sign-in link to this address.</small>
+        </div>
+
+        <div class="substack-box">
+          <p><strong>Subscribe to The Kiwi Dialectic on Substack</strong> — required to receive weekly module drops and earn pou tohu.</p>
+          <a class="btn btn--red" href="https://www.kiwidialectic.com/subscribe" target="_blank" rel="noopener">Open Substack subscribe →</a>
+        </div>
+
+        <div class="check-row">
+          <input type="checkbox" id="substack-check" required />
+          <label for="substack-check">
+            I have subscribed (free) to <a href="https://www.kiwidialectic.com" target="_blank" rel="noopener">The Kiwi Dialectic</a> on Substack.
+          </label>
+        </div>
+
+        <button type="submit" class="btn-primary">Send my sign-in link</button>
+      </form>
+      <div id="email-msg"></div>
+    </div>
+  </section>
+
+  <!-- Step 2: after click magic link -->
+  <section class="step" id="step-sent">
+    <div class="form-card">
+      <h2 style="margin-top:0">Check your inbox</h2>
+      <p>We sent a sign-in link to <strong id="sent-email"></strong>. Click it and you'll come back here to finish setting up your learner profile.</p>
+      <p class="lede" style="margin-bottom:0">If it doesn't arrive in a few minutes, check your spam folder or <a href="#" id="retry-link">try again</a>.</p>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  window.TE_PA_PUBLIC_CONFIG = window.TE_PA_PUBLIC_CONFIG || {
+    supabaseUrl: 'TODO_SUPABASE_URL',
+    supabaseAnonKey: 'TODO_SUPABASE_ANON_KEY'
+  };
+</script>
+<script src="/assets/js/te-pa-auth.js"></script>
+<script>
+  const form = document.getElementById('email-form');
+  const msg  = document.getElementById('email-msg');
+  const sentEmail = document.getElementById('sent-email');
+  const stepEmail = document.getElementById('step-email');
+  const stepSent  = document.getElementById('step-sent');
+
+  function show(s) {
+    document.querySelectorAll('.step').forEach(x => x.classList.remove('active'));
+    s.classList.add('active');
+  }
+
+  // If already signed in, jump straight to /profile/finish
+  (async () => {
+    const { user } = await window.TePa.getSession();
+    if (user) window.location.href = '/auth/finish/';
+  })();
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    msg.innerHTML = '';
+    const email = document.getElementById('email').value.trim();
+    if (!document.getElementById('substack-check').checked) {
+      msg.innerHTML = '<div class="msg err">Please confirm your Substack subscription first.</div>';
+      return;
+    }
+    try {
+      await window.TePa.sendMagicLink(email, '/auth/finish/');
+      sentEmail.textContent = email;
+      show(stepSent);
+    } catch (err) {
+      msg.innerHTML = `<div class="msg err">${err.message || 'Could not send sign-in link.'}</div>`;
+    }
+  });
+
+  document.getElementById('retry-link').addEventListener('click', (e) => {
+    e.preventDefault();
+    show(stepEmail);
+  });
+</script>
+
+</body>
+</html>

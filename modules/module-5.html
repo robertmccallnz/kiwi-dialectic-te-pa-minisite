@@ -229,6 +229,10 @@
       </div>
     </section>
 
+    
+    <!-- ─── Pou tohu badge widget (login + mark complete) ─── -->
+    <div data-te-pa-complete data-module="5"></div>
+
     <footer class="site-footer">
       <p>
         <a href="https://www.kiwidialectic.com" target="_blank" rel="noopener noreferrer">The Kiwi Dialectic</a>
@@ -252,5 +256,15 @@
       btn.textContent=next==='dark'?'Light':'Dark';
     });
   </script>
+
+  <!-- Te Pā auth (Supabase magic link) -->
+  <script>
+    window.TE_PA_PUBLIC_CONFIG = window.TE_PA_PUBLIC_CONFIG || {
+      supabaseUrl: 'TODO_SUPABASE_URL',
+      supabaseAnonKey: 'TODO_SUPABASE_ANON_KEY'
+    };
+  </script>
+  <script src="/assets/js/te-pa-auth.js" defer></script>
+  <script src="/assets/js/te-pa-complete.js" defer></script>
 </body>
 </html>
