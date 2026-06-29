@@ -1,0 +1,148 @@
+/* ============================================================
+   te-pa.org — Hotere patch v0.1
+   Scope: token retune only — bring te-pa.org's palette in line
+   with the AI Warrior site so the two sibling sites read as
+   one ecosystem.
+
+   Strategy: override existing CSS custom properties at :root
+   level (and inside [data-theme="dark"]) using the same Hotere
+   token names + values as AI Warrior. No markup changes. No
+   structural changes. No content changes.
+
+   Load order: this file MUST come after assets/kiwi-dialectic.css
+   so its variables win the cascade.
+   ============================================================ */
+
+:root {
+  /* Hotere palette — light theme (paper).
+     The Ralph Hotere reference: matte black + bone white + protest
+     red + ochre gold + the occasional flash of pounamu green. */
+  --bg:          #F4EFE6;          /* bone paper */
+  --bg-card:     #FFFFFF;
+  --bg-raised:   #FFFFFF;
+  --fg:          #0A0A0A;          /* near-black ink */
+  --fg-muted:    #4A453C;          /* warm muted */
+  --border:      rgba(10,10,10,0.12);
+  --border-bold: rgba(10,10,10,0.22);
+
+  /* Te-pa kept --whero (red) and --accent2 (green) as semantic
+     tokens; retune the values but keep the names. */
+  --whero:       #B11F22;          /* protest red, paper version */
+  --whero-soft:  #C8262A;
+  --mangu:       #0A0A0A;
+  --ma:          #F4EFE6;
+  --ma-pure:     #FFFFFF;
+
+  --accent:      var(--whero);
+  --accent2:     #2C7A4B;           /* pounamu green — unchanged */
+
+  /* New Hotere-specific token: ochre gold. Used for kickers,
+     accents, dividers — replaces what was a quiet grey before. */
+  --gold:        #8A6A1F;           /* paper-mode ochre */
+}
+
+/* Dark theme — Hotere matte-black field with bone foreground.
+   These overrides win because [data-theme="dark"] selector is
+   more specific than :root and comes later in source order. */
+[data-theme="dark"] {
+  --bg:          #0A0A0A;          /* matte black field */
+  --bg-card:     #161616;
+  --bg-raised:   #161616;
+  --fg:          #EDE6D6;          /* bone, not pure white */
+  --fg-muted:    #8C8579;          /* warm dim */
+  --border:      rgba(237,230,214,0.12);
+  --border-bold: rgba(237,230,214,0.22);
+
+  --whero:       #C8262A;          /* protest red, dark mode */
+  --whero-soft:  #E04A2E;          /* hover red */
+  --gold:        #C9962B;           /* OCHRE GOLD — the Hotere signature */
+
+  --accent:      var(--whero);
+  --accent2:     #3A8E5C;           /* slightly brighter green on black */
+}
+
+/* ============================================================
+   Signature Hotere details — applied without markup changes.
+   ============================================================ */
+
+/* Gold hairline above the footer — the recognisable "Hotere gold
+   band" that AI Warrior uses to separate body from outro. */
+.site-footer {
+  border-top: 1px solid var(--gold);
+  padding-top: 1.5rem;
+  margin-top: 3rem;
+  font-family: 'Work Sans', system-ui, sans-serif;
+  font-size: 14px;
+  color: var(--fg-muted);
+  letter-spacing: 0.02em;
+}
+
+.site-footer a {
+  color: var(--fg);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color .15s ease, color .15s ease;
+}
+
+.site-footer a:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+/* Section kickers / eyebrow labels go ochre, not red — saves the
+   red for CTAs and the brand band. */
+.kicker,
+.eyebrow,
+.tag {
+  color: var(--gold);
+  letter-spacing: 0.16em;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+/* Thicker, more confident "Te Whai Ao" red band — the existing
+   --band-h was a quiet 6px; Hotere wants 8px so it reads as a
+   ribbon, not a divider. */
+:root { --band-h: 8px; }
+
+/* Hairline rules across the site adopt the gold token so the
+   eye picks up the Hotere palette anywhere a divider appears. */
+hr,
+.divider,
+.section-divider {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--gold) 18%,
+    var(--gold) 82%,
+    transparent 100%
+  );
+  margin: 2.5rem 0;
+  opacity: 0.65;
+}
+
+/* Card hover lift — bone shadow on dark, ink shadow on paper.
+   Keeps the Hotere reading even on interactive surfaces. */
+.card:hover,
+.motif-card:hover,
+.thinker:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  transform: translateY(-2px);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+[data-theme="dark"] .card:hover,
+[data-theme="dark"] .motif-card:hover,
+[data-theme="dark"] .thinker:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.55),
+              0 0 0 1px rgba(201,150,43,0.16); /* faint gold ring */
+}
+
+/* Selection — bone on red so highlighting feels intentional. */
+::selection {
+  background: var(--whero);
+  color: var(--bg);
+}
