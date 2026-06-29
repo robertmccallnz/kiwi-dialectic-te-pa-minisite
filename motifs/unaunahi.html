@@ -162,7 +162,7 @@ const plats=[['x','X/Twitter 1200×675'],['instagram','Instagram 1080×1080'],['
 const KEY='unaunahi';
 plats.forEach(([plat,label])=>{
   msgs.forEach(n=>{
-    const base=`../social-kit/unaunahi/${KEY}-${plat}-${String(n).padStart(2,'0')}`;
+    const base=`../social-kit/motifs/unaunahi/${KEY}-${plat}-${String(n).padStart(2,'0')}`;
     // find matching file by listing known pattern
     fetch(`${base}-who_built_this.svg`).then(()=>{}).catch(()=>{});
   });
@@ -179,7 +179,7 @@ const SLUGS={
 const slugs=SLUGS[KEY]||[];
 plats.forEach(([plat,label])=>{
   slugs.forEach((slug,i)=>{
-    const src=`../social-kit/unaunahi/${KEY}-${plat}-${String(i+1).padStart(2,'0')}-${slug}.svg`;
+    const src=`../social-kit/motifs/unaunahi/${KEY}-${plat}-${String(i+1).padStart(2,'0')}-${slug}.svg`;
     const div=document.createElement('div');
     div.style.cssText='background:var(--bg-raised);border:1px solid var(--border);border-radius:8px;overflow:hidden';
     div.innerHTML=`<img src="${src}" style="width:100%;display:block" loading="lazy" onerror="this.parentElement.style.display='none'"/>
