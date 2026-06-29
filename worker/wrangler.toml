@@ -1,0 +1,31 @@
+# Cloudflare Worker config for te-pa analytics + public motif API.
+#
+# Deploy: from the `worker/` directory, run `wrangler deploy` (CI does this
+# automatically on push to main — see .github/workflows/deploy-worker.yml).
+#
+# Required secrets at deploy time (set in Cloudflare dashboard or via
+# `wrangler secret put`):
+#   - none currently; auth keys are checked via X-TePa-Use header but are
+#     not yet bound here. Add as `[vars]` or secrets when introduced.
+#
+# Database: D1 binding `DB`. Replace the placeholder `database_id` with the
+# real one from `wrangler d1 list` (or paste from the dashboard).
+# Until that value is filled in, CI will deploy successfully but the Worker
+# will fail at runtime when it hits `env.DB.prepare(...)`.
+
+name = "te-pa-analytics"
+main = "analytics-worker-v3.js"
+compatibility_date = "2026-06-01"
+workers_dev = true
+
+# D1 binding — used for analytics tracking, stats, rate-limit counters,
+# and motif/culture lookups (env.DB throughout analytics-worker-v3.js).
+[[d1_databases]]
+binding = "DB"
+database_name = "te-pa-analytics"
+# database_id: fill in from `wrangler d1 list` before the first deploy.
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+
+# Observability — surface Worker logs in the Cloudflare dashboard.
+[observability]
+enabled = true
