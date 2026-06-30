@@ -1,0 +1,318 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-06-30T10:56:08.365278+00:00",
+  "campaign": "lead-motifs-launch",
+  "utm_template": "utm_source={channel}&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content={motif}_{lang}",
+  "map_url": "https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html",
+  "course_url": "https://kiwidialectic.com",
+  "channels_drafted": [
+    "x",
+    "bluesky",
+    "facebook",
+    "instagram",
+    "mastodon",
+    "substack-note"
+  ],
+  "posts": [
+    {
+      "motif_id": "koru",
+      "language": "en",
+      "culture": "maori",
+      "course_module": "module_1",
+      "name_en": "Koru",
+      "name_indigenous": "Koru",
+      "meaning": "New life, unfurling potential, the origin point of all things. Something is beginning — or being prevented from beginning.",
+      "themes": [
+        "renewal",
+        "education",
+        "language",
+        "future",
+        "youth"
+      ],
+      "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_koru_en.png",
+      "colour_primary": "#2ecc71",
+      "platforms": {
+        "x": {
+          "text": "Te Koru. New life unfurling. Beginnings refused to be stolen.\n\nFree course: https://kiwidialectic.com/?utm_source=x&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=koru_en\n\n#TePāTūwatawata #TeManaRaraunga #Koru",
+          "char_count": 224,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_koru_en.png"
+        },
+        "bluesky": {
+          "text": "Te Koru. New life unfurling. Beginnings refused to be stolen.\n\nFree course: https://kiwidialectic.com/?utm_source=bluesky&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=koru_en\n\n#TePāTūwatawata #TeManaRaraunga #Koru",
+          "char_count": 230,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_koru_en.png"
+        },
+        "facebook": {
+          "text": "Te Koru. New life unfurling. Every spiral was someone refusing to let beginnings be stolen.\n\nLearn the politics of the pattern — free course:\n\nWhat it means: New life, unfurling potential, the origin point of all things. Something is beginning — or being prevented from beginning.\n\nThemes: renewal, education, language, future, youth.\nEvery share lights a node on the rhizome map → https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html\nFree course → https://kiwidialectic.com/?utm_source=facebook&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=koru_en\n\n#TePāTūwatawata #TeManaRaraunga #Koru #IndigenousAI #KiwiDialectic",
+          "char_count": 649,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_koru_en.png"
+        },
+        "instagram": {
+          "text": "Te Koru. New life unfurling. Every spiral was someone refusing to let beginnings be stolen.\n\nLearn the politics of the pattern — free course:\n\nWhat it means: New life, unfurling potential, the origin point of all things. Something is beginning — or being prevented from beginning.\n\nThemes: renewal, education, language, future, youth.\nEvery share lights a node on the rhizome map → https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html\nFree course → https://kiwidialectic.com/?utm_source=instagram&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=koru_en\n\n#TePāTūwatawata #TeManaRaraunga #Koru #IndigenousAI #KiwiDialectic",
+          "char_count": 650,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_koru_en.png"
+        },
+        "mastodon": {
+          "text": "Te Koru. New life unfurling. Every spiral was someone refusing to let beginnings be stolen.\n\nLearn the politics of the pattern — free course:\n\nWhat it means: New life, unfurling potential, the origin point of all things. Something is beginning — or being prevented from beginning.\n\nThemes: renewal, education, language, future, youth.\nEvery share lights a node on the rhizome map → https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html\nFree course → https://kiwidialectic.com/?utm_source=mastodon&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=koru_en\n\n#TePāTūwatawata #TeManaRaraunga #Koru #IndigenousAI #KiwiDialectic",
+          "char_count": 649,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_koru_en.png"
+        },
+        "substack-note": {
+          "text": "Te Koru. New life unfurling. Every spiral was someone refusing to let beginnings be stolen.\n\nLearn the politics of the pattern — free course:\n\nWhat it means: New life, unfurling potential, the origin point of all things. Something is beginning — or being prevented from beginning.\n\nThemes: renewal, education, language, future, youth.\nEvery share lights a node on the rhizome map → https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html\nFree course → https://kiwidialectic.com/?utm_source=substack-note&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=koru_en\n\n#TePāTūwatawata #TeManaRaraunga #Koru #IndigenousAI #KiwiDialectic",
+          "char_count": 654,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_koru_en.png"
+        }
+      }
+    },
+    {
+      "motif_id": "koru",
+      "language": "mi",
+      "culture": "maori",
+      "course_module": "module_1",
+      "name_en": "Koru",
+      "name_indigenous": "Koru",
+      "meaning": "New life, unfurling potential, the origin point of all things. Something is beginning — or being prevented from beginning.",
+      "themes": [
+        "renewal",
+        "education",
+        "language",
+        "future",
+        "youth"
+      ],
+      "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_koru_mi.png",
+      "colour_primary": "#2ecc71",
+      "platforms": {
+        "x": {
+          "text": "Te Koru — te oranga hou. Akoranga utukore: https://kiwidialectic.com/?utm_source=x&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=koru_mi\n\n#TePāTūwatawata #TeManaRaraunga #Koru",
+          "char_count": 191,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_koru_mi.png"
+        },
+        "bluesky": {
+          "text": "Te Koru — te oranga hou. Akoranga utukore: https://kiwidialectic.com/?utm_source=bluesky&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=koru_mi\n\n#TePāTūwatawata #TeManaRaraunga #Koru",
+          "char_count": 197,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_koru_mi.png"
+        },
+        "facebook": {
+          "text": "Te Koru — te oranga hou e takoto ana. Ka tīmata anō. Akoranga utukore mō te mātauranga matihiko:\n\nWhat it means: New life, unfurling potential, the origin point of all things. Something is beginning — or being prevented from beginning.\n\nThemes: renewal, education, language, future, youth.\nEvery share lights a node on the rhizome map → https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html\nFree course → https://kiwidialectic.com/?utm_source=facebook&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=koru_mi\n\n#TePāTūwatawata #TeManaRaraunga #Koru #IndigenousAI #KiwiDialectic",
+          "char_count": 604,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_koru_mi.png"
+        },
+        "instagram": {
+          "text": "Te Koru — te oranga hou e takoto ana. Ka tīmata anō. Akoranga utukore mō te mātauranga matihiko:\n\nWhat it means: New life, unfurling potential, the origin point of all things. Something is beginning — or being prevented from beginning.\n\nThemes: renewal, education, language, future, youth.\nEvery share lights a node on the rhizome map → https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html\nFree course → https://kiwidialectic.com/?utm_source=instagram&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=koru_mi\n\n#TePāTūwatawata #TeManaRaraunga #Koru #IndigenousAI #KiwiDialectic",
+          "char_count": 605,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_koru_mi.png"
+        },
+        "mastodon": {
+          "text": "Te Koru — te oranga hou e takoto ana. Ka tīmata anō. Akoranga utukore mō te mātauranga matihiko:\n\nWhat it means: New life, unfurling potential, the origin point of all things. Something is beginning — or being prevented from beginning.\n\nThemes: renewal, education, language, future, youth.\nEvery share lights a node on the rhizome map → https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html\nFree course → https://kiwidialectic.com/?utm_source=mastodon&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=koru_mi\n\n#TePāTūwatawata #TeManaRaraunga #Koru #IndigenousAI #KiwiDialectic",
+          "char_count": 604,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_koru_mi.png"
+        },
+        "substack-note": {
+          "text": "Te Koru — te oranga hou e takoto ana. Ka tīmata anō. Akoranga utukore mō te mātauranga matihiko:\n\nWhat it means: New life, unfurling potential, the origin point of all things. Something is beginning — or being prevented from beginning.\n\nThemes: renewal, education, language, future, youth.\nEvery share lights a node on the rhizome map → https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html\nFree course → https://kiwidialectic.com/?utm_source=substack-note&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=koru_mi\n\n#TePāTūwatawata #TeManaRaraunga #Koru #IndigenousAI #KiwiDialectic",
+          "char_count": 609,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_koru_mi.png"
+        }
+      }
+    },
+    {
+      "motif_id": "yvy_mara_ey",
+      "language": "pt",
+      "culture": "guarani",
+      "course_module": "module_1",
+      "name_en": "Yvy Marã Eÿ (Land Without Evil)",
+      "name_indigenous": "Yvy marã e'ỹ",
+      "meaning": "Terra sem males: paraíso mítico guaraní, livre de fome, guerra e doenças. Alcançável apenas por quem atingiu o estado espiritual de aguyjé. Ligado às grandes migrações tupi-guaraní. Conceito central nos manifestos de direitos territoriais.",
+      "themes": [
+        "territorial sovereignty",
+        "land rights",
+        "deforestation resistance",
+        "APIB",
+        "cosmological resistance"
+      ],
+      "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yvy_mara_ey_pt.png",
+      "colour_primary": "#27ae60",
+      "platforms": {
+        "x": {
+          "text": "Yvy Marã Ey — Terra Sem Males. Não é mito, é programa político.\n\nCurso grátis: https://kiwidialectic.com/?utm_source=x&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=yvy_mara_ey_pt\n\n#TePāTūwatawata #YvyMaraEy #TerraSemMales",
+          "char_count": 238,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yvy_mara_ey_pt.png"
+        },
+        "bluesky": {
+          "text": "Yvy Marã Ey — Terra Sem Males. Não é mito, é programa político.\n\nCurso grátis: https://kiwidialectic.com/?utm_source=bluesky&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=yvy_mara_ey_pt\n\n#TePāTūwatawata #YvyMaraEy #TerraSemMales",
+          "char_count": 244,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yvy_mara_ey_pt.png"
+        },
+        "facebook": {
+          "text": "Yvy Marã Ey — Terra Sem Males. Não é mito, é programa político. A floresta resiste, os povos resistem. Curso gratuito sobre soberania de dados indígenas:\n\nWhat it means: Terra sem males: paraíso mítico guaraní, livre de fome, guerra e doenças. Alcançável apenas por quem atingiu o estado espiritual de aguyjé. Ligado às grandes migrações tupi-guaraní. Conceito central nos manifestos de direitos territoriais.\n\nThemes: territorial sovereignty, land rights, deforestation resistance, APIB, cosmological resistance.\nEvery share lights a node on the rhizome map → https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html\nFree course → https://kiwidialectic.com/?utm_source=facebook&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=yvy_mara_ey_pt\n\n#TePāTūwatawata #YvyMaraEy #TerraSemMales #APIB #IndigenousAI",
+          "char_count": 830,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yvy_mara_ey_pt.png"
+        },
+        "instagram": {
+          "text": "Yvy Marã Ey — Terra Sem Males. Não é mito, é programa político. A floresta resiste, os povos resistem. Curso gratuito sobre soberania de dados indígenas:\n\nWhat it means: Terra sem males: paraíso mítico guaraní, livre de fome, guerra e doenças. Alcançável apenas por quem atingiu o estado espiritual de aguyjé. Ligado às grandes migrações tupi-guaraní. Conceito central nos manifestos de direitos territoriais.\n\nThemes: territorial sovereignty, land rights, deforestation resistance, APIB, cosmological resistance.\nEvery share lights a node on the rhizome map → https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html\nFree course → https://kiwidialectic.com/?utm_source=instagram&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=yvy_mara_ey_pt\n\n#TePāTūwatawata #YvyMaraEy #TerraSemMales #APIB #IndigenousAI",
+          "char_count": 831,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yvy_mara_ey_pt.png"
+        },
+        "mastodon": {
+          "text": "Yvy Marã Ey — Terra Sem Males. Não é mito, é programa político. A floresta resiste, os povos resistem. Curso gratuito sobre soberania de dados indígenas:\n\nWhat it means: Terra sem males: paraíso mítico guaraní, livre de fome, guerra e doenças. Alcançável apenas por quem atingiu o estado espiritual de aguyjé. Ligado às grandes migrações tupi-guaraní. Conceito central nos manifestos de direitos territoriais.\n\nThemes: territorial sovereignty, land rights, deforestation resistance, APIB, cosmological resistance.\nEvery share lights a node on the rhizome map → https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html\nFree course → https://kiwidialectic.com/?utm_source=mastodon&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=yvy_mara_ey_pt\n\n#TePāTūwatawata #YvyMaraEy #TerraSemMales #APIB #IndigenousAI",
+          "char_count": 830,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yvy_mara_ey_pt.png"
+        },
+        "substack-note": {
+          "text": "Yvy Marã Ey — Terra Sem Males. Não é mito, é programa político. A floresta resiste, os povos resistem. Curso gratuito sobre soberania de dados indígenas:\n\nWhat it means: Terra sem males: paraíso mítico guaraní, livre de fome, guerra e doenças. Alcançável apenas por quem atingiu o estado espiritual de aguyjé. Ligado às grandes migrações tupi-guaraní. Conceito central nos manifestos de direitos territoriais.\n\nThemes: territorial sovereignty, land rights, deforestation resistance, APIB, cosmological resistance.\nEvery share lights a node on the rhizome map → https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html\nFree course → https://kiwidialectic.com/?utm_source=substack-note&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=yvy_mara_ey_pt\n\n#TePāTūwatawata #YvyMaraEy #TerraSemMales #APIB #IndigenousAI",
+          "char_count": 835,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yvy_mara_ey_pt.png"
+        }
+      }
+    },
+    {
+      "motif_id": "yvy_mara_ey",
+      "language": "gn",
+      "culture": "guarani",
+      "course_module": "module_1",
+      "name_en": "Yvy Marã Eÿ (Land Without Evil)",
+      "name_indigenous": "Yvy marã e'ỹ",
+      "meaning": "Yvy marã e'ỹ: yvy = yvy; marã = vai/mbaasy; e'ỹ = ndaipóri. 'Yvy marã e'ỹ.' Oñeha'ã APIB ñe'ẽngue ha tetã ñorairõ reheve.",
+      "themes": [
+        "territorial sovereignty",
+        "land rights",
+        "deforestation resistance",
+        "APIB",
+        "cosmological resistance"
+      ],
+      "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yvy_mara_ey_gn.png",
+      "colour_primary": "#27ae60",
+      "platforms": {
+        "x": {
+          "text": "Yvy Marã E'ỹ — yvy ndaipóri vaí.\n\nMbo'esyry rei: https://kiwidialectic.com/?utm_source=x&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=yvy_mara_ey_gn\n\n#TePāTūwatawata #YvyMaraEy #TerraSemMales",
+          "char_count": 208,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yvy_mara_ey_gn.png"
+        },
+        "bluesky": {
+          "text": "Yvy Marã E'ỹ — yvy ndaipóri vaí.\n\nMbo'esyry rei: https://kiwidialectic.com/?utm_source=bluesky&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=yvy_mara_ey_gn\n\n#TePāTūwatawata #YvyMaraEy #TerraSemMales",
+          "char_count": 214,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yvy_mara_ey_gn.png"
+        },
+        "facebook": {
+          "text": "Yvy Marã E'ỹ — yvy ndaipóri vaí. Ko'ã táva oñorairõ. Mbo'esyry rei tetã ñemoñe'ẽ rehegua:\n\nWhat it means: Yvy marã e'ỹ: yvy = yvy; marã = vai/mbaasy; e'ỹ = ndaipóri. 'Yvy marã e'ỹ.' Oñeha'ã APIB ñe'ẽngue ha tetã ñorairõ reheve.\n\nThemes: territorial sovereignty, land rights, deforestation resistance, APIB, cosmological resistance.\nEvery share lights a node on the rhizome map → https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html\nFree course → https://kiwidialectic.com/?utm_source=facebook&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=yvy_mara_ey_gn\n\n#TePāTūwatawata #YvyMaraEy #TerraSemMales #APIB #IndigenousAI",
+          "char_count": 648,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yvy_mara_ey_gn.png"
+        },
+        "instagram": {
+          "text": "Yvy Marã E'ỹ — yvy ndaipóri vaí. Ko'ã táva oñorairõ. Mbo'esyry rei tetã ñemoñe'ẽ rehegua:\n\nWhat it means: Yvy marã e'ỹ: yvy = yvy; marã = vai/mbaasy; e'ỹ = ndaipóri. 'Yvy marã e'ỹ.' Oñeha'ã APIB ñe'ẽngue ha tetã ñorairõ reheve.\n\nThemes: territorial sovereignty, land rights, deforestation resistance, APIB, cosmological resistance.\nEvery share lights a node on the rhizome map → https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html\nFree course → https://kiwidialectic.com/?utm_source=instagram&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=yvy_mara_ey_gn\n\n#TePāTūwatawata #YvyMaraEy #TerraSemMales #APIB #IndigenousAI",
+          "char_count": 649,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yvy_mara_ey_gn.png"
+        },
+        "mastodon": {
+          "text": "Yvy Marã E'ỹ — yvy ndaipóri vaí. Ko'ã táva oñorairõ. Mbo'esyry rei tetã ñemoñe'ẽ rehegua:\n\nWhat it means: Yvy marã e'ỹ: yvy = yvy; marã = vai/mbaasy; e'ỹ = ndaipóri. 'Yvy marã e'ỹ.' Oñeha'ã APIB ñe'ẽngue ha tetã ñorairõ reheve.\n\nThemes: territorial sovereignty, land rights, deforestation resistance, APIB, cosmological resistance.\nEvery share lights a node on the rhizome map → https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html\nFree course → https://kiwidialectic.com/?utm_source=mastodon&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=yvy_mara_ey_gn\n\n#TePāTūwatawata #YvyMaraEy #TerraSemMales #APIB #IndigenousAI",
+          "char_count": 648,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yvy_mara_ey_gn.png"
+        },
+        "substack-note": {
+          "text": "Yvy Marã E'ỹ — yvy ndaipóri vaí. Ko'ã táva oñorairõ. Mbo'esyry rei tetã ñemoñe'ẽ rehegua:\n\nWhat it means: Yvy marã e'ỹ: yvy = yvy; marã = vai/mbaasy; e'ỹ = ndaipóri. 'Yvy marã e'ỹ.' Oñeha'ã APIB ñe'ẽngue ha tetã ñorairõ reheve.\n\nThemes: territorial sovereignty, land rights, deforestation resistance, APIB, cosmological resistance.\nEvery share lights a node on the rhizome map → https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html\nFree course → https://kiwidialectic.com/?utm_source=substack-note&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=yvy_mara_ey_gn\n\n#TePāTūwatawata #YvyMaraEy #TerraSemMales #APIB #IndigenousAI",
+          "char_count": 653,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yvy_mara_ey_gn.png"
+        }
+      }
+    },
+    {
+      "motif_id": "niho_mano",
+      "language": "sm",
+      "culture": "samoan",
+      "course_module": "module_6",
+      "name_en": "Niho Mano (Shark Teeth)",
+      "name_indigenous": "Niho Mano",
+      "meaning": "Malosi, puipuiga, taitaiga ma le fefete. O le malie ose aitu puipui i le tu ma aga faasamoa. I le pe'a ma le malu, o lenei fa'ailoga e fa'aalia ai le saogalemu o le aiga.",
+      "themes": [
+        "warrior",
+        "protection",
+        "sovereignty",
+        "resistance",
+        "cultural identity"
+      ],
+      "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_mano_sm.png",
+      "colour_primary": "#00b4d8",
+      "platforms": {
+        "x": {
+          "text": "Niho Mano — nifo o le malie. Malosi. Puipuiga. Aitu.\n\nA'oa'oga fua: https://kiwidialectic.com/?utm_source=x&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=niho_mano_sm\n\n#TePāTūwatawata #NihoMano #PolynesianResistance",
+          "char_count": 231,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_mano_sm.png"
+        },
+        "bluesky": {
+          "text": "Niho Mano — nifo o le malie. Malosi. Puipuiga. Aitu.\n\nA'oa'oga fua: https://kiwidialectic.com/?utm_source=bluesky&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=niho_mano_sm\n\n#TePāTūwatawata #NihoMano #PolynesianResistance",
+          "char_count": 237,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_mano_sm.png"
+        },
+        "facebook": {
+          "text": "Niho Mano — nifo o le malie. Malosi, puipuiga, fa'asoa. O lo tatou aitu puipui. A'oa'oga fua e uiga i le pulega o fa'amaumauga fa'aleaganu'u:\n\nWhat it means: Malosi, puipuiga, taitaiga ma le fefete. O le malie ose aitu puipui i le tu ma aga faasamoa. I le pe'a ma le malu, o lenei fa'ailoga e fa'aalia ai le saogalemu o le aiga.\n\nThemes: warrior, protection, sovereignty, resistance, cultural identity.\nEvery share lights a node on the rhizome map → https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html\nFree course → https://kiwidialectic.com/?utm_source=facebook&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=niho_mano_sm\n\n#TePāTūwatawata #NihoMano #PolynesianResistance #TalanoaSovereignty #IndigenousAI",
+          "char_count": 737,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_mano_sm.png"
+        },
+        "instagram": {
+          "text": "Niho Mano — nifo o le malie. Malosi, puipuiga, fa'asoa. O lo tatou aitu puipui. A'oa'oga fua e uiga i le pulega o fa'amaumauga fa'aleaganu'u:\n\nWhat it means: Malosi, puipuiga, taitaiga ma le fefete. O le malie ose aitu puipui i le tu ma aga faasamoa. I le pe'a ma le malu, o lenei fa'ailoga e fa'aalia ai le saogalemu o le aiga.\n\nThemes: warrior, protection, sovereignty, resistance, cultural identity.\nEvery share lights a node on the rhizome map → https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html\nFree course → https://kiwidialectic.com/?utm_source=instagram&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=niho_mano_sm\n\n#TePāTūwatawata #NihoMano #PolynesianResistance #TalanoaSovereignty #IndigenousAI",
+          "char_count": 738,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_mano_sm.png"
+        },
+        "mastodon": {
+          "text": "Niho Mano — nifo o le malie. Malosi, puipuiga, fa'asoa. O lo tatou aitu puipui. A'oa'oga fua e uiga i le pulega o fa'amaumauga fa'aleaganu'u:\n\nWhat it means: Malosi, puipuiga, taitaiga ma le fefete. O le malie ose aitu puipui i le tu ma aga faasamoa. I le pe'a ma le malu, o lenei fa'ailoga e fa'aalia ai le saogalemu o le aiga.\n\nThemes: warrior, protection, sovereignty, resistance, cultural identity.\nEvery share lights a node on the rhizome map → https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html\nFree course → https://kiwidialectic.com/?utm_source=mastodon&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=niho_mano_sm\n\n#TePāTūwatawata #NihoMano #PolynesianResistance #TalanoaSovereignty #IndigenousAI",
+          "char_count": 737,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_mano_sm.png"
+        },
+        "substack-note": {
+          "text": "Niho Mano — nifo o le malie. Malosi, puipuiga, fa'asoa. O lo tatou aitu puipui. A'oa'oga fua e uiga i le pulega o fa'amaumauga fa'aleaganu'u:\n\nWhat it means: Malosi, puipuiga, taitaiga ma le fefete. O le malie ose aitu puipui i le tu ma aga faasamoa. I le pe'a ma le malu, o lenei fa'ailoga e fa'aalia ai le saogalemu o le aiga.\n\nThemes: warrior, protection, sovereignty, resistance, cultural identity.\nEvery share lights a node on the rhizome map → https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html\nFree course → https://kiwidialectic.com/?utm_source=substack-note&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=niho_mano_sm\n\n#TePāTūwatawata #NihoMano #PolynesianResistance #TalanoaSovereignty #IndigenousAI",
+          "char_count": 742,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_mano_sm.png"
+        }
+      }
+    },
+    {
+      "motif_id": "niho_mano",
+      "language": "en",
+      "culture": "samoan",
+      "course_module": "module_6",
+      "name_en": "Niho Mano (Shark Teeth)",
+      "name_indigenous": "Niho Mano",
+      "meaning": "Strength, protection, guidance and ferocity. The shark is a revered guardian spirit (aitu) in Polynesian cosmology. In the pe'a and malu tattoos, this motif signals warrior readiness and the wearer's role as a protector of family and village.",
+      "themes": [
+        "warrior",
+        "protection",
+        "sovereignty",
+        "resistance",
+        "cultural identity"
+      ],
+      "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_mano_en.png",
+      "colour_primary": "#00b4d8",
+      "platforms": {
+        "x": {
+          "text": "Niho Mano — shark's tooth. Strength, protection, ferocity.\n\nFree course: https://kiwidialectic.com/?utm_source=x&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=niho_mano_en\n\n#TePāTūwatawata #NihoMano #PolynesianResistance",
+          "char_count": 236,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_mano_en.png"
+        },
+        "bluesky": {
+          "text": "Niho Mano — shark's tooth. Strength, protection, ferocity.\n\nFree course: https://kiwidialectic.com/?utm_source=bluesky&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=niho_mano_en\n\n#TePāTūwatawata #NihoMano #PolynesianResistance",
+          "char_count": 242,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_mano_en.png"
+        },
+        "facebook": {
+          "text": "Niho Mano — the shark's tooth. Strength, protection, ferocity. The guardian we carry. Free course on indigenous data sovereignty:\n\nWhat it means: Strength, protection, guidance and ferocity. The shark is a revered guardian spirit (aitu) in Polynesian cosmology. In the pe'a and malu tattoos, this motif signals warrior readiness and the wearer's role as a protector of family and village.\n\nThemes: warrior, protection, sovereignty, resistance, cultural identity.\nEvery share lights a node on the rhizome map → https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html\nFree course → https://kiwidialectic.com/?utm_source=facebook&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=niho_mano_en\n\n#TePāTūwatawata #NihoMano #PolynesianResistance #TalanoaSovereignty #IndigenousAI",
+          "char_count": 797,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_mano_en.png"
+        },
+        "instagram": {
+          "text": "Niho Mano — the shark's tooth. Strength, protection, ferocity. The guardian we carry. Free course on indigenous data sovereignty:\n\nWhat it means: Strength, protection, guidance and ferocity. The shark is a revered guardian spirit (aitu) in Polynesian cosmology. In the pe'a and malu tattoos, this motif signals warrior readiness and the wearer's role as a protector of family and village.\n\nThemes: warrior, protection, sovereignty, resistance, cultural identity.\nEvery share lights a node on the rhizome map → https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html\nFree course → https://kiwidialectic.com/?utm_source=instagram&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=niho_mano_en\n\n#TePāTūwatawata #NihoMano #PolynesianResistance #TalanoaSovereignty #IndigenousAI",
+          "char_count": 798,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_mano_en.png"
+        },
+        "mastodon": {
+          "text": "Niho Mano — the shark's tooth. Strength, protection, ferocity. The guardian we carry. Free course on indigenous data sovereignty:\n\nWhat it means: Strength, protection, guidance and ferocity. The shark is a revered guardian spirit (aitu) in Polynesian cosmology. In the pe'a and malu tattoos, this motif signals warrior readiness and the wearer's role as a protector of family and village.\n\nThemes: warrior, protection, sovereignty, resistance, cultural identity.\nEvery share lights a node on the rhizome map → https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html\nFree course → https://kiwidialectic.com/?utm_source=mastodon&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=niho_mano_en\n\n#TePāTūwatawata #NihoMano #PolynesianResistance #TalanoaSovereignty #IndigenousAI",
+          "char_count": 797,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_mano_en.png"
+        },
+        "substack-note": {
+          "text": "Niho Mano — the shark's tooth. Strength, protection, ferocity. The guardian we carry. Free course on indigenous data sovereignty:\n\nWhat it means: Strength, protection, guidance and ferocity. The shark is a revered guardian spirit (aitu) in Polynesian cosmology. In the pe'a and malu tattoos, this motif signals warrior readiness and the wearer's role as a protector of family and village.\n\nThemes: warrior, protection, sovereignty, resistance, cultural identity.\nEvery share lights a node on the rhizome map → https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html\nFree course → https://kiwidialectic.com/?utm_source=substack-note&utm_medium=social&utm_campaign=lead-motifs-launch&utm_content=niho_mano_en\n\n#TePāTūwatawata #NihoMano #PolynesianResistance #TalanoaSovereignty #IndigenousAI",
+          "char_count": 802,
+          "image_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_mano_en.png"
+        }
+      }
+    }
+  ]
+}
