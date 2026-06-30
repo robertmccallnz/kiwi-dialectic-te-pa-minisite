@@ -1,0 +1,1964 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-06-30T10:49:59.266470Z",
+  "license": "CC BY-NC-SA 4.0",
+  "attribution": "Te Pā Tūwatawata — The Kiwi Dialectic",
+  "project_links": {
+    "minisite": "https://kiwi-dialectic-te-pa-minisite.vercel.app",
+    "rhizome_map": "https://kiwi-dialectic-te-pa-minisite.vercel.app/rhizome-mapper.html",
+    "api_base": "https://te-pa-analytics.sketchschool.workers.dev/api",
+    "api_motifs": "https://te-pa-analytics.sketchschool.workers.dev/motifs",
+    "r2_public_base": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev",
+    "repo": "https://github.com/robertmccallnz/kiwi-dialectic-te-pa-minisite",
+    "data_dir": "https://raw.githubusercontent.com/robertmccallnz/kiwi-dialectic-te-pa-minisite/main/data",
+    "social_kit": "https://raw.githubusercontent.com/robertmccallnz/kiwi-dialectic-te-pa-minisite/main/social-kit"
+  },
+  "totals": {
+    "motifs": 30,
+    "cultures": 11,
+    "course_modules": 6,
+    "political_themes": 116,
+    "social_kit_assets": 1150
+  },
+  "cultures": [
+    "amazonian",
+    "fijian",
+    "guarani",
+    "guna",
+    "kayapo",
+    "maori",
+    "pacific",
+    "samoan",
+    "shipibo",
+    "tongan",
+    "yanomami"
+  ],
+  "languages_with_translation": [
+    "en",
+    "mi",
+    "sm",
+    "pt",
+    "gn",
+    "ar"
+  ],
+  "motifs": [
+    {
+      "id": "koru",
+      "culture": "maori",
+      "name_en": "Koru",
+      "name_indigenous": "Koru",
+      "language_primary": "te_reo_maori",
+      "region": "maori",
+      "rhizome_region": "maori",
+      "colour_primary": "#2ecc71",
+      "colour_secondary": "#1a9e55",
+      "meaning_active": "New life, unfurling potential, the origin point of all things. Something is beginning — or being prevented from beginning.",
+      "meanings": {
+        "en": "New life, unfurling potential, the origin point of all things. Something is beginning — or being prevented from beginning.",
+        "pt": "Nova vida, potencial se desdobrando, o ponto de origem de todas as coisas. Algo está começando — ou sendo impedido de começar.",
+        "sm": "O olaga fou, le malosi e fa'aalia mai, o le amataga o mea uma. O lo'o amatalia se mea — pe taofia.",
+        "gn": "Yvoty pyahu, kuaapy hekopyahu, mba'e oñemoñe'ẽrã rupi. Oñepyrũ peteĩ mba'e — térã oñeme'ẽ haguãicha."
+      },
+      "political_themes": [
+        "renewal",
+        "education",
+        "language",
+        "future",
+        "youth"
+      ],
+      "resistance_use": "Used in education campaigns, language revival, new political formations — the beginning of a movement",
+      "course_module": {
+        "id": "module_1",
+        "title_en": "What is Data? Indigenous Knowledges and the Digital World"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_koru.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/koru.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/koru.svg",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "ANZAAE kowhaiwhai guide",
+        "Te Papa collections",
+        "Kiwi Dialectic motif system"
+      ]
+    },
+    {
+      "id": "kowhaiwhai",
+      "culture": "maori",
+      "name_en": "Kōwhaiwhai",
+      "name_indigenous": "Kōwhaiwhai",
+      "language_primary": "te_reo_maori",
+      "region": "maori",
+      "rhizome_region": "maori",
+      "colour_primary": "#f39c12",
+      "colour_secondary": "#d68910",
+      "meaning_active": "The law written on the rafter. A clash between tikanga and statute, ancestral authority and state power.",
+      "meanings": {
+        "en": "The law written on the rafter. A clash between tikanga and statute, ancestral authority and state power.",
+        "pt": "A lei escrita na viga. Um conflito entre tikanga e estatuto, autoridade ancestral e poder estatal.",
+        "sm": "O le tulafono ua tusia i luga o le aso. Se feteena'i i le va o le aga fa'aleaganuu ma le tulafono a le setete.",
+        "gn": "Ñe'ẽpoty tataupyre rape rupi ohai. Peteĩ ñeikotevẽ tikanga ha ley mbytegua, tupãrupi ñangareko ha tetã mbarete."
+      },
+      "political_themes": [
+        "law",
+        "treaty",
+        "tikanga",
+        "governance",
+        "rights"
+      ],
+      "resistance_use": "Treaty of Waitangi fights, UNDRIP campaigns, indigenous constitutional law",
+      "course_module": {
+        "id": "module_3",
+        "title_en": "CARE & OCAP: Frameworks for Data Sovereignty"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_kowhaiwhai.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/kowhaiwhai.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/kowhaiwhai.svg",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "ANZAAE kowhaiwhai guide",
+        "Kiwi Dialectic motif system"
+      ]
+    },
+    {
+      "id": "manaia",
+      "culture": "maori",
+      "name_en": "Manaia",
+      "name_indigenous": "Manaia",
+      "language_primary": "te_reo_maori",
+      "region": "maori",
+      "rhizome_region": "maori",
+      "colour_primary": "#f1c40f",
+      "colour_secondary": "#d4ac0d",
+      "meaning_active": "The spiritual guardian — messenger between the living world and the spirit realm. Protector. The spiritual double of a person. Keeper of balance between seen and unseen.",
+      "meanings": {
+        "en": "The spiritual guardian — messenger between the living world and the spirit realm. Protector. The spiritual double of a person. Keeper of balance between seen and unseen.",
+        "pt": "O guardião espiritual — mensageiro entre o mundo dos vivos e o reino espiritual. Protetor. O duplo espiritual de uma pessoa. Guardião do equilíbrio entre o visto e o invisível.",
+        "sm": "O le leoleo agaga — fe'au i le va o le lalolagi ma le lalolagi agaga. Puipui. O le paga agaga o le tagata.",
+        "gn": "Ña'ãnga tyatyáva — mbohapykuévo yvypóra retã ha ñe'ẽrã retã. Ñangareko. Ñe'ẽrã yvypóra omomirõva."
+      },
+      "political_themes": [
+        "protection",
+        "spiritual",
+        "duality",
+        "AI",
+        "guardian",
+        "data sovereignty"
+      ],
+      "resistance_use": "Digital sovereignty — AI as guardian/threat framing, data as spiritual domain",
+      "course_module": {
+        "id": "module_3",
+        "title_en": "CARE & OCAP: Frameworks for Data Sovereignty"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_manaia.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/manaia.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/manaia.svg",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "Mokopounamu manaia research",
+        "Superprof NZ",
+        "YouTube Manaia guide"
+      ]
+    },
+    {
+      "id": "mangopare",
+      "culture": "maori",
+      "name_en": "Mangōpare",
+      "name_indigenous": "Mangōpare",
+      "language_primary": "te_reo_maori",
+      "region": "maori",
+      "rhizome_region": "maori",
+      "colour_primary": "#2c3e50",
+      "colour_secondary": "#1a252f",
+      "meaning_active": "The hammerhead shark — courage, determination, strength. The fighter who does not turn back. Warrior resolve.",
+      "meanings": {
+        "en": "The hammerhead shark — courage, determination, strength. The fighter who does not turn back. Warrior resolve.",
+        "pt": "O tubarão-martelo — coragem, determinação, força. O lutador que não recua. Resolução guerreira.",
+        "sm": "Le malie fua — lototele, mautinoa, malosigatasi. O le taua e le toe fo'i i tua. Le loto toa.",
+        "gn": "Pira raity — ñorairõ mbarete, ñane py'a potĩ, katu'ũjey. Ñorairõhápe ndojekuéi. Ñorairõ rekorã."
+      },
+      "political_themes": [
+        "resistance",
+        "courage",
+        "warrior",
+        "frontline",
+        "strength"
+      ],
+      "resistance_use": "Indigenous resistance movements, warrior imagery, frontline activism",
+      "course_module": {
+        "id": "module_2",
+        "title_en": "Data Colonialism: Who Took Our Data?"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_mangopare.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/mangopare.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/mangopare.svg",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "ANZAAE kowhaiwhai guide — mangōpare section"
+      ]
+    },
+    {
+      "id": "niho_taniwha",
+      "culture": "maori",
+      "name_en": "Niho Taniwha",
+      "name_indigenous": "Niho Taniwha",
+      "language_primary": "te_reo_maori",
+      "region": "maori",
+      "rhizome_region": "maori",
+      "colour_primary": "#e74c3c",
+      "colour_secondary": "#c0392b",
+      "meaning_active": "The taniwha's teeth — the colonial bite, extraction without consent, harm that must be named.",
+      "meanings": {
+        "en": "The taniwha's teeth — the colonial bite, extraction without consent, harm that must be named.",
+        "pt": "Os dentes do taniwha — a mordida colonial, extração sem consentimento, dano que deve ser nomeado.",
+        "sm": "Nifo o le taniwha — le 'ai faʻakolone, ave e aunoa ma le maliega, fa'aleagaina e tatau ona ta'ua.",
+        "gn": "Taniwha rembe — raupatu colonial, ñemono'ĩ mbeguekatu'ỹ ramo, mba'e vai oñemomba'epotáva."
+      },
+      "political_themes": [
+        "extraction",
+        "resistance",
+        "land",
+        "colonial harm",
+        "naming"
+      ],
+      "resistance_use": "#NoDAPL, #LANDBACK, Amazon deforestation resistance, mining opposition",
+      "course_module": {
+        "id": "module_2",
+        "title_en": "Data Colonialism: Who Took Our Data?"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_taniwha.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/niho_taniwha.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/niho-taniwha.svg",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "Kiwi Dialectic motif system"
+      ]
+    },
+    {
+      "id": "pikorua",
+      "culture": "maori",
+      "name_en": "Pikorua",
+      "name_indigenous": "Pikorua",
+      "language_primary": "te_reo_maori",
+      "region": "maori",
+      "rhizome_region": "maori",
+      "colour_primary": "#e67e22",
+      "colour_secondary": "#ca6f1e",
+      "meaning_active": "The double twist — two lives, two cultures, forever joined. Paths that separate always return. The symbol of inter-tribal gift, solidarity, eternal bond.",
+      "meanings": {
+        "en": "The double twist — two lives, two cultures, forever joined. Paths that separate always return. The symbol of inter-tribal gift, solidarity, eternal bond.",
+        "pt": "O twist duplo — duas vidas, duas culturas, sempre unidas. Caminhos que se separam sempre voltam. O símbolo da aliança entre povos.",
+        "sm": "Le lua feau — ola e lua, aganuu e lua, e feso'ota'i e fa'avavau. Auala e vavae ae toe fo'i pea. Fa'ailoga o le alofa fa'atasi.",
+        "gn": "Mboypy mokõi — yvypóra mokõi, teko mokõi, oñondivekuévo araka'e. Tape oñepyrũ oñembyaikuaa peve ojevy. Jeiko puku pytyvõrã."
+      },
+      "political_themes": [
+        "solidarity",
+        "alliance",
+        "union",
+        "cultures",
+        "bond",
+        "diaspora"
+      ],
+      "resistance_use": "Inter-indigenous solidarity, cross-cultural alliance building, reconciliation movements",
+      "course_module": {
+        "id": "module_4",
+        "title_en": "Land, Territory, and Digital Sovereignty"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_pikorua.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/pikorua.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/pikorua.svg",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "50bestcharms pikorua research",
+        "Symbol Sage",
+        "Arrowtown Stonework"
+      ]
+    },
+    {
+      "id": "pa_tuwatawata",
+      "culture": "maori",
+      "name_en": "Pā Tūwatawata",
+      "name_indigenous": "Pā Tūwatawata",
+      "language_primary": "te_reo_maori",
+      "region": "maori",
+      "rhizome_region": "maori",
+      "colour_primary": "#3498db",
+      "colour_secondary": "#1f78c8",
+      "meaning_active": "The fortified palisade — collective protection, sovereignty over space and governance.",
+      "meanings": {
+        "en": "The fortified palisade — collective protection, sovereignty over space and governance.",
+        "pt": "A paliçada fortificada — proteção coletiva, soberania sobre o espaço e a governança.",
+        "sm": "O pa fa'amautu — puipuiga fa'atasi, pule i le fanua ma le pulega.",
+        "gn": "Tava'anga ryguata — ñangareko ñepyrũ, soberanía tetãygua ha teko marangatu."
+      },
+      "political_themes": [
+        "sovereignty",
+        "governance",
+        "protection",
+        "data",
+        "land"
+      ],
+      "resistance_use": "Data sovereignty, co-governance battles, land defence, FPIC frameworks",
+      "course_module": {
+        "id": "module_1",
+        "title_en": "What is Data? Indigenous Knowledges and the Digital World"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_pa_tuwatawata.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/pa_tuwatawata.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/pa-tuwatawata.svg",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "Kiwi Dialectic motif system"
+      ]
+    },
+    {
+      "id": "takarangi",
+      "culture": "maori",
+      "name_en": "Takarangi",
+      "name_indigenous": "Takarangi",
+      "language_primary": "te_reo_maori",
+      "region": "maori",
+      "rhizome_region": "maori",
+      "colour_primary": "#9b59b6",
+      "colour_secondary": "#7d3c98",
+      "meaning_active": "The double spiral — history repeating, past and future wound together.",
+      "meanings": {
+        "en": "The double spiral — history repeating, past and future wound together.",
+        "pt": "A espiral dupla — história se repetindo, passado e futuro enrolados juntos.",
+        "sm": "Le spiral lua — o le tala fa'asolosolo, ua vili fa'atasi le taimi ua tuanai ma le lumanai.",
+        "gn": "Mboypy mokõi — historia ojevy jevy, ára ohasava ha ará oúva oñemoinge."
+      },
+      "political_themes": [
+        "cycles",
+        "memory",
+        "future",
+        "climate",
+        "decolonisation"
+      ],
+      "resistance_use": "Climate justice, generational memory, anti-colonial cycle recognition",
+      "course_module": {
+        "id": "module_4",
+        "title_en": "Land, Territory, and Digital Sovereignty"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_takarangi.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/takarangi.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/takarangi.svg",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "Kiwi Dialectic motif system"
+      ]
+    },
+    {
+      "id": "unaunahi",
+      "culture": "maori",
+      "name_en": "Unaunahi",
+      "name_indigenous": "Unaunahi",
+      "language_primary": "te_reo_maori",
+      "region": "maori",
+      "rhizome_region": "maori",
+      "colour_primary": "#1abc9c",
+      "colour_secondary": "#17a589",
+      "meaning_active": "Fish scales interlocking. This event calls for collective response — together they form armour.",
+      "meanings": {
+        "en": "Fish scales interlocking. This event calls for collective response — together they form armour.",
+        "pt": "Escamas de peixe entrelaçadas. Este momento exige resposta coletiva — juntas formam armadura.",
+        "sm": "Feau o i'a e feso'ota'i. O lenei tulaga e mana'omia ai le tali fa'atasi — fa'atasi e fai ma 'ie puipui.",
+        "gn": "Pira ngapypy oñemoinge. Ko tembiapo omoneĩ ñepyrũ ñemboaty — opytave oñondive oipytyvõ."
+      },
+      "political_themes": [
+        "collective",
+        "solidarity",
+        "protection",
+        "kotahitanga",
+        "network"
+      ],
+      "resistance_use": "Solidarity networks, coalition building, Pacific data sovereignty pacts",
+      "course_module": {
+        "id": "module_4",
+        "title_en": "Land, Territory, and Digital Sovereignty"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_unaunahi.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/unaunahi.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/unaunahi.svg",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "Kiwi Dialectic motif system"
+      ]
+    },
+    {
+      "id": "masi_kesa",
+      "culture": "fijian",
+      "name_en": "Masi Kesa (Fijian Stencilled Barkcloth)",
+      "name_indigenous": "Masi Kesa / Bolabola",
+      "language_primary": "fijian",
+      "region": "oceania",
+      "rhizome_region": "oceania",
+      "colour_primary": "#8b5e3c",
+      "colour_secondary": "#6b4226",
+      "meaning_active": "Clan identity, rank, and spiritual protection. Each sub-clan (tokatoka) owns specific masi motifs (draudrau) that are their intellectual property. The stencilling technique (kesakesa) is unique to Fiji. The motifs encode clan genealogy and territorial claims (vanua).",
+      "meanings": {
+        "en": "Clan identity, rank, and spiritual protection. Each sub-clan (tokatoka) owns specific masi motifs (draudrau) that are their intellectual property. The stencilling technique (kesakesa) is unique to Fiji. The motifs encode clan genealogy and territorial claims (vanua).",
+        "pt": "Identidade de clã, patente e proteção espiritual. Cada sub-clã (tokatoka) possui motivos de masi específicos (draudrau) que são sua propriedade intelectual. A técnica de estêncil é única em Fiji. Os motivos codificam genealogia de clã e reivindicações territoriais (vanua).",
+        "sm": "Fa'ailoaina o le nu'u, tulaga fa'aaloalo, ma le puipuiga agaga. O tokatoka ta'itasi e iai ni fa'ailoga masi lava ia (draudrau) o lona mea fa'apitoa. O fa'ailoga e fa'aogaina ai gafa ma tagi'aga o fanua (vanua).",
+        "gn": "Aty rekove, hierarquía ha ñangareko agaga. Tokatoka ta'itasi orekóva fa'ailoga masi oñeha'ã (draudrau) ipyguapegua. Fa'ailoga oñe'ẽ gafa ha yvy ñorairõ (vanua)."
+      },
+      "political_themes": [
+        "land rights",
+        "intellectual property",
+        "cultural sovereignty",
+        "clan identity",
+        "vanua"
+      ],
+      "resistance_use": "Contemporary Fijian artists have contested the appropriation of masi motifs by non-Fijian commercial entities; masi is used in Fiji's cultural diplomacy as an assertion of iTaukei identity and land rights (vanua).",
+      "course_module": {
+        "id": "module_4",
+        "title_en": "Land, Territory, and Digital Sovereignty"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_masi_kesa.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/fijian/masi_kesa.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/fijian/masi_kesa.png",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "https://tapa.gla.ac.uk/wp-content/uploads/2021/01/Pacific-Barkcloth-101-Characteristic-Features-v1-02Jan21.pdf",
+        "https://files.eric.ed.gov/fulltext/EJ1146667.pdf",
+        "https://ueaeprints.uea.ac.uk/id/eprint/77433/1/2019IgglesdenKTPhDvol1.pdf"
+      ]
+    },
+    {
+      "id": "vonu",
+      "culture": "fijian",
+      "name_en": "Vonu (Sea Turtle)",
+      "name_indigenous": "Vonu",
+      "language_primary": "fijian",
+      "region": "oceania",
+      "rhizome_region": "oceania",
+      "colour_primary": "#6b4226",
+      "colour_secondary": "#8b5e3c",
+      "meaning_active": "Longevity, endurance, navigation, and the connection between land and sea. The vonu is a symbol of wisdom and the link between the terrestrial (vanua) and oceanic realms. Key symbol in Pacific climate activism — appearing on protest signs at Pacific Climate Warriors events.",
+      "meanings": {
+        "en": "Longevity, endurance, navigation, and the connection between land and sea. The vonu is a symbol of wisdom and the link between the terrestrial (vanua) and oceanic realms. Key symbol in Pacific climate activism — appearing on protest signs at Pacific Climate Warriors events.",
+        "pt": "Longevidade, resistência, navegação e a conexão entre terra e mar. O vonu é um símbolo de sabedoria e a ligação entre os reinos terrestres (vanua) e oceânicos. Símbolo-chave no ativismo climático do Pacífico.",
+        "sm": "Umi, onosa'i, fa'atonuga, ma le feso'ota'iga i le va o le eleele ma le vasa. O le vonu o se fa'ailoga o le poto ma le feso'ota'iga o le vanua ma le vasa. Fa'ailoga taua i le tau tauiviga o le Pasifika.",
+        "gn": "Umi, ñemoi, jaike tape ha yvy-ari ha ko'ã feso'ota'iga. Vonu ohechauka arandu ha feso'ota'iga vanua ha ko'ã reheve. Fa'ailoga taua Pasifika yvytu ñorairõ-pe."
+      },
+      "political_themes": [
+        "climate justice",
+        "ocean rights",
+        "endangered species",
+        "Pacific identity",
+        "sea-level rise"
+      ],
+      "resistance_use": "A key symbol in Pacific climate activism — appearing on protest signs, murals, and social media campaigns by Pacific Climate Warriors and Pasifika Rising, linking endangered marine species to climate-driven sea-level rise.",
+      "course_module": {
+        "id": "module_4",
+        "title_en": "Land, Territory, and Digital Sovereignty"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_vonu.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/fijian/vonu.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/fijian/vonu.png",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "https://tapa.gla.ac.uk/wp-content/uploads/2021/01/Pacific-Barkcloth-101-Characteristic-Features-v1-02Jan21.pdf",
+        "https://www.pasifikarising.org/niu-pawa-what-climate-activism-looks-like-in-the-pacific/"
+      ]
+    },
+    {
+      "id": "va_a_waka",
+      "culture": "pacific",
+      "name_en": "Va'a / Waka (Outrigger Canoe)",
+      "name_indigenous": "Va'a (Samoan) / Waka (Māori/Cook Islands) / Vaka (Fijian/Tongan)",
+      "language_primary": "samoan",
+      "region": "oceania",
+      "rhizome_region": "oceania",
+      "colour_primary": "#00b4d8",
+      "colour_secondary": "#f4a261",
+      "meaning_active": "Voyaging, ancestry, freedom, and the claim to the Pacific Ocean as indigenous homeland. The outrigger canoe enabled the settlement of the entire Pacific. In resistance contexts, it is the motif most directly associated with ocean sovereignty and climate action.",
+      "meanings": {
+        "en": "Voyaging, ancestry, freedom, and the claim to the Pacific Ocean as indigenous homeland. The outrigger canoe enabled the settlement of the entire Pacific. In resistance contexts, it is the motif most directly associated with ocean sovereignty and climate action.",
+        "pt": "Navegação, ancestralidade, liberdade e a reivindicação do Oceano Pacífico como pátria indígena. A canoa de outrigger permitiu o povoamento de todo o Pacífico. Em contextos de resistência, é o motivo mais diretamente associado à soberania oceânica e à ação climática.",
+        "sm": "Malaga, gafa, sa'olotoga, ma le tagi'aga i le Atu-a-'Oa o le Pasifika. O le va'a na mafai ai ona nofoia le Pasifika atoa. I le tau tauiviga, o le va'a e fa'atusalia ai le pule i le vasa ma le taumafaiga mo le tau.",
+        "gn": "Oguata, tupã, sa'olotoga ha ñorairõ Pasifika ñande retãgua peguarã. Va'a oñemopu'ã Pasifika atova. Ñorairõ rekópe, va'a ohechauka pule ko'ã-ari ha yvytu tembiapo."
+      },
+      "political_themes": [
+        "climate justice",
+        "ocean sovereignty",
+        "Pacific identity",
+        "resistance",
+        "voyaging"
+      ],
+      "resistance_use": "PRIMARY RESISTANCE MOTIF: Pacific Climate Warriors used decorated traditional canoes to physically blockade the world's largest coal export port at Newcastle, Australia (2014). The slogan 'We are not drowning. We are fighting.' accompanies this imagery.",
+      "course_module": {
+        "id": "module_1",
+        "title_en": "What is Data? Indigenous Knowledges and the Digital World"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_va_a_waka.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/pacific/va_a_waka.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/pacific/va_a_waka.png",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "https://radicaldiscipleship.net/2014/10/20/art-as-resistance-the-pacific-climate-warriors/",
+        "https://www.pasifikarising.org/niu-pawa-what-climate-activism-looks-like-in-the-pacific/",
+        "https://scholarspace.manoa.hawaii.edu/server/api/core/bitstreams/e24b141d-2496-48d3-a8a4-58681d80bb89/content"
+      ]
+    },
+    {
+      "id": "aso",
+      "culture": "samoan",
+      "name_en": "Aso (Rafters of the Fale)",
+      "name_indigenous": "'Aso / 'Aso Fa'aifo",
+      "language_primary": "samoan",
+      "region": "oceania",
+      "rhizome_region": "oceania",
+      "colour_primary": "#48cae4",
+      "colour_secondary": "#0077b6",
+      "meaning_active": "Shelter, protection, family, and home. The 'aso represents the structural rafters of the traditional oval Samoan house (fale). Carrying this motif signals devotion to family (aiga) and communal life. One of the most central recurring motifs in both pe'a tattooing and siapo design.",
+      "meanings": {
+        "en": "Shelter, protection, family, and home. The 'aso represents the structural rafters of the traditional oval Samoan house (fale). Carrying this motif signals devotion to family (aiga) and communal life. One of the most central recurring motifs in both pe'a tattooing and siapo design.",
+        "pt": "Abrigo, proteção, família e lar. O 'aso representa os caibros da tradicional casa oval samoana (fale). Carregar este motivo sinaliza devoção à família (aiga) e à vida comunitária. Um dos motivos mais centrais tanto nas tatuagens pe'a quanto nos designs de siapo.",
+        "sm": "O le fale, puipuiga, aiga, ma le faiāoga. O le 'aso e fa'atusalia ai aso o le fale samoana fa'aleaganu'u. O le amo o lenei fa'ailoga e fa'aalia ai le alofa i le aiga ma le olaga fa'afāgota.",
+        "gn": "Óga, ñangareko, aiga ha aty. 'Aso ohechauka fale samoano asy. Ko fa'ailoga oty ohechauka ñangareko aiga ha tëkoteɓe aty."
+      },
+      "political_themes": [
+        "home",
+        "displacement",
+        "community",
+        "family",
+        "indigenous space"
+      ],
+      "resistance_use": "Used in contemporary Pasifika graphic design and architecture as a symbol of indigenous domestic space and resistance to displacement. Reproduced in murals and public art by Samoan community organisations in Auckland, Sydney, and Los Angeles.",
+      "course_module": {
+        "id": "module_6",
+        "title_en": "Building Indigenous AI: Resistance and Future Visions"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_aso.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/aso.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/aso.png",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "https://thekokosamoa.com.au/blogs/recipes/the-language-of-lines-deciphering-the-sacred-meanings-in-samoan-designs",
+        "https://measinasamoa.com.au/blogs/news/samoan-malofie-motifs-and-their-meanings",
+        "https://press-files.anu.edu.au/downloads/press/p298891/pdf/ch113.pdf"
+      ]
+    },
+    {
+      "id": "atualoa",
+      "culture": "samoan",
+      "name_en": "Atualoa (Centipede)",
+      "name_indigenous": "Fa'a Atualoa / Ātualoa",
+      "language_primary": "samoan",
+      "region": "oceania",
+      "rhizome_region": "oceania",
+      "colour_primary": "#0077b6",
+      "colour_secondary": "#48cae4",
+      "meaning_active": "Strength, endurance, and commitment to extended family (aiga). The centipede is venomous and symbolises danger and power; it also represents a creature that tends to its many offspring, standing for family devotion. Its revival on siapo cloth has been part of cultural reclamation movements.",
+      "meanings": {
+        "en": "Strength, endurance, and commitment to extended family (aiga). The centipede is venomous and symbolises danger and power; it also represents a creature that tends to its many offspring, standing for family devotion. Its revival on siapo cloth has been part of cultural reclamation movements.",
+        "pt": "Força, resistência e compromisso com a família extensa (aiga). A centopeia é venenosa e simboliza o perigo e o poder; representa também a devoção familiar. Seu renascimento no siapo faz parte dos movimentos de recuperação cultural.",
+        "sm": "Malosi, onosa'i, ma le alofa fa'amaoni i le aiga. O le atualoa ose mea oona e fa'aalia ai le malosigatasi; o lo'o fa'atusalia fo'i le tautuaiga i le aiga. O lona toe fa'afouina i le siapo o se vaega o le toe fa'aleleia o le aganuu.",
+        "gn": "Mbarete, ñemoi ha ñangareko aiga ári. Ñemoñare'ỹ ha mbarete ohechauka; ohechauka avei aiga ñangareko. Oñemopyrũ jevy siapo retape ñande rekove omombyta haguã."
+      },
+      "political_themes": [
+        "cultural reclamation",
+        "family",
+        "endurance",
+        "identity",
+        "resistance"
+      ],
+      "resistance_use": "Cited in Samoa's traditional pese o le pe'a (tattoo song) as one of the sacred motifs distinguishing Samoan cultural identity; its revival on siapo cloth has been part of cultural reclamation movements.",
+      "course_module": {
+        "id": "module_5",
+        "title_en": "Collective Knowledge and Network Thinking"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_atualoa.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/atualoa.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/atualoa.png",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "https://measinasamoa.com.au/blogs/news/samoan-malofie-motifs-and-their-meanings",
+        "http://www.siapo.com/design-elements.html",
+        "https://en.wikipedia.org/wiki/Pe%CA%BBa"
+      ]
+    },
+    {
+      "id": "fa_a_aupega",
+      "culture": "samoan",
+      "name_en": "Fa'a 'Au'upega (Net / Community Weave)",
+      "name_indigenous": "Fa'a 'Au'upega / Upega",
+      "language_primary": "samoan",
+      "region": "oceania",
+      "rhizome_region": "oceania",
+      "colour_primary": "#00b4d8",
+      "colour_secondary": "#f4a261",
+      "meaning_active": "Community interdependence, collective effort, and the practice of fishing. The net (upega) motif symbolises traditional nets for catching sea turtles and pigeons. In tattooing, the net pattern relates to communal interconnection and mutual support.",
+      "meanings": {
+        "en": "Community interdependence, collective effort, and the practice of fishing. The net (upega) motif symbolises traditional nets for catching sea turtles and pigeons. In tattooing, the net pattern relates to communal interconnection and mutual support.",
+        "pt": "Interdependência comunitária, esforço coletivo e a prática da pesca. O motivo da rede (upega) simboliza as redes tradicionais. Na tatuagem, o padrão de rede relaciona-se à interconexão comunitária e ao apoio mútuo.",
+        "sm": "Feso'ota'iga fa'alapotopotoga, taumafaiga fa'atasi, ma le fagofago. O le upega e fa'atusalia ai upega fa'aleaganu'u. I le tatau, e fa'aalia ai le feso'ota'iga o le nu'u ma le fesoasoani fa'atasi.",
+        "gn": "Tetã rehegua feso'ota'iga, opamba'e oñemongu'e, ha pira-ryru. Upega ohechauka ñande rekove feso'ota'iga ha pytyvõ ñomongeta."
+      },
+      "political_themes": [
+        "ocean rights",
+        "fishing sovereignty",
+        "collective action",
+        "community",
+        "EEZ"
+      ],
+      "resistance_use": "Used in contemporary Samoan art to reference ocean rights and traditional fishing sovereignty, particularly in Pacific nations' claims to exclusive economic zones and resistance to industrial fishing.",
+      "course_module": {
+        "id": "module_5",
+        "title_en": "Collective Knowledge and Network Thinking"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_fa_a_aupega.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/fa_a_aupega.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/fa_a_aupega.png",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "http://www.siapo.com/design-elements.html",
+        "https://nus.edu.ws/ACH/Museum%20Web/LapitaWeb/Johansson2008_Lapita-%20Thriving%20Culture%20or%20Gone%20forever.pdf"
+      ]
+    },
+    {
+      "id": "fetu",
+      "culture": "samoan",
+      "name_en": "Fetu (Star)",
+      "name_indigenous": "Fetu / Fa'a Aveau",
+      "language_primary": "samoan",
+      "region": "oceania",
+      "rhizome_region": "oceania",
+      "colour_primary": "#f4a261",
+      "colour_secondary": "#00b4d8",
+      "meaning_active": "Navigation, hope, and spiritual connection to ancestors and the heavens. Stars guided Polynesian voyagers across the Pacific and symbolise divine guidance. In tattooing, fetu marks the wearer's ancestry and their journey through life.",
+      "meanings": {
+        "en": "Navigation, hope, and spiritual connection to ancestors and the heavens. Stars guided Polynesian voyagers across the Pacific and symbolise divine guidance. In tattooing, fetu marks the wearer's ancestry and their journey through life.",
+        "pt": "Navegação, esperança e conexão espiritual com os ancestrais e os céus. As estrelas guiavam os navegadores polinésios pelo Pacífico e simbolizam orientação divina. Na tatuagem, fetu marca a ancestralidade do portador e sua jornada pela vida.",
+        "sm": "Fa'atonuga o le vasa, fa'amoemoe, ma le feso'ota'iga agaga ma tupuga ma le lagi. Na taitaia ai e fetu fautasi o Polenesia i le Pasefika. I le tatau, o le fetu e fa'aalia ai le gafa ma le malaga o le olaga.",
+        "gn": "Jaike yvate, tarova ha tekotevẽ yvy ari tupã reheve. Fetu ogueroata yvypóra oguata haguã Pasifika-pe. Tatú-pe, fetu ohechauka ñande tupã ha ñande tape."
+      },
+      "political_themes": [
+        "navigation",
+        "sovereignty",
+        "climate",
+        "ocean rights",
+        "ancestry"
+      ],
+      "resistance_use": "The star motif appears on canoes used in the 2014 Pacific Climate Warriors' blockade of Newcastle coal port; stars reference Pacific wayfinding and the claim to oceanic sovereignty. Also used in Pasifika digital identity campaigns.",
+      "course_module": {
+        "id": "module_5",
+        "title_en": "Collective Knowledge and Network Thinking"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_fetu.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/fetu.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/fetu.png",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "https://thekokosamoa.com.au/blogs/recipes/the-language-of-lines-deciphering-the-sacred-meanings-in-samoan-designs",
+        "http://www.siapo.com/design-elements.html",
+        "https://radicaldiscipleship.net/2014/10/20/art-as-resistance-the-pacific-climate-warriors/"
+      ]
+    },
+    {
+      "id": "malu_diamond",
+      "culture": "samoan",
+      "name_en": "Malu (Diamond / Women's Protection)",
+      "name_indigenous": "Malu",
+      "language_primary": "samoan",
+      "region": "oceania",
+      "rhizome_region": "oceania",
+      "colour_primary": "#0077b6",
+      "colour_secondary": "#90e0ef",
+      "meaning_active": "Protection and shelter. The entire female tattoo takes its name from this motif. 'Malu' means 'to protect, to shelter' in Samoan. The motif signifies the woman's role as keeper of heritage and protector of family knowledge within Fa'a Samoa.",
+      "meanings": {
+        "en": "Protection and shelter. The entire female tattoo takes its name from this motif. 'Malu' means 'to protect, to shelter' in Samoan. The motif signifies the woman's role as keeper of heritage and protector of family knowledge within Fa'a Samoa.",
+        "pt": "Proteção e abrigo. Toda a tatuagem feminina (malu) leva o nome deste motivo. 'Malu' significa 'proteger, abrigar' em samoano. O motivo simboliza o papel da mulher como guardiã do patrimônio e protetora do conhecimento familiar.",
+        "sm": "Puipuiga ma le malu. O le tatau atoa a le fafine e fa'aigoa i lenei fa'ailoga. 'Malu' o lona uiga o le 'puipui, malu.' O le fa'ailoga e fa'aalia ai le matafaioi o le fafine o le fai tautuaiga ma le puipuiga o le aiga.",
+        "gn": "Ñangareko ha ombyta. Pe'a kuña asy oñeha'ã ko fa'ailoga reheve. 'Malu' he'ise 'ñangareko, ombyta' samoano ñe'ẽme. Ko fa'ailoga ohechauka kuña ñangareko ñande rekove ha aiga arandu reheve."
+      },
+      "political_themes": [
+        "women's rights",
+        "sovereignty",
+        "cultural reclamation",
+        "Fa'a Samoa",
+        "gender"
+      ],
+      "resistance_use": "The malu and its central diamond motif have been reclaimed by Samoan women in diaspora as symbols of Indigenous female sovereignty and resistance to colonial gender norms. Frequently reproduced on textiles, apparel and digital art by Pasifika women artists.",
+      "course_module": {
+        "id": "module_3",
+        "title_en": "CARE & OCAP: Frameworks for Data Sovereignty"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_malu_diamond.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/malu_diamond.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/malu_diamond.png",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Malu",
+        "https://thekokosamoa.com.au/blogs/recipes/the-language-of-lines-deciphering-the-sacred-meanings-in-samoan-designs",
+        "https://australian.museum/about/history/exhibitions/body-art/the-meaning-of-ta-tau-samoan-tattoing/"
+      ]
+    },
+    {
+      "id": "niho_mano",
+      "culture": "samoan",
+      "name_en": "Niho Mano (Shark Teeth)",
+      "name_indigenous": "Niho Mano",
+      "language_primary": "samoan",
+      "region": "oceania",
+      "rhizome_region": "oceania",
+      "colour_primary": "#00b4d8",
+      "colour_secondary": "#0077b6",
+      "meaning_active": "Strength, protection, guidance and ferocity. The shark is a revered guardian spirit (aitu) in Polynesian cosmology. In the pe'a and malu tattoos, this motif signals warrior readiness and the wearer's role as a protector of family and village.",
+      "meanings": {
+        "en": "Strength, protection, guidance and ferocity. The shark is a revered guardian spirit (aitu) in Polynesian cosmology. In the pe'a and malu tattoos, this motif signals warrior readiness and the wearer's role as a protector of family and village.",
+        "pt": "Força, proteção, orientação e ferocidade. O tubarão é um espírito guardião reverenciado na cosmologia polinésia. Nas tatuagens pe'a e malu, este motivo sinaliza a prontidão guerreira e o papel do portador como protetor da família e da aldeia.",
+        "sm": "Malosi, puipuiga, taitaiga ma le fefete. O le malie ose aitu puipui i le tu ma aga faasamoa. I le pe'a ma le malu, o lenei fa'ailoga e fa'aalia ai le saogalemu o le aiga.",
+        "gn": "Mbarete, ñangareko, mboriaite ha kuaaty. Pira raity umi yvypóra ñangareko ruvicha tupãsy reheve. Pe'a ha malu tatú-pe, ko fa'ailoga ohechauka ñorairõhápe ñangareko aiga reheve."
+      },
+      "political_themes": [
+        "warrior",
+        "protection",
+        "sovereignty",
+        "resistance",
+        "cultural identity"
+      ],
+      "resistance_use": "Widely adopted in contemporary Pacific diaspora design and streetwear as a marker of Indigenous pride and resistance to cultural erasure. Used on protest banners and activist garments at Pacific climate and sovereignty events.",
+      "course_module": {
+        "id": "module_6",
+        "title_en": "Building Indigenous AI: Resistance and Future Visions"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_niho_mano.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/niho_mano.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/niho_mano.png",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "https://thekokosamoa.com.au/blogs/recipes/the-language-of-lines-deciphering-the-sacred-meanings-in-samoan-designs",
+        "https://measinasamoa.com.au/blogs/news/samoan-malofie-motifs-and-their-meanings",
+        "https://www.aifortattoo.com/blog/polynesian-tattoo-symbolism-guide"
+      ]
+    },
+    {
+      "id": "pea",
+      "culture": "samoan",
+      "name_en": "Pe'a (Sacred Male Tattoo / Flying Fox)",
+      "name_indigenous": "Pe'a / Malofie",
+      "language_primary": "samoan",
+      "region": "oceania",
+      "rhizome_region": "oceania",
+      "colour_primary": "#0077b6",
+      "colour_secondary": "#1a252f",
+      "meaning_active": "Sacred rite of passage marking Samoan manhood, social standing, and covenant with ancestors. 'Pe'a' means the Samoan flying fox. The composition is a living genealogical record: each motif band narrates the wearer's lineage, duties, and spiritual covenants.",
+      "meanings": {
+        "en": "Sacred rite of passage marking Samoan manhood, social standing, and covenant with ancestors. 'Pe'a' means the Samoan flying fox. The composition is a living genealogical record: each motif band narrates the wearer's lineage, duties, and spiritual covenants.",
+        "pt": "Rito de passagem sagrado que marca a virilidade samoana, o status social e o pacto com os ancestrais. 'Pe'a' significa a raposa voadora samoana. A composição é um registro genealógico vivo: cada faixa de motivos narra a linhagem e os pactos espirituais do portador.",
+        "sm": "Sauniga paia e fa'aalia ai le tane samoana, tulaga fa'aaloalo, ma le feagaiga ma tupuga. 'Pe'a' o lona uiga o le pe'a samoana. O le fa'asologa o fa'ailoga o se tusi gafa ola: e tala e faitatau ma ona gafa, tiute, ma feagaiga agaga.",
+        "gn": "Ñepyrũ sagrado ohechauka kuimba'e samoanogua, ñande reko ha aña rekove. 'Pe'a' he'ise pe'a samoano. Pe'a-pe tatú oñehundumi ñande rekove: ta'ãnga oñe'ẽ ñande tupã, mba'etépa ojapo ha aña reheve."
+      },
+      "political_themes": [
+        "cultural survival",
+        "resistance",
+        "decolonisation",
+        "identity",
+        "masculinity"
+      ],
+      "resistance_use": "The pe'a was actively suppressed by English Christian missionaries in the 1830s; its survival is one of the most significant acts of cultural resistance in Samoan history. Contemporary athletes, artists, and activists display the pe'a as an assertion of indigenous identity.",
+      "course_module": {
+        "id": "module_6",
+        "title_en": "Building Indigenous AI: Resistance and Future Visions"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_pea.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/pea.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/pea.png",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Pe%CA%BBa",
+        "https://australian.museum/about/history/exhibitions/body-art/the-meaning-of-ta-tau-samoan-tattoing/",
+        "https://thekokosamoa.com.au/blogs/recipes/the-language-of-lines-deciphering-the-sacred-meanings-in-samoan-designs",
+        "https://www.nps.gov/teachers/classrooms/samoan-art-in-the-tatau-tattoo.htm"
+      ]
+    },
+    {
+      "id": "manulua",
+      "culture": "tongan",
+      "name_en": "Manulua (Two Birds / Interlocking Alliance)",
+      "name_indigenous": "Manulua",
+      "language_primary": "tongan",
+      "region": "oceania",
+      "rhizome_region": "oceania",
+      "colour_primary": "#8b5e3c",
+      "colour_secondary": "#c9a227",
+      "meaning_active": "Unity, alliance, and the binding of social relationships. 'Two birds' — the paired forms represent unity and the binding of alliances between families and chiefs. A kupesi 'eiki (chiefly design) from Lapita ancestry, reserved for ceremonial ngatu.",
+      "meanings": {
+        "en": "Unity, alliance, and the binding of social relationships. 'Two birds' — the paired forms represent unity and the binding of alliances between families and chiefs. A kupesi 'eiki (chiefly design) from Lapita ancestry, reserved for ceremonial ngatu.",
+        "pt": "Unidade, aliança e a ligação das relações sociais. 'Dois pássaros' — as formas emparelhadas representam a unidade e a ligação de alianças entre famílias e chefes. Um kupesi 'eiki (design chiefly) de ancestralidade Lapita.",
+        "sm": "Lotogatasi, feagaiga, ma le fusia o sootaga fa'aagafesootai. 'Manu e lua' — o faiga mautinoa e lua e fa'atusalia ai le lotogatasi ma le fusia o feagaiga i le va o aiga ma ali'i. O se kupesi 'eiki mai le tupuga Lapita.",
+        "gn": "Ñepyrũ, ñemboayvu ha feso'ota'iga. 'Manu mokõi' — aty mokõi ohechauka ñepyrũ ha feso'ota'iga aiga ha mburuvicha reheve. Kupesi 'eiki Lapita ñemoñe'ẽrã."
+      },
+      "political_themes": [
+        "alliance",
+        "sovereignty",
+        "unity",
+        "chiefly authority",
+        "diaspora identity"
+      ],
+      "resistance_use": "Used in contemporary Tongan diaspora art and ceremonial ngatu exchanged at political and cultural events as an affirmation of Tongan identity and sovereignty. Prominent at Tongan community gatherings in Auckland, Sydney, and the US.",
+      "course_module": {
+        "id": "module_4",
+        "title_en": "Land, Territory, and Digital Sovereignty"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_manulua.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/tongan/manulua.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/tongan/manulua.png",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "https://roguearthistorian.substack.com/p/warriors-weavers-and-the-waves-art",
+        "https://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=1468&context=tsaconf",
+        "https://artsandculture.google.com/story/ngatu-cultural-wealth-of-the-kingdom-of-tonga-ichcap/NQWh_qPipunBKA?hl=en"
+      ]
+    },
+    {
+      "id": "luta_pela_vida",
+      "culture": "amazonian",
+      "name_en": "Luta pela Vida (Struggle for Life — Political Body Paint)",
+      "name_indigenous": "Luta pela Vida (Pt); Ore arandu rekove (Guaraní concept)",
+      "language_primary": "portuguese",
+      "region": "south_america",
+      "rhizome_region": "south_america",
+      "colour_primary": "#e74c3c",
+      "colour_secondary": "#1a252f",
+      "meaning_active": "The Luta pela Vida (Struggle for Life) camp by APIB in Brasília (August–September 2021) was the largest indigenous mobilisation in Brazilian history. Body paint was simultaneously an act of cultural affirmation, political challenge, and territorial claim. #ForaGarimpoPoraCovid and #APIB circulated these images globally.",
+      "meanings": {
+        "en": "The Luta pela Vida (Struggle for Life) camp by APIB in Brasília (August–September 2021) was the largest indigenous mobilisation in Brazilian history. Body paint was simultaneously an act of cultural affirmation, political challenge, and territorial claim. #ForaGarimpoPoraCovid and #APIB circulated these images globally.",
+        "pt": "O acampamento 'Luta pela Vida' (agosto-setembro 2021), organizado pela APIB em Brasília, foi a maior mobilização indígena da história brasileira. A pintura corporal foi simultaneamente afirmação cultural, desafio político e reivindicação territorial.",
+        "sm": "O le 'Tauiviga mo le Ola' (agosto-setema 2021) a APIB i Brasília o le fa'aputuina tele o tagata indigenous i le talafaasolopito o Pasila. O le tino fa'ailoga o se gaioiga fa'aaganu'u, fa'afinauga faapolokiki, ma tagi'aga fanua.",
+        "gn": "Ore arandu rekove — nande arandu ñande rekóve reheve. 'Luta pela Vida' APIB oñepyrũ Brasília-pe 2021-me. Tatú político ha tetã ñorairõ oñondive."
+      },
+      "political_themes": [
+        "APIB",
+        "land demarcation",
+        "anti-Bolsonaro",
+        "cultural survival",
+        "body as territory",
+        "Brasília"
+      ],
+      "resistance_use": "THIS IS THE CENTRAL RESISTANCE MOTIF CONTEXT. APIB explicitly frames body paint as political act of cultural survival. The contrast of painted indigenous bodies vs. suited politicians is a visual argument about who 'belongs' in Brazil. Images used across global #APIB campaigns.",
+      "course_module": {
+        "id": "module_2",
+        "title_en": "Data Colonialism: Who Took Our Data?"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_luta_pela_vida.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/amazonian/luta_pela_vida.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/amazonian/luta_pela_vida.png",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "https://apiboficial.org/luta-pela-vida/?lang=en",
+        "https://apiboficial.org/en/apib/",
+        "https://apiboficial.org/files/2021/08/DOSSIE_en_v3web.pdf"
+      ]
+    },
+    {
+      "id": "cuaracy_ra_angaba",
+      "culture": "guarani",
+      "name_en": "Cuaracy Ra'Angaba (Solar Calendar / Image of the Sun)",
+      "name_indigenous": "Cuaracy Ra'Angaba",
+      "language_primary": "guarani",
+      "region": "south_america",
+      "rhizome_region": "south_america",
+      "colour_primary": "#f39c12",
+      "colour_secondary": "#27ae60",
+      "meaning_active": "An astronomical stone calendar used by the Guaraní to track seasons, solstices, moon phases, and cardinal directions. 'Cuaracy' means 'sun' and 'Ra'angaba' means 'image.' The sun is the greatest deity (Ñamandu); the clock encodes the sacred eternal circle and continuity of life.",
+      "meanings": {
+        "en": "An astronomical stone calendar used by the Guaraní to track seasons, solstices, moon phases, and cardinal directions. 'Cuaracy' means 'sun' and 'Ra'angaba' means 'image.' The sun is the greatest deity (Ñamandu); the clock encodes the sacred eternal circle and continuity of life.",
+        "pt": "Relógio solar e lunar dos Guaraní. 'Cuaracy' = sol; 'Ra'angaba' = imagem. Símbolo do círculo eterno e da continuidade. O sol é a divindade suprema Ñamandu.",
+        "sm": "O se kalena ma le fetu o le Guaraní e fa'aoga ai e fa'ailo ai vaitau, solstice, tulaga o le masina, ma itu e fa. 'Cuaracy' o lona uiga o 'la'; 'Ra'angaba' o le ata. O le la o le atua sili (Ñamandu). Fa'ailoga o le taamilosaga e fa'avavau.",
+        "gn": "Kuarahy Ra'angaba: Kuarahy = Kuarahy (kuarahy); Ra'angaba = ra'angaba/ñemoarandu. Símbolo sagrado del ciclo eterno. Kuarahy oñeha'ã divindad sili Ñamandu reheve."
+      },
+      "political_themes": [
+        "cosmology",
+        "land demarcation",
+        "indigenous knowledge",
+        "seasonal rights",
+        "cultural rights"
+      ],
+      "resistance_use": "Used in contemporary Guaraní visual identity and eco-cultural activism. The solar wheel appears in educational resources for Guaraní cultural rights and land demarcation advocacy.",
+      "course_module": {
+        "id": "module_5",
+        "title_en": "Collective Knowledge and Network Thinking"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_cuaracy_ra_angaba.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/cuaracy_ra_angaba.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/cuaracy_ra_angaba.png",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "https://www.explore-vc.org/en/galleries-content/cuaracy2.html"
+      ]
+    },
+    {
+      "id": "jagua_pyta",
+      "culture": "guarani",
+      "name_en": "Jagua Pytã / Jaguarový (Guaraní Cosmic Jaguar)",
+      "name_indigenous": "Jaguarový (Blue Jaguar) / Jagua Pytã (Red Jaguar)",
+      "language_primary": "guarani",
+      "region": "south_america",
+      "rhizome_region": "south_america",
+      "colour_primary": "#e74c3c",
+      "colour_secondary": "#8e44ad",
+      "meaning_active": "In Guaraní cosmology, the Blue Jaguar (Jaguarový) is contained inside Nhamandu's hut at Yvy Marã Eÿ. If released, it would destroy humanity. The Red Jaguar is a guardian force. The jaguar motif in body painting and ceramics carries both creative and destructive cosmic charge — the boundary between order and chaos.",
+      "meanings": {
+        "en": "In Guaraní cosmology, the Blue Jaguar (Jaguarový) is contained inside Nhamandu's hut at Yvy Marã Eÿ. If released, it would destroy humanity. The Red Jaguar is a guardian force. The jaguar motif in body painting and ceramics carries both creative and destructive cosmic charge — the boundary between order and chaos.",
+        "pt": "Na cosmologia guaraní, o Jaguar Azul (Jaguarový) está contido na cabana de Nhamandu em Yvy Marã Eÿ. Se libertado, destruiria a humanidade. O Jaguar Vermelho é guardião. O motivo jaguar carrega carga cósmica criativa e destrutiva — a fronteira entre ordem e caos.",
+        "sm": "I le cosmology Guaraní, o le Jaguar Lanu Moana (Jaguarový) e taofia i le fale o Nhamandu i Yvy Marã Eÿ. Afai tali, e faʻaumatia ai tagata uma. O le Jaguar Mumu o le leoleo. O le fa'ailoga jaguar e iai le malosi faufau ma faaaumatatia — o le tuaoi i le va o le fa'avasegaina ma le fetunaiga.",
+        "gn": "Jaguarový = jaguar (onça) + ovy (hovy). Jagua pytã = jaguar pytã. Jagua = onça guaraní ñe'ẽme. Oñeha'ã APIB fa'ailoga ha ñorairõ tetã reheve."
+      },
+      "political_themes": [
+        "territorial sovereignty",
+        "cosmological order",
+        "anti-extractivism",
+        "APIB",
+        "indigenous strength"
+      ],
+      "resistance_use": "The jaguar motif appears across Amazonian resistance art, including APIB activist graphics, where the jaguar represents indigenous strength, territorial sovereignty, and cosmological order threatened by extractivism.",
+      "course_module": {
+        "id": "module_6",
+        "title_en": "Building Indigenous AI: Resistance and Future Visions"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_jagua_pyta.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/jagua_pyta.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/jagua_pyta.png",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Yvy_mar%C3%A3_e'%E1%BB%B9",
+        "https://en.wikipedia.org/wiki/Paraguayan_Indigenous_art"
+      ]
+    },
+    {
+      "id": "yvy_mara_ey",
+      "culture": "guarani",
+      "name_en": "Yvy Marã Eÿ (Land Without Evil)",
+      "name_indigenous": "Yvy marã e'ỹ",
+      "language_primary": "guarani",
+      "region": "south_america",
+      "rhizome_region": "south_america",
+      "colour_primary": "#27ae60",
+      "colour_secondary": "#f39c12",
+      "meaning_active": "The mythical Guaraní paradise — a land free of hunger, war, and disease. The soul must achieve a state of perfection (aguyjé) to reach it. Associated with eastward migration, prophetic leadership, and shamanic song. Widely used in APIB rhetoric and land-rights manifestos as the original indigenous claim to territorial sovereignty.",
+      "meanings": {
+        "en": "The mythical Guaraní paradise — a land free of hunger, war, and disease. The soul must achieve a state of perfection (aguyjé) to reach it. Associated with eastward migration, prophetic leadership, and shamanic song. Widely used in APIB rhetoric and land-rights manifestos as the original indigenous claim to territorial sovereignty.",
+        "pt": "Terra sem males: paraíso mítico guaraní, livre de fome, guerra e doenças. Alcançável apenas por quem atingiu o estado espiritual de aguyjé. Ligado às grandes migrações tupi-guaraní. Conceito central nos manifestos de direitos territoriais.",
+        "sm": "O le 'Fanua e aunoa ma le leaga' — le palataiso fa'amalie o Guaraní, sa'o mai le fia'ai, taua, ma ma'i. E mafai ona o'o i ai e ala i le ola sa'o (aguyjé). Fa'aogaina i tagi'aga fanua ma sa'olotoga.",
+        "gn": "Yvy marã e'ỹ: yvy = yvy; marã = vai/mbaasy; e'ỹ = ndaipóri. 'Yvy marã e'ỹ.' Oñeha'ã APIB ñe'ẽngue ha tetã ñorairõ reheve."
+      },
+      "political_themes": [
+        "territorial sovereignty",
+        "land rights",
+        "deforestation resistance",
+        "APIB",
+        "cosmological resistance"
+      ],
+      "resistance_use": "Concept widely used in APIB rhetoric, ATL (Free Land Camp) speeches, and deforestation resistance campaigns as the original indigenous claim to territorial sovereignty. Appears in Guaraní ATY GUASU council declarations.",
+      "course_module": {
+        "id": "module_1",
+        "title_en": "What is Data? Indigenous Knowledges and the Digital World"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yvy_mara_ey.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/yvy_mara_ey.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/yvy_mara_ey.png",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Yvy_mar%C3%A3_e'%E1%BB%B9",
+        "https://journals.openedition.org/polis/pdf/10070"
+      ]
+    },
+    {
+      "id": "nanduti",
+      "culture": "guarani",
+      "name_en": "Ñandutí (Spider Web Lace)",
+      "name_indigenous": "Ñandutí",
+      "language_primary": "guarani",
+      "region": "south_america",
+      "rhizome_region": "south_america",
+      "colour_primary": "#8e44ad",
+      "colour_secondary": "#f39c12",
+      "meaning_active": "Traditional Paraguayan needle lace whose name means 'spider web' in Guaraní. Created by mestizo Guaraní women blending European needle-lace technique with indigenous craft. The spider-web form echoes indigenous cosmological webs — the universe woven by creative force.",
+      "meanings": {
+        "en": "Traditional Paraguayan needle lace whose name means 'spider web' in Guaraní. Created by mestizo Guaraní women blending European needle-lace technique with indigenous craft. The spider-web form echoes indigenous cosmological webs — the universe woven by creative force.",
+        "pt": "Renda paraguaia tradicional cujo nome em guaraní significa 'teia de aranha'. Criada por mulheres guaraní mestiças em Itauguá, combinando técnicas europeias de renda com a artesania indígena. Símbolo nacional do Paraguai.",
+        "sm": "Lalo fa'asamoa Paraguayan e ta'ua o le 'tele o le atasi' i le gagana Guaraní. Na faia e fafine mestizo Guaraní i Itauguá, o lo'o tu'ufa'atasia ai le fa'atekoniga Europea ma le taulima fa'aleaganuu. Fa'ailoga fa'alelotu o le urale ua fau.",
+        "gn": "Ñandutí = ñandu (araña) + ti (blanco/teia). 'Teia araña pytã.' Ñandutí ohechauka Paraguái ñande rekove ha kuña mbarete."
+      },
+      "political_themes": [
+        "cultural resilience",
+        "women's craft",
+        "hybrid identity",
+        "UNESCO heritage",
+        "diaspora"
+      ],
+      "resistance_use": "Symbol of Paraguayan national and Guaraní cultural identity. Appears in indigenous craft markets, UNESCO heritage discussions, and diaspora community events as a marker of Guaraní-mestizo hybrid resilience.",
+      "course_module": {
+        "id": "module_4",
+        "title_en": "Land, Territory, and Digital Sovereignty"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_nanduti.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/nanduti.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/nanduti.png",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/%C3%91andut%C3%AD",
+        "https://asunciontimes.com/culture/nanduti-day-in-paraguay-the-story-behind-the-spiderweb-lace/"
+      ]
+    },
+    {
+      "id": "mola_guna",
+      "culture": "guna",
+      "name_en": "Mola (Guna Reverse Appliqué Panel)",
+      "name_indigenous": "Mola",
+      "language_primary": "spanish",
+      "region": "south_america",
+      "rhizome_region": "south_america",
+      "colour_primary": "#e74c3c",
+      "colour_secondary": "#f39c12",
+      "meaning_active": "Hand-stitched textile panels worn by Guna women of the San Blas Archipelago (Guna Yala), Panama. Its designs may be residuals of pre-Hispanic body-painting patterns. Traditional abstract designs are based on brain coral — the sea as cosmic reference for an archipelago people. The Guna achieved autonomy (Guna Yala comarca) partly through cultural mobilisation in which mola was central.",
+      "meanings": {
+        "en": "Hand-stitched textile panels worn by Guna women of the San Blas Archipelago (Guna Yala), Panama. Its designs may be residuals of pre-Hispanic body-painting patterns. Traditional abstract designs are based on brain coral — the sea as cosmic reference for an archipelago people. The Guna achieved autonomy (Guna Yala comarca) partly through cultural mobilisation in which mola was central.",
+        "pt": "Painéis têxteis artesanais usados pelas mulheres guna do Arquipélago de San Blas, Panamá. Seus designs podem ser resíduos de padrões de pintura corporal pré-hispânicos. Os designs geométricos abstratos baseiam-se no coral-cérebro. A autonomia de Guna Yala foi parcialmente conquistada por mobilização cultural centrada na mola.",
+        "sm": "Ni'o textile a tamaitai Guna o Arquipélago San Blas, Panamá. O fuafuaga o le fa'ailoga e ono'ai mai tulaga o le tino painting a tua. O fuafuaga geometric abstract e faavae i luga o fatu sami. Na mafai ai ona maua le pule o Guna Yala i se vaega ona o ola fa'aaganu'u e aofia ai le mola.",
+        "gn": "N/A (Dulegaya). Mola = ao/terno Dulegaya ñe'ẽme. Guna Yala autonomía oñemopyendá aganuu ñangareko reheve — mola omboaje."
+      },
+      "political_themes": [
+        "cultural autonomy",
+        "women's sovereignty",
+        "anti-assimilation",
+        "indigenous governance",
+        "Guna Yala"
+      ],
+      "resistance_use": "Molas became markers of Guna cultural sovereignty and resistance to cultural assimilation in the 20th century. Contemporary Guna political movements use mola patterns in logos, flags, and protest materials.",
+      "course_module": {
+        "id": "module_3",
+        "title_en": "CARE & OCAP: Frameworks for Data Sovereignty"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_mola_guna.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guna/mola_guna.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guna/mola_guna.png",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "https://benton.uconn.edu/exhibitions/molas-textile-designs-of-the-kuna-indians-of-panama/",
+        "https://www.britannica.com/topic/mola-clothing"
+      ]
+    },
+    {
+      "id": "kayapo_jaguar_division",
+      "culture": "kayapo",
+      "name_en": "Kayapó Jaguar Body Division Pattern",
+      "name_indigenous": "Meï-kà (jaguar pattern, lit. 'jaguar-like')",
+      "language_primary": "portuguese",
+      "region": "south_america",
+      "rhizome_region": "south_america",
+      "colour_primary": "#c0392b",
+      "colour_secondary": "#2c3e50",
+      "meaning_active": "The jaguar is the apex predator and spiritual power animal of Kayapó cosmology. Jaguar-pattern body paint marks warriors, chiefs, and ceremony participants. Bilateral body division into upper (red, vital, social) and lower (black, wild, nature) halves encodes the Kayapó cosmological opposition between society and the forest.",
+      "meanings": {
+        "en": "The jaguar is the apex predator and spiritual power animal of Kayapó cosmology. Jaguar-pattern body paint marks warriors, chiefs, and ceremony participants. Bilateral body division into upper (red, vital, social) and lower (black, wild, nature) halves encodes the Kayapó cosmological opposition between society and the forest.",
+        "pt": "A onça é o animal-espírito por excelência dos Kayapó. A divisão bilateral do corpo em metade vermelha (superior — social, vital) e metade preta (inferior — natureza selvagem) codifica a cosmologia Kayapó. Líderes como Raoni Metuktire aparecem na mídia com esta pintura em cúpulas climáticas.",
+        "sm": "O le puma o le animal aitu o Kayapó. O le fa'ailoga o le tino e vaega ese ai le vaega i luga (lanu mumu — sosieti) ma le vaega i lalo (uliuli — togavao). Taitai pei o Raoni Metuktire ua faaalia i le media faigamalaga o tau ma lenei fa'ailoga.",
+        "gn": "N/A (Kayapó reko Jê, ndaha'éi Guaraní). Kayapó tatú ohechauka ñorairõ — Raoni Metuktire oñemoarandu COP-pe ha anti-represa ñorairõ-pe."
+      },
+      "political_themes": [
+        "climate summits",
+        "anti-dam resistance",
+        "indigenous leadership",
+        "Amazonian defence",
+        "cosmological boundary"
+      ],
+      "resistance_use": "Kayapó leaders including Raoni Metuktire and Paiakã have appeared in international media wearing full jaguar-pattern body paint at climate summits and anti-dam protests. Featured in 2019 anti-Bolsonaro protests and at COP26.",
+      "course_module": {
+        "id": "module_2",
+        "title_en": "Data Colonialism: Who Took Our Data?"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_kayapo_jaguar_division.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/kayapo/kayapo_jaguar_division.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/kayapo/kayapo_jaguar_division.png",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "https://kayapo.org/body-paint/",
+        "https://www.meer.com/en/28769-kayapo-body-art",
+        "https://www.globalfirstnations.com/peoples/kayapo.html"
+      ]
+    },
+    {
+      "id": "kene_shipibo",
+      "culture": "shipibo",
+      "name_en": "Kené (Shipibo Cosmic Geometric Design)",
+      "name_indigenous": "Kené (also: quené, keno)",
+      "language_primary": "shipibo",
+      "region": "south_america",
+      "rhizome_region": "south_america",
+      "colour_primary": "#8e44ad",
+      "colour_secondary": "#2980b9",
+      "meaning_active": "The Shipibo-Conibo traditional geometric designs painted on ceramics, textiles, and bodies. They express the cosmological worldview: the universe is structured by intricate vibrational patterns first sung into existence by the primordial anaconda Ronin. Disease is distortion of pattern; healing restores it. Declared Cultural Heritage of Peru in 2008.",
+      "meanings": {
+        "en": "The Shipibo-Conibo traditional geometric designs painted on ceramics, textiles, and bodies. They express the cosmological worldview: the universe is structured by intricate vibrational patterns first sung into existence by the primordial anaconda Ronin. Disease is distortion of pattern; healing restores it. Declared Cultural Heritage of Peru in 2008.",
+        "pt": "Padrões geométricos tradicionais shipibo-conibo pintados em cerâmica, têxteis e corpos. Expressam a cosmovisão: o universo é estruturado por padrões vibracionais cantados à existência pela anaconda primordial Ronin. Doença = distorção do padrão; cura = restauração. Patrimônio Cultural do Peru (2008).",
+        "sm": "O fa'ailoga geometric fa'aleaganu'u Shipibo-Conibo ua gaosia i paelo, 'ie, ma tino. E fa'aalia ai le cosmological worldview: o le lalolagi ua faia e le ana primordial Ronin i ana pese. O ma'i o le fa'aleoga o le fa'ailoga; o le foma'i e toe fa'aleleia.",
+        "gn": "N/A (reko Panoan). Kené = design/padrão oñeha'ã jakon nete (bom mundo espiritual). Ronin kena = anaconda prim. oñe'ẽ yvy opyrũ haguã."
+      },
+      "political_themes": [
+        "territorial reclamation",
+        "cultural heritage",
+        "Amazonian rights",
+        "women's art",
+        "climate justice"
+      ],
+      "resistance_use": "Shipibo women have painted kené on urban murals in Lima as acts of cultural resistance and territorial reclamation. Featured in the Véxoa exhibition (Pinacoteca São Paulo, 2020–21) and in climate justice imagery for Amazonian peoples.",
+      "course_module": {
+        "id": "module_5",
+        "title_en": "Collective Knowledge and Network Thinking"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_kene_shipibo.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/shipibo/kene_shipibo.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/shipibo/kene_shipibo.png",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ken%C3%A9",
+        "https://shamanicsupply.com/pages/kene-the-sacred-geometric-art-of-the-shipibo-conibo-people",
+        "https://shipiboshamanism.com/en/kene.html",
+        "http://songoftheamazon.com/shipibo-art-kene/"
+      ]
+    },
+    {
+      "id": "ronin_kuin",
+      "culture": "shipibo",
+      "name_en": "Ronin Kuin (Primordial Anaconda / Cosmic Serpent)",
+      "name_indigenous": "Ronin Kuin (also: rono ewa)",
+      "language_primary": "shipibo",
+      "region": "south_america",
+      "rhizome_region": "south_america",
+      "colour_primary": "#2980b9",
+      "colour_secondary": "#8e44ad",
+      "meaning_active": "The primordial anaconda that, according to Shipibo-Conibo cosmology, sang the universe into existence. The pattern of her skin became the template for all kené designs. She is the 'mother of designs' (rono ewa). Every kené is a fragment of her song made visible. The cosmic serpent connects upper and lower worlds, river and forest.",
+      "meanings": {
+        "en": "The primordial anaconda that, according to Shipibo-Conibo cosmology, sang the universe into existence. The pattern of her skin became the template for all kené designs. She is the 'mother of designs' (rono ewa). Every kené is a fragment of her song made visible. The cosmic serpent connects upper and lower worlds, river and forest.",
+        "pt": "A anaconda primordial que cantou o universo à existência na cosmologia shipibo-conibo. O padrão de sua pele é o modelo para todos os kené. Ela é a 'mãe dos desenhos' (rono ewa). O motivo anaconda é usado em campanhas ambientais para simbolizar a teia ecológica destruída pelo garimpo.",
+        "sm": "O le 'ana primordial na pese ai le lalolagi i totonu o le cosmology Shipibo-Conibo. O le fa'ailoga o lona pa'u na fai ai le template mo fa'ailoga kené uma. O ia o le 'tina o fa'ailoga' (rono ewa). O le 'ana cosmic e feso'ota'i ai lalolagi i luga ma lalo, vaitafe ma togavao.",
+        "gn": "N/A (reko Panoan). Ronin = anaconda; Kuin = oñehechakuaa/primordial. Anaconda kosmosu oñe'ẽ yvypóra oñemopyendávo."
+      },
+      "political_themes": [
+        "ecology",
+        "anti-mining",
+        "deforestation resistance",
+        "cosmological sovereignty",
+        "Amazon"
+      ],
+      "resistance_use": "The anaconda motif is used in Amazonian environmental campaigns to symbolise the ecological web destroyed by garimpo (illegal mining) and deforestation. Featured in European museum exhibitions as a climate alarm symbol.",
+      "course_module": {
+        "id": "module_5",
+        "title_en": "Collective Knowledge and Network Thinking"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_ronin_kuin.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/shipibo/ronin_kuin.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/shipibo/ronin_kuin.png",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "http://songoftheamazon.com/shipibo-art-kene/",
+        "https://en.wikipedia.org/wiki/Ken%C3%A9"
+      ]
+    },
+    {
+      "id": "yanomami_urihi",
+      "culture": "yanomami",
+      "name_en": "Urihi a (Forest-Land Cosmos / Falling Sky)",
+      "name_indigenous": "Urihi a",
+      "language_primary": "portuguese",
+      "region": "south_america",
+      "rhizome_region": "south_america",
+      "colour_primary": "#27ae60",
+      "colour_secondary": "#e74c3c",
+      "meaning_active": "Urihi a ('forest-land') is the Yanomami concept for the inhabited world — the second lowest of four cosmic layers. Davi Kopenawa's cosmology, recorded in 'The Falling Sky,' describes the entire cosmos collapsing if the forest is destroyed. The phrase 'A queda do céu' became the central Yanomami political-cosmological text and is used in deforestation campaigns and UN submissions.",
+      "meanings": {
+        "en": "Urihi a ('forest-land') is the Yanomami concept for the inhabited world — the second lowest of four cosmic layers. Davi Kopenawa's cosmology, recorded in 'The Falling Sky,' describes the entire cosmos collapsing if the forest is destroyed. The phrase 'A queda do céu' became the central Yanomami political-cosmological text and is used in deforestation campaigns and UN submissions.",
+        "pt": "Urihi a = floresta-terra: o mundo habitado dos Yanomami. A cosmovisão estratificada em camadas. 'A queda do céu' (Davi Kopenawa, 2013) descreve o colapso do cosmos se a floresta for destruída — usado em campanhas de desmatamento e submissões à ONU.",
+        "sm": "Urihi a = 'fanua-togavao': o le lalolagi o tagata Yanomami, o le lua lalo o lau cosmic e fa. O le cosmology a Davi Kopenawa e fa'aalia ai le pa'ū o le lagi pe'a faatotoina le togavao — ua fa'aaogaina i le taumafaiga e taofia ai le pala o le togavao ma i le UN.",
+        "gn": "N/A (reko Yanomami). 'A queda do céu' (Kopenawa, 2013) ohechauka yvy asy ogueko mba'e Amazona oñembyaipa ramo."
+      },
+      "political_themes": [
+        "deforestation",
+        "genocide crisis",
+        "Amazonian sovereignty",
+        "cosmological rights",
+        "Roraima"
+      ],
+      "resistance_use": "Davi Kopenawa's 'The Falling Sky' drawn from urihi cosmology became the central Yanomami political text (2013). Used in deforestation campaigns and the Yanomami genocide crisis of 2023 in Roraima. The cosmic layered disc is reproduced in advocacy materials.",
+      "course_module": {
+        "id": "module_2",
+        "title_en": "Data Colonialism: Who Took Our Data?"
+      },
+      "assets": {
+        "meme_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/memes/meme_yanomami_urihi.png",
+        "motif_png": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/yanomami/yanomami_urihi.png",
+        "motif_svg": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/yanomami/yanomami_urihi.png",
+        "sourced_from": "r2_bucket"
+      },
+      "sources": [
+        "https://laulima.hawaii.edu/access/content/user/millerg/anth_200/A200Unit3/Yanocosmos.html",
+        "https://periodicos.ufmg.br/index.php/revistadaufmg/article/download/2743/1608",
+        "https://laymert.com.br/en/yanomami/"
+      ]
+    }
+  ],
+  "index_by_culture": {
+    "maori": [
+      "koru",
+      "kowhaiwhai",
+      "manaia",
+      "mangopare",
+      "niho_taniwha",
+      "pikorua",
+      "pa_tuwatawata",
+      "takarangi",
+      "unaunahi"
+    ],
+    "fijian": [
+      "masi_kesa",
+      "vonu"
+    ],
+    "pacific": [
+      "va_a_waka"
+    ],
+    "samoan": [
+      "aso",
+      "atualoa",
+      "fa_a_aupega",
+      "fetu",
+      "malu_diamond",
+      "niho_mano",
+      "pea"
+    ],
+    "tongan": [
+      "manulua"
+    ],
+    "amazonian": [
+      "luta_pela_vida"
+    ],
+    "guarani": [
+      "cuaracy_ra_angaba",
+      "jagua_pyta",
+      "yvy_mara_ey",
+      "nanduti"
+    ],
+    "guna": [
+      "mola_guna"
+    ],
+    "kayapo": [
+      "kayapo_jaguar_division"
+    ],
+    "shipibo": [
+      "kene_shipibo",
+      "ronin_kuin"
+    ],
+    "yanomami": [
+      "yanomami_urihi"
+    ]
+  },
+  "index_by_module": {
+    "module_1": [
+      "koru",
+      "pa_tuwatawata",
+      "va_a_waka",
+      "yvy_mara_ey"
+    ],
+    "module_3": [
+      "kowhaiwhai",
+      "manaia",
+      "malu_diamond",
+      "mola_guna"
+    ],
+    "module_2": [
+      "mangopare",
+      "niho_taniwha",
+      "luta_pela_vida",
+      "kayapo_jaguar_division",
+      "yanomami_urihi"
+    ],
+    "module_4": [
+      "pikorua",
+      "takarangi",
+      "unaunahi",
+      "masi_kesa",
+      "vonu",
+      "manulua",
+      "nanduti"
+    ],
+    "module_6": [
+      "aso",
+      "niho_mano",
+      "pea",
+      "jagua_pyta"
+    ],
+    "module_5": [
+      "atualoa",
+      "fa_a_aupega",
+      "fetu",
+      "cuaracy_ra_angaba",
+      "kene_shipibo",
+      "ronin_kuin"
+    ]
+  },
+  "index_by_theme": {
+    "renewal": [
+      "koru"
+    ],
+    "education": [
+      "koru"
+    ],
+    "language": [
+      "koru"
+    ],
+    "future": [
+      "koru",
+      "takarangi"
+    ],
+    "youth": [
+      "koru"
+    ],
+    "law": [
+      "kowhaiwhai"
+    ],
+    "treaty": [
+      "kowhaiwhai"
+    ],
+    "tikanga": [
+      "kowhaiwhai"
+    ],
+    "governance": [
+      "kowhaiwhai",
+      "pa_tuwatawata"
+    ],
+    "rights": [
+      "kowhaiwhai"
+    ],
+    "protection": [
+      "manaia",
+      "pa_tuwatawata",
+      "unaunahi",
+      "niho_mano"
+    ],
+    "spiritual": [
+      "manaia"
+    ],
+    "duality": [
+      "manaia"
+    ],
+    "AI": [
+      "manaia"
+    ],
+    "guardian": [
+      "manaia"
+    ],
+    "data sovereignty": [
+      "manaia"
+    ],
+    "resistance": [
+      "mangopare",
+      "niho_taniwha",
+      "va_a_waka",
+      "atualoa",
+      "niho_mano",
+      "pea"
+    ],
+    "courage": [
+      "mangopare"
+    ],
+    "warrior": [
+      "mangopare",
+      "niho_mano"
+    ],
+    "frontline": [
+      "mangopare"
+    ],
+    "strength": [
+      "mangopare"
+    ],
+    "extraction": [
+      "niho_taniwha"
+    ],
+    "land": [
+      "niho_taniwha",
+      "pa_tuwatawata"
+    ],
+    "colonial harm": [
+      "niho_taniwha"
+    ],
+    "naming": [
+      "niho_taniwha"
+    ],
+    "solidarity": [
+      "pikorua",
+      "unaunahi"
+    ],
+    "alliance": [
+      "pikorua",
+      "manulua"
+    ],
+    "union": [
+      "pikorua"
+    ],
+    "cultures": [
+      "pikorua"
+    ],
+    "bond": [
+      "pikorua"
+    ],
+    "diaspora": [
+      "pikorua",
+      "nanduti"
+    ],
+    "sovereignty": [
+      "pa_tuwatawata",
+      "fetu",
+      "malu_diamond",
+      "niho_mano",
+      "manulua"
+    ],
+    "data": [
+      "pa_tuwatawata"
+    ],
+    "cycles": [
+      "takarangi"
+    ],
+    "memory": [
+      "takarangi"
+    ],
+    "climate": [
+      "takarangi",
+      "fetu"
+    ],
+    "decolonisation": [
+      "takarangi",
+      "pea"
+    ],
+    "collective": [
+      "unaunahi"
+    ],
+    "kotahitanga": [
+      "unaunahi"
+    ],
+    "network": [
+      "unaunahi"
+    ],
+    "land rights": [
+      "masi_kesa",
+      "yvy_mara_ey"
+    ],
+    "intellectual property": [
+      "masi_kesa"
+    ],
+    "cultural sovereignty": [
+      "masi_kesa"
+    ],
+    "clan identity": [
+      "masi_kesa"
+    ],
+    "vanua": [
+      "masi_kesa"
+    ],
+    "climate justice": [
+      "vonu",
+      "va_a_waka",
+      "kene_shipibo"
+    ],
+    "ocean rights": [
+      "vonu",
+      "fa_a_aupega",
+      "fetu"
+    ],
+    "endangered species": [
+      "vonu"
+    ],
+    "Pacific identity": [
+      "vonu",
+      "va_a_waka"
+    ],
+    "sea-level rise": [
+      "vonu"
+    ],
+    "ocean sovereignty": [
+      "va_a_waka"
+    ],
+    "voyaging": [
+      "va_a_waka"
+    ],
+    "home": [
+      "aso"
+    ],
+    "displacement": [
+      "aso"
+    ],
+    "community": [
+      "aso",
+      "fa_a_aupega"
+    ],
+    "family": [
+      "aso",
+      "atualoa"
+    ],
+    "indigenous space": [
+      "aso"
+    ],
+    "cultural reclamation": [
+      "atualoa",
+      "malu_diamond"
+    ],
+    "endurance": [
+      "atualoa"
+    ],
+    "identity": [
+      "atualoa",
+      "pea"
+    ],
+    "fishing sovereignty": [
+      "fa_a_aupega"
+    ],
+    "collective action": [
+      "fa_a_aupega"
+    ],
+    "EEZ": [
+      "fa_a_aupega"
+    ],
+    "navigation": [
+      "fetu"
+    ],
+    "ancestry": [
+      "fetu"
+    ],
+    "women's rights": [
+      "malu_diamond"
+    ],
+    "Fa'a Samoa": [
+      "malu_diamond"
+    ],
+    "gender": [
+      "malu_diamond"
+    ],
+    "cultural identity": [
+      "niho_mano"
+    ],
+    "cultural survival": [
+      "pea",
+      "luta_pela_vida"
+    ],
+    "masculinity": [
+      "pea"
+    ],
+    "unity": [
+      "manulua"
+    ],
+    "chiefly authority": [
+      "manulua"
+    ],
+    "diaspora identity": [
+      "manulua"
+    ],
+    "APIB": [
+      "luta_pela_vida",
+      "jagua_pyta",
+      "yvy_mara_ey"
+    ],
+    "land demarcation": [
+      "luta_pela_vida",
+      "cuaracy_ra_angaba"
+    ],
+    "anti-Bolsonaro": [
+      "luta_pela_vida"
+    ],
+    "body as territory": [
+      "luta_pela_vida"
+    ],
+    "Brasília": [
+      "luta_pela_vida"
+    ],
+    "cosmology": [
+      "cuaracy_ra_angaba"
+    ],
+    "indigenous knowledge": [
+      "cuaracy_ra_angaba"
+    ],
+    "seasonal rights": [
+      "cuaracy_ra_angaba"
+    ],
+    "cultural rights": [
+      "cuaracy_ra_angaba"
+    ],
+    "territorial sovereignty": [
+      "jagua_pyta",
+      "yvy_mara_ey"
+    ],
+    "cosmological order": [
+      "jagua_pyta"
+    ],
+    "anti-extractivism": [
+      "jagua_pyta"
+    ],
+    "indigenous strength": [
+      "jagua_pyta"
+    ],
+    "deforestation resistance": [
+      "yvy_mara_ey",
+      "ronin_kuin"
+    ],
+    "cosmological resistance": [
+      "yvy_mara_ey"
+    ],
+    "cultural resilience": [
+      "nanduti"
+    ],
+    "women's craft": [
+      "nanduti"
+    ],
+    "hybrid identity": [
+      "nanduti"
+    ],
+    "UNESCO heritage": [
+      "nanduti"
+    ],
+    "cultural autonomy": [
+      "mola_guna"
+    ],
+    "women's sovereignty": [
+      "mola_guna"
+    ],
+    "anti-assimilation": [
+      "mola_guna"
+    ],
+    "indigenous governance": [
+      "mola_guna"
+    ],
+    "Guna Yala": [
+      "mola_guna"
+    ],
+    "climate summits": [
+      "kayapo_jaguar_division"
+    ],
+    "anti-dam resistance": [
+      "kayapo_jaguar_division"
+    ],
+    "indigenous leadership": [
+      "kayapo_jaguar_division"
+    ],
+    "Amazonian defence": [
+      "kayapo_jaguar_division"
+    ],
+    "cosmological boundary": [
+      "kayapo_jaguar_division"
+    ],
+    "territorial reclamation": [
+      "kene_shipibo"
+    ],
+    "cultural heritage": [
+      "kene_shipibo"
+    ],
+    "Amazonian rights": [
+      "kene_shipibo"
+    ],
+    "women's art": [
+      "kene_shipibo"
+    ],
+    "ecology": [
+      "ronin_kuin"
+    ],
+    "anti-mining": [
+      "ronin_kuin"
+    ],
+    "cosmological sovereignty": [
+      "ronin_kuin"
+    ],
+    "Amazon": [
+      "ronin_kuin"
+    ],
+    "deforestation": [
+      "yanomami_urihi"
+    ],
+    "genocide crisis": [
+      "yanomami_urihi"
+    ],
+    "Amazonian sovereignty": [
+      "yanomami_urihi"
+    ],
+    "cosmological rights": [
+      "yanomami_urihi"
+    ],
+    "Roraima": [
+      "yanomami_urihi"
+    ]
+  },
+  "social_kit_summary": {
+    "banners": {
+      "count": 2,
+      "platforms": {},
+      "languages": {},
+      "motifs": {},
+      "topics": {},
+      "base_url": "https://raw.githubusercontent.com/robertmccallnz/kiwi-dialectic-te-pa-minisite/main/social-kit",
+      "example": {
+        "path": "banners/una-facebook-linkedin-cover-1640x624.svg",
+        "name": "una-facebook-linkedin-cover-1640x624.svg"
+      }
+    },
+    "posters": {
+      "count": 7,
+      "platforms": {},
+      "languages": {},
+      "motifs": {},
+      "topics": {},
+      "base_url": "https://raw.githubusercontent.com/robertmccallnz/kiwi-dialectic-te-pa-minisite/main/social-kit",
+      "example": {
+        "path": "posters/una-poster-a3-data-sovereignty.svg",
+        "name": "una-poster-a3-data-sovereignty.svg"
+      }
+    },
+    "stickers": {
+      "count": 26,
+      "platforms": {},
+      "languages": {},
+      "motifs": {},
+      "topics": {},
+      "base_url": "https://raw.githubusercontent.com/robertmccallnz/kiwi-dialectic-te-pa-minisite/main/social-kit",
+      "example": {
+        "path": "stickers/sticker-rhizome-s01.png",
+        "name": "sticker-rhizome-s01.png"
+      }
+    },
+    "platform": {
+      "count": 96,
+      "platforms": {
+        "facebook": 24,
+        "instagram": 24,
+        "tiktok": 24,
+        "x": 24
+      },
+      "languages": {},
+      "motifs": {},
+      "topics": {
+        "cta": 4,
+        "declaration": 4,
+        "fact": 4,
+        "koru-begin": 4,
+        "koru-data": 4,
+        "koru-learn": 4,
+        "kow-design": 4,
+        "kow-law": 4,
+        "kow-reclaim": 4,
+        "niho-ai": 4
+      },
+      "base_url": "https://raw.githubusercontent.com/robertmccallnz/kiwi-dialectic-te-pa-minisite/main/social-kit",
+      "example": {
+        "path": "platform/platform-facebook-cta.png",
+        "name": "platform-facebook-cta.png",
+        "platform": "facebook",
+        "topic": "cta"
+      }
+    },
+    "unaunahi": {
+      "count": 33,
+      "platforms": {
+        "instagram": 9,
+        "facebook": 8,
+        "tiktok": 8,
+        "x": 8
+      },
+      "languages": {},
+      "motifs": {},
+      "topics": {
+        "ai": 4,
+        "boundaries": 4,
+        "design": 4,
+        "future": 4,
+        "layers": 4,
+        "resist": 4,
+        "sovereignty": 4,
+        "together": 4,
+        "carousel-cover": 1
+      },
+      "base_url": "https://raw.githubusercontent.com/robertmccallnz/kiwi-dialectic-te-pa-minisite/main/social-kit",
+      "example": {
+        "path": "unaunahi/una-facebook-ai.svg",
+        "name": "una-facebook-ai.svg",
+        "platform": "facebook",
+        "topic": "ai"
+      }
+    },
+    "campaign": {
+      "count": 36,
+      "platforms": {},
+      "languages": {
+        "en": 6,
+        "gn": 6,
+        "mi": 6,
+        "pt": 6,
+        "sm": 6,
+        "base": 6
+      },
+      "motifs": {},
+      "topics": {
+        "3-questions": 6,
+        "anamata": 6,
+        "data-sovereignty": 6,
+        "enrol": 6,
+        "raupatu": 6,
+        "te-mana-raraunga": 6
+      },
+      "base_url": "https://raw.githubusercontent.com/robertmccallnz/kiwi-dialectic-te-pa-minisite/main/social-kit",
+      "example": {
+        "path": "campaign-3-questions-en.png",
+        "name": "campaign-3-questions-en.png",
+        "topic": "3-questions",
+        "lang": "en"
+      }
+    },
+    "motifs": {
+      "count": 768,
+      "platforms": {
+        "facebook": 192,
+        "instagram": 192,
+        "tiktok": 192,
+        "x": 192
+      },
+      "languages": {},
+      "motifs": {
+        "aso": 24,
+        "atualoa": 24,
+        "cuaracy_ra_angaba": 24,
+        "fa_a_aupega": 24,
+        "fetu": 24,
+        "jagua_pyta": 24,
+        "kayapo_jaguar_division": 24,
+        "kene_shipibo": 24,
+        "koru": 24,
+        "kow": 24,
+        "kowhaiwhai": 24,
+        "luta_pela_vida": 24,
+        "malu_diamond": 24,
+        "manaia": 24,
+        "mangopare": 24,
+        "manulua": 24,
+        "masi_kesa": 24,
+        "mola_guna": 24,
+        "nanduti": 24,
+        "niho": 24,
+        "niho_mano": 24,
+        "pa": 24,
+        "pa_tuwatawata": 24,
+        "pea": 24,
+        "pikorua": 24,
+        "ronin_kuin": 24,
+        "takarangi": 24,
+        "unaunahi": 24,
+        "va_a_waka": 24,
+        "vonu": 24,
+        "yanomami_urihi": 24,
+        "yvy_mara_ey": 24
+      },
+      "topics": {
+        "sovereignty": 104,
+        "identity": 104,
+        "resist": 104,
+        "community": 104,
+        "future": 104,
+        "ai rights": 104,
+        "who built this": 4,
+        "beginnings": 4,
+        "old gives way": 4,
+        "a new path": 4
+      },
+      "base_url": "https://raw.githubusercontent.com/robertmccallnz/kiwi-dialectic-te-pa-minisite/main/social-kit",
+      "example": {
+        "path": "motifs/aso/aso-facebook-01-sovereignty.svg",
+        "motif": "aso",
+        "motif_name": "Aso",
+        "culture": "Sāmoa",
+        "platform": "facebook",
+        "theme": "sovereignty"
+      }
+    },
+    "memes": {
+      "count": 180,
+      "platforms": {},
+      "languages": {},
+      "motifs": {},
+      "topics": {},
+      "base_url": "https://raw.githubusercontent.com/robertmccallnz/kiwi-dialectic-te-pa-minisite/main/social-kit",
+      "example": {
+        "path": "memes/meme_aso_ar.png",
+        "name": "meme_aso_ar.png"
+      }
+    },
+    "bundles": {
+      "count": 2,
+      "platforms": {},
+      "languages": {},
+      "motifs": {},
+      "topics": {},
+      "base_url": "https://raw.githubusercontent.com/robertmccallnz/kiwi-dialectic-te-pa-minisite/main/social-kit",
+      "example": {
+        "path": "te-pa-meme-kit.zip",
+        "name": "te-pa-meme-kit.zip"
+      }
+    }
+  },
+  "campaign_categories": {
+    "count": 13,
+    "source": "https://raw.githubusercontent.com/robertmccallnz/kiwi-dialectic-te-pa-minisite/main/data/campaign-categories.json"
+  }
+}
