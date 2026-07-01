@@ -1,0 +1,127 @@
+{
+  "last_updated": "2026-07-01",
+  "total_entries": 7,
+  "entries": [
+    {
+      "id": "intel-202607-001",
+      "title": "Te Pā Tūwatawata launched as a Māori-led decentralised storage network for data sovereignty",
+      "summary": "An Indigenous Business Review report says Te Pā Tūwatawata launched as a decentralised online storage network so Māori organisations can store data under their own cultural protection protocols. The piece describes Te Kāhui Raraunga (a data iwi leaders' group) and advisor Erena Mikaere positioning the network as a concrete step to regain Māori data sovereignty and reduce reliance on external infrastructure.",
+      "source_url": "https://theibr.com.au/11-06-2026/24747/indigenous-storage-network-offers-maori-online-data-sovereignty",
+      "source_name": "Indigenous Business Review",
+      "date_published": "2026-06-11",
+      "urgency": "high",
+      "category": "policy_change",
+      "region": "oceania",
+      "related_cultures": [
+        "maori"
+      ],
+      "hashtags": [
+        "#PacificDataSovereignty",
+        "#StopDataColonialism"
+      ],
+      "campaign_node": "campaign-pacific-data-sovereignty"
+    },
+    {
+      "id": "intel-202607-002",
+      "title": "ABC reports AI-generated deepfakes targeting West Papuan activists as a form of disinformation",
+      "summary": "An ABC News report says West Papuan activists are being targeted with AI-generated deepfake videos and coordinated disinformation, including a fake clip depicting Koteka Wenda denouncing the documentary “Pig Feast: Colonialism in Our Time” (“Pesta Babi”). The report frames this as a tactic to discredit and silence advocacy in a conflict centered on West Papua’s political status and the struggle for rights and independence.",
+      "source_url": "https://www.abc.net.au/news/2026-06-21/ai-generated-content-targeting-west-papuan-activists/106760046",
+      "source_name": "ABC News (Australia)",
+      "date_published": "2026-06-21",
+      "urgency": "high",
+      "category": "ai_data_threat",
+      "region": "oceania",
+      "related_cultures": [
+        "pacific"
+      ],
+      "hashtags": [
+        "#FreeWestPapua",
+        "#StopDataColonialism"
+      ],
+      "campaign_node": "campaign-free-west-papua"
+    },
+    {
+      "id": "intel-202607-003",
+      "title": "Canada introduces Bill C-37 to affirm First Nations jurisdiction over drinking water and wastewater on First Nation lands",
+      "summary": "Indigenous Services Canada’s legislative timeline notes that Bill C-37 (proposed First Nations Clean Water Act) was introduced on 16 June 2026. The page says the bill affirms First Nations’ inherent right to self-government includes jurisdiction over water, drinking water, wastewater, and related infrastructure on First Nation lands, and commits the government to support comparable protections and co-develop funding frameworks.",
+      "source_url": "https://www.sac-isc.gc.ca/eng/1697555066364/1697555089256",
+      "source_name": "Indigenous Services Canada",
+      "date_published": "2026-06-16",
+      "urgency": "medium",
+      "category": "policy_change",
+      "region": "north_america",
+      "related_cultures": [],
+      "hashtags": [
+        "#LANDBACK"
+      ],
+      "campaign_node": "campaign-landback"
+    },
+    {
+      "id": "intel-202607-004",
+      "title": "IWGIA releases policy guide on ethical, rights-based engagement with Indigenous knowledge systems within UNFCCC",
+      "summary": "IWGIA published a policy guide in June 2026 aimed at shifting UNFCCC practice from symbolic inclusion toward systemic recognition of Indigenous Peoples as rights-holders and central actors in climate governance. The guide frames ethical and equitable engagement with Indigenous Knowledge Systems as rights-based and aligned with Indigenous Peoples’ political, cultural, and legal authority over their territories, governance systems, and knowledge.",
+      "source_url": "https://iwgia.org/en/resources/publications/6160-ethical-equitable-engagement-indigenous-peoples-knowledge-systems-unfccc.html",
+      "source_name": "IWGIA",
+      "date_published": "2026-06-03",
+      "urgency": "medium",
+      "category": "policy_change",
+      "region": "global",
+      "related_cultures": [],
+      "hashtags": [
+        "#StopDataColonialism"
+      ],
+      "campaign_node": "campaign-stop-data-colonialism"
+    },
+    {
+      "id": "intel-202607-005",
+      "title": "Cultural Survival: Indigenous Peoples’ Caucus reconfirms imprisoned leader Daria Egereva as UNFCCC Indigenous Forum co-chair",
+      "summary": "Cultural Survival reports that the International Indigenous Peoples’ Forum on Climate Change (IIPFCC) reconfirmed imprisoned leader Daria Egereva as Co-Chair until her release, rather than replacing her. The statement presents this as an act of solidarity to keep Indigenous leadership and representation intact in global climate negotiations despite repression.",
+      "source_url": "https://www.culturalsurvival.org/pt-br/node/15257",
+      "source_name": "Cultural Survival",
+      "date_published": "2026-06-09",
+      "urgency": "low",
+      "category": "cultural_sovereignty",
+      "region": "global",
+      "related_cultures": [],
+      "hashtags": [],
+      "campaign_node": null
+    },
+    {
+      "id": "intel-202607-006",
+      "title": "Amazon Conservation Association highlights illegal gold mining shifting pressures across Yanomami territory and Peru’s Tambopata reserve",
+      "summary": "Amazon Conservation Association reports (citing MAAP/ISA work) that mining-driven deforestation inside Brazil’s Yanomami Indigenous Territory fell sharply from about 1,800 hectares in 2022 to 45 hectares in 2025 following government intervention, but that miners are adapting and shifting tactics and locations. The same update describes severe impacts in Peru’s Tambopata National Reserve, including hundreds of hectares lost and extensive illegal infrastructure.",
+      "source_url": "https://www.amazonconservation.org/illegal-gold-mining-is-shifting-not-disappearing-across-the-amazon/",
+      "source_name": "Amazon Conservation Association",
+      "date_published": "2026-06-02",
+      "urgency": "medium",
+      "category": "land_rights",
+      "region": "south_america",
+      "related_cultures": [
+        "yanomami",
+        "amazonian"
+      ],
+      "hashtags": [
+        "#TerrasIndigenas"
+      ],
+      "campaign_node": "campaign-apib-terras"
+    },
+    {
+      "id": "intel-202607-007",
+      "title": "Cultural Survival condemns death of Miskitu Indigenous leader Brooklyn Rivera in Nicaraguan state custody",
+      "summary": "Cultural Survival says Brooklyn Rivera (Miskitu)—a founder of YATAMA and longtime defender of Indigenous rights and autonomy—died in Nicaraguan custody after being arrested in 2023 and forcibly disappeared for nearly three years. The statement cites UN experts calling for the release of detained relatives, return of Rivera’s body, and an independent investigation and accountability.",
+      "source_url": "https://www.culturalsurvival.org/news/cultural-survival-condemns-death-brooklyn-rivera-nicaraguan-state-custody",
+      "source_name": "Cultural Survival",
+      "date_published": "2026-06-01",
+      "urgency": "high",
+      "category": "legal_defeat",
+      "region": "south_america",
+      "related_cultures": [
+        "amazonian"
+      ],
+      "hashtags": [
+        "#LANDBACK"
+      ],
+      "campaign_node": "campaign-landback"
+    }
+  ]
+}
