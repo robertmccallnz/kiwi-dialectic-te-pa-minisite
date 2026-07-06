@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Systems Observatory — Te Pā Tūwatawata</title>
+<meta name="description" content="A living dashboard of Donella Meadows' twelve leverage points, mapped to Aotearoa political-economy indicators. A Te Pā Collective Action Lab artefact.">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/kiwi-dialectic.css"/>
+<link rel="stylesheet" href="../assets/css/hotere-patch.css"/>
+<link rel="stylesheet" href="../assets/nav.css">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#c0392b">
+<meta property="og:title" content="Systems Observatory — Te Pā Tūwatawata"/>
+<meta property="og:description" content="Twelve leverage points × Aotearoa political-economy indicators. A living, forkable archive of paradigm-challenging events."/>
+<meta property="og:image" content="https://te-pa.org/og-image.png"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<style>
+  .lp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; margin: 2rem 0; }
+  .lp-tile { border: 1px solid var(--border); border-radius: 6px; padding: 16px; display: flex; flex-direction: column; gap: 6px; background: rgba(255,255,255,.02); }
+  .lp-num { font-family: var(--font-serif); font-size: 2.4rem; line-height: 1; color: var(--accent); }
+  .lp-tier { font-size: .72rem; text-transform: uppercase; letter-spacing: 2px; opacity: .6; }
+  .lp-name { font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.3; }
+  .lp-q { font-size: .82rem; opacity: .7; font-style: italic; }
+  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.6rem 0; }
+  .hero-cta a { padding: 12px 22px; border-radius: 999px; text-decoration: none; font-size: .92rem; font-weight: 600; }
+  .cta-primary { background: var(--accent); color: #fff; }
+  .cta-secondary { border: 1px solid var(--border-bold); color: inherit; }
+  .kaupapa-block { border-left: 3px solid var(--accent2); padding: .8rem 1.2rem; margin: 2rem 0; background: rgba(44,122,75,.05); font-style: italic; opacity: .88; }
+  .obs-arch { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 1.5rem 0; }
+  @media (min-width: 720px) { .obs-arch { grid-template-columns: repeat(3, 1fr); } }
+  .obs-arch-step { border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
+  .obs-arch-step h4 { font-family: var(--font-serif); font-size: 1.1rem; margin: .1rem 0 .3rem; }
+  .obs-arch-step p { font-size: .88rem; opacity: .75; margin: 0; line-height: 1.55; }
+</style>
+</head>
+<body>
+<span class="motif-stripe" role="presentation" aria-hidden="true"></span>
+<div class="shell">
+
+<nav class="site-nav shell" aria-label="Primary">
+  <a class="nav-brand" href="../">Te Pā Tūwatawata</a>
+  <div class="nav-links">
+    <a href="../">Home</a>
+    <a href="../launch-mediakit/">Mediakit</a>
+    <a href="../teaching-kits/">Teaching</a>
+    <a href="../campaign-generator/">Generator</a>
+    <a href="/rhizome-mapper.html">Mapper</a>
+    <a href="./" aria-current="page">Observatory</a>
+    <a href="https://github.com/robertmccallnz/systems-observatory" rel="noopener">GitHub</a>
+  </div>
+</nav>
+
+<header style="margin: 2.5rem 0 2rem">
+  <p class="section-tag">Te Pā Collective Action Lab</p>
+  <h1 style="font-family:var(--font-serif);font-size:clamp(2.2rem,5vw,3.4rem);margin:.3rem 0;line-height:1.05">Systems Observatory</h1>
+  <p style="font-size:1.15rem;opacity:.7;margin:.4rem 0">Twelve leverage points · Aotearoa political economy · a living archive</p>
+  <p style="max-width:720px;line-height:1.75;margin:1.2rem 0">
+    A living dashboard of Donella Meadows' <a href="https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/" target="_blank" rel="noopener">twelve leverage points</a> — the places where a system can be intervened in, from the shallowest tweak of a parameter down to the deepest shift of the paradigm it arises from. Each of the twelve panels maps a Meadows tier to a public Aotearoa indicator, watches it against its own 24-period baseline, and flags deviations that challenge the current political-economic paradigm.
+  </p>
+  <div class="hero-cta">
+    <a class="cta-primary" href="https://robertmccallnz.github.io/systems-observatory/" target="_blank" rel="noopener">Open the dashboard →</a>
+    <a class="cta-secondary" href="https://github.com/robertmccallnz/systems-observatory/blob/main/docs/LEVERAGE_POINTS.md" target="_blank" rel="noopener">Read the mapping</a>
+    <a class="cta-secondary" href="https://huggingface.co/datasets/te-pa/systems-observatory-annotations" target="_blank" rel="noopener">Browse the archive</a>
+  </div>
+</header>
+
+<div class="niho-divider" aria-hidden="true"></div>
+
+<section style="margin: 2.4rem 0">
+  <p class="section-tag">He aha tēnei — What this is</p>
+  <h2 style="font-family:var(--font-serif);font-size:2rem;margin:.4rem 0 1rem">Meadows' framework, wired to Aotearoa data</h2>
+  <p style="max-width:720px;line-height:1.75">
+    Meadows argued that most policy energy is spent at the shallowest tiers — twiddling numbers, patching feedback loops — while the deepest leverage sits in the paradigm the system takes for granted. The Observatory makes that claim inspectable. It pairs each tier with a concrete NZ indicator, refreshes them weekly from public government sources, and lets kaimahi rank interventions by which tier they actually operate at.
+  </p>
+
+  <div class="lp-grid" aria-label="The twelve leverage points">
+    <div class="lp-tile"><span class="lp-tier">Constants &amp; Parameters</span><span class="lp-num">12</span><span class="lp-name">Official Cash Rate</span><span class="lp-q">Whose cost of living moves?</span></div>
+    <div class="lp-tile"><span class="lp-tier">Buffers &amp; Stocks</span><span class="lp-num">11</span><span class="lp-name">Dwelling consents</span><span class="lp-q">Are the buffers thick enough?</span></div>
+    <div class="lp-tile"><span class="lp-tier">Material Flows</span><span class="lp-num">10</span><span class="lp-name">Greenhouse-gas emissions</span><span class="lp-q">Does the economy match ecological limits?</span></div>
+    <div class="lp-tile"><span class="lp-tier">Delays</span><span class="lp-num">9</span><span class="lp-name">OIA response times</span><span class="lp-q">Does the state react at the system's speed?</span></div>
+    <div class="lp-tile"><span class="lp-tier">Negative Feedback</span><span class="lp-num">8</span><span class="lp-name">Union membership</span><span class="lp-q">Can workers correct their conditions?</span></div>
+    <div class="lp-tile"><span class="lp-tier">Positive Feedback</span><span class="lp-num">7</span><span class="lp-name">Top-1% wealth share</span><span class="lp-q">What snowballs faster — capital, or wages?</span></div>
+    <div class="lp-tile"><span class="lp-tier">Information Flows</span><span class="lp-num">6</span><span class="lp-name">OIA complaints upheld</span><span class="lp-q">Who gets to know what?</span></div>
+    <div class="lp-tile"><span class="lp-tier">Rules</span><span class="lp-num">5</span><span class="lp-name">Jobseeker recipients</span><span class="lp-q">Whose behaviour is disciplined?</span></div>
+    <div class="lp-tile"><span class="lp-tier">Self-Organisation</span><span class="lp-num">4</span><span class="lp-name">Iwi co-governance</span><span class="lp-q">Who redesigns the system from inside?</span></div>
+    <div class="lp-tile"><span class="lp-tier">Goals</span><span class="lp-num">3</span><span class="lp-name">Wellbeing ÷ growth spend</span><span class="lp-q">What is the system optimising for?</span></div>
+    <div class="lp-tile"><span class="lp-tier">Paradigms</span><span class="lp-num">2</span><span class="lp-name">Hansard framing ratio</span><span class="lp-q">What is thinkable in this political culture?</span></div>
+    <div class="lp-tile"><span class="lp-tier">Transcending Paradigms</span><span class="lp-num">1</span><span class="lp-name">Waitangi Tribunal reports</span><span class="lp-q">Can the system see beyond itself?</span></div>
+  </div>
+</section>
+
+<div class="niho-divider" aria-hidden="true"></div>
+
+<section style="margin: 2.4rem 0">
+  <p class="section-tag">Ngā rauemi — How it is built</p>
+  <h2 style="font-family:var(--font-serif);font-size:2rem;margin:.4rem 0 1rem">Three transparent, forkable pieces</h2>
+  <div class="obs-arch">
+    <div class="obs-arch-step">
+      <span class="lp-tier">01 · Site</span>
+      <h4>Static dashboard</h4>
+      <p>GitHub Pages, versioned JSON, weekly refresh — the same pattern as the Thinkers Mapper. Nothing hidden; every number carries its source.</p>
+    </div>
+    <div class="obs-arch-step">
+      <span class="lp-tier">02 · Compute</span>
+      <h4>Anomaly detection</h4>
+      <p>A Hugging Face Space runs a rolling z-score against each indicator's own history. Deviations of |z|&nbsp;≥&nbsp;2.5 are flagged as paradigm-challenging.</p>
+    </div>
+    <div class="obs-arch-step">
+      <span class="lp-tier">03 · Archive</span>
+      <h4>Community annotation</h4>
+      <p>Kaimahi rank interventions by leverage tier and cite whakapapa. Every submission is written to a public HF dataset — forkable, auditable, CC BY.</p>
+    </div>
+  </div>
+</section>
+
+<div class="kaupapa-block">
+  <strong>Kaupapa.</strong> Built under the <a href="https://www.kahuiraraunga.io/" target="_blank" rel="noopener">Māori Data Governance Model</a> of Te Kāhui Raraunga. Public, aggregated, non-personal data only. Every indicator cites its source. Te reo Māori terminology is used deliberately, as a paradigm-shifting act at leverage point&nbsp;#2.
+</div>
+
+<section style="margin: 2rem 0 3rem">
+  <p class="section-tag">Kōrero mai — Contribute</p>
+  <h2 style="font-family:var(--font-serif);font-size:2rem;margin:.4rem 0 1rem">Rank an intervention. Cite a whakapapa.</h2>
+  <p style="max-width:720px;line-height:1.75">
+    The observatory is only as good as the readings kaimahi bring to it. If you're watching a pattern in Aotearoa — a housing tightening, a benefit-sanction spike, a Waitangi Tribunal recommendation, a Hansard shift — open the dashboard, propose an intervention, and rank which of Meadows' twelve tiers it actually operates at. Every entry becomes part of the public archive.
+  </p>
+  <div class="hero-cta">
+    <a class="cta-primary" href="https://robertmccallnz.github.io/systems-observatory/#annotate" target="_blank" rel="noopener">Add to the archive →</a>
+    <a class="cta-secondary" href="https://github.com/robertmccallnz/systems-observatory" target="_blank" rel="noopener">Fork on GitHub</a>
+  </div>
+</section>
+
+</div>
+</body>
+</html>
