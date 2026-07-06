@@ -50,7 +50,12 @@
       "course_module": "module_1",
       "motif_png_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/koru.png",
       "meaning_ar": "الحياة الجديدة والإمكانيات المتفتحة — نقطة البداية لكل شيء. شيء ما يبدأ، ينبثق، يتكشّف. هذه اللحظة هي لحظة ولادة.",
-      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/koru.svg"
+      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/koru.svg",
+      "leverage_tiers": [
+        1,
+        12
+      ],
+      "leverage_tier_primary": 1
     },
     {
       "id": "pa_tuwatawata",
@@ -85,7 +90,11 @@
       "course_module": "module_1",
       "motif_png_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/pa_tuwatawata.png",
       "meaning_ar": "السياج المحصّن — الحماية الجماعية، السيادة على المكان والحوكمة الذاتية. لا يُدخَل إلا بإذن.",
-      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/pa_tuwatawata.svg"
+      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/pa_tuwatawata.svg",
+      "leverage_tiers": [
+        2
+      ],
+      "leverage_tier_primary": 2
     },
     {
       "id": "niho_taniwha",
@@ -120,7 +129,11 @@
       "course_module": "module_2",
       "motif_png_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/niho_taniwha.png",
       "meaning_ar": "أسنان التانيوها — العضة الاستعمارية، الاستخراج دون موافقة، الأذى الذي يترك أثراً. البيانات المسروقة هي هذا الأذى.",
-      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/niho_taniwha.svg"
+      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/niho_taniwha.svg",
+      "leverage_tiers": [
+        5
+      ],
+      "leverage_tier_primary": 5
     },
     {
       "id": "kowhaiwhai",
@@ -156,7 +169,12 @@
       "course_module": "module_3",
       "motif_png_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/kowhaiwhai.png",
       "meaning_ar": "القانون المكتوب على العارضة. صراع بين التيكانغا والتشريع، والسلطة الأجدادية مقابل التشريع المفروض.",
-      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/kowhaiwhai.svg"
+      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/kowhaiwhai.svg",
+      "leverage_tiers": [
+        7,
+        12
+      ],
+      "leverage_tier_primary": 7
     },
     {
       "id": "unaunahi",
@@ -191,7 +209,11 @@
       "course_module": "module_4",
       "motif_png_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/unaunahi.png",
       "meaning_ar": "حراشف السمك المتشابكة. هذا الحدث يستدعي استجابة جماعية — معاً نشكّل الدرع التي تحمي مجتمعنا.",
-      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/unaunahi.svg"
+      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/unaunahi.svg",
+      "leverage_tiers": [
+        6
+      ],
+      "leverage_tier_primary": 6
     },
     {
       "id": "takarangi",
@@ -226,7 +248,11 @@
       "course_module": "module_4",
       "motif_png_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/takarangi.png",
       "meaning_ar": "اللولب المزدوج — التاريخ يعيد نفسه، الماضي والمستقبل ملتفّان معاً.",
-      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/takarangi.svg"
+      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/takarangi.svg",
+      "leverage_tiers": [
+        1
+      ],
+      "leverage_tier_primary": 1
     },
     {
       "id": "pikorua",
@@ -264,7 +290,11 @@
       "course_module": "module_4",
       "motif_png_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/pikorua.png",
       "meaning_ar": "الالتواء المزدوج — حياتان، ثقافتان، متحدتان إلى الأبد. مسارات تتباعد وتتقاطع، وحياة تُبنى من الاتصال.",
-      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/pikorua.svg"
+      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/pikorua.svg",
+      "leverage_tiers": [
+        4
+      ],
+      "leverage_tier_primary": 4
     },
     {
       "id": "manaia",
@@ -302,7 +332,11 @@
       "course_module": "module_3",
       "motif_png_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/manaia.png",
       "meaning_ar": "الحارس الروحي — رسول بين عالم الأحياء وعالم الأرواح. القيادة التي تجمع بين العالمَين.",
-      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/manaia.svg"
+      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/manaia.svg",
+      "leverage_tiers": [
+        6
+      ],
+      "leverage_tier_primary": 6
     },
     {
       "id": "mangopare",
@@ -337,7 +371,11 @@
       "course_module": "module_2",
       "motif_png_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/mangopare.png",
       "meaning_ar": "القرش المطرقي — الشجاعة والإصرار والقوة. المقاتل الذي لا يتراجع أبداً.",
-      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/mangopare.svg"
+      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/maori/mangopare.svg",
+      "leverage_tiers": [
+        3
+      ],
+      "leverage_tier_primary": 3
     },
     {
       "id": "niho_mano",
@@ -485,7 +523,12 @@
       "course_module": "module_3",
       "motif_png_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/malu_diamond.png",
       "meaning_ar": "الحماية والمأوى. الوشم الكامل للمرأة يأخذ اسمه من هذا النقش — الهوية والصمود الأنثوي.",
-      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/malu_diamond.svg"
+      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/samoan/malu_diamond.svg",
+      "leverage_tiers": [
+        7,
+        11
+      ],
+      "leverage_tier_primary": 7
     },
     {
       "id": "aso",
@@ -670,7 +713,11 @@
       "course_module": "module_4",
       "motif_png_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/tongan/manulua.png",
       "meaning_ar": "الوحدة والتحالف وربط العلاقات الاجتماعية. 'طائران' — الزوج الذي يمثّل التوازن والشراكة.",
-      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/tongan/manulua.svg"
+      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/tongan/manulua.svg",
+      "leverage_tiers": [
+        8
+      ],
+      "leverage_tier_primary": 8
     },
     {
       "id": "masi_kesa",
@@ -707,7 +754,11 @@
       "course_module": "module_4",
       "motif_png_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/fijian/masi_kesa.png",
       "meaning_ar": "هوية العشيرة والمكانة والحماية الروحية. كل مجموعة فرعية (توكاتوكا) تمتلك تصاميم ماسي خاصة بها.",
-      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/fijian/masi_kesa.svg"
+      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/fijian/masi_kesa.svg",
+      "leverage_tiers": [
+        10
+      ],
+      "leverage_tier_primary": 10
     },
     {
       "id": "vonu",
@@ -743,7 +794,12 @@
       "course_module": "module_4",
       "motif_png_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/fijian/vonu.png",
       "meaning_ar": "الطول والتحمّل والملاحة والارتباط بين البر والبحر. السلحفاة تتنقّل بين العالمَين وتحمل الحكمة الأجدادية.",
-      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/fijian/vonu.svg"
+      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/fijian/vonu.svg",
+      "leverage_tiers": [
+        8,
+        11
+      ],
+      "leverage_tier_primary": 8
     },
     {
       "id": "yvy_mara_ey",
@@ -779,7 +835,11 @@
       "course_module": "module_1",
       "motif_png_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/yvy_mara_ey.png",
       "meaning_ar": "الفردوس الغواراني الأسطوري — أرض خالية من الجوع والحرب والمرض. حلم السيادة الأصلية حياً في كل نضال.",
-      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/yvy_mara_ey.svg"
+      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/yvy_mara_ey.svg",
+      "leverage_tiers": [
+        2
+      ],
+      "leverage_tier_primary": 2
     },
     {
       "id": "cuaracy_ra_angaba",
@@ -850,7 +910,11 @@
       "course_module": "module_4",
       "motif_png_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/nanduti.png",
       "meaning_ar": "الدانتيل الإبري الباراغوياني التقليدي الذي يعني اسمه 'شبكة العنكبوت' بالغوارانية. الجمال المنسوج من المعرفة الأصلية.",
-      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/nanduti.svg"
+      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guarani/nanduti.svg",
+      "leverage_tiers": [
+        9
+      ],
+      "leverage_tier_primary": 9
     },
     {
       "id": "kene_shipibo",
@@ -960,7 +1024,11 @@
       "course_module": "module_3",
       "motif_png_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guna/mola_guna.png",
       "meaning_ar": "لوحات نسيجية مطرّزة يدوياً ترتديها نساء غونا من أرخبيل سان بلاس. الهوية والمقاومة والسيادة الثقافية.",
-      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guna/mola_guna.svg"
+      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/guna/mola_guna.svg",
+      "leverage_tiers": [
+        4
+      ],
+      "leverage_tier_primary": 4
     },
     {
       "id": "jagua_pyta",
@@ -1033,7 +1101,12 @@
       "course_module": "module_2",
       "motif_png_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/kayapo/kayapo_jaguar_division.png",
       "meaning_ar": "النمر هو الحيوان الروحي الأعلى في كوزمولوجيا الكيابو. تقسيمات المجتمع المرتبطة بالنمر تحكم القانون الأصلي.",
-      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/kayapo/kayapo_jaguar_division.svg"
+      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/kayapo/kayapo_jaguar_division.svg",
+      "leverage_tiers": [
+        3,
+        10
+      ],
+      "leverage_tier_primary": 3
     },
     {
       "id": "yanomami_urihi",
@@ -1070,7 +1143,11 @@
       "course_module": "module_2",
       "motif_png_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/yanomami/yanomami_urihi.png",
       "meaning_ar": "أوريهي أ ('أرض الغابة') هو مفهوم اليانومامي للعالم المأهول — الغابة المحيطة كيان حيّ يربط البشر بالأجداد.",
-      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/yanomami/yanomami_urihi.svg"
+      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/yanomami/yanomami_urihi.svg",
+      "leverage_tiers": [
+        9
+      ],
+      "leverage_tier_primary": 9
     },
     {
       "id": "luta_pela_vida",
@@ -1108,7 +1185,11 @@
       "course_module": "module_2",
       "motif_png_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/amazonian/luta_pela_vida.png",
       "meaning_ar": "مخيّم 'النضال من أجل الحياة' لـ APIB في برازيليا — الاتحاد الأمازوني الأصلي يقاوم تشريعات الإبادة. البقاء هو المقاومة.",
-      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/amazonian/luta_pela_vida.svg"
+      "svg_r2_url": "https://pub-bf8eea881c1e44d88eda5192c3b92291.r2.dev/motifs/amazonian/luta_pela_vida.svg",
+      "leverage_tiers": [
+        5
+      ],
+      "leverage_tier_primary": 5
     }
   ]
 }

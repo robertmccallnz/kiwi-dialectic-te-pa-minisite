@@ -908,6 +908,25 @@
       <input type="search" class="node-search" id="nodeSearch" placeholder="Search orgs…" oninput="searchNodes(this.value)" data-i18n-placeholder="search-placeholder"/>
     </div>
 
+    <!-- LEVERAGE TIER FILTER (Donella Meadows) -->
+    <div class="controls-bar" style="margin-top:-.35rem">
+      <span class="controls-label" title="Donella Meadows — 12 leverage points">Tier</span>
+      <button class="filter-chip chip-tier chip-tier-all active" onclick="filterTier('all',this)">All</button>
+      <button class="filter-chip chip-tier" style="border-color:#8e44ad;color:#8e44ad" onclick="filterTier(1,this)" title="Transcend paradigms">T1</button>
+      <button class="filter-chip chip-tier" style="border-color:#8e44ad;color:#8e44ad" onclick="filterTier(2,this)" title="Paradigm / mindset">T2</button>
+      <button class="filter-chip chip-tier" style="border-color:#8e44ad;color:#8e44ad" onclick="filterTier(3,this)" title="Goals of the system">T3</button>
+      <button class="filter-chip chip-tier" style="border-color:#c0392b;color:#c0392b" onclick="filterTier(4,this)" title="Self-organisation">T4</button>
+      <button class="filter-chip chip-tier" style="border-color:#c0392b;color:#c0392b" onclick="filterTier(5,this)" title="Rules">T5</button>
+      <button class="filter-chip chip-tier" style="border-color:#c0392b;color:#c0392b" onclick="filterTier(6,this)" title="Information flows">T6</button>
+      <button class="filter-chip chip-tier" style="border-color:#e67e22;color:#e67e22" onclick="filterTier(7,this)" title="Positive feedback loops">T7</button>
+      <button class="filter-chip chip-tier" style="border-color:#e67e22;color:#e67e22" onclick="filterTier(8,this)" title="Negative feedback loops">T8</button>
+      <button class="filter-chip chip-tier" style="border-color:#e67e22;color:#e67e22" onclick="filterTier(9,this)" title="Delays">T9</button>
+      <button class="filter-chip chip-tier" style="border-color:#f1c40f;color:#f1c40f" onclick="filterTier(10,this)" title="Material flows / stocks">T10</button>
+      <button class="filter-chip chip-tier" style="border-color:#f1c40f;color:#f1c40f" onclick="filterTier(11,this)" title="Buffers">T11</button>
+      <button class="filter-chip chip-tier" style="border-color:#f1c40f;color:#f1c40f" onclick="filterTier(12,this)" title="Parameters">T12</button>
+      <a class="filter-chip" href="https://robertmccallnz.github.io/leverage-points-course/" style="border-color:var(--accent);color:var(--accent);text-decoration:none;margin-left:.4rem" title="Open the 12-module course">📘 Course</a>
+    </div>
+
     <!-- STATS -->
     <div class="stats-bar" id="statsBar">
       <span class="stat-item"><strong id="statVisible">105</strong> <span data-i18n="stat-orgs">organisations</span></span>
@@ -2403,6 +2422,24 @@ const REGION_LABELS = {
 let activeRegion = 'all';
 let activeCause = null;
 let activeLang = null;
+let activeTier = 'all';  // Donella Meadows 12 leverage-points filter
+
+/* Cause → Leverage tier(s) map (Meadows).
+   Each org's `cause` array is scanned; if any cause maps to activeTier, node passes. */
+const CAUSE_TIER_MAP = {
+  'political sovereignty':  [1, 2, 3, 4],   // paradigm / goals / self-org
+  'land rights':            [3, 4, 5, 10],  // goals + rules + material flows
+  'cultural preservation':  [1, 2, 6],      // paradigm / mindset / info flows
+  'language revival':       [2, 6],         // mindset shift + info flows
+  'data sovereignty':       [5, 6],         // rules + info flows
+  'AI ethics':              [2, 5, 6],      // mindset + rules + info flows
+  'environmental justice':  [3, 7, 10, 11]  // goals + reinforcing loops + stocks + buffers
+};
+function nodeTiers(n) {
+  const s = new Set();
+  (n.cause || []).forEach(c => (CAUSE_TIER_MAP[c] || []).forEach(t => s.add(t)));
+  return s;
+}
 let searchQuery = '';
 let simulation = null;
 let svgZoom = null;
@@ -2415,6 +2452,7 @@ function getVisibleNodes() {
     if (activeLang === 'pt' && !n.lang_pt) return false;
     if (activeLang === 'gn' && !n.lang_gn) return false;
     if (activeLang === 'sm' && !n.lang_sm) return false;
+    if (activeTier !== 'all' && !nodeTiers(n).has(activeTier)) return false;
     if (searchQuery) {
       const q = searchQuery.toLowerCase();
       return n.name.toLowerCase().includes(q) ||
@@ -2470,6 +2508,13 @@ function filterLang(lang, btn) {
     document.querySelectorAll('.filter-chip[onclick^="filterLang"]').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
   }
+  drawNetwork();
+}
+
+function filterTier(tier, btn) {
+  activeTier = tier;
+  document.querySelectorAll('.filter-chip[onclick^="filterTier"]').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
   drawNetwork();
 }
 
