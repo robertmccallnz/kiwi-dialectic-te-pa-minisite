@@ -56,4 +56,4 @@ All Te Pā motifs, images, and teaching materials are published under
 ---
 
 *Generated automatically by `scripts/generate-partner-docs.js`*  
-*Te Pā Tūwatawata — 2 Mount Street, Port Chalmers, Dunedin 9023, Aotearoa New Zealand*
+*Te Pā Tūwatawata Charitable Trust — 2 Mount Street, Port Chalmers, Dunedin 9023, Aotearoa New Zealand*
