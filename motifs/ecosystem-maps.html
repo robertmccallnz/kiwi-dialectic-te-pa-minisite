@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Ecosystem Maps — Te Pā Tūwatawata — The Kiwi Dialectic</title>
-<meta name="description" content="Te Pā ecosystem system-design maps: Ōtepoti, Aotearoa, courses and the Systems Observatory, woven through the Six Thinkers. Māori data sovereignty."/>
+<meta name="description" content="Te Pā ecosystem system-design maps: Ōtepoti, Aotearoa, courses, the Systems Observatory and wider connections to indigenous movements via the rhizome and thinkers mappers."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap">
@@ -18,7 +18,6 @@
 .eco-refs a{color:var(--accent2,#2ecc71)}
 .eco-refs li{margin:0 0 6px}
 .tag{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#2ecc71}
-.mermaid .node.clickable{cursor:pointer}
 </style>
 </head>
 <body data-theme="light">
@@ -36,8 +35,8 @@
 <span class="motif-colour-stripe" role="presentation" aria-hidden="true"></span>
 <p class="tag">Pūnaha Hoahoa — System design</p>
 <h1>Te Pā Ecosystem Maps</h1>
-<p>How the Te Pā Tūwatawata ecosystem fits together — the marae-based relationships in Ōtepoti, the national network across Aotearoa, the free courses, and the Systems Observatory that records activity. Everything is woven through the Six Thinkers meta-layer. <strong>Every box is a live link</strong> — click a node to open its site.</p>
-<div class="eco-legend"><strong>Edge labels (flows):</strong> <strong>kōrero</strong> = dialogue · <strong>raraunga</strong> = data / sovereignty · <strong>kaihaukai</strong> = reciprocal exchange · <strong>mahika kai</strong> = provisioning · <strong>takarangi</strong> = spiral growth · <strong>ngaru</strong> = wave / propagation.</div>
+<p>How the Te Pā Tūwatawata ecosystem fits together — the marae-based relationships in Ōtepoti, the national network across Aotearoa, the free courses, the Systems Observatory that records activity, and the wider web of indigenous movements it connects to through the mappers. Everything is woven through the Six Thinkers meta-layer. <strong>Every box is a live link</strong> — click a node to open its site.</p>
+<div class="eco-legend"><strong>Edge labels (flows):</strong> <strong>kōrero</strong> = dialogue · <strong>raraunga</strong> = data / sovereignty · <strong>kaihaukai</strong> = reciprocal exchange · <strong>mahika kai</strong> = provisioning · <strong>takarangi</strong> = spiral growth · <strong>ngaru</strong> = wave / propagation · <strong>whanaungatanga</strong> = kinship / solidarity.</div>
 <h2>Te Pā Ōtepoti</h2>
 <p class="eco-caption">The local layer. Te Pā in Ōtepoti sits in relationship with mana whenua and community partners — each brings a different flow: data (raraunga), reciprocal exchange (kaihaukai), food-gathering knowledge (mahika kai), dialogue (kōrero) and capability-building (takarangi). Practice then propagates back out (ngaru).</p>
 <div class="eco-map">
@@ -133,6 +132,30 @@ click OBS "/observatory/" _blank
 click TPA "https://www.te-pa.org" _blank
 </pre>
 </div>
+<h2>Te Kōtuinga Whānui — Wider connections</h2>
+<p class="eco-caption">The outward layer. Te Pā is not a closed system. Two mappers open it onto the wider world: the <strong>Rhizome Mapper</strong> links Te Pā to indigenous sovereignty, land-rights, data-sovereignty and environmental-justice movements worldwide (whanaungatanga); the <strong>Thinkers Mapper</strong> is a rhizome of the whole course catalogue that feeds the Six Thinkers layer. Together they connect the local kaupapa to a global network of struggle and solidarity. Click either mapper to explore.</p>
+<div class="eco-map">
+<pre class="mermaid">
+flowchart TD
+TPA[Te Pa Tuwatawata]
+RM[Rhizome Mapper]
+TM[Thinkers Mapper]
+ST[Six Thinkers meta-layer]
+GLOBAL[Global indigenous + justice movements]
+OTHER[Other communities + marae + unions]
+TPA -->|whanaungatanga| RM
+RM -->|whanaungatanga| GLOBAL
+RM -->|whanaungatanga| OTHER
+TM -->|korero| ST
+ST -->|takarangi| TPA
+GLOBAL -->|kaihaukai| TPA
+OTHER -->|kaihaukai| TPA
+click TPA "https://www.te-pa.org" _blank
+click RM "https://te-pa.org/rhizome-mapper.html" _blank
+click TM "https://robertmccallnz.github.io/thinkers-mapper/" _blank
+click ST "https://robertmccallnz.github.io/six-thinkers/" _blank
+</pre>
+</div>
 <h2>Ngā tohutoro — References &amp; links</h2>
 <div class="eco-refs">
 <p><strong>Ōtepoti — mana whenua &amp; partners</strong></p>
@@ -151,6 +174,11 @@ click TPA "https://www.te-pa.org" _blank
 <li>Twelve Leverage Points — <a href="https://robertmccallnz.github.io/leverage-points-course/">leverage-points-course</a></li>
 <li>Te Pā Tūwatawata — <a href="https://www.te-pa.org">te-pa.org</a></li>
 <li>Systems Observatory — <a href="/observatory/">/observatory/</a></li>
+</ul>
+<p><strong>Mappers &amp; wider connections</strong></p>
+<ul>
+<li>Rhizome Mapper — indigenous movements worldwide — <a href="https://te-pa.org/rhizome-mapper.html">te-pa.org/rhizome-mapper.html</a></li>
+<li>Thinkers Mapper — rhizome of the course catalogue — <a href="https://robertmccallnz.github.io/thinkers-mapper/">thinkers-mapper</a></li>
 </ul>
 </div>
 <footer style="margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border,#e5e0d0);font-size:.85rem;opacity:.75">
