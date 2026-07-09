@@ -1,46 +1,124 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Ecosystem Maps — Te Pā Tūwatawata — The Kiwi Dialectic</title>
 <meta name="description" content="Te Pā ecosystem system-design maps: Ōtepoti, Aotearoa, courses, the Systems Observatory and wider connections to indigenous movements via the rhizome and thinkers mappers."/>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="../assets/css/kiwi-dialectic.css"/>
-<link rel="stylesheet" href="../assets/css/hotere-patch.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap"/>
 <style>
-.motif-colour-stripe{background:#2ecc71;height:6px;width:100%;display:block;margin-bottom:2rem;border-radius:3px}
-.eco-map{background:var(--bg-raised,#fdfcf7);border:1px solid var(--border,#e5e0d0);border-radius:12px;padding:1rem;margin:1rem 0;overflow-x:auto}
-.eco-legend{font-size:.95rem;background:var(--bg-raised,#f7f4ea);border-left:4px solid #2ecc71;border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:1rem 0}
-.eco-caption{font-size:.9rem;opacity:.8;margin:.5rem 0 1.5rem}
-.eco-refs a{color:var(--accent2,#2ecc71)}
-.eco-refs li{margin:0 0 6px}
-.tag{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#2ecc71}
+:root{
+  --mangu:#0e0d0b;      /* black — Te Korekore */
+  --mangu-2:#171512;    /* raised black */
+  --whero:#c8102e;      /* red — Te Whai Ao */
+  --whero-2:#e2263f;
+  --ma:#f4efe6;         /* white/cream — Te Ao Mārama */
+  --ma-dim:#a9a196;
+  --line:#2a2621;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--mangu);
+  color:var(--ma);
+  font-family:'Work Sans',system-ui,sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:0 1.25rem 4rem}
+a{color:var(--whero-2)}
+
+/* whero top rule */
+.top-rule{height:6px;background:var(--whero);width:100%}
+
+/* niho taniwha frieze */
+.niho{
+  height:26px;width:100%;display:block;
+  background:linear-gradient(135deg,var(--whero) 25%,transparent 25%) -14px 0/28px 28px,
+            linear-gradient(225deg,var(--whero) 25%,transparent 25%) -14px 0/28px 28px;
+  background-color:var(--mangu);
+  margin:0 0 2.5rem;
+}
+
+/* header / nav */
+header.site{padding:1.1rem 1.25rem .2rem;max-width:1000px;margin:0 auto}
+header.site .brand{font-family:'Instrument Serif',serif;font-size:1.15rem;letter-spacing:.03em;color:var(--ma);text-decoration:none}
+nav.site{max-width:1000px;margin:0 auto;padding:.4rem 1.25rem 0;display:flex;flex-wrap:wrap;gap:1.1rem;align-items:center}
+nav.site a,nav.site button{
+  background:none;border:0;padding:0;cursor:pointer;
+  font-family:'Work Sans',sans-serif;font-size:.7rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ma-dim);text-decoration:none;
+}
+nav.site a:hover,nav.site button:hover{color:var(--whero-2)}
+
+/* hero */
+.eyebrow{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--whero-2);margin:0 0 .5rem}
+h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:3rem;line-height:1.05;margin:.2rem 0 1rem}
+h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:2rem;margin:3rem 0 .3rem}
+.lead{font-size:1.05rem;color:var(--ma);max-width:60ch}
+.hero{position:relative;overflow:hidden}
+.koru{position:absolute;right:-60px;top:-40px;width:340px;height:340px;opacity:.06;pointer-events:none}
+
+/* legend */
+.legend{
+  background:var(--mangu-2);border:1px solid var(--line);
+  border-left:4px solid var(--whero);
+  border-radius:0 8px 8px 0;padding:.9rem 1.1rem;margin:1.5rem 0;
+  font-size:.95rem;color:var(--ma);
+}
+.legend b{color:var(--whero-2)}
+
+/* map cards */
+.eco-map{
+  background:var(--mangu-2);
+  border:1px solid var(--line);
+  border-radius:12px;padding:1.25rem;margin:1rem 0 .6rem;
+  overflow-x:auto;
+}
+.caption{font-size:.92rem;color:var(--ma-dim);margin:.2rem 0 1.5rem;max-width:70ch}
+
+/* references */
+.refs h3{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--whero-2);margin:1.6rem 0 .5rem}
+.refs ul{list-style:none;padding:0;margin:0}
+.refs li{padding:.25rem 0;border-bottom:1px solid var(--line);color:var(--ma-dim);font-size:.95rem}
+.refs li a{color:var(--ma)}
+.refs li a:hover{color:var(--whero-2)}
+
+/* footer */
+footer{border-top:1px solid var(--line);margin-top:3rem;padding-top:1.2rem;color:var(--ma-dim);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body data-theme="light">
-<header>
-<a href="https://www.kiwidialectic.com">The Kiwi Dialectic</a>
-<nav>
-<a href="../index.html">Home</a>
-<a href="../index.html#modules">Modules</a>
-<a href="index.html">All Motifs</a>
-<a href="../index.html#social-kit">Social Kit</a>
-<button id="tt">Dark</button>
-<a href="/observatory/">Observatory</a>
-</nav>
+<body>
+<div class="top-rule"></div>
+<header class="site">
+  <a class="brand" href="https://www.kiwidialectic.com">The Kiwi Dialectic</a>
 </header>
-<span class="motif-colour-stripe" role="presentation" aria-hidden="true"></span>
-<p class="tag">Pūnaha Hoahoa — System design</p>
-<h1>Te Pā Ecosystem Maps</h1>
-<p>How the Te Pā Tūwatawata ecosystem fits together — the marae-based relationships in Ōtepoti, the national network across Aotearoa, the free courses, the Systems Observatory that records activity, and the wider web of indigenous movements it connects to through the mappers. Everything is woven through the Six Thinkers meta-layer. <strong>Every box is a live link</strong> — click a node to open its site.</p>
-<div class="eco-legend"><strong>Edge labels (flows):</strong> <strong>kōrero</strong> = dialogue · <strong>raraunga</strong> = data / sovereignty · <strong>kaihaukai</strong> = reciprocal exchange · <strong>mahika kai</strong> = provisioning · <strong>takarangi</strong> = spiral growth · <strong>ngaru</strong> = wave / propagation · <strong>whanaungatanga</strong> = kinship / solidarity.</div>
-<h2>Te Pā Ōtepoti</h2>
-<p class="eco-caption">The local layer. Te Pā in Ōtepoti sits in relationship with mana whenua and community partners — each brings a different flow: data (raraunga), reciprocal exchange (kaihaukai), food-gathering knowledge (mahika kai), dialogue (kōrero) and capability-building (takarangi). Practice then propagates back out (ngaru).</p>
-<div class="eco-map">
-<pre class="mermaid">
+<nav class="site">
+  <a href="../index.html">Home</a>
+  <a href="../index.html#modules">Modules</a>
+  <a href="index.html">All Motifs</a>
+  <a href="../index.html#social-kit">Social Kit</a>
+  <a href="/observatory/">Observatory</a>
+</nav>
+<span class="niho" role="presentation" aria-hidden="true"></span>
+
+<div class="wrap">
+  <section class="hero">
+    <svg class="koru" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 5a45 45 0 1 0 45 45 30 30 0 1 1-30-30 18 18 0 1 0 18 18 8 8 0 1 1-8-8" fill="none" stroke="#f4efe6" stroke-width="3"/></svg>
+    <p class="eyebrow">Pūnaha Hoahoa — System design</p>
+    <h1>Te Pā Ecosystem Maps</h1>
+    <p class="lead">How the Te Pā Tūwatawata ecosystem fits together — the marae-based relationships in Ōtepoti, the national network across Aotearoa, the free courses, the Systems Observatory that records activity, and the wider web of indigenous movements it connects to. Everything is woven through the Six Thinkers meta-layer. <b>Every box is a live link</b> — click a node to open its site.</p>
+  </section>
+
+  <div class="legend">
+    <b>Edge labels (flows):</b> <b>kōrero</b> = dialogue · <b>raraunga</b> = data / sovereignty · <b>kaihaukai</b> = reciprocal exchange · <b>mahika kai</b> = provisioning · <b>takarangi</b> = spiral growth · <b>ngaru</b> = wave / propagation · <b>whanaungatanga</b> = kinship / solidarity.
+  </div>
+
+  <h2>Te Pā Ōtepoti</h2>
+  <p class="caption">The local layer. Te Pā in Ōtepoti sits in relationship with mana whenua and community partners — each brings a different flow: data (raraunga), reciprocal exchange (kaihaukai), food-gathering knowledge (mahika kai), dialogue (kōrero) and capability-building (takarangi). Practice then propagates back out (ngaru).</p>
+  <pre class="mermaid eco-map">
 flowchart TD
 WK[Te Whare Karioi]
 KT[Kai Tahu / Ngai Tahu]
@@ -60,12 +138,11 @@ click PK "https://www.puketeraki.nz" _blank
 click LA "https://www.literacy.org.nz" _blank
 click WK "https://nz-code.nz/wharekarioi" _blank
 click TP "https://www.te-pa.org" _blank
-</pre>
-</div>
-<h2>Te Pā Aotearoa</h2>
-<p class="eco-caption">The national layer. The Six Thinkers meta-layer sets the pedagogy; the Te Pā Aotearoa hub (te-pa.org) coordinates regional nōari and shares kōrero out to each. Each region feeds back a distinct flow — Ōtepoti returns raraunga, others return kaihaukai, ngaru and mahika kai.</p>
-<div class="eco-map">
-<pre class="mermaid">
+  </pre>
+
+  <h2>Te Pā Aotearoa</h2>
+  <p class="caption">The national layer. The Six Thinkers meta-layer sets the pedagogy; the Te Pā Aotearoa hub (te-pa.org) coordinates regional nōari and shares kōrero out to each. Each region feeds back a distinct flow — Ōtepoti returns raraunga, others return kaihaukai, ngaru and mahika kai.</p>
+  <pre class="mermaid eco-map">
 flowchart TD
 ST[Six Thinkers meta-layer]
 NAT[Te Pa Aotearoa Hub]
@@ -85,12 +162,14 @@ WKO -->|mahika kai| NAT
 click ST "https://robertmccallnz.github.io/six-thinkers/" _blank
 click NAT "https://www.te-pa.org" _blank
 click OTE "https://www.te-pa.org" _blank
-</pre>
-</div>
-<h2>Ngā Akoranga — Courses</h2>
-<p class="eco-caption">The learning layer. The Six Thinkers meta-layer feeds a family of free, CC BY-SA courses. Te Pā draws on all of them for its digital-literacy kaupapa. Click any course to open it.</p>
-<div class="eco-map">
-<pre class="mermaid">
+click TMK "https://www.te-pa.org" _blank
+click WLG "https://www.te-pa.org" _blank
+click WKO "https://www.te-pa.org" _blank
+  </pre>
+
+  <h2>Ngā Akoranga — Courses</h2>
+  <p class="caption">The learning layer. The Six Thinkers meta-layer feeds a family of free, CC BY-SA courses. Te Pā draws on all of them for its digital-literacy kaupapa. Click any course to open it.</p>
+  <pre class="mermaid eco-map">
 flowchart TD
 ST[Six Thinkers meta-layer]
 STC[Six Thinkers course]
@@ -106,18 +185,17 @@ STC -->|korero| TPA
 AIW -->|korero| TPA
 AIL -->|korero| TPA
 LLP -->|korero| TPA
+click ST "https://robertmccallnz.github.io/six-thinkers/" _blank
 click STC "https://robertmccallnz.github.io/six-thinkers/" _blank
 click AIW "https://robertmccallnz.github.io/ai-warrior/" _blank
 click AIL "https://ai-literacy-for-families.vercel.app/" _blank
 click LLP "https://robertmccallnz.github.io/leverage-points-course/" _blank
 click TPA "https://www.te-pa.org" _blank
-click ST "https://robertmccallnz.github.io/six-thinkers/" _blank
-</pre>
-</div>
-<h2>Te Tirohanga Pūnaha — Systems Observatory</h2>
-<p class="eco-caption">The feedback layer. The Observatory watches the whole ecosystem — it records activity across the courses, the regional nōari and partners, and returns raraunga (data / signals) to the Te Pā hub so the network can adapt. This closes the takarangi: observation feeds back into design.</p>
-<div class="eco-map">
-<pre class="mermaid">
+  </pre>
+
+  <h2>Te Tirohanga Pūnaha — Systems Observatory</h2>
+  <p class="caption">The feedback layer. The Observatory watches the whole ecosystem — it records activity across the courses, the regional nōari and partners, and returns raraunga (data / signals) to the Te Pā hub so the network can adapt. This closes the takarangi: observation feeds back into design.</p>
+  <pre class="mermaid eco-map">
 flowchart TD
 TPA[Te Pa Tuwatawata]
 OBS[Systems Observatory]
@@ -130,12 +208,11 @@ TPA -->|takarangi| CRS
 TPA -->|korero| REG
 click OBS "/observatory/" _blank
 click TPA "https://www.te-pa.org" _blank
-</pre>
-</div>
-<h2>Te Kōtuinga Whānui — Wider connections</h2>
-<p class="eco-caption">The outward layer. Te Pā is not a closed system. Two mappers open it onto the wider world: the <strong>Rhizome Mapper</strong> links Te Pā to indigenous sovereignty, land-rights, data-sovereignty and environmental-justice movements worldwide (whanaungatanga); the <strong>Thinkers Mapper</strong> is a rhizome of the whole course catalogue that feeds the Six Thinkers layer. Together they connect the local kaupapa to a global network of struggle and solidarity. Click either mapper to explore.</p>
-<div class="eco-map">
-<pre class="mermaid">
+  </pre>
+
+  <h2>Te Kōtuinga Whānui — Wider connections</h2>
+  <p class="caption">The outward layer. Te Pā is not a closed system. Two mappers open it onto the wider world: the Rhizome Mapper links Te Pā to indigenous sovereignty, land-rights, data-sovereignty and environmental-justice movements worldwide (whanaungatanga); the Thinkers Mapper is a rhizome of the whole course catalogue that feeds the Six Thinkers layer. Together they connect the local kaupapa to a global network of struggle and solidarity. Click either mapper to explore.</p>
+  <pre class="mermaid eco-map">
 flowchart TD
 TPA[Te Pa Tuwatawata]
 RM[Rhizome Mapper]
@@ -154,42 +231,55 @@ click TPA "https://www.te-pa.org" _blank
 click RM "https://te-pa.org/rhizome-mapper.html" _blank
 click TM "https://robertmccallnz.github.io/thinkers-mapper/" _blank
 click ST "https://robertmccallnz.github.io/six-thinkers/" _blank
-</pre>
+click GLOBAL "https://te-pa.org/rhizome-mapper.html" _blank
+click OTHER "https://te-pa.org/rhizome-mapper.html" _blank
+  </pre>
+
+  <section class="refs">
+    <h3>Ngā tohutoro — Ōtepoti: mana whenua & partners</h3>
+    <ul>
+      <li>Kai Tahu / Ngai Tahu — <a href="https://ngaitahu.iwi.nz" target="_blank" rel="noopener">ngaitahu.iwi.nz</a></li>
+      <li>Te Runanga o Otakou — <a href="https://www.otakourunaka.co.nz" target="_blank" rel="noopener">otakourunaka.co.nz</a></li>
+      <li>Kati Huirapa Runaka ki Puketeraki — <a href="https://www.puketeraki.nz" target="_blank" rel="noopener">puketeraki.nz</a></li>
+      <li>Literacy Aotearoa — <a href="https://www.literacy.org.nz" target="_blank" rel="noopener">literacy.org.nz</a></li>
+      <li>Te Whare Karioi — <a href="https://nz-code.nz/wharekarioi" target="_blank" rel="noopener">nz-code.nz/wharekarioi</a></li>
+    </ul>
+    <h3>Courses & kete</h3>
+    <ul>
+      <li>Six Thinkers — <a href="https://robertmccallnz.github.io/six-thinkers/" target="_blank" rel="noopener">six-thinkers</a></li>
+      <li>AI Warrior — <a href="https://robertmccallnz.github.io/ai-warrior/" target="_blank" rel="noopener">ai-warrior</a></li>
+      <li>AI Literacy for Families — <a href="https://ai-literacy-for-families.vercel.app/" target="_blank" rel="noopener">ai-literacy-for-families</a></li>
+      <li>Twelve Leverage Points — <a href="https://robertmccallnz.github.io/leverage-points-course/" target="_blank" rel="noopener">leverage-points-course</a></li>
+      <li>Te Pā Tūwatawata — <a href="https://www.te-pa.org" target="_blank" rel="noopener">te-pa.org</a></li>
+      <li>Systems Observatory — <a href="/observatory/">/observatory/</a></li>
+    </ul>
+    <h3>Mappers & wider connections</h3>
+    <ul>
+      <li>Rhizome Mapper — indigenous movements worldwide — <a href="https://te-pa.org/rhizome-mapper.html" target="_blank" rel="noopener">te-pa.org/rhizome-mapper.html</a></li>
+      <li>Thinkers Mapper — rhizome of the course catalogue — <a href="https://robertmccallnz.github.io/thinkers-mapper/" target="_blank" rel="noopener">thinkers-mapper</a></li>
+    </ul>
+  </section>
+
+  <footer>The Kiwi Dialectic · Ōtepoti / Dunedin · CC BY-SA 4.0</footer>
 </div>
-<h2>Ngā tohutoro — References &amp; links</h2>
-<div class="eco-refs">
-<p><strong>Ōtepoti — mana whenua &amp; partners</strong></p>
-<ul>
-<li>Kai Tahu / Ngai Tahu — <a href="https://ngaitahu.iwi.nz">ngaitahu.iwi.nz</a></li>
-<li>Te Runanga o Otakou — <a href="https://www.otakourunaka.co.nz">otakourunaka.co.nz</a></li>
-<li>Kati Huirapa Runaka ki Puketeraki — <a href="https://www.puketeraki.nz">puketeraki.nz</a></li>
-<li>Literacy Aotearoa — <a href="https://www.literacy.org.nz">literacy.org.nz</a></li>
-<li>Te Whare Karioi — <a href="https://nz-code.nz/wharekarioi">nz-code.nz/wharekarioi</a></li>
-</ul>
-<p><strong>Courses &amp; kete</strong></p>
-<ul>
-<li>Six Thinkers — <a href="https://robertmccallnz.github.io/six-thinkers/">six-thinkers</a></li>
-<li>AI Warrior — <a href="https://robertmccallnz.github.io/ai-warrior/">ai-warrior</a></li>
-<li>AI Literacy for Families — <a href="https://ai-literacy-for-families.vercel.app/">ai-literacy-for-families</a></li>
-<li>Twelve Leverage Points — <a href="https://robertmccallnz.github.io/leverage-points-course/">leverage-points-course</a></li>
-<li>Te Pā Tūwatawata — <a href="https://www.te-pa.org">te-pa.org</a></li>
-<li>Systems Observatory — <a href="/observatory/">/observatory/</a></li>
-</ul>
-<p><strong>Mappers &amp; wider connections</strong></p>
-<ul>
-<li>Rhizome Mapper — indigenous movements worldwide — <a href="https://te-pa.org/rhizome-mapper.html">te-pa.org/rhizome-mapper.html</a></li>
-<li>Thinkers Mapper — rhizome of the course catalogue — <a href="https://robertmccallnz.github.io/thinkers-mapper/">thinkers-mapper</a></li>
-</ul>
-</div>
-<footer style="margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border,#e5e0d0);font-size:.85rem;opacity:.75">
-The Kiwi Dialectic · Ōtepoti / Dunedin · CC BY-SA 4.0
-</footer>
-<script>
-(function(){var b=document.getElementById('tt'),h=document.documentElement;var s=localStorage.getItem('kd-theme')||'light';h.setAttribute('data-theme',s);if(b){b.textContent=s==='dark'?'Light':'Dark';b.addEventListener('click',function(){var c=h.getAttribute('data-theme'),n=c==='dark'?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('kd-theme',n);b.textContent=n==='dark'?'Light':'Dark';});}})();
-</script>
+
 <script type="module">
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.9.6/dist/mermaid.esm.min.mjs";
-mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "neutral" });
+mermaid.initialize({
+  startOnLoad: true,
+  securityLevel: "loose",
+  theme: "base",
+  themeVariables: {
+    background: "#171512",
+    primaryColor: "#171512",
+    primaryBorderColor: "#c8102e",
+    primaryTextColor: "#f4efe6",
+    lineColor: "#c8102e",
+    edgeLabelBackground: "#0e0d0b",
+    fontFamily: "'Work Sans', sans-serif",
+    fontSize: "15px"
+  }
+});
 </script>
 </body>
 </html>
