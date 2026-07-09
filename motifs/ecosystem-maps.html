@@ -4,36 +4,42 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Ecosystem Maps — Te Pā Tūwatawata — The Kiwi Dialectic</title>
-<meta name="description" content="Te Pā ecosystem system-design maps: Ōtepoti and Aotearoa, woven through the Six Thinkers. Māori data sovereignty."/>
+<meta name="description" content="Te Pā ecosystem system-design maps: Ōtepoti, Aotearoa, courses and the Systems Observatory, woven through the Six Thinkers. Māori data sovereignty."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="../assets/css/kiwi-dialectic.css"/>
 <link rel="stylesheet" href="../assets/css/hotere-patch.css"/>
 <style>
 .motif-colour-stripe{background:#2ecc71;height:6px;width:100%;display:block;margin-bottom:2rem;border-radius:3px}
 .eco-map{background:var(--bg-raised,#fdfcf7);border:1px solid var(--border,#e5e0d0);border-radius:12px;padding:1rem;margin:1rem 0;overflow-x:auto}
 .eco-legend{font-size:.95rem;background:var(--bg-raised,#f7f4ea);border-left:4px solid #2ecc71;border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:1rem 0}
+.eco-caption{font-size:.9rem;opacity:.8;margin:.5rem 0 1.5rem}
 .eco-refs a{color:var(--accent2,#2ecc71)}
 .eco-refs li{margin:0 0 6px}
 .tag{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#2ecc71}
+.mermaid .node.clickable{cursor:pointer}
 </style>
 </head>
-<body>
-<nav style="display:flex;gap:1.2rem;flex-wrap:wrap;align-items:center;padding:1rem 0;font-size:.9rem">
-<a href="https://www.kiwidialectic.com"><strong>The Kiwi Dialectic</strong></a>
+<body data-theme="light">
+<header>
+<a href="https://www.kiwidialectic.com">The Kiwi Dialectic</a>
+<nav>
 <a href="../index.html">Home</a>
 <a href="../index.html#modules">Modules</a>
 <a href="index.html">All Motifs</a>
 <a href="../index.html#social-kit">Social Kit</a>
+<button id="tt">Dark</button>
 <a href="/observatory/">Observatory</a>
 </nav>
+</header>
 <span class="motif-colour-stripe" role="presentation" aria-hidden="true"></span>
 <p class="tag">Pūnaha Hoahoa — System design</p>
 <h1>Te Pā Ecosystem Maps</h1>
-<p>Two system-design maps of the Te Pā ecosystem, woven through the Six Thinkers meta-layer. The first is grounded in Ōtepoti; the second scales the same logic across Aotearoa. Edge labels name the flows between nodes: <strong>kōrero</strong> (dialogue), <strong>raraunga</strong> (data / sovereignty), <strong>kaihaukai</strong> (reciprocal exchange), <strong>mahika kai</strong> (provisioning), <strong>takarangi</strong> (spiral growth), <strong>ngaru</strong> (wave / propagation). Iwi and Māori organisation nodes are clickable and link to official sites — reference and relationship, not formal endorsement or partnership.</p>
+<p>How the Te Pā Tūwatawata ecosystem fits together — the marae-based relationships in Ōtepoti, the national network across Aotearoa, the free courses, and the Systems Observatory that records activity. Everything is woven through the Six Thinkers meta-layer. <strong>Every box is a live link</strong> — click a node to open its site.</p>
+<div class="eco-legend"><strong>Edge labels (flows):</strong> <strong>kōrero</strong> = dialogue · <strong>raraunga</strong> = data / sovereignty · <strong>kaihaukai</strong> = reciprocal exchange · <strong>mahika kai</strong> = provisioning · <strong>takarangi</strong> = spiral growth · <strong>ngaru</strong> = wave / propagation.</div>
 <h2>Te Pā Ōtepoti</h2>
-<div class="eco-legend"><strong>Motif legend:</strong> takarangi = spiral capability growth · ngaru = wave propagation · mangōpare = resilience · kaihaukai = reciprocal exchange.</div>
+<p class="eco-caption">The local layer. Te Pā in Ōtepoti sits in relationship with mana whenua and community partners — each brings a different flow: data (raraunga), reciprocal exchange (kaihaukai), food-gathering knowledge (mahika kai), dialogue (kōrero) and capability-building (takarangi). Practice then propagates back out (ngaru).</p>
 <div class="eco-map">
 <pre class="mermaid">
 flowchart TD
@@ -54,10 +60,11 @@ click OR "https://www.otakourunaka.co.nz" _blank
 click PK "https://www.puketeraki.nz" _blank
 click LA "https://www.literacy.org.nz" _blank
 click WK "https://nz-code.nz/wharekarioi" _blank
+click TP "https://www.te-pa.org" _blank
 </pre>
 </div>
 <h2>Te Pā Aotearoa</h2>
-<div class="eco-legend"><strong>Motif legend:</strong> The Six Thinkers form the meta-layer that weaves regional nodes; edges carry kōrero, raraunga and kaihaukai across the motu.</div>
+<p class="eco-caption">The national layer. The Six Thinkers meta-layer sets the pedagogy; the Te Pā Aotearoa hub (te-pa.org) coordinates regional nōari and shares kōrero out to each. Each region feeds back a distinct flow — Ōtepoti returns raraunga, others return kaihaukai, ngaru and mahika kai.</p>
 <div class="eco-map">
 <pre class="mermaid">
 flowchart TD
@@ -76,10 +83,59 @@ OTE -->|raraunga| NAT
 TMK -->|kaihaukai| NAT
 WLG -->|ngaru| NAT
 WKO -->|mahika kai| NAT
+click ST "https://robertmccallnz.github.io/six-thinkers/" _blank
+click NAT "https://www.te-pa.org" _blank
+click OTE "https://www.te-pa.org" _blank
 </pre>
 </div>
-<h2>Ōtepoti references</h2>
+<h2>Ngā Akoranga — Courses</h2>
+<p class="eco-caption">The learning layer. The Six Thinkers meta-layer feeds a family of free, CC BY-SA courses. Te Pā draws on all of them for its digital-literacy kaupapa. Click any course to open it.</p>
+<div class="eco-map">
+<pre class="mermaid">
+flowchart TD
+ST[Six Thinkers meta-layer]
+STC[Six Thinkers course]
+AIW[AI Warrior]
+AIL[AI Literacy for Families]
+LLP[Twelve Leverage Points]
+TPA[Te Pa Tuwatawata]
+ST -->|takarangi| STC
+ST -->|takarangi| AIW
+ST -->|takarangi| AIL
+ST -->|takarangi| LLP
+STC -->|korero| TPA
+AIW -->|korero| TPA
+AIL -->|korero| TPA
+LLP -->|korero| TPA
+click STC "https://robertmccallnz.github.io/six-thinkers/" _blank
+click AIW "https://robertmccallnz.github.io/ai-warrior/" _blank
+click AIL "https://ai-literacy-for-families.vercel.app/" _blank
+click LLP "https://robertmccallnz.github.io/leverage-points-course/" _blank
+click TPA "https://www.te-pa.org" _blank
+click ST "https://robertmccallnz.github.io/six-thinkers/" _blank
+</pre>
+</div>
+<h2>Te Tirohanga Pūnaha — Systems Observatory</h2>
+<p class="eco-caption">The feedback layer. The Observatory watches the whole ecosystem — it records activity across the courses, the regional nōari and partners, and returns raraunga (data / signals) to the Te Pā hub so the network can adapt. This closes the takarangi: observation feeds back into design.</p>
+<div class="eco-map">
+<pre class="mermaid">
+flowchart TD
+TPA[Te Pa Tuwatawata]
+OBS[Systems Observatory]
+CRS[Courses]
+REG[Regional Nodes + Partners]
+CRS -->|raraunga| OBS
+REG -->|raraunga| OBS
+OBS -->|raraunga| TPA
+TPA -->|takarangi| CRS
+TPA -->|korero| REG
+click OBS "/observatory/" _blank
+click TPA "https://www.te-pa.org" _blank
+</pre>
+</div>
+<h2>Ngā tohutoro — References &amp; links</h2>
 <div class="eco-refs">
+<p><strong>Ōtepoti — mana whenua &amp; partners</strong></p>
 <ul>
 <li>Kai Tahu / Ngai Tahu — <a href="https://ngaitahu.iwi.nz">ngaitahu.iwi.nz</a></li>
 <li>Te Runanga o Otakou — <a href="https://www.otakourunaka.co.nz">otakourunaka.co.nz</a></li>
@@ -87,10 +143,22 @@ WKO -->|mahika kai| NAT
 <li>Literacy Aotearoa — <a href="https://www.literacy.org.nz">literacy.org.nz</a></li>
 <li>Te Whare Karioi — <a href="https://nz-code.nz/wharekarioi">nz-code.nz/wharekarioi</a></li>
 </ul>
+<p><strong>Courses &amp; kete</strong></p>
+<ul>
+<li>Six Thinkers — <a href="https://robertmccallnz.github.io/six-thinkers/">six-thinkers</a></li>
+<li>AI Warrior — <a href="https://robertmccallnz.github.io/ai-warrior/">ai-warrior</a></li>
+<li>AI Literacy for Families — <a href="https://ai-literacy-for-families.vercel.app/">ai-literacy-for-families</a></li>
+<li>Twelve Leverage Points — <a href="https://robertmccallnz.github.io/leverage-points-course/">leverage-points-course</a></li>
+<li>Te Pā Tūwatawata — <a href="https://www.te-pa.org">te-pa.org</a></li>
+<li>Systems Observatory — <a href="/observatory/">/observatory/</a></li>
+</ul>
 </div>
 <footer style="margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border,#e5e0d0);font-size:.85rem;opacity:.75">
 The Kiwi Dialectic · Ōtepoti / Dunedin · CC BY-SA 4.0
 </footer>
+<script>
+(function(){var b=document.getElementById('tt'),h=document.documentElement;var s=localStorage.getItem('kd-theme')||'light';h.setAttribute('data-theme',s);if(b){b.textContent=s==='dark'?'Light':'Dark';b.addEventListener('click',function(){var c=h.getAttribute('data-theme'),n=c==='dark'?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('kd-theme',n);b.textContent=n==='dark'?'Light':'Dark';});}})();
+</script>
 <script type="module">
 import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.9.6/dist/mermaid.esm.min.mjs";
 mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "neutral" });
