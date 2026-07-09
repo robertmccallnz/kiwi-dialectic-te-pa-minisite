@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Ecosystem Maps — Te Pā Tūwatawata — The Kiwi Dialectic</title>
+<meta name="description" content="Te Pā ecosystem system-design maps: Ōtepoti and Aotearoa, woven through the Six Thinkers. Māori data sovereignty."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/kiwi-dialectic.css"/>
+<link rel="stylesheet" href="../assets/css/hotere-patch.css"/>
+<style>
+.motif-colour-stripe{background:#2ecc71;height:6px;width:100%;display:block;margin-bottom:2rem;border-radius:3px}
+.eco-map{background:var(--bg-raised,#fdfcf7);border:1px solid var(--border,#e5e0d0);border-radius:12px;padding:1rem;margin:1rem 0;overflow-x:auto}
+.eco-legend{font-size:.95rem;background:var(--bg-raised,#f7f4ea);border-left:4px solid #2ecc71;border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:1rem 0}
+.eco-refs a{color:var(--accent2,#2ecc71)}
+.eco-refs li{margin:0 0 6px}
+.tag{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#2ecc71}
+</style>
+</head>
+<body>
+<nav style="display:flex;gap:1.2rem;flex-wrap:wrap;align-items:center;padding:1rem 0;font-size:.9rem">
+<a href="https://www.kiwidialectic.com"><strong>The Kiwi Dialectic</strong></a>
+<a href="../index.html">Home</a>
+<a href="../index.html#modules">Modules</a>
+<a href="index.html">All Motifs</a>
+<a href="../index.html#social-kit">Social Kit</a>
+<a href="/observatory/">Observatory</a>
+</nav>
+<span class="motif-colour-stripe" role="presentation" aria-hidden="true"></span>
+<p class="tag">Pūnaha Hoahoa — System design</p>
+<h1>Te Pā Ecosystem Maps</h1>
+<p>Two system-design maps of the Te Pā ecosystem, woven through the Six Thinkers meta-layer. The first is grounded in Ōtepoti; the second scales the same logic across Aotearoa. Edge labels name the flows between nodes: <strong>kōrero</strong> (dialogue), <strong>raraunga</strong> (data / sovereignty), <strong>kaihaukai</strong> (reciprocal exchange), <strong>mahika kai</strong> (provisioning), <strong>takarangi</strong> (spiral growth), <strong>ngaru</strong> (wave / propagation). Iwi and Māori organisation nodes are clickable and link to official sites — reference and relationship, not formal endorsement or partnership.</p>
+<h2>Te Pā Ōtepoti</h2>
+<div class="eco-legend"><strong>Motif legend:</strong> takarangi = spiral capability growth · ngaru = wave propagation · mangōpare = resilience · kaihaukai = reciprocal exchange.</div>
+<div class="eco-map">
+<pre class="mermaid">
+flowchart TD
+WK[Te Whare Karioi]
+KT[Kai Tahu / Ngai Tahu]
+OR[Te Runanga o Otakou]
+PK[Kati Huirapa Runaka ki Puketeraki]
+LA[Literacy Aotearoa]
+TP[Te Pa Otepoti Node]
+KT -->|raraunga| TP
+OR -->|kaihaukai| TP
+PK -->|mahika kai| TP
+WK -->|korero| TP
+LA -->|takarangi| TP
+TP -->|ngaru| WK
+click KT "https://ngaitahu.iwi.nz" _blank
+click OR "https://www.otakourunaka.co.nz" _blank
+click PK "https://www.puketeraki.nz" _blank
+click LA "https://www.literacy.org.nz" _blank
+click WK "https://nz-code.nz/wharekarioi" _blank
+</pre>
+</div>
+<h2>Te Pā Aotearoa</h2>
+<div class="eco-legend"><strong>Motif legend:</strong> The Six Thinkers form the meta-layer that weaves regional nodes; edges carry kōrero, raraunga and kaihaukai across the motu.</div>
+<div class="eco-map">
+<pre class="mermaid">
+flowchart TD
+ST[Six Thinkers meta-layer]
+NAT[Te Pa Aotearoa Hub]
+OTE[Te Pa Otepoti]
+TMK[Te Pa Te Tai Tokerau]
+WLG[Te Pa Te Whanganui-a-Tara]
+WKO[Te Pa Waikato]
+ST -->|takarangi| NAT
+NAT -->|korero| OTE
+NAT -->|korero| TMK
+NAT -->|korero| WLG
+NAT -->|korero| WKO
+OTE -->|raraunga| NAT
+TMK -->|kaihaukai| NAT
+WLG -->|ngaru| NAT
+WKO -->|mahika kai| NAT
+</pre>
+</div>
+<h2>Ōtepoti references</h2>
+<div class="eco-refs">
+<ul>
+<li>Kai Tahu / Ngai Tahu — <a href="https://ngaitahu.iwi.nz">ngaitahu.iwi.nz</a></li>
+<li>Te Runanga o Otakou — <a href="https://www.otakourunaka.co.nz">otakourunaka.co.nz</a></li>
+<li>Kati Huirapa Runaka ki Puketeraki — <a href="https://www.puketeraki.nz">puketeraki.nz</a></li>
+<li>Literacy Aotearoa — <a href="https://www.literacy.org.nz">literacy.org.nz</a></li>
+<li>Te Whare Karioi — <a href="https://nz-code.nz/wharekarioi">nz-code.nz/wharekarioi</a></li>
+</ul>
+</div>
+<footer style="margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border,#e5e0d0);font-size:.85rem;opacity:.75">
+The Kiwi Dialectic · Ōtepoti / Dunedin · CC BY-SA 4.0
+</footer>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10.9.6/dist/mermaid.esm.min.mjs";
+mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "neutral" });
+</script>
+</body>
+</html>
