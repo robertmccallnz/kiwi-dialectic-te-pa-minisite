@@ -409,71 +409,95 @@
   },
   "current_headlines": [
     {
-      "title": "ICT NEWSCAST: Ho-Chunk land return, boarding school healing, a tribal micro grid and more",
-      "link": "https://ictnews.org/newscasts/ict-newscast-ho-chunk-land-return-boarding-school-healing-a-tribal-micro-grid-and-more/",
+      "title": "Barnaby Joyce claims Australia is a ‘Christian nation’ and says many First Nations people would agree",
+      "link": "https://www.theguardian.com/australia-news/2026/jul/15/barnaby-joyce-australia-christian-first-nations-ntwnfb",
+      "source": "The Guardian — First Nations AU",
+      "source_id": "first-nations-tg",
+      "published": "2026-07-15T03:53:02+00:00",
+      "category": "palestine-indigenous-solidarity"
+    },
+    {
+      "title": "#First@5AM: AI, Election Battle, Bird Flu and Cost of Living Lead Monday’s Headlines",
+      "link": "https://waateanews.com/2026/07/20/first5am-ai-election-battle-bird-flu-and-cost-of-living-lead-mondays-headlines/",
+      "source": "Waatea News (Māori)",
+      "source_id": "waatea",
+      "published": "2026-07-19T17:00:39+00:00",
+      "category": "ai-sovereignty"
+    },
+    {
+      "title": "#regional: From Te Tai Tokerau to Tāmaki: Riki Whiu Takes on Key Police Leadership Role",
+      "link": "https://waateanews.com/2026/07/20/from-te-tai-tokerau-to-tamaki-riki-whiu-takes-on-key-police-leadership-role/",
+      "source": "Waatea News (Māori)",
+      "source_id": "waatea",
+      "published": "2026-07-19T17:00:10+00:00",
+      "category": "ai-sovereignty"
+    },
+    {
+      "title": "Ripeka Lessels | Me Whai Wāhi Ngā Kaiako ki te Poari Whakatau i Ngā Paearu Whakaako",
+      "link": "https://waateanews.com/2026/07/19/ripeka-lessels-me-whai-wahi-nga-kaiako-ki-te-poari-whakatau-i-nga-paearu-whakaako/",
+      "source": "Waatea News (Māori)",
+      "source_id": "waatea",
+      "published": "2026-07-19T02:51:16+00:00",
+      "category": "ai-sovereignty"
+    },
+    {
+      "title": "Moko Tepania | Kei te Wānangahia Tonutia te Anamata o Ngā Kaunihera o Te Tai Tokerau.",
+      "link": "https://waateanews.com/2026/07/19/moko-tepania-kei-te-wanangahia-tonutia-te-anamata-o-nga-kaunihera-o-te-tai-tokerau/",
+      "source": "Waatea News (Māori)",
+      "source_id": "waatea",
+      "published": "2026-07-19T02:41:33+00:00",
+      "category": "ai-sovereignty"
+    },
+    {
+      "title": "‘We made history’: Dugout launch first in recent memory",
+      "link": "https://ictnews.org/news/we-made-history-dugout-launch-first-in-recent-memory/",
       "source": "ICT News (Indian Country Today)",
       "source_id": "ictnews",
-      "published": "2026-06-26T21:00:00+00:00",
-      "category": "land-back"
-    },
-    {
-      "title": "Online racism is significantly affecting mental health, First Nations people say: ‘It’s like carrying a bully in your pocket’",
-      "link": "https://www.theguardian.com/australia-news/2026/jun/13/online-racism-mental-health-first-nations-australians-social-media-ntwnfb",
-      "source": "The Guardian — First Nations AU",
-      "source_id": "first-nations-tg",
-      "published": "2026-06-12T15:00:50+00:00",
-      "category": "ai-sovereignty"
-    },
-    {
-      "title": "NSW police sergeant avoids jail over death of 16-year-old Indigenous teenager Jai Wright",
-      "link": "https://www.theguardian.com/australia-news/2026/jun/05/jai-wright-indigenous-teenager-collision-death-police-officer-avoids-jail-ntwnfb",
-      "source": "The Guardian — First Nations AU",
-      "source_id": "first-nations-tg",
-      "published": "2026-06-05T15:28:22+00:00",
-      "category": "ai-sovereignty"
-    },
-    {
-      "title": "NDIS overhaul will ‘harm’ Australians with disabilities, government’s own committee warns",
-      "link": "https://www.theguardian.com/australia-news/2026/jun/03/ndis-budget-cuts-overhaul-material-harm-australians-with-disabilities-government-advisory-committee-warns",
-      "source": "The Guardian — First Nations AU",
-      "source_id": "first-nations-tg",
-      "published": "2026-06-02T15:00:27+00:00",
+      "published": "2026-07-17T14:00:00+00:00",
       "category": "anti-extraction"
     },
     {
-      "title": "When racism is so entrenched in Australia, could paying lip service to multiculturalism do more harm than good? | Anhaar Kareem",
-      "link": "https://www.theguardian.com/commentisfree/2026/jun/28/racism-entrenched-in-australia-multiculturalism-lip-service-ntwnfb",
+      "title": "We have survived! Forty years of Aboriginal protest posters – in pictures",
+      "link": "https://www.theguardian.com/artanddesign/gallery/2026/jul/14/aboriginal-protest-posters-ray-jackson-in-pictures-ntwnfb",
       "source": "The Guardian — First Nations AU",
       "source_id": "first-nations-tg",
-      "published": "2026-06-27T20:00:15+00:00",
+      "published": "2026-07-13T15:00:50+00:00",
+      "category": "anti-extraction"
+    },
+    {
+      "title": "School in remote SA Indigenous community on list of places where accused paedophile worked",
+      "link": "https://www.theguardian.com/australia-news/2026/jul/15/remote-indigenous-school-south-australia-on-list-of-places-where-accused-paedophile-worked-ntwnfb",
+      "source": "The Guardian — First Nations AU",
+      "source_id": "first-nations-tg",
+      "published": "2026-07-15T09:19:38+00:00",
       "category": "anti-racism-policing"
     },
     {
-      "title": "Here we Joh again? The spectre of Bjelke-Petersen still looms large over Queensland",
-      "link": "https://www.theguardian.com/australia-news/2026/jun/27/joh-bjelke-petersen-queensland-politics-ntwnfb",
+      "title": "Taking down the Nicky Winmar statue points to a troubling double standard in our public spaces | Paul Daley",
+      "link": "https://www.theguardian.com/commentisfree/2026/jul/14/nicky-winmar-statue-and-monuments-to-men-who-killed-aboriginal-people-ntwnfb",
       "source": "The Guardian — First Nations AU",
       "source_id": "first-nations-tg",
-      "published": "2026-06-26T15:00:15+00:00",
+      "published": "2026-07-13T15:00:52+00:00",
       "category": "anti-racism-policing"
     },
     {
-      "title": "Death of Indigenous teen found on rail tracks with towel under head ‘suspicious’, NSW coroner says",
-      "link": "https://www.theguardian.com/australia-news/2026/jun/18/racism-hindered-nsw-police-investigation-into-the-1988-death-of-indigenous-teenager-mark-haines-inquest-found-ntwnfb",
+      "title": "‘We should be dead’: Perth’s Indigenous community felt ignored after alleged Invasion Day bombing attempt, inquiry told",
+      "link": "https://www.theguardian.com/australia-news/2026/jul/13/perth-alleged-invasion-day-bombing-attempt-indigenous-community-inquiry-ntwnfb",
       "source": "The Guardian — First Nations AU",
       "source_id": "first-nations-tg",
-      "published": "2026-06-18T04:53:18+00:00",
+      "published": "2026-07-13T07:53:27+00:00",
       "category": "anti-racism-policing"
     },
     {
-      "title": "Man claiming to be One Nation branch official defended Hitler Youth and called Aboriginal people ‘stone age’ in racist posts",
-      "link": "https://www.theguardian.com/australia-news/2026/jun/16/one-nation-hitler-youth-john-drew-ntwnfb",
+      "title": "Take a stand on racism or send a message against violence: what should happen to the Nicky Winmar statue?",
+      "link": "https://www.theguardian.com/australia-news/2026/jul/12/what-should-happen-to-the-nicky-winmar-statue-ntwnfb",
       "source": "The Guardian — First Nations AU",
       "source_id": "first-nations-tg",
-      "published": "2026-06-15T15:00:29+00:00",
+      "published": "2026-07-11T20:00:59+00:00",
       "category": "anti-racism-policing"
     }
   ],
-  "feed_last_refreshed": "2026-06-28T21:01:06.808741+00:00",
+  "feed_last_refreshed": "2026-07-19T21:02:54.184559+00:00",
   "feed_sources": {
     "ok": [
       {
